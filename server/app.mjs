@@ -52,7 +52,8 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
    if(!['GET','HEAD'].includes(request.method))return method();
    const name={'/':'index.html','/live':'live.html','/live/':'live.html','/poc':'poc.html','/poc/':'poc.html'}[path];
    if(name){if(!pages.has(name))pages.set(name,readPage(name));return new Response(request.method==='HEAD'?null:await pages.get(name),{headers:{...headers,'Content-Type':mime['.html']}});}
-   let decoded;try{decoded=decodeURIComponent(path);}catch{return error('not_found',404,'File not found.');}
+   const staticPath=path==='/florida'||path==='/florida/'?'/florida.html':path;
+   let decoded;try{decoded=decodeURIComponent(staticPath);}catch{return error('not_found',404,'File not found.');}
    if(decoded.includes('\\')||decoded.includes('\0')||decoded.split('/').some(p=>p.startsWith('.')||p==='..'))return error('not_found',404,'File not found.');
    if(!mime[extname(decoded).toLowerCase()])return error('not_found',404,'File not found.');
    const root=await realpath(staticRoot),file=await realpath(resolve(root,'.'+decoded));if(!file.startsWith(root+sep)||file.slice(root.length+1).split(sep).some(p=>p.startsWith('.'))||!mime[extname(file).toLowerCase()]||!(await stat(file)).isFile())return error('not_found',404,'File not found.');

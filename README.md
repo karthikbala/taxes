@@ -28,6 +28,7 @@ For development use `npm run dev`. Node watches imported code; restart it after 
 - `server/app.mjs`: authenticated APIs, safe pages/static assets, deadlines and request IDs.
 - `server/sqlite.mjs`: persistent local database with atomic reservation/reconciliation.
 - `lib/client/`, `lib/live/`: existing deterministic source adapters, parsing, matching and validation.
+- `/florida`: the dated 67-county source matrix, with search and backend/access filters.
 - `/poc`: rich address/owner workflow; `/live`: older parcel workflow with self-hosted API key input.
 - `/healthz`: liveness only, no provider calls.
 - `/api/v2/health`: protected readiness/preflight, distinct from liveness or extraction proof.
@@ -65,7 +66,7 @@ SQLite currently supports one application instance. Do not run independent budge
 
 ## Historical hosting
 
-The currently live taxes.zeneral.ai site remains unchanged until your colleague deploys and switches DNS. Its accepted v27 source was b184c17c610ebbb055c23beb6b7f025d5f82af3b; see dated [source evidence](docs/evidence/README.md).
+The live taxes.zeneral.ai site still uses the existing Worker host until your colleague deploys and switches DNS. On 8 October 2026, the explicitly requested matrix page was added at /florida in v28, source d744bb03af1bde6eeb1e775556aea740577ded11. Extraction remains based on accepted v27; see dated [source evidence](docs/evidence/README.md). This publication does not change the Linux deployment direction.
 
 Old Worker routes and scaffolding are isolated under [legacy/sites-worker](legacy/sites-worker/README.md). Hosting identifiers and the former dependency manifest are archived under docs/history. They are reference material, not dependencies or instructions to use Sites. No .openai hosting declaration remains in the active project.
 
