@@ -1,0 +1,25 @@
+[Unit]
+Description=Taxes standalone property application
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=taxes
+Group=taxes
+WorkingDirectory=/opt/taxes
+EnvironmentFile=/etc/taxes/taxes.env
+ExecStart=/usr/bin/node /opt/taxes/server/index.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=180
+KillSignal=SIGTERM
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/taxes
+
+[Install]
+WantedBy=multi-user.target

@@ -2,6 +2,12 @@
 
 This repository is the standalone property-tax application. Keep it independent of PortTrack: no imports, credentials, deployment actions or runtime paths from another project.
 
+## Hosting direction
+
+The user has chosen a future self-hosted Linux server. GitHub is the primary source of truth; the standalone Node server, CLI and offline checks must work without ChatGPT Sites, a Sites editor account, or a Cloudflare runtime. Do not make automatic Sites calls, publish a replacement Site, or change the existing live deployment, DNS, Cloudflare account or secrets while preparing this route. The v27 Worker/Sites deployment is dated legacy evidence and remains unchanged until an explicitly authorized cutover.
+
+Use [deployment instructions](docs/DEPLOYMENT.md) for Node, Nginx and systemd; Docker is an optional packaging route. SQLite requires durable storage and one application instance until a shared database is deliberately implemented. Never create a fresh paid ledger to replace existing spending: migrate and reconcile all reservations and historical spend before enabling managed source access.
+
 ## Start every session
 
 1. Read [the development handoff](docs/DEVELOPMENT-HANDOFF.md), [architecture](docs/ARCHITECTURE.md), and [setup/deployment instructions](README.md). Treat the dated deployment and acceptance evidence as snapshots.

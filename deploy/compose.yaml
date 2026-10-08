@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - /etc/taxes/taxes.env
+    environment:
+      HOST: 0.0.0.0
+      PORT: "3000"
+      TAXES_DB_PATH: /data/taxes.sqlite
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - /var/lib/taxes:/data
+    stop_grace_period: 180s

@@ -10,8 +10,6 @@ jobs:
     timeout-minutes: 15
     env:
       INVISIA_BROWSER_ENABLED: "0"
-      CLOUDFLARE_CF_FETCH_ENABLED: "false"
-      WRANGLER_SEND_METRICS: "false"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

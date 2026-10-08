@@ -8,11 +8,18 @@ import { syncBuiltinESMExports } from "node:module";
 // The same module is preloaded in each test worker. Tests may replace fetch with
 // fixture transports; accidentally falling back to the real network fails closed.
 if (process.env.INVISIA_OFFLINE_TEST_WORKER === "1") {
-  const blocked = () => { throw new Error("Network access is disabled in npm test; use a fixture transport."); };
-  globalThis.fetch = blocked;
+  const allowedLocal = target => {
+    if (process.env.INVISIA_TEST_ALLOW_LOOPBACK !== "1") return false;
+    try { const u = new URL(target instanceof Request ? target.url : String(target)); return ["http:","https:"].includes(u.protocol) && ["127.0.0.1","[::1]"].includes(u.hostname); } catch { return false; }
+  };
+  const guarded = original => (...args) => {
+    if (!allowedLocal(args[0])) throw new Error("Network access is disabled in npm test; use a fixture transport.");
+    return original(...args);
+  };
+  globalThis.fetch = guarded(globalThis.fetch);
   for (const protocol of [http, https]) {
-    protocol.request = blocked;
-    protocol.get = blocked;
+    protocol.request = guarded(protocol.request.bind(protocol));
+    protocol.get = guarded(protocol.get.bind(protocol));
   }
   syncBuiltinESMExports();
 } else {

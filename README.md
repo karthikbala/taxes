@@ -1,20 +1,12 @@
-# taxes — Zeneral property-tax extraction POC
+# taxes — standalone Zeneral property-tax application
 
-Private development repository for https://taxes.zeneral.ai. The app joins county Property Appraiser and Tax Collector records and produces source-backed JSON. Runtime extraction is deterministic code; no LLM is called during lookups.
+**Deployment target: your own Linux server with Nginx/systemd. ChatGPT Sites is not required.** The default setup, dev server, build and production entry point use Node.js and SQLite. GitHub is the canonical code repository.
 
-## Start here
-
-- [Agent instructions](AGENTS.md)
-- [Development status and next counties](docs/DEVELOPMENT-HANDOFF.md)
-- [Architecture and source adapters](docs/ARCHITECTURE.md)
-- [Hosting, credentials and team handoff](docs/DEPLOYMENT.md)
-- [Dated live source evidence](docs/evidence/README.md)
-
-Three richer v2 workflows are enabled: Miami-Dade, Osceola and Bradford. They are verified with explicit partial coverage. Twenty legacy parcel workflows are configured; the other seventeen have not passed the richer client contract. The 67-county registry is research coverage, not 67 working crawlers.
+Read [AGENTS.md](AGENTS.md), [development handoff](docs/DEVELOPMENT-HANDOFF.md), [architecture](docs/ARCHITECTURE.md) and [Linux deployment guide](docs/DEPLOYMENT.md). Agents must use the self-hosted route and must not create or publish a ChatGPT Site.
 
 ## Local setup
 
-Install Git and Node.js 22 LTS (minimum 22.13). No Codex installation, Cloudflare login or provider subscription is needed for local setup.
+Install Git and Node 22 LTS, minimum 22.13. No Cloudflare account, Codex hosting tooling, Python, browser installation or managed-provider credentials are required for offline setup.
 
 ```sh
 git clone https://github.com/karthikbala/taxes.git
@@ -22,55 +14,59 @@ cd taxes
 npm ci
 npm run setup:local
 npm test
-npm run dev
+npm run build
+npm start
 ```
 
-Open the URL printed by the dev server (normally http://127.0.0.1:5173/poc).
+Open http://127.0.0.1:3000/poc. Setup generates an ignored `.env.local` containing a random local `INVISIA_POC_API_KEY`; read that file privately and paste the key into the form. Paid source access is disabled. SQLite schema is initialized at ignored `runtime/taxes.sqlite`; no paid budget is created or reset.
 
-The setup creates an ignored, mode-0600 `.dev.vars` containing a random local POC key and sets paid browser access off. It applies tracked migrations to a **local** D1 database in ignored `.wrangler/state`. It never initializes or resets production spending.
+For development use `npm run dev`. Node watches imported code; restart it after changes to generated HTML text modules if required. `npm run db:setup` initializes missing local schema without replacing data. Build emits `dist/selfhost`; deployment uses the full repository with the standalone server, not an old Worker bundle.
 
-Read the local `INVISIA_POC_API_KEY` value in your editor/password manager and paste it into the local POC form. This key is different from the hosted site's key. It is never committed or printed by setup. Do not replace `.dev.vars` with production credentials for routine offline development.
+## Entry points and configuration
+
+- `server/index.mjs`: standalone HTTP server, startup and shutdown.
+- `server/app.mjs`: authenticated APIs, safe pages/static assets, deadlines and request IDs.
+- `server/sqlite.mjs`: persistent local database with atomic reservation/reconciliation.
+- `lib/client/`, `lib/live/`: existing deterministic source adapters, parsing, matching and validation.
+- `/poc`: rich address/owner workflow; `/live`: older parcel workflow with self-hosted API key input.
+- `/healthz`: liveness only, no provider calls.
+- `/api/v2/health`: protected readiness/preflight, distinct from liveness or extraction proof.
+
+Environment variables are listed in [.env.example](.env.example). The defaults bind `127.0.0.1:3000`, use SQLite and disable managed browser access. Production requires `INVISIA_POC_API_KEY`. Use a durable `TAXES_DB_PATH` and privately provision the production environment; never commit env files or databases.
+
+Both v1 and v2 lookup endpoints require the Bearer key on the standalone server. Source capability endpoints remain public.
 
 ```sh
-npm run db:setup    # Apply new local migrations
-npm run build      # Build production bundle locally
-npm start          # Serve the built bundle locally
-```
-
-Use the origin printed by npm start; its port may differ from npm run dev. Neither command deploys production.
-
-## API
-
-`POST /api/v2/property/lookup` requires an Authorization Bearer POC key. `GET /api/v2/sources` lists county capabilities. `GET /api/v2/health` is protected and reports readiness/preflight; it does not prove extraction or identify the deployed revision. `/live` and `/api/v1/property/lookup` retain the older parcel interface.
-
-```sh
-curl -X POST 'https://taxes.zeneral.ai/api/v2/property/lookup' \
+curl -X POST 'http://127.0.0.1:3000/api/v2/property/lookup' \
   -H "Authorization: Bearer $POC_ACCESS_KEY" \
   -H 'Content-Type: application/json' \
   --data '{"scrap_order_id":"10000001","address":"555 NE 15 ST UNIT 401","ownerName":"JUDE PATRICK JACOB","county":"miami-dade-fl","transactionType":"REFI","state":"FL"}'
 ```
 
-For local requests use your printed local server origin and local key. `10000001` is the client's dummy business order ID; every call has an independent generated request ID. REFI/PURCHASE are client-specified pass-through transaction labels.
+Load `POC_ACCESS_KEY` securely from your local environment before using curl. The local key differs from the existing hosted API key. Order ID is pass-through business metadata; each call generates an independent request ID.
 
-Selecting a county fills its sample address/owner. Miami's example comes from the client; Osceola and Bradford were selected public-property examples.
+## Sources and testing
 
-## Tests and CI
+Three richer client workflows are enabled: Miami-Dade, Osceola and Bradford, with explicit partial coverage. Twenty legacy parcel workflows are configured; seventeen still await the richer contract. The 67-county registry is research coverage, not 67 completed crawlers.
 
-`npm test` discovers all `tests/**/*.test.mjs` and blocks unmocked fetch/HTTP traffic. The fixtures include source-derived identity, matching, table, history and negative cases. Tests do not call providers or source sites. GitHub Actions runs npm ci, offline tests and build on Node 22; it does **not** deploy or hold production secrets.
+Runtime extraction is fixed code, never an LLM call. County selection fills sample inputs; Miami is client-supplied, the other two are Zeneral-selected public examples.
 
-Local live lookup is separate from offline testing. Direct native APIs may respond from your laptop, but challenged collector pages need separately authorized managed browser access and an approved budget. With the provider disabled, the app returns explicit unavailable/blocked sections; it never substitutes saved samples.
+`npm test` blocks external source/provider traffic. Fixtures mock those transports; HTTP server tests explicitly allow literal loopback only. GitHub CI runs offline tests and the self-host build on Node 22. It does not deploy or use provider secrets.
 
-## Production and teammate access
+Real county calls are separate from tests. Without the existing managed browser credentials and approved ledger, challenged sources return explicit unavailable/blocked sections; saved samples are never fallback data.
 
-GitHub is the canonical development/handoff repository. **A GitHub push does not automatically update taxes.zeneral.ai.** Production remains the existing Sites/Cloudflare Worker and D1 project. See [deployment instructions](docs/DEPLOYMENT.md) before publishing.
+## Linux deployment
 
-A colleague needs private GitHub collaborator access. For production changes they also need editor access to the existing Sites project and secure access to the appropriate runtime credential administration. Production credentials and the existing D1 ledger remain in the cloud when this Mac checkout is deleted.
+Use [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [systemd service](deploy/taxes.service) and [Nginx template](deploy/nginx.conf). Provision Node 22, an unprivileged service user, private environment file, durable SQLite storage, HTTPS and server/DNS permissions. Docker templates are an optional alternative.
 
-Before deleting local files, copy the existing hosted POC access key to an approved password manager and arrange team access. Do not put keys, dev.vars, deployment archives, logs containing headers or local database state in Git.
+Keep managed source access off until the prior production spending ledger and settled browser history are migrated and verified. `npm run budget:import -- --budget <snapshot.json> --database <database-path> --approved-import` requires an owner-supplied settled snapshot with the existing budget ID and complete browser_runs array; it never replaces an existing ledger or assumes a new $5 allowance.
 
-## Repository provenance
+SQLite currently supports one application instance. Do not run independent budget databases or old/new paid deployments concurrently. GitHub pushes and npm builds do not deploy; releases and DNS cutover need explicit owner authorization.
 
-This repository starts with a clean source snapshot of the accepted deployed code plus portable setup, CI and handoff documentation. Original operational deployment archives and old Git history were intentionally excluded. [Export and sanitization notes](docs/EXPORT-NOTES.md) record fixture changes and deployment provenance. Original runtime source revision: b184c17c610ebbb055c23beb6b7f025d5f82af3b (v27, 8 October 2026).
+## Historical hosting
 
-This application is independent of PortTrack and must not import its credentials, recipes or deployment configuration.
+The currently live taxes.zeneral.ai site remains unchanged until your colleague deploys and switches DNS. Its accepted v27 source was b184c17c610ebbb055c23beb6b7f025d5f82af3b; see dated [source evidence](docs/evidence/README.md).
 
+Old Worker routes and scaffolding are isolated under [legacy/sites-worker](legacy/sites-worker/README.md). Hosting identifiers and the former dependency manifest are archived under docs/history. They are reference material, not dependencies or instructions to use Sites. No .openai hosting declaration remains in the active project.
+
+Before deleting old local files, preserve the current hosted key and required production backups through approved private storage. The repo is private; grant your colleague GitHub access and authorized server/DNS access. They do **not** need a ChatGPT Sites account for the chosen deployment path.

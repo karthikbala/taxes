@@ -2,6 +2,12 @@
 
 Start with [AGENTS.md](../AGENTS.md), then [README setup/deployment](../README.md) and [architecture](ARCHITECTURE.md). This document records the accepted POC milestone; it is not a current deployment or budget assertion. Reverify the remote revision and loaded application before changes. This repository must remain usable after the original Mac checkout is deleted.
 
+## Current hosting decision
+
+The user selected a future remote Linux server under their own control. GitHub is the primary source of truth. The portable route is Node 22 + SQLite, with Nginx/systemd as the default and Docker optional; see [the deployment guide](DEPLOYMENT.md). Local setup, offline tests, builds, the source CLI and `npm start` require no ChatGPT Sites hosting or editor access.
+
+The legacy v27 deployment below is dated evidence and has not been replaced. No server has been provisioned and no DNS, Cloudflare account, secret or live application changes are authorized by this documentation update. A future cutover needs explicit deployment authorization, the target server/SSH and DNS permissions, HTTPS provisioning, a durable database backup/import and reconciliation of the existing paid ledger. Do not seed a new allowance or clear historical spending.
+
 ## Accepted snapshot
 
 | Item | Dated evidence |
@@ -27,7 +33,7 @@ Osceola accepted API request: `dc1735e6-d4e6-447c-881b-c1a98ddeabe2` (v26). Brad
 ## How to continue
 
 1. Clone the private repository, follow README setup and secret provisioning, and run the selected offline tests before any source access. Keep fixtures under `tests/fixtures/`; production must never read them as fallback data.
-2. Confirm who owns shared integration/release and verify the deployment through the hosting account. Public `/api/v2/sources` describes capabilities; it does not expose a deployment SHA. Authorized `/api/v2/health` verifies readiness/preflight, not source correctness. Do not trigger an example lookup just to check the deployment.
+2. Confirm who owns shared integration/release. For local work use the standalone Node server; for future Linux deployment follow the deployment guide. If reviewing the legacy live application, verify its loaded version through the existing hosting account without changing it. Public `/api/v2/sources` describes capabilities; authorized `/api/v2/health` verifies readiness/preflight, not source correctness. Do not trigger an example lookup just to check deployment readiness.
 3. Pick one county and one source family. Agree its sample, bounded milestone, source fields and acceptance gaps. Complete offline diagnosis/fix first; perform live acceptance only within explicit current scope/budget.
 
 The remaining 17 are suggested family batches, not authorization for a fleet trial:

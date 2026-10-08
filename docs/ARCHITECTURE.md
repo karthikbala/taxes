@@ -1,6 +1,6 @@
 # Architecture
 
-This standalone Vinext/React application runs as a Cloudflare Worker. [README](../README.md) owns installation, local preview, secret provisioning and deployment procedure; [handoff](DEVELOPMENT-HANDOFF.md) owns the dated acceptance snapshot. [AGENTS.md](../AGENTS.md) defines change/release rules.
+This application has a standalone Node 22 server for local development and future Linux self-hosting. GitHub is the primary source of truth. The existing Cloudflare Worker/Sites deployment is a legacy runtime with dated acceptance evidence; preparing Node support does not replace it. [README](../README.md) owns installation and local setup; [deployment](DEPLOYMENT.md) owns future server operation; [handoff](DEVELOPMENT-HANDOFF.md) owns the dated acceptance snapshot. [AGENTS.md](../AGENTS.md) defines change/release rules.
 
 ## Request path
 
@@ -8,8 +8,9 @@ This standalone Vinext/React application runs as a Cloudflare Worker. [README](.
 
 | Component | Responsibility |
 | --- | --- |
-| `app/poc/route.ts`, `lib/poc-page.ts`, `public/poc.js` | POC form, county examples, safe value rendering, source/section coverage and JSON download |
-| `app/api/v2/property/lookup/route.ts` | Bearer authorization, bounded JSON input, request-ID assignment, guarded browser integration and error response |
+| `server/index.mjs`, `server/app.mjs`, `server/sqlite.mjs` | Standalone HTTP entry point, local environment loading, API/static delivery and SQLite runtime binding |
+| `server/app.mjs`, `lib/poc-page.ts`, `public/poc.js` | POC form, county examples, safe value rendering, source/section coverage and JSON download |
+| `server/app.mjs` | Bearer authorization, bounded JSON input, request-ID assignment, guarded browser integration and error response |
 | `lib/client/access.mjs` | POC authorization and managed-service entitlement/ledger preflight |
 | `lib/client/engine.mjs` | County dispatch, bounded fresh transport, retries, partial-section preservation, provenance and composed validation |
 | `lib/client/miami.mjs`, `osceola.mjs`, `bradford.mjs` | Native address/owner resolution and county appraiser enrichment |
@@ -18,7 +19,7 @@ This standalone Vinext/React application runs as a Cloudflare Worker. [README](.
 | `lib/client/contract.mjs`, `profiles.mjs` | Input/client envelope, mandatory sections, metadata and explicit county readiness |
 | `lib/client/logging.mjs` | Correlated structured events with a restricted safe field set |
 | `lib/live/florida.mjs`, county/collector adapters | Existing deterministic parcel-based source retrieval shared with v2 |
-| `lib/live/managed-browser.mjs`, `browser-budget.mjs` | Approved scripted browser capture and D1 reservation/reconciliation |
+| `lib/live/managed-browser.mjs`, `browser-budget.mjs` | Approved scripted browser capture and durable reservation/reconciliation |
 | `tests/`, `tests/fixtures/` | Offline independent contract, source parser, identity, renderer and failure evidence |
 
 `/live` and `/api/v1/property/lookup` retain the legacy parcel interface. `/api/v1/sources` exposes the broader source catalogue. `/api/v2/sources` exposes configured client profiles; `/api/v2/health` is authenticated readiness/preflight. Neither health nor capability output proves fresh extraction correctness or the loaded source revision.
@@ -35,11 +36,15 @@ The client envelope preserves source-backed sections on partial failure, per-sec
 
 ## Runtime state and secrets
 
-Hosting declares D1 binding `DB` in `.openai/hosting.json`; `drizzle/` contains the budget/run schema. D1 stores the shared managed-browser ledger and run reservations, not a completed production order-management system. Preserve the existing ledger during migration. Local `.wrangler/` state is disposable preview state and must not be treated as the production ledger.
+The Node runtime uses Node 22's built-in SQLite support. `TAXES_DB_PATH` defaults to `./runtime/taxes.sqlite`; `DB` remains the application-facing database interface. The schema stores the managed-browser ledger and run reservations, not a completed production order-management system. Use a durable, private database path and one app instance. A shared database requires a separate reviewed implementation.
+
+The legacy hosting declaration `docs/history/cloudflare-sites-v27.json` binds D1 as `DB`. Its production ledger must be backed up, imported and reconciled during an authorized migration. Local setup creates schema only and leaves paid managed access disabled; it must never seed a replacement paid allowance. Local `.wrangler/` state is disposable preview state and is not a production backup.
 
 `INVISIA_POC_API_KEY` authorizes v2 requests. Managed access additionally requires `INVISIA_BROWSER_API_KEY`, `INVISIA_BROWSER_ENABLED=1`, the DB binding, verified entitlement and remaining authorized budget. Secret values belong in approved secret storage and ignored local configuration. The browser form retains its entered POC key only in page memory; do not persist it or add it to logs.
 
-Deployment identity/account permissions and standalone setup are operator concerns recorded in README. The existing Sites project binding is historical deployment configuration, not permission for another maintainer to deploy into that account. No runtime reads a Mac-specific path or PortTrack checkout.
+`npm start` runs the standalone server at `HOST=127.0.0.1`, `PORT=3000` by default and reads private `.env.local` when present. Linux service configuration supplies variables from `/etc/taxes/taxes.env`; container operation sets `HOST=0.0.0.0` inside the container while publishing only a loopback host port. Nginx provides the public HTTPS boundary. Source extraction and CLI adapters stay deterministic, with no runtime model calls.
+
+Server SSH, GitHub and DNS permissions are operator concerns recorded in the deployment guide. The historical Sites binding grants no authority to use that account. A colleague can run and maintain the Node route without a Sites editor account. No runtime reads a Mac-specific path or PortTrack checkout.
 
 ## Safe extension point
 

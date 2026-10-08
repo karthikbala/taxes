@@ -52,3 +52,6 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# Standalone server state; never commit a local or production ledger.
+/runtime/
