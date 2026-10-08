@@ -159,3 +159,12 @@ test('millage reconciliation rounds only at printed precision and authority chec
   assert.throws(()=>parseClientBillLayout(items,basic,'01-3231-052-0020',2025),{code:'document_identity_mismatch'});
   assert.throws(()=>parseClientBillLayout(items,basic,miamiId,2024),{code:'document_identity_mismatch'});
 });
+
+test('side-by-side address headings preserve the original Miami taxpayer mailing block',async()=>{
+ const result=await parseClientBillPdf(await fixture('miami-annual-reference.pdf'),miamiId,2025);
+ assert.match(result.BillDetails.mailingAddress,/JUDE PATRICK JACOB.*NOAH ELIJAH JACOB.*202 MALLARD WAY.*PEEKSKILL/);
+ assert.equal(result.provenance['BillDetails.mailingAddress'].method,'positioned_pdf_text');
+ assert.ok(result.provenance['BillDetails.mailingAddress'].items.every(i=>i.x<290));
+ const f=await osceolaLayout();const osceola=parseClientBillLayout(f.items,f.basic,f.expectedId,f.expectedYear);
+ assert.equal(osceola.BillDetails.mailingAddress,null);
+});

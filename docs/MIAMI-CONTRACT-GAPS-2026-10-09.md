@@ -46,3 +46,10 @@ Full historical certificate/deed clearance and unpublished years cannot be asser
 - Exact Firecrawl folio HTTP request timed out at caller; no response body retained. Ledger reconciled and reserved0. This is not a no-case/no-debt result. No blind replay.
 - External allowance d40c598b-64da-4de1-b71a-29c0bfd9b8a5 conservatively charged$0.08 before dispatch. Ledger snapshot$2.04 spent,0 reserved,$2.96 remaining; includes conservative allowance, not vendor invoice proof.
 - Source continuation was explicitly requested after the JSON milestone; a20-minute parcel-search target overran during safe budget/credential integration. Close after the authorized bounded tests; do not widen provider/county trials.
+
+## Final corrections and service evidence
+
+- Scrape.do current account active, five concurrent slots,48 monthly credits available. Initial100-credit guard did not dispatch. Official request-cost documentation verifies basic rendering5 credits (residential rendering25); one authorized render then returned200,26,939bytes, authoritative Scrape.do-Request-Cost5 and remaining43. Token stayed in worker environment; only sanitized public portal summary copied into Taxes. No exact parcel/case result or historical clearance claimed from this entry page.
+- Mailing-address root cause independently reproduced in the client PDF: Mailing Address and Property Address headings share one horizontal row. The former guard treated any text to the right as inline remittance text, discarding the taxpayer block. Restricted the guard to the same column; source-derived Miami positive and Osceola remittance negative controls pass.21 focused checks passed. No appraiser address substituted.
+- Final hosted v34 sourcebbb72257ccf8861c73069dfe93c9bdd81f318459; saved version appgprj_6ac53842fb58819195dbc8435c4116e9~appgver_ddd960def5bc81918472f69fcadeb4d2; deployment appgdep_6ac7f9eec6d8819196833f794f07cfda succeeded, environment2. Fresh final mailing lookup pending below.
+- GitHub057da537e8aa1189d52fd7b24ee398166289f312 CI37836109567 succeeded for source-test lane. Latest mailing-source code requires final CI after this commit; do not count earlier CI as that check.
