@@ -53,3 +53,15 @@ Full historical certificate/deed clearance and unpublished years cannot be asser
 - Mailing-address root cause independently reproduced in the client PDF: Mailing Address and Property Address headings share one horizontal row. The former guard treated any text to the right as inline remittance text, discarding the taxpayer block. Restricted the guard to the same column; source-derived Miami positive and Osceola remittance negative controls pass.21 focused checks passed. No appraiser address substituted.
 - Final hosted v34 sourcebbb72257ccf8861c73069dfe93c9bdd81f318459; saved version appgprj_6ac53842fb58819195dbc8435c4116e9~appgver_ddd960def5bc81918472f69fcadeb4d2; deployment appgdep_6ac7f9eec6d8819196833f794f07cfda succeeded, environment2. Fresh final mailing lookup pending below.
 - GitHub057da537e8aa1189d52fd7b24ee398166289f312 CI37836109567 succeeded for source-test lane. Latest mailing-source code requires final CI after this commit; do not count earlier CI as that check.
+
+## Final acceptance
+
+Fresh final request abb4c1b6-b274-4768-ae78-fff32435ba63 verifies the mailbox correction: original receipt_pdf page1 positioned text contains both owners,202 MALLARD WAY,PEEKSKILL/NY/10566. Bill mailingAddress is populated from those source items, not the appraiser. Folio matched;14 authority rows; combined$3,132.45; paid$3,007.15; all authority calculations matched; extraction errors[]. Screenshot and complete client JSON are included in this evidence directory.
+
+GitHub code7a72cffa7c3c3b23cbcfa0fc9043b11f1e62335e CI37838461532 succeeded (offline suite and standalone build). This final evidence update changes no application code; reuse that exact code-revision check rather than replay paid/source tests.
+
+Final ledger snapshot$2.08 conservatively accounted,0 reserved,$2.92 remaining under$5. This includes$0.08 external allowance; Scrape.do authoritative receipt reports5 credits, not a verified USD invoice. No funds reset or limits raised. API keys never printed/committed; shared Scrape.do token remained in worker environment.
+
+Remaining source limits: original Miami PDFs do not publish a totalDiscountable subtotal/eligibility proof; ownerOccupied lacks an authoritative field; full historical certificate/deed clearance remains unproven. Firecrawl and Scrape.do each reached the Clerk entry page200, but no independently verified property-specific deed result was integrated. Exact Firecrawl search caller timed out and no result body was retained; do not reinterpret that as no cases. Discovery endpoints stay distinct from client lookup/acceptance and must not advertise full coverage.
+
+Stop source/provider trials at this checkpoint. Continuation needs a new bounded scope for the case/certificate adapter and durable diagnostic result capture, not replay of historical trials. Keep remaining17 county upgrades and production Linux cutover separate.
