@@ -10,8 +10,8 @@ export async function POST(request:Request){
  try{
   if(!request.headers.get('content-type')?.includes('application/json'))return reply({status:'error',error:{code:'unsupported_media_type'}},415);
   const body=JSON.parse(new TextDecoder().decode(await readBounded(request,8192)));
-  if(!body||Array.isArray(body)||typeof body!=='object'||Object.keys(body).length)return reply({status:'error',error:{code:'invalid_input',message:'Fixed source probe accepts an empty JSON object only.'}},400);
-  return reply(await discoverMiamiDeed(env,{signal:request.signal,requestId:crypto.randomUUID()}));
+  if(!body||Array.isArray(body)||typeof body!=='object'||Object.keys(body).some(k=>k!=='folio'))return reply({status:'error',error:{code:'invalid_input',message:'Fixed source probe accepts an only an optional Miami folio.'}},400);
+  return reply(await discoverMiamiDeed(env,{signal:request.signal,requestId:crypto.randomUUID(),folio:body.folio}));
  }catch(e){return reply({status:'error',error:{code:e.code||'source_probe_failed',message:e.code?e.message:'Source probe could not complete.'}},e.http||502);}
 }
 export function GET(){return reply({method:'POST',authentication:'Bearer POC access key'},405);}

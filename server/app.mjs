@@ -1,3 +1,4 @@
+import {debitScrapedoProbe} from '../lib/client/external-probe-budget.mjs';
 import {discoverMiamiDeed} from '../lib/client/deed-discovery.mjs';
 import {readFile,realpath,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
@@ -51,8 +52,13 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
    }
    if(path==='/api/v2/diagnostics/miami-tax-deed'){
     if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
-    const input=await inputJSON(request);if(!input||Array.isArray(input)||typeof input!=='object'||Object.keys(input).length)return error('invalid_input',400,'This fixed source-access probe accepts an empty JSON object only.');
-    const backend=track(discoverMiamiDeed(env,{signal:request.signal,requestId}));return json(await backend);
+    const input=await inputJSON(request);if(!input||Array.isArray(input)||typeof input!=='object'||Object.keys(input).some(k=>k!=='folio'))return error('invalid_input',400,'Fixed source probe accepts only an optional Miami folio.');
+    const backend=track(discoverMiamiDeed(env,{signal:request.signal,requestId,folio:input.folio}));return json(await backend);
+   }
+   if(path==='/api/v2/diagnostics/miami-external-test-budget'){
+    if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
+    const input=await inputJSON(request);if(!input||Array.isArray(input)||typeof input!=='object'||Object.keys(input).length)return error('invalid_input',400,'Fixed external source test accepts an empty object only.');
+    return json(await track(debitScrapedoProbe(env)));
    }
    if(path.startsWith('/api/'))return error('not_found',404,'Endpoint not found.');
    if(!['GET','HEAD'].includes(request.method))return method();

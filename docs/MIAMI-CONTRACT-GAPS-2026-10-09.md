@@ -33,3 +33,16 @@ Full historical certificate/deed clearance and unpublished years cannot be asser
 - First Firecrawl source probe failed in execution runtime: TextEncoder is not defined. This was probe compatibility failure, not a county-access conclusion. Request ray a4776d89aff92447; browser lease38b7b280-023a-4d1d-9a0b-6b046e29c2d1. Paid actual2credits, conservatively priced$0.04; total ledger$1.84, reserved0, remaining$3.16.
 - Corrected emitted code uses plain JavaScript UTF-8 byte counting. Four restricted-VM regressions pass without injected TextEncoder/Buffer. Corrected hosted build passed; final publication/source proof pending below.
 - Scrape.do credential-only exception from PortTrack is pending explicit owner authorization due Taxes AGENTS isolation rule; no credential was read/imported and no Scrape.do test performed.
+
+## Accepted live client lookup and source continuation
+
+- GitHub246d08d3b4239a8a192a2f261a30271517d48713: CI37830992044 succeeded, 221 offline tests plus selfhost build. Prior CI caught a stale one-module assertion; updated it to verify both POC browser modules and MIME types, focused server15 passed.
+- v32 source7fbf87cbd3695d6be06cc2fc24a7fcb355cad7ae; deployment appgdep_6ac7ecb8ff2881918f72fdd7386b8359 succeeded, environment2.
+- Fresh Miami request cef45f59-3e8a-4590-9d96-291308951e9f: matched folio01-3231-052-0010, 14 authority rows, $3,132.45 combined, $3,007.15 payment, receiptEEX-26-000928, 11/25/2025. All14 authority calculations and authority/year taxable comparisons matched; errors[]. Printed totals independent comparison unavailable in this retrieved layout; never represented as passed.
+- Current original bill mailingAddress is null although appraiser mailingAddress is populated. This is an unresolved bill-header extraction/source-layout limit; no appraiser address was copied into the bill field.
+- Corrected Firecrawl entry probe3de7d513-2454-45c1-8994-73d46a1f87d9 reached Clerk public cases page200 and discovered exact parcel search field/filter controls. Discovery does not prove record/case/clearance.
+- User subsequently requested service testing and approved one shared-company Scrape.do credential exception. Credential stays in worker environment; no token persisted/copied into Taxes or logs/Git; no PortTrack code/data/deployment changed.
+- v33 source0d1537e9f579e4aea09ee92e50926ad23de9449a; deployment appgdep_6ac7f3d1bc3481919e1330b91082aaf2 succeeded. Optional exact folio search uses discovered field/button once and returns unverified tables/pagination. Fixed external allowance debit precedes the one external request; no source URL/code/cost override accepted.
+- Exact Firecrawl folio HTTP request timed out at caller; no response body retained. Ledger reconciled and reserved0. This is not a no-case/no-debt result. No blind replay.
+- External allowance d40c598b-64da-4de1-b71a-29c0bfd9b8a5 conservatively charged$0.08 before dispatch. Ledger snapshot$2.04 spent,0 reserved,$2.96 remaining; includes conservative allowance, not vendor invoice proof.
+- Source continuation was explicitly requested after the JSON milestone; a20-minute parcel-search target overran during safe budget/credential integration. Close after the authorized bounded tests; do not widen provider/county trials.
