@@ -55,3 +55,7 @@ next-env.d.ts
 
 # Standalone server state; never commit a local or production ledger.
 /runtime/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
