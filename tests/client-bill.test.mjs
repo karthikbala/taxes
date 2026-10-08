@@ -95,3 +95,67 @@ test('complete paid public rows cannot imply authoritative historical clearance'
   const html=await readFile(new URL('./fixtures/phase-one/collectors-broward-browser-history-excerpt.html',import.meta.url),'utf8');const r=parseClientTaxHistory(html);
   assert.equal(r.publishedHistoryCoverage,'COMPLETE');assert.equal(r.coverage,'PARTIAL');assert.equal(r.sourceScope,'PUBLIC_PUBLISHED_BILL_ROWS');assert.match(r.notes.join(' '),/certificate or tax-deed clearance/);assert.equal(r.summary.amountDue,'$0.00');assert.equal(r.history[0].status,'Paid');assert.equal(r.history[0].paidAmount,'$572.00');
 });
+
+// Native text is extracted from the original PDF here. Mutations below are explicitly
+// adversarial parser cases, never fixture fallback or newly claimed source evidence.
+async function miamiNativeLayout(){
+  const {getDocumentProxy,extractTextItems}=await import('unpdf');
+  const {parseTaxBillPdf}=await import('../lib/live/pdf-text.mjs');
+  const bytes=await fixture('miami-annual-reference.pdf');
+  const pdf=await getDocumentProxy(bytes.slice(),{isEvalSupported:false});
+  try{const data=await extractTextItems(pdf);return {items:data.items.flatMap((page,i)=>page.filter(t=>t.str.trim()).map(t=>({...t,str:t.str.replace(/\s+/g,' ').trim(),page:i+1}))),basic:await parseTaxBillPdf(bytes,miamiId,2025)};}
+  finally{await pdf.loadingTask.destroy();}
+}
+
+test('Miami native PDFs retain source totals and explain unavailable discount eligibility independently of sample JSON',async()=>{
+  for(const [file,folder,id,total]of [['miami-annual-reference.pdf','client',miamiId,'$3,132.45'],['miami-taxsys-print.pdf','phase-one','01-4138-034-0020','$7,041,345.00']]){
+    const r=await parseClientBillPdf(await fixture(file,folder),id,2025);
+    assert.equal(r.AdValoremMillage.length,14);assert.equal(r.TaxAmounts.totalTax,total);
+    assert.equal(r.TaxAmounts.totalDiscountable,null);assert.equal(r.provenance['TaxAmounts.totalDiscountable'].status,'UNAVAILABLE');
+    assert.match(r.notes.join(' '),/does not print a discountable total or an explicit eligibility rule/);
+    assert.equal(r.section_status.TaxAmounts.status,'PARTIAL');assert.match(r.section_status.TaxAmounts.note,/discountable total/);
+    assert.equal(r.validation.authorityTaxReconciliation,'MATCHED');assert.equal(r.validation.combinedTotalReconciliation,'MATCHED');
+    assert.equal(r.validation.authorityTaxChecks.length,14);assert.equal(r.validation.reconciliationTolerance,'$0.05');
+  }
+});
+
+test('printed discountable label is required; receipt discount arithmetic never establishes eligibility',async()=>{
+  const {items,basic}=await miamiNativeLayout();
+  const sourceTotal=items.find(i=>i.str==='$3,132.45');
+  // Explicit synthetic label/cell extension exercises a separately printed value.
+  const printed=[...items,{...sourceTotal,str:'Total Discountable',x:300,y:290,width:120},{...sourceTotal,str:'$3,000.00',x:500,y:290}];
+  const r=parseClientBillLayout(printed,basic,miamiId,2025);
+  assert.equal(r.TaxAmounts.totalDiscountable,'$3,000.00');assert.equal(r.TaxAmounts.totalTax,'$3,132.45');
+  assert.equal(r.provenance['TaxAmounts.totalDiscountable'].text,'$3,000.00');assert.equal(r.provenance['TaxAmounts.totalDiscountable'].label.text,'Total Discountable');
+  const missing=printed.filter(i=>i.str!=='$3,000.00');
+  assert.equal(parseClientBillLayout(missing,basic,miamiId,2025).TaxAmounts.totalDiscountable,null);
+});
+
+test('printed reconciliation permits five cents, rejects six, and preserves totals and tax rows',async()=>{
+  const f=await osceolaLayout();
+  const change=(from,to)=>f.items.map(i=>i.str===from?{...i,str:to}:i);
+  for(const [amount,status]of [['$189,066.91','MATCHED'],['$189,066.92','DIFFERENT']]){
+    const r=parseClientBillLayout(change('$189,066.86',amount),f.basic,f.expectedId,f.expectedYear);
+    assert.equal(r.validation.printedTotalsReconciliation,status);assert.equal(r.validation.printedAdValoremTotal,amount);
+    assert.equal(r.TaxAmounts.adValorem,'$189,066.86');assert.equal(r.AdValoremMillage[0].taxesLevied,'$91,433.56');
+  }
+  for(const [combined,status]of [['285389.70','MATCHED'],['285389.71','DIFFERENT']]){
+    const r=parseClientBillLayout(f.items,{...f.basic,fields:{...f.basic.fields,combined_taxes_and_assessments:combined}},f.expectedId,f.expectedYear);
+    assert.equal(r.validation.combinedTotalReconciliation,status);assert.equal(r.TaxAmounts.totalTax,'$285,389.'+combined.slice(-2));
+  }
+});
+
+test('millage reconciliation rounds only at printed precision and authority checks flag independent amount corruption',async()=>{
+  const f=await osceolaLayout();
+  for(const [millage,status]of [['13.854','MATCHED'],['13.855','DIFFERENT']]){
+    const r=parseClientBillLayout(f.items.map(i=>i.str==='13.8543'?{...i,str:millage}:i),f.basic,f.expectedId,f.expectedYear);
+    assert.equal(r.validation.printedTotalsReconciliation,status);assert.equal(r.validation.printedMillageRate,millage);assert.equal(r.ParcelDetails.millageRate,'13.85430');
+  }
+  const {items,basic}=await miamiNativeLayout();
+  for(const [tax,status]of [['845.35','MATCHED'],['845.36','DIFFERENT']]){
+    const r=parseClientBillLayout(items.map(i=>i.str==='845.30'?{...i,str:tax}:i),basic,miamiId,2025);
+    assert.equal(r.validation.authorityTaxReconciliation,status);assert.equal(r.AdValoremMillage[0].taxesLevied,'$'+tax);
+  }
+  assert.throws(()=>parseClientBillLayout(items,basic,'01-3231-052-0020',2025),{code:'document_identity_mismatch'});
+  assert.throws(()=>parseClientBillLayout(items,basic,miamiId,2024),{code:'document_identity_mismatch'});
+});

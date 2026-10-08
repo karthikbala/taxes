@@ -10,3 +10,17 @@ test('blocked collector preserves rich appraiser data and explicit empty-unverif
 test('pending county cannot masquerade as upgraded address coverage',async()=>{const d=await clientLookup({...order,county:'Polk'},()=>{throw Error('No source request expected');});assert.ok(d.ExtractionMetadata.errors.some(e=>e.code==='county_address_contract_pending'));assert.equal(d.scrapTaxOrderRequest.PropertyInformation.ParcelNumber,null);});
 test('read transport retries transient failures but never retries a403 or exceeds source size gates',async()=>{let n=0;const t=createClientTransport(async()=>new Response('x',{status:++n<3?503:200}));assert.equal(await(await t.request('https://example.com/a')).text(),'x');assert.equal(n,3);n=0;const blocked=createClientTransport(async()=>{n++;return new Response('blocked',{status:403});});assert.equal((await blocked.request('https://example.com/a')).status,403);assert.equal(n,1);});
 test('POC key authentication rejects missing/wrong secrets; browser annual-only code compiles',async()=>{assert.equal(await authorized(new Request('https://example.com'),{INVISIA_POC_API_KEY:'test'}),false);assert.equal(await authorized(new Request('https://example.com',{headers:{Authorization:'Bearer other'}}),{INVISIA_POC_API_KEY:'test'}),false);assert.equal(await authorized(new Request('https://example.com',{headers:{Authorization:'Bearer test'}}),{INVISIA_POC_API_KEY:'test'}),true);new Script('(async()=>{'+captureCode('https://county-taxes.net/fl-miamidade/property-tax/EXAMPLE',true,true)+'})');});
+
+test('same-year mismatch produces partial result and withholds only derived exemption',async()=>{
+ const mismatched=structuredClone(json('miami-property-source.json'));
+ const year=mismatched.Taxable.TaxableInfos.find(r=>String(r.Year)==='2025');year.CountyTaxableValue=164478;
+ const changed=async url=>new URL(url).searchParams.get('Operation')==='GetPropertySearchByFolio'?Response.json(mismatched):fetcher(url);
+ const account=resolveTaxsys(json('miami-collector-search-source.json'),'0132310520010','miamidade'),urls=taxsysUrls('fl-miamidade','miamidade',account.token),pdfUrl=urls.iframe+'/bills/REFERENCE-2025/print';
+ const d=await clientLookup(order,changed,{managedBrowser:async()=>({html:scaffold(pdfUrl),url:urls.iframe,pdf:{url:pdfUrl,base64:read('miami-annual-reference.pdf').toString('base64')}})});
+ assert.equal(d.status,'partial');assert.ok(d.ExtractionMetadata.errors.some(e=>e.code==='source_values_disagree'));
+ const countyRows=d.scrapTaxOrderRequest.AdValoremMillage.filter(r=>r.group==='Miami-Dade County');
+ assert.equal(countyRows.length,3);assert.ok(countyRows.every(r=>r.exemptionValue===null));
+ assert.equal(d.scrapTaxOrderRequest.TaxAmounts.totalTax,'$3,132.45');
+ assert.equal(d.scrapTaxOrderRequest.DelinquencyInformation.coverageDetails.independentTaxDeedSearch,'NOT_IMPLEMENTED');
+ assert.equal(d.scrapTaxOrderRequest.DelinquencyInformation.coverageDetails.historicalClearanceEstablished,false);
+});

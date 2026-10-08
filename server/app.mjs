@@ -1,3 +1,4 @@
+import {discoverMiamiDeed} from '../lib/client/deed-discovery.mjs';
 import {readFile,realpath,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 import {randomUUID} from 'node:crypto';
@@ -47,6 +48,11 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
     let preflight;const guardedBrowser=managedBrowser?async args=>{if(ctl.signal.aborted)throw problem('request_aborted',499,'Request canceled.');preflight??=await managedPreflight(env);if(!preflight.ready)throw problem('managed_access_not_ready',503,'Managed source entitlement or authorized budget was not verified.');if(ctl.signal.aborted)throw problem('request_aborted',499,'Request canceled.');return managedBrowser({...args,signal:ctl.signal,deadline:Math.min(args.deadline??Infinity,start+deadlineMs)});}:null;
     try{const runtime={requestId,signal:ctl.signal,managedBrowser:guardedBrowser,log};const backend=track(Promise.resolve().then(()=>path.includes('/v2/')?lookupClient(input,boundedFetch,runtime):lookupLegacy(input,boundedFetch,runtime)));const result=await Promise.race([backend,canceled]);if(path.includes('/v1/')){result.request_id=requestId;return json(result,result.status==='not_found'?404:result.status==='blocked'?503:result.status==='error'?502:200);}return json(result);}
     finally{clearTimeout(timer);request.signal.removeEventListener('abort',abort);}
+   }
+   if(path==='/api/v2/diagnostics/miami-tax-deed'){
+    if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
+    const input=await inputJSON(request);if(!input||Array.isArray(input)||typeof input!=='object'||Object.keys(input).length)return error('invalid_input',400,'This fixed source-access probe accepts an empty JSON object only.');
+    const backend=track(discoverMiamiDeed(env,{signal:request.signal,requestId}));return json(await backend);
    }
    if(path.startsWith('/api/'))return error('not_found',404,'Endpoint not found.');
    if(!['GET','HEAD'].includes(request.method))return method();

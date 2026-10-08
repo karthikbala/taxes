@@ -1,5 +1,6 @@
 const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
-export const displayValue = value => value === 'source_displayed_rate_fraction' ? 'Fractional tax rate (as printed)' : value === null || value === undefined || value === '' ? 'Not published / unavailable' : String(value);
+const scopeLabels={PROPERTY_APPRAISER_ROLL_AUTHORITY_UNSPECIFIED:'Property appraiser roll; assessment authority not specified',VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY:'Events visible in the retrieved collector account history',NOT_IMPLEMENTED:'Independent source search not implemented'};
+export const displayValue = value => (Object.hasOwn(scopeLabels,value)?scopeLabels[value]:null) ?? (value === 'source_displayed_rate_fraction' ? 'Fractional tax rate (as printed)' : value === null || value === undefined || value === '' ? 'Not published / unavailable' : String(value));
 export const fieldLabel = key => String(key).replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
 const appendText = (document, parent, tag, value) => {
   const node = document.createElement(tag);
@@ -79,4 +80,11 @@ export function resultBadge(data, ok = true) {
 }
 export function resultRequestId(data, headerId) {
   return data.ExtractionMetadata?.request_id || data.request_id || headerId || null;
+}
+
+export function renderValidation(document, parent, validation) {
+  const panel=document.createElement('details');panel.className='section';
+  appendText(document,panel,'summary','Source validation and reconciliation');
+  appendText(document,panel,'p','Checks compare the retrieved source values. DIFFERENT means a discrepancy; UNAVAILABLE means the comparison could not be completed. Original values remain unchanged.');
+  renderValue(document,panel,validation);parent.append(panel);
 }

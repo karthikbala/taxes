@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { displayValue, renderSections, renderValue, resultBadge, resultRequestId, sectionComment } from '../public/poc-render.mjs';
+import { displayValue, renderSections, renderValidation, renderValue, resultBadge, resultRequestId, sectionComment } from '../public/poc-render.mjs';
 
 // Small DOM harness verifies rendered content and node structure without a browser or network.
 class Node {
@@ -91,4 +91,9 @@ test('HTML source and generated route export stay identical and load the module 
   assert.equal(JSON.parse(generated.replace(/^export const pocHtml = /, '').replace(/;\s*$/, '')), html);
   assert.match(html, /<script type="module" src="\/poc.js"><\/script>/);
   assert.match(html, /id="request-id"/);
+});
+
+test('validation panel displays discrepancy and unavailable checks without HTML injection',()=>{
+ const root=new Node('main');renderValidation(document,root,{parcel_join:'matched',authorityTaxReconciliation:'DIFFERENT',printedTotalsReconciliation:'UNAVAILABLE',untrusted:'<script>alert(1)</script>'});
+ assert.match(root.textContent,/Source validation and reconciliation/);assert.match(root.textContent,/DIFFERENT/);assert.match(root.textContent,/UNAVAILABLE/);assert.match(root.textContent,/Original values remain unchanged/);assert.equal(descendants(root,'script').length,0);
 });

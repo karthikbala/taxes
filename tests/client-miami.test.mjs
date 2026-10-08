@@ -65,7 +65,14 @@ test('wrong returned detail parcel or unit is rejected even with the requested o
 test('fresh official assessment source maps all nine client source sections and their years',()=>{
   const result=enrichMiami(detail,'0132310520010');
   const expected=fixture('miami-client-sample.json').scrapTaxOrderRequest;
-  for(const key of ['AssessmentInformation','AssessmentHistory','BenefitsInformation','BenefitsNote','TaxableValueInformation','FullLegalDescription','SalesInformation','LandBuildingExtraFeatures']) assert.deepEqual(result[key],expected[key],key);
+  for(const key of ['AssessmentInformation','AssessmentHistory','BenefitsInformation','BenefitsNote','TaxableValueInformation','FullLegalDescription','SalesInformation','LandBuildingExtraFeatures']) {
+    const actual=structuredClone(result[key]);
+    if(key==='AssessmentInformation'){delete actual.Status;delete actual.SourceScope;}
+    if(key==='AssessmentHistory')for(const row of actual){delete row.Status;delete row.SourceScope;}
+    assert.deepEqual(actual,expected[key],key);
+  }
+  assert.equal(result.AssessmentInformation.Status,null);
+  assert.equal(result.AssessmentInformation.SourceScope,'PROPERTY_APPRAISER_ROLL_AUTHORITY_UNSPECIFIED');
   assert.deepEqual(result.PropertyInformation.Owners,expected.PropertyInformation.Owners);
   assert.equal(result.PropertyInformation.LotSize,'0 Sq.Ft'); assert.equal(result.PropertyInformation.LivingArea,'450 Sq.Ft');
   assert.equal(result.PropertyInformation.ownerOccupied,null);
