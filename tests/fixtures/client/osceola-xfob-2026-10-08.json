@@ -1,0 +1,159 @@
+{
+  "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#xfob",
+  "@odata.count": 17,
+  "value": [
+    {
+      "ID": 18861,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-ASPHALT PAVING PER PARKING SPACE AVERAG",
+      "units": 994,
+      "yr_blt": 2005,
+      "asd_val": 342400,
+      "ln_num": 1
+    },
+    {
+      "ID": 18862,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE PAVEMENT AVERAGE",
+      "units": 35266,
+      "yr_blt": 2005,
+      "asd_val": 52300,
+      "ln_num": 2
+    },
+    {
+      "ID": 18863,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+      "units": 48950,
+      "yr_blt": 2014,
+      "asd_val": 205600,
+      "ln_num": 3
+    },
+    {
+      "ID": 18864,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+      "units": 572,
+      "yr_blt": 2005,
+      "asd_val": 1900,
+      "ln_num": 4
+    },
+    {
+      "ID": 18865,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+      "units": 2385,
+      "yr_blt": 2005,
+      "asd_val": 7800,
+      "ln_num": 5
+    },
+    {
+      "ID": 18866,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+      "units": 1800,
+      "yr_blt": 2005,
+      "asd_val": 5800,
+      "ln_num": 6
+    },
+    {
+      "ID": 18867,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CHAIN LINK FENCE-8 FT HIGH GOOD",
+      "units": 230,
+      "yr_blt": 2005,
+      "asd_val": 800,
+      "ln_num": 7
+    },
+    {
+      "ID": 18868,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-LOADWELL GOOD",
+      "units": 9240,
+      "yr_blt": 2005,
+      "asd_val": 60100,
+      "ln_num": 8
+    },
+    {
+      "ID": 18869,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-ASPHALT PAVEMENT WITH CURBING AVERAGE",
+      "units": 41769,
+      "yr_blt": 2005,
+      "asd_val": 33900,
+      "ln_num": 9
+    },
+    {
+      "ID": 18870,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-LIGHTS EXCELLENT",
+      "units": 5,
+      "yr_blt": 2005,
+      "asd_val": 5000,
+      "ln_num": 10
+    },
+    {
+      "ID": 18871,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-LIGHTS GOOD",
+      "units": 25,
+      "yr_blt": 2005,
+      "asd_val": 20200,
+      "ln_num": 11
+    },
+    {
+      "ID": 18872,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-LIGHTS AVERAGE",
+      "units": 6,
+      "yr_blt": 2005,
+      "asd_val": 3600,
+      "ln_num": 12
+    },
+    {
+      "ID": 18873,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+      "units": 9106,
+      "yr_blt": 2005,
+      "asd_val": 15000,
+      "ln_num": 13
+    },
+    {
+      "ID": 18874,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+      "units": 4080,
+      "yr_blt": 2005,
+      "asd_val": 6700,
+      "ln_num": 14
+    },
+    {
+      "ID": 18875,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+      "units": 9106,
+      "yr_blt": 2005,
+      "asd_val": 10000,
+      "ln_num": 15
+    },
+    {
+      "ID": 18876,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+      "units": 4080,
+      "yr_blt": 2005,
+      "asd_val": 4500,
+      "ln_num": 16
+    },
+    {
+      "ID": 18877,
+      "strap": "022528285000010010       ",
+      "l_dscr": "COMMERCIAL-CHAIN LINK FENCE-10 FT HIGH GOOD",
+      "units": 468,
+      "yr_blt": 2005,
+      "asd_val": 1900,
+      "ln_num": 17
+    }
+  ]
+}

@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html>
+<html  lang="en">
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;chrome=1;" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<script type="text/javascript">  
+	
+var bIE = false;
+var bIE8 = false;
+var bIE10 = false;
+
+var bOpera = false;
+var bChrome = false;
+var bAndroid = false;
+var bIpad = false;
+var bMobile = false;
+var bNarrow = false;
+var cW = 768;
+var cH = 1024;
+var minScreenWidth = 1;
+
+
+
+if (document.all) {bIE = true;}
+
+var browser = navigator.userAgent;
+var location_pathName = location.pathname;
+
+//console.log('location_pathName=' + location_pathName + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+if (location_pathName.indexOf("gisSideMenu_3_Details") == -1) {
+
+
+		if (bIE) {
+		cW = document.documentElement.clientWidth;
+		cH = document.documentElement.clientHeight;
+		} 
+		else
+		{
+		cW = window.innerWidth;
+		cH = window.innerHeight;
+		} //if (bIE) {
+
+		if (cH < cW) {
+		minScreenWidth = cH;
+		} else {
+		minScreenWidth = cW;
+		}
+
+		if (minScreenWidth < 500) {
+		bNarrow = true;
+		}
+
+	//console.log('SET: cW=' + cW + '| cH=' + cH + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+} //if (location_pathName.indexOf("gisSideMenu_3_Details") == 0) {
+
+if (browser.indexOf('Opera') != -1) {bOpera = true;}
+if (browser.indexOf('Chrome') != -1) {bChrome = true;}
+if (browser.indexOf('MSIE 8.0') != -1) {bIE8 = true;}
+if (browser.indexOf('MSIE 10') != -1 || browser.indexOf('MSIE 7') != -1) {bIE10 = true;}
+if (browser.indexOf('Android') != -1) {bAndroid = true; bMobile = true;} 
+if (browser.indexOf('iPad') != -1 || browser.indexOf('iPhone') != -1) {bIpad = true; bMobile = true;}
+
+//alert('cW=' + cW + '| cH=' + cH + ' | minScreenWidth='+minScreenWidth);
+//if (cW > 0 &&  cW < 500) bNarrow = true;
+//bNarrow = false;
+</script>
+
+
+<script type="text/javascript"> 
+	
+    var serverName = location.hostname;
+    var strCounty = 'UnionPA'
+    var mapPath = '/www/_grizzly.gis/gis.UnionPA.com/';
+    var countyDomain = 'UnionPA.com';
+    var proxyURL = 'https://' + serverName + '/proxy/?'
+    
+    
+    var currentDomainTileServer_URL = 'https://' + serverName +  '/GIS_Server/'
+    var tileServerURL_array = ['https://union.floridapa.com/GIS_Server/'];
+    
+    var directMapserverURL = 'https://gz.floridapa.com/mapserver/'
+    
+
+</script>
+
+
+ 
+<style>	
+
+html, body {
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	overflow:auto; 
+	margin-top: 2px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: arial, sans-serif; 
+    font-size:14pt;
+    background: #D9D9CF;
+    min-height: 100%;
+  	margin:0px;
+    -webkit-backface-visibility: visible;
+   }
+   
+   
+a:link		{color: #0000FF; font-family: tahoma, arial,sans-serif; font-size: 8pt; text-decoration:none;}
+a:visited	{color: #0000FF; font-family: tahoma, arial,sans-serif; font-size: 8pt; text-decoration:none;}
+a:hover		{color: #0000FF; font-family: tahoma, arial,sans-serif; font-size: 8pt; font-weight: normal; text-decoration:none;}
+
+.tb14{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 14pt;}
+.tb12{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 12pt;}
+.tb10{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 10pt;}
+.tb9{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 9pt;}
+.tb9b{font-family:arial,sans-serif; font-weight: bold; color:black; font-size: 9pt;}
+.tb8{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 8pt;}
+.tb8b{font-family:arial,sans-serif; font-weight: bold; color:black; font-size: 8pt;}            
+.tb7{font-family:arial,sans-serif; font-weight: normal; color:#1a1a1a; font-size: 7pt;}
+.tb6{font-family:arial,sans-serif; font-weight: normal; color:#1a1a1a; font-size: 6pt;}
+
+#wrapper{
+top:0px;
+left:0px;
+overflow:hidden;
+}
+
+#detailsOutput_div {
+position:absolute;
+overflow:auto;
+top:0px;
+bottom:30px;
+width:100%;
+border:0px;
+border-style: solid;
+border-color:#FF0000; 
+}
+
+#detailsPrevNext_div {
+position:absolute;
+overflow-y:auto;
+bottom:0px;
+height:32px;
+width:100%;
+border:0px;
+border-style: solid;
+border-color:#00FF00;
+background-color:#F1F1EE;
+-moz-box-shadow: 0px 0px 5px #9a9a9a;
+-webkit-box-shadow: 0px 0px 5px #9a9a9a;
+box-shadow: 0px 0px 5px #9a9a9a;
+}
+
+
+
+
+table.gisDetails_Headings tr {
+width:100%;
+padding:0px;
+border:0px;
+border-style: solid;
+font-family: arial;
+font-size: 10pt; 
+color:#5D5741;
+//background-color:#DCDAD1;
+background-color:#ACB5BC;
+}
+
+
+tr#hv {
+ background-color:#FFFFFF !important;
+  }
+
+tr#hv2 {
+ background-color:#F1F1EE !important;
+  background: transparent;
+}
+
+
+
+
+
+.gisLabels{
+width:56px;
+background-color: #F1F1EE;
+font-family: arial;
+font-size: 8pt; 
+color:#7a7a7a;
+text-align:right;
+}
+
+
+
+/* ---- */
+#gisDetails_MapLinks {
+display:block
+/* width:100%; */
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_MapLinksContent {
+/*
+width:319px;
+*/
+background-color: #efefef;
+}
+
+#gisDetails_MapLinksContent tr{
+font-family: arial;
+font-size: 10pt; 
+background-color:#FFFFFF; 
+}
+/* ---- */
+
+
+
+/* ---- */
+#gisDetails_Owner {
+display:block
+/* width:100%; */
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_OwnerContent {
+/* width:319px; */
+background-color: #efefef;
+}
+
+#gisDetails_OwnerContent tr{
+font-family: arial;
+font-size: 10pt; 
+background-color:#FFFFFF; 
+}
+/* ---- */
+
+
+
+/* ---- */
+#gisDetails_Values {
+display:block
+width:100%;
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_ValuesContent {
+/* width:319px; */
+width:100%;
+background-color: #efefef;
+}
+
+#gisDetails_ValuesContent tr{
+font-family: arial;
+font-size: 10pt; 
+background-color:#FFFFFF; 
+}
+/* ---- */
+
+
+
+
+/* ---- */
+#gisDetails_Sales {
+display:block
+width:100%;
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_SalesContent {
+width:100%;
+background-color: #efefef;
+}
+
+#gisDetails_SalesContent tr {
+font-family: arial;
+font-size: 10pt;
+background-color:#FFFFFF; 
+}
+
+
+#gisDetails_XFOB {
+width:100%;
+background-color: #efefef;
+}
+
+#gisDetails_XFOB tr {
+font-family: arial;
+font-size: 7pt;
+background-color:#FFFFFF; 
+}
+
+
+/* ---- */
+
+
+
+
+ .gisDetails_PIN {
+ font-size: 10pt;
+color:#000000;
+}
+
+.gisDetails_HXcodes {
+font-size: 10pt;
+color:#5a5a5a;
+
+font-family: arial, 'arial narrow';
+
+font-stretch: condensed;
+}     
+
+ .gisDetails_Codes {
+ font-size: 10pt; 
+color:#000000;
+}
+
+.gisDetails_wrap {
+  white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap;
+    font-family: arial;
+font-size: 8pt;
+color:#000000;
+    }
+    
+    
+
+
+ .gisDetails_fontMinus1 {
+ font-size: 8pt;
+color:#000000;
+}
+   
+  
+.gisDetails_numeric {
+font-size: 10pt;
+color:#000000;
+text-align: right;
+}
+   
+#gisTableUnderline {
+width:100%;
+border-color:#FFFFFF;
+background-color:#cccccc;
+}
+  
+  
+  
+.submit:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+.submit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #050505;
+	padding: 2px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+
+
+.submitSmall:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+
+.submitSmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #050505;
+	padding: 1px 3px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+
+.TaxableValue_labels {
+font-family:arial;
+font-size: 7pt;
+}
+
+</style>
+
+<script type="text/javascript">  
+
+
+
+function ExpandLayer(inObject) {  //gisDetails tab
+	
+	if (document.images[inObject + 'Img'].src.indexOf('layer_minus_triangle4.gif') != -1) {
+		
+		if(obj=document.getElementById(inObject)) {
+		obj.style.display = 'none';
+		obj.style.visibility = 'hidden';
+		}
+	
+	document.images[inObject + 'Img'].src = 'https://union.floridapa.com/gis/_images/layer_plus_triangle4.gif'
+	} else {
+	
+		if(obj=document.getElementById(inObject)) {
+		obj.style.display = 'block';
+		obj.style.visibility = 'visible';
+		}
+		
+
+				
+	document.images[inObject + 'Img'].src = 'https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif'
+	
+	}
+}
+
+
+</script>
+
+</head>
+<body onload="onLoad();">
+
+
+
+<!-- inc -->
+
+<!-- END inc -->
+
+
+
+
+
+
+
+
+
+<form name="TaxPASearch" action="" method="POST">
+
+<input type=HIDDEN name="iTotalPage" value="">
+<input type=HIDDEN name="iRecordCount" value="0">
+<input type=HIDDEN name="PageCount" value="100">
+<input type=HIDDEN name="CurrentPage" value="1">
+<input type=HIDDEN name="DisplayPage" value="1">
+
+<input type=HIDDEN name="OrderBy" value="">
+
+<input type=HIDDEN name="Show_Rec" value="1">
+
+<input type=HIDDEN name="GoToPage" value>
+
+<input type=HIDDEN name="LastSaleOnly" value="">
+<input type=HIDDEN name="ShowDownloadButton" value="">
+
+<input type="hidden" name="Parcel_RowID" value="0">
+<input type="hidden" name="Parcel_RowID_click" value>
+
+<input type="hidden" name="SearchResults_File" value="">
+
+<input type="hidden" name="clientWidth" value="">
+<input type="hidden" name="clientHeight" value="">
+
+ <div id="detailsOutput_div">
+
+
+
+
+<table width="100%" border=0 cellpadding="0" cellspacing="1" bgcolor="#FFFFFF">
+<tr>
+<td>
+
+
+
+	<!-- -->
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td valign=bottom onclick="ExpandLayer('gisDetails_MapLinks');">
+					<img name="gisDetails_MapLinksImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>External Map Links</b></td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+		<tr>
+		<td  id="gisDetails_MapLinks"  width="100%">
+					<table width="100%" cellpadding="0" cellspacing="0" border=0>
+					<tr>
+					<td>
+						<table id="gisDetails_MapLinksContent" width="100%" border="0" cellpadding="0" cellspacing="1">
+						
+						<tr><td class="gisLabels">GoogleEarth</td><td>&nbsp;<a href="#" onclick="ExportKML();">KML export</font></a> </td><td>&nbsp;</td></tr>
+						<tr><td class="gisLabels">GoogleMaps</td><td>&nbsp;<a href="#" onclick="ShowGoogleMapAddress();">by Address</font></a> </td><td>&nbsp;&nbsp;<a href="#" onclick="ShowGoogleMapPolygon();">Polygon</a></td></tr>
+						<tr><td class="gisLabels">Bing Maps</td><td>&nbsp;<a href="#" onclick="ShowBingMapAddress();">2D Aerial</font></a> </td><td>&nbsp;&nbsp;<a href="#" onclick="ShowBingMapLatLon();">Bird's eye</a></td></tr>
+						</table>
+								
+					</td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+
+</td>
+</tr>	
+<tr>
+<td>
+	
+	
+	
+		<!-- -->
+
+			
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td valign=bottom span onclick="ExpandLayer('gisDetails_Owner');">
+					<img name="gisDetails_OwnerImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>Owner Info</b>
+					</td>
+                        
+
+					</tr>
+					</table>
+		</td>
+		</tr>
+		<tr>
+		<td id="gisDetails_Owner" width="100%">
+					<table id="gisDetails_Owner" cellpadding="0" cellspacing="0" border=0 width="100%">
+					<tr>
+					<td>
+						<table id="gisDetails_OwnerContent" width="100%" border="0" cellpadding="1" cellspacing="1">
+						
+                        <tr><td class="gisLabels"><a href="javascript:parent.zoomParcel('2651590.47+378371.65', '423', '3005200900001800');"><input border=0 type="button" class="submitSmall" value="&nbsp;&lt;&lt; zoom&nbsp;&nbsp;" id=button1 name=button1></a></td><td class="gisDetails_PIN">&nbsp;30-05-20-09-000-0180-0 (2631) &nbsp;</td></tr>
+                        
+						<tr><td colspan=2><b>COMMUNITY STATE BANK</b></td></tr>
+						<tr><td colspan=2>811 S WALNUT STREET<br>STARKE, FL 32091</td></tr>
+						<tr><td colspan=2><span class="gisLabels">Site:</span> 300 W MAIN STREET, LAKE BUTLER</td></tr>
+						<tr><td colspan=2><span class="gisLabels">Use:</span> FINANCIAL BLDG&nbsp;<span class="gisDetails_fontMinus1">(2300)</span>&nbsp;|&nbsp;1.898 AC</td></tr>
+						<tr><td colspan=2 class="gisDetails_wrap"><span class="gisLabels">Desc:</span> 30/05/20 | COM @ SE COR OF INT OF MAIN ST & DEKLE ST, TH RUN S 75 FT TO POB, TH CONT S 135'TO INT WITH N R/W LN OF CLEVELAND ST;THENC E, ALONG N R/W LN, 411.47' </td></tr>
+						</table>
+								
+					</td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+	
+	
+</td>
+</tr>	
+<tr>
+<td>	
+	
+		<!-- -->
+
+			
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+			
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td valign=bottom onclick="ExpandLayer('gisDetails_Values');">
+					<img name="gisDetails_ValuesImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>2026 Working Values</b>
+					</td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+					
+		<tr>
+		<td valign="top" id="gisDetails_Values" width="100%">
+			
+					<table cellpadding="0" cellspacing="0" border=0 width="100%" bgcolor="#F1F1EE">
+					<tr>
+					<td width="45%" valign="top">
+					
+							<table id="gisDetails_ValuesContent" border="0" cellpadding="1" cellspacing="1">
+							<tr>	
+							<td class="gisLabels">Mkt Lnd ()</td><td class="gisDetails_numeric">$117,876</td>
+							</tr>
+						
+							<tr>
+							<td class="gisLabels">Ag Lnd ()</td><td class="gisDetails_numeric">$0</td>
+							</tr>
+						
+							<tr>
+							<td class="gisLabels">Bldg ()</td><td class="gisDetails_numeric">$530,393</td>
+							</tr>
+						
+							<tr>
+							<td class="gisLabels">XFOB ()</td><td class="gisDetails_numeric">$16,018</td>
+							</tr>
+							
+							<tr>	
+							<td class="gisLabels">Just</td><td class="gisDetails_numeric">$664,287</td>
+							</tr>
+						
+							<tr>
+							<td class="gisLabels">Class</td><td class="gisDetails_numeric">$0</td>
+							</tr>
+							
+						
+							
+							</table>
+								
+					</td>
+					
+					<td width="55%" valign="top">
+					
+							<table id="gisDetails_ValuesContent" border="0" cellpadding="1" cellspacing="1">
+
+						
+							<tr>
+							<td class="gisLabels">Appraised</td><td class="gisDetails_numeric">$664,287</td>
+							</tr>
+							
+							
+							<tr>
+							<td class="gisLabels">Assessed</td><td class="gisDetails_numeric">$664,287</td>
+							</tr>
+							
+							
+							<tr>
+							<td class="gisLabels">Exempt</td><td class="gisDetails_numeric">$0</td>
+							</tr>
+													
+													
+							<tr>
+							<td class="gisLabels">Total Taxable</td><td class="gisDetails_numeric"><b class='TaxableValue_labels'>county:</b>$664,287 <b class='TaxableValue_labels'>city:</b>$664,287<br><b class='TaxableValue_labels'>other:</b>$0 <b class='TaxableValue_labels'>school:</b>$664,287</td>
+							</tr>
+							</table>
+					</td>
+					
+					</tr>
+					</table>
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+	
+		
+	
+</td>
+</tr>	
+<tr>
+<td>	
+	
+		<!-- -->
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td onclick="ExpandLayer('gisDetails_Sales');">
+					<img name="gisDetails_SalesImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>Sales</b>
+					</td>
+					</tr>
+					</table>
+					
+		</td>
+		</tr>
+		<tr>
+		<td id="gisDetails_Sales" width="100%">
+			<table cellpadding="0" cellspacing="0" border=0 width="100%">
+			<tr>
+			<td>
+					<table id="gisDetails_SalesContent" cellpadding="0" cellspacing="1" border=0 width="100%">
+					<tr><td align=right>12/1/2020</td><td align=right>$575,000</td><td align=center><a title='Link to Clerk of Courts Offical Records' href="javascript:ClerkLink('407','32')">407 / 032</a></td><td align=center>WD</td><td align=center>I / Q</td></tr><tr><td align=right>10/7/1996</td><td align=right>$100</td><td align=center><a title='Link to Clerk of Courts Offical Records' href="javascript:ClerkLink('124','429')">124 / 429</a></td><td align=center>N/A</td><td align=center>I / Q</td></tr><tr><td align=right>6/10/1993</td><td align=right>$60,000</td><td align=center><a title='Link to Clerk of Courts Offical Records' href="javascript:ClerkLink('98','441')">098 / 441</a></td><td align=center>WD</td><td align=center>V / Q</td></tr><tr><td align=right>1/1/1969</td><td align=right>$904,151</td><td align=center>0 / 000</td><td align=center>DR</td><td align=center>I / Q</td></tr>
+					</table>
+			</td>
+			</tr>
+			</table>
+			
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0 width="100%"><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+	
+	
+		<!-- -->
+	
+		
+	
+</td>
+</tr>	
+
+
+<tr>
+<td>	
+	
+		<!-- -->
+
+			
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+			
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td valign=bottom onclick="ExpandLayer('gisBuilding_Characteristics');">
+					<img name="gisBuilding_CharacteristicsImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>Building Characteristics</b>
+					</td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+					
+		<tr>
+		<td  id="gisBuilding_Characteristics" width="100%">
+			
+					<table cellpadding="0" cellspacing="0" border=0 width="100%">
+						<tr>
+						<td>
+								<table id="gisDetails_XFOB" cellpadding="0" cellspacing="1" border=0 width="100%">
+									<tr style="font-size:7pt">
+									
+									<td align=center bgcolor="#DCD9CC">&nbsp;</td>
+									<td align=center bgcolor="#DCD9CC">Desc</td>
+									<td align=center bgcolor="#DCD9CC">Year Blt</td>
+									<td align=center bgcolor="#DCD9CC">Heated SF</td>
+									<td align=center bgcolor="#DCD9CC">Actual SF</td>
+									<td align=center bgcolor="#DCD9CC">Value</td>
+									</tr>
+				
+								<tr bgcolor=#FFFFFF><td align=center>1</td><td align=center>BANK (6200)  &nbsp;</td><td align=center>1993&nbsp;</td><td align=center>8757&nbsp;</td><td align=center>12603&nbsp;</td><td align=center>$530,393&nbsp;</td></tr>
+								</table>
+						</td>
+						</tr>
+						</table>
+						
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+	
+		
+	
+</td>
+</tr>	
+
+
+
+
+
+
+
+
+<tr>
+<td>	
+	
+		<!-- -->
+
+			
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+			
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td valign=bottom onclick="ExpandLayer('gisExtra_Features');">
+					<img name="gisExtra_FeaturesImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>Extra Features & Out Buildings</b>
+					</td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+					
+		<tr>
+		<td  id="gisExtra_Features" width="100%">
+			
+					<table cellpadding="0" cellspacing="0" border=0 width="100%">
+						<tr>
+						<td>
+								<table id="gisDetails_XFOB" cellpadding="0" cellspacing="1" border=0 width="100%">
+									<tr style="font-size:7pt">
+										<td align=center bgcolor="#DCD9CC">Code</td>
+										<td align=center bgcolor="#DCD9CC">Desc</td>
+										<td align=center bgcolor="#DCD9CC">Year Blt</td>
+										<td align=center bgcolor="#DCD9CC">Value</td>
+										<td align=center bgcolor="#DCD9CC">Units</td>
+										<td align=center bgcolor="#DCD9CC">Dims</td>
+									<!--
+										<td align=center bgcolor="#DCD9CC">Condition (% Good)</td>
+										-->
+									</tr>
+				
+								
+				
+						<tr bgcolor=#FFFFFF><td align=center>0880</td><td align=center>MISC CONC&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$1,696.00&nbsp;</td><td align=center>2550.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0860</td><td align=center>COM ASPH&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$9,774.00&nbsp;</td><td align=center>30075.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0880C</td><td align=center>MISC CONC&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$912.00&nbsp;</td><td align=center>1920.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0880C</td><td align=center>MISC CONC&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$193.00&nbsp;</td><td align=center>407.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0760</td><td align=center>C/L FN '6&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$665.00&nbsp;</td><td align=center>191.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0750</td><td align=center>C/L FN '4&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$976.00&nbsp;</td><td align=center>396.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>9999</td><td align=center>MISC IMPR&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$250.00&nbsp;</td><td align=center>5.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0875</td><td align=center>PARKING BUMPERS&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$148.00&nbsp;</td><td align=center>39.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td> <tr bgcolor=#FFFFFF><td align=center>0876</td><td align=center>CURB/PARK LOT&nbsp;</td><td align=center>1993&nbsp;</td><td align=center>$1,404.00&nbsp;</td><td align=center>1137.00&nbsp;</td><td align=center>0&nbsp;x&nbsp;0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+						
+						
+								</table>
+						</td>
+						</tr>
+						</table>
+						
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+	
+		
+	
+</td>
+</tr>	
+
+
+
+
+
+
+
+
+<tr>
+<td>	
+	
+		<!-- -->
+
+			
+		<table width="100%" border=0 cellpadding="0" cellspacing="0">
+			
+		<tr>
+		<td>
+					<table border="0" cellpadding="1" cellspacing="0" class="gisDetails_Headings" width="100%">
+					<tr>
+					<td valign=bottom onclick="ExpandLayer('gisLand_Breakdown');">
+					<img name="gisLand_BreakdownImg" src="https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;<b>Land Breakdown</b>
+					</td>
+					</tr>
+					</table>
+		</td>
+		</tr>
+					
+		<tr>
+		<td  id="gisLand_Breakdown" width="100%">
+			
+					<table cellpadding="0" cellspacing="0" border=0 width="100%">
+						<tr>
+						<td>
+								<table id="gisDetails_XFOB" cellpadding="0" cellspacing="1" border=0 width="100%">
+								
+									<tr>
+									<td align=center bgcolor="#DCD9CC">Code</td>
+									<td align=center bgcolor="#DCD9CC">Desc</td>
+									<td align=center bgcolor="#DCD9CC">Units</td>
+									<td align=center bgcolor="#DCD9CC">Adjustments</td>
+									<td align=center bgcolor="#DCD9CC">Eff Rate</td>
+									<td align=center bgcolor="#DCD9CC">Land Value</td>
+									
+																		
+									</tr>
+				
+										<tr bgcolor=#FFFFFF><td align=center>2300</td><td align=center>FINANCIAL (MKT)</td><td align=center>82,720.000 SF&nbsp;&nbsp;(1.898 AC)</td><td align=center>1.0000/1.0000 1.0000/1.0000000 /</td><td align=center>$1 /SF</td><td align=center>$117,876</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+								</table>
+						</td>
+						</tr>
+						</table>
+						
+		</td>
+		</tr>
+		<tr><td><table id="gisTableUnderline" cellpadding=0 cellspacing=1 border=0><tr><td></td></tr></table></td></tr>
+		</table>
+		
+	<!-- -->
+	
+		
+	
+</td>
+</tr>	
+
+
+</table>	
+
+<br>
+
+</div>
+
+
+
+
+	<div id="detailsPrevNext_div">
+	<table border=0 width="100%" cellpadding=4 cellspacing=0>
+	<tr>
+	<td align="center">
+
+			<table border=0 width="88%" cellpadding=0 cellspacing=0>
+
+						
+
+							<tr>
+							<td width="30%" valign=top align=left>
+							
+							</td>
+							<td width=40% valign=top align=center><font face=Arial size=1> 1 of 0</font></td>
+							<td width=30% valign=top align=right>
+								
+							</td>
+							</tr>
+							
+					
+					
+			</table>
+		
+		
+
+			
+	</td>
+	</tr>
+	</table>
+	
+
+		
+</div> 
+
+
+
+</form>
+
+
+
+
+
+		
+
+<form method="GET" action="" id="GoogleEarthWeb" name="GoogleEarthWeb" target="GoogleEarthWeb">
+<input type="hidden" name="hl" value="en">
+<input type="hidden" name="t" value="e">
+<input type="hidden" name="q" value="http://localhost/mapserver//gis/getKML/?q=obbjlgblhjpjolfjgbfnpcjemikaiakpppoamfmjnnjdkpjnohmmfhndckcmfdhlohkljhehdnenikkpbbkckbajhdfechhgoakldmpddddlnkdcjlpjejbcpccgmiohfjbdenifoagggafdagibhjojncldpckfjaoabaglecgchgeknhcabmkhiocpdkehoaghjpeffdha">
+</form>
+
+
+<form method="POST" action="https://union.floridapa.com/gis/linkGoogle/" id="GoogleMapsPolygon" name="GoogleMapsPolygon" target="GoogleMapsPolygon">
+<input type="hidden" name="kml" value="https://union.floridapa.com/gis/getKML/?q=obbjlgblhjpjolfjgbfnpcjemikaiakpppoamfmjnnjdkpjnohmmfhndckcmfdhlohkljhehdnenikkpbbkckbajhdfechhgoakldmpddddlnkdcjlpjejbcpccgmiohfjbdenifoagggafdagibhjojncldpckfjaoabaglecgchgeknhcabmkhiocpdkehoaghjpeffdha">
+<input type="hidden" name="latlon" value="">
+</form>
+		
+<script type="text/javascript" language="javascript">
+<!-- 
+
+
+//-----------------------------------------------------------------------------------------------------
+
+ function onLoad() {
+ 
+
+	if (obj=parent.document.parentForm.clientWidth) cW = obj.value;
+	if (obj=parent.document.parentForm.clientHeight) cH = obj.value;
+	
+	
+minScreenWidth = cW;
+if (cH < minScreenWidth) minScreenWidth = cH;
+
+if (minScreenWidth < 500) bNarrow = true;
+
+
+parent.gisShowParcelDetail_showTab(); // Show content (this is overrides all settings)
+
+
+ 
+
+
+	if (obj=parent.document.parentForm.tempPIN) obj.value= "3005200900001800";
+	
+	if (obj=parent.document.gisPrintForm.currentPIN) obj.value= "3005200900001800";
+		
+	
+	
+	parent.zoomParcel('2651590.47+378371.65', '423', '3005200900001800', '30-05-20-09-000-0180-0 (2631)~COMMUNITY STATE BANK~300 W MAIN STREET~30/05/20|FINANCIAL BLDG|1.898 AC~Exmpt: -- | Txbl: $664,287.00~LSale: 12/1/2020 $575,000 I/Q'); //sent from \recordSearch_3_Details\
+	
+	
+	if (obj=parent.document.parentForm) obj.zoomPIN.value= '0'; //needs to be cleared first
+	
+
+
+
+
+if (obj=parent.document.getElementById("parcelPopup_click")) {  //THis opens the side ParceDetails when you click the white pop-up
+    
+obj.addEventListener("click", function(){
+    parent.gisSideMenuClick(parent.document.getElementById('gisSideMenuButton_3'),1);  //display 3rd tab (Details) panel
+    parent.gisSideMenu_setVisibilty(1); 
+});
+
+}// if
+
+
+}   //function onLoad
+//----------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////
+
+
+function clearTempObj() {
+if (obj=parent.document.parentForm.tempPIN) obj.value= "";
+	//-- Kill any existing pop-ups
+parent.killPopUps();
+} //func
+
+
+//-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+// --- Pictometry --
+function ShowPictometryMap() {
+
+var ShapeLatLon=parent.transformLatLon(2651590.47,378371.65);
+window.open("https://union.floridapa.com/gis/linkPictometry/LatLon.aspx?county=UnionPA&LatLon=" + ShapeLatLon.lat + "," + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Pictometry Map
+
+
+// --- Google Earth --
+function ExportKML() {
+Win1 = window.open("https://union.floridapa.com/gis/getKML/?q=obbjlgblhjpjolfjgbfnpcjemikaiakpppoamfmjnnjdkpjnohmmfhndckcmfdhlohkljhehdnenikkpbbkckbajhdfechhgoakldmpddddlnkdcjlpjejbcpccgmiohfjbdenifoagggafdagibhjojncldpckfjaoabaglecgchgeknhcabmkhiocpdkehoaghjpeffdha", "_blank");
+
+} //KML
+
+function ShowGoogleEarthViaWeb() {
+document.getElementById("GoogleEarthWeb").action="http://maps.google.com/maps/?rand=" + Math.floor(Math.random()*1000) 
+document.forms["GoogleEarthWeb"].submit();
+} //Google Earth
+
+
+
+// --- Google Maps --
+function ShowGoogleMapAddress() {
+var ShapeLatLon=parent.transformLatLon(2651590.47,378371.65);
+window.open("http://maps.google.com/maps?hl=en&t=h&q=300+W+MAIN+STREET,+LAKE+BUTLER,+FL@" + ShapeLatLon.lat + "," + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Google Map
+
+
+function ShowGoogleMapPolygon() {
+var ShapeLatLon=parent.transformLatLon(2651590.47,378371.65);
+document.GoogleMapsPolygon.latlon.value = ShapeLatLon.lat + "," + ShapeLatLon.lon;
+document.forms["GoogleMapsPolygon"].submit();
+} //Google Earth
+
+
+
+// --- Bing Maps --
+function ShowBingMapAddress() {
+var ShapeLatLon=parent.transformLatLon(2651590.47,378371.65);
+window.open("http://www.bing.com/maps/default.aspx?style=h&lvl=17&where1=300+W+MAIN+STREET,+LAKE+BUTLER,+FL&cp=" + ShapeLatLon.lat + "~" + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Bing Map
+
+function ShowBingMapLatLon() {
+var ShapeLatLon=parent.transformLatLon(2651590.47,378371.65);
+window.open("http://www.bing.com/maps/default.aspx?style=b&lvl=17&where1=300+W+MAIN+STREET,+LAKE+BUTLER,+FL&cp=" + ShapeLatLon.lat + "~" + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Bing Map
+
+
+
+function ClerkLink(inBook, inPage)
+{
+window.open("https://union.floridapa.com/gis/linkClerk/?ClerkBook=" + inBook + "&ClerkPage=" + inPage + "&autoSubmit=1",  "WAMsession",'toolbar=no,menubar=no,scrollbars=yes,status=yes,resizable=yes,top=0,left=0,width=875,height=600');
+}
+
+
+
+
+function ShowBldgDwg(inAYB,inHtd,inAdj,inIndex) {
+Win1 = window.open("https://union.floridapa.com/gis/linkBldgDwg/webcard/?pin=3005200900001800&ayb=" + inAYB + "&htd=" + inHtd + "&Adj=" + inAdj + "&Index=" + inIndex, "BldgDwg", "width=800,height=700,outerWidth=800,outerHeight=500,menubar=1,toolbar=1,scrollbars=1,resizable=1");
+} //ShowBldgDwg
+
+
+
+// -->
+</script>
+
+
+</body>
+</html>

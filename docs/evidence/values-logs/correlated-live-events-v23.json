@@ -1,0 +1,235 @@
+[
+  {
+    "event": "client_api_completed",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "status": "partial",
+    "duration_ms": 29272,
+    "http_status": 200
+  },
+  {
+    "event": "client_lookup_completed",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "county": "miami-dade-fl",
+    "status": "partial",
+    "match_status": "MATCHED",
+    "section_status": {
+      "PropertyInformation": "EXTRACTED",
+      "AssessmentInformation": "EXTRACTED",
+      "TaxInformation": "EXTRACTED",
+      "BillDetails": "EXTRACTED",
+      "ParcelDetails": "EXTRACTED",
+      "TaxAmounts": "EXTRACTED",
+      "PaymentDetails": "EXTRACTED",
+      "FullLegalDescription": "EXTRACTED",
+      "AssessmentHistory": "EXTRACTED",
+      "BenefitsInformation": "EXTRACTED",
+      "SalesInformation": "EXTRACTED",
+      "AccountHistory": "PARTIAL",
+      "AdValoremMillage": "EXTRACTED",
+      "NonAdValorem": "EMPTY",
+      "TaxableValueInformation": "EXTRACTED",
+      "LandBuildingExtraFeatures": "EMPTY",
+      "AdValoremGroupTotals": "EXTRACTED",
+      "Exemptions": "EMPTY",
+      "BenefitsNote": "EXTRACTED",
+      "NonAdValoremNote": "available",
+      "ExemptionsNote": "available",
+      "DelinquencyInformation": "PARTIAL"
+    },
+    "validation": {
+      "parcel": "MATCHED",
+      "taxYear": "MATCHED",
+      "authorityRowCount": "14",
+      "combinedTotalReconciliation": "MATCHED",
+      "derivedFields": "",
+      "taxable_value_0": "matched",
+      "taxable_value_1": "matched",
+      "taxable_value_2": "matched",
+      "taxable_value_3": "matched",
+      "taxable_value_4": "matched",
+      "taxable_value_5": "matched",
+      "taxable_value_6": "matched",
+      "taxable_value_7": "matched",
+      "taxable_value_8": "matched",
+      "taxable_value_9": "matched",
+      "taxable_value_10": "matched",
+      "taxable_value_11": "matched",
+      "taxable_value_12": "matched",
+      "taxable_value_13": "matched",
+      "parcel_join": "matched"
+    },
+    "duration_ms": 29272,
+    "source_count": 7,
+    "error_count": 0,
+    "section_count": 22,
+    "tax_line_count": 14
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "receipt_pdf",
+    "status": "verified"
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "tax_collector_browser",
+    "status": "verified",
+    "duration_ms": 22531
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "collector_identity",
+    "status": "failed",
+    "error_code": "source_blocked",
+    "duration_ms": 41,
+    "http_status": 403
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "collector_search",
+    "status": "verified",
+    "duration_ms": 979,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "collector_config",
+    "status": "verified",
+    "duration_ms": 944,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "miami_assessment",
+    "status": "verified",
+    "duration_ms": 353,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "source_id": "miami_address_search",
+    "status": "verified",
+    "duration_ms": 4424,
+    "http_status": 200
+  },
+  {
+    "event": "client_stage_started",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "stage": "annual_pdf_parsing"
+  },
+  {
+    "event": "client_stage_started",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:31.083Z",
+    "stage": "history_parsing"
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:08.552Z",
+    "source_role": "collector",
+    "status": "http_failure",
+    "duration_ms": 41,
+    "attempt": 1,
+    "http_status": 403
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:08.511Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 979,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:07.532Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 944,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "client_stage_started",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:06.588Z",
+    "stage": "collector_lookup"
+  },
+  {
+    "event": "source_completed",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:06.588Z",
+    "source_id": "miami_assessment",
+    "status": "retrieved",
+    "duration_ms": 353,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:06.588Z",
+    "source_id": "miami_assessment",
+    "source_role": "appraiser",
+    "status": "received",
+    "duration_ms": 353,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_completed",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:06.235Z",
+    "source_id": "miami_address_search",
+    "status": "retrieved",
+    "duration_ms": 4424,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:06.235Z",
+    "source_id": "miami_address_search",
+    "source_role": "appraiser",
+    "status": "received",
+    "duration_ms": 4424,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "client_stage_started",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:01.811Z",
+    "stage": "property_resolution"
+  },
+  {
+    "event": "client_lookup_started",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:01.811Z",
+    "county": "miami-dade-fl"
+  },
+  {
+    "event": "client_api_started",
+    "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+    "timestamp": "2026-10-08T07:21:01.811Z"
+  }
+]

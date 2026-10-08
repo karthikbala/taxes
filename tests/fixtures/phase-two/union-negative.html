@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html  lang="en">
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;chrome=1;" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<script type="text/javascript">  
+	
+var bIE = false;
+var bIE8 = false;
+var bIE10 = false;
+
+var bOpera = false;
+var bChrome = false;
+var bAndroid = false;
+var bIpad = false;
+var bMobile = false;
+var bNarrow = false;
+var cW = 768;
+var cH = 1024;
+var minScreenWidth = 1;
+
+
+
+if (document.all) {bIE = true;}
+
+var browser = navigator.userAgent;
+var location_pathName = location.pathname;
+
+//console.log('location_pathName=' + location_pathName + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+if (location_pathName.indexOf("gisSideMenu_3_Details") == -1) {
+
+
+		if (bIE) {
+		cW = document.documentElement.clientWidth;
+		cH = document.documentElement.clientHeight;
+		} 
+		else
+		{
+		cW = window.innerWidth;
+		cH = window.innerHeight;
+		} //if (bIE) {
+
+		if (cH < cW) {
+		minScreenWidth = cH;
+		} else {
+		minScreenWidth = cW;
+		}
+
+		if (minScreenWidth < 500) {
+		bNarrow = true;
+		}
+
+	//console.log('SET: cW=' + cW + '| cH=' + cH + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+} //if (location_pathName.indexOf("gisSideMenu_3_Details") == 0) {
+
+if (browser.indexOf('Opera') != -1) {bOpera = true;}
+if (browser.indexOf('Chrome') != -1) {bChrome = true;}
+if (browser.indexOf('MSIE 8.0') != -1) {bIE8 = true;}
+if (browser.indexOf('MSIE 10') != -1 || browser.indexOf('MSIE 7') != -1) {bIE10 = true;}
+if (browser.indexOf('Android') != -1) {bAndroid = true; bMobile = true;} 
+if (browser.indexOf('iPad') != -1 || browser.indexOf('iPhone') != -1) {bIpad = true; bMobile = true;}
+
+//alert('cW=' + cW + '| cH=' + cH + ' | minScreenWidth='+minScreenWidth);
+//if (cW > 0 &&  cW < 500) bNarrow = true;
+//bNarrow = false;
+</script>
+
+
+<script type="text/javascript"> 
+	
+    var serverName = location.hostname;
+    var strCounty = 'UnionPA'
+    var mapPath = '/www/_grizzly.gis/gis.UnionPA.com/';
+    var countyDomain = 'UnionPA.com';
+    var proxyURL = 'https://' + serverName + '/proxy/?'
+    
+    
+    var currentDomainTileServer_URL = 'https://' + serverName +  '/GIS_Server/'
+    var tileServerURL_array = ['https://union.floridapa.com/GIS_Server/'];
+    
+    var directMapserverURL = 'https://gz.floridapa.com/mapserver/'
+    
+
+</script>
+
+
+ 
+<style>	
+
+html, body {
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	overflow:auto; 
+	margin-top: 2px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: arial, sans-serif; 
+    font-size:14pt;
+    background: #D9D9CF;
+    min-height: 100%;
+  	margin:0px;
+    -webkit-backface-visibility: visible;
+   }
+   
+   
+a:link		{color: #0000FF; font-family: tahoma, arial,sans-serif; font-size: 8pt; text-decoration:none;}
+a:visited	{color: #0000FF; font-family: tahoma, arial,sans-serif; font-size: 8pt; text-decoration:none;}
+a:hover		{color: #0000FF; font-family: tahoma, arial,sans-serif; font-size: 8pt; font-weight: normal; text-decoration:none;}
+
+.tb14{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 14pt;}
+.tb12{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 12pt;}
+.tb10{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 10pt;}
+.tb9{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 9pt;}
+.tb9b{font-family:arial,sans-serif; font-weight: bold; color:black; font-size: 9pt;}
+.tb8{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 8pt;}
+.tb8b{font-family:arial,sans-serif; font-weight: bold; color:black; font-size: 8pt;}            
+.tb7{font-family:arial,sans-serif; font-weight: normal; color:#1a1a1a; font-size: 7pt;}
+.tb6{font-family:arial,sans-serif; font-weight: normal; color:#1a1a1a; font-size: 6pt;}
+
+#wrapper{
+top:0px;
+left:0px;
+overflow:hidden;
+}
+
+#detailsOutput_div {
+position:absolute;
+overflow:auto;
+top:0px;
+bottom:30px;
+width:100%;
+border:0px;
+border-style: solid;
+border-color:#FF0000; 
+}
+
+#detailsPrevNext_div {
+position:absolute;
+overflow-y:auto;
+bottom:0px;
+height:32px;
+width:100%;
+border:0px;
+border-style: solid;
+border-color:#00FF00;
+background-color:#F1F1EE;
+-moz-box-shadow: 0px 0px 5px #9a9a9a;
+-webkit-box-shadow: 0px 0px 5px #9a9a9a;
+box-shadow: 0px 0px 5px #9a9a9a;
+}
+
+
+
+
+table.gisDetails_Headings tr {
+width:100%;
+padding:0px;
+border:0px;
+border-style: solid;
+font-family: arial;
+font-size: 10pt; 
+color:#5D5741;
+//background-color:#DCDAD1;
+background-color:#ACB5BC;
+}
+
+
+tr#hv {
+ background-color:#FFFFFF !important;
+  }
+
+tr#hv2 {
+ background-color:#F1F1EE !important;
+  background: transparent;
+}
+
+
+
+
+
+.gisLabels{
+width:56px;
+background-color: #F1F1EE;
+font-family: arial;
+font-size: 8pt; 
+color:#7a7a7a;
+text-align:right;
+}
+
+
+
+/* ---- */
+#gisDetails_MapLinks {
+display:block
+/* width:100%; */
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_MapLinksContent {
+/*
+width:319px;
+*/
+background-color: #efefef;
+}
+
+#gisDetails_MapLinksContent tr{
+font-family: arial;
+font-size: 10pt; 
+background-color:#FFFFFF; 
+}
+/* ---- */
+
+
+
+/* ---- */
+#gisDetails_Owner {
+display:block
+/* width:100%; */
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_OwnerContent {
+/* width:319px; */
+background-color: #efefef;
+}
+
+#gisDetails_OwnerContent tr{
+font-family: arial;
+font-size: 10pt; 
+background-color:#FFFFFF; 
+}
+/* ---- */
+
+
+
+/* ---- */
+#gisDetails_Values {
+display:block
+width:100%;
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_ValuesContent {
+/* width:319px; */
+width:100%;
+background-color: #efefef;
+}
+
+#gisDetails_ValuesContent tr{
+font-family: arial;
+font-size: 10pt; 
+background-color:#FFFFFF; 
+}
+/* ---- */
+
+
+
+
+/* ---- */
+#gisDetails_Sales {
+display:block
+width:100%;
+padding:1px;  /* was 1 */
+border:0px;
+border-style: solid;
+background-color:#DCDAD1; 
+}
+
+#gisDetails_SalesContent {
+width:100%;
+background-color: #efefef;
+}
+
+#gisDetails_SalesContent tr {
+font-family: arial;
+font-size: 10pt;
+background-color:#FFFFFF; 
+}
+
+
+#gisDetails_XFOB {
+width:100%;
+background-color: #efefef;
+}
+
+#gisDetails_XFOB tr {
+font-family: arial;
+font-size: 7pt;
+background-color:#FFFFFF; 
+}
+
+
+/* ---- */
+
+
+
+
+ .gisDetails_PIN {
+ font-size: 10pt;
+color:#000000;
+}
+
+.gisDetails_HXcodes {
+font-size: 10pt;
+color:#5a5a5a;
+
+font-family: arial, 'arial narrow';
+
+font-stretch: condensed;
+}     
+
+ .gisDetails_Codes {
+ font-size: 10pt; 
+color:#000000;
+}
+
+.gisDetails_wrap {
+  white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap;
+    font-family: arial;
+font-size: 8pt;
+color:#000000;
+    }
+    
+    
+
+
+ .gisDetails_fontMinus1 {
+ font-size: 8pt;
+color:#000000;
+}
+   
+  
+.gisDetails_numeric {
+font-size: 10pt;
+color:#000000;
+text-align: right;
+}
+   
+#gisTableUnderline {
+width:100%;
+border-color:#FFFFFF;
+background-color:#cccccc;
+}
+  
+  
+  
+.submit:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+.submit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #050505;
+	padding: 2px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+
+
+.submitSmall:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+
+.submitSmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #050505;
+	padding: 1px 3px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+
+.TaxableValue_labels {
+font-family:arial;
+font-size: 7pt;
+}
+
+</style>
+
+<script type="text/javascript">  
+
+
+
+function ExpandLayer(inObject) {  //gisDetails tab
+	
+	if (document.images[inObject + 'Img'].src.indexOf('layer_minus_triangle4.gif') != -1) {
+		
+		if(obj=document.getElementById(inObject)) {
+		obj.style.display = 'none';
+		obj.style.visibility = 'hidden';
+		}
+	
+	document.images[inObject + 'Img'].src = 'https://union.floridapa.com/gis/_images/layer_plus_triangle4.gif'
+	} else {
+	
+		if(obj=document.getElementById(inObject)) {
+		obj.style.display = 'block';
+		obj.style.visibility = 'visible';
+		}
+		
+
+				
+	document.images[inObject + 'Img'].src = 'https://union.floridapa.com/gis/_images/layer_minus_triangle4.gif'
+	
+	}
+}
+
+
+</script>
+
+</head>
+<body onload="onLoad();">
+
+
+
+<!-- inc -->
+
+<!-- END inc -->
+
+
+
+
+
+
+
+
+
+<form name="TaxPASearch" action="" method="POST">
+
+<input type=HIDDEN name="iTotalPage" value="">
+<input type=HIDDEN name="iRecordCount" value="0">
+<input type=HIDDEN name="PageCount" value="100">
+<input type=HIDDEN name="CurrentPage" value="1">
+<input type=HIDDEN name="DisplayPage" value="1">
+
+<input type=HIDDEN name="OrderBy" value="">
+
+<input type=HIDDEN name="Show_Rec" value="1">
+
+<input type=HIDDEN name="GoToPage" value>
+
+<input type=HIDDEN name="LastSaleOnly" value="">
+<input type=HIDDEN name="ShowDownloadButton" value="">
+
+<input type="hidden" name="Parcel_RowID" value="0">
+<input type="hidden" name="Parcel_RowID_click" value>
+
+<input type="hidden" name="SearchResults_File" value="">
+
+<input type="hidden" name="clientWidth" value="">
+<input type="hidden" name="clientHeight" value="">
+
+ <div id="detailsOutput_div">
+
+<P><br><font face=verdana size=2><b>No Matching Records Found! - Please Try Again</b></font><P><br>		
+</div> 
+
+
+
+</form>
+
+
+
+
+
+		
+
+<form method="GET" action="" id="GoogleEarthWeb" name="GoogleEarthWeb" target="GoogleEarthWeb">
+<input type="hidden" name="hl" value="en">
+<input type="hidden" name="t" value="e">
+<input type="hidden" name="q" value="http://localhost/mapserver//gis/getKML/?q=">
+</form>
+
+
+<form method="POST" action="https://union.floridapa.com/gis/linkGoogle/" id="GoogleMapsPolygon" name="GoogleMapsPolygon" target="GoogleMapsPolygon">
+<input type="hidden" name="kml" value="">
+<input type="hidden" name="latlon" value="">
+</form>
+		
+<script type="text/javascript" language="javascript">
+<!-- 
+
+
+//-----------------------------------------------------------------------------------------------------
+
+ function onLoad() {
+ 
+
+	if (obj=parent.document.parentForm.clientWidth) cW = obj.value;
+	if (obj=parent.document.parentForm.clientHeight) cH = obj.value;
+	
+	
+minScreenWidth = cW;
+if (cH < minScreenWidth) minScreenWidth = cH;
+
+if (minScreenWidth < 500) bNarrow = true;
+
+
+parent.gisShowParcelDetail_showTab(); // Show content (this is overrides all settings)
+
+
+ 
+
+
+	if (obj=parent.document.parentForm.tempPIN) obj.value= "9999999999999999999";
+	
+	if (obj=parent.document.gisPrintForm.currentPIN) obj.value= "9999999999999999999";
+		
+	
+	
+	parent.zoomParcel('', '', '', ''); //sent from \recordSearch_3_Details\
+	
+	
+	if (obj=parent.document.parentForm) obj.zoomPIN.value= '0'; //needs to be cleared first
+	
+
+
+
+
+if (obj=parent.document.getElementById("parcelPopup_click")) {  //THis opens the side ParceDetails when you click the white pop-up
+    
+obj.addEventListener("click", function(){
+    parent.gisSideMenuClick(parent.document.getElementById('gisSideMenuButton_3'),1);  //display 3rd tab (Details) panel
+    parent.gisSideMenu_setVisibilty(1); 
+});
+
+}// if
+
+
+}   //function onLoad
+//----------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////
+
+
+function clearTempObj() {
+if (obj=parent.document.parentForm.tempPIN) obj.value= "";
+	//-- Kill any existing pop-ups
+parent.killPopUps();
+} //func
+
+
+//-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+// --- Pictometry --
+function ShowPictometryMap() {
+
+var ShapeLatLon=parent.transformLatLon();
+window.open("https://union.floridapa.com/gis/linkPictometry/LatLon.aspx?county=UnionPA&LatLon=" + ShapeLatLon.lat + "," + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Pictometry Map
+
+
+// --- Google Earth --
+function ExportKML() {
+Win1 = window.open("", "_blank");
+
+} //KML
+
+function ShowGoogleEarthViaWeb() {
+document.getElementById("GoogleEarthWeb").action="http://maps.google.com/maps/?rand=" + Math.floor(Math.random()*1000) 
+document.forms["GoogleEarthWeb"].submit();
+} //Google Earth
+
+
+
+// --- Google Maps --
+function ShowGoogleMapAddress() {
+var ShapeLatLon=parent.transformLatLon();
+window.open("http://maps.google.com/maps?hl=en&t=h&q=@" + ShapeLatLon.lat + "," + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Google Map
+
+
+function ShowGoogleMapPolygon() {
+var ShapeLatLon=parent.transformLatLon();
+document.GoogleMapsPolygon.latlon.value = ShapeLatLon.lat + "," + ShapeLatLon.lon;
+document.forms["GoogleMapsPolygon"].submit();
+} //Google Earth
+
+
+
+// --- Bing Maps --
+function ShowBingMapAddress() {
+var ShapeLatLon=parent.transformLatLon();
+window.open("http://www.bing.com/maps/default.aspx?style=h&lvl=17&where1=&cp=" + ShapeLatLon.lat + "~" + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Bing Map
+
+function ShowBingMapLatLon() {
+var ShapeLatLon=parent.transformLatLon();
+window.open("http://www.bing.com/maps/default.aspx?style=b&lvl=17&where1=&cp=" + ShapeLatLon.lat + "~" + ShapeLatLon.lon, "_blank");
+window.focus();
+} //Bing Map
+
+
+
+function ClerkLink(inBook, inPage)
+{
+window.open("https://union.floridapa.com/gis/linkClerk/?ClerkBook=" + inBook + "&ClerkPage=" + inPage + "&autoSubmit=1",  "WAMsession",'toolbar=no,menubar=no,scrollbars=yes,status=yes,resizable=yes,top=0,left=0,width=875,height=600');
+}
+
+
+
+
+function ShowBldgDwg(inAYB,inHtd,inAdj,inIndex) {
+Win1 = window.open("https://union.floridapa.com/gis/linkBldgDwg/webcard/?pin=&ayb=" + inAYB + "&htd=" + inHtd + "&Adj=" + inAdj + "&Index=" + inIndex, "BldgDwg", "width=800,height=700,outerWidth=800,outerHeight=500,menubar=1,toolbar=1,scrollbars=1,resizable=1");
+} //ShowBldgDwg
+
+
+
+// -->
+</script>
+
+
+</body>
+</html>

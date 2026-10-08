@@ -1,0 +1,22 @@
+{
+  "source_runtime_revision": "b184c17c610ebbb055c23beb6b7f025d5f82af3b",
+  "mode": "Fresh current-tree export, no original Git history",
+  "excluded_tracked_files": [
+    "pdf-extraction-deploy.tar.gz",
+    "tsconfig.tsbuildinfo"
+  ],
+  "sanitized_fixtures": [
+    {
+      "path": "tests/fixtures/client/miami-collector-config-sanitized.json",
+      "original_sha256": "93a26c9831a12eb61ad193da44fa9cf6c7419aba63d5abf8f54aab4970012ba9",
+      "export_sha256": "4e90ad9e3231a4bf0f25ef7ad83b88c69cc98bd41849d30554d5457679f38cd5",
+      "public_api_key_values_replaced": 3
+    },
+    {
+      "path": "tests/fixtures/phase-one/appraisers-volusia-accepted-detail.html",
+      "original_sha256": "87d1f0f4032ba63cda19d194bad677bbb6229815c931349bb2f032faf758b86f",
+      "export_sha256": "09274fabb0d1d703037775088f8c716760b9a0c5113571b4e273d3232df840b9",
+      "public_api_key_values_replaced": 2
+    }
+  ]
+}

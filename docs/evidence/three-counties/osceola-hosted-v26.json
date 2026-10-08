@@ -1,0 +1,4206 @@
+{
+  "scrap_order_id": "POC-OSCEOLA-ACCEPT-20261008",
+  "address": "3250 VINELAND RD",
+  "ownerName": "WAL-MART STORES EAST LP",
+  "county": "Osceola",
+  "state": "FL",
+  "errorMessage": "NA",
+  "status": "partial",
+  "scrapTaxOrderRequest": {
+    "orderId": "POC-OSCEOLA-ACCEPT-20261008",
+    "status": "new",
+    "transactionType": "REFI",
+    "address": "3250 VINELAND RD",
+    "county": "Osceola",
+    "state": "FL",
+    "errorMessage": "NA",
+    "matchStatus": "MATCHED",
+    "warnings": [
+      "BenefitsInformation has no entries but source inspection was not established.",
+      "The published annual bill rows were inspected. Full prior-year, certificate and tax-deed coverage is not established by this account view.",
+      "AdValoremGroupTotals has no entries but source inspection was not established.",
+      "Exemptions has no entries but source inspection was not established.",
+      "BenefitsNote was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "DelinquencyInformation: PARTIAL"
+    ],
+    "PropertyInformation": {
+      "ParcelNumber": "02-25-28-2850-0001-0010",
+      "PropertyAddress": "3250 VINELAND RD KISSIMMEE FL 34746-",
+      "MailingAddress": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555",
+      "PrimaryZone": null,
+      "PrimaryLandUse": "1311 DEPT. STORES-IMP",
+      "BedsBathsHalf": null,
+      "Floors": null,
+      "LivingUnits": "0",
+      "LivingArea": "213543 Sq.Ft",
+      "AdjustedArea": null,
+      "LotSize": null,
+      "YearBuilt": "2005",
+      "Owners": [
+        "WAL-MART STORES EAST LP"
+      ],
+      "ownerOccupied": null,
+      "EffectiveYearBuilt": "2008",
+      "LotAreaAcres": "24.551",
+      "GrossBuildingArea": "224581 Sq.Ft",
+      "BuildingCount": "1",
+      "ValuationMethod": "Alternate Cost"
+    },
+    "AssessmentInformation": {
+      "Year": "2026",
+      "LandValue": "$6,991,600",
+      "BuildingValue": "$5,865,500",
+      "ExtraFeatureValue": "$784,800",
+      "MarketValue": "$13,641,900",
+      "AssessedValue": "$13,641,900",
+      "UncappedAssessedValue": "$13,641,900",
+      "Status": "CERTIFIED",
+      "CertifiedDate": "2026-10-06T00:00:00-04:00",
+      "ValuationDate": null
+    },
+    "TaxInformation": {
+      "accountNumber": "R022528-285000010010",
+      "type": "PAID",
+      "amountDue": "$0.00",
+      "statusMessage": "Your account is paid in full. There is nothing due at this time.",
+      "lastPaymentDate": "11/18/2025",
+      "lastPaymentAmount": "$273,974.06",
+      "amountPaidYear": "2025",
+      "note": "Account payment status and historical delinquency are separate observations."
+    },
+    "BillDetails": {
+      "taxYear": "2025",
+      "folio": "R022528-285000010010",
+      "municipality": null,
+      "millCode": "300",
+      "propertyAddress": null,
+      "mailingAddress": null,
+      "paidBy": "WALMART INC (PT)",
+      "receiptNumber": "121702900",
+      "paidDate": "11/18/2025",
+      "paidAmount": "$273,974.06"
+    },
+    "ParcelDetails": {
+      "millageRate": "13.85430"
+    },
+    "TaxAmounts": {
+      "adValorem": "$189,066.86",
+      "nonAdValorem": "$96,322.79",
+      "totalDiscountable": null,
+      "totalTax": "$285,389.65"
+    },
+    "PaymentDetails": {
+      "combinedTaxesAndAssessments": "$285,389.65",
+      "discountNote": "Derived arithmetic: printed combined taxes $285,389.65 minus printed payment $273,974.06 = $11,415.59. This difference does not establish a current balance or a statutory discount.",
+      "PaymentSchedule": [
+        {
+          "ifPaidBy": "Nov 30, 2025",
+          "pleasePay": "$0.00"
+        }
+      ]
+    },
+    "FullLegalDescription": [
+      "CALYPSO CAY COMMERCIAL PB 17 PG 3 LOT 1 LESS BEG AT SW R/W OF SR 535 & NE COR OF LOT 1, S 37 DEG E 213.83 FT, S 53 DEG W 172.94 FT TO POC, CURVE RIGHT, RAD 18 FT, (CH BEARING N 82 DEG W 25.44 FT) WLY ALONG CURVE 28.26 FT, N 37 DEG W 195.74 FT, N 53 DEG E 190.76 FT TO POB"
+    ],
+    "AssessmentHistory": [
+      {
+        "Year": "2027",
+        "LandValue": "$6,991,600",
+        "BuildingValue": "$5,716,700",
+        "ExtraFeatureValue": "$777,500",
+        "MarketValue": "$13,485,800",
+        "AssessedValue": "$13,485,800",
+        "UncappedAssessedValue": null,
+        "Status": "WORKING",
+        "CertifiedDate": null,
+        "ValuationDate": "2026-10-06T03:31:46.09-04:00"
+      },
+      {
+        "Year": "2026",
+        "LandValue": "$6,991,600",
+        "BuildingValue": "$5,865,500",
+        "ExtraFeatureValue": "$784,800",
+        "MarketValue": "$13,641,900",
+        "AssessedValue": "$13,641,900",
+        "UncappedAssessedValue": "$13,641,900",
+        "Status": "CERTIFIED",
+        "CertifiedDate": "2026-10-06T00:00:00-04:00",
+        "ValuationDate": null
+      },
+      {
+        "Year": "2025",
+        "LandValue": "$6,991,600",
+        "BuildingValue": "$5,865,500",
+        "ExtraFeatureValue": "$789,700",
+        "MarketValue": "$13,646,800",
+        "AssessedValue": "$13,646,800",
+        "UncappedAssessedValue": "$13,646,800",
+        "Status": "CERTIFIED",
+        "CertifiedDate": "2026-06-10T00:00:00-04:00",
+        "ValuationDate": null
+      },
+      {
+        "Year": "2024",
+        "LandValue": "$6,991,600",
+        "BuildingValue": "$5,975,000",
+        "ExtraFeatureValue": "$797,000",
+        "MarketValue": "$13,763,600",
+        "AssessedValue": "$13,763,600",
+        "UncappedAssessedValue": "$13,763,600",
+        "Status": "CERTIFIED",
+        "CertifiedDate": "2025-03-31T00:00:00-04:00",
+        "ValuationDate": null
+      },
+      {
+        "Year": "2023",
+        "LandValue": "$6,347,400",
+        "BuildingValue": "$5,941,100",
+        "ExtraFeatureValue": "$801,300",
+        "MarketValue": "$13,089,800",
+        "AssessedValue": "$13,089,800",
+        "UncappedAssessedValue": "$13,089,800",
+        "Status": "CERTIFIED",
+        "CertifiedDate": "2024-02-12T00:00:00-05:00",
+        "ValuationDate": null
+      },
+      {
+        "Year": "2022",
+        "LandValue": "$5,288,800",
+        "BuildingValue": "$6,050,600",
+        "ExtraFeatureValue": "$811,800",
+        "MarketValue": "$12,151,200",
+        "AssessedValue": "$12,151,200",
+        "UncappedAssessedValue": "$12,151,200",
+        "Status": "CERTIFIED",
+        "CertifiedDate": "2023-03-24T00:00:00-04:00",
+        "ValuationDate": null
+      }
+    ],
+    "BenefitsInformation": [],
+    "SalesInformation": [
+      {
+        "SaleDate": "2004-04-14T00:00:00-04:00",
+        "Price": "$7,162,700",
+        "DeedType": "WARRANTY DEED",
+        "InstrumentBook": "2558",
+        "InstrumentPage": "2981",
+        "Grantors": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+        "Grantees": "WAL-AMRT STORES EAST LP",
+        "QualificationCode": "U",
+        "QualificationDescription": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+        "VacantImprovedCode": "I",
+        "MultiParcelReasonCode": "05",
+        "SourceTaxYear": "2027"
+      },
+      {
+        "SaleDate": "1999-03-24T00:00:00-05:00",
+        "Price": "$8,000,000",
+        "DeedType": "SPECIAL WARRANTY DEED",
+        "InstrumentBook": "1596",
+        "InstrumentPage": "1319",
+        "Grantors": "PROPERTY SECURITY FLORIDA INC",
+        "Grantees": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+        "QualificationCode": "U",
+        "QualificationDescription": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+        "VacantImprovedCode": "I",
+        "MultiParcelReasonCode": "05",
+        "SourceTaxYear": "2027"
+      },
+      {
+        "SaleDate": "1992-12-31T00:00:00-05:00",
+        "Price": "$0",
+        "DeedType": "SPECIAL WARRANTY DEED",
+        "InstrumentBook": "1143",
+        "InstrumentPage": "0907",
+        "Grantors": "OSCEOLA 104 ASSOC",
+        "Grantees": "PROPERTYSECURITY FLORIDA INC",
+        "QualificationCode": "U",
+        "QualificationDescription": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+        "VacantImprovedCode": "V",
+        "MultiParcelReasonCode": "05",
+        "SourceTaxYear": "2027"
+      }
+    ],
+    "AccountHistory": [
+      {
+        "billYear": "2025",
+        "billType": "Annual",
+        "amountDue": "$0.00",
+        "status": "Paid",
+        "paidAmount": "$273,974.06",
+        "paidDate": "11/18/2025",
+        "receiptNumber": "121702900",
+        "billId": "e766d457-a479-11f0-b243-0050568184a7",
+        "note": "2025 Annual bill $0.00 Paid $273,974.06 11/18/2025 Receipt #121702900 Print (PDF) Downloading...",
+        "pdf_url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7/print"
+      }
+    ],
+    "AdValoremMillage": [
+      {
+        "group": null,
+        "authority": "OSCEOLA CO",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "6.7000",
+        "taxesLevied": "$91,433.56"
+      },
+      {
+        "group": null,
+        "authority": "SAVE OSC MAN",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.2500",
+        "taxesLevied": "$3,411.70"
+      },
+      {
+        "group": null,
+        "authority": "EMER MED SRV",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "1.0682",
+        "taxesLevied": "$14,577.51"
+      },
+      {
+        "group": null,
+        "authority": "SCH STATE LW",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "3.0580",
+        "taxesLevied": "$41,731.91"
+      },
+      {
+        "group": null,
+        "authority": "CAPITAL OUTLAY",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "1.5000",
+        "taxesLevied": "$20,470.20"
+      },
+      {
+        "group": null,
+        "authority": "DISCRETIONARY",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.7480",
+        "taxesLevied": "$10,207.81"
+      },
+      {
+        "group": null,
+        "authority": "SFWMD EVERG",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.0327",
+        "taxesLevied": "$446.25"
+      },
+      {
+        "group": null,
+        "authority": "SO FL WATER",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.0948",
+        "taxesLevied": "$1,293.72"
+      },
+      {
+        "group": null,
+        "authority": "SFWMD OKEE",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.1026",
+        "taxesLevied": "$1,400.16"
+      },
+      {
+        "group": null,
+        "authority": "LIBRARY DIST",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.3000",
+        "taxesLevied": "$4,094.04"
+      },
+      {
+        "group": null,
+        "authority": "SAVE OSC DBT",
+        "assessedValue": "$13,646,800.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$13,646,800.00",
+        "millage": "0.0000",
+        "taxesLevied": "$0.00"
+      }
+    ],
+    "NonAdValorem": [
+      {
+        "authority": "Fire Rescue Commercial Sq Ft",
+        "amount": "$96,322.79",
+        "rate": "0.4289",
+        "footageUnits": null,
+        "unitLabel": "Sq Ft"
+      }
+    ],
+    "TaxableValueInformation": {
+      "2022": {
+        "County": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "SchoolBoard": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "City": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Regional": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Reported": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$12,151,200"
+        }
+      },
+      "2023": {
+        "County": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "SchoolBoard": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "City": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Regional": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Reported": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$13,089,800"
+        }
+      },
+      "2024": {
+        "County": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "SchoolBoard": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "City": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Regional": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Reported": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$13,763,600"
+        }
+      },
+      "2025": {
+        "County": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "SchoolBoard": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "City": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Regional": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Reported": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$13,646,800"
+        }
+      },
+      "2026": {
+        "County": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "SchoolBoard": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "City": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Regional": {
+          "ExemptionValue": null,
+          "TaxableValue": null
+        },
+        "Reported": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$13,641,900"
+        }
+      }
+    },
+    "LandBuildingExtraFeatures": {
+      "Land": [
+        {
+          "Number": "1",
+          "Description": "COMMERCIAL AC",
+          "Units": "24.549",
+          "UnitType": "AC",
+          "Depth": "0",
+          "Value": "$6,991,555"
+        }
+      ],
+      "Buildings": [
+        {
+          "Number": "1",
+          "Description": "DISCOUNT STORE",
+          "YearBuilt": "2005",
+          "Value": "$5,716,741",
+          "GrossArea": "224581 Sq.Ft",
+          "HeatedArea": "213543 Sq.Ft",
+          "Bedrooms": null,
+          "Bathrooms": null,
+          "HalfBathrooms": null,
+          "Fixtures": "45",
+          "LivingUnits": null,
+          "NonLivingUnits": null,
+          "RoofCover": null,
+          "ExteriorWall": null,
+          "Sketch": "BAS 2005 <1>  (199541 P2062) $   BAS 2015 <1>  (5000 P324) $   GRF 2005 <1>  (3552 P266) $   OPF 2005 <1>  (1848 P222) $   EPF 2005 <1>  (9002 P548) $   OPU 2005 <1>  (4080 P262) $   OPF 2005 <1>  (1508 P182) $   OPF 2005 <1>  (50 P54) $   ."
+        }
+      ],
+      "ExtraFeatures": [
+        {
+          "Number": "1",
+          "Description": "COMMERCIAL-ASPHALT PAVING PER PARKING SPACE AVERAG",
+          "Units": "994",
+          "YearBuilt": "2005",
+          "Value": "$342,400"
+        },
+        {
+          "Number": "2",
+          "Description": "COMMERCIAL-CONCRETE PAVEMENT AVERAGE",
+          "Units": "35266",
+          "YearBuilt": "2005",
+          "Value": "$52,300"
+        },
+        {
+          "Number": "3",
+          "Description": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+          "Units": "48950",
+          "YearBuilt": "2014",
+          "Value": "$205,600"
+        },
+        {
+          "Number": "4",
+          "Description": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+          "Units": "572",
+          "YearBuilt": "2005",
+          "Value": "$1,900"
+        },
+        {
+          "Number": "5",
+          "Description": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+          "Units": "2385",
+          "YearBuilt": "2005",
+          "Value": "$7,800"
+        },
+        {
+          "Number": "6",
+          "Description": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+          "Units": "1800",
+          "YearBuilt": "2005",
+          "Value": "$5,800"
+        },
+        {
+          "Number": "7",
+          "Description": "COMMERCIAL-CHAIN LINK FENCE-8 FT HIGH GOOD",
+          "Units": "230",
+          "YearBuilt": "2005",
+          "Value": "$800"
+        },
+        {
+          "Number": "8",
+          "Description": "COMMERCIAL-LOADWELL GOOD",
+          "Units": "9240",
+          "YearBuilt": "2005",
+          "Value": "$60,100"
+        },
+        {
+          "Number": "9",
+          "Description": "COMMERCIAL-ASPHALT PAVEMENT WITH CURBING AVERAGE",
+          "Units": "41769",
+          "YearBuilt": "2005",
+          "Value": "$33,900"
+        },
+        {
+          "Number": "10",
+          "Description": "COMMERCIAL-LIGHTS EXCELLENT",
+          "Units": "5",
+          "YearBuilt": "2005",
+          "Value": "$5,000"
+        },
+        {
+          "Number": "11",
+          "Description": "COMMERCIAL-LIGHTS GOOD",
+          "Units": "25",
+          "YearBuilt": "2005",
+          "Value": "$20,200"
+        },
+        {
+          "Number": "12",
+          "Description": "COMMERCIAL-LIGHTS AVERAGE",
+          "Units": "6",
+          "YearBuilt": "2005",
+          "Value": "$3,600"
+        },
+        {
+          "Number": "13",
+          "Description": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+          "Units": "9106",
+          "YearBuilt": "2005",
+          "Value": "$15,000"
+        },
+        {
+          "Number": "14",
+          "Description": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+          "Units": "4080",
+          "YearBuilt": "2005",
+          "Value": "$6,700"
+        },
+        {
+          "Number": "15",
+          "Description": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+          "Units": "9106",
+          "YearBuilt": "2005",
+          "Value": "$10,000"
+        },
+        {
+          "Number": "16",
+          "Description": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+          "Units": "4080",
+          "YearBuilt": "2005",
+          "Value": "$4,500"
+        },
+        {
+          "Number": "17",
+          "Description": "COMMERCIAL-CHAIN LINK FENCE-10 FT HIGH GOOD",
+          "Units": "468",
+          "YearBuilt": "2005",
+          "Value": "$1,900"
+        }
+      ]
+    },
+    "AdValoremGroupTotals": {},
+    "Exemptions": {},
+    "BenefitsNote": null,
+    "NonAdValoremNote": "Printed non-ad valorem assessment rows.",
+    "ExemptionsNote": "Exemption details were not reported in the recognized layout.",
+    "DelinquencyInformation": {
+      "hasActiveDelinquency": null,
+      "knownPriorYearsDue": "$0.00",
+      "totalPriorYearsDue": null,
+      "currentYearDue": "$0.00",
+      "delinquentYears": [],
+      "coverage": "PARTIAL",
+      "unavailableYears": [],
+      "currentBillYear": "2025",
+      "asOf": "2026-10-08",
+      "timeZone": "America/New_York",
+      "note": "History is incomplete or inconclusive; no negative delinquency conclusion is available.",
+      "notes": [
+        "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out."
+      ]
+    },
+    "candidateFolios": [
+      {
+        "parcel_id": "022528285000010010",
+        "address": "3250 VINELAND RD",
+        "owners": [
+          "WAL-MART STORES EAST LP"
+        ],
+        "source_id": "osceola_address_search"
+      }
+    ]
+  },
+  "ExtractionMetadata": {
+    "contractVersion": "2.0",
+    "request_id": "dc1735e6-d4e6-447c-881b-c1a98ddeabe2",
+    "collected_at": "2026-10-08T08:43:50.591Z",
+    "duration_ms": 26222,
+    "county_id": "osceola-fl",
+    "status": "partial",
+    "match": {
+      "status": "MATCHED",
+      "parcel_id": "022528285000010010",
+      "candidates": [
+        {
+          "parcel_id": "022528285000010010",
+          "address": "3250 VINELAND RD",
+          "owners": [
+            "WAL-MART STORES EAST LP"
+          ],
+          "source_id": "osceola_address_search"
+        }
+      ],
+      "notes": [],
+      "source_id": "osceola_assessment"
+    },
+    "section_status": {
+      "PropertyInformation": {
+        "status": "EXTRACTED",
+        "source_id": "osceola_address_search",
+        "source_paths": [
+          "market.value.0"
+        ],
+        "note": null
+      },
+      "AssessmentInformation": {
+        "status": "EXTRACTED",
+        "source_id": "osceola_assessment",
+        "source_paths": [
+          "values.value"
+        ],
+        "note": null
+      },
+      "TaxInformation": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "BillDetails": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "ParcelDetails": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "TaxAmounts": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "PaymentDetails": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "FullLegalDescription": {
+        "status": "EXTRACTED",
+        "source_id": "osceola_address_search",
+        "source_paths": [
+          "market.value.0.Legals"
+        ],
+        "note": null
+      },
+      "AssessmentHistory": {
+        "status": "EXTRACTED",
+        "source_id": "osceola_assessment",
+        "source_paths": [
+          "market.value",
+          "values.value"
+        ],
+        "note": null
+      },
+      "BenefitsInformation": {
+        "status": "UNAVAILABLE",
+        "source_id": "osceola_assessment",
+        "source_paths": [],
+        "reason": "SOURCE_SECTION_NOT_CAPTURED",
+        "note": "BenefitsInformation has no entries but source inspection was not established."
+      },
+      "SalesInformation": {
+        "status": "EXTRACTED",
+        "source_id": "osceola_sales",
+        "source_paths": [
+          "sales.value"
+        ],
+        "note": null
+      },
+      "AccountHistory": {
+        "status": "PARTIAL",
+        "note": "The published annual bill rows were inspected. Full prior-year, certificate and tax-deed coverage is not established by this account view."
+      },
+      "AdValoremMillage": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "NonAdValorem": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "TaxableValueInformation": {
+        "status": "EXTRACTED",
+        "source_id": "osceola_assessment",
+        "source_paths": [
+          "values.value"
+        ],
+        "note": null
+      },
+      "LandBuildingExtraFeatures": {
+        "status": "EXTRACTED",
+        "source_paths": [
+          "land.value",
+          "buildings.value",
+          "extras.value"
+        ],
+        "source_ids": [
+          "osceola_land",
+          "osceola_buildings",
+          "osceola_extras"
+        ],
+        "note": null
+      },
+      "AdValoremGroupTotals": {
+        "status": "UNAVAILABLE",
+        "note": "AdValoremGroupTotals has no entries but source inspection was not established."
+      },
+      "Exemptions": {
+        "status": "UNAVAILABLE",
+        "note": "Exemptions has no entries but source inspection was not established."
+      },
+      "BenefitsNote": {
+        "status": "UNAVAILABLE",
+        "source_id": "osceola_assessment",
+        "source_paths": [],
+        "reason": "SOURCE_SECTION_NOT_CAPTURED",
+        "note": "BenefitsNote was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "NonAdValoremNote": {
+        "status": "available",
+        "note": null
+      },
+      "ExemptionsNote": {
+        "status": "available",
+        "note": null
+      },
+      "DelinquencyInformation": {
+        "status": "PARTIAL",
+        "note": null
+      }
+    },
+    "sources": [
+      {
+        "id": "osceola_address_search",
+        "url": "https://search.property-appraiser.org/api/v1/ParcelMarket?%24filter=contains%28SitusAll%2C%273250+VINELAND+RD%27%29&%24count=true&%24top=100",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:50.591Z",
+        "http_status": 200,
+        "sha256": "8da0cf263de9b2c2c23f92ce3cc7af75dd6f9a21498bf6d34e2264bcfcfeecd2",
+        "duration_ms": 1908
+      },
+      {
+        "id": "osceola_assessment",
+        "url": "https://search.property-appraiser.org/api/v1/PropertyValues?%24filter=strap+eq+%27022528285000010010%27&%24orderby=tax_yr+desc&%24count=true&%24top=100",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:52.499Z",
+        "http_status": 200,
+        "sha256": "248403cb0573832b12c50011265f9c609296b13cdb0dc01aa06c44c048428307",
+        "duration_ms": 494
+      },
+      {
+        "id": "osceola_sales",
+        "url": "https://search.property-appraiser.org/api/v1/sales?%24filter=strap+eq+%27022528285000010010%27&%24count=true&%24top=100&%24orderby=dos+desc",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:52.993Z",
+        "http_status": 200,
+        "sha256": "edccfcca189a7dfc2aebe24763234499f71fa585bd85dc68f9e7296ad6b6aeb0",
+        "duration_ms": 718
+      },
+      {
+        "id": "osceola_land",
+        "url": "https://search.property-appraiser.org/api/v1/Lnd_c?%24filter=strap+eq+%27022528285000010010%27&%24count=true&%24top=100",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:53.711Z",
+        "http_status": 200,
+        "sha256": "401940843462a71c64e3c4911117808b1341e9c6196b7cfefd98c1235fac4b62",
+        "duration_ms": 441
+      },
+      {
+        "id": "osceola_buildings",
+        "url": "https://search.property-appraiser.org/api/v1/Bld?%24filter=strap+eq+%27022528285000010010%27&%24count=true&%24top=100",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:54.152Z",
+        "http_status": 200,
+        "sha256": "9301ea8131da673c2637d9ae1cbec1a377ce09a8ab85781881d82c8248330935",
+        "duration_ms": 292
+      },
+      {
+        "id": "osceola_extras",
+        "url": "https://search.property-appraiser.org/api/v1/xfob?%24filter=strap+eq+%27022528285000010010%27&%24count=true&%24top=100",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:54.444Z",
+        "http_status": 200,
+        "sha256": "1dec4118416ec6952a778dfa31c3de2cd31caeb1e1175461244e3191f3b4acfd",
+        "duration_ms": 366
+      },
+      {
+        "id": "assessment_lookup",
+        "url": "https://search.property-appraiser.org/api/v1/ParcelMarket?%24filter=strap+eq+%27022528285000010010%27",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:54.810Z",
+        "http_status": 200,
+        "sha256": "fd753bb38f008c0d933cadd116c5e6494c2681926a399d526b6e8be33236fefe",
+        "duration_ms": 381
+      },
+      {
+        "id": "collector_config",
+        "url": "https://config.grantstreet.com/api/v1/payhub/data-pub/settings/osceola/osceola",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:54.810Z",
+        "http_status": 200,
+        "sha256": "1b778c19bd4108058f3df942a9679c4d9817f657148b5b3f99278d99797a13df",
+        "duration_ms": 874
+      },
+      {
+        "id": "assessment_county",
+        "url": "https://search.property-appraiser.org/api/v1/PropertyValues?%24filter=strap+eq+%27022528285000010010%27",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:55.191Z",
+        "http_status": 200,
+        "sha256": "f0c9ef9f96bd80327b455a0b75b7ad05c90aa1fe04bb342db4f709349b82bda1",
+        "duration_ms": 366
+      },
+      {
+        "id": "collector_search",
+        "url": "https://0lwzo52ls2-dsn.algolia.net/1/indexes/*/queries",
+        "method": "POST",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:55.684Z",
+        "http_status": 200,
+        "sha256": "14aeda1ed0d78e6d8ef6e8f15196516e6f8608e812f3a1e350f16ebd336c07a8",
+        "duration_ms": 1154
+      },
+      {
+        "id": "collector_identity",
+        "url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA%3D%3D",
+        "method": "GET",
+        "status": "failed",
+        "fetched_at": "2026-10-08T08:43:56.838Z",
+        "http_status": 403,
+        "error_code": "source_blocked",
+        "duration_ms": 8
+      },
+      {
+        "id": "tax_collector_browser",
+        "url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==?search_query=&search_target=&search_category=property-tax&search_path=",
+        "method": "BROWSER",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:43:56.846Z",
+        "duration_ms": 19967,
+        "sha256": "b51a996a82df1ca66dedac0b3db170db780a851660c2424c3a82f21b0153ad51"
+      },
+      {
+        "id": "receipt_pdf",
+        "url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7/print",
+        "method": "BROWSER_DOWNLOAD",
+        "status": "verified",
+        "fetched_at": "2026-10-08T08:44:16.813Z",
+        "duration_ms": null,
+        "sha256": "472dea39f0d24ef16030c2b56cce97645c6f9c585981e680d6d9af1c5e605523"
+      }
+    ],
+    "errors": [],
+    "validation": {
+      "published_history_rows": "COMPLETE",
+      "parcel": "MATCHED",
+      "taxYear": "MATCHED",
+      "authorityRowCount": 11,
+      "combinedTotalReconciliation": "MATCHED",
+      "derivedFields": [
+        "TaxAmounts.adValorem",
+        "TaxAmounts.nonAdValorem",
+        "ParcelDetails.millageRate",
+        "PaymentDetails.discountNote"
+      ],
+      "printedAdValoremTotal": "$189,066.86",
+      "printedNonAdValoremTotal": "$96,322.79",
+      "printedMillageRate": "13.8543",
+      "printedTotalsReconciliation": "MATCHED",
+      "parcel_join": "matched",
+      "appraiser_bill_year": {
+        "bill_year": "2025",
+        "latest_assessment_year": "2026",
+        "status": "captured_year_available"
+      }
+    },
+    "provenance": {
+      "PropertyInformation.ParcelNumber": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.dsp_strap",
+        "source_value": "02-25-28-2850-0001-0010"
+      },
+      "PropertyInformation.PropertyAddress": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.Situs",
+        "source_value": "3250 VINELAND RD KISSIMMEE FL 34746-    "
+      },
+      "PropertyInformation.MailingAddress": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.Mailing",
+        "source_value": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 "
+      },
+      "PropertyInformation.LivingUnits": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.livunits",
+        "source_value": 0
+      },
+      "PropertyInformation.LivingArea": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.HeatedArea",
+        "source_value": 213543
+      },
+      "PropertyInformation.YearBuilt": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.ayb",
+        "source_value": 2005
+      },
+      "PropertyInformation.EffectiveYearBuilt": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.eyb",
+        "source_value": 2008
+      },
+      "PropertyInformation.LotAreaAcres": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.totalAcres",
+        "source_value": 24.551
+      },
+      "PropertyInformation.GrossBuildingArea": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.grossBldArea",
+        "source_value": 224581
+      },
+      "PropertyInformation.BuildingCount": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.numofbuildings",
+        "source_value": 1
+      },
+      "PropertyInformation.ValuationMethod": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.ValMethodDscr",
+        "source_value": "Alternate Cost"
+      },
+      "PropertyInformation.Owners": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.Owners",
+        "source_value": "WAL-MART STORES EAST LP"
+      },
+      "PropertyInformation.PrimaryLandUse": {
+        "source_id": "osceola_address_search",
+        "source_paths": [
+          "market.value.0.dorCode",
+          "market.value.0.dorDesc"
+        ],
+        "source_value": {
+          "dorCode": "1311",
+          "dorDesc": "DEPT. STORES-IMP"
+        }
+      },
+      "AssessmentHistory.0.Year": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.taxyear",
+        "source_value": 2027
+      },
+      "AssessmentHistory.0.LandValue": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.tot_lnd_val",
+        "source_value": 6991600
+      },
+      "AssessmentHistory.0.BuildingValue": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.tot_bld_val",
+        "source_value": 5716700
+      },
+      "AssessmentHistory.0.ExtraFeatureValue": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.tot_xf_val",
+        "source_value": 777500
+      },
+      "AssessmentHistory.0.MarketValue": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.currJustValue",
+        "source_value": 13485800
+      },
+      "AssessmentHistory.0.AssessedValue": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.currassessedvalue",
+        "source_value": 13485800
+      },
+      "AssessmentHistory.0.UncappedAssessedValue": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.asd_val",
+        "source_value": null
+      },
+      "AssessmentHistory.0.ValuationDate": {
+        "source_id": "osceola_address_search",
+        "source_path": "market.value.0.ValuationDate",
+        "source_value": "2026-10-06T03:31:46.09-04:00"
+      },
+      "AssessmentHistory.1.Year": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tax_yr",
+        "source_value": 2026
+      },
+      "AssessmentHistory.1.LandValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tot_lnd_val",
+        "source_value": 6991600
+      },
+      "AssessmentHistory.1.BuildingValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tot_bld_val",
+        "source_value": 5865500
+      },
+      "AssessmentHistory.1.ExtraFeatureValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tot_xf_val",
+        "source_value": 784800
+      },
+      "AssessmentHistory.1.MarketValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.jst_val",
+        "source_value": 13641900
+      },
+      "AssessmentHistory.1.AssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.soh_val",
+        "source_value": 13641900
+      },
+      "AssessmentHistory.1.UncappedAssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.asd_val",
+        "source_value": 13641900
+      },
+      "AssessmentHistory.1.CertifiedDate": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.certified_dt",
+        "source_value": "2026-10-06T00:00:00-04:00"
+      },
+      "AssessmentHistory.2.Year": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.tax_yr",
+        "source_value": 2025
+      },
+      "AssessmentHistory.2.LandValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.tot_lnd_val",
+        "source_value": 6991600
+      },
+      "AssessmentHistory.2.BuildingValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.tot_bld_val",
+        "source_value": 5865500
+      },
+      "AssessmentHistory.2.ExtraFeatureValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.tot_xf_val",
+        "source_value": 789700
+      },
+      "AssessmentHistory.2.MarketValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.jst_val",
+        "source_value": 13646800
+      },
+      "AssessmentHistory.2.AssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.soh_val",
+        "source_value": 13646800
+      },
+      "AssessmentHistory.2.UncappedAssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.asd_val",
+        "source_value": 13646800
+      },
+      "AssessmentHistory.2.CertifiedDate": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.certified_dt",
+        "source_value": "2026-06-10T00:00:00-04:00"
+      },
+      "AssessmentHistory.3.Year": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.tax_yr",
+        "source_value": 2024
+      },
+      "AssessmentHistory.3.LandValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.tot_lnd_val",
+        "source_value": 6991600
+      },
+      "AssessmentHistory.3.BuildingValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.tot_bld_val",
+        "source_value": 5975000
+      },
+      "AssessmentHistory.3.ExtraFeatureValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.tot_xf_val",
+        "source_value": 797000
+      },
+      "AssessmentHistory.3.MarketValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.jst_val",
+        "source_value": 13763600
+      },
+      "AssessmentHistory.3.AssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.soh_val",
+        "source_value": 13763600
+      },
+      "AssessmentHistory.3.UncappedAssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.asd_val",
+        "source_value": 13763600
+      },
+      "AssessmentHistory.3.CertifiedDate": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.certified_dt",
+        "source_value": "2025-03-31T00:00:00-04:00"
+      },
+      "AssessmentHistory.4.Year": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.tax_yr",
+        "source_value": 2023
+      },
+      "AssessmentHistory.4.LandValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.tot_lnd_val",
+        "source_value": 6347400
+      },
+      "AssessmentHistory.4.BuildingValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.tot_bld_val",
+        "source_value": 5941100
+      },
+      "AssessmentHistory.4.ExtraFeatureValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.tot_xf_val",
+        "source_value": 801300
+      },
+      "AssessmentHistory.4.MarketValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.jst_val",
+        "source_value": 13089800
+      },
+      "AssessmentHistory.4.AssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.soh_val",
+        "source_value": 13089800
+      },
+      "AssessmentHistory.4.UncappedAssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.asd_val",
+        "source_value": 13089800
+      },
+      "AssessmentHistory.4.CertifiedDate": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.certified_dt",
+        "source_value": "2024-02-12T00:00:00-05:00"
+      },
+      "AssessmentHistory.5.Year": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.tax_yr",
+        "source_value": 2022
+      },
+      "AssessmentHistory.5.LandValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.tot_lnd_val",
+        "source_value": 5288800
+      },
+      "AssessmentHistory.5.BuildingValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.tot_bld_val",
+        "source_value": 6050600
+      },
+      "AssessmentHistory.5.ExtraFeatureValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.tot_xf_val",
+        "source_value": 811800
+      },
+      "AssessmentHistory.5.MarketValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.jst_val",
+        "source_value": 12151200
+      },
+      "AssessmentHistory.5.AssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.soh_val",
+        "source_value": 12151200
+      },
+      "AssessmentHistory.5.UncappedAssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.asd_val",
+        "source_value": 12151200
+      },
+      "AssessmentHistory.5.CertifiedDate": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.certified_dt",
+        "source_value": "2023-03-24T00:00:00-04:00"
+      },
+      "AssessmentInformation.Year": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tax_yr",
+        "source_value": 2026
+      },
+      "AssessmentInformation.LandValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tot_lnd_val",
+        "source_value": 6991600
+      },
+      "AssessmentInformation.BuildingValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tot_bld_val",
+        "source_value": 5865500
+      },
+      "AssessmentInformation.ExtraFeatureValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tot_xf_val",
+        "source_value": 784800
+      },
+      "AssessmentInformation.MarketValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.jst_val",
+        "source_value": 13641900
+      },
+      "AssessmentInformation.AssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.soh_val",
+        "source_value": 13641900
+      },
+      "AssessmentInformation.UncappedAssessedValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.asd_val",
+        "source_value": 13641900
+      },
+      "AssessmentInformation.CertifiedDate": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.certified_dt",
+        "source_value": "2026-10-06T00:00:00-04:00"
+      },
+      "TaxableValueInformation.2026.Reported.ExemptionValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.ex_val",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2026.Reported.TaxableValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.0.tax_val",
+        "source_value": 13641900
+      },
+      "TaxableValueInformation.2025.Reported.ExemptionValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.ex_val",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2025.Reported.TaxableValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.1.tax_val",
+        "source_value": 13646800
+      },
+      "TaxableValueInformation.2024.Reported.ExemptionValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.ex_val",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2024.Reported.TaxableValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.2.tax_val",
+        "source_value": 13763600
+      },
+      "TaxableValueInformation.2023.Reported.ExemptionValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.ex_val",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2023.Reported.TaxableValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.3.tax_val",
+        "source_value": 13089800
+      },
+      "TaxableValueInformation.2022.Reported.ExemptionValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.ex_val",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2022.Reported.TaxableValue": {
+        "source_id": "osceola_assessment",
+        "source_path": "values.value.4.tax_val",
+        "source_value": 12151200
+      },
+      "SalesInformation.0.SaleDate": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.dos",
+        "source_value": "2004-04-14T00:00:00-04:00"
+      },
+      "SalesInformation.0.Price": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.price",
+        "source_value": 7162700
+      },
+      "SalesInformation.0.DeedType": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.trans_dscr",
+        "source_value": "WARRANTY DEED"
+      },
+      "SalesInformation.0.InstrumentBook": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.or_bk",
+        "source_value": "2558"
+      },
+      "SalesInformation.0.InstrumentPage": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.or_pg",
+        "source_value": "2981"
+      },
+      "SalesInformation.0.Grantors": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.grantors",
+        "source_value": "EPOCH-FLA CAPITAL LAND INVESTMENT"
+      },
+      "SalesInformation.0.Grantees": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.grantees",
+        "source_value": "WAL-AMRT STORES EAST LP"
+      },
+      "SalesInformation.0.QualificationCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.qu_flg",
+        "source_value": "U"
+      },
+      "SalesInformation.0.QualificationDescription": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.dscr",
+        "source_value": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER"
+      },
+      "SalesInformation.0.VacantImprovedCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.vi",
+        "source_value": "I"
+      },
+      "SalesInformation.0.MultiParcelReasonCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.rea_cd",
+        "source_value": "05"
+      },
+      "SalesInformation.0.SourceTaxYear": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.0.CurrTaxYear",
+        "source_value": 2027
+      },
+      "SalesInformation.1.SaleDate": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.dos",
+        "source_value": "1999-03-24T00:00:00-05:00"
+      },
+      "SalesInformation.1.Price": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.price",
+        "source_value": 8000000
+      },
+      "SalesInformation.1.DeedType": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.trans_dscr",
+        "source_value": "SPECIAL WARRANTY DEED"
+      },
+      "SalesInformation.1.InstrumentBook": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.or_bk",
+        "source_value": "1596"
+      },
+      "SalesInformation.1.InstrumentPage": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.or_pg",
+        "source_value": "1319"
+      },
+      "SalesInformation.1.Grantors": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.grantors",
+        "source_value": "PROPERTY SECURITY FLORIDA INC"
+      },
+      "SalesInformation.1.Grantees": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.grantees",
+        "source_value": "EPOCH-FLA CAPITAL LAND INVESTMENT"
+      },
+      "SalesInformation.1.QualificationCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.qu_flg",
+        "source_value": "U"
+      },
+      "SalesInformation.1.QualificationDescription": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.dscr",
+        "source_value": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER"
+      },
+      "SalesInformation.1.VacantImprovedCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.vi",
+        "source_value": "I"
+      },
+      "SalesInformation.1.MultiParcelReasonCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.rea_cd",
+        "source_value": "05"
+      },
+      "SalesInformation.1.SourceTaxYear": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.1.CurrTaxYear",
+        "source_value": 2027
+      },
+      "SalesInformation.2.SaleDate": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.dos",
+        "source_value": "1992-12-31T00:00:00-05:00"
+      },
+      "SalesInformation.2.Price": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.price",
+        "source_value": 0
+      },
+      "SalesInformation.2.DeedType": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.trans_dscr",
+        "source_value": "SPECIAL WARRANTY DEED"
+      },
+      "SalesInformation.2.InstrumentBook": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.or_bk",
+        "source_value": "1143"
+      },
+      "SalesInformation.2.InstrumentPage": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.or_pg",
+        "source_value": "0907"
+      },
+      "SalesInformation.2.Grantors": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.grantors",
+        "source_value": "OSCEOLA 104 ASSOC"
+      },
+      "SalesInformation.2.Grantees": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.grantees",
+        "source_value": "PROPERTYSECURITY FLORIDA INC"
+      },
+      "SalesInformation.2.QualificationCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.qu_flg",
+        "source_value": "U"
+      },
+      "SalesInformation.2.QualificationDescription": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.dscr",
+        "source_value": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER"
+      },
+      "SalesInformation.2.VacantImprovedCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.vi",
+        "source_value": "V"
+      },
+      "SalesInformation.2.MultiParcelReasonCode": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.rea_cd",
+        "source_value": "05"
+      },
+      "SalesInformation.2.SourceTaxYear": {
+        "source_id": "osceola_sales",
+        "source_path": "sales.value.2.CurrTaxYear",
+        "source_value": 2027
+      },
+      "LandBuildingExtraFeatures.Land.0.Number": {
+        "source_id": "osceola_land",
+        "source_path": "land.value.0.num",
+        "source_value": 1
+      },
+      "LandBuildingExtraFeatures.Land.0.Description": {
+        "source_id": "osceola_land",
+        "source_path": "land.value.0.land_type",
+        "source_value": "COMMERCIAL AC"
+      },
+      "LandBuildingExtraFeatures.Land.0.Units": {
+        "source_id": "osceola_land",
+        "source_path": "land.value.0.uts",
+        "source_value": 24.549
+      },
+      "LandBuildingExtraFeatures.Land.0.UnitType": {
+        "source_id": "osceola_land",
+        "source_path": "land.value.0.unit_type",
+        "source_value": "AC"
+      },
+      "LandBuildingExtraFeatures.Land.0.Depth": {
+        "source_id": "osceola_land",
+        "source_path": "land.value.0.dpth",
+        "source_value": 0
+      },
+      "LandBuildingExtraFeatures.Land.0.Value": {
+        "source_id": "osceola_land",
+        "source_path": "land.value.0.val",
+        "source_value": 6991555
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Number": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.CardNumber",
+        "source_value": 1
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Description": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.Description",
+        "source_value": "DISCOUNT STORE"
+      },
+      "LandBuildingExtraFeatures.Buildings.0.YearBuilt": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.YearBuilt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Value": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.BuildingValue",
+        "source_value": 5716741
+      },
+      "LandBuildingExtraFeatures.Buildings.0.GrossArea": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.BuildingSqFeet",
+        "source_value": 224581
+      },
+      "LandBuildingExtraFeatures.Buildings.0.HeatedArea": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.HeatedSqFeet",
+        "source_value": 213543
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Bedrooms": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.Bedrooms",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Bathrooms": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.Bathrooms",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.HalfBathrooms": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.HalfBathrooms",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Fixtures": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.Fixtures",
+        "source_value": 45
+      },
+      "LandBuildingExtraFeatures.Buildings.0.LivingUnits": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.LivingUnits",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.NonLivingUnits": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.NonLivingUnits",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.RoofCover": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.RoofCover",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.ExteriorWall": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.ExteriorWall",
+        "source_value": null
+      },
+      "LandBuildingExtraFeatures.Buildings.0.Sketch": {
+        "source_id": "osceola_buildings",
+        "source_path": "buildings.value.0.Sketch",
+        "source_value": "BAS 2005 <1>  (199541 P2062) $   BAS 2015 <1>  (5000 P324) $   GRF 2005 <1>  (3552 P266) $   OPF 2005 <1>  (1848 P222) $   EPF 2005 <1>  (9002 P548) $   OPU 2005 <1>  (4080 P262) $   OPF 2005 <1>  (1508 P182) $   OPF 2005 <1>  (50 P54) $   . "
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.0.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.0.ln_num",
+        "source_value": 1
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.0.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.0.l_dscr",
+        "source_value": "COMMERCIAL-ASPHALT PAVING PER PARKING SPACE AVERAG"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.0.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.0.units",
+        "source_value": 994
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.0.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.0.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.0.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.0.asd_val",
+        "source_value": 342400
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.1.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.1.ln_num",
+        "source_value": 2
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.1.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.1.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE PAVEMENT AVERAGE"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.1.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.1.units",
+        "source_value": 35266
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.1.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.1.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.1.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.1.asd_val",
+        "source_value": 52300
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.2.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.2.ln_num",
+        "source_value": 3
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.2.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.2.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.2.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.2.units",
+        "source_value": 48950
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.2.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.2.yr_blt",
+        "source_value": 2014
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.2.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.2.asd_val",
+        "source_value": 205600
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.3.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.3.ln_num",
+        "source_value": 4
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.3.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.3.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.3.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.3.units",
+        "source_value": 572
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.3.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.3.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.3.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.3.asd_val",
+        "source_value": 1900
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.4.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.4.ln_num",
+        "source_value": 5
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.4.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.4.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.4.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.4.units",
+        "source_value": 2385
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.4.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.4.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.4.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.4.asd_val",
+        "source_value": 7800
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.5.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.5.ln_num",
+        "source_value": 6
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.5.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.5.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.5.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.5.units",
+        "source_value": 1800
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.5.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.5.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.5.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.5.asd_val",
+        "source_value": 5800
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.6.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.6.ln_num",
+        "source_value": 7
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.6.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.6.l_dscr",
+        "source_value": "COMMERCIAL-CHAIN LINK FENCE-8 FT HIGH GOOD"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.6.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.6.units",
+        "source_value": 230
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.6.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.6.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.6.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.6.asd_val",
+        "source_value": 800
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.7.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.7.ln_num",
+        "source_value": 8
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.7.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.7.l_dscr",
+        "source_value": "COMMERCIAL-LOADWELL GOOD"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.7.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.7.units",
+        "source_value": 9240
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.7.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.7.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.7.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.7.asd_val",
+        "source_value": 60100
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.8.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.8.ln_num",
+        "source_value": 9
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.8.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.8.l_dscr",
+        "source_value": "COMMERCIAL-ASPHALT PAVEMENT WITH CURBING AVERAGE"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.8.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.8.units",
+        "source_value": 41769
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.8.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.8.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.8.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.8.asd_val",
+        "source_value": 33900
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.9.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.9.ln_num",
+        "source_value": 10
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.9.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.9.l_dscr",
+        "source_value": "COMMERCIAL-LIGHTS EXCELLENT"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.9.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.9.units",
+        "source_value": 5
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.9.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.9.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.9.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.9.asd_val",
+        "source_value": 5000
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.10.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.10.ln_num",
+        "source_value": 11
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.10.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.10.l_dscr",
+        "source_value": "COMMERCIAL-LIGHTS GOOD"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.10.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.10.units",
+        "source_value": 25
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.10.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.10.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.10.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.10.asd_val",
+        "source_value": 20200
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.11.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.11.ln_num",
+        "source_value": 12
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.11.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.11.l_dscr",
+        "source_value": "COMMERCIAL-LIGHTS AVERAGE"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.11.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.11.units",
+        "source_value": 6
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.11.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.11.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.11.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.11.asd_val",
+        "source_value": 3600
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.12.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.12.ln_num",
+        "source_value": 13
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.12.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.12.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.12.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.12.units",
+        "source_value": 9106
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.12.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.12.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.12.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.12.asd_val",
+        "source_value": 15000
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.13.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.13.ln_num",
+        "source_value": 14
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.13.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.13.l_dscr",
+        "source_value": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.13.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.13.units",
+        "source_value": 4080
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.13.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.13.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.13.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.13.asd_val",
+        "source_value": 6700
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.14.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.14.ln_num",
+        "source_value": 15
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.14.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.14.l_dscr",
+        "source_value": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.14.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.14.units",
+        "source_value": 9106
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.14.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.14.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.14.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.14.asd_val",
+        "source_value": 10000
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.15.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.15.ln_num",
+        "source_value": 16
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.15.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.15.l_dscr",
+        "source_value": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.15.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.15.units",
+        "source_value": 4080
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.15.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.15.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.15.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.15.asd_val",
+        "source_value": 4500
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.16.Number": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.16.ln_num",
+        "source_value": 17
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.16.Description": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.16.l_dscr",
+        "source_value": "COMMERCIAL-CHAIN LINK FENCE-10 FT HIGH GOOD"
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.16.Units": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.16.units",
+        "source_value": 468
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.16.YearBuilt": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.16.yr_blt",
+        "source_value": 2005
+      },
+      "LandBuildingExtraFeatures.ExtraFeatures.16.Value": {
+        "source_id": "osceola_extras",
+        "source_path": "extras.value.16.asd_val",
+        "source_value": 1900
+      },
+      "PropertyInformation": {
+        "source_id": "osceola_address_search",
+        "source_paths": [
+          "market.value.0"
+        ],
+        "source_value": {
+          "strap": "022528285000010010       ",
+          "dsp_strap": "02-25-28-2850-0001-0010",
+          "subName": "CALYPSO CAY COMMERCIAL",
+          "situsCity": "KISSIMMEE",
+          "situsZip": "34746-    ",
+          "mailCity": "BENTONVILLE",
+          "mailState": "AR",
+          "mailZip": "72716-0555",
+          "mailCountry": "",
+          "census": "120970408092",
+          "dorCode": "1311",
+          "dorDesc": "DEPT. STORES-IMP",
+          "prevDorCode": "1311",
+          "prevDorDscr": "DEPT. STORES-IMP",
+          "ayb": 2005,
+          "eyb": 2008,
+          "totalAcres": 24.551,
+          "grossBldArea": 224581,
+          "HeatedArea": 213543,
+          "numofbuildings": 1,
+          "livunits": 0,
+          "grade": "03",
+          "quality": "STANDARD",
+          "juris": 7001,
+          "jurisdesc": "WEST 192 COMMERCIAL",
+          "currassessedvalue": 13485800,
+          "currJustValue": 13485800,
+          "currTaxable": 13485800,
+          "curNewConstruction": 0,
+          "prevAssessed": 13641900,
+          "prevJust": 13641900,
+          "prevTaxable": 13641900,
+          "distGroup": "300",
+          "numofUnits": 0,
+          "NBC": 701075,
+          "NBCDesc": "US 192 EAST OF DISNEY TO KISSIMMEE CITY LIMITS",
+          "ChangeJust": -156100,
+          "changePct": -1.14,
+          "dos": null,
+          "qu_flg": null,
+          "price": null,
+          "taxyear": 2027,
+          "Owners": "WAL-MART STORES EAST LP",
+          "Legals": "CALYPSO CAY COMMERCIAL PB 17 PG 3 LOT 1 LESS BEG AT SW R/W OF SR 535 &amp; NE COR OF LOT 1, S 37 DEG E 213.83 FT, S 53 DEG W 172.94 FT TO POC, CURVE RIGHT, RAD 18 FT, (CH BEARING N 82 DEG W 25.44 FT) WLY ALONG CURVE 28.26 FT, N 37 DEG W 195.74 FT, N 53 DEG E 190.76 FT TO POB ",
+          "Exemptions": null,
+          "Situs": "3250 VINELAND RD KISSIMMEE FL 34746-    ",
+          "SitusAll": "3250 VINELAND RD; 3252 VINELAND RD",
+          "usechange": 0,
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "YOS": null,
+          "ParcelMarketId": 16530,
+          "X": 499766.960672,
+          "Y": 1457469.66607,
+          "lat": 28.34230376,
+          "lon": -81.48621689,
+          "tot_bld_val": 5716700,
+          "tot_lnd_val": 6991600,
+          "asd_lnd_val": 6991600,
+          "tot_xf_val": 777500,
+          "ag_x_val": null,
+          "soh_val": 13485800,
+          "ValuationDate": "2026-10-06T03:31:46.09-04:00",
+          "SitusStreet": "3250 VINELAND RD",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": "",
+          "ValMethod": "8",
+          "ValMethodDscr": "Alternate Cost"
+        }
+      },
+      "AssessmentInformation": {
+        "source_id": "osceola_assessment",
+        "source_paths": [
+          "values.value"
+        ],
+        "source_value": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+          "@odata.count": 5,
+          "value": [
+            {
+              "Id": 51413,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2026,
+              "appr_val": 13641900,
+              "tot_bld_val": 5865500,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 784800,
+              "jst_val": 13641900,
+              "asd_val": 13641900,
+              "soh_val": 13641900,
+              "ex_val": 0,
+              "mkt_nhx": 13641900,
+              "cap_val_nhx": 13641900,
+              "tax_val": 13641900,
+              "ag_x_val": 0,
+              "certified_dt": "2026-10-06T00:00:00-04:00"
+            },
+            {
+              "Id": 51412,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2025,
+              "appr_val": 13646800,
+              "tot_bld_val": 5865500,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 789700,
+              "jst_val": 13646800,
+              "asd_val": 13646800,
+              "soh_val": 13646800,
+              "ex_val": 0,
+              "mkt_nhx": 13646800,
+              "cap_val_nhx": 13646800,
+              "tax_val": 13646800,
+              "ag_x_val": 0,
+              "certified_dt": "2026-06-10T00:00:00-04:00"
+            },
+            {
+              "Id": 51411,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2024,
+              "appr_val": 13763600,
+              "tot_bld_val": 5975000,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 797000,
+              "jst_val": 13763600,
+              "asd_val": 13763600,
+              "soh_val": 13763600,
+              "ex_val": 0,
+              "mkt_nhx": 13763600,
+              "cap_val_nhx": 13763600,
+              "tax_val": 13763600,
+              "ag_x_val": 0,
+              "certified_dt": "2025-03-31T00:00:00-04:00"
+            },
+            {
+              "Id": 51410,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2023,
+              "appr_val": 13089800,
+              "tot_bld_val": 5941100,
+              "tot_lnd_val": 6347400,
+              "asd_lnd_val": 6347400,
+              "tot_xf_val": 801300,
+              "jst_val": 13089800,
+              "asd_val": 13089800,
+              "soh_val": 13089800,
+              "ex_val": 0,
+              "mkt_nhx": 13089800,
+              "cap_val_nhx": 13089800,
+              "tax_val": 13089800,
+              "ag_x_val": 0,
+              "certified_dt": "2024-02-12T00:00:00-05:00"
+            },
+            {
+              "Id": 51409,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2022,
+              "appr_val": 12151200,
+              "tot_bld_val": 6050600,
+              "tot_lnd_val": 5288800,
+              "asd_lnd_val": 5288800,
+              "tot_xf_val": 811800,
+              "jst_val": 12151200,
+              "asd_val": 12151200,
+              "soh_val": 12151200,
+              "ex_val": 0,
+              "mkt_nhx": 12151200,
+              "cap_val_nhx": 12151200,
+              "tax_val": 12151200,
+              "ag_x_val": 0,
+              "certified_dt": "2023-03-24T00:00:00-04:00"
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+              "@odata.count": 5,
+              "value": [
+                {
+                  "Id": 51413,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2026,
+                  "appr_val": 13641900,
+                  "tot_bld_val": 5865500,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 784800,
+                  "jst_val": 13641900,
+                  "asd_val": 13641900,
+                  "soh_val": 13641900,
+                  "ex_val": 0,
+                  "mkt_nhx": 13641900,
+                  "cap_val_nhx": 13641900,
+                  "tax_val": 13641900,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-10-06T00:00:00-04:00"
+                },
+                {
+                  "Id": 51412,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2025,
+                  "appr_val": 13646800,
+                  "tot_bld_val": 5865500,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 789700,
+                  "jst_val": 13646800,
+                  "asd_val": 13646800,
+                  "soh_val": 13646800,
+                  "ex_val": 0,
+                  "mkt_nhx": 13646800,
+                  "cap_val_nhx": 13646800,
+                  "tax_val": 13646800,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-06-10T00:00:00-04:00"
+                },
+                {
+                  "Id": 51411,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2024,
+                  "appr_val": 13763600,
+                  "tot_bld_val": 5975000,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 797000,
+                  "jst_val": 13763600,
+                  "asd_val": 13763600,
+                  "soh_val": 13763600,
+                  "ex_val": 0,
+                  "mkt_nhx": 13763600,
+                  "cap_val_nhx": 13763600,
+                  "tax_val": 13763600,
+                  "ag_x_val": 0,
+                  "certified_dt": "2025-03-31T00:00:00-04:00"
+                },
+                {
+                  "Id": 51410,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2023,
+                  "appr_val": 13089800,
+                  "tot_bld_val": 5941100,
+                  "tot_lnd_val": 6347400,
+                  "asd_lnd_val": 6347400,
+                  "tot_xf_val": 801300,
+                  "jst_val": 13089800,
+                  "asd_val": 13089800,
+                  "soh_val": 13089800,
+                  "ex_val": 0,
+                  "mkt_nhx": 13089800,
+                  "cap_val_nhx": 13089800,
+                  "tax_val": 13089800,
+                  "ag_x_val": 0,
+                  "certified_dt": "2024-02-12T00:00:00-05:00"
+                },
+                {
+                  "Id": 51409,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2022,
+                  "appr_val": 12151200,
+                  "tot_bld_val": 6050600,
+                  "tot_lnd_val": 5288800,
+                  "asd_lnd_val": 5288800,
+                  "tot_xf_val": 811800,
+                  "jst_val": 12151200,
+                  "asd_val": 12151200,
+                  "soh_val": 12151200,
+                  "ex_val": 0,
+                  "mkt_nhx": 12151200,
+                  "cap_val_nhx": 12151200,
+                  "tax_val": 12151200,
+                  "ag_x_val": 0,
+                  "certified_dt": "2023-03-24T00:00:00-04:00"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "AssessmentHistory": {
+        "source_id": "osceola_assessment",
+        "source_paths": [
+          "market.value",
+          "values.value"
+        ],
+        "source_value": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+          "@odata.count": 5,
+          "value": [
+            {
+              "Id": 51413,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2026,
+              "appr_val": 13641900,
+              "tot_bld_val": 5865500,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 784800,
+              "jst_val": 13641900,
+              "asd_val": 13641900,
+              "soh_val": 13641900,
+              "ex_val": 0,
+              "mkt_nhx": 13641900,
+              "cap_val_nhx": 13641900,
+              "tax_val": 13641900,
+              "ag_x_val": 0,
+              "certified_dt": "2026-10-06T00:00:00-04:00"
+            },
+            {
+              "Id": 51412,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2025,
+              "appr_val": 13646800,
+              "tot_bld_val": 5865500,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 789700,
+              "jst_val": 13646800,
+              "asd_val": 13646800,
+              "soh_val": 13646800,
+              "ex_val": 0,
+              "mkt_nhx": 13646800,
+              "cap_val_nhx": 13646800,
+              "tax_val": 13646800,
+              "ag_x_val": 0,
+              "certified_dt": "2026-06-10T00:00:00-04:00"
+            },
+            {
+              "Id": 51411,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2024,
+              "appr_val": 13763600,
+              "tot_bld_val": 5975000,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 797000,
+              "jst_val": 13763600,
+              "asd_val": 13763600,
+              "soh_val": 13763600,
+              "ex_val": 0,
+              "mkt_nhx": 13763600,
+              "cap_val_nhx": 13763600,
+              "tax_val": 13763600,
+              "ag_x_val": 0,
+              "certified_dt": "2025-03-31T00:00:00-04:00"
+            },
+            {
+              "Id": 51410,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2023,
+              "appr_val": 13089800,
+              "tot_bld_val": 5941100,
+              "tot_lnd_val": 6347400,
+              "asd_lnd_val": 6347400,
+              "tot_xf_val": 801300,
+              "jst_val": 13089800,
+              "asd_val": 13089800,
+              "soh_val": 13089800,
+              "ex_val": 0,
+              "mkt_nhx": 13089800,
+              "cap_val_nhx": 13089800,
+              "tax_val": 13089800,
+              "ag_x_val": 0,
+              "certified_dt": "2024-02-12T00:00:00-05:00"
+            },
+            {
+              "Id": 51409,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2022,
+              "appr_val": 12151200,
+              "tot_bld_val": 6050600,
+              "tot_lnd_val": 5288800,
+              "asd_lnd_val": 5288800,
+              "tot_xf_val": 811800,
+              "jst_val": 12151200,
+              "asd_val": 12151200,
+              "soh_val": 12151200,
+              "ex_val": 0,
+              "mkt_nhx": 12151200,
+              "cap_val_nhx": 12151200,
+              "tax_val": 12151200,
+              "ag_x_val": 0,
+              "certified_dt": "2023-03-24T00:00:00-04:00"
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+              "@odata.count": 5,
+              "value": [
+                {
+                  "Id": 51413,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2026,
+                  "appr_val": 13641900,
+                  "tot_bld_val": 5865500,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 784800,
+                  "jst_val": 13641900,
+                  "asd_val": 13641900,
+                  "soh_val": 13641900,
+                  "ex_val": 0,
+                  "mkt_nhx": 13641900,
+                  "cap_val_nhx": 13641900,
+                  "tax_val": 13641900,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-10-06T00:00:00-04:00"
+                },
+                {
+                  "Id": 51412,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2025,
+                  "appr_val": 13646800,
+                  "tot_bld_val": 5865500,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 789700,
+                  "jst_val": 13646800,
+                  "asd_val": 13646800,
+                  "soh_val": 13646800,
+                  "ex_val": 0,
+                  "mkt_nhx": 13646800,
+                  "cap_val_nhx": 13646800,
+                  "tax_val": 13646800,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-06-10T00:00:00-04:00"
+                },
+                {
+                  "Id": 51411,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2024,
+                  "appr_val": 13763600,
+                  "tot_bld_val": 5975000,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 797000,
+                  "jst_val": 13763600,
+                  "asd_val": 13763600,
+                  "soh_val": 13763600,
+                  "ex_val": 0,
+                  "mkt_nhx": 13763600,
+                  "cap_val_nhx": 13763600,
+                  "tax_val": 13763600,
+                  "ag_x_val": 0,
+                  "certified_dt": "2025-03-31T00:00:00-04:00"
+                },
+                {
+                  "Id": 51410,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2023,
+                  "appr_val": 13089800,
+                  "tot_bld_val": 5941100,
+                  "tot_lnd_val": 6347400,
+                  "asd_lnd_val": 6347400,
+                  "tot_xf_val": 801300,
+                  "jst_val": 13089800,
+                  "asd_val": 13089800,
+                  "soh_val": 13089800,
+                  "ex_val": 0,
+                  "mkt_nhx": 13089800,
+                  "cap_val_nhx": 13089800,
+                  "tax_val": 13089800,
+                  "ag_x_val": 0,
+                  "certified_dt": "2024-02-12T00:00:00-05:00"
+                },
+                {
+                  "Id": 51409,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2022,
+                  "appr_val": 12151200,
+                  "tot_bld_val": 6050600,
+                  "tot_lnd_val": 5288800,
+                  "asd_lnd_val": 5288800,
+                  "tot_xf_val": 811800,
+                  "jst_val": 12151200,
+                  "asd_val": 12151200,
+                  "soh_val": 12151200,
+                  "ex_val": 0,
+                  "mkt_nhx": 12151200,
+                  "cap_val_nhx": 12151200,
+                  "tax_val": 12151200,
+                  "ag_x_val": 0,
+                  "certified_dt": "2023-03-24T00:00:00-04:00"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "BenefitsInformation": {
+        "source_id": "osceola_assessment",
+        "source_paths": [],
+        "source_value": null
+      },
+      "BenefitsNote": {
+        "source_id": "osceola_assessment",
+        "source_paths": [],
+        "source_value": null
+      },
+      "TaxableValueInformation": {
+        "source_id": "osceola_assessment",
+        "source_paths": [
+          "values.value"
+        ],
+        "source_value": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+          "@odata.count": 5,
+          "value": [
+            {
+              "Id": 51413,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2026,
+              "appr_val": 13641900,
+              "tot_bld_val": 5865500,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 784800,
+              "jst_val": 13641900,
+              "asd_val": 13641900,
+              "soh_val": 13641900,
+              "ex_val": 0,
+              "mkt_nhx": 13641900,
+              "cap_val_nhx": 13641900,
+              "tax_val": 13641900,
+              "ag_x_val": 0,
+              "certified_dt": "2026-10-06T00:00:00-04:00"
+            },
+            {
+              "Id": 51412,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2025,
+              "appr_val": 13646800,
+              "tot_bld_val": 5865500,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 789700,
+              "jst_val": 13646800,
+              "asd_val": 13646800,
+              "soh_val": 13646800,
+              "ex_val": 0,
+              "mkt_nhx": 13646800,
+              "cap_val_nhx": 13646800,
+              "tax_val": 13646800,
+              "ag_x_val": 0,
+              "certified_dt": "2026-06-10T00:00:00-04:00"
+            },
+            {
+              "Id": 51411,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2024,
+              "appr_val": 13763600,
+              "tot_bld_val": 5975000,
+              "tot_lnd_val": 6991600,
+              "asd_lnd_val": 6991600,
+              "tot_xf_val": 797000,
+              "jst_val": 13763600,
+              "asd_val": 13763600,
+              "soh_val": 13763600,
+              "ex_val": 0,
+              "mkt_nhx": 13763600,
+              "cap_val_nhx": 13763600,
+              "tax_val": 13763600,
+              "ag_x_val": 0,
+              "certified_dt": "2025-03-31T00:00:00-04:00"
+            },
+            {
+              "Id": 51410,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2023,
+              "appr_val": 13089800,
+              "tot_bld_val": 5941100,
+              "tot_lnd_val": 6347400,
+              "asd_lnd_val": 6347400,
+              "tot_xf_val": 801300,
+              "jst_val": 13089800,
+              "asd_val": 13089800,
+              "soh_val": 13089800,
+              "ex_val": 0,
+              "mkt_nhx": 13089800,
+              "cap_val_nhx": 13089800,
+              "tax_val": 13089800,
+              "ag_x_val": 0,
+              "certified_dt": "2024-02-12T00:00:00-05:00"
+            },
+            {
+              "Id": 51409,
+              "strap": "022528285000010010       ",
+              "tax_yr": 2022,
+              "appr_val": 12151200,
+              "tot_bld_val": 6050600,
+              "tot_lnd_val": 5288800,
+              "asd_lnd_val": 5288800,
+              "tot_xf_val": 811800,
+              "jst_val": 12151200,
+              "asd_val": 12151200,
+              "soh_val": 12151200,
+              "ex_val": 0,
+              "mkt_nhx": 12151200,
+              "cap_val_nhx": 12151200,
+              "tax_val": 12151200,
+              "ag_x_val": 0,
+              "certified_dt": "2023-03-24T00:00:00-04:00"
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+              "@odata.count": 5,
+              "value": [
+                {
+                  "Id": 51413,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2026,
+                  "appr_val": 13641900,
+                  "tot_bld_val": 5865500,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 784800,
+                  "jst_val": 13641900,
+                  "asd_val": 13641900,
+                  "soh_val": 13641900,
+                  "ex_val": 0,
+                  "mkt_nhx": 13641900,
+                  "cap_val_nhx": 13641900,
+                  "tax_val": 13641900,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-10-06T00:00:00-04:00"
+                },
+                {
+                  "Id": 51412,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2025,
+                  "appr_val": 13646800,
+                  "tot_bld_val": 5865500,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 789700,
+                  "jst_val": 13646800,
+                  "asd_val": 13646800,
+                  "soh_val": 13646800,
+                  "ex_val": 0,
+                  "mkt_nhx": 13646800,
+                  "cap_val_nhx": 13646800,
+                  "tax_val": 13646800,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-06-10T00:00:00-04:00"
+                },
+                {
+                  "Id": 51411,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2024,
+                  "appr_val": 13763600,
+                  "tot_bld_val": 5975000,
+                  "tot_lnd_val": 6991600,
+                  "asd_lnd_val": 6991600,
+                  "tot_xf_val": 797000,
+                  "jst_val": 13763600,
+                  "asd_val": 13763600,
+                  "soh_val": 13763600,
+                  "ex_val": 0,
+                  "mkt_nhx": 13763600,
+                  "cap_val_nhx": 13763600,
+                  "tax_val": 13763600,
+                  "ag_x_val": 0,
+                  "certified_dt": "2025-03-31T00:00:00-04:00"
+                },
+                {
+                  "Id": 51410,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2023,
+                  "appr_val": 13089800,
+                  "tot_bld_val": 5941100,
+                  "tot_lnd_val": 6347400,
+                  "asd_lnd_val": 6347400,
+                  "tot_xf_val": 801300,
+                  "jst_val": 13089800,
+                  "asd_val": 13089800,
+                  "soh_val": 13089800,
+                  "ex_val": 0,
+                  "mkt_nhx": 13089800,
+                  "cap_val_nhx": 13089800,
+                  "tax_val": 13089800,
+                  "ag_x_val": 0,
+                  "certified_dt": "2024-02-12T00:00:00-05:00"
+                },
+                {
+                  "Id": 51409,
+                  "strap": "022528285000010010       ",
+                  "tax_yr": 2022,
+                  "appr_val": 12151200,
+                  "tot_bld_val": 6050600,
+                  "tot_lnd_val": 5288800,
+                  "asd_lnd_val": 5288800,
+                  "tot_xf_val": 811800,
+                  "jst_val": 12151200,
+                  "asd_val": 12151200,
+                  "soh_val": 12151200,
+                  "ex_val": 0,
+                  "mkt_nhx": 12151200,
+                  "cap_val_nhx": 12151200,
+                  "tax_val": 12151200,
+                  "ag_x_val": 0,
+                  "certified_dt": "2023-03-24T00:00:00-04:00"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "FullLegalDescription": {
+        "source_id": "osceola_address_search",
+        "source_paths": [
+          "market.value.0.Legals"
+        ],
+        "source_value": "CALYPSO CAY COMMERCIAL PB 17 PG 3 LOT 1 LESS BEG AT SW R/W OF SR 535 &amp; NE COR OF LOT 1, S 37 DEG E 213.83 FT, S 53 DEG W 172.94 FT TO POC, CURVE RIGHT, RAD 18 FT, (CH BEARING N 82 DEG W 25.44 FT) WLY ALONG CURVE 28.26 FT, N 37 DEG W 195.74 FT, N 53 DEG E 190.76 FT TO POB "
+      },
+      "SalesInformation": {
+        "source_id": "osceola_sales",
+        "source_paths": [
+          "sales.value"
+        ],
+        "source_value": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#sales",
+          "@odata.count": 3,
+          "value": [
+            {
+              "ID": 56146,
+              "strap": "022528285000010010       ",
+              "sale_id": 1,
+              "ln_num": 1,
+              "trns_cd": "WD",
+              "trans_dscr": "WARRANTY DEED",
+              "or_bk": "2558",
+              "or_pg": "2981",
+              "grantors": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+              "grantees": "WAL-AMRT STORES EAST LP",
+              "dos": "2004-04-14T00:00:00-04:00",
+              "dos_yr": 2004,
+              "price": 7162700,
+              "vi": "I",
+              "qu_flg": "U",
+              "note": "",
+              "rea_cd": "05",
+              "dscr": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+              "qsrc_cd": null,
+              "adj_price": 0,
+              "price_per_sqft": 33.54,
+              "reset_flg": "N",
+              "all_grantors": "EPOCH-FLA CAPITAL LAND INVEST,,",
+              "all_grantees": null,
+              "salesratio": 188.28,
+              "X": 499766.960672,
+              "Y": 1457469.66607,
+              "CurrTaxYear": 2027
+            },
+            {
+              "ID": 56147,
+              "strap": "022528285000010010       ",
+              "sale_id": 2,
+              "ln_num": 2,
+              "trns_cd": "SW",
+              "trans_dscr": "SPECIAL WARRANTY DEED",
+              "or_bk": "1596",
+              "or_pg": "1319",
+              "grantors": "PROPERTY SECURITY FLORIDA INC",
+              "grantees": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+              "dos": "1999-03-24T00:00:00-05:00",
+              "dos_yr": 1999,
+              "price": 8000000,
+              "vi": "I",
+              "qu_flg": "U",
+              "note": "",
+              "rea_cd": "05",
+              "dscr": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+              "qsrc_cd": null,
+              "adj_price": 0,
+              "price_per_sqft": 37.46,
+              "reset_flg": "N",
+              "all_grantors": "PROPERTY SECURITY FLORIDA INC,",
+              "all_grantees": null,
+              "salesratio": 168.57,
+              "X": 499766.960672,
+              "Y": 1457469.66607,
+              "CurrTaxYear": 2027
+            },
+            {
+              "ID": 56148,
+              "strap": "022528285000010010       ",
+              "sale_id": 3,
+              "ln_num": 3,
+              "trns_cd": "SW",
+              "trans_dscr": "SPECIAL WARRANTY DEED",
+              "or_bk": "1143",
+              "or_pg": "0907",
+              "grantors": "OSCEOLA 104 ASSOC",
+              "grantees": "PROPERTYSECURITY FLORIDA INC",
+              "dos": "1992-12-31T00:00:00-05:00",
+              "dos_yr": 1992,
+              "price": 0,
+              "vi": "V",
+              "qu_flg": "U",
+              "note": "",
+              "rea_cd": "05",
+              "dscr": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+              "qsrc_cd": null,
+              "adj_price": 0,
+              "price_per_sqft": 0,
+              "reset_flg": "N",
+              "all_grantors": "OSCEOLA 104 ASSOC,",
+              "all_grantees": null,
+              "salesratio": null,
+              "X": 499766.960672,
+              "Y": 1457469.66607,
+              "CurrTaxYear": 2027
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#sales",
+              "@odata.count": 3,
+              "value": [
+                {
+                  "ID": 56146,
+                  "strap": "022528285000010010       ",
+                  "sale_id": 1,
+                  "ln_num": 1,
+                  "trns_cd": "WD",
+                  "trans_dscr": "WARRANTY DEED",
+                  "or_bk": "2558",
+                  "or_pg": "2981",
+                  "grantors": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+                  "grantees": "WAL-AMRT STORES EAST LP",
+                  "dos": "2004-04-14T00:00:00-04:00",
+                  "dos_yr": 2004,
+                  "price": 7162700,
+                  "vi": "I",
+                  "qu_flg": "U",
+                  "note": "",
+                  "rea_cd": "05",
+                  "dscr": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+                  "qsrc_cd": null,
+                  "adj_price": 0,
+                  "price_per_sqft": 33.54,
+                  "reset_flg": "N",
+                  "all_grantors": "EPOCH-FLA CAPITAL LAND INVEST,,",
+                  "all_grantees": null,
+                  "salesratio": 188.28,
+                  "X": 499766.960672,
+                  "Y": 1457469.66607,
+                  "CurrTaxYear": 2027
+                },
+                {
+                  "ID": 56147,
+                  "strap": "022528285000010010       ",
+                  "sale_id": 2,
+                  "ln_num": 2,
+                  "trns_cd": "SW",
+                  "trans_dscr": "SPECIAL WARRANTY DEED",
+                  "or_bk": "1596",
+                  "or_pg": "1319",
+                  "grantors": "PROPERTY SECURITY FLORIDA INC",
+                  "grantees": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+                  "dos": "1999-03-24T00:00:00-05:00",
+                  "dos_yr": 1999,
+                  "price": 8000000,
+                  "vi": "I",
+                  "qu_flg": "U",
+                  "note": "",
+                  "rea_cd": "05",
+                  "dscr": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+                  "qsrc_cd": null,
+                  "adj_price": 0,
+                  "price_per_sqft": 37.46,
+                  "reset_flg": "N",
+                  "all_grantors": "PROPERTY SECURITY FLORIDA INC,",
+                  "all_grantees": null,
+                  "salesratio": 168.57,
+                  "X": 499766.960672,
+                  "Y": 1457469.66607,
+                  "CurrTaxYear": 2027
+                },
+                {
+                  "ID": 56148,
+                  "strap": "022528285000010010       ",
+                  "sale_id": 3,
+                  "ln_num": 3,
+                  "trns_cd": "SW",
+                  "trans_dscr": "SPECIAL WARRANTY DEED",
+                  "or_bk": "1143",
+                  "or_pg": "0907",
+                  "grantors": "OSCEOLA 104 ASSOC",
+                  "grantees": "PROPERTYSECURITY FLORIDA INC",
+                  "dos": "1992-12-31T00:00:00-05:00",
+                  "dos_yr": 1992,
+                  "price": 0,
+                  "vi": "V",
+                  "qu_flg": "U",
+                  "note": "",
+                  "rea_cd": "05",
+                  "dscr": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+                  "qsrc_cd": null,
+                  "adj_price": 0,
+                  "price_per_sqft": 0,
+                  "reset_flg": "N",
+                  "all_grantors": "OSCEOLA 104 ASSOC,",
+                  "all_grantees": null,
+                  "salesratio": null,
+                  "X": 499766.960672,
+                  "Y": 1457469.66607,
+                  "CurrTaxYear": 2027
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "LandBuildingExtraFeatures": {
+        "source_ids": [
+          "osceola_land",
+          "osceola_buildings",
+          "osceola_extras"
+        ],
+        "source_paths": [
+          "land.value",
+          "buildings.value",
+          "extras.value"
+        ],
+        "source_value": {
+          "land": {
+            "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Lnd_c",
+            "@odata.count": 1,
+            "value": [
+              {
+                "ID": 11696,
+                "strap": "022528285000010010       ",
+                "num": 1,
+                "land_type": "COMMERCIAL AC",
+                "uts": 24.549,
+                "dpth": 0,
+                "unit_type": "AC",
+                "val": 6991555
+              }
+            ],
+            "pages": [
+              {
+                "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Lnd_c",
+                "@odata.count": 1,
+                "value": [
+                  {
+                    "ID": 11696,
+                    "strap": "022528285000010010       ",
+                    "num": 1,
+                    "land_type": "COMMERCIAL AC",
+                    "uts": 24.549,
+                    "dpth": 0,
+                    "unit_type": "AC",
+                    "val": 6991555
+                  }
+                ]
+              }
+            ]
+          },
+          "buildings": {
+            "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Bld",
+            "@odata.count": 1,
+            "value": [
+              {
+                "ID": 11448,
+                "Strap": "022528285000010010",
+                "CardNumber": 1,
+                "Description": "DISCOUNT STORE",
+                "YearBuilt": 2005,
+                "BuildingValue": 5716741,
+                "BuildingSqFeet": 224581,
+                "HeatedSqFeet": 213543,
+                "Bedrooms": null,
+                "Bathrooms": null,
+                "HalfBathrooms": null,
+                "Fixtures": 45,
+                "LivingUnits": null,
+                "NonLivingUnits": null,
+                "RoofCover": null,
+                "ExteriorWall": null,
+                "Photo": "\\\\pa-svr-doc\\Isynergy\\Repository\\Homestead Exemption\\_obj_3_D3722\\_obj_3_D3722_462.JPG",
+                "Sketch": "BAS 2005 <1>  (199541 P2062) $   BAS 2015 <1>  (5000 P324) $   GRF 2005 <1>  (3552 P266) $   OPF 2005 <1>  (1848 P222) $   EPF 2005 <1>  (9002 P548) $   OPU 2005 <1>  (4080 P262) $   OPF 2005 <1>  (1508 P182) $   OPF 2005 <1>  (50 P54) $   . "
+              }
+            ],
+            "pages": [
+              {
+                "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Bld",
+                "@odata.count": 1,
+                "value": [
+                  {
+                    "ID": 11448,
+                    "Strap": "022528285000010010",
+                    "CardNumber": 1,
+                    "Description": "DISCOUNT STORE",
+                    "YearBuilt": 2005,
+                    "BuildingValue": 5716741,
+                    "BuildingSqFeet": 224581,
+                    "HeatedSqFeet": 213543,
+                    "Bedrooms": null,
+                    "Bathrooms": null,
+                    "HalfBathrooms": null,
+                    "Fixtures": 45,
+                    "LivingUnits": null,
+                    "NonLivingUnits": null,
+                    "RoofCover": null,
+                    "ExteriorWall": null,
+                    "Photo": "\\\\pa-svr-doc\\Isynergy\\Repository\\Homestead Exemption\\_obj_3_D3722\\_obj_3_D3722_462.JPG",
+                    "Sketch": "BAS 2005 <1>  (199541 P2062) $   BAS 2015 <1>  (5000 P324) $   GRF 2005 <1>  (3552 P266) $   OPF 2005 <1>  (1848 P222) $   EPF 2005 <1>  (9002 P548) $   OPU 2005 <1>  (4080 P262) $   OPF 2005 <1>  (1508 P182) $   OPF 2005 <1>  (50 P54) $   . "
+                  }
+                ]
+              }
+            ]
+          },
+          "extras": {
+            "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#xfob",
+            "@odata.count": 17,
+            "value": [
+              {
+                "ID": 18861,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-ASPHALT PAVING PER PARKING SPACE AVERAG",
+                "units": 994,
+                "yr_blt": 2005,
+                "asd_val": 342400,
+                "ln_num": 1
+              },
+              {
+                "ID": 18862,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE PAVEMENT AVERAGE",
+                "units": 35266,
+                "yr_blt": 2005,
+                "asd_val": 52300,
+                "ln_num": 2
+              },
+              {
+                "ID": 18863,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                "units": 48950,
+                "yr_blt": 2014,
+                "asd_val": 205600,
+                "ln_num": 3
+              },
+              {
+                "ID": 18864,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                "units": 572,
+                "yr_blt": 2005,
+                "asd_val": 1900,
+                "ln_num": 4
+              },
+              {
+                "ID": 18865,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                "units": 2385,
+                "yr_blt": 2005,
+                "asd_val": 7800,
+                "ln_num": 5
+              },
+              {
+                "ID": 18866,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                "units": 1800,
+                "yr_blt": 2005,
+                "asd_val": 5800,
+                "ln_num": 6
+              },
+              {
+                "ID": 18867,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CHAIN LINK FENCE-8 FT HIGH GOOD",
+                "units": 230,
+                "yr_blt": 2005,
+                "asd_val": 800,
+                "ln_num": 7
+              },
+              {
+                "ID": 18868,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-LOADWELL GOOD",
+                "units": 9240,
+                "yr_blt": 2005,
+                "asd_val": 60100,
+                "ln_num": 8
+              },
+              {
+                "ID": 18869,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-ASPHALT PAVEMENT WITH CURBING AVERAGE",
+                "units": 41769,
+                "yr_blt": 2005,
+                "asd_val": 33900,
+                "ln_num": 9
+              },
+              {
+                "ID": 18870,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-LIGHTS EXCELLENT",
+                "units": 5,
+                "yr_blt": 2005,
+                "asd_val": 5000,
+                "ln_num": 10
+              },
+              {
+                "ID": 18871,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-LIGHTS GOOD",
+                "units": 25,
+                "yr_blt": 2005,
+                "asd_val": 20200,
+                "ln_num": 11
+              },
+              {
+                "ID": 18872,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-LIGHTS AVERAGE",
+                "units": 6,
+                "yr_blt": 2005,
+                "asd_val": 3600,
+                "ln_num": 12
+              },
+              {
+                "ID": 18873,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+                "units": 9106,
+                "yr_blt": 2005,
+                "asd_val": 15000,
+                "ln_num": 13
+              },
+              {
+                "ID": 18874,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+                "units": 4080,
+                "yr_blt": 2005,
+                "asd_val": 6700,
+                "ln_num": 14
+              },
+              {
+                "ID": 18875,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+                "units": 9106,
+                "yr_blt": 2005,
+                "asd_val": 10000,
+                "ln_num": 15
+              },
+              {
+                "ID": 18876,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+                "units": 4080,
+                "yr_blt": 2005,
+                "asd_val": 4500,
+                "ln_num": 16
+              },
+              {
+                "ID": 18877,
+                "strap": "022528285000010010       ",
+                "l_dscr": "COMMERCIAL-CHAIN LINK FENCE-10 FT HIGH GOOD",
+                "units": 468,
+                "yr_blt": 2005,
+                "asd_val": 1900,
+                "ln_num": 17
+              }
+            ],
+            "pages": [
+              {
+                "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#xfob",
+                "@odata.count": 17,
+                "value": [
+                  {
+                    "ID": 18861,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-ASPHALT PAVING PER PARKING SPACE AVERAG",
+                    "units": 994,
+                    "yr_blt": 2005,
+                    "asd_val": 342400,
+                    "ln_num": 1
+                  },
+                  {
+                    "ID": 18862,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE PAVEMENT AVERAGE",
+                    "units": 35266,
+                    "yr_blt": 2005,
+                    "asd_val": 52300,
+                    "ln_num": 2
+                  },
+                  {
+                    "ID": 18863,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                    "units": 48950,
+                    "yr_blt": 2014,
+                    "asd_val": 205600,
+                    "ln_num": 3
+                  },
+                  {
+                    "ID": 18864,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                    "units": 572,
+                    "yr_blt": 2005,
+                    "asd_val": 1900,
+                    "ln_num": 4
+                  },
+                  {
+                    "ID": 18865,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                    "units": 2385,
+                    "yr_blt": 2005,
+                    "asd_val": 7800,
+                    "ln_num": 5
+                  },
+                  {
+                    "ID": 18866,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE/CONCRETE BLOCK WALL AVG",
+                    "units": 1800,
+                    "yr_blt": 2005,
+                    "asd_val": 5800,
+                    "ln_num": 6
+                  },
+                  {
+                    "ID": 18867,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CHAIN LINK FENCE-8 FT HIGH GOOD",
+                    "units": 230,
+                    "yr_blt": 2005,
+                    "asd_val": 800,
+                    "ln_num": 7
+                  },
+                  {
+                    "ID": 18868,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-LOADWELL GOOD",
+                    "units": 9240,
+                    "yr_blt": 2005,
+                    "asd_val": 60100,
+                    "ln_num": 8
+                  },
+                  {
+                    "ID": 18869,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-ASPHALT PAVEMENT WITH CURBING AVERAGE",
+                    "units": 41769,
+                    "yr_blt": 2005,
+                    "asd_val": 33900,
+                    "ln_num": 9
+                  },
+                  {
+                    "ID": 18870,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-LIGHTS EXCELLENT",
+                    "units": 5,
+                    "yr_blt": 2005,
+                    "asd_val": 5000,
+                    "ln_num": 10
+                  },
+                  {
+                    "ID": 18871,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-LIGHTS GOOD",
+                    "units": 25,
+                    "yr_blt": 2005,
+                    "asd_val": 20200,
+                    "ln_num": 11
+                  },
+                  {
+                    "ID": 18872,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-LIGHTS AVERAGE",
+                    "units": 6,
+                    "yr_blt": 2005,
+                    "asd_val": 3600,
+                    "ln_num": 12
+                  },
+                  {
+                    "ID": 18873,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+                    "units": 9106,
+                    "yr_blt": 2005,
+                    "asd_val": 15000,
+                    "ln_num": 13
+                  },
+                  {
+                    "ID": 18874,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CONCRETE PAD/PATIO AVERAGE",
+                    "units": 4080,
+                    "yr_blt": 2005,
+                    "asd_val": 6700,
+                    "ln_num": 14
+                  },
+                  {
+                    "ID": 18875,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+                    "units": 9106,
+                    "yr_blt": 2005,
+                    "asd_val": 10000,
+                    "ln_num": 15
+                  },
+                  {
+                    "ID": 18876,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-GREENHSE-PLASTIC COVER/METAL FRM GOOD",
+                    "units": 4080,
+                    "yr_blt": 2005,
+                    "asd_val": 4500,
+                    "ln_num": 16
+                  },
+                  {
+                    "ID": 18877,
+                    "strap": "022528285000010010       ",
+                    "l_dscr": "COMMERCIAL-CHAIN LINK FENCE-10 FT HIGH GOOD",
+                    "units": 468,
+                    "yr_blt": 2005,
+                    "asd_val": 1900,
+                    "ln_num": 17
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "PropertyInformation.ownerOccupied": {
+        "source_id": "osceola_address_search",
+        "source_value": null,
+        "missing_reason": "SOURCE_FIELD_UNAVAILABLE"
+      },
+      "PropertyInformation.PrimaryZone": {
+        "source_id": "osceola_address_search",
+        "source_value": null,
+        "missing_reason": "SOURCE_FIELD_UNAVAILABLE"
+      },
+      "PropertyInformation.BedsBathsHalf": {
+        "source_id": "osceola_address_search",
+        "source_value": null,
+        "missing_reason": "SOURCE_FIELD_UNAVAILABLE"
+      },
+      "PropertyInformation.Floors": {
+        "source_id": "osceola_address_search",
+        "source_value": null,
+        "missing_reason": "SOURCE_FIELD_UNAVAILABLE"
+      },
+      "PropertyInformation.AdjustedArea": {
+        "source_id": "osceola_address_search",
+        "source_value": null,
+        "missing_reason": "SOURCE_FIELD_UNAVAILABLE"
+      },
+      "PropertyInformation.LotSize": {
+        "source_id": "osceola_address_search",
+        "source_value": null,
+        "missing_reason": "SOURCE_FIELD_UNAVAILABLE"
+      },
+      "AccountHistory": {
+        "source_id": "tax_collector_browser",
+        "method": "county_history_html",
+        "source_scope": "PUBLIC_PUBLISHED_BILL_ROWS",
+        "published_history_coverage": "COMPLETE"
+      },
+      "BillDetails.taxYear": {
+        "page": 1,
+        "text": "2025",
+        "x": 556.86,
+        "y": 765.65,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "BillDetails.folio": {
+        "page": 1,
+        "text": "R022528-285000010010",
+        "x": 58.71,
+        "y": 737.88,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "BillDetails.paidDate": {
+        "page": 1,
+        "text": "11/18/2025",
+        "x": 384.75,
+        "y": 47.71,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "BillDetails.paidAmount": {
+        "page": 1,
+        "text": "$273,974.06",
+        "x": 547.34,
+        "y": 47.79,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "BillDetails.millCode": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "300",
+        "x": 540.65,
+        "y": 738.43
+      },
+      "BillDetails.paidBy": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "WALMART INC (PT)",
+        "x": 391.92,
+        "y": 29.94
+      },
+      "BillDetails.receiptNumber": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "121702900",
+        "x": 476.72,
+        "y": 48.2
+      },
+      "authority_table_headings": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "note": "Printed table headings without numeric tax cells; retained as context, not invented tax rows.",
+        "items": [
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "SCH LOCAL BD",
+            "x": 23.65,
+            "y": 538.24
+          }
+        ]
+      },
+      "AdValoremMillage[0].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "OSCEOLA CO",
+        "x": 23.65,
+        "y": 583.66
+      },
+      "AdValoremMillage[0].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 583.66
+      },
+      "AdValoremMillage[0].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 583.66
+      },
+      "AdValoremMillage[0].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 583.66
+      },
+      "AdValoremMillage[0].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "6.7000",
+        "x": 273.38,
+        "y": 583.66
+      },
+      "AdValoremMillage[0].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "91,433.56",
+        "x": 555.95,
+        "y": 583.66
+      },
+      "AdValoremMillage[1].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "SAVE OSC MAN",
+        "x": 23.65,
+        "y": 572.3
+      },
+      "AdValoremMillage[1].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 572.33
+      },
+      "AdValoremMillage[1].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 572.33
+      },
+      "AdValoremMillage[1].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 572.31
+      },
+      "AdValoremMillage[1].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.2500",
+        "x": 273.38,
+        "y": 572.3
+      },
+      "AdValoremMillage[1].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "3,411.70",
+        "x": 559.95,
+        "y": 572.3
+      },
+      "AdValoremMillage[2].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "EMER MED SRV",
+        "x": 23.65,
+        "y": 560.95
+      },
+      "AdValoremMillage[2].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 560.99
+      },
+      "AdValoremMillage[2].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 561
+      },
+      "AdValoremMillage[2].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 560.97
+      },
+      "AdValoremMillage[2].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "1.0682",
+        "x": 273.38,
+        "y": 560.95
+      },
+      "AdValoremMillage[2].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "14,577.51",
+        "x": 555.95,
+        "y": 560.95
+      },
+      "AdValoremMillage[3].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "SCH STATE LW",
+        "x": 23.65,
+        "y": 549.6
+      },
+      "AdValoremMillage[3].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 549.66
+      },
+      "AdValoremMillage[3].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 549.66
+      },
+      "AdValoremMillage[3].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 549.63
+      },
+      "AdValoremMillage[3].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "3.0580",
+        "x": 273.38,
+        "y": 549.6
+      },
+      "AdValoremMillage[3].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "41,731.91",
+        "x": 555.95,
+        "y": 549.6
+      },
+      "AdValoremMillage[4].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "CAPITAL OUTLAY",
+        "x": 23.65,
+        "y": 526.89
+      },
+      "AdValoremMillage[4].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 527
+      },
+      "AdValoremMillage[4].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 527
+      },
+      "AdValoremMillage[4].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 526.94
+      },
+      "AdValoremMillage[4].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "1.5000",
+        "x": 273.38,
+        "y": 526.89
+      },
+      "AdValoremMillage[4].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "20,470.20",
+        "x": 555.95,
+        "y": 526.89
+      },
+      "AdValoremMillage[5].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "DISCRETIONARY",
+        "x": 23.65,
+        "y": 515.54
+      },
+      "AdValoremMillage[5].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 515.67
+      },
+      "AdValoremMillage[5].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 515.67
+      },
+      "AdValoremMillage[5].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 515.59
+      },
+      "AdValoremMillage[5].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.7480",
+        "x": 273.38,
+        "y": 515.54
+      },
+      "AdValoremMillage[5].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "10,207.81",
+        "x": 555.95,
+        "y": 515.54
+      },
+      "AdValoremMillage[6].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "SFWMD EVERG",
+        "x": 23.65,
+        "y": 504.18
+      },
+      "AdValoremMillage[6].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 504.34
+      },
+      "AdValoremMillage[6].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 504.34
+      },
+      "AdValoremMillage[6].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 504.25
+      },
+      "AdValoremMillage[6].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.0327",
+        "x": 273.38,
+        "y": 504.18
+      },
+      "AdValoremMillage[6].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "446.25",
+        "x": 565.95,
+        "y": 504.18
+      },
+      "AdValoremMillage[7].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "SO FL WATER",
+        "x": 23.65,
+        "y": 492.83
+      },
+      "AdValoremMillage[7].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 493.01
+      },
+      "AdValoremMillage[7].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 493.01
+      },
+      "AdValoremMillage[7].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 492.91
+      },
+      "AdValoremMillage[7].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.0948",
+        "x": 273.38,
+        "y": 492.83
+      },
+      "AdValoremMillage[7].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "1,293.72",
+        "x": 559.95,
+        "y": 492.83
+      },
+      "AdValoremMillage[8].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "SFWMD OKEE",
+        "x": 23.65,
+        "y": 481.48
+      },
+      "AdValoremMillage[8].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 481.68
+      },
+      "AdValoremMillage[8].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 481.68
+      },
+      "AdValoremMillage[8].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 481.57
+      },
+      "AdValoremMillage[8].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.1026",
+        "x": 273.38,
+        "y": 481.48
+      },
+      "AdValoremMillage[8].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "1,400.16",
+        "x": 559.95,
+        "y": 481.48
+      },
+      "AdValoremMillage[9].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "LIBRARY DIST",
+        "x": 23.65,
+        "y": 470.12
+      },
+      "AdValoremMillage[9].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 470.35
+      },
+      "AdValoremMillage[9].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 470.35
+      },
+      "AdValoremMillage[9].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 470.22
+      },
+      "AdValoremMillage[9].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.3000",
+        "x": 273.38,
+        "y": 470.12
+      },
+      "AdValoremMillage[9].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "4,094.04",
+        "x": 559.95,
+        "y": 470.12
+      },
+      "AdValoremMillage[10].authority": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "SAVE OSC DBT",
+        "x": 23.65,
+        "y": 458.77
+      },
+      "AdValoremMillage[10].assessedValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 334.22,
+        "y": 459.01
+      },
+      "AdValoremMillage[10].exemptionValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0",
+        "x": 449.89,
+        "y": 459.01
+      },
+      "AdValoremMillage[10].taxableValue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13,646,800",
+        "x": 485.96,
+        "y": 458.88
+      },
+      "AdValoremMillage[10].millage": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.0000",
+        "x": 273.38,
+        "y": 458.77
+      },
+      "AdValoremMillage[10].taxesLevied": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0.00",
+        "x": 573.95,
+        "y": 458.77
+      },
+      "NonAdValorem[0]": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "items": [
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "Fire Rescue Commercial Sq Ft",
+            "x": 23.38,
+            "y": 378.73
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "407-742-1800",
+            "x": 191.07,
+            "y": 378.82
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "@ 0.4289",
+            "x": 303.72,
+            "y": 378.73
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "96,322.79",
+            "x": 494.44,
+            "y": 379.17
+          }
+        ]
+      },
+      "TaxAmounts.adValorem": {
+        "source_id": "receipt_pdf",
+        "method": "derived_decimal_calculation",
+        "formula": "Sum of printed authority taxesLevied",
+        "inputs": [
+          "AdValoremMillage[0].taxesLevied",
+          "AdValoremMillage[1].taxesLevied",
+          "AdValoremMillage[2].taxesLevied",
+          "AdValoremMillage[3].taxesLevied",
+          "AdValoremMillage[4].taxesLevied",
+          "AdValoremMillage[5].taxesLevied",
+          "AdValoremMillage[6].taxesLevied",
+          "AdValoremMillage[7].taxesLevied",
+          "AdValoremMillage[8].taxesLevied",
+          "AdValoremMillage[9].taxesLevied",
+          "AdValoremMillage[10].taxesLevied"
+        ]
+      },
+      "TaxAmounts.nonAdValorem": {
+        "source_id": "receipt_pdf",
+        "method": "derived_decimal_calculation",
+        "formula": "Sum of printed non-ad valorem amounts",
+        "inputs": [
+          "NonAdValorem[0].amount"
+        ]
+      },
+      "TaxAmounts.totalTax": {
+        "page": 1,
+        "text": "$285,389.65",
+        "x": 216.05,
+        "y": 270.68,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "PaymentDetails.combinedTaxesAndAssessments": {
+        "page": 1,
+        "text": "$285,389.65",
+        "x": 216.05,
+        "y": 270.68,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "ParcelDetails.millageRate": {
+        "source_id": "receipt_pdf",
+        "method": "derived_decimal_calculation",
+        "formula": "Sum of printed authority millage rates",
+        "inputs": [
+          "AdValoremMillage[0].millage",
+          "AdValoremMillage[1].millage",
+          "AdValoremMillage[2].millage",
+          "AdValoremMillage[3].millage",
+          "AdValoremMillage[4].millage",
+          "AdValoremMillage[5].millage",
+          "AdValoremMillage[6].millage",
+          "AdValoremMillage[7].millage",
+          "AdValoremMillage[8].millage",
+          "AdValoremMillage[9].millage",
+          "AdValoremMillage[10].millage"
+        ]
+      },
+      "PaymentDetails.PaymentSchedule[0]": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "items": [
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "Nov 30, 2025",
+            "x": 124.29,
+            "y": 252.8
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "$0.00",
+            "x": 124.54,
+            "y": 242.55
+          }
+        ]
+      },
+      "PaymentDetails.discountNote": {
+        "source_id": "receipt_pdf",
+        "method": "derived_decimal_calculation",
+        "formula": "Printed combined tax total minus printed receipt payment",
+        "inputs": [
+          "TaxAmounts.totalTax",
+          "BillDetails.paidAmount"
+        ]
+      },
+      "validation.printedAdValoremTotal": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "$189,066.86",
+        "x": 547.03,
+        "y": 424.37
+      },
+      "validation.printedNonAdValoremTotal": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "$96,322.79",
+        "x": 490.5,
+        "y": 289.78
+      },
+      "validation.printedMillageRate": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "13.8543",
+        "x": 269.36,
+        "y": 423.16
+      },
+      "original_annual_bill": {
+        "source_id": "receipt_pdf",
+        "source_url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7/print",
+        "sha256": "472dea39f0d24ef16030c2b56cce97645c6f9c585981e680d6d9af1c5e605523",
+        "format": "PDF"
+      }
+    }
+  }
+}

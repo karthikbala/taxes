@@ -1,0 +1,14 @@
+{
+  "fixture_scope": "Historical authoritative original HTML; not current live proof",
+  "captured_date": "2026-10-06",
+  "source_url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+  "source_method": "POST resolved native collector bill identity",
+  "parcel": "04708-0-00200",
+  "bill_number": "1209500",
+  "tax_year": "2025",
+  "authority_count": 5,
+  "unique_annual_year_count": 14,
+  "annual_years": "2012–2025",
+  "source_duplicate": "2025 appears twice with identical values",
+  "limitations": ["Original HTML only; no original PDF exposed", "No complete published year scope", "Certificate and tax deed sections not captured", "Fractional rates preserved exactly; no mills conversion"]
+}

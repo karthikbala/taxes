@@ -1,0 +1,452 @@
+{
+  "propertyDetail": {
+    "Location": "600 OKEECHOBEE BLVD ",
+    "Municipality": "WEST PALM BEACH",
+    "PCN": "74434321170020000",
+    "Subdivision": "CITYPLACE PL 2",
+    "Book": "18513",
+    "Page": "1068",
+    "SaleDate": "04/29/2005",
+    "LegalDesc": " CITYPLACE PL 2  TR 2 & PT OF FLORIDA AVE VACATED PER OR15621P1673  ",
+    "AddressLine1": "PREM DIVISION C/O 2633 VISTA PKWY",
+    "AddressLine2": "   ",
+    "AddressLine3": "WEST PALM BEACH FL 33411 5613",
+    "ConfidentialFlag": "N",
+    "TaxYear": "2027",
+    "OwnerName": "PALM BEACH COUNTY",
+    "Units": "400",
+    "Acres": "3.43",
+    "SqFt": "310506",
+    "UseCode": "8600",
+    "UseCodeDesc": "CITY INC NONMUNI",
+    "Zoning": "CPD",
+    "ZoningDesc": "COMMERCIAL PLANNED DEV ",
+    "ZoningCity": "WEST PALM BEACH",
+    "ZoningCityDesc": "74-WEST PALM BEACH",
+    "ZipCode": null,
+    "FormattedPCN": "74-43-43-21-17-002-0000",
+    "DetailYr": "2026",
+    "PropertyRecordCard": "N",
+    "ShowTaxCalc": "Y",
+    "AdrChngFlag": "Y",
+    "PreliminaryValue": "Y",
+    "PropertyType": "I",
+    "TaxNoticeYear": "2026",
+    "TrimFlag": "Y",
+    "PropertyDamageFlag": null
+  },
+  "TangpropertyDetail": null,
+  "ownerInfo": [
+    "PALM BEACH COUNTY"
+  ],
+  "salesInfo": [
+    {
+      "SaleDate": "04/29/2005",
+      "Price": "0",
+      "Book": "18513",
+      "Page": "01068",
+      "SaleType": "WARRANTY DEED",
+      "OwnerName": "PALM BEACH COUNTY",
+      "ConfidentialFlag": "N",
+      "NoSalesInfo": null
+    }
+  ],
+  "assessmentInfo": [
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "78770900",
+      "AssessedValue": "78770900",
+      "PenaltyAmount": null,
+      "TaxYear": "2026"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "71609909",
+      "AssessedValue": "71609909",
+      "PenaltyAmount": null,
+      "TaxYear": "2025"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "65099917",
+      "AssessedValue": "65099917",
+      "PenaltyAmount": null,
+      "TaxYear": "2024"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "59181743",
+      "AssessedValue": "59181743",
+      "PenaltyAmount": null,
+      "TaxYear": "2023"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "53690860",
+      "AssessedValue": "53690860",
+      "PenaltyAmount": null,
+      "TaxYear": "2022"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "48731364",
+      "AssessedValue": "48731364",
+      "PenaltyAmount": null,
+      "TaxYear": "2021"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "64891394",
+      "AssessedValue": "64891394",
+      "PenaltyAmount": null,
+      "TaxYear": "2020"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "67648453",
+      "AssessedValue": "67648453",
+      "PenaltyAmount": null,
+      "TaxYear": "2019"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "66924219",
+      "AssessedValue": "66924219",
+      "PenaltyAmount": null,
+      "TaxYear": "2018"
+    },
+    {
+      "TaxableValue": "0",
+      "ExemptionAmount": "62412656",
+      "AssessedValue": "62412656",
+      "PenaltyAmount": null,
+      "TaxYear": "2017"
+    }
+  ],
+  "appraisalInfo": [
+    {
+      "TaxYear": "2026",
+      "ImprovementValue": "69314781",
+      "LandValue": "20000000",
+      "TotalMarketValue": "89314781",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2025",
+      "ImprovementValue": "61170827",
+      "LandValue": "14944600",
+      "TotalMarketValue": "76115427",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2024",
+      "ImprovementValue": "61853442",
+      "LandValue": "14944600",
+      "TotalMarketValue": "76798042",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2023",
+      "ImprovementValue": "53060748",
+      "LandValue": "14944600",
+      "TotalMarketValue": "68005348",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2022",
+      "ImprovementValue": "54079680",
+      "LandValue": "13683276",
+      "TotalMarketValue": "67762956",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2021",
+      "ImprovementValue": "36999853",
+      "LandValue": "11731511",
+      "TotalMarketValue": "48731364",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2020",
+      "ImprovementValue": "53210695",
+      "LandValue": "11680699",
+      "TotalMarketValue": "64891394",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2019",
+      "ImprovementValue": "56523693",
+      "LandValue": "11124760",
+      "TotalMarketValue": "67648453",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2018",
+      "ImprovementValue": "56123757",
+      "LandValue": "10800462",
+      "TotalMarketValue": "66924219",
+      "JustValue": null,
+      "PercentDiff": null
+    },
+    {
+      "TaxYear": "2017",
+      "ImprovementValue": "52126288",
+      "LandValue": "10286368",
+      "TotalMarketValue": "62412656",
+      "JustValue": null,
+      "PercentDiff": null
+    }
+  ],
+  "taxInfo": [
+    {
+      "TaxYear": "2026",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2025",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2024",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2023",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2022",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2021",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2020",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2019",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    },
+    {
+      "TaxYear": "2018",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "69368",
+      "TotalTaxValue": "69368"
+    },
+    {
+      "TaxYear": "2017",
+      "AdValoremTax": "0",
+      "NonAdValoremTax": "0",
+      "TotalTaxValue": "0"
+    }
+  ],
+  "exemptionInfo": [
+    {
+      "SOHBaseYear": "0",
+      "SOHFlag": "N",
+      "ExemptionYear": null,
+      "Description": "",
+      "Status": "",
+      "TaxYear": "2026",
+      "ApplicantName": "",
+      "Message": null
+    }
+  ],
+  "extraDetails": [
+    {
+      "FeatureUnits": "1",
+      "Description": "Commercial Fountain",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "5950",
+      "Description": "Paving- Asphalt",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "1880",
+      "Description": "Fence- Wrought Iron",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "4775",
+      "Description": "Walkway-Concrete",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "1530",
+      "Description": "Wall",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "4284",
+      "Description": "Paving- Asphalt",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "4160",
+      "Description": "Swimming Pool Commercial",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "1",
+      "Description": "Spa",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "10790",
+      "Description": "Patio",
+      "YrBuilt": "2016"
+    },
+    {
+      "FeatureUnits": "8213",
+      "Description": "Walkway-Concrete",
+      "YrBuilt": "2016"
+    }
+  ],
+  "landDetails": [
+    {
+      "LandLine": "1",
+      "Description": "COMMERCIAL",
+      "Front": "0",
+      "Depth": "0",
+      "Zoning": "CPD",
+      "Acres": "3.4308",
+      "Units": "400",
+      "SqFt": "149446",
+      "Type": "U"
+    }
+  ],
+  "structuralDetails": {
+    "BuildingNumbers": [
+      "1"
+    ],
+    "StructuralElements": [
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Top",
+        "ElementName": "Year Built",
+        "ElementValue": "2016",
+        "ElementNumber": "51"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Top",
+        "ElementName": "HOTEL- HI RISE",
+        "ElementValue": "310506",
+        "ElementNumber": "52"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "BANQUET ROOM",
+        "ElementValue": "13940",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "BANQUET ROOM",
+        "ElementValue": "6344",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "HOTEL LOBBY",
+        "ElementValue": "2348",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "HOTEL HIGH RISE",
+        "ElementValue": "52966",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "HOTEL HIGH RISE",
+        "ElementValue": "21892",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "SUPPORT",
+        "ElementValue": "1189",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "HOTEL HIGH RISE",
+        "ElementValue": "151032",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "HOTEL HIGH RISE",
+        "ElementValue": "43389",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "HOTEL HIGH RISE",
+        "ElementValue": "17406",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "RESTOUTSEATING",
+        "ElementValue": "0",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "RESTOUTSEATING",
+        "ElementValue": "0",
+        "ElementNumber": "53"
+      },
+      {
+        "BuildingNumber": "1",
+        "DetailsSection": "Bottom",
+        "ElementName": "Total Square Footage",
+        "ElementValue": "310506",
+        "ElementNumber": "59"
+      }
+    ]
+  }
+}

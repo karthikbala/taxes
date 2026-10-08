@@ -1,0 +1,3 @@
+import {sqliteTable,text,integer} from 'drizzle-orm/sqlite-core';
+export const scrapeBudgets=sqliteTable('scrape_budgets',{id:text('id').primaryKey(),limitMilliUsd:integer('limit_milli_usd').notNull(),spentMilliUsd:integer('spent_milli_usd').notNull().default(0),reservedMilliUsd:integer('reserved_milli_usd').notNull().default(0)});
+export const browserRuns=sqliteTable('browser_runs',{id:text('id').primaryKey(),budgetId:text('budget_id').notNull(),county:text('county').notNull(),status:text('status').notNull(),reservedMilliUsd:integer('reserved_milli_usd').notNull(),credits:integer('credits'),spentMilliUsd:integer('spent_milli_usd'),createdAt:text('created_at').notNull(),completedAt:text('completed_at')});

@@ -1,0 +1,10 @@
+* text=auto
+*.mjs text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.md text eol=lf
+tests/fixtures/** -text
+*.pdf binary
+*.png binary
+*.jpg binary
+*.webp binary

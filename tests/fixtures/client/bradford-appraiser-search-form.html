@@ -1,0 +1,1624 @@
+
+<!DOCTYPE html>
+<html  lang="en">
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;chrome=1;" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- #in--clude virtual="_CountySpecific_inc.asp" -->
+
+<script type="text/javascript">  
+	
+var bIE = false;
+var bIE8 = false;
+var bIE10 = false;
+
+var bOpera = false;
+var bChrome = false;
+var bAndroid = false;
+var bIpad = false;
+var bMobile = false;
+var bNarrow = false;
+var cW = 768;
+var cH = 1024;
+var minScreenWidth = 1;
+
+
+
+if (document.all) {bIE = true;}
+
+var browser = navigator.userAgent;
+var location_pathName = location.pathname;
+
+//console.log('location_pathName=' + location_pathName + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+if (location_pathName.indexOf("gisSideMenu_3_Details") == -1) {
+
+
+		if (bIE) {
+		cW = document.documentElement.clientWidth;
+		cH = document.documentElement.clientHeight;
+		} 
+		else
+		{
+		cW = window.innerWidth;
+		cH = window.innerHeight;
+		} //if (bIE) {
+
+		if (cH < cW) {
+		minScreenWidth = cH;
+		} else {
+		minScreenWidth = cW;
+		}
+
+		if (minScreenWidth < 500) {
+		bNarrow = true;
+		}
+
+	//console.log('SET: cW=' + cW + '| cH=' + cH + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+} //if (location_pathName.indexOf("gisSideMenu_3_Details") == 0) {
+
+if (browser.indexOf('Opera') != -1) {bOpera = true;}
+if (browser.indexOf('Chrome') != -1) {bChrome = true;}
+if (browser.indexOf('MSIE 8.0') != -1) {bIE8 = true;}
+if (browser.indexOf('MSIE 10') != -1 || browser.indexOf('MSIE 7') != -1) {bIE10 = true;}
+if (browser.indexOf('Android') != -1) {bAndroid = true; bMobile = true;} 
+if (browser.indexOf('iPad') != -1 || browser.indexOf('iPhone') != -1) {bIpad = true; bMobile = true;}
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript"> 
+	
+    var serverName = location.hostname;
+    var strCounty = 'BradfordAppraiser'
+    var mapPath = '/www/_grizzly.gis/gis.BradfordAppraiser.com/';
+    var countyDomain = 'BradfordAppraiser.com';
+    var proxyURL = 'https://' + serverName + '/proxy/?'
+    
+    
+    var currentDomainTileServer_URL = 'https://' + serverName +  '/GIS_Server/'
+    var tileServerURL_array = ['https://www.bradfordappraiser.com/GIS_Server/'];
+    
+    var directMapserverURL = 'https://gz.floridapa.com/mapserver/'
+    
+
+</script>
+
+
+
+<style type="text/css">
+
+html, body {
+height:100%;
+	width:100%;
+    overflow:visible;
+    -webkit-overflow-scrolling: touch;
+	margin-top: 2px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: arial, sans-serif; 
+    font-size:14pt;
+    background: #D9D9CF;
+    min-height: 100%;
+  	margin:0px;
+ }
+  
+  
+a:link {color:black; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}
+a:visited {color:black; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}   
+a:hover {color:red; font-family:Georgia; font-size:10pt; font-weight:normal; text-decoration:none;}
+
+.tb8{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 8pt;}
+.tb8b{font-family:arial,sans-serif; font-weight: bold; color:black; font-size: 8pt;}            
+
+.tb7{
+font-family:arial,sans-serif; font-weight: normal; color:#1a1a1a; font-size: 7pt;
+background-color:#E8E8E8;
+}
+
+.tb6{font-family:arial,sans-serif; font-weight: normal; color:black; font-size: 6pt;}
+
+
+#wrapper{
+top:0px;
+left:0px;
+width:100%;
+height:100%;
+overflow:hidden;
+border-color:#00FF00; 
+border-width:0px; 
+border-style:solid;
+}
+
+
+
+.outlineRadius {
+border-radius: 3px;
+margin: 0px; 
+padding: 0px;
+border: 1px solid #7f7f7f;
+background: #E8E8E8;
+}
+
+.shadow {
+border-radius: 3px;
+-moz-box-shadow: 2px 2px 5px #303030;
+-webkit-box-shadow: 2px 2px 5px #303030;
+box-shadow: 2px 2px 5px #303030;
+border-top:outset 1px #7f7f7f;
+border-left:outset 1px #7f7f7f;
+border-bottom:outset 2px #a1a1a1;
+border-right:outset 2px #a1a1a1;
+}
+
+
+.submit:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+.submit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #050505;
+	padding: 2px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+.submitSmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	color: #050505;
+	padding: 1px 5px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+
+.recordsearchTable {
+font-family: arial;
+font-size: 10pt; 
+border-radius: 5px;
+background-color:#D9D9CF;
+}
+
+.recordsearchInsideTable {
+font-family: arial;
+font-size: 10pt; 
+border-radius: 6px;
+background-color:#E8E8E8; //tab_color_on
+}
+
+.recordsearchFormInput{
+font-family: arial;
+font-size: 10pt; 
+}
+
+.formInput {
+font-family: arial;
+font-size: 12pt;
+}
+
+
+.salesReportTable {
+font-family: arial;
+font-size: 8pt; 
+}
+
+#TaxPAsearchForm {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+}
+     
+
+input, input:before, input:after {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+     } 
+
+
+
+
+
+#div_login{
+position:absolute; 
+top:0px;
+left:0px; 
+width:100%;
+height:100%;
+visibility:hidden; 
+display:none;
+z-index:9;
+background-color:#7a7a7a;
+opacity:0.5;
+filter:alpha(opacity=50);
+}
+
+#div_Alert_OnLoad {
+position:absolute; 
+left: 35%;
+top: 25%;
+transform: translate(-50%, -50%);
+width: 80%;
+max-width: 325px;
+height: auto;
+max-height:475px;
+visibility: hidden;
+z-index: 1500;
+font-family: Tahoma;
+font-size: 9pt; 
+background-color: #B9B9AF;
+border-color:#B9B9AF; 
+border-width:3; 
+border-style:solid;
+overflow : auto;
+border-bottom:outset 3px #aeaeae;
+border-right:outset 3px #aeaeae;
+}
+
+
+
+</style>
+
+
+
+<script type="text/javascript" language="javascript">
+
+
+function ClearSearch() {
+
+
+if(obj = document.TaxPASearch.OwnerName) obj.value = "";
+
+if(obj = document.TaxPASearch.HouseNumber) obj.value = "";
+if (obj = document.TaxPASearch.StreetName) obj.value = "";
+if (obj = document.TaxPASearch.StreetType) obj.selectedIndex = 0;
+if (obj = document.TaxPASearch.StreetDir) obj.selectedIndex = 0;
+
+if (obj = document.TaxPASearch.PIN) obj.value = "";
+if (obj = document.TaxPASearch.Parcel_Key) obj.value = "";
+
+if (obj = document.TaxPASearch.XFOBcode) obj.value = "";
+if (obj = document.TaxPASearch.BldgType) obj.value = "";
+if (obj = document.TaxPASearch.SUBD) obj.value = "";
+if (obj = document.TaxPASearch.LOT) obj.value = "";
+if (obj = document.TaxPASearch.BLOCK) obj.value = "";
+if (obj = document.TaxPASearch.LEGAL) obj.value = "";
+if (obj = document.TaxPASearch.Acre_GT) obj.value = "";
+if (obj = document.TaxPASearch.Acre_GT) obj.value = "";
+
+if (obj = document.TaxPASearch.SaleDateFrom) obj.value = "";
+if (obj = document.TaxPASearch.SaleDateTo) obj.value = "";
+if (obj = document.TaxPASearch.SalePriceFrom) obj.value = "";
+if (obj = document.TaxPASearch.SalePriceTo) obj.value = "";
+if (obj = document.TaxPASearch.SaleBook) obj.value= "";
+if (obj = document.TaxPASearch.SalePage) obj.value = "";
+
+if (obj = document.TaxPASearch.Sale_Vimp) obj.selectedIndex = 0;
+if (obj = document.TaxPASearch.Sale_Qual) obj.checked = false;
+if (obj = document.TaxPASearch.LastSaleOnly) obj.checked = false;
+
+if (obj = document.TaxPASearch.Section) obj.selectedIndex = 0;
+if (obj = document.TaxPASearch.Township) obj.selectedIndex = 0;
+if (obj = document.TaxPASearch.Range) obj.selectedIndex = 0;
+if (obj = document.TaxPASearch.Use_Code) obj.selectedIndex = 0;
+
+if (obj = document.TaxPASearch.HeatedSF_From) obj.value = "";
+if (obj = document.TaxPASearch.HeatedSF_To) obj.value = "";
+if (obj = document.TaxPASearch.YearBuilt_From) obj.value = "";
+if (obj = document.TaxPASearch.YearBuilt_To) obj.value = "";
+
+if (obj=document.TaxPASearch.OwnerName) obj.focus();
+return false;
+}
+
+function ReloadSearchMenu_Tab1(inMenu) {
+	if (top.S_Top.document.S_TopForm.S_TopMenu.value != inMenu) {
+	top.S_Top.document.S_TopForm.S_TopMenu.value = inMenu;
+	top.S_Top.document.images['tab2'].src = "./images/SearchMenu_2_off.gif"
+	top.S_Top.document.images['tab3'].src = "./images/SearchMenu_3_off.gif"
+	top.S_Top.document.images['tab4'].src = "./images/SearchMenu_4_off.gif"
+	top.S_Top.document.images['tab1'].src = "./images/SearchMenu_1_on.gif"
+	}
+}
+
+
+function CheckSaleYear() {
+
+if (document.TaxPASearch.SaleReport_Year[5].checked) {
+document.TaxPASearch.SaleReport_Year[5].value = document.TaxPASearch.SaleReport_Year_text.value
+}
+} //function CheckSaleYear() {
+
+
+function AlertOnLoad() {
+document.getElementById('div_login').style.display = 'block'
+window.setTimeout("document.getElementById('div_login').style.visibility = 'visible'", 100);
+document.getElementById("div_Alert_OnLoad").style.visibility = 'visible';
+}
+
+function close_AlertOnLoad() {
+document.getElementById("div_Alert_OnLoad").style.visibility = 'hidden';
+document.getElementById('div_login').style.display = 'none'
+document.getElementById("div_login").style.visibility = 'hidden';
+}
+
+
+
+function OpenSubdWindow() {
+var Win1 = window.open("./showSubdCodes/?sortBy=2", "", "menubar=0,toolbar=0,scrollbars=1,resizable=1,width=400,height=500");
+}
+
+function OpenBldgTypeWindow() {
+var Win1 = window.open("./showBuildingCodes/?sortBy=1", "", "menubar=0,toolbar=0,scrollbars=1,resizable=1,width=350,height=500");
+}
+
+
+function OpenXFOBWindow() {
+var Win1 = window.open("./showXFOBCodes/?sortBy=1", "", "menubar=0,toolbar=0,scrollbars=1,resizable=1,width=350,height=500");
+}
+
+
+function hideSideBarMenu() {
+document.getElementById("sbMenu").style.display = 'none';
+}
+
+
+
+function submitRecordSearch(inForm) {
+document.activeElement.blur();
+parent.showDivLoading(true);
+}
+
+
+
+
+function SetWindowWidth(inW, inH) {
+
+	if (inW == '' || inH == '') {
+
+		if (document.all) {
+		inW = document.body.clientWidth;
+		inH = document.body.clientHeight;
+		}
+		else {
+		inW=window.innerWidth;
+		inH=window.innerHeight;
+		}
+	} //if
+document.TaxPASearch.clientWidth.value	= inW
+document.TaxPASearch.clientHeight.value = inH
+
+} //func
+
+
+var timerVar;
+
+function iFrameHeightDelay() {
+clearTimeout(timerVar);
+timerVar = setTimeout("iFrameHeight()", 50); 
+}
+
+
+
+function iFrameHeight() {
+
+if (bIE) {
+cW = document.documentElement.clientWidth;
+cH = document.documentElement.clientHeight;
+} 
+else
+{
+cW = window.innerWidth;
+cH = window.innerHeight;
+} //if (bIE) {
+
+
+
+
+
+//-------------------------------------------------------
+screenOrientation = window.orientation
+
+
+if (cW > 0 && cH > 0) {
+
+		if (typeof screenOrientation !== 'undefined') {
+
+			if (screenOrientation == 0 || screenOrientation == 180) {
+
+				if (cW > cH) {
+				
+					w=cH;
+					h=cW-52;
+				
+				} else {
+				
+					w = cW
+					h = cH-52  //make up for the Record Search TABs
+				}
+				
+			} else {
+
+			w = cW
+			h = cH-52  //make up for the Record Search TABs
+
+			} //if (screenOrientation == 0 || screenOrientation == 180) {
+			
+		} else {
+
+		w = cW
+		h = cH-52  //make up for the Record Search TABs
+			
+		} //if (typeof screenOrientation != 'undefined') {
+
+
+		if (w < 400) bNarrow=true; //gisMainMenu
+
+
+SetWindowWidth(w,h);
+
+	
+	if (obj=document.getElementById("wrapper")) {
+
+
+		if (w < 900 || bMobile) {
+		obj.style.width = "100%"
+		} else {
+		obj.style.width = "910px"
+		}
+		
+	} //if (obj=document.getElementById("wrapper")) {
+	
+		
+} //if cW > 0 {	
+	
+} //funct
+
+
+
+function ExpandAdvOptions(inObject, inMode) {
+
+    if (typeof (inMode) == 'undefined') {
+
+
+        if (document.images[inObject + 'Img'].src.indexOf('layer_plus_triangle4.gif') != -1) {
+            inMode = true;
+        } else {
+            inMode = false;
+        }
+    } //if
+
+
+
+    if (inMode) {
+
+
+        if (obj = document.getElementById(inObject)) {
+            obj.style.display = 'block';
+            obj.style.visibility = 'visible';
+            document.images[inObject + 'Img'].src = 'https://www.bradfordappraiser.com/gis/_images/layer_minus_triangle4.gif'
+        }
+
+    } else {
+
+
+        if (obj = document.getElementById(inObject)) {
+            obj.style.display = 'none';
+            obj.style.visibility = 'hidden';
+            document.images[inObject + 'Img'].src = 'https://www.bradfordappraiser.com/gis/_images/layer_plus_triangle4.gif'
+        }
+    } //if
+
+}//func
+
+
+
+
+
+function showAdvanced_click(inObj) {
+
+
+
+if (inObj.checked) {
+inValue = "1"
+ExpandAdvOptions('AdvSearchOptions',true);
+} else {
+inValue = "0"
+ExpandAdvOptions('AdvSearchOptions',false);
+}//if
+
+parent.setCookie('BradfordAppraiser_recordSearch_form_showAdvanced_chk', inValue, 365)	
+
+} //function
+
+
+
+function onLoad() {
+
+    iFrameHeight();
+
+    var tmpVal = parent.getCookie('BradfordAppraiser_recordSearch_form_showAdvanced_chk')
+
+    if (tmpVal.length > 0 ) {
+
+
+        if (tmpVal == '1') {
+            tmpVal = true;
+				
+            if (obj=document.getElementById('showAdvanced_chk')) obj.checked=tmpVal;
+						
+            ExpandAdvOptions('AdvSearchOptions', true);
+	
+        } else {
+	
+            tmpVal = false;
+	
+            ExpandAdvOptions('AdvSearchOptions', false);
+	
+        } // if (tmpVal == '1') {
+
+
+    } else {
+
+        if (!bMobile) {
+            tmpVal = '1'
+            ExpandAdvOptions('AdvSearchOptions', true);
+        }
+
+    } //if  (tmpVal.length > 0 ) {
+
+
+    if (obj=document.getElementById('showAdvanced_chk')) obj.checked=tmpVal;
+    
+    if (obj=document.TaxPASearch.OwnerName) 
+    {
+        if (!bMobile) {
+            obj.autocomplete = "off";
+            obj.focus();
+            obj.autocomplete = "on";
+        }
+    }
+
+		
+} // function onLoad
+
+</script>
+
+</head>
+
+
+
+
+<body onload="onLoad();" onResize="iFrameHeight();">
+<a name="Page_Top"></a>
+
+<form name="TaxPASearch" id="TaxPAsearchForm" action="https://www.bradfordappraiser.com/gis/recordSearch_2_Results/" method="POST" onsubmit="return submitRecordSearch(this);">
+
+<div id="wrapper">		
+
+
+
+<table  width="100%" cellpadding="0" cellspacing="0" border=0>
+<tr>
+<td valign=top bgcolor="#ACB5BC">
+
+
+
+		<table  width="100%" id="sbMenu" cellpadding="0" cellspacing="0" border=0>
+		<tr>
+		<td valign=top>
+			<img src="https://www.bradfordappraiser.com/images/pixel.gif" width=1 height=40>
+			<br>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td >
+
+						<table border="0" cellspacing="0" cellpadding="4"  width="100%">
+						<tr>
+						<td height="16" align="center" bgcolor="#D9D9CF"><a href="./?showForm=1" class="sbmenu"  style="font-family:Georgia; font-size:10pt; color:#384A66;">Real&nbsp;Property</a></td>
+						</tr>
+
+						<tr>
+						<td height="16" ><a href="./?showForm=2" class="sbmenu" >Sales&nbsp;Report</a></td>
+						</tr>
+																			
+						<tr>
+						<td height="16" ><a href="javascript:parent.ClickTab(4,true)" class="sbmenu" >GIS&nbsp;Map</a></td>
+						</tr>
+
+                        
+                        
+                        <tr>
+						<td height="16" ><a href="https://www.bradfordappraiser.com/Plat_Maps" target="_top" class="sbmenu" >PLAT&nbsp;Maps</a></td>
+						</tr>
+                        
+                        <tr>
+						<script type="text/javascript">
+function EstimateTax() {
+Win2 = window.open("https://www.bradfordappraiser.com/GIS/Tax_Estimator.asp?Tax_Code=", "", "width=500,height=600,outerWidth=500,outerHeight=600,menubar=1,toolbar=0,scrollbars=1,resizable=1");
+} //EstimateTax
+</script>
+
+						<td height="16" ><a href="javascript:EstimateTax();" class="sbmenu" >TAX Estimator</a></td>
+						</tr>
+                        
+
+						</table>
+				</td>	
+				</tr>
+				</table>
+		</td>
+		</tr>
+		</table>
+		
+		
+<td bgcolor="#D9D9CF">
+<img src="https://www.bradfordappraiser.com/images/pixel.gif" width=2 height=1>
+</td>
+		
+
+<td valign=top>
+
+
+
+
+<table width="100%"  border=0 cellpadding="8" cellspacing=0>
+<tr>
+<td>
+
+		<table width="100%" border=0 cellpadding="2" cellspacing=0>
+		<tr>
+		<td valign=top align=left>	
+ 
+
+		<div class="outlineRadius">
+							
+<!-- here -->
+		<table class="recordsearchTable" width="100%" cellspacing=0 cellpadding=1 border=0>
+		
+			<tr bgcolor="#ACB5BC">
+			<td colspan=2>
+					
+			<table border="0" cellpadding="6" cellspacing="0" class="gisDetails_Headings" width="100%"  bgcolor="#ACB5BC">
+			<tr>		
+				
+				<td><font style="font-family:Georgia;font-size:12pt;color:#384A66;font-weight:bold;">Real Property Record Search</font></td>
+				
+			</tr>
+			</table>
+							
+		</tr>
+					
+		<tr>
+		<td align=top>
+
+
+
+		
+			<input type="hidden" name="button_RecordSearch" value="1">
+
+		
+		
+		 
+						
+					<table width="100%"  class="recordsearchTable" border=0 cellspacing="2" cellpadding="2">
+													
+						
+							
+							<tr>
+							<td width="90" bgcolor="#ACB5BC">Owner's Name</td>
+							<td colspan=3 bgcolor="#E8E8E8"><input type="search"  size="32" maxlength=45 value="" id="OwnerName" name="OwnerName" placeholder="LastName  FirstName"></td>
+							</tr>
+	
+							
+						
+						
+							<tr>
+							<td bgcolor="#ACB5BC">Street Address</td>
+							<td colspan=3 bgcolor="#E8E8E8"><input type="text" SIZE=32 maxlength=45 VALUE="" NAME="StreetName" autocomplete=on placeholder="*HouseNumber  StreetName"> <span style="font-family:arial;font-size:7pt;">*optional</span></td>
+							</tr>
+							
+							
+							
+							<tr>
+							<td bgcolor="#ACB5BC">Parcel Number</td>
+							
+							<td width="160" bgcolor="#E8E8E8"><input type="search" id="PIN" class="recordsearchFormInput"  size=32 maxlength=30 value="" name="PIN" autocomplete=on placeHolder="#####-#-#####  (3 min)"></td>
+							<td width="80" align=center bgcolor="#ACB5BC">Alt Key&nbsp;&nbsp;</td>
+							<td width="*" bgcolor="#E8E8E8"><input type="text" SIZE=8 maxlength=6 VALUE="" NAME="Parcel_Key" autocomplete=on placeholder="######"></td>
+							
+							</tr>
+						
+							
+						
+						
+			</table> <!-- new -->	
+	
+<!-- here -->
+
+</td>
+</tr>	
+			
+	<tr>
+	<td colspan=2>
+
+			
+
+		<table border="0" cellpadding="2" cellspacing="2" class="gisDetails_Headings" width="100%" bgcolor="#ACB5BC">
+			<tr>
+			<td valign=bottom onclick="ExpandAdvOptions('AdvSearchOptions');"  style="cursor: pointer;">&nbsp;<img name="AdvSearchOptionsImg" src="https://www.bradfordappraiser.com/gis/_images/layer_plus_triangle4.gif" WIDTH="16" HEIGHT="12">&nbsp;
+			<font style="font-family:Georgia; font-size:10pt; color:#FFFFFF;text-shadow: 1px 1px 3px #7a7a7a;">Advanced Search options <font style='font-family:arial; font-size:8.5pt; color:#0000FF;'> (click to expand)</font></font> </td>
+			<td>&nbsp&nbsp;<label class="tb8"><input type="checkbox" class="checkboxSmall" name="showAdvanced_chk" value="click" id="showAdvanced_chk" onclick="showAdvanced_click(this);" ><font color="#505050">Always show Advanced Search options</font></label></td>
+			</tr>
+			</table>
+
+						
+	</td>
+	</tr>
+			
+
+<tr>
+<td>
+
+	
+
+<div id="AdvSearchOptions" style="display:none;">	
+			
+			<table width="100%"  class="recordsearchTable" border=0 cellspacing="2" cellpadding="2">
+			<tr>
+			
+			
+			
+			<td width="90" bgcolor="#ACB5BC">Geographic</td>
+			<td  colspan=3 bgcolor="#E8E8E8" align=left>
+					
+			
+			
+					
+		
+		
+	
+	
+		
+			<table width="100%" border=0 cellspacing=2 cellpadding=0>
+			<tr>
+			<td>
+				
+					<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+					<tr>
+					<td>
+						<table  class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+						<tr>
+						<td><table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+				<tr>
+				<td>
+				Section
+				<br>
+					<SELECT class="recordsearchFormInput" SIZE=1 NAME="Section">
+					<OPTION VALUE="">ANY&nbsp;&nbsp;
+					<OPTION VALUE="1">1
+					<OPTION VALUE="2">2
+					<OPTION VALUE="3">3
+					<OPTION VALUE="4">4
+					<OPTION VALUE="5">5
+					<OPTION VALUE="6">6
+					<OPTION VALUE="7">7
+					<OPTION VALUE="8">8
+					<OPTION VALUE="9">9
+					<OPTION VALUE="10">10
+					<OPTION VALUE="11">11
+					<OPTION VALUE="12">12
+					<OPTION VALUE="13">13
+					<OPTION VALUE="14">14
+					<OPTION VALUE="15">15
+					<OPTION VALUE="16">16
+					<OPTION VALUE="17">17
+					<OPTION VALUE="18">18
+					<OPTION VALUE="19">19
+					<OPTION VALUE="20">20
+					<OPTION VALUE="21">21
+					<OPTION VALUE="22">22
+					<OPTION VALUE="23">23
+					<OPTION VALUE="24">24
+					<OPTION VALUE="25">25
+					<OPTION VALUE="26">26
+					<OPTION VALUE="27">27
+					<OPTION VALUE="28">28
+					<OPTION VALUE="29">29
+					<OPTION VALUE="30">30
+					<OPTION VALUE="31">31
+					<OPTION VALUE="32">32
+					<OPTION VALUE="33">33
+					<OPTION VALUE="34">34
+					<OPTION VALUE="35">35
+					<OPTION VALUE="36">36
+					</SELECT>
+				</td>
+
+
+				
+				<td>
+				Township
+				<br>
+					<SELECT class="recordsearchFormInput" SIZE=1 NAME="Township">
+					<OPTION VALUE="">ANY&nbsp;&nbsp;
+					<OPTION VALUE="4">4
+					<OPTION VALUE="5">5
+					<OPTION VALUE="6">6
+					<OPTION VALUE="7">7
+					<OPTION VALUE="8">8
+					<OPTION VALUE="9">9
+					</SELECT>
+				</td>
+				
+				<td>
+				Range
+				<br>
+				<SELECT class="recordsearchFormInput" SIZE=1 NAME="Range">
+					<OPTION VALUE="">ANY&nbsp;&nbsp;
+					<OPTION VALUE="19">19
+					<OPTION VALUE="20">20
+					<OPTION VALUE="21">21
+					<OPTION VALUE="22">22
+				</SELECT>
+				</td>
+				<td>
+				
+
+				
+
+
+
+
+
+				
+				</tr>
+				</table>
+				
+				</td>
+						</tr>
+						</table>
+					</td>
+					</tr>
+					</table>
+			
+			</td>
+			</tr>
+			<tr>
+			<td>
+				
+				
+			
+					<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+					<tr>
+					<td>
+						<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding="2">
+						<tr>
+						<td>Acreage <font size=1>&gt;=</font><br><INPUT class="recordsearchFormInput" SIZE=6 maxlength=6 NAME="Acre_GT" placeholder="gt or eq"><font size=1>AC</font></td>
+				
+						<td>Acreage <font size=1>&lt;=</font><br><INPUT class="recordsearchFormInput" SIZE=6 maxlength=6 NAME="Acre_LT" placeholder="lt or eq"><font size=1>AC</font></td>
+						
+						<td><img src="https://www.bradfordappraiser.com/images/pixel.gif" width=2 height=1></td>
+						
+						
+                        
+                                               
+						</table>
+					</td>
+					</tr>
+					</table>
+				
+				
+			</td>
+			</tr>
+			<tr>
+			<td>
+
+				<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+				<tr>
+				<td>	
+		
+					<table class="recordsearchFormInput"  border=0 cellspacing=0 cellpadding=2>
+					<tr>
+					<td colspan=1>Property Use:
+					<br>
+					<SELECT SIZE=1 NAME="Use_Code" class="recordsearchFormInput" style="width:170px;">
+<OPTION VALUE="">ANY
+<OPTION VALUE="000000">VACANT
+<OPTION VALUE="000100">SINGLE FAMILY
+<OPTION VALUE="000200">MOBILE HOME
+<OPTION VALUE="000300">MULTI-FAM 
+<OPTION VALUE="000400">CONDOMINIA
+<OPTION VALUE="000500">COOPERATIVES
+<OPTION VALUE="000600">RETIREMENT HOMES
+<OPTION VALUE="000700">MISC IMPROVED
+<OPTION VALUE="001000">VACANT COMMERCIAL
+<OPTION VALUE="001100">STORES/1 STORY
+<OPTION VALUE="001126">CONV STORE/GAS
+<OPTION VALUE="001200">MXD RES/OFF/STO
+<OPTION VALUE="001300">DEPARTMNT STORE
+<OPTION VALUE="001400">SUPERMARKET
+<OPTION VALUE="001500">REGIONAL SHOPPING
+<OPTION VALUE="001600">COMMUNITY SHOPPING
+<OPTION VALUE="001700">OFFICE BLD 1STY
+<OPTION VALUE="001800">OFFCE BLD M/STY
+<OPTION VALUE="001900">PROFESS OFF/BLD
+<OPTION VALUE="002000">TRANSIT TERMINL
+<OPTION VALUE="002100">RESTAURANT/CAFE
+<OPTION VALUE="002200">DRIVE-IN REST.
+<OPTION VALUE="002300">FINANCIAL BLDG
+<OPTION VALUE="002400">INSURANCE COMP
+<OPTION VALUE="002500">REPAIR SERVICE
+<OPTION VALUE="002525">BEAUTY PARLOR
+<OPTION VALUE="002600">SERVICE STATION
+<OPTION VALUE="002700">VEH SALE/REPAIR
+<OPTION VALUE="002800">RV/MH PK ,PK/LOT
+<OPTION VALUE="002900">WHOLESALE OUTLET
+<OPTION VALUE="003000">FLORIST/GREENHOUSE
+<OPTION VALUE="003100">DRIVE-IN/OPEN STAD
+<OPTION VALUE="003200">THEATER/AUDITORIUM
+<OPTION VALUE="003300">NIGHTCLUB/BARS
+<OPTION VALUE="003400">BOWL,RINKS,POOL
+<OPTION VALUE="003500">TOURIST ATTRACTION
+<OPTION VALUE="003600">CAMPS
+<OPTION VALUE="003700">RACE TRACKS,ALL
+<OPTION VALUE="003800">GOLF COURSES
+<OPTION VALUE="003900">HOTELS/MOTELS
+<OPTION VALUE="004000">VACANT INDUSTRIAL
+<OPTION VALUE="004100">LIGHT MANUFACTURE
+<OPTION VALUE="004200">HEAVY INDUSTRL
+<OPTION VALUE="004300">LUMBER YARD
+<OPTION VALUE="004400">PACKING PLANTS
+<OPTION VALUE="004500">CANNERIES/BOTTLERS
+<OPTION VALUE="004600">OTHER FOOD PROCESS
+<OPTION VALUE="004700">MINERAL PROCESSING
+<OPTION VALUE="004800">WAREHOSE/DISTRB
+<OPTION VALUE="004900">OPEN STORAGE
+<OPTION VALUE="005000">IMPROVED AG
+<OPTION VALUE="005100">CROPLAND 
+<OPTION VALUE="005400">TIMBERLAND
+<OPTION VALUE="006000">PASTURELAND
+
+<OPTION VALUE="006600">GROVES,ORCHRD
+<OPTION VALUE="006700">POULT,BEES,FISH, ETC
+<OPTION VALUE="006800">DAIRIES,FEEDLOTS
+<OPTION VALUE="006900">MISC AG
+<OPTION VALUE="007000">VAC INSTITUTIONAL
+<OPTION VALUE="007100">CHURCHES
+<OPTION VALUE="007200">PRVT SCHL/DAY CARE
+<OPTION VALUE="007300">PRIVATE HOSPITALS
+<OPTION VALUE="007400">HOMES FOR THE AGED
+<OPTION VALUE="007500">NON-PROFIT / ORPHANA
+<OPTION VALUE="007600">MORTUARY/CEMETARY
+<OPTION VALUE="007700">CLUBS/LODGES/HALLS
+<OPTION VALUE="007800">REST HOMES
+<OPTION VALUE="007900">CULTERAL GROUPS
+<OPTION VALUE="008100">MILITARY
+<OPTION VALUE="008200">FOREST, PARKS, REC
+<OPTION VALUE="008300">PUBLIC SCHOOLS
+<OPTION VALUE="008400">COLLEGES
+<OPTION VALUE="008500">HOSPITALS
+<OPTION VALUE="008600">COUNTY
+<OPTION VALUE="008628">COUNTY RV PARK
+<OPTION VALUE="008700">STATE
+<OPTION VALUE="008701">WATER MG DIST
+<OPTION VALUE="008702">SPECIAL TAXING
+<OPTION VALUE="008703">O U A
+<OPTION VALUE="008704">TIITF%/SFWMD%
+<OPTION VALUE="008800">FEDERAL
+<OPTION VALUE="008900">MUNICIPAL
+<OPTION VALUE="009000">LEASEHOLD INTEREST
+<OPTION VALUE="009100">UTILITIES
+<OPTION VALUE="009200">MINING
+<OPTION VALUE="009300">SUBSURFACE RGHT
+<OPTION VALUE="009400">RIGHTS-OF-WAY
+<OPTION VALUE="009500">RIVERS AND LAKES
+<OPTION VALUE="009600">WASTELAND/DUMPS
+<OPTION VALUE="009700">REC AND PARK LAND
+<OPTION VALUE="009800">CENTRALLY ASSED
+<OPTION VALUE="009900">NON AG ACREAGE
+</SELECT></td>
+					<td><img src="https://www.bradfordappraiser.com/images/pixel.gif" width=5 height=1></td>
+					<td>Brief Description:<br><INPUT class="recordsearchFormInput" SIZE=24 maxlength=25 VALUE="" NAME="LEGAL"></td>
+					</tr>
+					</table>
+				</td>
+				</tr>
+				</table>
+				
+				
+			</td>
+			</tr>
+			</table>
+				
+		</td>
+		</tr>		
+		
+	
+			
+
+			<tr>
+			<td bgcolor="#ACB5BC">Structure</td>
+			<td  colspan=3 bgcolor="#E8E8E8">
+		
+				
+				
+			<table width="100%" border=0 cellspacing=2 cellpadding=0>
+			<tr>
+			<td>
+					<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+					<tr>
+					<td>
+						<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+						<tr>
+						<td bgcolor="#E8E8E8">Base Area <font size=1>&gt;=</font><br>
+						<INPUT class="recordsearchFormInput"  SIZE=8 maxlength=12 VALUE="" NAME="HeatedSF_From" placeholder="gt or eq"><font size=1>SF</font>
+						</td>
+						
+						<td><img src="https://www.bradfordappraiser.com/images/pixel.gif" width=5 height=1></td>
+						
+						<td bgcolor="#E8E8E8">Base Area <font size=1>&lt;=</font><br>
+						<INPUT class="recordsearchFormInput"  SIZE=8 maxlength=12 VALUE="" NAME="HeatedSF_To" placeholder="lt or eq"><font size=1>SF</font>
+						</td>
+						</tr>
+						</table>
+					</td>
+					</tr>
+					</table>
+		
+			</td>
+			</tr>
+			<tr>
+			<td>
+		
+				<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+				<tr>
+				<td>
+						<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+						<tr>
+						<td bgcolor="#E8E8E8">Year Built <font size=1>&gt;=</font><br>
+						<INPUT class="recordsearchFormInput"  SIZE=6 maxlength=12 VALUE="" NAME="YearBuilt_From" placeholder="gt or eq">
+						</td>
+						
+						<td><img src="https://www.bradfordappraiser.com/images/pixel.gif" width=5 height=1></td>
+
+						<td bgcolor="#E8E8E8">Year Built <font size=1>&lt;=</font><br>
+						<INPUT class="recordsearchFormInput"  SIZE=6 maxlength=12 VALUE="" NAME="YearBuilt_To" placeholder="lt or eq">
+						</td>
+						
+						<td><font size=1>(4 digit: yyyy)</font></td>
+						
+						</tr>
+						</table>
+				</td>
+				</tr>
+				</table>
+				
+			</td>
+			</tr>
+			
+			<tr>
+			<td>
+
+                    <table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+				    <tr>
+				    <td>
+				        <table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+				        <tr>
+				
+				        <td bgcolor="#E8E8E8">Building Type: <a href="javascript:OpenBldgTypeWindow();"><font face=arial size=1 color=blue><b>(codes)</b></font></a><br>
+				        <INPUT class="recordsearchFormInput"  maxlength=80 VALUE="" NAME="BldgType" style="font-size:8pt;height:14px;width:125px;">&nbsp;&nbsp;
+				        </td>
+				
+				        <td bgcolor="#E8E8E8">Extra Features:   <a href="javascript:OpenXFOBWindow();"><font face=arial size=1 color=blue><b>(codes)</b></font></a><br>
+				        <INPUT class="recordsearchFormInput" maxlength=80 VALUE="" NAME="XFOBcode" style="font-size:8pt;height:14px;width:125px">
+				        </td>
+				
+				        </tr>
+				        </table>
+			    </td>
+				</tr>
+				</table>
+			</td>
+			</tr>
+			</table>
+			
+	</td>
+	</tr>
+			
+				
+			
+	
+			<tr>
+			<td bgcolor="#ACB5BC">Sales History</td>
+			<td colspan=3 bgcolor="#E8E8E8">
+		
+				
+				
+			<table width="100%" border=0 cellspacing=2 cellpadding=0>
+			<tr>
+			<td>
+				
+					
+                    
+       
+                    <table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+                       
+
+					<tr>
+					<td>
+                                         
+                             
+
+						
+                        <table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+ 
+							<tr>
+							<td>Sale Date&nbsp;<font size=1>&gt;=</font><br>
+							<INPUT  class="recordsearchFormInput" SIZE=8 maxlength=10 VALUE="" NAME="SaleDateFrom" id="SaleDateFrom" placeholder="gt or eq">
+							</td>
+							<td bgcolor="#E8E8E8">Sale Date&nbsp;<font size=1>&lt;=</font><br>
+							<INPUT class="recordsearchFormInput" SIZE=8 maxlength=10 VALUE="" NAME="SaleDateTo" id="SaleDateTo" placeholder="lt or eq">
+							</td>
+							
+							<td><font size=1>(mm/dd/yyyy)</font></td>
+							
+							</tr>
+							</table>
+							
+							<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>			
+							<tr>
+							<td>Sale Price <font size=1>&gt;=</font>&nbsp;<br>
+							<INPUT  class="recordsearchFormInput" SIZE=8 maxlength=12 VALUE="" NAME="SalePriceFrom" placeholder="gt or eq">
+							</td>
+							<td align=right bgcolor="#E8E8E8">Sale Price&nbsp;<font size=1>&lt;=&nbsp;</font><br>
+							<INPUT  class="recordsearchFormInput" SIZE=8 maxlength=12 VALUE="" NAME="SalePriceTo" placeholder="lt or eq">
+							</td>
+							</tr>
+							</table>
+							
+						</td>
+						</tr>
+						</table>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>	
+				
+				
+				<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+					<tr>
+					<td>
+						<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>
+						<tr>
+						<td>
+						<SELECT class="recordsearchFormInput"  SIZE=1 NAME="Sale_Vimp">
+							   <OPTION VALUE="" SELECTED>Vacant or Improved
+							  <option value="V">V - Vacant only</option>
+							  <option value="I">I - Improved only</option>
+							  </SELECT>
+						</td>
+						<td>
+								<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=0>
+								<tr>			
+								<td valign=middle nowrap><input class="recordsearchFormInput" type=checkbox name=Sale_Qual value="Q">Qualified Sales</td>
+								</tr>
+								<tr>
+								<td valign=middle nowrap><input class="recordsearchFormInput" type=checkbox name=LastSaleOnly Value=1>Last Sale only</td>
+								</tr>
+								</table>
+						</td>
+						</tr>
+						</table>
+					</td>
+					</tr>
+					</table>
+					
+			</td>
+			</tr>
+			<tr>
+			<td>	
+				
+				
+						
+				<table width="100%"  class="recordsearchInsideTable" border=0 cellspacing=0 cellpadding=0>
+				<tr>
+				<td>			
+						<table class="recordsearchFormInput" border=0 cellspacing=0 cellpadding=2>				
+						<tr>
+						<td>Offical Record (Document# or Bk/Pg)<br>
+						<INPUT class="recordsearchFormInput"  placeholder="Document# -or- Book" SIZE=14 maxlength=20 VALUE="" NAME="SaleBook"> / <INPUT class="recordsearchFormInput" placeholder="Page" SIZE=4 maxlength=6 VALUE="" NAME="SalePage">
+						</td>
+						</tr>
+						</table>
+				</td>
+				</tr>
+				</table>
+			
+			</td>
+			</tr>
+			</table>
+			
+			
+			
+			</td>
+			</tr>
+		</table> <!-- new -->
+
+</div> <!-- AdvSearchOptions -->
+
+<!-- here -->
+
+</td>
+</tr>
+<tr>
+<td>		
+		
+
+		
+			<table width="100%"  class="recordsearchTable" border=0 cellspacing=4 cellpadding=0 bg-color="#9a9a9a">	
+			<tr>
+			<td align=center bgcolor="#E8E8E8" colspan=4>
+			
+			
+				<table cellspacing=0 cellpadding=4 border=0 bgcolor="#E8E8E8">
+				<tr>	<td colspan=2><font face=Verdana size=1>By clicking "Run Search", I agree to the <a href="#disclaimer"><font color=red>disclaimer</font></a> below:</font></td></tr>				
+				
+				<tr>
+				<td valign=bottom><input class=submit type="reset" value="Clear Form ^^" id="reset1" name="RESET" onClick="return ClearSearch()"> </td>
+							
+				
+				<td valign=bottom align=right><INPUT type="submit" class=submit  value="Run Search &gt&gt" NAME="submit_RecordSearch" id="submit_RecordSearch"></td>
+				</tr>
+				
+				<tr>
+				<td colspan=2 align=center><font face="arial" size=1 color="#000000">NOTE: More input above will narrow the search results</font><br>
+				<font face="verdana" size=1>updated: 9/10/2026</font>
+				</td>
+				</tr>
+				</table>
+	
+	
+			</td>
+			</tr>
+		</table>
+
+	
+
+
+
+				 
+
+
+		</td>
+		</tr>
+		</table>
+
+		</div>
+		 <!--shadow-->
+
+
+	</td>
+	</tr>
+	</table>
+	
+</td> <!-- new -->
+</tr>
+<tr>
+<td>
+
+
+
+				<a name="SearchHelp"></a>
+
+				<p>
+				
+				
+			<table width="100%" border=0 cellpadding=5>
+			<tr>
+			<td>
+				<table width=100% cellpadding=10 bgcolor="#FFFFFF" style="font-family:arial;font-size:8pt;" class=shadow>
+				<tr>
+				<td colspan=2><b>Search Tips:</b>
+				<hr>
+				<b>The above form will create a custom search based on ALL the input that you enter.</b>  If you search on more than one field, your results will be limited to only those matching records. 
+				For example; Entering "SMITH" in the Name field, and selecting "VACANT" as the Land Use type will retrieve all VACANT parcels owned by somebody named SMITH.
+				<p>
+				</td>
+				</tr>
+
+				<tr bgcolor="#E8E8E8">
+				<td><b>Owner's Name Search:</b></td>
+				<td><i>format:  (LastName FirstName)</i> ... For best results, enter only first part of name.
+				<br>
+				- "Smith J" will return all SMITH's with the first name starting with J
+				</td>
+				</tr>
+
+			
+				<tr>
+				<td><b>Address Search:</b></td>
+				<td>Enter as much or as little of the address as you wish.  Leave off the Street Number & Street Type if you're not sure.</td>
+				</tr>
+			
+				<tr bgcolor="#E8E8E8">
+				<td><b>Parcel ID Search:</b></td>
+				<td> <i>(Parcel Identification Number)</i> Enter as much of the PIN as you know. (you can add dashes "-" on your input for easy reading!)</td>
+				</tr>
+
+
+				<tr>
+				<td><b>Geographic Search:</b></td>
+				<td>
+				<b>Section/Township/Range: </b> Use these to narrow the search results to particular geographic location.
+				<br>
+				<b>Land Use, Acreage (min/max): </b> Select a Land Use type to limit the amount of records retrieved.  Entering a Min. and Max. Acreage value will narrow results even further.
+				</td>
+				</tr>
+
+				<tr bgcolor="#E8E8E8">
+				<td><b>Structure Search:</b></td>
+				<td>
+				<b>Heated Square Footage: </b> Heated Square Footage is also known as Base Area.
+				<br>
+				<b>Year Built:</b> Enter a 4 digit year.
+				<br>
+				</td>
+				</tr>
+
+				<tr>
+				<td><b>Sales History Search:</b></td>
+				<td>
+				 <b>Sale Date (min/max): </b> <i>format: (Month / Day / Year , Month / Year)</i> Specify a Date Range to find parcels that have been sold between the dates entered.
+				<br>
+				<b>Sale Price (min/max):</b> Enter a Sale Price Range.  (TIP: Enter a Sale Price GT >= $101 to ignore all Trust or non arm length sale transactions)
+
+				<br>
+				<b>Vacant or Improved: </b> Select to filter Sales hits on Vacant or Improved Sales
+				<br>
+				<b>Qualified Sales: </b> Select to filter Sales hits on Qualified Only Sales
+				<br>
+				<b>Last Sales only: </b> Select this option to only Search the Last Sale for each property. (unchecked will search all recorded sales)
+				<br>
+				<b>Sale Book/Page:</b> Enter the Official Records Book and Page number of the recorded Deed to find the associated parcel.
+				</td>
+
+				</tr>
+				</table>
+			</td>
+			</tr>
+			</table>
+				
+</td>
+</tr>
+<tr>
+<td>
+
+
+<a name="disclaimer"></a>
+
+<center>
+			<table width="98%" border=0 cellpadding=8>
+			<tr>
+			<td>
+	            <table border=0 cellpadding=4 width="100%" bgcolor="#FBFBEB" class="shadow" style="font-family:arial; color:#000000; font-size:9pt;">
+	            <tr>
+	            <td align=left>
+	            <FONT style="font-family:arial; color:#005802; font-size:10pt;"><b>Disclaimer:</b></FONT>
+                <br />
+	           
+	            This information was derived from data which was compiled by the Bradford County Property Appraiser's Office solely for the governmental purpose of property assessment.  This information should not be relied upon by anyone as a determination of the ownership of property or market value.  No warranties, expressed or implied, are provided for the accuracy of the data herein, it's use, or it's interpretation.  Although it is periodically updated, this information may not reflect the data currently on file in the Property Appraiser's office. The assessed values are NOT certified values and therefore are subject to change before being finalized for ad valorem assessment purposes.
+	            <br />
+	            <span style="font-family:arial; color:#005802; font-size:10pt;"><B>Notice:</B></span>
+	            <br />
+                Under Florida Law, e-mail addresses are public record. If you do not want your e-mail address released in response to a public-records request, do not send electronic mail to this entity. Instead contact this office by phone or in writing.
+	            </td>
+	            </tr>
+	            </table>
+             </td>
+             </tr>
+	         </table>
+
+</center>
+</td>
+</tr>
+</table>
+
+<p><BR>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0">
+		<tr>
+		<td align="left"><font size="1">&copy; Bradford County Property Appraiser | Kenny Clark, CFA | Starke, Florida | 904-966-6216</font></td>
+		<td align=right><font face="arial" size=1 color=white><a href="https://www.schneidergis.com/resources/newsroom/schneider-geospatial-expands-florida-presence" target="_blank"><font face=tahoma size=1 color=blue>GrizzlyLogic</a>&nbsp;</font></td>
+		</tr>
+		</table>
+
+
+	
+</td>
+</tr>
+</table>
+	<!--		 Gray Outline -->
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+<input type="hidden" name="GoToPage">
+<input type="hidden" name="SearchMenu">
+<input type="hidden" name="backCheck" value="1">
+
+<input type="hidden" name="clientWidth" value="1280">
+<input type="hidden" name="clientHeight" value="800">
+
+
+</form>
+
+
+
+
+<div id="div_login">&nbsp;</div>
+<div id="div_Alert_OnLoad" class="shadow">
+
+				<div id="div_Alert_OnLoad_titlebar">
+				<table cellpadding=2 cellspacing=1 width="100%" border=0 class=tb7>
+				<tr bgcolor="#7A7A7A">
+				<td align=center><font color="#FFFFFF"><b>Bradford County Property Appraiser - Public Access</b></font></td>
+				<td width=17 align=right valign=bottom><a href="javascript:close_AlertOnLoad()"><img ID=img_filters src="https://www.bradfordappraiser.com/images/closeWindow.gif" width=16 height=16 border=0></a></td>
+				</tr>
+				</table>
+				</div>
+
+			<table cellpadding=8 cellspacing=0 width="100%" border=0 class=tb7>
+			<tr >
+			<td bgcolor="#DADAD0">
+
+				<table cellpadding=8 cellspacing=4 width="100%" border=0  style="font-family: Tahoma; font-size: 9pt;" >
+				<tr>
+				<td align=center bgcolor="#ffffff">The information on this website is for<br><br> <b>** INFORMATIONAL PURPOSES ONLY **</b> <br><br>This information is a work in progress and is compiled and used for ASSESSMENT PURPOSES ONLY and the duties within the County Assessor's office.<br><br>Information contained herein, which include parcel numbers, use codes, descriptions, etc., are subject to change at any time.<br><br><b>** NEVER USE THIS INFORMATION IN ANY OFFICIAL CAPACITY **</b></td>
+				</tr>
+				</table>
+			</td>
+			</tr>
+			
+				<tr >
+				<td bgcolor="#DADAD0">
+
+				<table cellpadding=0 cellspacing=0 width="100%" border=0  style="font-family: Tahoma;font-size: 10pt;" >
+				<tr>
+				<td align=center ><input type="button" value="I agree, please continue" onclick="close_AlertOnLoad();" class="submit" id="button1" name="button1"><p></td>
+				</tr>
+				</table>
+			</td>
+			</tr>
+			
+			</table>
+	
+
+								
+</div> <!-- wrapper -->											
+
+<P><br>
+
+<script type="text/javascript" language="javascript">
+    if ( window == window.parent ) window.location.replace("https://www.bradfordappraiser.com/gis/");  
+parent.showDivLoading(false);
+
+function AlertOnLoad() {
+    if (obj=document.getElementById('div_login')) {
+        obj.style.display = 'block';
+        window.setTimeout("document.getElementById('div_login').style.visibility = 'visible'", 250);
+    }
+    if (obj=document.getElementById("div_Alert_OnLoad")) {
+        window.setTimeout("document.getElementById('div_Alert_OnLoad').style.visibility = 'visible'", 500);
+    }
+}
+
+function close_AlertOnLoad() {
+    if (obj=document.getElementById("div_Alert_OnLoad")) obj.style.visibility = 'hidden';
+    if (obj=document.getElementById('div_login')) {
+        obj.style.display = 'none';
+        obj.style.visibility = 'hidden';
+    }
+    if (obj=document.TaxPASearch.OwnerName) 
+    {
+        
+        if (!bMobile) {
+            obj.autocomplete = "off";
+            obj.focus();
+            obj.autocomplete = "on";
+        }
+    }
+}
+
+
+AlertOnLoad();
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+[
+  {
+    "event": "client_api_completed",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "status": "partial",
+    "duration_ms": 6446,
+    "http_status": 200
+  },
+  {
+    "event": "client_lookup_completed",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "county": "bradford-fl",
+    "status": "partial",
+    "match_status": "MATCHED",
+    "section_status": {
+      "PropertyInformation": "EXTRACTED",
+      "AssessmentInformation": "EXTRACTED",
+      "TaxInformation": "EXTRACTED",
+      "BillDetails": "EXTRACTED",
+      "ParcelDetails": "EXTRACTED",
+      "TaxAmounts": "EXTRACTED",
+      "PaymentDetails": "EXTRACTED",
+      "FullLegalDescription": "PARTIAL",
+      "AssessmentHistory": "PARTIAL",
+      "BenefitsInformation": "UNAVAILABLE",
+      "SalesInformation": "EXTRACTED",
+      "AccountHistory": "PARTIAL",
+      "AdValoremMillage": "EXTRACTED",
+      "NonAdValorem": "EMPTY",
+      "TaxableValueInformation": "EXTRACTED",
+      "LandBuildingExtraFeatures": "EXTRACTED",
+      "AdValoremGroupTotals": "EXTRACTED",
+      "Exemptions": "EMPTY",
+      "BenefitsNote": "UNAVAILABLE",
+      "NonAdValoremNote": "available",
+      "ExemptionsNote": "available",
+      "DelinquencyInformation": "PARTIAL"
+    },
+    "validation": {
+      "parcel": "MATCHED",
+      "taxYear": "MATCHED",
+      "billNumber": "1209500",
+      "authorityRowCount": "5",
+      "annualHistoryYearCount": "14",
+      "adValoremReconciliation": "MATCHED",
+      "nonAdValoremReconciliation": "MATCHED",
+      "combinedTotalReconciliation": "MATCHED",
+      "millageSourceUnits": "Original_fractional_tax_rates__preserved_at_source_precision__no_conversion_to_mills",
+      "reconciliationTolerance": "_0.05",
+      "historyCoverage": "PARTIAL",
+      "derivedFields": "",
+      "printedFractionalRateTaxChecks": "",
+      "parcel_join": "matched",
+      "appraiser_bill_year": "bill_year_not_in_captured_appraiser_history"
+    },
+    "duration_ms": 6446,
+    "source_count": 7,
+    "error_count": 0,
+    "section_count": 22,
+    "tax_line_count": 5
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "tax_collector",
+    "status": "verified",
+    "duration_ms": 1545,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "collector_search",
+    "status": "verified",
+    "duration_ms": 436,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "collector_session_form",
+    "status": "session_initialized",
+    "duration_ms": 592,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "collector_session",
+    "status": "session_initialized",
+    "duration_ms": 1436,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "bradford_property_card",
+    "status": "verified",
+    "duration_ms": 324,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "bradford_assessment",
+    "status": "verified",
+    "duration_ms": 320,
+    "http_status": 200
+  },
+  {
+    "event": "client_source_result",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_id": "bradford_address_search",
+    "status": "verified",
+    "duration_ms": 1370,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:09.574Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 1545,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:08.029Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 436,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:07.593Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 592,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:07.001Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 1436,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:05.565Z",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 423,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "client_stage_started",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:05.142Z",
+    "stage": "collector_lookup"
+  },
+  {
+    "event": "source_completed",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:05.142Z",
+    "source_id": "bradford_property_card",
+    "status": "retrieved",
+    "duration_ms": 324,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:05.142Z",
+    "source_id": "bradford_property_card",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 324,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_completed",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:04.818Z",
+    "source_id": "bradford_assessment",
+    "status": "retrieved",
+    "duration_ms": 320,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:04.818Z",
+    "source_id": "bradford_assessment",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 320,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "source_completed",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:04.498Z",
+    "source_id": "bradford_address_search",
+    "status": "retrieved",
+    "duration_ms": 1370,
+    "http_status": 200
+  },
+  {
+    "event": "source_attempt",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:04.498Z",
+    "source_id": "bradford_address_search",
+    "source_role": "collector",
+    "status": "received",
+    "duration_ms": 1370,
+    "attempt": 1,
+    "http_status": 200
+  },
+  {
+    "event": "client_stage_started",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:03.128Z",
+    "stage": "property_resolution"
+  },
+  {
+    "event": "client_lookup_started",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:03.128Z",
+    "county": "bradford-fl"
+  },
+  {
+    "event": "client_api_started",
+    "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+    "timestamp": "2026-10-08T08:52:03.128Z"
+  }
+]

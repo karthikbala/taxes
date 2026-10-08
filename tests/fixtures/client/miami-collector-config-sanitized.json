@@ -1,0 +1,3364 @@
+{
+  "/payhub/data-pub/settings/fl-miamidade/fl-miamidade/payableSources/payableSources/value": [
+    {
+      "id": "57b34515-8772-4b19-b7ca-6c60112fa4cc",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": ""
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Vehicle Registration Renewals",
+            "es": "Renovaci\u00f3n de registro vehicular"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": [
+            "phone"
+          ]
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": "https://mdctaxcollector.gov/auto-tag-renewals"
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": "200 NW 2nd Avenue, Miami, FL 33128"
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": "(305) 375-5448"
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {
+            "en": "Will be processed after approval (within one business day)",
+            "es": "Se procesar\u00e1 despu\u00e9s de ser aprobado (dentro de un d\u00eda h\u00e1bil)"
+          }
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Vehicle Registration",
+            "es": "Registro Vehicular"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": true
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayType": {
+          "type": "text",
+          "value": "rex-vehicle-registration"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": "https://site-settings.grantstreet-cdn.com/9ee50a36-0cee-42fe-bc05-acf5ae81934dvehicle-registration.jpg"
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": "https://cdn-grantstreet-com.s3.amazonaws.com/2e705be8-05ec-44ca-8279-0e50465d1bf1Miami-Dade-Help-Image.jpg"
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {
+            "en": "Sample paper bill highlighting the location of the PIN, registrant's name, and tag number.",
+            "es": "Ejemplo de factura en papel que resalta la ubicaci\u00f3n del PIN, el nombre del titular del registro y el n\u00famero de placa."
+          }
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": ""
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": []
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": []
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "vehicle-registration"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "50"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {}
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": "vehicle-registration"
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Vehicle Registration Renewal",
+            "es": "Renovaci\u00f3n de registro vehicular"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/RenewExpress/v0"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": "dmv"
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": ""
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": false
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": ""
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": ""
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {}
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": false
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {}
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": false
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "field-search-rexhub"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": "prefixWithApp"
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    },
+    {
+      "id": "861c862f-ca6d-495d-86df-776ef61b227f",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": ""
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Specialty Plate Voucher",
+            "es": "Vale para placa especializada"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": []
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": "https://mdctaxcollector.gov/"
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": "200 NW 2nd Avenue, Miami, FL 33128"
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": "(305) 375-5448"
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {
+            "en": "Will be processed after county approval",
+            "es": "Se procesar\u00e1 despu\u00e9s de la aprobaci\u00f3n del condado"
+          }
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Tax Collector - Specialty Plates & Pre-Sale Vouchers",
+            "es": "Recaudador de impuestos - Placas especiales y cupones para placas especiales"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": true
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayType": {
+          "type": "text",
+          "value": "voucher"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": "https://site-settings.grantstreet-cdn.com/dbd7c88f-16ea-4409-83f1-57c4d145546cspecialty-page.jpg"
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": ""
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": "voucher-expand"
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": []
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": [
+            {
+              "id": "82450712-0238-433e-ab97-80807b89d408",
+              "type": "Object",
+              "value": {
+                "charLimit": {
+                  "type": "text",
+                  "value": "8"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Purchaser's Current License Plate",
+                    "es": "Placa Actual del Comprador"
+                  }
+                },
+                "pexKey": {
+                  "type": "text",
+                  "value": "purchaser_plate"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {}
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": true
+                },
+                "textArea": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "tooltip": {
+                  "type": "TranslatableText",
+                  "value": {}
+                }
+              }
+            },
+            {
+              "id": "2016dccf-bd46-476b-86a3-e2f8a7048467",
+              "type": "Object",
+              "value": {
+                "charLimit": {
+                  "type": "text",
+                  "value": "8"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Recipient's Current License Plate",
+                    "es": "Placa Actual del Destinatario"
+                  }
+                },
+                "pexKey": {
+                  "type": "text",
+                  "value": "recipient_plate"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Optional",
+                    "es": "Opcional"
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "textArea": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "tooltip": {
+                  "type": "TranslatableText",
+                  "value": {}
+                }
+              }
+            },
+            {
+              "id": "218cad76-1dc2-4ea1-9741-794ae730cb10",
+              "type": "Object",
+              "value": {
+                "charLimit": {
+                  "type": "text",
+                  "value": "20"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Recipient's Full Name",
+                    "es": "Nombre Completo del Destinatario"
+                  }
+                },
+                "pexKey": {
+                  "type": "text",
+                  "value": "recipient_name"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Optional",
+                    "es": "Opcional"
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "textArea": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "tooltip": {
+                  "type": "TranslatableText",
+                  "value": {}
+                }
+              }
+            }
+          ]
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "license-plate"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "800"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {
+            "en": "<div>Choose your pre-sale voucher and check out.&nbsp;</div><div><br></div><div>Pre\u2011sale vouchers are allocated for a specific specialty plate. <span style=\"font-size: 1.125rem;\">Pre-sale vouchers can be purchased for yourself or any other Florida resident, but <b>they cannot be transferred once purchased</b>. If the specialty license plate does not meet its pre-sale requirement, a refund may be requested through the HSMV site. <b>No refunds will be given until the pre-sale has ended</b>.</span></div>",
+            "es": "Elija su cup\u00f3n de preventa y finalice la compra.<div><br></div><div>Los cupones de preventa se asignan a una placa especial espec\u00edfica. Los cupones de preventa se pueden comprar para usted o para cualquier otro residente de Florida. No se pueden transferir ni reembolsar una vez comprados. Se reembolsar\u00e1n solo si la placa no cumple con el requisito de preventa.&nbsp;<br></div>"
+          }
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": "vouchers"
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Specialty Plate Voucher",
+            "es": "Vale para placa especializada"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/Taxsys-DmvItems-Vouchers/v0"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": "dmv"
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": ""
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": false
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": ""
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": ""
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {}
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": false
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {}
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": false
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "expandable-item-list"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": "prefixWithApp"
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    },
+    {
+      "id": "bdeaace1-45eb-4cf2-a998-a97d1aae45d2",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": ""
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Specialty License Plates",
+            "es": "Placas Personalizadas"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": []
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": "https://mdctaxcollector.gov/"
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": "200 NW 2nd Avenue, Miami, FL 33128"
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": "(305) 375-5448"
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {
+            "en": "Will be processed after county approval",
+            "es": "Se procesar\u00e1 despu\u00e9s de la aprobaci\u00f3n del condado"
+          }
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Tax Collector - Specialty Plates & Pre-Sale Vouchers",
+            "es": "Recaudador de impuestos - Placas especiales y cupones para placas especiales"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": true
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayType": {
+          "type": "text",
+          "value": "specialty-plate"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": "https://site-settings.grantstreet-cdn.com/3d0f85f7-0155-4304-be25-ceb16ce20e77specialty-page.jpg"
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": ""
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": "plate-expand"
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": [
+            {
+              "id": "3aad0913-6764-4ad7-9ee5-090b707b8900",
+              "type": "Object",
+              "value": {
+                "categoryKey": {
+                  "type": "text",
+                  "value": "collegiate"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Collegiate",
+                    "es": "Colegial"
+                  }
+                }
+              }
+            },
+            {
+              "id": "d4212a2b-13d8-4fa7-9527-08579cf6356e",
+              "type": "Object",
+              "value": {
+                "categoryKey": {
+                  "type": "text",
+                  "value": "environmental_wildlife"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Environmental/Wildlife",
+                    "es": "Medioambiente / Vida Silvestre"
+                  }
+                }
+              }
+            },
+            {
+              "id": "3b4409a2-933e-4d66-9168-6a5ddbb6d6b4",
+              "type": "Object",
+              "value": {
+                "categoryKey": {
+                  "type": "text",
+                  "value": "military"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Military",
+                    "es": "Militar"
+                  }
+                }
+              }
+            },
+            {
+              "id": "994e4f34-0b0a-4c2a-ab41-b8c8170aa17c",
+              "type": "Object",
+              "value": {
+                "categoryKey": {
+                  "type": "text",
+                  "value": "special_interest"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Special Interest",
+                    "es": "Inter\u00e9s especial"
+                  }
+                }
+              }
+            },
+            {
+              "id": "bfed3a52-c7fb-42a1-b7b5-d2ac1fae3a41",
+              "type": "Object",
+              "value": {
+                "categoryKey": {
+                  "type": "text",
+                  "value": "sports"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Sports",
+                    "es": "Deportes"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": [
+            {
+              "id": "ab00a077-6a45-446c-97fe-c5ac950384e7",
+              "type": "Object",
+              "value": {
+                "charLimit": {
+                  "type": "text",
+                  "value": "8"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Purchaser's Current License Plate",
+                    "es": "Placa Actual del Comprador"
+                  }
+                },
+                "pexKey": {
+                  "type": "text",
+                  "value": "purchaser_plate"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {}
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": true
+                },
+                "textArea": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "tooltip": {
+                  "type": "TranslatableText",
+                  "value": {}
+                }
+              }
+            },
+            {
+              "id": "5d9c152b-54c6-4431-a976-bf0c6124bffe",
+              "type": "Object",
+              "value": {
+                "charLimit": {
+                  "type": "text",
+                  "value": "8"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Recipient's Current License Plate",
+                    "es": "Placa Actual del Destinatario"
+                  }
+                },
+                "pexKey": {
+                  "type": "text",
+                  "value": "recipient_plate"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Optional",
+                    "es": "Opcional"
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "textArea": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "tooltip": {
+                  "type": "TranslatableText",
+                  "value": {}
+                }
+              }
+            },
+            {
+              "id": "0c26bf73-247b-4143-b3b7-23e1bf13c9a8",
+              "type": "Object",
+              "value": {
+                "charLimit": {
+                  "type": "text",
+                  "value": "20"
+                },
+                "label": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Recipient's Full Name",
+                    "es": "Nombre Completo del Destinatario"
+                  }
+                },
+                "pexKey": {
+                  "type": "text",
+                  "value": "recipient_name"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Optional",
+                    "es": "Opcional"
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "textArea": {
+                  "type": "toggle",
+                  "value": false
+                },
+                "tooltip": {
+                  "type": "TranslatableText",
+                  "value": {}
+                }
+              }
+            }
+          ]
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "license-plate"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "700"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {
+            "en": "<b>Please note: Specialty plates are only available if your vehicle registration will expire in the next 12 months. If you order a specialty plate and have a registration that expires in 13 months or more your order will be cancelled upon review.</b>",
+            "es": "<b>Por favor tenga en cuenta: Las placas especiales solo est\u00e1n disponibles si el registro de su veh\u00edculo vence en los pr\u00f3ximos 12 meses. Si ordena una placa especial y tiene un registro que vence en 13 meses o m\u00e1s, su pedido ser\u00e1 cancelado.</b>"
+          }
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": "plates"
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Specialty License Plates",
+            "es": "Placas Personalizadas"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/Taxsys-DmvItems-Plates/v0"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": "dmv"
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": ""
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": false
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": ""
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": ""
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {}
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": false
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {}
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": false
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "expandable-item-list"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": "prefixWithApp"
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    },
+    {
+      "id": "e366bd20-873d-4055-a2e5-578ca608d9c0",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": ""
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Forms"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": []
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": ""
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": ""
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": ""
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Forms"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": false
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": true
+        },
+        "displayType": {
+          "type": "text",
+          "value": "ETitle"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": ""
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": ""
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": ""
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": []
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": []
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "clipboard"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "700"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {}
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "E-Title Printing",
+            "es": "Impresi\u00f3n de T\u00edtulos Electr\u00f3nicos"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/GovHub-Forms-Taxsys-ETitle/v0"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": "dmv"
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": "/fl-miamidade/forms/electronic-title"
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": false
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": ""
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": ""
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {}
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": false
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {}
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": false
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "redirect"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": "prefixWithApp"
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    },
+    {
+      "id": "3ea8b1c4-5e2c-4839-9825-d961b10fd447",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": ""
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Business Tax",
+            "es": "Impuesto de negocios"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": []
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": "https://mdctaxcollector.gov/"
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": "200 NW 2nd Avenue, Miami, FL 33128"
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": "(305) 375-5448"
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Business Tax",
+            "es": "Impuesto de negocios"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": false
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayType": {
+          "type": "text",
+          "value": "business-tax"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": ""
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": ""
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {
+            "en": "To complete a Business Tax Receipt, and pursuant to section 205.0532, Florida Statutes, customers must submit a declaration attesting they do not do business with Cuba in violation of federal law. <b>Please allow up to three (3) business days for Business Tax Receipt to become available for printing</b> after attestation has been completed.\n<br>\n<br>\nTo complete attestation, please click <a href=\"https://consenthub.mdctaxcollector.gov/\"  target=\"_blank\" >consenthub.mdctaxcollector.gov</a>",
+            "es": "<b>Aviso sobre los Estatutos de Florida</b>\n<br>\nPara completar un Recibo del Impuesto Comercial Local, y de conformidad con la Secci\u00f3n 205.0532 de los Estatutos de Florida, los clientes deben presentar una declaraci\u00f3n en la que certifiquen que no realizan negocios con Cuba en violaci\u00f3n de la ley federal.\n<br>\n<b>Una vez completada la declaraci\u00f3n, permita hasta tres (3) d\u00edas h\u00e1biles para que el Recibo del Impuesto Comercial Local est\u00e9 disponible para imprimir.</b>\n<br>\n<br>\nPara completar la declaraci\u00f3n, visite:\n<a href=\"https://consenthub.mdctaxcollector.gov/\" target=\"_blank\" >consenthub.mdctaxcollector.gov</a>"
+          }
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": ""
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": []
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": []
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "business-tax"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "200"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {}
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": "business-tax"
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Business Tax",
+            "es": "Impuesto de negocios"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/Taxsys-GovHub/v0/"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": ""
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": ""
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": true
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": ""
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": ""
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {}
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": ""
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": true
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {
+                "en": "<p>No bills or accounts matched your search. The following tips may help:</p>\n<ul class=\"classic-list col-sm-12\">\n<li>Try using different or fewer search terms.</li>\n<li>Try leaving off words like drive, road, avenue, etc. For example, search for <code>123 Main</code> instead of <code>123 Main Street</code>.</li>\n</ul>",
+                "es": "<p>No se encontraron facturas ni cuentas que coincidan con su b\u00fasqueda. Los siguientes consejos pueden ser de ayuda:</p>\n<ul class=\"classic-list col-sm-12\">\n<li>Intente usar t\u00e9rminos de b\u00fasqueda diferentes o menos espec\u00edficos.</li>\n<li>Intente omitir palabras como calle, avenida, carretera, etc. Por ejemplo, busque <code>123 Main</code> en lugar de <code>123 Main Street</code>.</li>\n</ul>"
+              }
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": "TEST_ONLY_PUBLIC_KEY"
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": "Z0CFW6ZFEB"
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": "fl-miamidade.business_tax"
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": "TEST_ONLY_PUBLIC_KEY"
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": "0LWZO52LS2"
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": "fl-miamidade.business_tax"
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": true
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": [
+            {
+              "id": "9a01a073-ab82-44c7-bbc5-2e088b79d67b",
+              "type": "Object",
+              "value": {
+                "payablesKey": {
+                  "type": "text",
+                  "value": "querystring"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Name, Address, Account Number, Folio Number, etc.",
+                    "es": "Nombre, direcci\u00f3n, n\u00famero de cuenta, n\u00famero de folio, etc."
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": true
+                }
+              }
+            }
+          ]
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "index-search"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": ""
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    },
+    {
+      "id": "846437f6-a5f2-4513-b46d-73ea17f80584",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown",
+          "value": "fl"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": "https://cdn-grantstreet-com.s3.amazonaws.com/76db10f2-bf8f-4da2-9fbc-6302192dd912BATC-FL-2.pdf"
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text",
+          "value": "500"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Property Tax",
+            "es": "Impuesto a la propiedad"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": []
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": "https://mdctaxcollector.gov/"
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": "200 NW 2nd Avenue, Miami, FL 33128"
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": "(305) 375-5448"
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Property Tax",
+            "es": "Impuesto a la propiedad"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": false
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayType": {
+          "type": "text",
+          "value": "property-tax"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": ""
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": true
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": ""
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {
+            "en": "<h2  class=\"h3\">Go Paperless!</h2>\n<p><b>Sign up to receive your property tax bills by email.</b> Search for your property above, then click \"Enroll in Paperless\" on your Account Summary page to get started.</p>",
+            "es": "<h2  class=\"h3\">\u00a1Inscr\u00edbase!</h2>\n<p><b>Reciba sus facturas del impuesto a la propiedad por correo electr\u00f3nico.</b> Para comenzar, busque su propiedad arriba y luego haga clic en \"Inscribirse en el programa sin papel\" en la p\u00e1gina de resumen de la cuenta.</p>"
+          }
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": ""
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": []
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": []
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "property-tax"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "100"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {}
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": "property-tax"
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Property Tax",
+            "es": "Impuesto a la propiedad"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/Taxsys-GovHub/v0/"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": ""
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": ""
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": true
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/search/confidential/example"
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": "confidential-account-number"
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {
+                        "en": "Account",
+                        "es": "Cuenta"
+                      }
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": "account_number"
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": true
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {
+                "en": "<p>No bills or accounts matched your search. The following tips may help:</p>\n<ul class=\"classic-list col-sm-12\">\n<li>Try using different or fewer search terms.</li>\n<li>Try leaving off words like drive, road, avenue, etc. For example, search for <code>123 Main</code> instead of <code>123 Main Street</code>.</li>\n</ul>",
+                "es": "<p>No se encontraron facturas ni cuentas que coincidan con su b\u00fasqueda. Los siguientes consejos pueden ser de ayuda:</p>\n<ul class=\"classic-list col-sm-12\">\n<li>Intente usar t\u00e9rminos de b\u00fasqueda diferentes o menos espec\u00edficos.</li>\n<li>Intente omitir palabras como calle, avenida, carretera, etc. Por ejemplo, busque <code>123 Main</code> en lugar de <code>123 Main Street</code>.</li>\n</ul>"
+              }
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": "TEST_ONLY_PUBLIC_KEY"
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": "Z0CFW6ZFEB"
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": "fl-miamidade.property_tax"
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": "TEST_ONLY_PUBLIC_KEY"
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": "0LWZO52LS2"
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": "fl-miamidade.property_tax"
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": false
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": [
+            {
+              "id": "c802ac94-bfe2-457a-9923-ed87b9c0f524",
+              "type": "Object",
+              "value": {
+                "payablesKey": {
+                  "type": "text",
+                  "value": "querystring"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Name, Address, Account Number, Folio Number, etc.",
+                    "es": "Nombre, direcci\u00f3n, n\u00famero de cuenta, n\u00famero de folio, etc."
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": true
+                }
+              }
+            }
+          ]
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "index-search"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": ""
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    },
+    {
+      "id": "523a9e70-40fc-4ab3-a1f2-d95c1e0cf700",
+      "type": "Object",
+      "value": {
+        "allowPaperlessEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "blindDisplayNameLabel": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "blindDisplayNamePlaceholder": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartContactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "bulkAddToCartContactTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "bulkAddToCartFileFormat": {
+          "type": "dropdown",
+          "value": "fl"
+        },
+        "bulkAddToCartInformationalPacket": {
+          "type": "pdf",
+          "value": "https://cdn-grantstreet-com.s3.amazonaws.com/21d8010c-bc61-4e2a-bdf1-360d55bbaaef76db10f2-bf8f-4da2-9fbc-6302192dd912BATC-FL-2.pdf"
+        },
+        "bulkAddToCartMaxItems": {
+          "type": "text",
+          "value": "500"
+        },
+        "categoryTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Get Bills By Email",
+            "es": "Recibir factura por correo electr\u00f3nico"
+          }
+        },
+        "clientContactPreferenceSchep": {
+          "type": "checkbox",
+          "value": [
+            "phone"
+          ]
+        },
+        "clientWebsiteUrl": {
+          "type": "url",
+          "value": "https://mdctaxcollector.gov/"
+        },
+        "contactAddress": {
+          "type": "text",
+          "value": "200 NW 2nd Avenue, Miami, FL 33128"
+        },
+        "contactEmail": {
+          "type": "text",
+          "value": ""
+        },
+        "contactPhone": {
+          "type": "text",
+          "value": "(305) 375-5448"
+        },
+        "delayedBadgeText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "departmentDisplayName": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Get Bills By Email",
+            "es": "Recibir Facturas Por Correo Electr\u00f3nico"
+          }
+        },
+        "displayBulkAddContact": {
+          "type": "toggle",
+          "value": false
+        },
+        "displayContactPhone": {
+          "type": "toggle",
+          "value": false
+        },
+        "displaySidebar": {
+          "type": "toggle",
+          "value": true
+        },
+        "displayType": {
+          "type": "text",
+          "value": "get-bills-by-email"
+        },
+        "dropdownImage": {
+          "type": "image",
+          "value": ""
+        },
+        "enableBillExpressSearch": {
+          "type": "toggle",
+          "value": true
+        },
+        "enableBulkAddToCart": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableSMSEbillingReminders": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableTaxDollarBreakdownSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "enableUnclaimedRefundsSearch": {
+          "type": "toggle",
+          "value": false
+        },
+        "exampleImage": {
+          "type": "image",
+          "value": ""
+        },
+        "exampleImageAltText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "exampleImageText": {
+          "type": "TranslatableTextArea",
+          "value": {}
+        },
+        "expandComponentKey": {
+          "type": "text",
+          "value": ""
+        },
+        "expandItemCategories": {
+          "type": "List",
+          "value": []
+        },
+        "explicitTermsOfUseAcknowledgment": {
+          "type": "toggle",
+          "value": false
+        },
+        "freeformFields": {
+          "type": "List",
+          "value": []
+        },
+        "generateUniqueId": {
+          "type": "toggle",
+          "value": false
+        },
+        "hideInProd": {
+          "type": "toggle",
+          "value": false
+        },
+        "icon": {
+          "type": "icon",
+          "value": "mail"
+        },
+        "itemName": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "navOrder": {
+          "type": "text",
+          "value": "9"
+        },
+        "pageDescription": {
+          "type": "TranslatableWysiwyg",
+          "value": {}
+        },
+        "pageImageTop": {
+          "type": "image",
+          "value": ""
+        },
+        "pageRoute": {
+          "type": "text",
+          "value": "get-bills-by-email"
+        },
+        "pageSubtitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "pageTitle": {
+          "type": "TranslatableText",
+          "value": {
+            "en": "Get Bills By Email",
+            "es": "Recibir factura por correo electr\u00f3nico"
+          }
+        },
+        "payablesAdaptor": {
+          "type": "text",
+          "value": "/Taxsys-GovHub/v0/"
+        },
+        "pinGateEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "prodAccessPassword": {
+          "type": "text",
+          "value": ""
+        },
+        "productOwnership": {
+          "type": "radio",
+          "value": ""
+        },
+        "redirectLink": {
+          "type": "text",
+          "value": "/fl-miamidade/property-tax"
+        },
+        "redirectLinkNonProd": {
+          "type": "text",
+          "value": ""
+        },
+        "searchApi": {
+          "type": "Object",
+          "value": {
+            "alwaysShowMainAddress": {
+              "name": "Always Show Main Address",
+              "order": 800,
+              "type": "toggle",
+              "value": false
+            },
+            "autocompleteAddressOnly": {
+              "description": "<p>When enabled, autocomplete will only work with address searches and will not use Account or Bill Number.</p>",
+              "name": "Autocomplete on Address Searches Only",
+              "order": 950,
+              "type": "toggle",
+              "value": false
+            },
+            "confidentialSearch": {
+              "description": "<p>Some customers may need to search for confidential accounts using a different form. This configures the example image, and primary selector field.</p>",
+              "name": "Confidential Search",
+              "order": 1000,
+              "type": "Object",
+              "value": {
+                "exampleImage": {
+                  "name": "Example Image URL",
+                  "type": "url",
+                  "value": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/search/confidential/example"
+                },
+                "field": {
+                  "name": "",
+                  "type": "Object",
+                  "value": {
+                    "id": {
+                      "highRisk": true,
+                      "name": "Field Id",
+                      "type": "text",
+                      "value": "confidential-account-number"
+                    },
+                    "label": {
+                      "name": "Field Label",
+                      "type": "TranslatableText",
+                      "value": {
+                        "en": "Account",
+                        "es": "Cuenta"
+                      }
+                    },
+                    "name": {
+                      "name": "Field Name",
+                      "type": "text",
+                      "value": "account_number"
+                    }
+                  }
+                }
+              }
+            },
+            "enableAlgolia": {
+              "highRisk": true,
+              "name": "Enable Algolia",
+              "order": 50,
+              "type": "toggle",
+              "value": true
+            },
+            "noResultsFallbackText": {
+              "name": "No Results Fallback Text",
+              "order": 750,
+              "type": "TranslatableTextArea",
+              "value": {
+                "en": "<p>No bills or accounts matched your search. The following tips may help:</p>\n<ul class=\"classic-list col-sm-12\">\n<li>Try using different or fewer search terms.</li>\n<li>Try leaving off words like drive, road, avenue, etc. For example, search for <code>123 Main</code> instead of <code>123 Main Street</code>.</li>\n</ul>",
+                "es": "<p>No se encontraron facturas ni cuentas que coincidan con su b\u00fasqueda. Los siguientes consejos pueden ser de ayuda:</p>\n<ul class=\"classic-list col-sm-12\">\n<li>Intente usar t\u00e9rminos de b\u00fasqueda diferentes o menos espec\u00edficos.</li>\n<li>Intente omitir palabras como calle, avenida, carretera, etc. Por ejemplo, busque <code>123 Main</code> en lugar de <code>123 Main Street</code>.</li>\n</ul>"
+              }
+            },
+            "nonprodAlgoliaApiKey": {
+              "name": "Non-Prod Algolia Search API Key",
+              "order": 400,
+              "type": "text",
+              "value": "TEST_ONLY_PUBLIC_KEY"
+            },
+            "nonprodAlgoliaAppId": {
+              "name": "Non-Prod Algolia API Application ID",
+              "order": 200,
+              "type": "text",
+              "value": "Z0CFW6ZFEB"
+            },
+            "nonprodIndex": {
+              "name": "Non-Prod Search Index",
+              "order": 600,
+              "type": "text",
+              "value": "fl-miamidade.property_tax"
+            },
+            "prodAlgoliaApiKey": {
+              "highRisk": true,
+              "name": "Prod Algolia Search API Key",
+              "order": 300,
+              "type": "text",
+              "value": "TEST_ONLY_PUBLIC_KEY"
+            },
+            "prodAlgoliaAppId": {
+              "highRisk": true,
+              "name": "Prod Algolia API Application ID",
+              "order": 100,
+              "type": "text",
+              "value": "0LWZO52LS2"
+            },
+            "prodIndex": {
+              "highRisk": true,
+              "name": "Prod Search Index",
+              "order": 500,
+              "type": "text",
+              "value": "fl-miamidade.property_tax"
+            },
+            "promoteAccountNumberInCard": {
+              "description": "<p>When enabled, the search result card flips the address and account number display so that the account number is more prominent. This applies to both Algolia and Fallback search results.</p>",
+              "name": "Promote Account Number in Search Result Card",
+              "order": 975,
+              "type": "toggle",
+              "value": false
+            },
+            "separateExactMatchInResults": {
+              "name": "Separate Exact Match in Search Results",
+              "order": 900,
+              "type": "toggle",
+              "value": true
+            },
+            "showBtExpress": {
+              "description": "<p>Used to display a BTExpress&trade; link with icon and copy underneath the search field.</p>",
+              "highRisk": true,
+              "name": "Show BTExpress",
+              "order": 1100,
+              "type": "toggle",
+              "value": false
+            }
+          }
+        },
+        "searchInputs": {
+          "type": "List",
+          "value": [
+            {
+              "id": "c9662733-84a9-47de-9ad3-c1f50cc005cb",
+              "type": "Object",
+              "value": {
+                "payablesKey": {
+                  "type": "text",
+                  "value": "querystring"
+                },
+                "placeholder": {
+                  "type": "TranslatableText",
+                  "value": {
+                    "en": "Name, Address, Account Number, Folio Number, etc.",
+                    "es": "Nombre, direcci\u00f3n, n\u00famero de cuenta, n\u00famero de folio, etc."
+                  }
+                },
+                "required": {
+                  "type": "toggle",
+                  "value": true
+                }
+              }
+            }
+          ]
+        },
+        "showTermsOfUse": {
+          "type": "toggle",
+          "value": false
+        },
+        "sourceType": {
+          "type": "dropdown",
+          "value": "index-search"
+        },
+        "taxDollarBreakdownPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "taxDollarBreakdownPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "taxDollarBreakdownSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "tempTaxsysEnvLink": {
+          "type": "Object",
+          "value": {
+            "beta": {
+              "name": "Beta",
+              "order": 400,
+              "type": "text",
+              "value": ""
+            },
+            "demo": {
+              "name": "Demo",
+              "order": 200,
+              "type": "text",
+              "value": ""
+            },
+            "prod": {
+              "name": "Prod",
+              "order": 100,
+              "type": "text",
+              "value": ""
+            },
+            "stage": {
+              "name": "Stage",
+              "order": 300,
+              "type": "text",
+              "value": ""
+            },
+            "test": {
+              "name": "Test",
+              "order": 500,
+              "type": "text",
+              "value": ""
+            }
+          }
+        },
+        "unclaimedRefundsPageRoute": {
+          "type": "text",
+          "value": ""
+        },
+        "unclaimedRefundsPageTitle": {
+          "type": "TranslatableText",
+          "value": {}
+        },
+        "unclaimedRefundsSearchInputs": {
+          "type": "List",
+          "value": []
+        },
+        "urlAppMapping": {
+          "type": "radio",
+          "value": ""
+        },
+        "useEbilling": {
+          "type": "toggle",
+          "value": false
+        },
+        "useUserVerification": {
+          "type": "toggle",
+          "value": false
+        }
+      }
+    }
+  ],
+  "/payhub/data-pub/settings/fl-miamidade/fl-miamidade/taxsys/taxsysClientId/value": "miamidade"
+}

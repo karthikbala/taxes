@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Teresa G. Phillips - Bradford County Tax Collector</title>
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/Style/Blue.css" />
+    <link rel="stylesheet" type="text/css" href="/Style/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/ui-lightness/jquery-ui-1.10.1.custom.css" />
+    
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/web-icons.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    
+<header class=" sticky-top scroll-color">
+    <!--nav menu -->
+    <nav class="navbar navbar-expand-lg main-menu ">
+        <div class="container-xl container-fluid align-items-lg-start">
+            <div class="app-logo">
+                <a class="navbar-brand d-block radius-bg" href="/"><img src="/assets/images/app-logo.png"></a>
+            </div>
+            <button class="border-0 bg-transparent d-block d-lg-none" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="fs-1"><i class="bi bi-list"></i></span>
+            </button>
+            <div class="offcanvas offcanvas-start main-menu " id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <button type="button" class="btn-close d-block d-lg-none ms-auto p-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="d-none d-lg-block">
+                    <ul class="submenu ">
+                        <li>
+                            <a class="submenu-link" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/TaxCollector">Tax Collector's Office</a>
+                        </li>
+                        
+                        <li>
+                            <a class="submenu-link" href="/Survey">Customer Survey</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/Holidays">Legal Holidays</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/Deadlines">Due Dates & Discounts</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/Statements">Documents</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/Services/Links">Helpful Links</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 p-4 p-lg-0 py-lg-3 pb-lg-1">
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Property/SearchSelect?ClearData=True"><span class="d-lg-block d-none"><i class="bi bi-search"></i></span>Search Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/SearchSelect?ClearData=True"><span class="d-lg-block d-none"><i class="bi bi-credit-card"></i></span> Pay Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services"><span class="d-lg-block d-none"><i class="bi bi-gear"></i></span> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Locations"><span class="d-lg-block d-none"><i class="bi bi-geo-alt"></i></span> Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Contact"><span class="d-lg-block d-none"><i class="bi bi-telephone"></i></span> Contact Us</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <style>
+        .mainContentMain {
+            *padding: 0 13px 0 14px;
+        }
+    </style>
+    <div>
+        
+<link rel="stylesheet" href="/Style/SearchGrid.css" />
+
+<!--hero -->
+<section class="inner-hero-bg inner-hero-bg-h150">
+    <div class="container">
+        <h5>Search Selection</h5>
+    </div>
+</section>
+<!--page sec -->
+<main class="sec-min-h">
+        <div class="container py-lg-4">
+            <table class="mainTable">
+                <tbody>
+                    <tr class="mainContentMain">
+                        <td class="mainContentMain">
+                            <table cellspacing="0" cellpadding="0" class="">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" class="fullwidthcontent" id="custombody">
+<form action="/Property/search" id="searchform" method="post" onkeydown="return event.keyCode!=13">                                                <div id="filter-show" class="button" style="padding-right:0; width:150px;margin: 12px 0 0 12px; "><div class="downarrow">Hide filter options</div></div>
+<a class="button" href="/Cart" id="view-cart" style="float:right;margin-top:12px;display:none;">View Shopping Cart</a>                                                <div class="clearfix"></div>
+                                                <div id="filter">
+                                                    <br />
+                                                    <div style="color:black;text-align:justify;">
+                                                        
+                                                        
+                                                        <b><p>Search for your Property by using only ONE (1) Search Option below, along with the Roll Type and Year.</p></b>
+                                                        
+                                                        
+                                                        <p>Then click on  SEARCH  to activate your search.</p>
+                                                        <hr>
+                                                    </div>
+                                                    <div id="filterleft">
+                                                        <label for="ownername">Property Owners Name </label><input id="ownername" name="ownername" placeholder="" type="text" value="" />
+                                                        <br />
+                                                        <span style="font-size:x-small;">Input your last name first.  For best results, just input last name only and then click on search. Example:  SMITH  or    SMITH  JOHN</span>
+                                                        <hr />
+                                                        <div>
+                                                            <table>
+                                                                <tr>
+                                                                    <td><label for="streetnumber">Location House Number</label></td>
+                                                                    <td><label for="streetname">Location Street Name</label></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input id="streetnumber" name="streetnumber" placeholder="House Number" type="text" value="" /></td>
+                                                                    <td><input id="streetname" name="streetname" placeholder="Street Name" type="text" value="" /></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <span style="font-size:x-small;">Input your property’s Location Address.  For best results, input only your Street Name without House Number and then click on search.</span>
+                                                        <hr />
+                                                        <label for="propertynumber">Property Number</label><input id="propertynumber" name="propertynumber" placeholder="Ex: 00000000-00-0262-0009" type="text" value="" />
+                                                        <br />
+                                                        <span style="font-size:x-small;">  Input your Property Number or partial Property Number in the exact format as you see it displayed.  Example: 00000000-00-0262-0009</span>
+                                                        <hr />
+                                                        <label for="taxbillnumber">Tax Bill Number</label><input id="taxbillnumber" name="taxbillnumber" placeholder="Ex. 23400" type="text" value="" />
+                                                    </div>
+
+                                                    <div id="filterright">
+                                                        <label for="RollTypes">Roll Type</label><select id="RollTypes" name="RollTypes"><option value="R">Real Estate</option>
+<option value="P">Personal Property</option>
+<option selected="selected" value="">All Roll Types</option>
+</select>
+                                                        <label for="Years">Tax Year</label><select id="Years" name="Years"><option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option selected="selected" value="">All Years</option>
+</select>
+                                                        <label></label>
+                                                        <input hidden type='submit' value="1">
+                                                        <div id="search" role="button" tabindex="1" class="button" onkeypress="submitForm(0)" onclick="submitForm(0)" style="float:right;margin-right:120px;">Search</div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix">
+                                                </div>
+                                                <div id="filter-results" style="margin-top:25px;float:left">
+                                                    <div id="filter-results-info">
+                                                        <div id="info">
+
+                                                        </div>
+                                                        <div id="page-links">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div id="toview"></div>
+                                                    <div id="filter-results-table">
+
+
+                                                    </div>
+                                                </div>
+</form>
+                                            <div class="clearfix">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+</main>
+
+
+
+
+    </div>
+    <div>
+
+<footer class="bg-app-color pt-5">
+    <div class="container mb-5">
+        <div class="row justify-content-md-between">
+            <div class="col-md-auto mb-lg-0 mb-5">
+                <h6 class="fw-semibold mb-4">Bradford County Tax Collector</h6>
+                <div>
+                    <p class="mb-0"><span class="fw-semibold">Location :</span>  945 North Temple Ave. Suite B Starke, FL 32091-0969</p>
+                    <p class="mb-0"><span class="fw-semibold">Mailing :</span>  PO Box 969 Starke FL  32091</p>
+                    <p class="mb-3">Monday - Friday HOURS: REG. OFFICE 8:00AM TO 4:30PM </p>
+                    <p class="mb-0">DRIVERS LICENSE 8:00AM TO 4:15PM</p>
+                </div>
+                <div class="pt-4">
+                    <a href="#" class="d-flex gap-2 align-items-center text-white"><img src="/assets/images/phone.svg" width="24px">904-966-6246</a>
+                    <a href="#" class="d-flex gap-2 align-items-center text-white mt-2"><img src="/assets/images/mail.svg" width="24px"> tax@bradfordcountyfl.gov</a>
+                </div>
+            </div>
+            <div class="col-md-auto mb-lg-0 mb-5">
+                <h6 class="fw-semibold mb-3">Quick Links</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/SearchSelect?ClearData=True">Search Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/SearchSelect?ClearData=True">Pay Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Locations">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div> 
+            <div class="col-md-auto mb-lg-0 mb-5">
+                <h6 class="fw-semibold mb-3">  <a class="nav-link" href="/About/PropertyTax">Property Taxes</a></h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/PropertyTax">Personal Property</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/DelinquentTaxes">Delinquent Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/TaxCertificates">Tax Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/MillageRates">Millage Rates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/CountyCertificates">County Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/TaxGlossary">Tax Glossary</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-auto mb-lg-0 mb-4">
+                <h6 class="fw-semibold mb-3">Services</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.flhsmv.gov/" target="_blank">Tag Renewal Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/Tags">Tag & Title</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://myfwc.com/" target="_blank">Hunting & Fishing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/ConcealedWeapons">Concealed Weapon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/Forms">View Online Forms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://get.adobe.com/reader/" target="_blank">Download Form Viewer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/Links">Helpful Links</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright py-3">
+        <div class="container">
+            <div class="d-md-flex justify-content-between">
+                <a href="/Home/Privacy" class="text-white">Privacy Policy</a>
+                <div class="pt-md-0 pt-3">All rights reserved.  © Copyright www.visualgov.com 1999-2023</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    
+<div id="mask">
+    <img id="mask-loader" src="/img/h-loader.gif" alt="mask" style="width:220px; height:10px" />
+</div>
+<div id="popup-background" style="display:none"></div>
+<div id="popupcontainer" style="display:none">
+    <div id="popup-inner-container">
+        <div id="popup-close" style="float:right;  margin: -45px -45px 0 0;"><img src="/Images/close_button.png" alt="close" /></div>
+        <div class="clearfix"></div>
+        <div id="popup-content"></div>
+    </div>
+</div>
+
+<style type="text/css">
+    #mask, #popup-background {
+        background: none repeat scroll 0 0 #000000;
+        display: none;
+        height: 100%;
+        left: 0;
+        opacity: 0.75;
+        filter: alpha(opacity=75);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2000;
+    }
+
+    #mask-loader {
+        position: absolute;
+    }
+
+    .popup {
+        display: none;
+        /*position: absolute;*/
+    }
+
+    #popupcontainer {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid;
+        padding: 15px;
+        position: absolute;
+        z-index: 2000;
+    }
+
+    #popup-inner-container {
+        border: 2px solid #D6D6D6;
+        float: left;
+        padding: 7px;
+    }
+</style>
+
+    <div id="printer" class="mainContentMain">
+    </div>
+
+</body>
+
+</html>

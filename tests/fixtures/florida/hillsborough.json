@@ -1,0 +1,3806 @@
+{
+  "acreage": 0.95,
+  "appraiserValueInfo": null,
+  "buildings": [
+    {
+      "apexYear": "2026",
+      "bathrooms": null,
+      "bedrooms": null,
+      "cardNumber": 1,
+      "constructionInfo": [
+        {
+          "constructionDetail": {
+            "code": "B  ",
+            "description": "Reinforced Concrete Columns And Beams"
+          },
+          "element": {
+            "code": "50  ",
+            "description": "Class"
+          },
+          "sequence": 1
+        },
+        {
+          "constructionDetail": {
+            "code": "15",
+            "description": "Glass Thermopane"
+          },
+          "element": {
+            "code": "EW  ",
+            "description": "Exterior Wall"
+          },
+          "sequence": 2
+        },
+        {
+          "constructionDetail": {
+            "code": "9",
+            "description": "Stone"
+          },
+          "element": {
+            "code": "EW  ",
+            "description": "Exterior Wall"
+          },
+          "sequence": 3
+        },
+        {
+          "constructionDetail": {
+            "code": "9",
+            "description": "Rigid Frame/Barjoist"
+          },
+          "element": {
+            "code": "RS  ",
+            "description": "Roof Structure"
+          },
+          "sequence": 4
+        },
+        {
+          "constructionDetail": {
+            "code": "12",
+            "description": "Rubber Or Plastic"
+          },
+          "element": {
+            "code": "RC  ",
+            "description": "Roof Cover"
+          },
+          "sequence": 5
+        },
+        {
+          "constructionDetail": {
+            "code": "5",
+            "description": "Drywall"
+          },
+          "element": {
+            "code": "IW  ",
+            "description": "Interior Walls"
+          },
+          "sequence": 6
+        },
+        {
+          "constructionDetail": {
+            "code": "8",
+            "description": "Carpet"
+          },
+          "element": {
+            "code": "IF  ",
+            "description": "Interior Flooring"
+          },
+          "sequence": 7
+        },
+        {
+          "constructionDetail": {
+            "code": "7",
+            "description": "Tile"
+          },
+          "element": {
+            "code": "IF  ",
+            "description": "Interior Flooring"
+          },
+          "sequence": 8
+        },
+        {
+          "constructionDetail": {
+            "code": "2",
+            "description": "Central"
+          },
+          "element": {
+            "code": "AC  ",
+            "description": "Heat/Ac"
+          },
+          "sequence": 9
+        },
+        {
+          "constructionDetail": {
+            "code": "3",
+            "description": "Typical"
+          },
+          "element": {
+            "code": "PL  ",
+            "description": "Plumbing"
+          },
+          "sequence": 10
+        },
+        {
+          "constructionDetail": {
+            "code": "3",
+            "description": "Average"
+          },
+          "element": {
+            "code": "CN  ",
+            "description": "Condition"
+          },
+          "sequence": 11
+        },
+        {
+          "constructionDetail": {
+            "code": "41.00",
+            "description": null
+          },
+          "element": {
+            "code": "SH  ",
+            "description": "Stories"
+          },
+          "sequence": 12
+        },
+        {
+          "constructionDetail": {
+            "code": "100.00",
+            "description": null
+          },
+          "element": {
+            "code": "RM  ",
+            "description": "Units"
+          },
+          "sequence": 13
+        },
+        {
+          "constructionDetail": {
+            "code": "10.00",
+            "description": null
+          },
+          "element": {
+            "code": "WH  ",
+            "description": "Wall Height"
+          },
+          "sequence": 14
+        }
+      ],
+      "depreciation": 196444784,
+      "grossArea": 878863,
+      "heatedArea": 812912,
+      "noData": false,
+      "photo": null,
+      "sketch": "FBM(20482 P622)\r\nUST(405 P84)\r\nCAN(1845 P330)\r\nTWO(10830 P650)\r\nCAN(780 P154)\r\nCAN(1800 P324)\r\nUST(350 P78)\r\nCAN(600 P124)\r\nUST(1420 P204)\r\nFUS(1420 P204)\r\nUST(500 P90)\r\nATR(500 P90)\r\nATR(1800 P220)\r\nFST(600 P100)\r\nFST(600 P100)\r\nFST(600 P100)\r\nFST(600 P100)\r\nFUS(13090 P50)\r\nFST(1200 P50)\r\nFUS(717300 P50)\r\nFST(43200 P50)\r\nFUS(18300 P50)\r\nFST(1200 P50)\r\nBAL(1625 P50)\r\nFUS(16050 P50)\r\nFST(1200 P50)\r\nBAL(2250 P50)\r\nUST(5176 P50)\r\nFUS(2310 P50)\r\n.\r\n",
+      "stories": 41.0,
+      "subAreaInfo": [
+        {
+          "areaType": "FBM",
+          "depreciatedValue": 3836159,
+          "grossArea": 20482,
+          "heatedArea": 20482,
+          "sequence": 1
+        },
+        {
+          "areaType": "UST",
+          "depreciatedValue": 37926,
+          "grossArea": 405,
+          "heatedArea": 0,
+          "sequence": 2
+        },
+        {
+          "areaType": "CAN",
+          "depreciatedValue": 129698,
+          "grossArea": 1845,
+          "heatedArea": 0,
+          "sequence": 3
+        },
+        {
+          "areaType": "TWO",
+          "depreciatedValue": 5070866,
+          "grossArea": 21660,
+          "heatedArea": 21660,
+          "sequence": 4
+        },
+        {
+          "areaType": "CAN",
+          "depreciatedValue": 54782,
+          "grossArea": 780,
+          "heatedArea": 0,
+          "sequence": 5
+        },
+        {
+          "areaType": "CAN",
+          "depreciatedValue": 126420,
+          "grossArea": 1800,
+          "heatedArea": 0,
+          "sequence": 6
+        },
+        {
+          "areaType": "UST",
+          "depreciatedValue": 32776,
+          "grossArea": 350,
+          "heatedArea": 0,
+          "sequence": 7
+        },
+        {
+          "areaType": "CAN",
+          "depreciatedValue": 42140,
+          "grossArea": 600,
+          "heatedArea": 0,
+          "sequence": 8
+        },
+        {
+          "areaType": "UST",
+          "depreciatedValue": 132976,
+          "grossArea": 1420,
+          "heatedArea": 0,
+          "sequence": 9
+        },
+        {
+          "areaType": "FUS",
+          "depreciatedValue": 332439,
+          "grossArea": 1420,
+          "heatedArea": 1420,
+          "sequence": 10
+        },
+        {
+          "areaType": "UST",
+          "depreciatedValue": 46822,
+          "grossArea": 500,
+          "heatedArea": 0,
+          "sequence": 11
+        },
+        {
+          "areaType": "ATR",
+          "depreciatedValue": 140467,
+          "grossArea": 500,
+          "heatedArea": 500,
+          "sequence": 12
+        },
+        {
+          "areaType": "ATR",
+          "depreciatedValue": 505682,
+          "grossArea": 1800,
+          "heatedArea": 1800,
+          "sequence": 13
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 70234,
+          "grossArea": 600,
+          "heatedArea": 0,
+          "sequence": 14
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 70234,
+          "grossArea": 600,
+          "heatedArea": 0,
+          "sequence": 15
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 70234,
+          "grossArea": 600,
+          "heatedArea": 0,
+          "sequence": 16
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 70234,
+          "grossArea": 600,
+          "heatedArea": 0,
+          "sequence": 17
+        },
+        {
+          "areaType": "FUS",
+          "depreciatedValue": 3064526,
+          "grossArea": 13090,
+          "heatedArea": 13090,
+          "sequence": 18
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 140467,
+          "grossArea": 1200,
+          "heatedArea": 0,
+          "sequence": 19
+        },
+        {
+          "areaType": "FUS",
+          "depreciatedValue": 167928538,
+          "grossArea": 717300,
+          "heatedArea": 717300,
+          "sequence": 20
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 5056819,
+          "grossArea": 43200,
+          "heatedArea": 0,
+          "sequence": 21
+        },
+        {
+          "areaType": "FUS",
+          "depreciatedValue": 4284250,
+          "grossArea": 18300,
+          "heatedArea": 18300,
+          "sequence": 22
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 140467,
+          "grossArea": 1200,
+          "heatedArea": 0,
+          "sequence": 23
+        },
+        {
+          "areaType": "BAL",
+          "depreciatedValue": 57123,
+          "grossArea": 1625,
+          "heatedArea": 0,
+          "sequence": 24
+        },
+        {
+          "areaType": "FUS",
+          "depreciatedValue": 3757498,
+          "grossArea": 16050,
+          "heatedArea": 16050,
+          "sequence": 25
+        },
+        {
+          "areaType": "FST",
+          "depreciatedValue": 140467,
+          "grossArea": 1200,
+          "heatedArea": 0,
+          "sequence": 26
+        },
+        {
+          "areaType": "BAL",
+          "depreciatedValue": 79130,
+          "grossArea": 2250,
+          "heatedArea": 0,
+          "sequence": 27
+        },
+        {
+          "areaType": "UST",
+          "depreciatedValue": 484612,
+          "grossArea": 5176,
+          "heatedArea": 0,
+          "sequence": 28
+        },
+        {
+          "areaType": "FUS",
+          "depreciatedValue": 540799,
+          "grossArea": 2310,
+          "heatedArea": 2310,
+          "sequence": 29
+        }
+      ],
+      "type": {
+        "code": "50  ",
+        "description": "OFFICE >2 STORY"
+      },
+      "units": 100.0,
+      "value": 196444784,
+      "wallHeight": null,
+      "yearBuilt": 1984
+    }
+  ],
+  "extraFeatures": [
+    {
+      "building": 1,
+      "code": "0820  ",
+      "description": "BRIDGE PEDESTRIAN",
+      "featureValue": 318461,
+      "length": "154",
+      "sequence": 1,
+      "units": "2310",
+      "width": "15",
+      "year": 2000
+    },
+    {
+      "building": 0,
+      "code": "0115  ",
+      "description": "CONCRETE PAVERS",
+      "featureValue": 54618,
+      "length": "0",
+      "sequence": 2,
+      "units": "6733",
+      "width": "0",
+      "year": 2013
+    },
+    {
+      "building": 0,
+      "code": "0415  ",
+      "description": "FOUNTAIN LARGE",
+      "featureValue": 29623,
+      "length": "0",
+      "sequence": 3,
+      "units": "1",
+      "width": "0",
+      "year": 2019
+    },
+    {
+      "building": 0,
+      "code": "0410  ",
+      "description": "FOUNTAIN SMALL",
+      "featureValue": 4778,
+      "length": "0",
+      "sequence": 4,
+      "units": "1",
+      "width": "0",
+      "year": 2019
+    }
+  ],
+  "fullLegal": [
+    "TAMPA GENERAL MAP OF 1853 ALL OF BLOCK 78"
+  ],
+  "isConfidential": false,
+  "landLines": [
+    {
+      "acres": 0.0,
+      "depth": 0.0,
+      "frontage": 0.0,
+      "item": 1,
+      "landType": {
+        "code": "SF",
+        "description": "SQUARE FEET"
+      },
+      "landUse": {
+        "code": "DTND",
+        "description": "Downtown D"
+      },
+      "units": 41554.45,
+      "value": 5651405,
+      "zone": "CBD-2"
+    }
+  ],
+  "landUse": {
+    "code": "1810",
+    "description": "OFF MULT-STY A"
+  },
+  "mailingAddress": {
+    "addr1": "250 W 94TH ST",
+    "addr2": "",
+    "city": "NEW YORK",
+    "country": "",
+    "state": "NY",
+    "zip": "10025-6954"
+  },
+  "owner": "FLORMAN AND LEWISOHN LLC; ",
+  "permitInfo": [
+    {
+      "descr": "Interior renovation of Suite 2350",
+      "estValue": "$772,000",
+      "id": 1335203,
+      "issueDate": "4/10/2026",
+      "permitNum": "BLD-26-0523085",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-26-0523085",
+      "propertyType": "C"
+    },
+    {
+      "descr": "Relocate fire sprinklers",
+      "estValue": "$11,200",
+      "id": 1334655,
+      "issueDate": "4/1/2026",
+      "permitNum": "BLD-26-0523755",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-26-0523755",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior renovation of Suite 2220",
+      "estValue": "$810,593",
+      "id": 1334335,
+      "issueDate": "3/3/2026",
+      "permitNum": "BLD-26-0521787",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-26-0521787",
+      "propertyType": "C"
+    },
+    {
+      "descr": "(SHUMAKER FL 29) REPLACE 38 EXISTING RECESSED PEND",
+      "estValue": "$28,438",
+      "id": 1308744,
+      "issueDate": "12/11/2025",
+      "permitNum": "BLD-26-0519919",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-26-0519919",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RENOVATION OF 28 AND 29TH FLOORS. INCLUDI",
+      "estValue": "$1,209,528",
+      "id": 1297698,
+      "issueDate": "7/8/2025",
+      "permitNum": "BLD-25-0513453",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0513453",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ADD AND RELOCATE (71) SPRINKLERS FOR TENANT BUILD-",
+      "estValue": "$18,883",
+      "id": 1283999,
+      "issueDate": "6/17/2025",
+      "permitNum": "BLD-25-0515948",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0515948",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "TENANT EXPANSION AND INTERIOR IMPREVEMENTS TO EXIS",
+      "estValue": "$50,000",
+      "id": 1284362,
+      "issueDate": "6/3/2025",
+      "permitNum": "BLD-25-0513799",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0513799",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior Renovation of Suite 4100. Including archi",
+      "estValue": "$967,461",
+      "id": 1283752,
+      "issueDate": "6/2/2025",
+      "permitNum": "BLD-25-0514242",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0514242",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF SUITE 3200. INCLUDING ARCHITEC",
+      "estValue": "$229,042",
+      "id": 1238187,
+      "issueDate": "1/28/2025",
+      "permitNum": "BLD-25-0512844",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0512844",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM",
+      "estValue": "$16,200",
+      "id": 1238513,
+      "issueDate": "1/14/2025",
+      "permitNum": "BLD-25-0513608",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0513608",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior Renovation of Suite 2050.",
+      "estValue": "$1,014,465",
+      "id": 1235366,
+      "issueDate": "12/16/2024",
+      "permitNum": "BLD-25-0512572",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-25-0512572",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE SPACE , SUITE",
+      "estValue": "$475,000",
+      "id": 1222767,
+      "issueDate": "10/3/2024",
+      "permitNum": "BLD-24-0510486",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-24-0510486",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SLAB INFILL REPAIRS",
+      "estValue": "$53,279",
+      "id": 1214912,
+      "issueDate": "8/19/2024",
+      "permitNum": "BLD-24-0509987",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-24-0509987",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "OFFICE RENOVATION OF APPROXIMATLY 5700 SQUARE FEET",
+      "estValue": "$650,313",
+      "id": 1214481,
+      "issueDate": "8/2/2024",
+      "permitNum": "BLD-24-0508554",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-24-0508554",
+      "propertyType": "C"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM",
+      "estValue": "$11,900",
+      "id": 1209950,
+      "issueDate": "7/17/2024",
+      "permitNum": "BLD-24-0509864",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-24-0509864",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior Renovation of Suite 300. Included MEP.",
+      "estValue": "$270,963",
+      "id": 1194978,
+      "issueDate": "3/27/2024",
+      "permitNum": "BLD-24-0506862",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-24-0506862",
+      "propertyType": "C"
+    },
+    {
+      "descr": "REPLACEMENT OF 6\" BACKFLOW PREVENTER ASSEMBLY WITH",
+      "estValue": "$11,518",
+      "id": 1170985,
+      "issueDate": "9/14/2023",
+      "permitNum": "BLD-23-0503142",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0503142",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF SUITE 3350; INCLUDING ARCHITEC",
+      "estValue": "$423,581",
+      "id": 1157652,
+      "issueDate": "7/14/2023",
+      "permitNum": "BLD-23-0500265",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0500265",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ADD/RELOCATE FIRE ALARM DEVICES ON EXISTING FIRE A",
+      "estValue": "$43,200",
+      "id": 1152252,
+      "issueDate": "5/22/2023",
+      "permitNum": "BLD-23-0500628",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0500628",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF SUITE 3800/3850 (38TH FLOOR).",
+      "estValue": "$622,716",
+      "id": 1138520,
+      "issueDate": "3/20/2023",
+      "permitNum": "BLD-23-0498647",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498647",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "FIRE PUMP REPLACEMENT.",
+      "estValue": "$279,500",
+      "id": 1138795,
+      "issueDate": "3/1/2023",
+      "permitNum": "BLD-23-0498753",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498753",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM.",
+      "estValue": "$38,750",
+      "id": 1137702,
+      "issueDate": "2/14/2023",
+      "permitNum": "BLD-23-0498729",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498729",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM. REMODEL BEING DO",
+      "estValue": "$7,800",
+      "id": 1137813,
+      "issueDate": "2/14/2023",
+      "permitNum": "BLD-23-0498727",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498727",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM.",
+      "estValue": "$24,250",
+      "id": 1137924,
+      "issueDate": "2/14/2023",
+      "permitNum": "BLD-23-0498728",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498728",
+      "propertyType": "Z"
+    },
+    {
+      "descr": ": 39TH & 40TH FLOOR REMODEL",
+      "estValue": "$2,861,135",
+      "id": 1137609,
+      "issueDate": "2/13/2023",
+      "permitNum": "BLD-23-0497932",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0497932",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REMODEL- INTERIOR ONLY",
+      "estValue": "$1,482,416",
+      "id": 1124229,
+      "issueDate": "1/24/2023",
+      "permitNum": "BLD-23-0498095",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498095",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF SUITE 2125. INCLUDING ARCHITEC",
+      "estValue": "$596,800",
+      "id": 1124540,
+      "issueDate": "1/20/2023",
+      "permitNum": "BLD-23-0497392",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0497392",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "AN INTERIOR ALTERATION OF EXISTING SUITE #3250, FO",
+      "estValue": "$148,461",
+      "id": 1124467,
+      "issueDate": "1/17/2023",
+      "permitNum": "BLD-22-0495388",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-22-0495388",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM",
+      "estValue": "$6,350",
+      "id": 1124270,
+      "issueDate": "1/12/2023",
+      "permitNum": "BLD-23-0498253",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0498253",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior Non-Structural demo on 39th and 40th Flo",
+      "estValue": "$90,000",
+      "id": 1124566,
+      "issueDate": "1/3/2023",
+      "permitNum": "BLD-23-0497614",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0497614",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior of Suite 3450. Including architectural, m",
+      "estValue": "$446,445",
+      "id": 1119809,
+      "issueDate": "12/19/2022",
+      "permitNum": "BLD-23-0497490",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0497490",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM",
+      "estValue": "$6,500",
+      "id": 1119836,
+      "issueDate": "12/8/2022",
+      "permitNum": "BLD-23-0497773",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0497773",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior Renovation of Suite 2450. Including archi",
+      "estValue": "$3,842,268",
+      "id": 1118832,
+      "issueDate": "11/21/2022",
+      "permitNum": "BLD-22-0496170",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-22-0496170",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "modify existing sprinkler system",
+      "estValue": "$10,000",
+      "id": 1118745,
+      "issueDate": "11/16/2022",
+      "permitNum": "BLD-23-0496983",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-23-0496983",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Interior Renovation of Suite 3350; Including archi",
+      "estValue": "$747,667",
+      "id": 1119035,
+      "issueDate": "11/14/2022",
+      "permitNum": "BLD-22-0495215",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-22-0495215",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF SUITE 4110. INCLUDING ARCHITEC",
+      "estValue": "$294,678",
+      "id": 1114004,
+      "issueDate": "10/19/2022",
+      "permitNum": "BLD-22-0495037",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-22-0495037",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REPLACE 6\" FIRE BACKFLOW IN GARAGE PUMP ROOM.",
+      "estValue": "$10,468",
+      "id": 1087204,
+      "issueDate": "5/9/2022",
+      "permitNum": "BLD-22-0491802",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-22-0491802",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "RELOCATE 25 FIRE SPRINKLERS - SUITE 1800",
+      "estValue": "$8,500",
+      "id": 1074580,
+      "issueDate": "3/23/2022",
+      "permitNum": "BLD-22-0491322",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-22-0491322",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SELECTIVE DEMOLITION AND CONSTRUCTION OF INTERIOR",
+      "estValue": "$700,000",
+      "id": 1073986,
+      "issueDate": "3/14/2022",
+      "permitNum": "BLD-21-0486826",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0486826",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START FOR INTERIOR, NON-STRUCTURAL WORK ONLY",
+      "estValue": "$700,000",
+      "id": 1040446,
+      "issueDate": "10/18/2021",
+      "permitNum": "BLD-21-0485001",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0485001",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "RELOCATE FIRE SPRINKLER HEADS TO NEW ROOM LAYOUT O",
+      "estValue": "$4,600",
+      "id": 1039968,
+      "issueDate": "9/9/2021",
+      "permitNum": "BLD-21-0486578",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0486578",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM SUITE 1125/1150",
+      "estValue": "$3,400",
+      "id": 1021846,
+      "issueDate": "6/21/2021",
+      "permitNum": "BLD-21-0484630",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0484630",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RENOVATION BUILDING LEVEL: ELEVENTH FLOOR",
+      "estValue": "$270,000",
+      "id": 1020854,
+      "issueDate": "5/17/2021",
+      "permitNum": "BLD-21-0482723",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0482723",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SUITE 300 RENOVATIONS TO AN EXISTING DENTAL OFFICE",
+      "estValue": "$200,000",
+      "id": 1009740,
+      "issueDate": "4/19/2021",
+      "permitNum": "BLD-21-0478643",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0478643",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ADD/RELOCATE FIRE ALARM DEVICES FOR BUILD OUT ON 6",
+      "estValue": "$12,250",
+      "id": 985487,
+      "issueDate": "1/25/2021",
+      "permitNum": "BLD-21-0480803",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0480803",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "FIRE ALARM ",
+      "estValue": "$12,777",
+      "id": 985578,
+      "issueDate": "12/10/2020",
+      "permitNum": "BLD-21-0479264",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0479264",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ADD/RELOCATE 34 FIRE SPRINKLERS 6TH FLOOR",
+      "estValue": "$9,000",
+      "id": 978724,
+      "issueDate": "12/9/2020",
+      "permitNum": "BLD-21-0479665",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0479665",
+      "propertyType": "P"
+    },
+    {
+      "descr": "MODIFY EXISTING SPRINKLER SYSTEM",
+      "estValue": "$6,700",
+      "id": 1033675,
+      "issueDate": "10/21/2020",
+      "permitNum": "BLD-21-0478608",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0478608",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Modify existing fire sprinkler system",
+      "estValue": "$3,400",
+      "id": 978949,
+      "issueDate": "10/12/2020",
+      "permitNum": "BLD-21-0478325",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-21-0478325",
+      "propertyType": "P"
+    },
+    {
+      "descr": "INTERIOR RENOVATION FOR SUITE 3325 TO INCLUDE BUIL",
+      "estValue": "$0",
+      "id": 969250,
+      "issueDate": "10/7/2020",
+      "permitNum": "BLD-20-0477100",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0477100",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "WAFS TO ADD/RELOCATE 128 HEADS TO ACCOMMODATE NEW",
+      "estValue": "$0",
+      "id": 968740,
+      "issueDate": "9/25/2020",
+      "permitNum": "BLD-20-0477815",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0477815",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RENOVATION OF AN EXISTING SUITE 730 FOR A",
+      "estValue": "$0",
+      "id": 949277,
+      "issueDate": "9/1/2020",
+      "permitNum": "BLD-20-0477623",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0477623",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC: ELECTRICAL PER PLANS FOR TEMPORARY GENERATOR",
+      "estValue": "$0",
+      "id": 942032,
+      "issueDate": "8/1/2020",
+      "permitNum": "BLD-20-0476215",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0476215",
+      "propertyType": "P"
+    },
+    {
+      "descr": "ELECTRICAL FOR EXACT CHANGE OUTS (3) LIEBERT CRAC",
+      "estValue": "$0",
+      "id": 935157,
+      "issueDate": "7/10/2020",
+      "permitNum": "BTR-20-0518073",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-20-0518073",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "THE PROJECT CONSISTS OF RENOVATING AN EXISTING OFF",
+      "estValue": "$0",
+      "id": 933727,
+      "issueDate": "7/1/2020",
+      "permitNum": "BLD-20-0475784",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0475784",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "4 MAG LOCKS WILL BE INSTALLED (AND TIED INTO THE B",
+      "estValue": "$0",
+      "id": 934210,
+      "issueDate": "6/25/2020",
+      "permitNum": "BTR-20-0517223",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-20-0517223",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE SPACE - BOA 10",
+      "estValue": "$0",
+      "id": 926770,
+      "issueDate": "6/1/2020",
+      "permitNum": "BLD-20-0475425",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0475425",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE SPACE - 101 E",
+      "estValue": "$600,000",
+      "id": 926771,
+      "issueDate": "6/1/2020",
+      "permitNum": "BLD-20-0475427",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0475427",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE SPACE - 101 E",
+      "estValue": "$200,000",
+      "id": 926773,
+      "issueDate": "6/1/2020",
+      "permitNum": "BLD-20-0475428",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0475428",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "HVAC EXACT CHANGE OUTS: FURNISH AND INSTALL (3) LI",
+      "estValue": "$0",
+      "id": 921089,
+      "issueDate": "5/14/2020",
+      "permitNum": "BTR-20-0515195",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-20-0515195",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING TENANT SPACE.",
+      "estValue": "$475,000",
+      "id": 913192,
+      "issueDate": "4/8/2020",
+      "permitNum": "BLD-20-0472714",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0472714",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "RENOVATION OF 4TH FLOOR CONFERENCE ROOM",
+      "estValue": "$193,507",
+      "id": 913022,
+      "issueDate": "4/1/2020",
+      "permitNum": "BLD-20-0474191",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-20-0474191",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "DIRECT REPLACEMENT OF LOADING DOCK ACCESS DOOR ASS",
+      "estValue": "$0",
+      "id": 899073,
+      "issueDate": "12/23/2019",
+      "permitNum": "BTR-20-0509370",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-20-0509370",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "DIRECT REPLACEMENT OF ESCALATOR MAIN LINE DISCONNE",
+      "estValue": "$0",
+      "id": 899074,
+      "issueDate": "12/23/2019",
+      "permitNum": "BTR-20-0509371",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-20-0509371",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "CONTRACTOR WILL EPOXY COAT MAIN RETURN AND WATER F",
+      "estValue": "$0",
+      "id": 870176,
+      "issueDate": "9/4/2019",
+      "permitNum": "BTR-19-0504617",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-19-0504617",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "L SHAPED PYLON SIGN, EACH SIDE 5'W X 10'H INTERNAL",
+      "estValue": "$0",
+      "id": 869677,
+      "issueDate": "9/1/2019",
+      "permitNum": "BLD-19-0469381",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-19-0469381",
+      "propertyType": "P"
+    },
+    {
+      "descr": "SUITE 2500: ADD FIRE ALARM TO MOSAIC PROJECT",
+      "estValue": "$0",
+      "id": 862235,
+      "issueDate": "8/6/2019",
+      "permitNum": "BLD-19-0467941",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-19-0467941",
+      "propertyType": "P"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE, SUITE 2500, M",
+      "estValue": "$0",
+      "id": 842671,
+      "issueDate": "4/24/2019",
+      "permitNum": "BLD-19-0465306",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-19-0465306",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "1STFL :ADA RENOVATIONS/UPGRADES FOR ACCESSIBILITY/",
+      "estValue": "$115,000",
+      "id": 835076,
+      "issueDate": "3/4/2019",
+      "permitNum": "BLD-18-0461921",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0461921",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF AN EXISTING TENANT SUITE 2100,",
+      "estValue": "$51,800",
+      "id": 835333,
+      "issueDate": "3/1/2019",
+      "permitNum": "BLD-19-0465584",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-19-0465584",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REMOVE & REPLACE 4' BACKFLOW ASSEMBLY DOUBLE CHECK",
+      "estValue": "$0",
+      "id": 829475,
+      "issueDate": "1/29/2019",
+      "permitNum": "BTR-19-0494132",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-19-0494132",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "WAFS TO ADD/RELOCATE 51 SPRINKLERS",
+      "estValue": "$0",
+      "id": 822368,
+      "issueDate": "1/28/2019",
+      "permitNum": "BLD-19-0464486",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-19-0464486",
+      "propertyType": "P"
+    },
+    {
+      "descr": "31ST FLOOR: INTERIOR REMODEL OF AN EXISTING VACANT",
+      "estValue": "$0",
+      "id": 810557,
+      "issueDate": "11/20/2018",
+      "permitNum": "BLD-19-0463035",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-19-0463035",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SECURE: INTERIOR REMODEL OF EXISTING BASEMENT FITN",
+      "estValue": "$0",
+      "id": 802274,
+      "issueDate": "10/8/2018",
+      "permitNum": "BLD-18-0460988",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0460988",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Add/Relocate 65 fire sprinklers for new tenant bui",
+      "estValue": "$9,900",
+      "id": 801284,
+      "issueDate": "9/20/2018",
+      "permitNum": "BLD-18-0461953",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0461953",
+      "propertyType": "P"
+    },
+    {
+      "descr": "INT. RENO SUITES-1100,11652 &1180",
+      "estValue": "$275,033",
+      "id": 796215,
+      "issueDate": "8/29/2018",
+      "permitNum": "BLD-18-0460938",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0460938",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SECURE SUITE 250 SCOPE OF WORK: INTERIOR BUILD-OUT",
+      "estValue": "$0",
+      "id": 784468,
+      "issueDate": "7/31/2018",
+      "permitNum": "BLD-18-0458973",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0458973",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF 38TH FLOOR. BUILDING, MEP , FP",
+      "estValue": "$160,000",
+      "id": 784514,
+      "issueDate": "7/27/2018",
+      "permitNum": "BLD-18-0458892",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0458892",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR DEMOLITION OF THE 25TH FLOOR, SUITE 2500.",
+      "estValue": "$109,877",
+      "id": 784292,
+      "issueDate": "7/20/2018",
+      "permitNum": "BDE-18-0439392",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BDE-18-0439392",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "32nd fl:The Scope of work includes new carpet, pai",
+      "estValue": "$165,000",
+      "id": 796416,
+      "issueDate": "6/11/2018",
+      "permitNum": "BLD-18-0457760",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0457760",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RENOVATION FOR SUITE 1700",
+      "estValue": "$160,000",
+      "id": 768036,
+      "issueDate": "5/1/2018",
+      "permitNum": "BLD-18-0459055",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0459055",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REPLACING A PORTION OF MAIN BUILDING DRAIN IN THE",
+      "estValue": "$0",
+      "id": 756412,
+      "issueDate": "3/13/2018",
+      "permitNum": "BTR-18-0480185",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-18-0480185",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ADD 2 HEADS TO EXISTING FIRE PROTECTION SYSTEM TO",
+      "estValue": "$0",
+      "id": 755932,
+      "issueDate": "3/8/2018",
+      "permitNum": "BTR-18-0480029",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-18-0480029",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SUITE 3140:INTERIOR REMODEL OF EXISTING OFFICE SUI",
+      "estValue": "$40,000",
+      "id": 749717,
+      "issueDate": "2/28/2018",
+      "permitNum": "BLD-18-0457314",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0457314",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SUITE 3120:TENANT IMPROVEMENT OF OFFICE SUITE AT B",
+      "estValue": "$0",
+      "id": 734539,
+      "issueDate": "12/21/2017",
+      "permitNum": "BLD-17-0454558",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-17-0454558",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EXPRESS PERMIT--ADD (7) FIRE ALARM DEVICES.",
+      "estValue": "$0",
+      "id": 735317,
+      "issueDate": "12/1/2017",
+      "permitNum": "BTR-18-0476349",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-18-0476349",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SECURE - CREATE 2 OFFICES AND A STORAGE ROOM IN EX",
+      "estValue": "$40,000",
+      "id": 732648,
+      "issueDate": "11/1/2017",
+      "permitNum": "BLD-18-0455826",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-18-0455826",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REWORK 4 OUTLETS IN BREAK ROOM.",
+      "estValue": "$0",
+      "id": 726598,
+      "issueDate": "10/13/2017",
+      "permitNum": "BTR-18-0474619",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-18-0474619",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RENOVATION FOR SUITE 1200",
+      "estValue": "$0",
+      "id": 712854,
+      "issueDate": "8/28/2017",
+      "permitNum": "BLD-17-0453824",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-17-0453824",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SECURE PLANS INTERIOR RENOVATION FOR SUITE 1425",
+      "estValue": "$0",
+      "id": 706436,
+      "issueDate": "7/19/2017",
+      "permitNum": "BLD-17-0452882",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-17-0452882",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REPLACEMENT OF 1 - 5 AND 1 - 4 VERTICAL STACK ON E",
+      "estValue": "$0",
+      "id": 700631,
+      "issueDate": "6/28/2017",
+      "permitNum": "BTR-17-0470267",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-17-0470267",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "Secured: Interior Renovation Suite 2050, Remove re",
+      "estValue": "$189,000",
+      "id": 801335,
+      "issueDate": "4/10/2017",
+      "permitNum": "BLD-17-0451154",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-17-0451154",
+      "propertyType": "C"
+    },
+    {
+      "descr": "A/C CHANGE OUT SAME SIZE 1.5 TON",
+      "estValue": "$0",
+      "id": 680922,
+      "issueDate": "2/3/2017",
+      "permitNum": "BTR-17-0464530",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-17-0464530",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "RENOVATING THE 150 SF BREAK ROOM WITH MECHANICAL,",
+      "estValue": "$0",
+      "id": 664550,
+      "issueDate": "12/1/2016",
+      "permitNum": "BLD-17-0449338",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-17-0449338",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL SUITE 1845- TENANT-CO STAR",
+      "estValue": "$78,800",
+      "id": 659724,
+      "issueDate": "11/20/2016",
+      "permitNum": "BLD-16-0447827",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0447827",
+      "propertyType": "C"
+    },
+    {
+      "descr": "INSTALL TERMINATE AND TEST 62 DATA LOCATIONS. INST",
+      "estValue": "$0",
+      "id": 660606,
+      "issueDate": "11/18/2016",
+      "permitNum": "BTR-17-0462281",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-17-0462281",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REPLACE ITEMS TO REPLACE CHILLED WATERSYSTEM",
+      "estValue": "$70,000",
+      "id": 659699,
+      "issueDate": "11/4/2016",
+      "permitNum": "BLD-17-0448285",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-17-0448285",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "DEMO & RENO OF MAIN SPACE & LOBBY GARAGE",
+      "estValue": "$0",
+      "id": 653930,
+      "issueDate": "10/12/2016",
+      "permitNum": "BLD-16-0447032",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0447032",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RENOVATION OF SUITE 2300, PHASE 2",
+      "estValue": "$0",
+      "id": 653733,
+      "issueDate": "10/5/2016",
+      "permitNum": "BLD-16-0447540",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0447540",
+      "propertyType": "C"
+    },
+    {
+      "descr": "UNIT#700: REMOVED FIRE ALARM SIGNALING DEVICES FOR",
+      "estValue": "$0",
+      "id": 653316,
+      "issueDate": "9/2/2016",
+      "permitNum": "BLD-16-0446317",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0446317",
+      "propertyType": "P"
+    },
+    {
+      "descr": "SECURE INTERIOR REMODEL OF 23RD FLOOR SUITE #2300",
+      "estValue": "$27,000",
+      "id": 642062,
+      "issueDate": "8/29/2016",
+      "permitNum": "BLD-16-0446649",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0446649",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#700:INTERIOR REMODEL DEMO BACK TO VANILLA OF E",
+      "estValue": "$16,430",
+      "id": 642097,
+      "issueDate": "8/18/2016",
+      "permitNum": "BLD-16-0444933",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0444933",
+      "propertyType": "C"
+    },
+    {
+      "descr": "ADD AND RELOCATE SPRINKLERS PER NEW WALL LAYOUT",
+      "estValue": "$2,350",
+      "id": 642393,
+      "issueDate": "8/10/2016",
+      "permitNum": "BLD-16-0446813",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0446813",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "REPLACE 1.5 TON HEAT PUMP SYSTEM",
+      "estValue": "$0",
+      "id": 643203,
+      "issueDate": "8/8/2016",
+      "permitNum": "BTR-16-0458567",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-16-0458567",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "COMPLETE  INT ALTERATION  OF 31ST FL SUITE 3140",
+      "estValue": "$100,000",
+      "id": 642365,
+      "issueDate": "8/3/2016",
+      "permitNum": "BLD-16-0446556",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0446556",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SECURE SUITE 2175 INTERIOR REMODEL WITH NEW PARTIT",
+      "estValue": "$100,000",
+      "id": 635103,
+      "issueDate": "7/20/2016",
+      "permitNum": "BLD-16-0446346",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0446346",
+      "propertyType": "C"
+    },
+    {
+      "descr": "LOW VOLTAGE 2 CAMERA SYSTEM WITH DVR",
+      "estValue": "$0",
+      "id": 641631,
+      "issueDate": "7/5/2016",
+      "permitNum": "BTR-16-0457164",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BTR-16-0457164",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ADD/RELOCATE 10 SPRINKLERS, ADJUST 43 SPRINKLERS A",
+      "estValue": "$0",
+      "id": 639596,
+      "issueDate": "6/22/2016",
+      "permitNum": "BLD-16-0445945",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0445945",
+      "propertyType": "P"
+    },
+    {
+      "descr": "RMDL EXISTING SPACE. WILL HAVE MECH & ELECTRICAL W",
+      "estValue": "$50,000",
+      "id": 590888,
+      "issueDate": "11/24/2015",
+      "permitNum": "BLD-16-0442212",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-16-0442212",
+      "propertyType": "C"
+    },
+    {
+      "descr": "INTERIOR REMDOEL OF SUITE 1460 WITH ELECTRICAL, ME",
+      "estValue": "$35,000",
+      "id": 582164,
+      "issueDate": "9/25/2015",
+      "permitNum": "BLD-15-0441140",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0441140",
+      "propertyType": "C"
+    },
+    {
+      "descr": "INTERIOR REMODEL (BUILDOUT OF OPEN SPACE )",
+      "estValue": "$20,000",
+      "id": 582008,
+      "issueDate": "9/8/2015",
+      "permitNum": "BLD-15-0439957",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0439957",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2800/2900: MODIFY EX F/P SYSTEM",
+      "estValue": "$5,685",
+      "id": 586891,
+      "issueDate": "7/28/2015",
+      "permitNum": "BLD-15-0440586",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0440586",
+      "propertyType": "P"
+    },
+    {
+      "descr": "BANK OF AMERICA - 19TH FL - MODIFY EXISTING FIRE A",
+      "estValue": "$11,317",
+      "id": 586868,
+      "issueDate": "7/6/2015",
+      "permitNum": "BLD-15-0439963",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0439963",
+      "propertyType": "P"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE SPACE",
+      "estValue": "$250,000",
+      "id": 573212,
+      "issueDate": "6/30/2015",
+      "permitNum": "BLD-15-0439903",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0439903",
+      "propertyType": "C"
+    },
+    {
+      "descr": "REMODEL F/P SYSTEM",
+      "estValue": "$0",
+      "id": 586861,
+      "issueDate": "6/15/2015",
+      "permitNum": "BLD-15-0439811",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0439811",
+      "propertyType": "P"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF EXISTING OFFICE SPACE 19TH FLO",
+      "estValue": "$60,000",
+      "id": 572840,
+      "issueDate": "6/9/2015",
+      "permitNum": "BLD-15-0438824",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0438824",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1850: INTERIOR RMDL OF EXISTING OFFICE SPACE W",
+      "estValue": "$120,000",
+      "id": 566635,
+      "issueDate": "5/14/2015",
+      "permitNum": "BLD-15-0438895",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0438895",
+      "propertyType": "C"
+    },
+    {
+      "descr": "INTERIOR REMODEL BOFA BUILDING",
+      "estValue": "$50,000",
+      "id": 556907,
+      "issueDate": "4/17/2015",
+      "permitNum": "BLD-15-0438268",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0438268",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR REMODEL OF SUITE 1840",
+      "estValue": "$25,000",
+      "id": 557038,
+      "issueDate": "4/14/2015",
+      "permitNum": "BLD-15-0438577",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0438577",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "INTERIOR RMDL OF EXISTING BANK W/MECHANICAL AND EL",
+      "estValue": "$10,000",
+      "id": 556902,
+      "issueDate": "4/7/2015",
+      "permitNum": "BLD-15-0438239",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0438239",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "RMV/REP:EX CABINET,OMNI,ADD HIGH BAND RX DISH",
+      "estValue": "$17,000",
+      "id": 556289,
+      "issueDate": "3/17/2015",
+      "permitNum": "BLD-15-0434275",
+      "permitType": "P",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0434275",
+      "propertyType": "P"
+    },
+    {
+      "descr": "SEC:STE#3000 :INT RMD OF EX OFFICE AREA W/EL,ME,PL",
+      "estValue": "$600,000",
+      "id": 556319,
+      "issueDate": "3/3/2015",
+      "permitNum": "BLD-15-0436522",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=BLD-15-0436522",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "ZZSTE#2800:INT RMDL OF EX OFFICE AREA   HS7B",
+      "estValue": "$600,000",
+      "id": 548062,
+      "issueDate": "1/5/2015",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#2800:EARLY START PERMIT  HS7B",
+      "estValue": "$1",
+      "id": 541809,
+      "issueDate": "12/23/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "*********EARLY START ***************",
+      "estValue": "$35,000",
+      "id": 540760,
+      "issueDate": "11/25/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:SPC#340:CVRT MAILRM TO GRAB/GO FOOD",
+      "estValue": "$100,000",
+      "id": 540673,
+      "issueDate": "11/19/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:30TH FL:INTER NON-STRUCT DEMO:RETRN TO VANILLA",
+      "estValue": "$60,000",
+      "id": 539250,
+      "issueDate": "10/10/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#310:INT RMDL OF EX OFFICE SPC   HS7B",
+      "estValue": "$20,000",
+      "id": 537867,
+      "issueDate": "9/25/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#2125:INT REMODEL TO EXPAND OFFICE SUITE / HSA2",
+      "estValue": "$77,000",
+      "id": 537850,
+      "issueDate": "9/18/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:STE#3295:INTERIOR RMDL OF EXST OFFICE",
+      "estValue": "$50,000",
+      "id": 537784,
+      "issueDate": "9/16/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "27TH FL:INT REMDL OF EX OFFICE SPACE     HSGB",
+      "estValue": "$1,000,000",
+      "id": 537839,
+      "issueDate": "9/16/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "26TH FL:INT REMDL OF EX OFFICE SPACE     HSGB",
+      "estValue": "$1,000,000",
+      "id": 537840,
+      "issueDate": "9/16/2014",
+      "permitNum": "003",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "22ND FL:INT REMDL OF EX OFFICE SPACE     HSGB",
+      "estValue": "$1,000,000",
+      "id": 537841,
+      "issueDate": "9/16/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#2350:INT RMDL OF EX OFFICE SPC   HS7B",
+      "estValue": "$60,000",
+      "id": 537822,
+      "issueDate": "9/10/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "27TH FL:EARLY START                 HSGB",
+      "estValue": "$1,000,000",
+      "id": 537492,
+      "issueDate": "9/5/2014",
+      "permitNum": "010",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=010",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "26TH FL:EARLY START                 HSGB",
+      "estValue": "$1,000,000",
+      "id": 537493,
+      "issueDate": "9/5/2014",
+      "permitNum": "009",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=009",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "22ND FL:EARLY START                 HSGB",
+      "estValue": "$1,000,000",
+      "id": 537494,
+      "issueDate": "9/5/2014",
+      "permitNum": "008",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=008",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#2350:EARLY START / HSA2",
+      "estValue": "$60,000",
+      "id": 536166,
+      "issueDate": "8/11/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$50,000",
+      "id": 534826,
+      "issueDate": "7/8/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:16TH FL:INTERIOR RMDL OF EXISTING SPACE",
+      "estValue": "$450,000",
+      "id": 533262,
+      "issueDate": "6/17/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:1ST FL:INTERIOR RMDL OF EXST SPACE",
+      "estValue": "$60,000",
+      "id": 533263,
+      "issueDate": "6/17/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:2ND FL:INTERIOR REMODEL OF EXISTING SPACE",
+      "estValue": "$2,500",
+      "id": 533264,
+      "issueDate": "6/17/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:6TH FL:MINOR RMDL DUE TO ME & EL WORK",
+      "estValue": "$20,000",
+      "id": 533265,
+      "issueDate": "6/17/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:4TH FL:INTERIOR RMDL OF EXST SPACE",
+      "estValue": "$450,000",
+      "id": 533266,
+      "issueDate": "6/17/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:10TH FL:INTERIOR REMODEL OF EXISTING SPACE",
+      "estValue": "$450,000",
+      "id": 533267,
+      "issueDate": "6/17/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$20,000",
+      "id": 529874,
+      "issueDate": "4/17/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$450,000",
+      "id": 529875,
+      "issueDate": "4/17/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$450,000",
+      "id": 529876,
+      "issueDate": "4/17/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$450,000",
+      "id": 529877,
+      "issueDate": "4/17/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$2,500",
+      "id": 529878,
+      "issueDate": "4/17/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$60,000",
+      "id": 529879,
+      "issueDate": "4/17/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#3130:INT REMDL FOR NEW OFFICE SPACE   HSGB",
+      "estValue": "$18,000",
+      "id": 529087,
+      "issueDate": "3/27/2014",
+      "permitNum": "003",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#3120:INT REMDL FOR NEW OFFICE SPACE",
+      "estValue": "$25,000",
+      "id": 529332,
+      "issueDate": "3/21/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#2420:INT REMDL OF EX OFFICE SPACE W/ME,EL",
+      "estValue": "$18,000",
+      "id": 529242,
+      "issueDate": "3/6/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#2420:EARLY START                HSGB",
+      "estValue": "$18,000",
+      "id": 527887,
+      "issueDate": "2/18/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#3130:EARLY START                HSGB",
+      "estValue": "$18,000",
+      "id": 527888,
+      "issueDate": "2/18/2014",
+      "permitNum": "005",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#3120:EARLY START                HSGB",
+      "estValue": "$25,000",
+      "id": 527889,
+      "issueDate": "2/18/2014",
+      "permitNum": "006",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=006",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#1100:INT REMODEL OF OFFICE AREA   HS7B",
+      "estValue": "$20,000",
+      "id": 526976,
+      "issueDate": "1/27/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "STE#1100:EARLY START PERMIT   HS7B",
+      "estValue": "$1",
+      "id": 526975,
+      "issueDate": "1/22/2014",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "17TH FLR:INT REMODEL OF OFFICE AREA   HS7B",
+      "estValue": "$57,000",
+      "id": 526932,
+      "issueDate": "1/10/2014",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "38TH FLOOR:INT RMDL OFFICE \"HILL-WARD-HENDERSON\"",
+      "estValue": "$750,000",
+      "id": 525722,
+      "issueDate": "12/3/2013",
+      "permitNum": "005",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "37TH FLOOR:INT RMDL OFFICE \"HILL-WARD-HENDERSON\"",
+      "estValue": "$750,000",
+      "id": 525723,
+      "issueDate": "12/3/2013",
+      "permitNum": "004",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "36TH FLOOR:INT RMDL OFFICE \"HILL-WARD-HENDERSON\"",
+      "estValue": "$750,000",
+      "id": 525724,
+      "issueDate": "12/3/2013",
+      "permitNum": "003",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "35TH FLOOR:INT RMDL OFFICE \"HILL-WARD-HENDERSON\"",
+      "estValue": "$750,000",
+      "id": 525725,
+      "issueDate": "12/2/2013",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "9TH FLR:INT REMODEL OF OFFICE AREA   HS7B",
+      "estValue": "$400,000",
+      "id": 524421,
+      "issueDate": "11/14/2013",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "SEC:STE#3100:INTERIOR RMDL OF EXST OFC",
+      "estValue": "$27,000",
+      "id": 524430,
+      "issueDate": "11/7/2013",
+      "permitNum": "002",
+      "permitType": "Z",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "Z"
+    },
+    {
+      "descr": "35-38TH FL:EARLY START / HSA2",
+      "estValue": "$750,000",
+      "id": 523222,
+      "issueDate": "10/31/2013",
+      "permitNum": "010",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=010",
+      "propertyType": "C"
+    },
+    {
+      "descr": "9TH FLR:EARLY START PERMIT  HS7B",
+      "estValue": "$1",
+      "id": 522926,
+      "issueDate": "10/24/2013",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "FLR 42:INTR RMDL OF EX RESTAURANT  HSE3",
+      "estValue": "$60,000",
+      "id": 520388,
+      "issueDate": "8/2/2013",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "FLR 41:INTR RMDL OF EX RESTAURANT  HSE3",
+      "estValue": "$60,000",
+      "id": 520389,
+      "issueDate": "8/2/2013",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2175:INT REMODEL OFFICE SPACE / HSA2",
+      "estValue": "$15,000",
+      "id": 515763,
+      "issueDate": "5/3/2013",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2175:EARLY START / HSA2",
+      "estValue": "$15,000",
+      "id": 514407,
+      "issueDate": "4/11/2013",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "3RD FLOOR INT RMDL W/E & MEC/RENOVATION SKYBRIDGE",
+      "estValue": "$300,000",
+      "id": 510346,
+      "issueDate": "1/4/2013",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2400:INT REMODEL OFFICE SPACE / HSA2",
+      "estValue": "$40,000",
+      "id": 509334,
+      "issueDate": "12/14/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2400:EARLY START / HSA2",
+      "estValue": "$40,000",
+      "id": 509333,
+      "issueDate": "12/5/2012",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START/HS8R",
+      "estValue": "$300,000",
+      "id": 508135,
+      "issueDate": "11/8/2012",
+      "permitNum": "005",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SEC:STE#3400:INTR REMODEL       HSE3",
+      "estValue": "$50,000",
+      "id": 506886,
+      "issueDate": "10/22/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3905:INT RMDL OFFICE SPACE / HSA2",
+      "estValue": "$35,000",
+      "id": 504085,
+      "issueDate": "8/24/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3905:EARLY START / HSA2",
+      "estValue": "$35,000",
+      "id": 504084,
+      "issueDate": "8/10/2012",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3000:INTERIOR RMDL OF EXST OFFICE",
+      "estValue": "$10,000",
+      "id": 504430,
+      "issueDate": "8/9/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START PERMIT",
+      "estValue": "$10,000",
+      "id": 504429,
+      "issueDate": "8/1/2012",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2175:INTR REM, EXPAND OFFC HSE3",
+      "estValue": "$9,630",
+      "id": 501101,
+      "issueDate": "5/4/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2175:EARLY START           HSE3",
+      "estValue": "$9,630",
+      "id": 499074,
+      "issueDate": "4/20/2012",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SEC:SPC#1400 & 1500:INT REMDL OFFICE SPACE W/EMP",
+      "estValue": "$1,000,000",
+      "id": 499260,
+      "issueDate": "4/19/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1820:INTERIOR RMDL OF EXST OFFICE",
+      "estValue": "$25,000",
+      "id": 499279,
+      "issueDate": "4/13/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2110:INTERIOR RMDL OF EXST OFFICE",
+      "estValue": "$25,000",
+      "id": 499280,
+      "issueDate": "4/13/2012",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START",
+      "estValue": "$1,000,000",
+      "id": 498014,
+      "issueDate": "3/30/2012",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "F;#12:STE#1200:INTERIOR RMDL",
+      "estValue": "$30,000",
+      "id": 494786,
+      "issueDate": "12/16/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "INT RMDLW/EL:7FLSTE#700:8TH FLR COMBINE 3 STE TO 1",
+      "estValue": "$40,000",
+      "id": 493756,
+      "issueDate": "11/9/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START/HS8R",
+      "estValue": "$40,000",
+      "id": 493755,
+      "issueDate": "11/7/2011",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2125:INTERIOR RMDL ALLSTATE W/MEP'S   HSC3",
+      "estValue": "$40,000",
+      "id": 492799,
+      "issueDate": "10/5/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "7TH FL:INTERIOR REMODEL OF RECEPTION AREA  HS7B",
+      "estValue": "$8,000",
+      "id": 490673,
+      "issueDate": "8/25/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "7TH FL:EARLY START PERMIT   HS7B",
+      "estValue": "$1",
+      "id": 490672,
+      "issueDate": "8/12/2011",
+      "permitNum": "005",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "C"
+    },
+    {
+      "descr": "FLR 21:STE 2100:INTR REMODEL OF EX OFFC SPC  HSE3",
+      "estValue": "$25,000",
+      "id": 489664,
+      "issueDate": "7/21/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE# 3325:EARLY START             HSE3",
+      "estValue": "$1,800",
+      "id": 488633,
+      "issueDate": "6/28/2011",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "INT REMODEL OF EXISTING \"PUBLIC CORRIDOR\"",
+      "estValue": "$13,080",
+      "id": 488780,
+      "issueDate": "6/2/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START PERMIT   HS8Q",
+      "estValue": "$13,080",
+      "id": 487359,
+      "issueDate": "5/18/2011",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "BLDG:SUITE#3900:INTER REMODEL OF EX OFFICE  HS2S",
+      "estValue": "$40,240",
+      "id": 486573,
+      "issueDate": "4/27/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "3RD FL;STE#360:INT RMDL OF EX \"OFFICE SPC\"HS8Q",
+      "estValue": "$12,000",
+      "id": 486039,
+      "issueDate": "3/16/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SUITE#3900:EARLY START",
+      "estValue": "$1",
+      "id": 485858,
+      "issueDate": "3/15/2011",
+      "permitNum": "005",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "C"
+    },
+    {
+      "descr": "REM/REPL EX MILLWORK,PAINT,FLOORING    HS1Y",
+      "estValue": "$39,781",
+      "id": 486041,
+      "issueDate": "3/1/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3900; INTERIOR DEMOLITION   HS8Q",
+      "estValue": "$2,500",
+      "id": 484309,
+      "issueDate": "2/23/2011",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3300:REPAIRS DUE TO WATER DAMAGE  HS7B",
+      "estValue": "$6,849",
+      "id": 482127,
+      "issueDate": "11/5/2010",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "30TH FLR STE 3080-B:INTERIOR REMODEL      HSE3",
+      "estValue": "$19,080",
+      "id": 481209,
+      "issueDate": "10/21/2010",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE3080-B:EARLY START",
+      "estValue": "$1",
+      "id": 481208,
+      "issueDate": "10/12/2010",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "40TH FL:INTERIOR REMODEL OF EX OFFICE AREA  HS7B",
+      "estValue": "$300,000",
+      "id": 480048,
+      "issueDate": "9/15/2010",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "40TH FL:EARLY START PERMIT  HS7B",
+      "estValue": "$1",
+      "id": 478359,
+      "issueDate": "8/27/2010",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#3400;INT RMDL OF EX OFFICE SPACE HS8Q",
+      "estValue": "$500,000",
+      "id": 478346,
+      "issueDate": "8/3/2010",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "NONSTRUCTURAL INTERIOR DEMO",
+      "estValue": "$20,000",
+      "id": 478013,
+      "issueDate": "7/28/2010",
+      "permitNum": "001",
+      "permitType": "D",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START:SP#3400:INT RMDL OF EX OFFICE  1Y",
+      "estValue": "$1",
+      "id": 476898,
+      "issueDate": "6/25/2010",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#2401; INTER REMODEL OF OFFICE SPACE  HS8Q",
+      "estValue": "$3,610",
+      "id": 476732,
+      "issueDate": "6/10/2010",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START PERMIT   HS8Q",
+      "estValue": "$3,610",
+      "id": 475653,
+      "issueDate": "5/28/2010",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3850:INTERIOR REMODEL OF EX OFFICES;EL,ME",
+      "estValue": "$70,000",
+      "id": 474533,
+      "issueDate": "4/26/2010",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "16TH FL:DEMO EXISTING WALL TO ADD DOOR       HS1Y",
+      "estValue": "$5,000",
+      "id": 473468,
+      "issueDate": "3/25/2010",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE 2350:NONSTRUC INT RMDL W/ EL HSC3",
+      "estValue": "$34,000",
+      "id": 470760,
+      "issueDate": "12/8/2009",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "27TH FLR: INT REMODEL OF RESTROOM (HS8R)",
+      "estValue": "$42,000",
+      "id": 468349,
+      "issueDate": "10/23/2009",
+      "permitNum": "006",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=006",
+      "propertyType": "C"
+    },
+    {
+      "descr": "26TH FLR: INT REMODEL FOR RESTROOM (HS8R)",
+      "estValue": "$42,000",
+      "id": 468350,
+      "issueDate": "10/23/2009",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "39TH FLOOR:STE#3925:INTR RMDL OF EXISTING;EM  1Y",
+      "estValue": "$14,540",
+      "id": 464153,
+      "issueDate": "6/16/2009",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "39TH FLOOR:STE#3925:EARLY START PERMIT  HS1Y",
+      "estValue": "$1",
+      "id": 464152,
+      "issueDate": "6/1/2009",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "1ST FL:INTER RMDL OF LOADING DOCK AREA HS2S",
+      "estValue": "$13,530",
+      "id": 463003,
+      "issueDate": "5/26/2009",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2000:INT RMDL OF EXISTING OFFICE SPACE / HSA2",
+      "estValue": "$200,000",
+      "id": 460098,
+      "issueDate": "2/17/2009",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2000:EARLY START / HSA2",
+      "estValue": "$200,000",
+      "id": 459408,
+      "issueDate": "1/27/2009",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2000:INTERIOR DEMOLITION OF EX OFFICE SPC  3W",
+      "estValue": "$20,000",
+      "id": 458102,
+      "issueDate": "12/17/2008",
+      "permitNum": "001",
+      "permitType": "D",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#330:INT RMDL OF EXST SPC FOR HAIR SALON / HSA2",
+      "estValue": "$7,200",
+      "id": 457745,
+      "issueDate": "11/20/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2410:INTERIOR REMODEL OF OFFICE SPC  HS3W",
+      "estValue": "$64,000",
+      "id": 454962,
+      "issueDate": "9/24/2008",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "22ND FL COMMON AREA:INTERIOR REMODEL  HS7F",
+      "estValue": "$32,000",
+      "id": 455007,
+      "issueDate": "9/18/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2410:EARLY START PERMIT  HS3W",
+      "estValue": "$1",
+      "id": 453860,
+      "issueDate": "8/29/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "EARLY START:22ND FL COMMON AREA:INTERIOR REMODEL",
+      "estValue": "$1",
+      "id": 453930,
+      "issueDate": "8/25/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2700:INTERIOR REMODEL HS3U",
+      "estValue": "$11,250",
+      "id": 454024,
+      "issueDate": "8/12/2008",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2560:INTERIOR REMODEL HS3U",
+      "estValue": "$11,250",
+      "id": 454025,
+      "issueDate": "8/12/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2200:INTERIOR REMODEL HS3U",
+      "estValue": "$41,520",
+      "id": 454026,
+      "issueDate": "8/12/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "22ND FL:INT REMODEL OF RESTROOMS  HS3W",
+      "estValue": "$20,000",
+      "id": 453150,
+      "issueDate": "7/16/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "20TH FL:INT REMODEL OF RESTROOMS  HS3W",
+      "estValue": "$20,000",
+      "id": 453151,
+      "issueDate": "7/16/2008",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "15TH FL:INT REMODEL OF RESTROOMS  HS3W",
+      "estValue": "$20,000",
+      "id": 453152,
+      "issueDate": "7/16/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3850:INT REMODEL OF EX OFFICE  HS3W",
+      "estValue": "$21,000",
+      "id": 453178,
+      "issueDate": "7/14/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "27TH FLR:INTERIOR REMODEL OF EX OFFICE   HS7B",
+      "estValue": "$12,500",
+      "id": 452574,
+      "issueDate": "6/19/2008",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "26TH FLR:INTERIOR REMODEL OF EX OFFICE   HS7B",
+      "estValue": "$12,500",
+      "id": 452575,
+      "issueDate": "6/19/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#2200:INTERIOR REMODEL OF EX OFFICE SPC  7F",
+      "estValue": "$52,880",
+      "id": 452739,
+      "issueDate": "6/4/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#2200:INTERIOR DEMO OF EX OFFICE SPC HS7F",
+      "estValue": "$1,100",
+      "id": 451139,
+      "issueDate": "5/16/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#1100:INTERIOR DEMOLITION OF EX OFFICE SPC 7F",
+      "estValue": "$900",
+      "id": 451140,
+      "issueDate": "5/16/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1400:INT RMDL OF EX OFFICE SPACE W/EMP  HS2S",
+      "estValue": "$17,840",
+      "id": 451240,
+      "issueDate": "5/5/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1400:INTERIOR DEMO OF EXST OFFICE SPC / HSA2",
+      "estValue": "$1,900",
+      "id": 449790,
+      "issueDate": "4/17/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#870:INTERIOR REMODEL OF EX OFFICE SPACE  HS48",
+      "estValue": "$40,000",
+      "id": 449895,
+      "issueDate": "4/4/2008",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3800:INT REMODEL OF OFFICE AREA  HS3W",
+      "estValue": "$212,940",
+      "id": 449903,
+      "issueDate": "4/4/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3700:INT REMODEL OF OFFICE AREA  HS3W",
+      "estValue": "$21,060",
+      "id": 449904,
+      "issueDate": "4/4/2008",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#870:EARLY START PERMIT  HS48",
+      "estValue": "$1",
+      "id": 446869,
+      "issueDate": "2/19/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3800:INT DEMO OF EX OFFICE  HS3W",
+      "estValue": "$1",
+      "id": 446907,
+      "issueDate": "2/12/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#B-100(BSMNT):INT REMODEL FOR FITNESS CTR  3W",
+      "estValue": "$60,666",
+      "id": 446960,
+      "issueDate": "2/6/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#B-100(BSMNT):INTERIOR DEMO OF EX FITNESS CTR",
+      "estValue": "$7,000",
+      "id": 445494,
+      "issueDate": "1/24/2008",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1460:INT RMDL OF EXST OFFICE SPC / HSA2",
+      "estValue": "$60,000",
+      "id": 445509,
+      "issueDate": "1/22/2008",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "BLDG:STE#1460:EARLY START                 / HSA2",
+      "estValue": "$60,000",
+      "id": 443871,
+      "issueDate": "12/13/2007",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2450:INT RMDL EXPND OFF SPACE      HS4B",
+      "estValue": "$14,100",
+      "id": 442643,
+      "issueDate": "11/30/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "BLD:29TH FLOOR:INTERIOR REMODEL OF OFFICES HS3U",
+      "estValue": "$307,000",
+      "id": 442604,
+      "issueDate": "11/28/2007",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "BLD:28TH FLOOR:INTERIOR REMODEL OF OFFICES HS3U",
+      "estValue": "$307,000",
+      "id": 442605,
+      "issueDate": "11/28/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2450:EARLY START PERMIT      HS4B",
+      "estValue": "$1",
+      "id": 442642,
+      "issueDate": "11/20/2007",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#850:INTERIOR REMODEL OF EX OFFICE SPC  HS8Q",
+      "estValue": "$23,940",
+      "id": 442679,
+      "issueDate": "11/15/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1430:INT REMODEL OF OFFICE SPC  HS3W",
+      "estValue": "$85,000",
+      "id": 442861,
+      "issueDate": "11/9/2007",
+      "permitNum": "006",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=006",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3100:INT RMDL OF EXST OFFICE SPCACE  HS48",
+      "estValue": "$54,150",
+      "id": 441051,
+      "issueDate": "10/29/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "8TH FL CORRIDOR:INT RMDL OF CORRIDOR / HSA2",
+      "estValue": "$17,080",
+      "id": 439596,
+      "issueDate": "9/21/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#800:INT RMDL OF EXST OFFICE SPACE / HSA2",
+      "estValue": "$43,190",
+      "id": 439597,
+      "issueDate": "9/21/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1460:EARLY START PERMIT  HS3W",
+      "estValue": "$1",
+      "id": 439633,
+      "issueDate": "9/18/2007",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3100:INT RMDL OF EXST OFFICE SPC  HS7F",
+      "estValue": "$18,250",
+      "id": 437611,
+      "issueDate": "7/31/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "41ST FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434703,
+      "issueDate": "6/1/2007",
+      "permitNum": "009",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=009",
+      "propertyType": "C"
+    },
+    {
+      "descr": "38TH FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434704,
+      "issueDate": "6/1/2007",
+      "permitNum": "008",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=008",
+      "propertyType": "C"
+    },
+    {
+      "descr": "34TH FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434705,
+      "issueDate": "6/1/2007",
+      "permitNum": "007",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=007",
+      "propertyType": "C"
+    },
+    {
+      "descr": "33RD FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434706,
+      "issueDate": "6/1/2007",
+      "permitNum": "006",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=006",
+      "propertyType": "C"
+    },
+    {
+      "descr": "32ND FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434707,
+      "issueDate": "6/1/2007",
+      "permitNum": "005",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "C"
+    },
+    {
+      "descr": "31ST FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434708,
+      "issueDate": "6/1/2007",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "30TH FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434709,
+      "issueDate": "6/1/2007",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "19TH FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434710,
+      "issueDate": "6/1/2007",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "18TH FL:INTERIOR REMODEL OF RESTROOM  HS48",
+      "estValue": "$466",
+      "id": 434711,
+      "issueDate": "6/1/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "12TH FLR:INTERIOR REMODEL OF RESTROOMS  HS7B",
+      "estValue": "$4,360",
+      "id": 434712,
+      "issueDate": "6/1/2007",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "9TH FLR:INTERIOR REMODEL OF RESTROOMS  HS7B",
+      "estValue": "$4,360",
+      "id": 434713,
+      "issueDate": "6/1/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1750:INT RMDL OF EXST OFFICE SPACE / HSA2",
+      "estValue": "$52,490",
+      "id": 430391,
+      "issueDate": "4/23/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1700:INTERIOR REMODEL OF EX OFFICE SPC  HS7B",
+      "estValue": "$111,650",
+      "id": 430045,
+      "issueDate": "4/17/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1700: EARLY START",
+      "estValue": "$111,650",
+      "id": 430044,
+      "issueDate": "4/9/2007",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1750: EARLY START PERMIT   HS30",
+      "estValue": "$1",
+      "id": 430390,
+      "issueDate": "4/2/2007",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2380:CNSTR DEMISING WALL TO CREATE TENANT SPC",
+      "estValue": "$24,060",
+      "id": 427957,
+      "issueDate": "3/30/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3200:INT REMODEL OF OFFICE  HS7F",
+      "estValue": "$63,920",
+      "id": 426373,
+      "issueDate": "2/27/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#4200:INT RMDL OF OFFICE SPC FOR WINE RM / HSA2",
+      "estValue": "$30,000",
+      "id": 426524,
+      "issueDate": "2/12/2007",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1165:INTERIOR REMODEL OF OFFICE SPACE HS30",
+      "estValue": "$20,580",
+      "id": 423157,
+      "issueDate": "12/13/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1165: EARLY START PERMIT HS30",
+      "estValue": "$1",
+      "id": 421557,
+      "issueDate": "11/9/2006",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#900:INT RMDL OF EXST OFF SPC / HSA2",
+      "estValue": "$17,600",
+      "id": 419443,
+      "issueDate": "10/25/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "17TH FL:INT REMODEL OF RESTROOMS / HSA2",
+      "estValue": "$4,550",
+      "id": 419255,
+      "issueDate": "10/19/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "40TH FLR:INTERIOR REMODEL OF RESTROOMS  HS7B",
+      "estValue": "$4,710",
+      "id": 419256,
+      "issueDate": "10/19/2006",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "39TH FLR:INTERIOR REMODEL OF RESTROOMS  HS7B",
+      "estValue": "$4,710",
+      "id": 419257,
+      "issueDate": "10/19/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "25TH FL:INT RMDL OF RESTROOMS / HSA2",
+      "estValue": "$4,740",
+      "id": 419258,
+      "issueDate": "10/19/2006",
+      "permitNum": "004",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=004",
+      "propertyType": "C"
+    },
+    {
+      "descr": "24TH FL:INT RMDL OF RESTROOMS / HSA2",
+      "estValue": "$4,740",
+      "id": 419259,
+      "issueDate": "10/19/2006",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "23RD FL:INT RMDL OF RESTROOMS / HSA2",
+      "estValue": "$4,740",
+      "id": 419260,
+      "issueDate": "10/19/2006",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "21ST FL:INT RMDL OF RESTROOMS / HSA2",
+      "estValue": "$4,740",
+      "id": 419261,
+      "issueDate": "10/19/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "14TH FLR:INTERIOR REMODEL OF RESTROOM   HS7B",
+      "estValue": "$4,560",
+      "id": 419262,
+      "issueDate": "10/19/2006",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "11TH FLR:INTERIOR REMODEL OF RESTROOM   HS7B",
+      "estValue": "$4,560",
+      "id": 419263,
+      "issueDate": "10/19/2006",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "8TH FLR:INTERIOR REMODEL OF RESTROOM   HS7B",
+      "estValue": "$4,560",
+      "id": 419264,
+      "issueDate": "10/19/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#2350:INTERIOR REMODEL OF EX OFFICE SPC HS7F",
+      "estValue": "$36,480",
+      "id": 419265,
+      "issueDate": "10/19/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#900:EARLY START PERMIT  HS7F",
+      "estValue": "$17,600",
+      "id": 419442,
+      "issueDate": "10/10/2006",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "REISSUE:STE#2155:INTER REMODEL OF EX OFFICE SPC 7F",
+      "estValue": "$27,400",
+      "id": 417617,
+      "issueDate": "9/28/2006",
+      "permitNum": "005",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=005",
+      "propertyType": "C"
+    },
+    {
+      "descr": "SPC#2445:INTERIOR REMODLE OF EX OFFICE SPC  HS7F",
+      "estValue": "$10,100",
+      "id": 415337,
+      "issueDate": "8/31/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2155:INTERIOR REMODEL OF EX OFFICE SPC  HS7B",
+      "estValue": "$27,400",
+      "id": 411263,
+      "issueDate": "6/7/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#1150:INTERIOR REMODEL OF EX OFFICE SPC   HS7B",
+      "estValue": "$22,593",
+      "id": 405104,
+      "issueDate": "4/17/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "1ST FL:INTERIOR REMODEL OF OFFICE SPACE HS7F",
+      "estValue": "$16,354",
+      "id": 403159,
+      "issueDate": "3/21/2006",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "10TH FL:INTERIOR REMODEL OF EX OFFICE SPACE  HS48",
+      "estValue": "$100,000",
+      "id": 403243,
+      "issueDate": "3/14/2006",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3875:INTERIOR REMODEL OF OFFICE SPACE  HS48",
+      "estValue": "$30,515",
+      "id": 403021,
+      "issueDate": "3/10/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "10TH FL:EARLY START PERMIT  HS48",
+      "estValue": "$1",
+      "id": 400050,
+      "issueDate": "2/27/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "1ST FL:EARLY START PERMIT  HS7F",
+      "estValue": "$1",
+      "id": 400202,
+      "issueDate": "2/14/2006",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2450:INTERIOR REMODEL OF OFC  HS05",
+      "estValue": "$19,720",
+      "id": 394714,
+      "issueDate": "12/30/2005",
+      "permitNum": "002",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=002",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#2450:EARLY START PERMIT  HS05",
+      "estValue": "$1",
+      "id": 394715,
+      "issueDate": "12/22/2005",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3250:INTERIOR REMODEL OF OFFICE  HS3W",
+      "estValue": "$27,047",
+      "id": 392299,
+      "issueDate": "11/30/2005",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3220:INTERIOR REMODEL OF OFFICE  HS3W",
+      "estValue": "$40,689",
+      "id": 392371,
+      "issueDate": "11/30/2005",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3250:EARLY START PERMIT  HS3W",
+      "estValue": "$27,047",
+      "id": 392298,
+      "issueDate": "11/22/2005",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3140:INT REMODEL OF OFFICE SPC HS30",
+      "estValue": "$26,749",
+      "id": 392655,
+      "issueDate": "11/16/2005",
+      "permitNum": "001",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=001",
+      "propertyType": "C"
+    },
+    {
+      "descr": "STE#3140:EARLY START PERMIT  HS48",
+      "estValue": "$1",
+      "id": 392654,
+      "issueDate": "11/15/2005",
+      "permitNum": "003",
+      "permitType": "A",
+      "permitUrl": "https://aca-prod.accela.com/TAMPA/Cap/GlobalSearchResults.aspx?isNewQuery=yes&QueryText=003",
+      "propertyType": "C"
+    }
+  ],
+  "pin": "1829244ZI000078000000A",
+  "propertyCard": {
+    "acreage": 0.95,
+    "blockCode": "000078",
+    "certified": {
+      "_date": "09/26/2025",
+      "ag": null,
+      "appraisedJust": null,
+      "assessedEstimated": null,
+      "buildings": null,
+      "exemptionEstimated": null,
+      "extraFeatures": null,
+      "land": null,
+      "taxEstimated": null
+    },
+    "current": {
+      "_date": "10/06/2026",
+      "ag": 0,
+      "appraisedJust": null,
+      "assessedEstimated": null,
+      "buildings": 190868420,
+      "exemptionEstimated": null,
+      "extraFeatures": 0,
+      "land": 100,
+      "taxEstimated": null
+    },
+    "displayFolio": "193591-0000",
+    "displayStrap": "A-24-29-18-4ZI-000078-00000.0",
+    "folio": "1935910000",
+    "homestead": 0,
+    "isConfidential": false,
+    "landUse": {
+      "code": "1810",
+      "description": "OFF MULT-STY A"
+    },
+    "legalDescription": "TAMPA GENERAL MAP OF 1853 ALL OF BLOCK 78",
+    "lotCode": "000000",
+    "municipalityCode": "A",
+    "neighbor": {
+      "code": "205013.00",
+      "description": "Downtown Area"
+    },
+    "nonAdValoremTotalTax": null,
+    "nonSchoolTaxRate": 13.4013,
+    "platBook": "1",
+    "platPage": "7",
+    "priorFolio": "0000000000",
+    "priorStrap": "",
+    "range": "24",
+    "schoolTaxRate": 6.334,
+    "section": "18",
+    "subCode": "4ZI",
+    "subdivision": {
+      "code": "4ZI",
+      "description": "TAMPA GENERAL MAP OF 1853"
+    },
+    "taxDist": {
+      "code": "TA",
+      "description": "TAMPA"
+    },
+    "topSaleDate": "2015-12-16",
+    "topSalePrice": 100,
+    "totalTaxRate": 19.7353,
+    "township": "29"
+  },
+  "salesHistory": [
+    {
+      "book": "23757",
+      "deedType": "WD  ",
+      "docnum": "2015490417",
+      "isConfidential": false,
+      "page": "0248",
+      "qualified": "Unqualified",
+      "saleDate": "2015-12-16",
+      "salePrice": 100,
+      "sequence": 1,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "12158",
+      "deedType": "WD  ",
+      "docnum": "2002417741",
+      "isConfidential": false,
+      "page": "0337",
+      "qualified": "Unqualified",
+      "saleDate": "2002-10-22",
+      "salePrice": 100,
+      "sequence": 8,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "12158",
+      "deedType": "WD  ",
+      "docnum": "2002417742",
+      "isConfidential": false,
+      "page": "0340",
+      "qualified": "Unqualified",
+      "saleDate": "2002-10-22",
+      "salePrice": 100,
+      "sequence": 9,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "7548",
+      "deedType": "WD  ",
+      "docnum": "94251684",
+      "isConfidential": false,
+      "page": "1163",
+      "qualified": "Unqualified",
+      "saleDate": "1994-09-26",
+      "salePrice": 100,
+      "sequence": 6,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "7548",
+      "deedType": "WD  ",
+      "docnum": "94251685",
+      "isConfidential": false,
+      "page": "1168",
+      "qualified": "Unqualified",
+      "saleDate": "1994-09-26",
+      "salePrice": 100,
+      "sequence": 7,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "7239",
+      "deedType": "WD  ",
+      "docnum": "93316009",
+      "isConfidential": false,
+      "page": "1819",
+      "qualified": "Unqualified",
+      "saleDate": "1993-12-26",
+      "salePrice": 100,
+      "sequence": 5,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "7102",
+      "deedType": "TR  ",
+      "docnum": "93208079",
+      "isConfidential": false,
+      "page": "1403",
+      "qualified": "Unqualified",
+      "saleDate": "1993-09-01",
+      "salePrice": 100,
+      "sequence": 4,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "4674",
+      "deedType": "WD  ",
+      "docnum": "",
+      "isConfidential": false,
+      "page": "0668",
+      "qualified": "Unqualified",
+      "saleDate": "1985-11-01",
+      "salePrice": 100,
+      "sequence": 3,
+      "vacOrImp": "Improved"
+    },
+    {
+      "book": "4010",
+      "deedType": "WD  ",
+      "docnum": "",
+      "isConfidential": false,
+      "page": "0074",
+      "qualified": "Unqualified",
+      "saleDate": "1982-10-01",
+      "salePrice": 725000,
+      "sequence": 2,
+      "vacOrImp": "Improved"
+    }
+  ],
+  "shortLegal": "TAMPA GENERAL MAP OF 1853 ALL OF BLOCK 78",
+  "siteAddress": "101 E KENNEDY BLVD, TAMPA",
+  "streetLevelURL": "https://maps.googleapis.com/maps/api/streetview?fov=75&key=AIzaSyCNKpPoDflwftiwdQNvQCAFLoAyjNTg0vI&size=400x300&location=101%20E%20KENNEDY%20BLVD%2C%20TAMPA%20FL&signature=GXjZ8juuAhPxmb1QFtkbm-LD5S8=",
+  "subdivision": {
+    "code": "4ZI",
+    "description": "TAMPA GENERAL MAP OF 1853"
+  },
+  "taxDist": {
+    "code": "TA",
+    "description": "TAMPA"
+  },
+  "trimNotice": null,
+  "valueSummary": [
+    {
+      "assessedVal": 190868520,
+      "exemptions": 0,
+      "marketVal": 190868520,
+      "sequence": 4,
+      "taxDist": "Other Districts",
+      "taxableVal": 190868520
+    },
+    {
+      "assessedVal": 190868520,
+      "exemptions": 0,
+      "marketVal": 190868520,
+      "sequence": 3,
+      "taxDist": "Municipal",
+      "taxableVal": 190868520
+    },
+    {
+      "assessedVal": 190868520,
+      "exemptions": 0,
+      "marketVal": 190868520,
+      "sequence": 2,
+      "taxDist": "Public Schools",
+      "taxableVal": 190868520
+    },
+    {
+      "assessedVal": 190868520,
+      "exemptions": 0,
+      "marketVal": 190868520,
+      "sequence": 1,
+      "taxDist": "County",
+      "taxableVal": 190868520
+    }
+  ],
+  "subsidence": {
+    "status": ""
+  }
+}

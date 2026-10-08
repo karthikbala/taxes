@@ -1,0 +1,16 @@
+{
+  "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Lnd_c",
+  "@odata.count": 1,
+  "value": [
+    {
+      "ID": 11696,
+      "strap": "022528285000010010       ",
+      "num": 1,
+      "land_type": "COMMERCIAL AC",
+      "uts": 24.549,
+      "dpth": 0.0,
+      "unit_type": "AC",
+      "val": 6991555
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-08T08:14:05.976Z",
+  "command": "node --test tests/client-bradford.test.mjs",
+  "result": "PASS",
+  "tests": 12,
+  "passed": 12,
+  "failed": 0,
+  "files": [
+    {
+      "path": "lib/client/bradford.mjs",
+      "sha256": "1af0b2c321249b1ad1cc609299ffca36fcbf14d473e2374f8f7fe315fdb3d593"
+    },
+    {
+      "path": "tests/client-bradford.test.mjs",
+      "sha256": "d82c02cc0d3aa6dca5ceec9879ae3b4010e3fcfcab2e69ea640bc4a6bf51f6fd"
+    }
+  ],
+  "source": "Fresh source fixtures retrieved 2026-10-08; malformed/identity/unit cases are controlled fixture mutations, not county facts.",
+  "log": "✔ fresh native complete two-parcel address search narrows by intact entity owner (543.619792ms)\n✔ county address normalization retains exact units and negative identities (165.8395ms)\n✔ county native no-match -1/zero sentinel is explicit NOT_FOUND (149.013125ms)\n✔ pagination and missing counts cannot claim uniqueness (56.410334ms)\n✔ resolver uses address-only full search and identity-checked bounded native PDF (4424.994667ms)\n✔ ambiguous and incomplete searches do not fetch a detail (236.432667ms)\n✔ unique exact address owner mismatch/unavailable remains exposed (530.527208ms)\n✔ detail parcel and unit mismatch rejects, without card request (542.28875ms)\n✔ card failure preserves source HTML rich sections and explicit limitation (687.847625ms)\n✔ fresh rich source acceptance preserves all sales, legal, labelled values and components (142.713917ms)\n✔ explicit empty published tables differ from missing sections (369.21125ms)\n✔ blank source cells remain null and required year cannot be invented (222.73675ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 11829.929417\n"
+}

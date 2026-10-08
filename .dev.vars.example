@@ -1,0 +1,8 @@
+# Worker bindings for local development only. Copy to .dev.vars (ignored).
+# npm run setup:local generates a random local API key automatically.
+INVISIA_POC_API_KEY=replace-with-a-random-local-key
+
+# Leave disabled by default. This controls paid managed-browser source access.
+INVISIA_BROWSER_ENABLED=0
+# INVISIA_BROWSER_API_KEY=configure-only-after-separate-provider-and-budget-approval
+# DB is a local D1 binding supplied by vite.config.ts, not an environment string.

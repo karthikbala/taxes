@@ -1,0 +1,19 @@
+{
+  "fetched_at": "2026-10-07T19:27:25.715640+00:00",
+  "url": "https://www.desotocountytaxcollector.com/Property/search",
+  "request_fields": {
+    "ownername": "",
+    "streetnumber": "",
+    "streetname": "",
+    "propertynumber": "00-00-00-0000-0000-0000",
+    "taxbillnumber": "",
+    "RollTypes": "R",
+    "Years": "2025"
+  },
+  "status": 200,
+  "body": {
+    "success": true,
+    "message": "",
+    "result": "{ \"FLTax\": {\"ResultsInfo\": {\"Rows\": \"50\", \"Skip\": \"0\", \"TotalRowCount\": \"0\" } }}"
+  }
+}

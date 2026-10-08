@@ -1,0 +1,68 @@
+{"event":"client_lookup_started","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.410Z","county":"miami-dade-fl"}
+{"event":"client_stage_started","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.411Z","stage":"property_resolution"}
+{"event":"source_attempt","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.414Z","source_id":"miami_address_search","source_role":"appraiser","status":"received","duration_ms":3,"attempt":1,"http_status":200}
+{"event":"source_completed","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.415Z","source_id":"miami_address_search","status":"retrieved","duration_ms":4,"http_status":200}
+{"event":"source_attempt","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.416Z","source_id":"miami_assessment","source_role":"appraiser","status":"received","duration_ms":1,"attempt":1,"http_status":200}
+{"event":"source_completed","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.416Z","source_id":"miami_assessment","status":"retrieved","duration_ms":1,"http_status":200}
+{"event":"client_stage_started","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.417Z","stage":"collector_lookup"}
+{"event":"source_attempt","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.419Z","source_role":"collector","status":"received","duration_ms":1,"attempt":1,"http_status":200}
+{"event":"source_attempt","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.420Z","source_role":"collector","status":"received","duration_ms":0,"attempt":1,"http_status":200}
+{"event":"source_attempt","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.421Z","source_role":"collector","status":"http_failure","duration_ms":1,"attempt":1,"http_status":403}
+{"event":"property_lookup","county":"miami-dade-fl","source_mode":"county","request_id":"72d8d858-fe51-4f7a-b1c8-aa2135019e93","status":"succeeded","duration_ms":184,"error_codes":[]}
+{"event":"client_stage_started","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.602Z","stage":"history_parsing"}
+{"event":"client_stage_started","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.675Z","stage":"annual_pdf_parsing"}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.772Z","source_id":"miami_address_search","status":"verified","duration_ms":4,"http_status":200}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.772Z","source_id":"miami_assessment","status":"verified","duration_ms":1,"http_status":200}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.773Z","source_id":"collector_config","status":"verified","duration_ms":2,"http_status":200}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.773Z","source_id":"collector_search","status":"verified","duration_ms":0,"http_status":200}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.773Z","source_id":"collector_identity","status":"failed","error_code":"source_blocked","duration_ms":1,"http_status":403}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.773Z","source_id":"tax_collector_browser","status":"verified","duration_ms":7}
+{"event":"client_source_result","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.773Z","source_id":"receipt_pdf","status":"verified"}
+{"event":"client_lookup_completed","request_id":"e58d5232-3f8f-4bc1-84dc-d3b2c260b082","timestamp":"2026-10-08T07:18:11.773Z","county":"miami-dade-fl","status":"partial","match_status":"MATCHED","duration_ms":361,"source_count":7,"error_count":0,"section_count":22,"tax_line_count":14,"section_status":{"PropertyInformation":"EXTRACTED","AssessmentInformation":"EXTRACTED","TaxInformation":"EXTRACTED","BillDetails":"EXTRACTED","ParcelDetails":"EXTRACTED","TaxAmounts":"EXTRACTED","PaymentDetails":"EXTRACTED","FullLegalDescription":"EXTRACTED","AssessmentHistory":"EXTRACTED","BenefitsInformation":"EXTRACTED","SalesInformation":"EXTRACTED","AccountHistory":"PARTIAL","AdValoremMillage":"EXTRACTED","NonAdValorem":"EMPTY","TaxableValueInformation":"EXTRACTED","LandBuildingExtraFeatures":"EMPTY","AdValoremGroupTotals":"EXTRACTED","Exemptions":"EMPTY","BenefitsNote":"EXTRACTED","NonAdValoremNote":"available","ExemptionsNote":"available","DelinquencyInformation":"PARTIAL"},"validation":{"parcel":"MATCHED","taxYear":"MATCHED","authorityRowCount":"14","combinedTotalReconciliation":"MATCHED","derivedFields":"","taxable_value_0":"matched","taxable_value_1":"matched","taxable_value_2":"matched","taxable_value_3":"matched","taxable_value_4":"matched","taxable_value_5":"matched","taxable_value_6":"matched","taxable_value_7":"matched","taxable_value_8":"matched","taxable_value_9":"matched","taxable_value_10":"matched","taxable_value_11":"matched","taxable_value_12":"matched","taxable_value_13":"matched","parcel_join":"matched"}}
+{"event":"client_lookup_started","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.773Z","county":"miami-dade-fl"}
+{"event":"client_stage_started","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.773Z","stage":"property_resolution"}
+{"event":"source_attempt","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.774Z","source_id":"miami_address_search","source_role":"appraiser","status":"received","duration_ms":1,"attempt":1,"http_status":200}
+✔ address→detail→collector→annual PDF composes client sections without fake historical clearance (364.66725ms)
+{"event":"source_completed","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.774Z","source_id":"miami_address_search","status":"retrieved","duration_ms":1,"http_status":200}
+{"event":"source_attempt","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.774Z","source_id":"miami_assessment","source_role":"appraiser","status":"received","duration_ms":0,"attempt":1,"http_status":200}
+{"event":"source_completed","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.775Z","source_id":"miami_assessment","status":"retrieved","duration_ms":1,"http_status":200}
+{"event":"client_stage_started","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.775Z","stage":"collector_lookup"}
+{"event":"source_attempt","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.776Z","source_role":"collector","status":"received","duration_ms":1,"attempt":1,"http_status":200}
+{"event":"source_attempt","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.776Z","source_role":"collector","status":"received","duration_ms":0,"attempt":1,"http_status":200}
+{"event":"source_attempt","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_role":"collector","status":"http_failure","duration_ms":1,"attempt":1,"http_status":403}
+{"event":"property_lookup","county":"miami-dade-fl","source_mode":"county","request_id":"a582699d-a6d1-450c-abe2-8c0394ab510e","status":"partial","duration_ms":2,"error_codes":["source_blocked","document_dependency_failed"]}
+{"event":"client_source_result","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"miami_address_search","status":"verified","duration_ms":1,"http_status":200}
+{"event":"client_source_result","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"miami_assessment","status":"verified","duration_ms":1,"http_status":200}
+{"event":"client_source_result","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"collector_config","status":"verified","duration_ms":1,"http_status":200}
+{"event":"client_source_result","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"collector_search","status":"verified","duration_ms":0,"http_status":200}
+{"event":"client_source_result","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"collector_identity","status":"failed","error_code":"source_blocked","duration_ms":1,"http_status":403}
+{"event":"client_source_error","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"tax_collector","error_code":"source_blocked"}
+{"event":"client_source_error","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"documents","error_code":"document_dependency_failed"}
+{"event":"client_source_error","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"annual_bill","error_code":"annual_bill_unavailable"}
+{"event":"client_source_error","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","source_id":"collector_identity","error_code":"collector_identity_unresolved"}
+{"event":"client_lookup_completed","request_id":"1d6fb5a7-b696-45b5-ba9c-d8e1cab858d7","timestamp":"2026-10-08T07:18:11.777Z","county":"miami-dade-fl","status":"partial","match_status":"MATCHED","duration_ms":4,"source_count":5,"error_count":4,"section_count":22,"tax_line_count":0,"section_status":{"PropertyInformation":"EXTRACTED","AssessmentInformation":"EXTRACTED","TaxInformation":"unavailable","BillDetails":"unavailable","ParcelDetails":"unavailable","TaxAmounts":"unavailable","PaymentDetails":"unavailable","FullLegalDescription":"EXTRACTED","AssessmentHistory":"EXTRACTED","BenefitsInformation":"EXTRACTED","SalesInformation":"EXTRACTED","AccountHistory":"unavailable","AdValoremMillage":"unavailable","NonAdValorem":"unavailable","TaxableValueInformation":"EXTRACTED","LandBuildingExtraFeatures":"EMPTY","AdValoremGroupTotals":"unavailable","Exemptions":"unavailable","BenefitsNote":"EXTRACTED","NonAdValoremNote":"unavailable","ExemptionsNote":"unavailable","DelinquencyInformation":"unavailable"},"validation":{"parcel_join":"unverified"}}
+{"event":"client_lookup_started","request_id":"a25d28d7-7d02-49ea-a768-f8611a32e789","timestamp":"2026-10-08T07:18:11.777Z","county":"polk-fl"}
+{"event":"client_source_error","request_id":"a25d28d7-7d02-49ea-a768-f8611a32e789","timestamp":"2026-10-08T07:18:11.777Z","source_id":"property_resolution","error_code":"county_address_contract_pending"}
+{"event":"client_lookup_completed","request_id":"a25d28d7-7d02-49ea-a768-f8611a32e789","timestamp":"2026-10-08T07:18:11.777Z","county":"polk-fl","status":"error","match_status":"SEARCH_INCOMPLETE","duration_ms":0,"source_count":0,"error_count":1,"section_count":22,"tax_line_count":0,"section_status":{"PropertyInformation":"unavailable","AssessmentInformation":"unavailable","TaxInformation":"unavailable","BillDetails":"unavailable","ParcelDetails":"unavailable","TaxAmounts":"unavailable","PaymentDetails":"unavailable","FullLegalDescription":"unavailable","AssessmentHistory":"unavailable","BenefitsInformation":"unavailable","SalesInformation":"unavailable","AccountHistory":"unavailable","AdValoremMillage":"unavailable","NonAdValorem":"unavailable","TaxableValueInformation":"unavailable","LandBuildingExtraFeatures":"unavailable","AdValoremGroupTotals":"unavailable","Exemptions":"unavailable","BenefitsNote":"unavailable","NonAdValoremNote":"unavailable","ExemptionsNote":"unavailable","DelinquencyInformation":"unavailable"},"validation":{}}
+✔ blocked collector preserves rich appraiser data and explicit empty-unverified bill sections (3.804834ms)
+✔ pending county cannot masquerade as upgraded address coverage (0.197584ms)
+✔ read transport retries transient failures but never retries a403 or exceeds source size gates (0.313292ms)
+✔ POC key authentication rejects missing/wrong secrets; browser annual-only code compiles (0.919292ms)
+✔ logs correlate diagnostics without retaining credentials, addresses or source values (1.267083ms)
+✔ summary reports coverage and counts without logging property data (0.085708ms)
+✔ source retry logging records the failed and recovered attempt with one request ID (4.620625ms)
+✔ partial unavailable lookup preserves request ID and logs a terminal summary without source calls (0.837333ms)
+✔ source values appear in every extracted section, including nested years, lists and tables (1.404791ms)
+✔ EMPTY comments reflect inspection, while nested empty years stay visible (0.286959ms)
+✔ top ready label leaves historical partial coverage and JSON untouched (1.28425ms)
+✔ nulls and legitimate numeric or boolean zeros are preserved; source HTML remains text (0.0955ms)
+✔ request IDs prefer metadata and fall back to response header (0.061541ms)
+✔ HTML source and generated route export stay identical and load the module renderer (0.566125ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 602.335667

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florida Property & Tax Scraper</title>
+<style>
+:root{--bg:#fbfaf7;--card:#ffffff;--ink:#1d2329;--muted:#5d6670;--line:#e3e0d8;--accent:#0b5d6b;--accent-soft:#e3f0f1;--code:#f3f1ec;--warn:#8a5a00;--warn-soft:#fbf1dc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14171a;--card:#1b1f23;--ink:#e6e8ea;--muted:#9aa3ab;--line:#2c3238;--accent:#5fb7c4;--accent-soft:#1d3236;--code:#22272c;--warn:#e7b65a;--warn-soft:#33291a}}
+:root[data-theme="dark"]{--bg:#14171a;--card:#1b1f23;--ink:#e6e8ea;--muted:#9aa3ab;--line:#2c3238;--accent:#5fb7c4;--accent-soft:#1d3236;--code:#22272c;--warn:#e7b65a;--warn-soft:#33291a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:40px 16px 80px}
+header{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:28px}
+h1{font-size:28px;line-height:1.25;margin:0 0 6px}
+.meta{color:var(--muted);font-size:13px}
+.lead{font-size:16px;margin:18px 0 0}
+nav{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:32px}
+nav ol{margin:0;padding-left:20px;columns:2;column-gap:32px}
+nav a{color:var(--accent);text-decoration:none}
+nav a:hover{text-decoration:underline}
+h2{font-size:21px;margin:44px 0 10px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:15px;margin:22px 0 6px;color:var(--accent)}
+p{margin:8px 0}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow:auto;font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:10px 0}
+pre.long{max-height:640px}
+.tw{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+ol.steps li,ul li{margin:5px 0}
+.note{background:var(--warn-soft);border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+ul.check{list-style:none;padding-left:0}
+ul.check li{padding-left:26px;position:relative}
+ul.check li:before{content:"";position:absolute;left:2px;top:5px;width:13px;height:13px;border:1.5px solid var(--accent);border-radius:3px}
+footer{margin-top:48px;color:var(--muted);font-size:12.5px}
+@media (max-width:640px){nav ol{columns:1} h1{font-size:23px} .wrap{padding-top:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Florida Property &amp; Tax Scraper – Requirements</h1>
+<div class="meta">Version 1.1 · October 7, 2026</div>
+<p class="lead">Given a property address and an owner name in Miami-Dade County, the scraper returns one JSON record combining Property Appraiser and Tax Collector data. Prior-year taxes are returned <strong>only when they are still delinquent</strong>. Worked example: <strong>555 NE 15 ST UNIT 401</strong>, owner <strong>JUDE PATRICK JACOB</strong>, folio <strong>01-3231-052-0010</strong>.</p>
+</header>
+
+<nav><ol>
+<li><a href="#s1">Inputs and sources</a></li>
+<li><a href="#s2">Search and matching workflow</a></li>
+<li><a href="#s3">Property Appraiser fields</a></li>
+<li><a href="#s4">Tax Collector: summary and delinquency</a></li>
+<li><a href="#s5">Latest annual bill breakdown</a></li>
+<li><a href="#s6">Validation rules and edge cases</a></li>
+<li><a href="#s7">Standard JSON output</a></li>
+</ol></nav>
+
+<h2 id="s1">1. Inputs and sources</h2>
+<h3>Inputs per order</h3>
+<div class="tw"><table><thead><tr><th>Input</th><th>Example</th><th>Required</th></tr></thead><tbody><tr><td>scrap_order_id</td><td>10000001 (dummy)</td><td>Yes</td></tr><tr><td>Property address (incl. unit)</td><td>555 NE 15 ST UNIT 401</td><td>Yes</td></tr><tr><td>Owner name</td><td>JUDE PATRICK JACOB</td><td>Yes</td></tr><tr><td>County</td><td>Miami-Dade</td><td>Yes</td></tr><tr><td>transactionType</td><td>REFI / PURCHASE</td><td>Yes (pass-through)</td></tr></tbody></table></div>
+<h3>Sources (scraped in this order)</h3>
+<div class="tw"><table><thead><tr><th>#</th><th>Source</th><th>Entry point</th><th>What it gives</th></tr></thead><tbody><tr><td>1</td><td>Property Appraiser of Miami-Dade County</td><td>miamidadepa.gov – Property Search (by address)</td><td>Folio, property info, assessment, benefits, taxable values, legal description, sales</td></tr><tr><td>2</td><td>Miami-Dade Tax Collector</td><td>mdctaxcollector.gov – property tax search (by folio)</td><td>Account summary, amount due, payment history, annual bill breakdown</td></tr></tbody></table></div>
+<p>The folio from source 1 is the join key for source 2. Search the Tax Collector by folio, never by address, to avoid picking up another unit in the same building.</p>
+
+<h2 id="s2">2. Search and matching workflow</h2>
+<p>The scraper resolves address + owner to exactly one folio, then pulls everything else by that folio.</p>
+<ol class="steps">
+<li><strong>Normalize the address.</strong> Uppercase; standardize suffixes and directionals (STREET→ST, NORTHEAST→NE); split out the unit from forms like <code>UNIT 401</code>, <code>UNIT: 401</code>, <code>#401</code>, <code>APT 401</code> or a trailing <code>401</code>.</li>
+<li><strong>Search the Property Appraiser by address including unit.</strong> Condo buildings return many folios for one street address, so the unit is mandatory.</li>
+<li><strong>Match the owner.</strong> Compare against every owner on the folio (comma-separated on the PA). Match if any one owner matches after removing punctuation and ignoring word order. Allow LLC/TRUST/ESTATE suffix differences.</li>
+<li><strong>Decide the result.</strong>
+<ul>
+<li>One folio matches address + unit + owner → continue.</li>
+<li>Address matches but owner does not → continue, set <code>matchStatus = "OWNER_MISMATCH"</code>.</li>
+<li>Several candidates, none matches the owner → stop, <code>errorMessage = "Multiple parcels found, owner not matched"</code>, return candidate folios.</li>
+<li>No result → stop, <code>errorMessage = "Property not found"</code>.</li>
+</ul></li>
+<li><strong>Scrape the Property Appraiser detail pages</strong>, including legal description and sales.</li>
+<li><strong>Search the Tax Collector by folio</strong>; scrape Account Summary and Account History.</li>
+<li><strong>Open the latest annual bill</strong> and scrape the full breakdown.</li>
+<li><strong>Check every prior year for delinquency</strong>; keep only delinquent years in the output.</li>
+</ol>
+
+<h2 id="s3">3. Property Appraiser fields</h2>
+<p>Capture values exactly as displayed (keep <code>$</code> and commas), and capture all year columns shown.</p>
+<h3>Property Information</h3>
+<div class="tw"><table><thead><tr><th>Output key</th><th>PA label</th><th>Example value</th></tr></thead><tbody><tr><td>ParcelNumber</td><td>Folio</td><td>01-3231-052-0010</td></tr><tr><td>PropertyAddress</td><td>Property Address</td><td>555 NE 15 ST UNIT: 401, MIAMI, FL 33132-0000</td></tr><tr><td>Owners[]</td><td>Owner (split on comma)</td><td>JUDE PATRICK JACOB; NOAH ELIJAH JACOB</td></tr><tr><td>MailingAddress</td><td>Mailing Address</td><td>202 MALLARD WAY, PEEKSKILL, NY 10566</td></tr><tr><td>PrimaryZone</td><td>Primary Zone</td><td>6600 COMMERCIAL - LIBERAL</td></tr><tr><td>PrimaryLandUse</td><td>Primary Land Use</td><td>0407 RESIDENTIAL - TOTAL VALUE : CONDOMINIUM - RESIDENTIAL</td></tr><tr><td>BedsBathsHalf</td><td>Beds / Baths /Half</td><td>0 / 1 / 0</td></tr><tr><td>Floors / LivingUnits</td><td>Floors / Living Units</td><td>1 / 1</td></tr><tr><td>LivingArea / AdjustedArea / LotSize</td><td>same</td><td>450 Sq.Ft / 450 Sq.Ft / 0 Sq.Ft</td></tr><tr><td>YearBuilt</td><td>Year Built</td><td>1980</td></tr></tbody></table></div>
+<h3>Assessment Information</h3>
+<p>Output the latest year as <code>AssessmentInformation</code> and all years under <code>AssessmentHistory</code>. Detect the latest year from the table header; do not hard-code 2026.</p>
+<div class="tw"><table><thead><tr><th>Field</th><th>2026 (latest)</th><th>2025</th><th>2024</th></tr></thead><tbody><tr><td>Land Value</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Building Value</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Extra Feature Value</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Market Value</td><td>$164,478</td><td>$153,718</td><td>$159,160</td></tr><tr><td>Assessed Value</td><td>$164,478</td><td>$153,718</td><td>$132,350</td></tr></tbody></table></div>
+<h3>Benefits Information</h3>
+<p>Read every row and every year: Benefit, Type, one value per year. Blank cells → <code>null</code>. Example: <code>Non-Homestead Cap</code> / <code>Assessment Reduction</code> / 2026 null, 2025 null, 2024 $26,810. Capture the footnote too. Empty table → <code>[]</code>.</p>
+<h3>Taxable Value Information</h3>
+<p>Four groups (County, School Board, City, Regional), each with Exemption Value and Taxable Value per year. Example 2026: exemptions $0, taxable $164,478.</p>
+<h3>Full Legal Description</h3>
+<p>Every line, in order, as an array. Take it from the PA, not the tax bill (the bill truncates it to <code>OR 1834</code>).</p>
+<pre>VENETIA CONDO
+UNIT 401
+UNDIV 0.0028446 %
+INT IN COMMON ELEMENTS
+OFF REC 16685-2652
+OR 18345-3754 1098 5
+COC 23285-0804 03 2005 4</pre>
+<h3>Sales Information</h3>
+<p>Every row, newest first. Example has 8 rows:</p>
+<div class="tw"><table><thead><tr><th>Date</th><th>Price</th><th>OR Book-Page</th><th>Qualification Description</th></tr></thead><tbody><tr><td>05/02/2024</td><td>$215,000</td><td>34238-3104</td><td>Qual by exam of deed</td></tr><tr><td>01/30/2018</td><td>$94,000</td><td>30855-1341</td><td>Qual by exam of deed</td></tr><tr><td>04/20/2016</td><td>$122,800</td><td>30045-2394</td><td>Corrective, tax or QCD; min consideration</td></tr><tr><td>01/05/2009</td><td>$100</td><td>26722-2751</td><td>Financial inst or "In Lieu of Foreclosure" stated</td></tr><tr><td>03/01/2005</td><td>$0</td><td>23285-0804</td><td>Sales which are disqualified as a result of examination of the deed</td></tr><tr><td>07/01/2003</td><td>$85,000</td><td>21712-4153</td><td>Sales which are qualified</td></tr><tr><td>06/01/1998</td><td>$0</td><td>18157-4467</td><td>Sales which are disqualified as a result of examination of the deed</td></tr><tr><td>11/01/1995</td><td>$39,900</td><td>17004-0274</td><td>Sales which are qualified</td></tr></tbody></table></div>
+<h3>Land, Building and Extra-Feature Details</h3>
+<p>One table per roll year. Usually empty for condos; return <code>[]</code> per year, not an error.</p>
+
+<h2 id="s4">4. Tax Collector: account summary and delinquency</h2>
+<p>The example account is paid in full with nothing due; the most recent payment was $3,007.15 on 11/25/2025.</p>
+<h3>Account Summary → <code>TaxInformation</code></h3>
+<div class="tw"><table><thead><tr><th>Output key</th><th>Where on page</th><th>Example</th></tr></thead><tbody><tr><td>accountNumber</td><td>Real Estate Account #</td><td>01-3231-052-0010</td></tr><tr><td>amountDue</td><td>Amount Due panel ("paid in full" → $0.00)</td><td>$0.00</td></tr><tr><td>statusMessage</td><td>Amount Due panel, full sentence</td><td>Your account is paid in full. There is nothing due at this time.</td></tr><tr><td>lastPaymentDate</td><td>"most recent payment was made on …"</td><td>11/25/2025</td></tr><tr><td>lastPaymentAmount</td><td>same sentence</td><td>$3,007.15</td></tr><tr><td>type</td><td>derived: PAID / DUE / PARTIAL / DELINQUENT / UNKNOWN</td><td>PAID</td></tr></tbody></table></div>
+<h3>Account History → <code>AccountHistory[]</code></h3>
+<p>Return <strong>only the current (latest) bill year</strong>. Paid prior years are read for the delinquency check but are <strong>not</strong> included in the output.</p>
+<h3>Delinquency → <code>DelinquencyInformation</code></h3>
+<p>Florida real estate taxes become delinquent on April 1 of the year after the tax year. Check every Account History row; a prior year is returned in <code>delinquentYears[]</code> only if one of these rules is true:</p>
+<div class="tw"><table><thead><tr><th>Code</th><th>Rule (return the year only if this is true)</th></tr></thead><tbody><tr><td>PRIOR_YEAR_DUE</td><td>Any year before the current bill year with amount due &gt; $0</td></tr><tr><td>OPEN_CERTIFICATE</td><td>Tax certificate present and not marked Redeemed</td></tr><tr><td>TAX_DEED_PENDING</td><td>Tax deed application with no Sold / Redeemed / Cancelled outcome</td></tr><tr><td>CURRENT_YEAR_DUE</td><td>Current bill unpaid on or after April 1 of the following year</td></tr></tbody></table></div>
+<p>Each returned year carries billYear, billType, amountDue, status, code, any certificate / tax deed details, and the raw row text in <code>note</code>. <code>hasActiveDelinquency</code> = true when <code>delinquentYears</code> is not empty; <code>totalPriorYearsDue</code> = sum of their amounts due.</p>
+<div class="note">Not returned: years paid in full (even if paid late), redeemed certificates, completed tax deed sales, and years marked "Not Available" on the public site. For the example property all prior years are paid, so <code>delinquentYears</code> is empty.</div>
+<p>Shape of a delinquent result (illustrative values, not this property):</p>
+<pre>{
+  &quot;DelinquencyInformation&quot;: {
+    &quot;hasActiveDelinquency&quot;: true,
+    &quot;totalPriorYearsDue&quot;: &quot;$2,912.40&quot;,
+    &quot;delinquentYears&quot;: [
+      {
+        &quot;billYear&quot;: &quot;2024&quot;,
+        &quot;billType&quot;: &quot;Annual&quot;,
+        &quot;amountDue&quot;: &quot;$2,912.40&quot;,
+        &quot;status&quot;: &quot;Unpaid&quot;,
+        &quot;code&quot;: &quot;PRIOR_YEAR_DUE&quot;,
+        &quot;certificate&quot;: {
+          &quot;certificateNumber&quot;: &quot;1234&quot;,
+          &quot;status&quot;: &quot;Outstanding&quot;,
+          &quot;faceAmount&quot;: &quot;$2,770.06&quot;,
+          &quot;interestRate&quot;: &quot;18.00%&quot;
+        },
+        &quot;note&quot;: &quot;Certificate sold; not redeemed&quot;
+      }
+    ],
+    &quot;note&quot;: &quot;Prior-year taxes are delinquent&quot;
+  }
+}</pre>
+
+<h2 id="s5">5. Latest annual bill breakdown</h2>
+<p>The 2025 bill totals $3,132.45 at a combined millage of 20.37780, with no non-ad valorem assessments and no exemptions. Capture every line, not only the School Board group.</p>
+<h3>Bill header → <code>BillDetails</code></h3>
+<p>taxYear (2025), folio, municipality (MIAMI), millCode (0101), paidBy (SHELLPOINT MORTGAGE SERVICES – escrow), receiptNumber, paidDate, paidAmount, mailingAddress, propertyAddress.</p>
+<h3>Ad valorem taxes → <code>AdValoremMillage[]</code></h3>
+<p>One object per authority: group, authority, assessedValue, exemptionValue, taxableValue, millage, taxesLevied. Assessed value is $153,718 and exemption $0 on every row.</p>
+<div class="tw"><table><thead><tr><th>Group</th><th>Authority</th><th>Millage</th><th>Taxable value</th><th>Taxes levied</th></tr></thead><tbody><tr><td>Miami-Dade School Board</td><td>School Board Operating</td><td>5.49900</td><td>$153,718</td><td>$845.30</td></tr><tr><td>Miami-Dade School Board</td><td>School Board Debt Service</td><td>0.13400</td><td>$153,718</td><td>$20.60</td></tr><tr><td>Miami-Dade School Board</td><td>Voted School Operating</td><td>1.00000</td><td>$153,718</td><td>$153.72</td></tr><tr><td>State and Other</td><td>Florida Inland Navigation District</td><td>0.02700</td><td>$153,718</td><td>$4.15</td></tr><tr><td>State and Other</td><td>South Florida Water Management District</td><td>0.09480</td><td>$153,718</td><td>$14.57</td></tr><tr><td>State and Other</td><td>Okeechobee Basin</td><td>0.10260</td><td>$153,718</td><td>$15.77</td></tr><tr><td>State and Other</td><td>Everglades Construction Project</td><td>0.03270</td><td>$153,718</td><td>$5.03</td></tr><tr><td>State and Other</td><td>Childrens Trust Authority</td><td>0.46380</td><td>$153,718</td><td>$71.29</td></tr><tr><td>Miami-Dade County</td><td>County Wide Operating</td><td>4.57400</td><td>$153,718</td><td>$703.11</td></tr><tr><td>Miami-Dade County</td><td>County Wide Debt Service</td><td>0.41710</td><td>$153,718</td><td>$64.12</td></tr><tr><td>Miami-Dade County</td><td>Library District</td><td>0.28120</td><td>$153,718</td><td>$43.23</td></tr><tr><td>Municipal Governing Board</td><td>Miami Operating</td><td>7.10800</td><td>$153,718</td><td>$1,092.63</td></tr><tr><td>Municipal Governing Board</td><td>Miami Debt Service</td><td>0.25360</td><td>$153,718</td><td>$38.98</td></tr><tr><td>Municipal Governing Board</td><td>Miami Miscellaneous</td><td>0.39000</td><td>$153,718</td><td>$59.95</td></tr></tbody></table></div>
+<p>Also output <code>AdValoremGroupTotals</code>: School Board $1,019.62, State and Other $110.81, County $810.46, Municipal $1,191.56.</p>
+<h3>Tax amounts → <code>TaxAmounts</code></h3>
+<div class="tw"><table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>adValorem</td><td>$3,132.45</td></tr><tr><td>nonAdValorem</td><td>$0.00</td></tr><tr><td>totalDiscountable</td><td>$3,132.45</td></tr><tr><td>totalTax (Combined Taxes and Assessments)</td><td>$3,132.45</td></tr><tr><td>millageRate</td><td>20.37780</td></tr></tbody></table></div>
+<h3>Non-ad valorem → <code>NonAdValorem[]</code></h3>
+<p>levyingAuthority, footageUnits, rate, amount per row. Example is empty: return <code>[]</code> and <code>NonAdValoremNote: "No Non-Ad Valorem assessments."</code></p>
+<h3>Exemptions → <code>Exemptions{}</code></h3>
+<p>From the bill's EXEMPTIONS line and PA Taxable Value Information. Example has none: <code>{}</code> plus <code>ExemptionsNote: "No exemptions"</code>. When present, key by name (e.g. <code>HOMESTEAD: $25,000</code>).</p>
+<h3>Amount if paid by → <code>PaymentSchedule[]</code></h3>
+<p>Every date/amount pair (example: Nov 30, 2025 → $0.00). Miami-Dade gives a 4% early-payment discount in November down to 1% in February; $3,007.15 paid = $3,132.45 × 0.96. Store both totalTax and paidAmount so the difference is not read as an underpayment.</p>
+
+<h2 id="s6">6. Validation rules and edge cases</h2>
+<ul>
+<li><strong>Folio match:</strong> PA folio = Tax Collector account = bill folio.</li>
+<li><strong>Taxable value match:</strong> bill taxable value ($153,718) = PA prior-year (2025) taxable value; the bill lags the PA's latest roll year by one.</li>
+<li><strong>Line sum:</strong> sum of taxesLevied = adValorem (within $0.05). Example: $3,132.45.</li>
+<li><strong>Millage sum:</strong> line millages sum to millageRate. Example: 20.37780.</li>
+<li><strong>Total:</strong> adValorem + nonAdValorem = totalTax.</li>
+<li><strong>Zero land/building values</strong> on condos are valid, not missing data.</li>
+<li><strong>Blank cells</strong> → <code>null</code>; empty tables → <code>[]</code>; never drop a key.</li>
+<li><strong>Missing sections:</strong> keep the key with an empty value plus a <code>&lt;Section&gt;Note</code>.</li>
+<li><strong>Multiple owners:</strong> always an array, in page order.</li>
+<li><strong>Timeouts:</strong> retry twice, then name the failing source in <code>errorMessage</code> and still return the other source's data.</li>
+</ul>
+
+<h2 id="s7">7. Standard JSON output</h2>
+<p>Keeps the existing envelope (scrap_order_id, address, county, errorMessage, scrapTaxOrderRequest). Order IDs are dummy values. Conventions: money as displayed strings, dates MM/DD/YYYY, empty tables <code>[]</code>, blank cells <code>null</code>, owners as a flat array.</p>
+<pre class="long">{
+  &quot;scrap_order_id&quot;: &quot;10000001&quot;,
+  &quot;address&quot;: &quot;555 NE 15 ST UNIT 401&quot;,
+  &quot;ownerName&quot;: &quot;JUDE PATRICK JACOB&quot;,
+  &quot;county&quot;: &quot;Miami-Dade&quot;,
+  &quot;state&quot;: &quot;FL&quot;,
+  &quot;errorMessage&quot;: &quot;NA&quot;,
+  &quot;scrapTaxOrderRequest&quot;: {
+    &quot;orderId&quot;: &quot;10000001&quot;,
+    &quot;status&quot;: &quot;new&quot;,
+    &quot;transactionType&quot;: &quot;REFI&quot;,
+    &quot;address&quot;: &quot;555 NE 15 ST UNIT 401&quot;,
+    &quot;county&quot;: &quot;Miami-Dade&quot;,
+    &quot;state&quot;: &quot;FL&quot;,
+    &quot;errorMessage&quot;: &quot;NA&quot;,
+    &quot;matchStatus&quot;: &quot;MATCHED&quot;,
+    &quot;warnings&quot;: [],
+    &quot;PropertyInformation&quot;: {
+      &quot;ParcelNumber&quot;: &quot;01-3231-052-0010&quot;,
+      &quot;PropertyAddress&quot;: &quot;555 NE 15 ST UNIT: 401, MIAMI, FL 33132-0000&quot;,
+      &quot;Owners&quot;: [
+        &quot;JUDE PATRICK JACOB&quot;,
+        &quot;NOAH ELIJAH JACOB&quot;
+      ],
+      &quot;MailingAddress&quot;: &quot;202 MALLARD WAY, PEEKSKILL, NY 10566&quot;,
+      &quot;ownerOccupied&quot;: false,
+      &quot;PrimaryZone&quot;: &quot;6600 COMMERCIAL - LIBERAL&quot;,
+      &quot;PrimaryLandUse&quot;: &quot;0407 RESIDENTIAL - TOTAL VALUE : CONDOMINIUM - RESIDENTIAL&quot;,
+      &quot;BedsBathsHalf&quot;: &quot;0 / 1 / 0&quot;,
+      &quot;Floors&quot;: &quot;1&quot;,
+      &quot;LivingUnits&quot;: &quot;1&quot;,
+      &quot;LivingArea&quot;: &quot;450 Sq.Ft&quot;,
+      &quot;AdjustedArea&quot;: &quot;450 Sq.Ft&quot;,
+      &quot;LotSize&quot;: &quot;0 Sq.Ft&quot;,
+      &quot;YearBuilt&quot;: &quot;1980&quot;
+    },
+    &quot;FullLegalDescription&quot;: [
+      &quot;VENETIA CONDO&quot;,
+      &quot;UNIT 401&quot;,
+      &quot;UNDIV 0.0028446 %&quot;,
+      &quot;INT IN COMMON ELEMENTS&quot;,
+      &quot;OFF REC 16685-2652&quot;,
+      &quot;OR 18345-3754 1098 5&quot;,
+      &quot;COC 23285-0804 03 2005 4&quot;
+    ],
+    &quot;AssessmentInformation&quot;: {
+      &quot;Year&quot;: &quot;2026&quot;,
+      &quot;LandValue&quot;: &quot;$0&quot;,
+      &quot;BuildingValue&quot;: &quot;$0&quot;,
+      &quot;ExtraFeatureValue&quot;: &quot;$0&quot;,
+      &quot;MarketValue&quot;: &quot;$164,478&quot;,
+      &quot;AssessedValue&quot;: &quot;$164,478&quot;
+    },
+    &quot;AssessmentHistory&quot;: [
+      {
+        &quot;Year&quot;: &quot;2026&quot;,
+        &quot;LandValue&quot;: &quot;$0&quot;,
+        &quot;BuildingValue&quot;: &quot;$0&quot;,
+        &quot;ExtraFeatureValue&quot;: &quot;$0&quot;,
+        &quot;MarketValue&quot;: &quot;$164,478&quot;,
+        &quot;AssessedValue&quot;: &quot;$164,478&quot;
+      },
+      {
+        &quot;Year&quot;: &quot;2025&quot;,
+        &quot;LandValue&quot;: &quot;$0&quot;,
+        &quot;BuildingValue&quot;: &quot;$0&quot;,
+        &quot;ExtraFeatureValue&quot;: &quot;$0&quot;,
+        &quot;MarketValue&quot;: &quot;$153,718&quot;,
+        &quot;AssessedValue&quot;: &quot;$153,718&quot;
+      },
+      {
+        &quot;Year&quot;: &quot;2024&quot;,
+        &quot;LandValue&quot;: &quot;$0&quot;,
+        &quot;BuildingValue&quot;: &quot;$0&quot;,
+        &quot;ExtraFeatureValue&quot;: &quot;$0&quot;,
+        &quot;MarketValue&quot;: &quot;$159,160&quot;,
+        &quot;AssessedValue&quot;: &quot;$132,350&quot;
+      }
+    ],
+    &quot;BenefitsInformation&quot;: [
+      {
+        &quot;Benefit&quot;: &quot;Non-Homestead Cap&quot;,
+        &quot;Type&quot;: &quot;Assessment Reduction&quot;,
+        &quot;Values&quot;: {
+          &quot;2026&quot;: null,
+          &quot;2025&quot;: null,
+          &quot;2024&quot;: &quot;$26,810&quot;
+        }
+      }
+    ],
+    &quot;BenefitsNote&quot;: &quot;Not all benefits are applicable to all Taxable Values (i.e. County, School Board, City, Regional).&quot;,
+    &quot;TaxableValueInformation&quot;: {
+      &quot;2026&quot;: {
+        &quot;County&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$164,478&quot;
+        },
+        &quot;SchoolBoard&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$164,478&quot;
+        },
+        &quot;City&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$164,478&quot;
+        },
+        &quot;Regional&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$164,478&quot;
+        }
+      },
+      &quot;2025&quot;: {
+        &quot;County&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$153,718&quot;
+        },
+        &quot;SchoolBoard&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$153,718&quot;
+        },
+        &quot;City&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$153,718&quot;
+        },
+        &quot;Regional&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$153,718&quot;
+        }
+      },
+      &quot;2024&quot;: {
+        &quot;County&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$132,350&quot;
+        },
+        &quot;SchoolBoard&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$159,160&quot;
+        },
+        &quot;City&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$132,350&quot;
+        },
+        &quot;Regional&quot;: {
+          &quot;ExemptionValue&quot;: &quot;$0&quot;,
+          &quot;TaxableValue&quot;: &quot;$132,350&quot;
+        }
+      }
+    },
+    &quot;SalesInformation&quot;: [
+      {
+        &quot;Date&quot;: &quot;05/02/2024&quot;,
+        &quot;Price&quot;: &quot;$215,000&quot;,
+        &quot;ORBookPage&quot;: &quot;34238-3104&quot;,
+        &quot;QualificationDescription&quot;: &quot;Qual by exam of deed&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;01/30/2018&quot;,
+        &quot;Price&quot;: &quot;$94,000&quot;,
+        &quot;ORBookPage&quot;: &quot;30855-1341&quot;,
+        &quot;QualificationDescription&quot;: &quot;Qual by exam of deed&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;04/20/2016&quot;,
+        &quot;Price&quot;: &quot;$122,800&quot;,
+        &quot;ORBookPage&quot;: &quot;30045-2394&quot;,
+        &quot;QualificationDescription&quot;: &quot;Corrective, tax or QCD; min consideration&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;01/05/2009&quot;,
+        &quot;Price&quot;: &quot;$100&quot;,
+        &quot;ORBookPage&quot;: &quot;26722-2751&quot;,
+        &quot;QualificationDescription&quot;: &quot;Financial inst or \&quot;In Lieu of Foreclosure\&quot; stated&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;03/01/2005&quot;,
+        &quot;Price&quot;: &quot;$0&quot;,
+        &quot;ORBookPage&quot;: &quot;23285-0804&quot;,
+        &quot;QualificationDescription&quot;: &quot;Sales which are disqualified as a result of examination of the deed&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;07/01/2003&quot;,
+        &quot;Price&quot;: &quot;$85,000&quot;,
+        &quot;ORBookPage&quot;: &quot;21712-4153&quot;,
+        &quot;QualificationDescription&quot;: &quot;Sales which are qualified&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;06/01/1998&quot;,
+        &quot;Price&quot;: &quot;$0&quot;,
+        &quot;ORBookPage&quot;: &quot;18157-4467&quot;,
+        &quot;QualificationDescription&quot;: &quot;Sales which are disqualified as a result of examination of the deed&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;11/01/1995&quot;,
+        &quot;Price&quot;: &quot;$39,900&quot;,
+        &quot;ORBookPage&quot;: &quot;17004-0274&quot;,
+        &quot;QualificationDescription&quot;: &quot;Sales which are qualified&quot;
+      }
+    ],
+    &quot;LandBuildingExtraFeatures&quot;: {
+      &quot;2026&quot;: [],
+      &quot;2025&quot;: [],
+      &quot;2024&quot;: []
+    },
+    &quot;TaxInformation&quot;: {
+      &quot;accountNumber&quot;: &quot;01-3231-052-0010&quot;,
+      &quot;type&quot;: &quot;PAID&quot;,
+      &quot;amountDue&quot;: &quot;$0.00&quot;,
+      &quot;statusMessage&quot;: &quot;Your account is paid in full. There is nothing due at this time.&quot;,
+      &quot;lastPaymentDate&quot;: &quot;11/25/2025&quot;,
+      &quot;lastPaymentAmount&quot;: &quot;$3,007.15&quot;,
+      &quot;amountPaidYear&quot;: &quot;2025&quot;,
+      &quot;note&quot;: &quot;Bill paid in full&quot;
+    },
+    &quot;AccountHistory&quot;: [
+      {
+        &quot;billYear&quot;: &quot;2025&quot;,
+        &quot;billType&quot;: &quot;Annual&quot;,
+        &quot;amountDue&quot;: &quot;$0.00&quot;,
+        &quot;status&quot;: &quot;Paid&quot;,
+        &quot;paidAmount&quot;: &quot;$3,007.15&quot;,
+        &quot;paidDate&quot;: &quot;11/25/2025&quot;,
+        &quot;receiptNumber&quot;: &quot;EEX-26-000928&quot;
+      }
+    ],
+    &quot;DelinquencyInformation&quot;: {
+      &quot;hasActiveDelinquency&quot;: false,
+      &quot;totalPriorYearsDue&quot;: &quot;$0.00&quot;,
+      &quot;delinquentYears&quot;: [],
+      &quot;note&quot;: &quot;No delinquent prior-year taxes found&quot;
+    },
+    &quot;BillDetails&quot;: {
+      &quot;taxYear&quot;: &quot;2025&quot;,
+      &quot;folio&quot;: &quot;01-3231-052-0010&quot;,
+      &quot;municipality&quot;: &quot;MIAMI&quot;,
+      &quot;millCode&quot;: &quot;0101&quot;,
+      &quot;propertyAddress&quot;: &quot;555 NE 15 ST 401, Miami, 33132-0000&quot;,
+      &quot;mailingAddress&quot;: &quot;JUDE PATRICK JACOB, NOAH ELIJAH JACOB, 202 MALLARD WAY, PEEKSKILL, NY 10566&quot;,
+      &quot;paidBy&quot;: &quot;SHELLPOINT MORTGAGE SERVICES&quot;,
+      &quot;receiptNumber&quot;: &quot;EEX-26-000928&quot;,
+      &quot;paidDate&quot;: &quot;11/25/2025&quot;,
+      &quot;paidAmount&quot;: &quot;$3,007.15&quot;
+    },
+    &quot;AdValoremMillage&quot;: [
+      {
+        &quot;group&quot;: &quot;Miami-Dade School Board&quot;,
+        &quot;authority&quot;: &quot;School Board Operating&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;5.49900&quot;,
+        &quot;taxesLevied&quot;: &quot;$845.30&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Miami-Dade School Board&quot;,
+        &quot;authority&quot;: &quot;School Board Debt Service&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.13400&quot;,
+        &quot;taxesLevied&quot;: &quot;$20.60&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Miami-Dade School Board&quot;,
+        &quot;authority&quot;: &quot;Voted School Operating&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;1.00000&quot;,
+        &quot;taxesLevied&quot;: &quot;$153.72&quot;
+      },
+      {
+        &quot;group&quot;: &quot;State and Other&quot;,
+        &quot;authority&quot;: &quot;Florida Inland Navigation District&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.02700&quot;,
+        &quot;taxesLevied&quot;: &quot;$4.15&quot;
+      },
+      {
+        &quot;group&quot;: &quot;State and Other&quot;,
+        &quot;authority&quot;: &quot;South Florida Water Management District&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.09480&quot;,
+        &quot;taxesLevied&quot;: &quot;$14.57&quot;
+      },
+      {
+        &quot;group&quot;: &quot;State and Other&quot;,
+        &quot;authority&quot;: &quot;Okeechobee Basin&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.10260&quot;,
+        &quot;taxesLevied&quot;: &quot;$15.77&quot;
+      },
+      {
+        &quot;group&quot;: &quot;State and Other&quot;,
+        &quot;authority&quot;: &quot;Everglades Construction Project&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.03270&quot;,
+        &quot;taxesLevied&quot;: &quot;$5.03&quot;
+      },
+      {
+        &quot;group&quot;: &quot;State and Other&quot;,
+        &quot;authority&quot;: &quot;Childrens Trust Authority&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.46380&quot;,
+        &quot;taxesLevied&quot;: &quot;$71.29&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Miami-Dade County&quot;,
+        &quot;authority&quot;: &quot;County Wide Operating&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;4.57400&quot;,
+        &quot;taxesLevied&quot;: &quot;$703.11&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Miami-Dade County&quot;,
+        &quot;authority&quot;: &quot;County Wide Debt Service&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.41710&quot;,
+        &quot;taxesLevied&quot;: &quot;$64.12&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Miami-Dade County&quot;,
+        &quot;authority&quot;: &quot;Library District&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.28120&quot;,
+        &quot;taxesLevied&quot;: &quot;$43.23&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Municipal Governing Board&quot;,
+        &quot;authority&quot;: &quot;Miami Operating&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;7.10800&quot;,
+        &quot;taxesLevied&quot;: &quot;$1,092.63&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Municipal Governing Board&quot;,
+        &quot;authority&quot;: &quot;Miami Debt Service&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.25360&quot;,
+        &quot;taxesLevied&quot;: &quot;$38.98&quot;
+      },
+      {
+        &quot;group&quot;: &quot;Municipal Governing Board&quot;,
+        &quot;authority&quot;: &quot;Miami Miscellaneous&quot;,
+        &quot;assessedValue&quot;: &quot;$153,718&quot;,
+        &quot;exemptionValue&quot;: &quot;$0&quot;,
+        &quot;taxableValue&quot;: &quot;$153,718&quot;,
+        &quot;millage&quot;: &quot;0.39000&quot;,
+        &quot;taxesLevied&quot;: &quot;$59.95&quot;
+      }
+    ],
+    &quot;AdValoremGroupTotals&quot;: {
+      &quot;Miami-Dade School Board&quot;: &quot;$1,019.62&quot;,
+      &quot;State and Other&quot;: &quot;$110.81&quot;,
+      &quot;Miami-Dade County&quot;: &quot;$810.46&quot;,
+      &quot;Municipal Governing Board&quot;: &quot;$1,191.56&quot;
+    },
+    &quot;NonAdValorem&quot;: [],
+    &quot;NonAdValoremNote&quot;: &quot;No Non-Ad Valorem assessments.&quot;,
+    &quot;Exemptions&quot;: {},
+    &quot;ExemptionsNote&quot;: &quot;No exemptions&quot;,
+    &quot;ParcelDetails&quot;: {
+      &quot;millageRate&quot;: &quot;20.37780&quot;
+    },
+    &quot;TaxAmounts&quot;: {
+      &quot;adValorem&quot;: &quot;$3,132.45&quot;,
+      &quot;nonAdValorem&quot;: &quot;$0.00&quot;,
+      &quot;totalDiscountable&quot;: &quot;$3,132.45&quot;,
+      &quot;totalTax&quot;: &quot;$3,132.45&quot;
+    },
+    &quot;PaymentDetails&quot;: {
+      &quot;combinedTaxesAndAssessments&quot;: &quot;$3,132.45&quot;,
+      &quot;PaymentSchedule&quot;: [
+        {
+          &quot;ifPaidBy&quot;: &quot;Nov 30, 2025&quot;,
+          &quot;pleasePay&quot;: &quot;$0.00&quot;
+        }
+      ],
+      &quot;discountNote&quot;: &quot;Paid $3,007.15 = $3,132.45 less 4% November early-payment discount&quot;
+    }
+  }
+}</pre>
+
+
+<footer>Sources for the worked example: Property Appraiser of Miami-Dade County detailed report (generated 10/07/2026), Miami-Dade Tax Collector account summary, and 2025 Real Estate Property Taxes bill for folio 01-3231-052-0010.</footer>
+</div>
+</body>
+</html>

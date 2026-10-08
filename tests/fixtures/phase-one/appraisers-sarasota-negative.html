@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT1JFP7Q9G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GT1JFP7Q9G');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noarchive,nofollow">
+
+    
+    <title>Search</title>
+    <link href="/propertysearch/Content/themes/Redmond/scpa?v=1BnJakDSdliVOXJXiJ4LJxmFhdY4gx1MWPr0u_FEZqQ1" rel="stylesheet"/>
+
+    <link href="/propertysearch/bundles/css?v=GYRlIJ8YgiQmJ_SaKRocpEABEthnoe9j8OD9RkKmKsY1" rel="stylesheet"/>
+
+    <link href="/propertysearch/bundles/select2Override?v=HZQR69E7Afi04aKwnGkX3CdseOTxuHVA8HpPSIJube41" rel="stylesheet"/>
+
+    
+</head>
+<body>
+    <div class="top-bar hide-on-print"></div>
+
+    <header>
+
+        <!--[if lt IE 1]>
+            <div style="margin-bottom: 20px;">
+            <div id="browser-warning-window" style="display:none;position:fixed;z-index:999;left:0;top:-10px;width:100%;background:#FFE972;border:2px solid #EEC900;margin:0 auto;padding:10px;">
+                <p style="text-align:center;color:#8B7500;font-weight:bold;">This site works best using Internet Explorer 9 or above.&nbsp;<a id="browser-warning"href="javascript:void(0);">Close Message</a></p>
+            </div>
+          </div>
+        <![endif]-->
+        <!--[if lt IE 9]>
+             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+        <div id="container2">
+            <a href="/" title="Home">
+                <img src="/propertysearch/Content/Images/header.png" border="0" alt="Site Banner" />
+            </a>
+        </div>
+        <div class="menu">
+
+            <nav>
+                <a class="action" href="//www.sarasotapropertyappraiser.gov">Home</a>
+                <a class="action" href="/propertysearch/">Quick Search</a>
+                <a class="action" href="/propertysearch/Search/Advanced">Advanced Search</a>
+                <a class="action" href="/propertysearch/Tangible/Search">Tangible Search</a>
+                <a class="action" href="https://www.sarasotapropertyappraiser.gov/contact-us/contact-a-department">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="container" role="main" class="page-wrap">
+        <!-- Insert default "BasicPage" markup here -->
+        
+
+
+
+<h1>Quick Search</h1>
+
+<div style="width:700px;font-weight:bold;">All search criteria below are optional but at least one search criteria must be entered</div>
+
+<form id="searchform" action="/propertysearch/Result" method="POST" class="quicksearch">
+    <div class="section">
+        <div class="categories">
+            <label for="AddressKeywords">Address or Street or Zip</label>
+        </div>
+        <div class="content">
+            <input id="AddressKeywords" name="AddressKeywords" placeholder="Address or Street or Zip" style="width:340px;" type="text" value="" />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="OwnerKeywords">Owner</label>
+            <br />
+        </div>
+        <div class="content">
+            <input id="OwnerKeywords" maxlength="100" name="OwnerKeywords" placeholder="Owner" style="width:340px;" type="text" value="" />
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="Strap">Account Number/Parcel ID</label>
+            <br />
+        </div>
+        <div class="content">
+            <input id="Strap" maxlength="12" name="Strap" placeholder="Account #/Parcel ID" style="width:340px;" type="text" value="" />
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="Subdivision">Subdivision</label>
+            <br />
+        </div>
+        <div class="content">
+            <input id="Subdivision" maxlength="60" name="Subdivision" placeholder="Subdivision" style="width:340px;" type="text" value="" />
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="MunicipalityName">Municipality</label>
+            <br />
+        </div>
+        <div class="content" style="margin-bottom: 4px;">
+
+            <select Id="MunicipalityName" class="select2munis" id="MunicipalityName" multiple="multiple" name="MunicipalityName" style="width:350px;"><option value="0500">City of North Port</option>
+<option value="0200">City of Sarasota</option>
+<option value="0300">City of Venice</option>
+<option value="0100">Sarasota County</option>
+<option value="0400">Town of Longboat Key</option>
+</select>
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="UseCode">Property Use (DOR)</label>
+            <br />
+        </div>
+        <div class="content">
+            <input id="UseCode" maxlength="70" name="UseCode" placeholder="Property Use" style="width:45%;margin-right:6px;" type="text" value="" /><a href="/propertysearch/Lookup/UseCode">View List</a>
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <span class="fw-bold">Sale Date Range</span>
+            <br />
+        </div>
+        <div class="content">
+            <i><label for="SalesFrom">From</label></i>
+            <input class="date" data-val="true" data-val-date="The field From must be a date." id="SalesFrom" name="SalesFrom" size="10" type="text" value="" />
+            <i><label for="SalesTo">To</label></i>&nbsp;&nbsp;
+            <input class="date" data-val="true" data-val-date="The field To must be a date." id="SalesTo" name="SalesTo" size="10" type="text" value="" />
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <span class="fw-bold">Sale Price Range</span>
+            <br />
+        </div>
+        <div class="content">
+            <i><label for="SaleAmountFrom">Min</label></i>&nbsp;&nbsp;
+            <input class="allowNumericWithDecimal" id="SaleAmountFrom" maxlength="10" name="SaleAmountFrom" size="10" type="text" value="" />
+            <i><label for="SaleAmountTo">Max</label></i>
+            <input class="allowNumericWithDecimal" id="SaleAmountTo" maxlength="10" name="SaleAmountTo" size="10" type="text" value="" />
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="InstrumentNumber">Instrument Number</label>
+            <br />
+        </div>
+        <div class="content">
+            
+<input class="text-box single-line" id="InstrumentNumber" name="InstrumentNumber" style="width:125px" type="text" value="" />
+
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <label for="GrantorSeller">Grantor/Seller</label>
+            <br />
+        </div>
+        <div class="content">
+            
+<input class="text-box single-line" id="GrantorSeller" name="GrantorSeller" style="width:125px" type="text" value="" />
+
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="categories">
+            <span class="fw-bold">Property Features</span>
+            <br />
+        </div>
+        <div class="content">
+            <input data-val="true" data-val-required="The HasPool field is required." id="Pool" name="HasPool" type="checkbox" value="true" /><input name="HasPool" type="hidden" value="false" />&nbsp;<label for="Pool">Pool</label>
+            
+            <br />
+        </div>
+    </div>
+
+    <div class="section">
+        <br />
+        <div class="categories">
+            <input type="submit" name="search" value="search" id="search" />
+            <input type="reset" name="reset" value="reset" id="reset" />
+            <br />
+            <span style="width: 300px" id="criteria-count" class="large"></span>
+        </div>
+        <div class="content">
+            <a href="https://www.sarasotapropertyappraiser.gov/downloads/download-data">Database Downloads</a>
+
+            <br />
+        </div>
+    </div>
+    <br /><br /><br /><br /><br />
+</form>
+
+
+    </div>
+
+    <footer class="site-footer" style="margin-top:30px;">
+        <div class="hide-on-print footercaption">Serving Our Community with Pride and Accountability</div>
+        <div class="hide-on-print">
+            <a href="/glossary/">Glossary</a>&nbsp;|&nbsp;<a href="/accessibility-disclaimers/">Accessibility & Disclaimers</a>&nbsp;|&nbsp;<a href="/contact-us/">Contact Us</a>&nbsp;|&nbsp;<a href="/our-office/career-opportunities/">Career Opportunities</a>
+        </div>
+        <div>
+            <p>Sarasota County Property Appraiser - Ph. 941.861.8200 Fax. 941.861.8260 - 2001 Adams Lane, Sarasota, FL, 34237</p>
+        </div>
+    </footer>
+
+    <div id="loading_dialog" style="display: none;" class="hide-on-print"></div>
+
+    <script src="/propertysearch/bundles/jquery?v=gdql_X80944Qph4oYO6y83PuzqoV_ic9q5UUm2NV-9I1"></script>
+<script src="/propertysearch/bundles/jqueryui?v="></script>
+<script src="/propertysearch/bundles/scpa?v=ucAaUHD9Cta5Gr8mJutqWtpMBVZMqaddND1Zv35Hj801"></script>
+<script src="/propertysearch/bundles/select2?v=hOOu3qclIXihXJtqT3g-s8ncBdOL6Ndecowxw5HHBrg1"></script>
+<script src="/propertysearch/bundles/osvaldas?v=BtWwpGlMIMGSlUIV955aMwJd4fkwjwhw7Bwg9uZrUFs1"></script>
+
+
+    <script>
+        $(document).ready(function ()
+        {
+            JSONautoCompleteWrapper($("#Subdivision"), $("#Subdivision"), "/propertysearch/api/srch/ListSubs");
+            JSONautoCompleteWrapper($("#UseCode"), $("#UseCode"), "/propertysearch/api/srch/ListUseCodes");
+            AddressAutocompleteWrapper($("#AddressKeywords"), $("#AddressKeywords"), "/propertysearch/api/srch/ListAddresses");
+            JSONautoCompleteWrapper($("#OwnerKeywords"), $("#OwnerKeywords"), "/propertysearch/api/srch/ListOwners");
+            $(document).tooltip({
+                position: { my: "left top+15", at: "left bottom", collision: "flipfit" }, track: true,
+                tooltipClass: "custom-tooltip"
+            });
+
+        });
+    </script>
+
+    
+    <script>
+        $(document).ready(init);
+
+        $('#searchform input:text').each(function () {
+            if ($(this).val() == "[null]")
+                $(this).val("");
+
+            if ($(this).val() == "01/01/1974" || $(this).val() == "12/31/2099") {
+                $(this).val("");
+            }
+        });
+
+        $(".allowNumericWithDecimal").on("keypress keyup blur", function (event) {
+            $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+
+
+        $(".select2munis").select2({
+            placeholder: "Click to choose Municipalities",
+            multiple: true
+        });
+        // reset select2
+        $('#reset').click(function () {
+            $('.select2munis').select2('val', '');
+        });
+
+    </script>
+
+
+    <!--[if lt IE 1]>
+        <script>$(document).ready(function() {$("#browser-warning").click(function()
+            {$("#browser-warning-window").slideUp(350);setCookie("ignore-warning", "ignore", 14);});});</script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var _userway_config = {
+            account: 'MYTq08GnfC'
+        };
+    </script>
+    <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
+
+
+</body>
+</html>

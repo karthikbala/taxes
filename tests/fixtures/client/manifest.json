@@ -1,0 +1,12 @@
+{
+  "source": "User-provided client ZIP",
+  "captured_reference_date": "2026-10-07",
+  "use": "Dated offline reference; never a live fallback",
+  "files": {
+    "miami-assessment-reference.pdf": "952297a3a0e3f8aa8b8b5e4df633ec004ea4e354f23c52973ac87c1bbf88a8a0",
+    "miami-tax-history-reference.pdf": "e54695c7e7adef84acfca2821a331a76b93aaaff4de1e0711d4ddb98ecc0a6a8",
+    "miami-annual-reference.pdf": "00ebf95a652f2a748dc42359f3b9e16eb00929c034ed0d536cb70646c6ea6c15",
+    "miami-client-sample.json": "8edbfc285c444207d99f7e47f415c8fe04ec24f6040b29a0b3c051a017ee2e74",
+    "client-requirements.html": "f074eeb21320028e6c3abf99cf34af990d04ca04770ac9d944bbfd70a34d41b7"
+  }
+}

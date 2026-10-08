@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Highlands County - Property Tax Search
+</title><script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+<link href="/Content/css?v=Rr7aK0sHg5isr9kbLDhZZip823bgYAuLC3znWXOIn_s1" rel="stylesheet"/>
+<link id="myFavicon" href="Highlands-favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <style>
+            :root {
+                --navbar-bg-color: #0854a4 !important;
+                --navbar-highlight-color: #66ccff !important;
+                --dropdown-menu-highlight-color: #3399ff !important;
+            }
+            
+            /* Override dropdown open state background with rgba version of top menu color */
+            .navbar-inverse .navbar-nav .dropdown.open > a,
+            .navbar-inverse .navbar-nav .dropdown.open > a:hover,
+            .navbar-inverse .navbar-nav .dropdown.open > a:focus {
+                background-color: rgba(102, 204, 255, 0.15) !important;
+            }
+            
+            /* Additional overrides to ensure colors apply */
+            .navbar-inverse {
+                background-color: #0854a4 !important;
+            }
+            
+            .navbar-inverse .navbar-nav > li > a:hover,
+            .navbar-inverse .navbar-nav > li > a:focus,
+            .navbar-inverse .navbar-nav .dropdown-toggle:hover,
+            .navbar-inverse .navbar-nav .dropdown-toggle:focus,
+            .navbar-inverse .navbar-nav.navbar-right > li > a:hover,
+            .navbar-inverse .navbar-nav.navbar-right > li > a:focus {
+                color: #66ccff !important;
+            }
+            
+            .navbar-inverse .dropdown-menu > li > a:hover,
+            .navbar-inverse .dropdown-menu > li > a:focus {
+                background-color: #3399ff !important;
+                color: #ffffff !important;
+            }
+        </style>
+            
+
+    <style>
+        /* ── CSS Variables for Dynamic Theming ────────────────────── */
+        :root {
+            --navbar-bg-color: #222222;
+            --navbar-highlight-color: #ffbf47;
+            --dropdown-menu-highlight-color: #005fa3;
+        }
+        /* ── Skip Navigation ──────────────────────────────────────── */
+        .skip-nav {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: #005fa3;
+            color: #ffffff;
+            padding: 10px 20px;
+            z-index: 10000;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0 0 4px 0;
+            text-decoration: none;
+            transition: top 0.15s ease;
+        }
+
+            .skip-nav:focus {
+                top: 0;
+                outline: 3px solid var(--navbar-highlight-color);
+                outline-offset: 2px;
+            }
+
+        /* ── Focus Visible (global) ───────────────────────────────── */
+        /* Ensure every focusable element has a visible focus ring     */
+        :focus-visible {
+            outline: 3px solid var(--navbar-highlight-color);
+            outline-offset: 2px;
+        }
+        /* Remove outline for mouse users while keeping it for keyboard */
+        :focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* ── Navbar ───────────────────────────────────────────────── */
+        .navbar-inverse {
+            background-color: var(--navbar-bg-color) !important; /* Dynamic via CSS variable */
+            border-color: #080808;
+        }
+
+            /* Nav links – white on #222 = 14.75:1 (AAA) */
+            .navbar-inverse .navbar-nav > li > a,
+            .navbar-inverse .navbar-nav > li > a:visited {
+                color: #ffffff;
+            }
+
+                .navbar-inverse .navbar-nav > li > a:hover,
+                .navbar-inverse .navbar-nav > li > a:focus {
+                    color: var(--navbar-highlight-color) !important; /* Dynamic highlight color */
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+
+            /* Dropdown toggle */
+            .navbar-inverse .navbar-nav .dropdown-toggle {
+                color: #ffffff;
+            }
+
+                .navbar-inverse .navbar-nav .dropdown-toggle:hover,
+                .navbar-inverse .navbar-nav .dropdown-toggle:focus {
+                    color: var(--navbar-highlight-color) !important; /* Dynamic highlight color */
+                    text-decoration: underline;
+                }
+
+            /* Dropdown menu – meet 4.5:1 contrast on white background */
+            .navbar-inverse .dropdown-menu > li > a {
+                color: #1a1a1a;
+            }
+
+                .navbar-inverse .dropdown-menu > li > a:hover,
+                .navbar-inverse .dropdown-menu > li > a:focus {
+                    background-color: var(--dropdown-menu-highlight-color) !important;
+                    color: #ffffff !important;
+                    text-decoration: underline;
+                }
+
+            /* Right-side auth links */
+            .navbar-inverse .navbar-nav.navbar-right > li > a,
+            .navbar-inverse .navbar-nav.navbar-right > li > a:visited {
+                color: #ffffff;
+            }
+
+                .navbar-inverse .navbar-nav.navbar-right > li > a:hover,
+                .navbar-inverse .navbar-nav.navbar-right > li > a:focus {
+                    color: var(--navbar-highlight-color) !important; /* Dynamic highlight color */
+                    text-decoration: underline;
+                }
+
+            /* When dropdown is open (active state) */
+            .navbar-inverse .navbar-nav .dropdown.open > a,
+            .navbar-inverse .navbar-nav .dropdown.open > a:hover,
+            .navbar-inverse .navbar-nav .dropdown.open > a:focus {
+                background-color: rgba(255, 191, 71, 0.15) !important; /* Will be overridden dynamically */
+                color: var(--navbar-highlight-color) !important;
+            }
+
+            /* LoginStatus logout link */
+            .navbar-inverse .navbar-nav .navbar-right .aspNetLink,
+            .navbar-inverse .navbar-nav .navbar-right a {
+                color: #ffffff;
+            }
+
+        /* ── Logo ─────────────────────────────────────────────────── */
+        .logo {
+            height: 70px;       /* explicit logo height */
+            width: auto;
+        }
+
+        .navbar-brand {
+            padding: 0 15px;            /* remove top/bottom padding */
+            display: flex;
+            align-items: center;        /* vertically centre the logo */
+            height: 70px;               /* match the logo height exactly */
+        }
+
+        /* Force the navbar itself to be at least as tall as the logo */
+        .navbar {
+            min-height: 70px;
+        }
+
+        .navbar .container {
+            min-height: 70px;
+        }
+
+        /* ── Body padding for fixed navbar ───────────────────────── */
+        body {
+            padding-top: 70px; /* matches navbar min-height */
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 60px;
+            }
+        }
+
+        /* ── Mobile dropdown adjustments ─────────────────────────── */
+        @media (max-width: 767px) {
+            .navbar-nav .dropdown-menu {
+                position: static;
+                float: none;
+                width: auto;
+                margin-top: 0;
+                background-color: transparent;
+                border: 0;
+                box-shadow: none;
+            }
+
+                .navbar-nav .dropdown-menu > li > a {
+                    padding-left: 30px;
+                    color: #ffffff; /* white text on dark collapsed menu */
+                }
+
+                    .navbar-nav .dropdown-menu > li > a:hover,
+                    .navbar-nav .dropdown-menu > li > a:focus {
+                        color: var(--navbar-highlight-color) !important;
+                        background-color: transparent;
+                    }
+
+            .navbar-nav a br {
+                display: none;
+            }
+
+            .navbar-nav a {
+                white-space: normal !important;
+            }
+
+            .body-content {
+                padding: 15px;
+            }
+        }
+
+        /* ── Footer ───────────────────────────────────────────────── */
+        footer {
+            text-align: center;
+        }
+
+            footer img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            footer p {
+                word-wrap: break-word;
+            }
+
+        /* ── Keyboard-controlled dropdown support ─────────────────── */
+        /* When JS opens dropdown via keyboard, ensure menu is visible */
+        .dropdown.open .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <form method="post" action="./AccountSearch?s=pt" id="ctl01">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/bundles/MsAjaxJs?v=c42ygB2U07n37m_Sfa8ZbLGVu4Rr2gsBo7MvUEnJeZ81" type="text/javascript"></script>
+<script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="Scripts/respond.min.js" type="text/javascript"></script>
+<script src="/bundles/WebFormsJs?v=AAyiAYwMfvmwjNSBfIMrBAqfU5exDukMVhrRuZ-PDU01" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4948C7EA" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="+DckT78E3+mehiKj+9vpYZV3A+ANmm6q0f1vigIe8vLweQtp94mktvcA07vuojYge+WbZV0h/p+JCb3CrHHfocOeCpBlIfH5eVQTuinp+S00ZmiP0jKyNixD0p4w6YVHfXqRcc1Kflg5aDH0d7amzA==" />
+        
+
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Primary navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    
+                    <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#site-navbar-collapse"
+                        aria-controls="site-navbar-collapse"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation menu">
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                    </button>
+
+                    
+                    <a id="TaxCollectorLink" class="navbar-brand" aria-label="County Tax Collector (opens in new tab)" href="https://www.hctaxcollector.com/" target="_blank"><img src="..\Images\Highlands 01 transparent.png" class="img - responsive logo" alt="This is a link to the Tax Collector Site"></a>
+                </div>
+
+                
+                <div class="navbar-collapse collapse" id="site-navbar-collapse">
+                    <ul class="nav navbar-nav" role="menubar">
+
+                        
+                        <li role="menuitem">
+                            <a href="./" role="menuitem">
+                                
+                                Home
+                            </a>
+                        </li>
+
+                        
+                        
+                            <li class="dropdown">
+                                
+                                <a href="#"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    id="propertyTaxDropdown">Property Tax <span class="caret" aria-hidden="true"></span>
+                                </a>
+                                <ul class="dropdown-menu"
+                                    role="menu"
+                                    aria-labelledby="propertyTaxDropdown">
+                                    
+                                        <li role="menuitem"><a href="AccountSearch.aspx?s=pt" role="menuitem">Tax Account Search</a></li>
+                                    
+                                </ul>
+                            </li>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            
+                            <li role="menuitem">
+                                <a href="ShoppingCart" id="cartCount" role="menuitem" aria-label="Shopping Cart (0 items)">Shopping Cart <span aria-hidden='true'>(0)</span></a>
+                            </li>
+                        
+                    </ul>
+
+                    
+                    
+                            <ul class="nav navbar-nav navbar-right" aria-label="Account navigation">
+                                <li><a href="Account/Register">Register</a></li>
+                                <li><a href="Account/Login">Log in</a></li>
+                            </ul>
+                        
+                </div>
+                
+            </div>
+            
+        </nav>
+        
+
+        
+        <main id="main-content" class="container body-content" tabindex="-1">
+            
+    <style>
+        .btn {
+            background-color: rgb(0, 92, 178);
+            border-color: rgb(0, 92, 178);
+            color: white;
+        }
+
+        .btn:hover {
+            border-color: rgb(0, 92, 178);
+            color: rgb(0, 92, 178);
+            background-color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:focus {
+            background-color: rgb(0, 92, 178);
+            border-color: rgb(0, 92, 178);
+            color: white;
+            outline-color: transparent;
+        }
+
+        .btn:disabled {
+            background-color: rgb(24,137,245);
+        }
+
+        .MyInline {
+            display: inline;
+        }
+
+        /* Make search input responsive */
+        @media (max-width: 767px) {
+            .search-input-wrapper {
+                display: block;
+                margin-bottom: 10px;
+            }
+            
+            #MainContent_txtSearchCriteria {
+                width: 100% !important;
+                margin-bottom: 10px;
+            }
+            
+            .MyInline {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #MainContent_txtSearchCriteria {
+                width: 300px;
+            }
+        }
+
+        .result-table {
+            margin-bottom: 20px;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1">
+                <div>
+	
+                    <div class="mb-4">
+                        <img id="MainContent_TitleImage" class="img-fluid" src="../Images/EmptyImage.jpg" />
+                    </div>
+
+                    <p class="lead">
+                        <span id="MainContent_PaymentsDisabledMessage"></span>
+                        <span id="MainContent_SearchPageMessage"><img src="../Images/Highlands04-med.jpg" alt="Highlands County Tax Collector" width="100%" /></br><b>Welcome to the <span style="Color: rgb(8, 92, 68)" >Highlands County Tax Collector</span> site for Property Tax.</b></br></br>  In the search field below, use keywords such as owner name, address, or account number to find your record.</span>
+                    </p>
+
+                    <div class="mb-3">
+                        
+                    </div>
+
+                    <div class="search-input-wrapper mb-3">
+                        <input name="ctl00$MainContent$txtSearchCriteria" type="text" id="MainContent_txtSearchCriteria" class="form-control MyInline" placeholder="Enter search keywords here" />
+                        <a id="MainContent_btnSearch" class="btn btn-default" href="javascript:__doPostBack(&#39;ctl00$MainContent$btnSearch&#39;,&#39;&#39;)">
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </a>
+                        <a href="#" data-toggle="popover" title="Search Options" data-trigger="focus" 
+                           data-content="Keyword searches apply to account/bill numbers, names, and addresses. The more keywords entered, the more precise the search will be.">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                        </a>
+                    </div>
+
+                    <span id="MainContent_lblSearchCount"></span>
+                    
+                    
+
+                    <div class="text-center mb-5">
+                        
+                    </div>
+                
+</div>
+            </div>
+        </div>
+    </div>
+
+            <hr />
+
+            
+            
+        </main>
+
+    </form>
+
+    
+    <script>
+        (function () {
+            'use strict';
+
+            /* ── Sync aria-expanded when Bootstrap opens/closes a dropdown ── */
+            $(document).on('show.bs.dropdown', function (e) {
+                $(e.target).find('[aria-haspopup="true"]').attr('aria-expanded', 'true');
+            });
+            $(document).on('hide.bs.dropdown', function (e) {
+                $(e.target).find('[aria-haspopup="true"]').attr('aria-expanded', 'false');
+            });
+
+            /* ── Full keyboard navigation for dropdown menus ────────────── */
+            $(document).on('keydown', '.dropdown-toggle', function (e) {
+                var $toggle = $(this);
+                var $parent = $toggle.closest('.dropdown');
+                var isOpen = $parent.hasClass('open');
+
+                /* Enter or Space: toggle the dropdown */
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    $toggle.trigger('click');
+                    if (!isOpen) {
+                        /* Move focus to first menu item after opening */
+                        setTimeout(function () {
+                            $parent.find('.dropdown-menu [role="menuitem"]:visible:first').focus();
+                        }, 50);
+                    }
+                    return;
+                }
+
+                /* Arrow Down: open menu and focus first item */
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (!isOpen) { $toggle.trigger('click'); }
+                    setTimeout(function () {
+                        $parent.find('.dropdown-menu [role="menuitem"]:visible:first').focus();
+                    }, 50);
+                    return;
+                }
+
+                /* Arrow Up: open menu and focus last item */
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (!isOpen) { $toggle.trigger('click'); }
+                    setTimeout(function () {
+                        $parent.find('.dropdown-menu [role="menuitem"]:visible:last').focus();
+                    }, 50);
+                    return;
+                }
+            });
+
+            $(document).on('keydown', '.dropdown-menu [role="menuitem"]', function (e) {
+                var $item = $(this);
+                var $menu = $item.closest('.dropdown-menu');
+                var $parent = $item.closest('.dropdown');
+                var $items = $menu.find('[role="menuitem"]:visible');
+                var index = $items.index($item);
+
+                /* Arrow Down: next item (wraps to first) */
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    $items.eq(index < $items.length - 1 ? index + 1 : 0).focus();
+                    return;
+                }
+
+                /* Arrow Up: previous item (wraps to last) */
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    $items.eq(index > 0 ? index - 1 : $items.length - 1).focus();
+                    return;
+                }
+
+                /* Escape: close menu, return focus to toggle */
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    $parent.removeClass('open');
+                    $parent.find('.dropdown-toggle')
+                        .attr('aria-expanded', 'false')
+                        .focus();
+                    return;
+                }
+
+                /* Tab: close menu (focus moves naturally) */
+                if (e.key === 'Tab') {
+                    $parent.removeClass('open');
+                    $parent.find('.dropdown-toggle').attr('aria-expanded', 'false');
+                }
+            });
+
+            /* ── Close dropdown when focus leaves the whole dropdown ────── */
+            $(document).on('focusout', '.dropdown', function (e) {
+                var $parent = $(this);
+                /* Short timeout allows the new focused element to be set */
+                setTimeout(function () {
+                    if (!$.contains($parent[0], document.activeElement)) {
+                        $parent.removeClass('open');
+                        $parent.find('.dropdown-toggle').attr('aria-expanded', 'false');
+                    }
+                }, 100);
+            });
+
+        }());
+    </script>
+    <footer role="contentinfo">
+        <p>
+            <img src="Publicsoft_logo_Small.png"
+                alt="Powered by Publicsoft Phenix.net"
+                class="img-responsive"
+                style="display: inline-block; max-width: 150px;" />
+            &nbsp;&nbsp;&copy; 2026 - Powered by Phenix.net
+        </p>
+    </footer>
+</body>
+
+</html>

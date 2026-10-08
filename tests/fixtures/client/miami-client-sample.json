@@ -1,0 +1,400 @@
+{
+  "scrap_order_id": "10000001",
+  "address": "555 NE 15 ST UNIT 401",
+  "ownerName": "JUDE PATRICK JACOB",
+  "county": "Miami-Dade",
+  "state": "FL",
+  "errorMessage": "NA",
+  "scrapTaxOrderRequest": {
+    "orderId": "10000001",
+    "status": "new",
+    "transactionType": "REFI",
+    "address": "555 NE 15 ST UNIT 401",
+    "county": "Miami-Dade",
+    "state": "FL",
+    "errorMessage": "NA",
+    "matchStatus": "MATCHED",
+    "warnings": [],
+    "PropertyInformation": {
+      "ParcelNumber": "01-3231-052-0010",
+      "PropertyAddress": "555 NE 15 ST UNIT: 401, MIAMI, FL 33132-0000",
+      "Owners": [
+        "JUDE PATRICK JACOB",
+        "NOAH ELIJAH JACOB"
+      ],
+      "MailingAddress": "202 MALLARD WAY, PEEKSKILL, NY 10566",
+      "ownerOccupied": false,
+      "PrimaryZone": "6600 COMMERCIAL - LIBERAL",
+      "PrimaryLandUse": "0407 RESIDENTIAL - TOTAL VALUE : CONDOMINIUM - RESIDENTIAL",
+      "BedsBathsHalf": "0 / 1 / 0",
+      "Floors": "1",
+      "LivingUnits": "1",
+      "LivingArea": "450 Sq.Ft",
+      "AdjustedArea": "450 Sq.Ft",
+      "LotSize": "0 Sq.Ft",
+      "YearBuilt": "1980"
+    },
+    "FullLegalDescription": [
+      "VENETIA CONDO",
+      "UNIT 401",
+      "UNDIV 0.0028446 %",
+      "INT IN COMMON ELEMENTS",
+      "OFF REC 16685-2652",
+      "OR 18345-3754 1098 5",
+      "COC 23285-0804 03 2005 4"
+    ],
+    "AssessmentInformation": {
+      "Year": "2026",
+      "LandValue": "$0",
+      "BuildingValue": "$0",
+      "ExtraFeatureValue": "$0",
+      "MarketValue": "$164,478",
+      "AssessedValue": "$164,478"
+    },
+    "AssessmentHistory": [
+      {
+        "Year": "2026",
+        "LandValue": "$0",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$164,478",
+        "AssessedValue": "$164,478"
+      },
+      {
+        "Year": "2025",
+        "LandValue": "$0",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$153,718",
+        "AssessedValue": "$153,718"
+      },
+      {
+        "Year": "2024",
+        "LandValue": "$0",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$159,160",
+        "AssessedValue": "$132,350"
+      }
+    ],
+    "BenefitsInformation": [
+      {
+        "Benefit": "Non-Homestead Cap",
+        "Type": "Assessment Reduction",
+        "Values": {
+          "2026": null,
+          "2025": null,
+          "2024": "$26,810"
+        }
+      }
+    ],
+    "BenefitsNote": "Not all benefits are applicable to all Taxable Values (i.e. County, School Board, City, Regional).",
+    "TaxableValueInformation": {
+      "2026": {
+        "County": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$164,478"
+        },
+        "SchoolBoard": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$164,478"
+        },
+        "City": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$164,478"
+        },
+        "Regional": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$164,478"
+        }
+      },
+      "2025": {
+        "County": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$153,718"
+        },
+        "SchoolBoard": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$153,718"
+        },
+        "City": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$153,718"
+        },
+        "Regional": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$153,718"
+        }
+      },
+      "2024": {
+        "County": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$132,350"
+        },
+        "SchoolBoard": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$159,160"
+        },
+        "City": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$132,350"
+        },
+        "Regional": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$132,350"
+        }
+      }
+    },
+    "SalesInformation": [
+      {
+        "Date": "05/02/2024",
+        "Price": "$215,000",
+        "ORBookPage": "34238-3104",
+        "QualificationDescription": "Qual by exam of deed"
+      },
+      {
+        "Date": "01/30/2018",
+        "Price": "$94,000",
+        "ORBookPage": "30855-1341",
+        "QualificationDescription": "Qual by exam of deed"
+      },
+      {
+        "Date": "04/20/2016",
+        "Price": "$122,800",
+        "ORBookPage": "30045-2394",
+        "QualificationDescription": "Corrective, tax or QCD; min consideration"
+      },
+      {
+        "Date": "01/05/2009",
+        "Price": "$100",
+        "ORBookPage": "26722-2751",
+        "QualificationDescription": "Financial inst or \"In Lieu of Foreclosure\" stated"
+      },
+      {
+        "Date": "03/01/2005",
+        "Price": "$0",
+        "ORBookPage": "23285-0804",
+        "QualificationDescription": "Sales which are disqualified as a result of examination of the deed"
+      },
+      {
+        "Date": "07/01/2003",
+        "Price": "$85,000",
+        "ORBookPage": "21712-4153",
+        "QualificationDescription": "Sales which are qualified"
+      },
+      {
+        "Date": "06/01/1998",
+        "Price": "$0",
+        "ORBookPage": "18157-4467",
+        "QualificationDescription": "Sales which are disqualified as a result of examination of the deed"
+      },
+      {
+        "Date": "11/01/1995",
+        "Price": "$39,900",
+        "ORBookPage": "17004-0274",
+        "QualificationDescription": "Sales which are qualified"
+      }
+    ],
+    "LandBuildingExtraFeatures": {
+      "2026": [],
+      "2025": [],
+      "2024": []
+    },
+    "TaxInformation": {
+      "accountNumber": "01-3231-052-0010",
+      "type": "PAID",
+      "amountDue": "$0.00",
+      "statusMessage": "Your account is paid in full. There is nothing due at this time.",
+      "lastPaymentDate": "11/25/2025",
+      "lastPaymentAmount": "$3,007.15",
+      "amountPaidYear": "2025",
+      "note": "Bill paid in full"
+    },
+    "AccountHistory": [
+      {
+        "billYear": "2025",
+        "billType": "Annual",
+        "amountDue": "$0.00",
+        "status": "Paid",
+        "paidAmount": "$3,007.15",
+        "paidDate": "11/25/2025",
+        "receiptNumber": "EEX-26-000928"
+      }
+    ],
+    "DelinquencyInformation": {
+      "hasActiveDelinquency": false,
+      "totalPriorYearsDue": "$0.00",
+      "delinquentYears": [],
+      "note": "No delinquent prior-year taxes found"
+    },
+    "BillDetails": {
+      "taxYear": "2025",
+      "folio": "01-3231-052-0010",
+      "municipality": "MIAMI",
+      "millCode": "0101",
+      "propertyAddress": "555 NE 15 ST 401, Miami, 33132-0000",
+      "mailingAddress": "JUDE PATRICK JACOB, NOAH ELIJAH JACOB, 202 MALLARD WAY, PEEKSKILL, NY 10566",
+      "paidBy": "SHELLPOINT MORTGAGE SERVICES",
+      "receiptNumber": "EEX-26-000928",
+      "paidDate": "11/25/2025",
+      "paidAmount": "$3,007.15"
+    },
+    "AdValoremMillage": [
+      {
+        "group": "Miami-Dade School Board",
+        "authority": "School Board Operating",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "5.49900",
+        "taxesLevied": "$845.30"
+      },
+      {
+        "group": "Miami-Dade School Board",
+        "authority": "School Board Debt Service",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.13400",
+        "taxesLevied": "$20.60"
+      },
+      {
+        "group": "Miami-Dade School Board",
+        "authority": "Voted School Operating",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "1.00000",
+        "taxesLevied": "$153.72"
+      },
+      {
+        "group": "State and Other",
+        "authority": "Florida Inland Navigation District",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.02700",
+        "taxesLevied": "$4.15"
+      },
+      {
+        "group": "State and Other",
+        "authority": "South Florida Water Management District",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.09480",
+        "taxesLevied": "$14.57"
+      },
+      {
+        "group": "State and Other",
+        "authority": "Okeechobee Basin",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.10260",
+        "taxesLevied": "$15.77"
+      },
+      {
+        "group": "State and Other",
+        "authority": "Everglades Construction Project",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.03270",
+        "taxesLevied": "$5.03"
+      },
+      {
+        "group": "State and Other",
+        "authority": "Childrens Trust Authority",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.46380",
+        "taxesLevied": "$71.29"
+      },
+      {
+        "group": "Miami-Dade County",
+        "authority": "County Wide Operating",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "4.57400",
+        "taxesLevied": "$703.11"
+      },
+      {
+        "group": "Miami-Dade County",
+        "authority": "County Wide Debt Service",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.41710",
+        "taxesLevied": "$64.12"
+      },
+      {
+        "group": "Miami-Dade County",
+        "authority": "Library District",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.28120",
+        "taxesLevied": "$43.23"
+      },
+      {
+        "group": "Municipal Governing Board",
+        "authority": "Miami Operating",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "7.10800",
+        "taxesLevied": "$1,092.63"
+      },
+      {
+        "group": "Municipal Governing Board",
+        "authority": "Miami Debt Service",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.25360",
+        "taxesLevied": "$38.98"
+      },
+      {
+        "group": "Municipal Governing Board",
+        "authority": "Miami Miscellaneous",
+        "assessedValue": "$153,718",
+        "exemptionValue": "$0",
+        "taxableValue": "$153,718",
+        "millage": "0.39000",
+        "taxesLevied": "$59.95"
+      }
+    ],
+    "AdValoremGroupTotals": {
+      "Miami-Dade School Board": "$1,019.62",
+      "State and Other": "$110.81",
+      "Miami-Dade County": "$810.46",
+      "Municipal Governing Board": "$1,191.56"
+    },
+    "NonAdValorem": [],
+    "NonAdValoremNote": "No Non-Ad Valorem assessments.",
+    "Exemptions": {},
+    "ExemptionsNote": "No exemptions",
+    "ParcelDetails": {
+      "millageRate": "20.37780"
+    },
+    "TaxAmounts": {
+      "adValorem": "$3,132.45",
+      "nonAdValorem": "$0.00",
+      "totalDiscountable": "$3,132.45",
+      "totalTax": "$3,132.45"
+    },
+    "PaymentDetails": {
+      "combinedTaxesAndAssessments": "$3,132.45",
+      "PaymentSchedule": [
+        {
+          "ifPaidBy": "Nov 30, 2025",
+          "pleasePay": "$0.00"
+        }
+      ],
+      "discountNote": "Paid $3,007.15 = $3,132.45 less 4% November early-payment discount"
+    }
+  }
+}

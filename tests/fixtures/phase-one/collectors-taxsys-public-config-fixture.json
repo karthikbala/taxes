@@ -1,0 +1,33 @@
+{
+  "/payhub/data-pub/settings/broward/broward/payableSources/payableSources/value": [
+    {
+      "value": {
+        "pageRoute": {
+          "value": "property-tax"
+        },
+        "sourceType": {
+          "value": "index-search"
+        },
+        "payablesAdaptor": {
+          "value": "/Taxsys-GovHub/v0/"
+        },
+        "searchApi": {
+          "value": {
+            "enableAlgolia": {
+              "value": true
+            },
+            "prodAlgoliaAppId": {
+              "value": "0LWZO52LS2"
+            },
+            "prodAlgoliaApiKey": {
+              "value": "TEST_ONLY_DUMMY_PUBLIC_SEARCH_KEY"
+            },
+            "prodIndex": {
+              "value": "fl-broward.property_tax"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

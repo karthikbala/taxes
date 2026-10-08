@@ -1,0 +1,300 @@
+{
+  "contractVersion": "2.0",
+  "endpoint": "/api/v2/property/lookup",
+  "authentication": "Bearer POC access key",
+  "mode": "fresh_county_sources",
+  "counties": [
+    {
+      "id": "bradford-fl",
+      "name": "Bradford",
+      "state": "FL",
+      "collector_family": "visualgov",
+      "client_contract_status": "verified_partial",
+      "address_lookup_enabled": true,
+      "source_pair_status": "joined_verified",
+      "documents": "original_pdf_not_available",
+      "limitations": [
+        "Fresh address/owner-to-collector HTML bill accepted for 04708-0-00200; unfamiliar property types still require acceptance.",
+        "The original collector bill is HTML; no source PDF is manufactured.",
+        "Published legal text may be abbreviated; certificate/deed coverage remains explicit."
+      ],
+      "client_verified_at": "2026-10-08",
+      "client_verified_parcel": "04708-0-00200",
+      "demo_input": {
+        "address": "14500 S HWY 301",
+        "ownerName": "WALMART STORES EAST, LP",
+        "origin": "Zeneral-selected public property example"
+      }
+    },
+    {
+      "id": "charlotte-fl",
+      "name": "Charlotte",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "columbia-fl",
+      "name": "Columbia",
+      "state": "FL",
+      "collector_family": "phenix",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "assessment_verified_collector_pending",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "desoto-fl",
+      "name": "DeSoto",
+      "state": "FL",
+      "collector_family": "visualgov",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "original_pdf_not_available",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "hernando-fl",
+      "name": "Hernando",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "highlands-fl",
+      "name": "Highlands",
+      "state": "FL",
+      "collector_family": "phenix",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "hillsborough-fl",
+      "name": "Hillsborough",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "lee-fl",
+      "name": "Lee",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "martin-fl",
+      "name": "Martin",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "miami-dade-fl",
+      "name": "Miami-Dade",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "verified_partial",
+      "address_lookup_enabled": true,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Occupancy is unavailable unless explicitly published.",
+        "Unpublished tax years prevent a historical clearance conclusion.",
+        "Current address/owner-to-bill proof covers the published Miami-Dade sample; unusual property types still need acceptance."
+      ],
+      "client_verified_at": "2026-10-08",
+      "client_verified_parcel": "01-3231-052-0010",
+      "demo_input": {
+        "address": "555 NE 15 ST UNIT 401",
+        "ownerName": "JUDE PATRICK JACOB",
+        "origin": "Client-supplied worked example"
+      }
+    },
+    {
+      "id": "osceola-fl",
+      "name": "Osceola",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "verified_partial",
+      "address_lookup_enabled": true,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Fresh address/owner-to-collector original PDF bill accepted for 02-25-28-2850-0001-0010; unfamiliar property types still require acceptance.",
+        "Working and certified assessment years are distinct; authority-unspecified native values remain labelled.",
+        "Historical coverage and occupancy are not inferred."
+      ],
+      "client_verified_at": "2026-10-08",
+      "client_verified_parcel": "02-25-28-2850-0001-0010",
+      "demo_input": {
+        "address": "3250 VINELAND RD",
+        "ownerName": "WAL-MART STORES EAST LP",
+        "origin": "Zeneral-selected public property example"
+      }
+    },
+    {
+      "id": "palm-beach-fl",
+      "name": "Palm Beach",
+      "state": "FL",
+      "collector_family": "palm",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "pasco-fl",
+      "name": "Pasco",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "pinellas-fl",
+      "name": "Pinellas",
+      "state": "FL",
+      "collector_family": "phenix",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "assessment_verified_collector_pending",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "polk-fl",
+      "name": "Polk",
+      "state": "FL",
+      "collector_family": "phenix",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "santa-rosa-fl",
+      "name": "Santa Rosa",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "sarasota-fl",
+      "name": "Sarasota",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "suwannee-fl",
+      "name": "Suwannee",
+      "state": "FL",
+      "collector_family": "phenix",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "assessment_verified_collector_pending",
+      "documents": "pdf_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "union-fl",
+      "name": "Union",
+      "state": "FL",
+      "collector_family": "visualgov",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "original_pdf_not_available",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    },
+    {
+      "id": "volusia-fl",
+      "name": "Volusia",
+      "state": "FL",
+      "collector_family": "taxsys",
+      "client_contract_status": "address_contract_pending",
+      "address_lookup_enabled": false,
+      "source_pair_status": "joined_verified",
+      "documents": "pdf_text_adapter_enabled",
+      "limitations": [
+        "Legacy parcel lookup remains available; the v2 address/owner and rich section contracts require county-specific validation."
+      ]
+    }
+  ],
+  "notes": [
+    "No saved-reference or statewide-roll fallback.",
+    "A configured legacy county is not automatically verified against the client contract.",
+    "Partial coverage preserves source-backed sections and explicit gaps."
+  ]
+}

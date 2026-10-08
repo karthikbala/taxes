@@ -1,0 +1,1253 @@
+{
+  "Additionals": {
+    "AddtionalInfo": [
+      {
+        "Key": "LAND USE AND RESTRICTIONS",
+        "Value": [
+          {
+            "InfoName": "Community Development District",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Community Redevelopment Area",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Empowerment Zone",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Enterprise Zone",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Urban Development",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Zoning Code",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Existing Land Use",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "HARB Zoning Code",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Government Agencies and Community Services",
+            "InfoValue": "http://gisweb.miamidade.gov/communityservices/CommunityServicesAll.html?x=&y=&bufferDistance=5&address=701 BRICKELL AVE",
+            "Message": ""
+          }
+        ]
+      },
+      {
+        "Key": "OTHER GOVERNMENTAL JURISDICTIONS",
+        "Value": [
+          {
+            "InfoName": "Business Incentives",
+            "InfoValue": "https://gisweb.miamidade.gov/businessincentive/default.aspx?searchtype=address&amp;paramvalue=",
+            "Message": ""
+          },
+          {
+            "InfoName": "Childrens Trust",
+            "InfoValue": "https://www.thechildrenstrust.org/",
+            "Message": ""
+          },
+          {
+            "InfoName": "City of Miami",
+            "InfoValue": "http://www.miamigov.com/home/",
+            "Message": ""
+          },
+          {
+            "InfoName": "Environmental Considerations",
+            "InfoValue": "https://gisweb.miamidade.gov/environmentalconsiderations/?searchtype=address&paramvalue=701 BRICKELL AVE",
+            "Message": ""
+          },
+          {
+            "InfoName": "Florida Inland Navigation District",
+            "InfoValue": "http://www.aicw.org",
+            "Message": ""
+          },
+          {
+            "InfoName": "Septic - Well: Property List (MDC)",
+            "InfoValue": "https://gis-mdc.opendata.arcgis.com/maps/MDC::potential-properties-served-by-septic-or-well/about",
+            "Message": ""
+          },
+          {
+            "InfoName": "Septic - Well: Septic GIS Points (DOH)",
+            "InfoValue": "https://gis-mdc.opendata.arcgis.com/datasets/MDC::doh-septic-system/explore",
+            "Message": ""
+          },
+          {
+            "InfoName": "Septic - Well: Well GIS Points (DOH)",
+            "InfoValue": "https://gis-mdc.opendata.arcgis.com/datasets/MDC::doh-well-permit/explore",
+            "Message": ""
+          },
+          {
+            "InfoName": "PA Bulletin Board",
+            "InfoValue": "http://bbs.miamidadepa.gov/",
+            "Message": ""
+          },
+          {
+            "InfoName": "Special Taxing District and Other Non-Ad valorem Assessment",
+            "InfoValue": "/PAOnlineTools/Taxes/NonAdvalorem.aspx?folio=0141380340020",
+            "Message": ""
+          },
+          {
+            "InfoName": "School Board",
+            "InfoValue": "http://www.dadeschools.net/",
+            "Message": ""
+          },
+          {
+            "InfoName": "South Florida Water Mgmt District",
+            "InfoValue": "http://www.sfwmd.gov/portal/page/portal/sfwmdmain/home%20page",
+            "Message": ""
+          },
+          {
+            "InfoName": "Tax Collector",
+            "InfoValue": "http://www.miamidade.gov/taxcollector/",
+            "Message": ""
+          }
+        ]
+      }
+    ],
+    "FooterMessage": "",
+    "HeaderMessage": "* The information listed below is not derived from the Property Appraiser's Office records.  It is provided for convenience and is derived from other government agencies."
+  },
+  "Assessment": {
+    "AssessmentInfos": [
+      {
+        "AssessedValue": 359400000,
+        "BuildingOnlyValue": 108892500,
+        "ExtraFeatureValue": 0,
+        "LandValue": 250507500,
+        "Message": null,
+        "TotalValue": 359400000,
+        "Year": 2026
+      },
+      {
+        "AssessedValue": 345540000,
+        "BuildingOnlyValue": 95032500,
+        "ExtraFeatureValue": 0,
+        "LandValue": 250507500,
+        "Message": null,
+        "TotalValue": 345540000,
+        "Year": 2025
+      },
+      {
+        "AssessedValue": 291247000,
+        "BuildingOnlyValue": 100000,
+        "ExtraFeatureValue": 0,
+        "LandValue": 299900000,
+        "Message": null,
+        "TotalValue": 300000000,
+        "Year": 2024
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "",
+        "Year": 2025
+      },
+      {
+        "Message": "",
+        "Year": 2024
+      }
+    ]
+  },
+  "Benefit": {
+    "BenefitInfos": [
+      {
+        "Description": "Non-Homestead Cap",
+        "Message": null,
+        "Seq": "5",
+        "TaxYear": 2024,
+        "Type": "Assessment Reduction",
+        "Url": "http://www.miamidade.gov/pa/property_value_cap.asp",
+        "Value": 8753000
+      }
+    ],
+    "Messages": []
+  },
+  "Building": {
+    "BuildingInfos": [
+      {
+        "Actual": 1986,
+        "ActualArea": 42840,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 42840,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2026,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 313,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 42840,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 42840,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2025,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 313,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 42840,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 42840,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2024,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 313,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 712791,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 712791,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2026,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 258,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 712791,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 712791,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2025,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 258,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 712791,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 712791,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2024,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 258,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 15214,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 15214,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2026,
+        "SegNo": 3,
+        "TotalAdjustedPoints": 364,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 15214,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 15214,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2025,
+        "SegNo": 3,
+        "TotalAdjustedPoints": 364,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 15214,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 15214,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2024,
+        "SegNo": 3,
+        "TotalAdjustedPoints": 364,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 57918,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 2,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 57918,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2026,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 113,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 57918,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 2,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 57918,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2025,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 113,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 57918,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 2,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 57918,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2024,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 113,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 281894,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 2,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 281894,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2026,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 78,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 281894,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 2,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 281894,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2025,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 78,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      },
+      {
+        "Actual": 1986,
+        "ActualArea": 281894,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 2,
+        "DepreciatedValue": -1,
+        "Effective": 1986,
+        "EffectiveArea": 281894,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2024,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 78,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Base Area"
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2026
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2025
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2024
+      }
+    ]
+  },
+  "ClassifiedAgInfo": {
+    "Acreage": 0,
+    "CalculatedValue": 0,
+    "LandCode": null,
+    "LandUse": null,
+    "Message": null,
+    "UnitPrice": 0
+  },
+  "Completed": true,
+  "District": 6,
+  "ExtraFeature": {
+    "ExtraFeatureInfos": [
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Chill Water A/C (Aprox 300 sqft/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 975,
+        "UseCode": "0003"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Cent A/C - Comm (Aprox 300 sqft/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 5,
+        "UseCode": "0004"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 21,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 186,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Freight",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 67,
+        "UseCode": "0030"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Light Standard - 10-30 ft High - 2 Fixtures",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 1,
+        "UseCode": "0080"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Concrete Slab",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 7616,
+        "UseCode": "0087"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Concrete Slab",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 2890,
+        "UseCode": "0087"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Brick, Tile, Flagstone",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 18547,
+        "UseCode": "0090"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Brick, Tile, Flagstone",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 5688,
+        "UseCode": "0090"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Plumbing Fixtures - Hi-Rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 540,
+        "UseCode": "0099"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Sprinkler System/Auto - Wet",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 857447,
+        "UseCode": "0118"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Sprinkler System/Auto - Wet",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2026,
+        "Units": 307059,
+        "UseCode": "0118"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Sprinkler System/Auto - Wet",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 857447,
+        "UseCode": "0118"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Sprinkler System/Auto - Wet",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 307059,
+        "UseCode": "0118"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Plumbing Fixtures - Hi-Rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 540,
+        "UseCode": "0099"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 186,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 21,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Concrete Slab",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 7616,
+        "UseCode": "0087"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Brick, Tile, Flagstone",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 18547,
+        "UseCode": "0090"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Light Standard - 10-30 ft High - 2 Fixtures",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 1,
+        "UseCode": "0080"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Brick, Tile, Flagstone",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 5688,
+        "UseCode": "0090"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Concrete Slab",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 2890,
+        "UseCode": "0087"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Freight",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 67,
+        "UseCode": "0030"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Cent A/C - Comm (Aprox 300 sqft/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 5,
+        "UseCode": "0004"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Chill Water A/C (Aprox 300 sqft/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2025,
+        "Units": 975,
+        "UseCode": "0003"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Chill Water A/C (Aprox 300 sqft/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 975,
+        "UseCode": "0003"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Cent A/C - Comm (Aprox 300 sqft/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 5,
+        "UseCode": "0004"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 21,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 186,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Freight",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 67,
+        "UseCode": "0030"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Light Standard - 10-30 ft High - 2 Fixtures",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 1,
+        "UseCode": "0080"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Concrete Slab",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 7616,
+        "UseCode": "0087"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Brick, Tile, Flagstone",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 18547,
+        "UseCode": "0090"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Concrete Slab",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 2890,
+        "UseCode": "0087"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Patio - Brick, Tile, Flagstone",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 5688,
+        "UseCode": "0090"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Plumbing Fixtures - Hi-Rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 540,
+        "UseCode": "0099"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Sprinkler System/Auto - Wet",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 857447,
+        "UseCode": "0118"
+      },
+      {
+        "ActualYearBuilt": 1986,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Sprinkler System/Auto - Wet",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2024,
+        "Units": 307059,
+        "UseCode": "0118"
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2026
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2025
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2024
+      }
+    ]
+  },
+  "GeoParcel": null,
+  "Land": {
+    "Landlines": [
+      {
+        "AdjustedUnitPrice": -1,
+        "CalculatedValue": -1,
+        "Depth": 0,
+        "FrontFeet": 0,
+        "LandUse": "GENERAL",
+        "LandlineType": "C",
+        "Message": null,
+        "MuniZone": "T6-48a-O",
+        "MuniZoneDescription": null,
+        "PAZoneDescription": "HIGH DENSITY MIX USE",
+        "PercentCondition": 1,
+        "RollYear": 2026,
+        "TotalAdjustments": 0,
+        "UnitType": "Square Ft.",
+        "Units": 167005,
+        "UseCode": "00",
+        "Zone": "6407"
+      },
+      {
+        "AdjustedUnitPrice": -1,
+        "CalculatedValue": -1,
+        "Depth": 0,
+        "FrontFeet": 0,
+        "LandUse": "GENERAL",
+        "LandlineType": "C",
+        "Message": null,
+        "MuniZone": "T6-48a-O",
+        "MuniZoneDescription": null,
+        "PAZoneDescription": "HIGH DENSITY MIX USE",
+        "PercentCondition": 1,
+        "RollYear": 2025,
+        "TotalAdjustments": 1,
+        "UnitType": "Square Ft.",
+        "Units": 167005,
+        "UseCode": "00",
+        "Zone": "6407"
+      },
+      {
+        "AdjustedUnitPrice": -1,
+        "CalculatedValue": -1,
+        "Depth": 0,
+        "FrontFeet": 0,
+        "LandUse": "GENERAL",
+        "LandlineType": "C",
+        "Message": null,
+        "MuniZone": "T6-48a-O",
+        "MuniZoneDescription": null,
+        "PAZoneDescription": "HIGH DENSITY MIX USE",
+        "PercentCondition": 1,
+        "RollYear": 2024,
+        "TotalAdjustments": 1,
+        "UnitType": "Square Ft.",
+        "Units": 167005,
+        "UseCode": "00",
+        "Zone": "6407"
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2026
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2025
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2024
+      }
+    ]
+  },
+  "LegalDescription": {
+    "Description": "NASHER SUB|PB 117-90|TRACT A LESS S236.11FT THEREOF|LOT SIZE 167005 SQ FT|OR 20835-4298 1102 1",
+    "Message": null,
+    "Number": null
+  },
+  "MailingAddress": {
+    "Address1": "301 YAMATO RD 4160",
+    "Address2": "",
+    "Address3": "",
+    "City": "BOCA RATON",
+    "Country": "USA",
+    "Message": null,
+    "State": "FL",
+    "ZipCode": "33431"
+  },
+  "Message": "",
+  "OwnerInfos": [
+    {
+      "Description": "",
+      "MarriedFlag": "0",
+      "Message": null,
+      "Name": "MCME 701 LLC",
+      "PercentageOwn": 0,
+      "Role": null,
+      "ShortDescription": "",
+      "TenancyCd": "\u0000"
+    }
+  ],
+  "PropertyInfo": {
+    "BathroomCount": 0,
+    "BedroomCount": 0,
+    "BuildingActualArea": 1110657,
+    "BuildingBaseArea": 1110657,
+    "BuildingEffectiveArea": 1110657,
+    "BuildingGrossArea": -1,
+    "BuildingHeatedArea": -1,
+    "DORCode": "1813",
+    "DORDescription": "OFFICE BUILDING - MULTISTORY : OFFICE BUILDING",
+    "DORDescriptionCurrent": null,
+    "EncodedFolioAndTaxYear": "L5cgA%2f52Z780KzDW2AVlVhtvIIDsruih4zbuGUclcsQ%3d",
+    "FloorCount": 32,
+    "FolioNumber": "01-4138-034-0020",
+    "HalfBathroomCount": 0,
+    "HxBaseYear": 0,
+    "LotSize": 167005,
+    "Message": null,
+    "Municipality": "Miami",
+    "Neighborhood": 69010,
+    "NeighborhoodDescription": "Brickell East",
+    "ParentFolio": "",
+    "PercentHomesteadCapped": 0,
+    "PlatBook": "117",
+    "PlatPage": "90",
+    "PrimaryZone": "6407",
+    "PrimaryZoneDescription": "HIGH DENSITY MIX USE",
+    "ShowCurrentValuesFlag": "Y",
+    "Status": "AC Active",
+    "Subdivision": "014138034",
+    "SubdivisionDescription": "NASHER SUB",
+    "UnitCount": 0,
+    "YearAnnexed": 0,
+    "YearBuilt": "1986"
+  },
+  "RollYear1": 2026,
+  "SalesInfos": [
+    {
+      "DateOfSale": "10/4/2024",
+      "DocumentStamps": 2658000,
+      "EncodedRecordBookAndPage": "M6QKSgoe%2bhccPiQlb6ZwZh9HolnFGZ%2f8eijdtQAwNGCT2KAvVIooH850VeJgP%2bJDRgNIPUmGC1ROUlCNhGsXBw%3d%3d",
+      "GranteeName1": "MCME 701 LLC",
+      "GranteeName2": "",
+      "GrantorName1": "T C 701 BRICKELL LLC",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "34464",
+      "OfficialRecordPage": "3246",
+      "QualificationDescription": "Qual by exam of deed",
+      "QualifiedFlag": "Q",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "01",
+      "ReviewCode": null,
+      "SaleId": 4,
+      "SaleInstrument": "WDE",
+      "SalePrice": 443000000,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "9/16/2008",
+      "DocumentStamps": 0,
+      "EncodedRecordBookAndPage": "M6QKSgoe%2bheSXF%2bw4h9k58OYMy9aNhjf60%2f%2bhpSRCCSPg6Uoop8R82rEiGT0rr0vkuE8wgyt1bTaCJh4XKVHgQ%3d%3d",
+      "GranteeName1": "T C 701 BRICKELL LLC",
+      "GranteeName2": "",
+      "GrantorName1": "TEACHERS INSURANCE &",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "26571",
+      "OfficialRecordPage": "3273",
+      "QualificationDescription": "Sales which are disqualified as a result of examination of the deed",
+      "QualifiedFlag": "U",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "4",
+      "ReasonCode": "01",
+      "ReviewCode": null,
+      "SaleId": 3,
+      "SaleInstrument": "WDE",
+      "SalePrice": 10,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "9/1/1984",
+      "DocumentStamps": 0,
+      "EncodedRecordBookAndPage": "M6QKSgoe%2bhcrLOe0icoJRk4U5Scwf8dSVz4vETdqYiJLq9gh%2fQQgWDjCkt%2bxXjgSQ%2f2KKTmdUEUvFbaRXwYG6A%3d%3d",
+      "GranteeName1": "",
+      "GranteeName2": "",
+      "GrantorName1": "",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "12293",
+      "OfficialRecordPage": "0032",
+      "QualificationDescription": "Deeds that include more than one parcel",
+      "QualifiedFlag": "Q",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "02",
+      "ReviewCode": null,
+      "SaleId": 2,
+      "SaleInstrument": "",
+      "SalePrice": 69692400,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "11/1/2002",
+      "DocumentStamps": 0,
+      "EncodedRecordBookAndPage": "M6QKSgoe%2bhcCsyQitsElziaWq5S64eH0XS9da2k%2fEn1kI2%2bgW3jathCqFPPSPtSbjpG0ZSpYA%2f%2fJjh2hvmoLaw%3d%3d",
+      "GranteeName1": "",
+      "GranteeName2": "",
+      "GrantorName1": "",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "20835",
+      "OfficialRecordPage": "4298",
+      "QualificationDescription": "Sales which are qualified",
+      "QualifiedFlag": "Q",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "00",
+      "ReviewCode": null,
+      "SaleId": 1,
+      "SaleInstrument": "",
+      "SalePrice": 172000000,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    }
+  ],
+  "SiteAddress": [
+    {
+      "Address": "701 BRICKELL AVE, Miami, FL 33131-0000",
+      "BuildingNumber": 1,
+      "City": "Miami",
+      "HouseNumberSuffix": "",
+      "Message": null,
+      "StreetName": "BRICKELL",
+      "StreetNumber": 701,
+      "StreetPrefix": "",
+      "StreetSuffix": "AVE",
+      "StreetSuffixDirection": "",
+      "Unit": "",
+      "Zip": "33131-0000"
+    }
+  ],
+  "Taxable": {
+    "Messages": [],
+    "TaxableInfos": [
+      {
+        "CityExemptionValue": 0,
+        "CityTaxableValue": 359400000,
+        "CountyExemptionValue": 0,
+        "CountyTaxableValue": 359400000,
+        "Message": null,
+        "RegionalExemptionValue": 0,
+        "RegionalTaxableValue": 359400000,
+        "SchoolExemptionValue": 0,
+        "SchoolTaxableValue": 359400000,
+        "Year": 2026
+      },
+      {
+        "CityExemptionValue": 0,
+        "CityTaxableValue": 345540000,
+        "CountyExemptionValue": 0,
+        "CountyTaxableValue": 345540000,
+        "Message": null,
+        "RegionalExemptionValue": 0,
+        "RegionalTaxableValue": 345540000,
+        "SchoolExemptionValue": 0,
+        "SchoolTaxableValue": 345540000,
+        "Year": 2025
+      },
+      {
+        "CityExemptionValue": 0,
+        "CityTaxableValue": 291247000,
+        "CountyExemptionValue": 0,
+        "CountyTaxableValue": 291247000,
+        "Message": null,
+        "RegionalExemptionValue": 0,
+        "RegionalTaxableValue": 291247000,
+        "SchoolExemptionValue": 0,
+        "SchoolTaxableValue": 300000000,
+        "Year": 2024
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-08T06:00:01.079714+00:00",
+  "method": "direct GET; no model, vendor or browser actions",
+  "native_application": {
+    "url": "https://apps.miamidadepa.gov/PropertySearch/",
+    "bundle_url": "https://apps.miamidadepa.gov/PropertySearch/main.ca4dd149bc5b80db.js",
+    "bundle_sha256": "ae6fc7427ad4671afbd762a146565491475210d3fb4f2b641ffda3ac81fc09f3",
+    "address_request_excerpt": "if(\"\"!=Ye){this._folioService.SetCurrentFolio(\"\");const kt={Operation:\"GetAddress\",clientAppName:\"PropertySearch\",myUnit:at,from:1,myAddress:Ye,to:200};this._folioService.LoadCandidates(kt),this._folioService.SetParams(kt)}break;case 1:if(We=\"owner\",Ye=null===(I=this.folioForm.get(\"owner\"))||void 0===I?void 0:I.value,this.isNumericValue(Ye))Ye=Ye.replace(/ /g,\"\"),Ye=Ye.replace(/-/g,\"\"),this._folioService.Lo",
+    "candidate_response_excerpt": "us,strap:A.Strap,subdivisionDescr:A.SubdivisionDescription}}GetCandidatesFromWCF(A,D){return A.Completed&&(D.completed=A.Completed),A.Count&&(D.count=A.Count),A.Message&&(D.message=A.Message),A.MinimumPropertyInfos&&A.MinimumPropertyInfos.forEach(I=>{D.minimumPropertyInfos.push(this.MapMinimumCandidateInfo(I))}),A.PrintMessageFooter&&(D.printM",
+    "benefits_note_excerpt": "\",15),bt(30,\"tr\",16)(31,\"td\",17)(32,\"span\",18),Yt(33,\"Note: Not all benefits are applicable to all Taxable Values (i.e. County, School Board, City, Regional).\"),gt()()()()()),2&A&&(qe(20),Gr(D.property.rollYear1),qe(4),Gr(D.property.rollYear1-1),qe(4),Gr(D.property.rollYear1-2),qe(1),ct(\"ngForOf\",D.benefitList))},dependencies:[va,El,Ys,mm,aA],styles:[\".text-end-mine[_ngc"
+  },
+  "captures": [
+    {
+      "fixture": "miami-address-search-source.json",
+      "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=401&from=1&myAddress=555+NE+15+ST&to=200",
+      "sha256": "8a6d4e5843ff3d1a35e5c6a68a738aa250ae76be42625c59e6b04f57c50d3dbd",
+      "bytes": 392
+    },
+    {
+      "fixture": "miami-property-source.json",
+      "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010",
+      "sha256": "f5b569f10079e2ece9b617b8a3f55b5abc8573370219c0469c7a9c0e2885150b",
+      "bytes": 11624
+    }
+  ],
+  "resolution_evidence": {
+    "input_address": "555 NE 15 ST UNIT 401",
+    "candidate_completed": true,
+    "candidate_total": 1,
+    "candidate_folio": "01-3231-052-0010",
+    "detail_folio": "01-3231-052-0010",
+    "source_owner_names": [
+      "JUDE PATRICK JACOB",
+      "NOAH ELIJAH JACOB"
+    ],
+    "assessment_years": [
+      2026,
+      2025,
+      2024
+    ],
+    "important_ordering": "Detail folio was discovered from native address search response, not supplied as a resolver seed."
+  }
+}

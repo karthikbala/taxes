@@ -1,0 +1,413 @@
+{
+  "results": [
+    {
+      "hits": [
+        {
+          "child_groups": [
+            {
+              "children": [
+                {
+                  "external_id": "01-3231-052-0010",
+                  "custom_parameters": {
+                    "roll_year": "2025",
+                    "external_type": "Account",
+                    "custom_payable_type": "accounts"
+                  },
+                  "external_id_tokens": [
+                    "0132310520010",
+                    "01 3231 052 0010",
+                    "01 3231 0520010",
+                    "01 32310520010",
+                    "01 3231052 0010",
+                    "013231052 0010",
+                    "013231 052 0010"
+                  ]
+                }
+              ]
+            }
+          ],
+          "custom_parameters": {
+            "public_url": "/public/real_estate/parcels/01-3231-052-0010/bills?parcel=f1dcb6f7-e509-11eb-a632-0050568149e9",
+            "custom_payable_type": "parents",
+            "alternate_keys": [
+              {
+                "external_id": "null",
+                "external_type": "Alternate Key"
+              }
+            ],
+            "external_type": "Account",
+            "entities": [
+              {
+                "external_id": "JUDE PATRICK JACOB, 202 MALLARD WAY, PEEKSKILL, NY 10566",
+                "address": "202 MALLARD WAY",
+                "province": "",
+                "external_type": "Owner/Address",
+                "country": "USA",
+                "state": "NY",
+                "zip": "10566",
+                "name": "JUDE PATRICK JACOB",
+                "city": "PEEKSKILL"
+              },
+              {
+                "external_id": "NOAH ELIJAH JACOB",
+                "address": "",
+                "province": "",
+                "external_type": "Owner/Address",
+                "country": "",
+                "state": "",
+                "zip": "",
+                "name": "NOAH ELIJAH JACOB",
+                "city": ""
+              },
+              {
+                "external_id": "",
+                "address": "",
+                "province": "",
+                "external_type": "Billing Address",
+                "country": "",
+                "state": "",
+                "zip": "",
+                "name": "",
+                "city": ""
+              },
+              {
+                "external_id": "555 NE 15 ST 401, Miami, 33132-0000",
+                "address": "555 NE 15 ST 401",
+                "province": "",
+                "external_type": "Address",
+                "country": "",
+                "state": "",
+                "zip": "33132-0000",
+                "name": "",
+                "city": "Miami"
+              }
+            ]
+          },
+          "display_name": "JUDE PATRICK JACOB",
+          "display_type": "property_tax",
+          "external_id": "01-3231-052-0010",
+          "item_category": "Real Estate",
+          "objectID": "/Taxsys-GovHub/v0/items/miamidade:real_estate:parents:f1dcb6f7-e509-11eb-a632-0050568149e9",
+          "_highlightResult": {
+            "child_groups": [
+              {
+                "children": [
+                  {
+                    "external_id": {
+                      "value": "01-3231-052-0010",
+                      "matchLevel": "none",
+                      "matchedWords": []
+                    },
+                    "external_id_tokens": [
+                      {
+                        "value": "<em>0132310520010</em>",
+                        "matchLevel": "full",
+                        "fullyHighlighted": true,
+                        "matchedWords": [
+                          "0132310520010"
+                        ]
+                      },
+                      {
+                        "value": "01 3231 052 0010",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      {
+                        "value": "01 3231 0520010",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      {
+                        "value": "01 32310520010",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      {
+                        "value": "01 3231052 0010",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      {
+                        "value": "013231052 0010",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      },
+                      {
+                        "value": "013231 052 0010",
+                        "matchLevel": "none",
+                        "matchedWords": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "custom_parameters": {
+              "alternate_keys": [
+                {
+                  "external_id": {
+                    "value": "null",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  }
+                }
+              ],
+              "entities": [
+                {
+                  "external_id": {
+                    "value": "JUDE PATRICK JACOB, 202 MALLARD WAY, PEEKSKILL, NY 10566",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "address": {
+                    "value": "202 MALLARD WAY",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "province": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "country": {
+                    "value": "USA",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "state": {
+                    "value": "NY",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "zip": {
+                    "value": "10566",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "name": {
+                    "value": "JUDE PATRICK JACOB",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "city": {
+                    "value": "PEEKSKILL",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  }
+                },
+                {
+                  "external_id": {
+                    "value": "NOAH ELIJAH JACOB",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "address": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "province": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "country": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "state": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "zip": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "name": {
+                    "value": "NOAH ELIJAH JACOB",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "city": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  }
+                },
+                {
+                  "external_id": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "address": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "province": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "country": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "state": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "zip": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "name": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "city": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  }
+                },
+                {
+                  "external_id": {
+                    "value": "555 NE 15 ST 401, Miami, 33132-0000",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "address": {
+                    "value": "555 NE 15 ST 401",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "province": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "country": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "state": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "zip": {
+                    "value": "33132-0000",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "name": {
+                    "value": "",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  },
+                  "city": {
+                    "value": "Miami",
+                    "matchLevel": "none",
+                    "matchedWords": []
+                  }
+                }
+              ]
+            },
+            "display_name": {
+              "value": "JUDE PATRICK JACOB",
+              "matchLevel": "none",
+              "matchedWords": []
+            },
+            "external_id": {
+              "value": "01-3231-052-0010",
+              "matchLevel": "none",
+              "matchedWords": []
+            },
+            "external_id_tokens": [
+              {
+                "value": "<em>0132310520010</em>",
+                "matchLevel": "full",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                  "0132310520010"
+                ]
+              },
+              {
+                "value": "01 3231 052 0010",
+                "matchLevel": "none",
+                "matchedWords": []
+              },
+              {
+                "value": "01 3231 0520010",
+                "matchLevel": "none",
+                "matchedWords": []
+              },
+              {
+                "value": "01 32310520010",
+                "matchLevel": "none",
+                "matchedWords": []
+              },
+              {
+                "value": "01 3231052 0010",
+                "matchLevel": "none",
+                "matchedWords": []
+              },
+              {
+                "value": "013231052 0010",
+                "matchLevel": "none",
+                "matchedWords": []
+              },
+              {
+                "value": "013231 052 0010",
+                "matchLevel": "none",
+                "matchedWords": []
+              }
+            ]
+          }
+        }
+      ],
+      "nbHits": 1,
+      "page": 0,
+      "nbPages": 1,
+      "hitsPerPage": 20,
+      "exhaustiveNbHits": true,
+      "exhaustiveTypo": true,
+      "exhaustive": {
+        "nbHits": true,
+        "typo": true
+      },
+      "query": "0132310520010",
+      "params": "query=0132310520010&hitsPerPage=20",
+      "index": "fl-miamidade.property_tax",
+      "renderingContent": {},
+      "processingTimeMS": 11,
+      "processingTimingsMS": {
+        "_request": {
+          "roundTrip": 322
+        },
+        "fetch": {
+          "query": 8,
+          "total": 9
+        },
+        "getIdx": {
+          "load": {
+            "total": 1
+          },
+          "total": 1
+        },
+        "total": 11
+      },
+      "serverTimeMS": 12
+    }
+  ]
+}

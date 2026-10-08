@@ -1,0 +1,26 @@
+{
+  "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Bld",
+  "@odata.count": 1,
+  "value": [
+    {
+      "ID": 11448,
+      "Strap": "022528285000010010",
+      "CardNumber": 1,
+      "Description": "DISCOUNT STORE",
+      "YearBuilt": 2005,
+      "BuildingValue": 5716741,
+      "BuildingSqFeet": 224581,
+      "HeatedSqFeet": 213543,
+      "Bedrooms": null,
+      "Bathrooms": null,
+      "HalfBathrooms": null,
+      "Fixtures": 45,
+      "LivingUnits": null,
+      "NonLivingUnits": null,
+      "RoofCover": null,
+      "ExteriorWall": null,
+      "Photo": "\\\\pa-svr-doc\\Isynergy\\Repository\\Homestead Exemption\\_obj_3_D3722\\_obj_3_D3722_462.JPG",
+      "Sketch": "BAS 2005 <1>  (199541 P2062) $   BAS 2015 <1>  (5000 P324) $   GRF 2005 <1>  (3552 P266) $   OPF 2005 <1>  (1848 P222) $   EPF 2005 <1>  (9002 P548) $   OPU 2005 <1>  (4080 P262) $   OPF 2005 <1>  (1508 P182) $   OPF 2005 <1>  (50 P54) $   . "
+    }
+  ]
+}

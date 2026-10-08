@@ -1,0 +1,24 @@
+✔ enabled adapter registry supplies all twenty county aliases and canonical IDs (1.501875ms)
+✔ required bounded order strings and transaction are validated without trusting arbitrary URLs (0.603959ms)
+✔ reference sample keys remain canonical without filling missing sections from the sample (2.797917ms)
+✔ inspected empty sections differ from missing sections and unsupported occupancy is nullable (0.380958ms)
+✔ serializer preserves source sentinels and emits numeric monetary values as display strings (0.670667ms)
+✔ latest annual bill history excludes paid prior years and certificate views (0.30575ms)
+✔ failed and owner-mismatch resolution is explicit and keeps client request status new (0.380416ms)
+✔ all explicit sample sections can be serialized with complete metadata without mutation (1.051666ms)
+✔ source EXTRACTED/PRESENT states are positive and PARTIAL remains a gap (0.551208ms)
+✔ installment and supplemental entries cannot replace the latest annual client bill (0.146625ms)
+✔ source values appear in every extracted section, including nested years, lists and tables (1.334875ms)
+✔ EMPTY comments reflect inspection, while nested empty years stay visible (0.198958ms)
+✔ top ready label leaves historical partial coverage and JSON untouched (1.982583ms)
+✔ nulls and legitimate numeric or boolean zeros are preserved; source HTML remains text (0.0895ms)
+✔ request IDs prefer metadata and fall back to response header (0.05925ms)
+✔ HTML source and generated route export stay identical and load the module renderer (2.078333ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 53.648625

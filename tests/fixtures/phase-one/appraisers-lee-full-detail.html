@@ -1,0 +1,1830 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><link rel="icon" href="/images/LeePALogo.png" /><link href="/styles/lcpaText.css?version=51" type="text/css" rel="stylesheet" media="all" /><link href="/styles/DisplayParcel.css?version=61" type="text/css" rel="stylesheet" media="screen" /><link href="/styles/PrintDisplayParcel.css?version=54" type="text/css" rel="stylesheet" media="print" /><link href="/styles/lcpatype.css?version=52" type="text/css" rel="stylesheet" media="all" /><meta http-equiv="cache-control" content="no-cache" /><meta http-equiv="expires" content="0" /><meta name="robots" content="noarchive, nosnippet, noimageindex" /><meta http-equiv="googlebot" content="noarchive" />
+
+    <script type="text/javascript">
+
+        function taxYearChanged() {
+            var select = document.getElementById("selectTaxYear");
+            window.location = select[select.selectedIndex].value;
+        }
+
+        function newQuery() {
+            var parent = opener;
+            if (parent != null) {
+                window.close();
+                parent.location = "/Search/PropertySearch.aspx";
+            }
+            else {
+                window.location = "/Search/PropertySearch.aspx";
+            }
+        }
+
+        function goResults() {
+            var parent = opener;
+            if (parent != null) {
+                window.close();
+            }
+            else {
+                window.location = "/Search/PropertySearch.aspx";
+            }
+        }
+
+        function goHome() {
+            var parent = opener;
+            if (parent != null) {
+                window.close();
+                parent.location = "/Default.aspx";
+            }
+            else {
+                window.location = "/Default.aspx";
+            }
+        }
+
+
+        function showAllPhotos() {
+            var chkbox = document.getElementById("ViewOtherPhotosCheckBox");
+            var url = window.location.href;
+
+            var hash = window.location.hash.toString();
+
+            url = url.replace("&AllPhotos=false", "");
+            url = url.replace("&AllPhotos=true", "");
+            url = url.replace(hash, "");
+
+            if (chkbox.checked) {
+                url += '&AllPhotos=true';
+            }
+            else {
+                url += '&AllPhotos=false';
+                url = url.replace("&AllPhotos=true", "");
+                url = removeURLParameter(url, "PhotoIndex");
+            }
+
+
+
+            window.location.href = url + hash;
+        }
+
+        function OnKeyPress(e) {
+            if (e.keyCode == "27") {
+                closeComp();
+                closeTaxLetter();
+                closeAllPopups();
+            }
+        }
+        function pageLoad(sender, args) {
+            $addHandler(document, "keydown", OnKeyPress);
+        }
+
+
+        function closeComp() {
+            var control = document.getElementById("AlertBoxComps");
+            control.style.visibility = "hidden";
+        }
+
+        function closeTaxLetter() {
+            var control = document.getElementById("TaxLetterDiv");
+            control.style.visibility = "hidden";
+        }
+
+        function closeCurrentTaxLetter() {
+            var control = document.getElementById("CurrentTaxLetterDiv");
+            control.style.visibility = "hidden";
+        }
+
+
+
+
+
+        function goPrint() {
+            window.open("/Display/DisplayParcel.aspx?FolioID=10614748&PrintDetails=true", "leepaPrintWindow");
+        }
+
+        function loadParcel() {
+            if (window.name == "leepaPrintWindow") {
+                window.print();
+            }
+        }
+
+        function removeURLParameter(url, parameter) {
+            //prefer to use l.search if you have a location/link object
+            var urlparts = url.split('?');
+            if (urlparts.length >= 2) {
+
+                var prefix = encodeURIComponent(parameter) + '=';
+                var pars = urlparts[1].split(/[&;]/g);
+
+                //reverse iteration as may be destructive
+                for (var i = pars.length; i-- > 0;) {
+                    //idiom for string.startsWith
+                    if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                        pars.splice(i, 1);
+                    }
+                }
+
+                url = urlparts[0] + '?' + pars.join('&');
+
+                return url;
+            } else {
+                return url;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var ddl = document.getElementById('TaxRollLetterYears');
+                ddl.addEventListener("change", function () {
+                    var selectedYear = ddl.value;
+                    if (selectedYear) {
+                        var url = 'DisplayTaxRollValueLetter.aspx?FolioID=10614748&TaxRollYear=' + encodeURIComponent(selectedYear);
+                        window.open(url, '_blank');
+                    }
+                });
+            });
+
+        function closeAllPopups() {
+            var control = document.getElementById('ownershipTypeDiv');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('legalDiv');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('currentValuesDiv');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            //control = document.getElementById('AlertBox');
+            //if (control.style.visibility == "visible" || control.style.visibility == "")
+            //    control.style.visibility = "collapse";
+
+            control = document.getElementById('UploadPhotoAlertBox');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('ownershipDiv');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('addressHistoryDiv');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+
+
+            control = document.getElementById('TaxRollDiv');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('AlertBoxInternalCode');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('AlertBoxHiddenFromWeb');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+
+            control = document.getElementById('VerifierCompleteBox');
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+        }
+
+        function toggleOwnershipVisibility(controlId) {
+            var control = document.getElementById(controlId);
+            if (control.style.visibility == "visible" || control.style.visibility == "")
+                control.style.visibility = "collapse";
+            else {
+                control.style.visibility = "visible";
+
+                var parent = document.getElementById('divDisplayParcelOwner');
+                control.style.left = parent.style.left;
+                control.style.top = parent.style.top;
+            }
+        }
+
+        function toggleVisibility(controlId) {
+           
+            var control = document.getElementById(controlId);
+
+            if (control.style.visibility == "visible" || control.style.visibility == "") {
+                control.style.visibility = "collapse";
+                control.style.display = "none";
+            }
+
+            else {
+                control.style.visibility = "visible";
+                control.style.display = "block";
+
+                var parent = document.getElementById('divDisplayParcelOwner');
+
+                control.style.left = parent.style.left;
+                control.style.top = parent.style.top;
+
+               
+            }
+        }
+
+        function toggleVisibilityCurrentValues(controlId) {
+            var e = event || window.event;
+
+            if (e) {
+                // capture the mouse position
+                var posx = 0;
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posx = e.pageX;
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posx = e.clientX;
+                    posy = e.clientY;
+                }
+
+                var control = document.getElementById(controlId);
+
+                if (control.style.visibility == "visible" || control.style.visibility == "") {
+                    control.style.visibility = "collapse";
+                    control.style.display = "none";
+                }
+
+                else {
+                    control.style.visibility = "visible";
+                    control.style.display = "block";
+
+                    var parent = document.getElementById('PropertyDetailsCurrent');
+
+                    control.style.left = (parseInt(posx) - 250) + 'px';
+                    control.style.top = parent.style.top;
+                }
+            } 
+        }
+
+        function toggleVisibilityPhotoMessage(controlId) {
+            var e = event || window.event;
+
+            if (e) {
+                // capture the mouse position
+                var posx = 0;
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posx = e.pageX;
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posx = e.clientX;
+                    posy = e.clientY;
+                }
+
+                var control = document.getElementById(controlId);
+
+                if (control.style.visibility == "visible" || control.style.visibility == "") {
+                    control.style.visibility = "collapse";
+                    control.style.display = "none";
+                }
+
+                else {
+                    control.style.visibility = "visible";
+                    control.style.display = "block";
+
+                    var parent = document.getElementById('PropertyDetailsCurrent');
+
+                    control.style.left = (parseInt(posx) - 300) + 'px';
+                    control.style.top = parent.style.top;
+                }
+            } 
+        }
+
+        function toggleVisibilityChangeText(event, controlId, link, obj) {
+
+            var e = event || window.event;
+
+            if (e) {
+                // capture the mouse position
+                var posx = 0;
+
+                if (e.pageX || e.pageY) {
+                    posx = e.pageX;
+                } else if (e.clientX || e.clientY) {
+                    posx = e.clientX;
+                }
+
+                if (posx == 0) {
+                    //in case we got here from the keyboard only
+                    if (window.outerWidth > 0)
+                        posx = window.outerWidth / 2;
+                }
+
+                var control = document.getElementById(controlId);
+
+                if (control.style.visibility == "visible" || control.style.visibility == "")
+                    control.style.visibility = "hidden";
+                else {
+                    control.style.left = (parseInt(posx) - 110) + 'px';
+                    control.style.visibility = "visible";
+
+                    var textControl = document.getElementById('AlertBoxTrimText');
+                    textControl.innerHTML = link;
+                }
+            }
+        }
+
+        function toggleVisibilityInternalCode(event, controlId, link, obj) {
+
+            var e = event || window.event;
+
+            if (e) {
+                // capture the mouse position
+                var posx = 0;
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posx = e.pageX;
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posx = e.clientX;
+                    posy = e.clientY;
+                }
+
+                var control = document.getElementById(controlId);
+
+                if (control.style.visibility == "visible" || control.style.visibility == "")
+                    control.style.visibility = "hidden";
+                else {
+                    control.style.left = (parseInt(posx) - 200) + 'px';
+                    control.style.top = (parseInt(posy) - 80) + 'px';
+                    control.style.visibility = "visible";
+                }
+            }
+        }
+
+        function toggleVisibilityHiddenFromWeb(event, controlId, link, obj) {
+
+            var e = event || window.event;
+
+            if (e) {
+                // capture the mouse position
+                var posx = 0;
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posx = e.pageX;
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posx = e.clientX;
+                    posy = e.clientY;
+                }
+
+                var control = document.getElementById(controlId);
+
+                if (control.style.visibility == "visible" || control.style.visibility == "")
+                    control.style.visibility = "hidden";
+                else {
+                    control.style.left = (parseInt(posx) - 200) + 'px';
+                    control.style.top = (parseInt(posy) - 80) + 'px';
+                    control.style.visibility = "visible";
+                }
+            }
+        }
+
+        function toggleVisibilityTaxLetter(event, link) {
+
+            var control = document.getElementById("TaxLetterDiv");
+            var e = event || window.event;
+
+            if (e) {
+
+                // capture the mouse position
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posy = e.clientY;
+                }
+
+                if (control.style.visibility === "visible" || control.style.visibility === "")
+                    control.style.visibility = "hidden";
+                else {
+                    var textControl = document.getElementById('TaxLetterText');
+                    textControl.innerHTML = link;
+
+                    control.style.visibility = "visible";
+                    control.style.top = (parseInt(posy, 10)) + 'px';
+
+                }
+            }
+        }
+
+        function toggleVisibilityCurrentTaxLetter(event, link) {
+
+            var control = document.getElementById("CurrentTaxLetterDiv");
+            var e = event || window.event;
+
+            if (e) {
+
+                // capture the mouse position
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posy = e.clientY;
+                }
+
+                if (control.style.visibility === "visible" || control.style.visibility === "")
+                    control.style.visibility = "hidden";
+                else {
+                    var textControl = document.getElementById('CurrentTaxLetterText');
+                    textControl.innerHTML = link;
+
+                    control.style.visibility = "visible";
+                    control.style.top = (parseInt(posy, 10)) + 'px';
+
+                }
+            }
+        }
+
+        function toggleVisibilityComp(event, link) {
+            var control = document.getElementById("AlertBoxComps");
+            var e = event || window.event;
+
+            if (e) {
+
+                // capture the mouse position
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posy = e.clientY;
+                }
+
+                if (control.style.visibility === "visible" || control.style.visibility === "")
+                    control.style.visibility = "hidden";
+                else {
+                    var textControl = document.getElementById('AlertBoxCompsText');
+                    textControl.innerHTML = link;
+
+                    control.style.visibility = "visible";
+                    control.style.top = (parseInt(posy, 10)) + 'px';
+
+                }
+            }
+        }
+
+
+        function toggleVisibilityVerifier(event, link) {
+            var control = document.getElementById("VerifierCompleteBox");
+            var e = event || window.event;
+
+            if (e) {
+
+                // capture the mouse position
+                var posy = 0;
+
+                if (e.pageX || e.pageY) {
+                    posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                    posy = e.clientY;
+                }
+
+                if (control.style.visibility === "visible" || control.style.visibility === "")
+                    control.style.visibility = "hidden";
+                else {
+                    var textControl = document.getElementById('AlertBoxCompsText');
+                    textControl.innerHTML = link;
+
+                    control.style.visibility = "visible";
+                    control.style.top = (parseInt(posy, 10)) + 'px';
+
+                }
+            }
+        }
+
+
+
+    </script>
+
+<title>
+	Online Parcel Inquiry | Lee County Property Appraiser
+</title></head>
+
+<body onload="loadParcel();">
+
+    <div id="header">
+        <div id="banner">
+            <div class="left">
+                <a href="/Default.aspx">
+                    <img src="/images/LeePALogo.png" alt="Lee County Property Appraiser Home" height="60" style="padding-top: 2px;" />
+                </a>
+            </div>
+            <div id="headerLogo">Lee County Property Appraiser</div>
+
+            <div id="headerTaxYear">
+                
+                        Tax Year 
+                        <select id="selectTaxYear" title="Select a tax year to change the displayed tax roll information" onchange="taxYearChanged();">
+                    
+                        <option selected value="/Display/DisplayParcel.aspx?FolioID=10614748&TaxYear=2026">2026</option>
+                    
+                        <option  value="/Display/DisplayParcel.aspx?FolioID=10614748&TaxYear=2025">2025</option>
+                    
+                        <option  value="/Display/DisplayParcel.aspx?FolioID=10614748&TaxYear=2024">2024</option>
+                    
+                        <option  value="/Display/DisplayParcel.aspx?FolioID=10614748&TaxYear=2023">2023</option>
+                    
+                        <option  value="/Display/DisplayParcel.aspx?FolioID=10614748&TaxYear=2022">2022</option>
+                    
+                        </select>
+                    
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div id="navigation">
+
+            <div style="display: block; text-align: right; margin-right: 20px;">
+                <a id="LowerParcelHyperLink" href="/Display/DisplayParcel.aspx?FolioID=10153026&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True">Previous Parcel Number</a>
+                <a id="HigherParcelHyperLink" href="/Display/DisplayParcel.aspx?FolioID=10158782&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True">Next Parcel Number</a>
+                
+                <a id="TaxEstimatorHyperLink" href="/taxestimator/default.aspx?FolioId=10614748">Tax Estimator</a>
+                <a id="CapeHyperLink" href="http://www.capecoral.gov/department/information_technology_services/disclaimer.php#.UzAwnLV3s-U" target="eCape">Cape Coral Fees</a>
+                <a id="TaxBillsLink" href="https://lee.county-taxes.com/public/real_estate/parcels/08-44-24-C2-00004.0010" target="_blank">Tax Bills</a>
+                <a href="javascript:goPrint();">Print</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <form method="post" action="./DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True" id="Form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="d4Lfx3jGPzzdk7jGOxH1zeNkQ+GyJW6DccXiQXqUfu8xHsMdjyJ1Jz9ftkyMvdVk5S7CCjfFfitVhKY0y9PeAfMKuOttEgmbofjHPoIm2gT1zv2DUoSvt2+DaBSBpeyaLhIdCd4mv9nsnzPgsSR/YjnKixlDfEn1qh/QoFvqYkSOw/0evvpDZ1+zkmIRhBE8CVBQdU0XsfoyYUkG/sDegHEPoTikJkGJ+XzSfqPsDLoCTrQ4LU5Ke+Ye+mimXVW2nJrwuX1uPhnWuXL2xloNeg0wvYg7VjVS+e0L8Oo89GkuGI3LBuwt74BEy0VSjUE+gnj54j096XTjOsKhf5SyiGi/ztNfbZckRvpAIS6BDN7ShuGfqnSocjRlqvvXaDEFga2+lr/QAhA35MVu4ZhjidQBcfKBhKnHG3oPGX442LwwR1M1CZ+XZPEOUL98gNGFHIW/xdL/rriG3WJd9OVpPC6cZl+h7c1uP0jPIgGioAlVsui3oI6NxwZzUbnP/ovB9Se31s3zfp1RmFXstCvCc9FLUvyTKq5m5iFvFWnSrVTczSKSLGM97mYj2JY36bjKKNxqJAUcZ+r6ADmcYUd62ECw44CbJdXy/+X+H1eLc6gIpNnXJRu9dE2mBtXiFlNp2xSf68NuqlooqxkZgJNhVTZzBEsA2C9VoyXBbrMMllpoPvvGjbCcvGYZbNXTAEad1JHbGWubaITDBqaY5D7i4GO5DJ6Soi+jdC8lLitccZGN9hxj6H1A8c8KVylY2vqBlaGfGp00eh0p7/DaixPxQexQ8ZjvWeBjCvHF3fnw0AZmMf/YK4V/EstRvDbTWzfpSs8aTDO20NXeapCuzUxG9wt4Z7LhaYGOP48JA5Jce5E+Lf+7fIibQsN0M1hDRrFikRlj5OiQQc+qEg+/ONStSe4b7vuxb3MLrWKgCK6RHbM45moMsmpIEHY9tQaZyAbTy3ROronOvr8LNbM3ZAXML/bQR2X3wgF6GDHDgBUEDe8wFKRDwsN11kosiwQS7qnp6XahXHaDEgNP8eNd5Ub2w8t6sGaYzYNkz4uBdO6armUf8sFUcjEAURNbRIU3gPbXSIHp9uvDzS+D0bqL78d6rFz0v5H3Hp0PBOgiqQzYYvv/FH7NrAx1VCdEkdoP2ln9l7u6KaDPV6nESo/max0NIfuHI10zP5ZrAxlHbWjGwKI0hVmwtwbYjv9m6r8dwfKUMODWoyArD75amlCbopauM8StdOA2Lpri0qULfWQqGykIzbEu+641xnX/FNNPFj835RN00yvJr+HNAu2GLI2x/4gsjuq2by9mJ34IJsMggNZekbRgI0oIrb6p+IR9Auo1cJu52J1l5y9nVLkOiw+6EPg0VD40OOd5aYz99/+DrN+R80NyqhgCxvAczP5d9sRmGfDoxbnDRqoSnOuvvMtwJq6ruPYs/qyKeiMCTfsrJA+J92fGJm4HSZfURj2O8Rr+NKLsw662MmE1FhRPUI9B/gEqHK+B4MT9RJmq5Rr5zO0cOgDDa0CZRk8jd78F/Do9UAPnJRIz6EkHMQ0MnrOCnQbXxm6siPj5A+1q3q4ETgnvcyJ9g+fcIDK9usBoWo6QRPi3qHmZ9PnuRLUyxpug2nMuw2chR3MABo9A5EqcDkxEGtfQVL1JwiUDxHgr20nXwpjq2a7msXlN1MiTTT5+4ptpEQVN75SaSM819RP6vmKc92DPDabKaE63f7N6cwA94PpLP4kSQCX/GJj6g7tJ49Z9GfLVAHGxmtNQ3CIae/R39Dw8LOz/fgBuOVNcz9WpKBdGgVIU2vUwezPT3MBFWUNtCvK2uUna2wpl2rIy7eCpoD9Dj0yrPx6xJg4vyIANuwszVO0RL3jiVQb1+s//JFgPCE3Kb68w5HtvpCBwhooHTqMmOKCUpClzUhlv0ZY2EclfjyUUdCy3osyVnmNYk8YpUX/GIvPJbuDv2yPtYA8UDInm561HVW8P76XOtsT2+nyofarsGHm2ub/fDEyQ/FTFBh3q5HS1U029Jy2v9V99xO4SoIpT7m+E6cZbWJiwQEjqPbRbQ54OKwbe8nembf/u0/nR+G5hAblk9s+hIbqvCWlEj4sMo1eoU8TIj5sFn9aat7oMCCNHv6MiHauSlLU5lta9IwEOk4N4zfKPZm88NlI3fy/IXDXgshU8iEh/6JM7acdLE/9LGK+7mCyWvDay4RsIqmmXuhoS4jJihg5lrB1Iq34xjRPU6mMZerUSYeqkFw8kncRQUDyLdD7EeYbdapDsguLy0BJTeMi4Q7x9M0WkDjog0Y4qqrMsfOtGATKf2DXGQau8SNnfwBkeB3lQLFrhsSqotEAB4St6PIaNKeC24VGb9etRC052miqcZpwfJkb3sincnNQz0Of2OAex51zRiTI5/eq31D5UdpwGOk0Sn6P6oKVsphdnlHyMyq0xozsGk9ejX2556L83347JbCeh3wBD4Cq8nIkbPj/EXwQIyDPj3O7V1Vjl44Y9It+TbarbcnNx92XSQ4BOa7WcdVpB3Qgvgps1QgBRz61dDmVfmvuuM2h1KermVUkJ+wJZJLWyrnt99NBOAov4yN3ZiTr6fVmlRBZLo8xby29l/k+S2z5DmgfxK6iujUCtrxst6kfS4mPDxy13TNbCdPkMLr3tfl0uTbnNWIDegwc8pyrItSiEwHWAN4MMeFnedm6VY4HHDlwcXU9xNRZRVVGhL05BNHpuq87f1XQY7jZRhTIJed2YyqZGRxtXmw4bjQtykqkfm9JJHgl9hgzoZS/JWHKDll430e0B8zZidbHeyfyt1v1u2gM4n0ZftmJgPfeJajuUYpQPevJF2fyUl0gcnkczMGPU8rLNWJzT9xrOuyaFT4tzizNPayx5KOZGMGYE8JJITgHv/T19e/bghMnctM2fxdH0WTAH32wVoD19qHoW5YnImV+PV1IMIxUwuBb8wVNz2PQNeKUUIG3TcJ2SjwyDnumw9DQMfdw5NfeotihrZbsuLs708I2KTQQBWvcnzeQH8cRd+jDDfFrl6oRoqL0phE7dBcfM3V9mDN8a5LF/YktVeSr1kl8/RPIfP8i75jxCdSqeyxDdZg9ZzmyxQtfqdV4EYmaxO04Gh9jQ9sV/Jb0Q3VST/zG/YGlWdw9/9vKizCSPzZN+RerKpe/0/9q4FxQe3QJauKIET9HYCCWcyDdqtOw3W6S/Bk/0KII+9R3E3YCK0OkblIhzox9zqtEhgL9mxJvAzM8c5H+xgYkSgXN3FTWP0HqfDoj9F1qfrQswxblb+4xKLWpj4egcfkbIUeAAZXTo0L21Ny/aymrddFh1ttSnj52tKisAl0VH0+0qViXyblQvNp56Uwt0pKt8P0js3c7SzDMwkU5VWSmPjoWb3iUsSZkHzPXJAJc4auHfF9nXdx4xfvL2DycI0QbsgIs14TTZo0K+wf/BV2xNDedU9gnmn6eTQk+UFxfrZ83aXZpQMlpmEAGVMAjp3QsVyw8t2AuDWJDThpKpC+UGyQNGoGW3tTzT4LUTjYymcVqZlNTtEMBuiF2lkeB5A62k/uynP9AHndNvHkCu1sX8WeyqxSV9ZGJYttbNOS8tY+MLoaYqZE8ftkEfsrine8+oEtMYkmNDByY+ahRmtTlKxg1q4X7Onq+/+t+1r0SViP7TANsQ5WgyNShNfRLF8sJKiuJn37U6TD/goAKA6Hcn0A7lUhq2I4ZwYekyjKvoY5/nG/RSEUcFDqMrUOsJLhqjc1HlhmqB9XaFhfwihpMerUO5feynjXQo5gUu3hYmZptQrvTBFk/ckGdc0JIhD3NUfVJAhC8W9vb69GH3Sq7YvIBrkkHYVVuaBaSLGrsKeeQ1HKQsxYMYkstpCAd/LwS8HNJuntYHmTI3VK8jToh+NL9lv5k/HnTGKBLSGtGD7VcJWMHbJS1PqOcFk5+Ddl0SSW3+IxuGbRNpHO8w8Naiknp5hZ1vdiaZCnEE5I2L5zHmEqRHBxZU9iXmkRjCU3FPVHPqv3ndFHF/tvxEoyAPl/kl9yUXShGT8XHByjW6J22FRwP+pnswDUy92G8+GJrwqAVaeCHGsSWkHVvujejHSAnSspQ0aWV0uXt/aBLJCpnCPLrVWstshX2ZP5QegPAuP8wcUA2JuTihbqfika15IT/kwBju6Yk0Ypl+5Bu4sOMTQ0Bf9hHVnzF/OOoAtZifCHkrqdVet3aq2YmwPhTxDiy6Ii+MBQH+lChHdghFjh1MfO8xFYlPIv4Uk0ciHH5/ekscZzzQfT72rdJC5lmslN5oCxLB2eyVU4O+ZlZ9JIlPXD/LU46co/harbOdCk+ucYLKtOtQEvHaJSqhBuYlzWseiJYvludgGLV8g9soMJLpBuHzXQikBoMWyzRvZ1n0cCEHV1iCis9zNoHp3NfGX06Kmy9ZrwYh1kjIsxB7JnQpVv+NDci2eJW44GiT6RDECDtyMBiW+W6QRuMa7mL01/5kaiIKpNhlhTbBFMqmQqzT6pt3/UKtTA1DIwNZy1op5eajJo80pi7lwyBdxHQD8EDfiflFrB57JWQoHAt+Xce2UD3U8hLKe9j70XpifxX2XtRU/GEAaeDrzSoqQTPJPY0IPtObl/q65ElgjwTbBWFI9LSVVSPmysonF8yaWuujJ0Y2Nq8ilTUvO8ycWPNnPVyHyRsUmUtjFok58hH7U6wNpG4NqWsu7qeMx1IUkOB5xntsAsoUzXqPSsdU+QYTM220u548Icuey9u/TmKLJcE/qa5FyoybekTdMVTECQrI9Y7rHuHBeLNx0AqQzCyLodzBj6i5P4wtF3YP96xVRPDEPBEUB2M1FvK8n8Pcmjv+ctB1MtiagVIPkDjRIbEMmA+BRUxxYbHlWWvq+LYbVDghAObDMDaUKKkMJjNlxjqUBVWwsZ9sjqBtncBus+Z5aGibxXMtbSpmpvP9q9hHm/Prg+2JnySBxRQcGc4r7RcRD4wcO4mFstMNkXKlYqeKIphlkAUNeQ+Lk9Kwu8+qnJ2jdaF1R65I/O0ZMKdwIzGTiBhRVWTviLdiZKCTKNDNA6VGNCKltGTQL7iV06hF8qc2+xF6smJZEf8zPNMN02ymRaxPryueAV4kTn7L8V52e9qUlhF0Ine/eNn/M8QLIArbR1jLGuuIgHqrJxHytK235FaQAvZ3ByZqFTTMtETnE2FEg4xzmWfMPcPZmF+U+3XewUX0u0Oe0sFJDPQ4jLSo8f7Etux92M5lQBZRUgXVN7RtPDE/HsL1zYsHtRDew84QZdQpS+0XfC8NI/P7aBbAI7tK4aHfUV5JPhX/CynEn0hbu0iWnzKCm8igIeKIksoP1JIzaQi8eOT37zrlpyMI4TFOFok4VT/PeYuyKqwj7O9Q+dOEy13QZN2bgcExAb6IZ0/t/335+PXAWPjDaotprT12mn5Yxo9RrVD+RemGheGtYpqYXa0OfHnSl4ejJRS35QjWaNVwuWVkophWmmAIIrqp3EePUfIOOkm6JndVOTNS3zinS/uhH5dSJdGTbLcWKLzchRGF1TcVL0hs2BJI/MBJa5O9L5bNo4NRnFq8IxoPHzvnjzLBzWjEn5oRcLFNq2wBDYVBVnmt9djp/CDPCskiIrKOuyLcXAVlaIeibQBU9mT0GWtcakzr7rrIe6ver81qwFE/rCn0Qj0lxCkr3v/pjuKffwEmeCH697auu3ca7fIYJYitVR3veRenZ2hSpfQ3kBJGfNY77qoKrdEHwTPQqMga4O1fFs0UKbp1UPvhFdflmCYWppFv5ByK2tjSN9HVxkeV4REZvKNAx1TAxVGSzDUzv1YyQbk5asncp6OgJcnDvnpAq57acV/KjUNQ45JOp+rQ71suKIMwBe0TYIlpXto48CaN8hc6nHeezXhQYKDjAj9de+x005jdwsN5ecHBBaRw8s7yZHQ3bfYR2k83IlpmQfC5vyeIHLvI7oOew3AkDj4NVifQ2Ldx7NlKwGKWUabwA1l6strZopE5kW0TM01/UEEvYumAks/8XJ10LKtkB6s1aIJ31SrA1dv1b44SpjzIdnLn/9iu0YCgUUSqnRH2MO3WH3jrkHkYAzqtWgkHcrdNtbTzOq9d+t8BFIek3LhFsivzewIsROXOfFs73sNfFvJOBobv6KaqEo56VyYNJVutET3s4hkdPQtne74IVX4A1GADSaSnIFbABSij9T+NHeiawzhe9tlXCulkP0rBWoacu9GcgqBFCT1KYsBY/YYRaXWQCPP/v8PrtarxK0sgMjFq/56vkI/rMp/vWImd3D0NZU58Xq+QzwGs4l5V1O7Pmb+8DW/whDc4WB00mqKTHjEx2+1N3d27U5ovtrlaWdkXW4rdmJI85JgjVJAaogJDytJw4IGuVhns8teZuMdQDKSs5aZREuO467XVzrOis+V4hEWgbsU35C/azNhqlZpxMmiqb07Sv+CBs8Un9YM7I1AQDOF7rF7euPtiu8Fl5/NFbpBloZDWMYJrGVmsOs74JrrMlIjbLsBLWHl/CLP0ZYQxEfXPk/kTjeADniJjzWLSUNElVW7Izvnln/ZkaZPgzrVCNJcPVYpYjXxmqbkyQPqpVgbZX1+3H8ubLTTwoOudLwtwfGaF8wVpEJgsoiWKX4HGWtrFHcnLfn/AT4C5cvVJRhOAF+nB0nogRvy5KtOn9UAYNFhGHhUjlzB003RChp2bln1wDXgdMDVARHNZ4+Yte0Pfiw3aWMYawwhNucOo0tSRE2MdyF3mmk0i7i/SdFvEIyJ+xcLjdNzm0NDai7geEFEjKxAacKa6mDcRMzVThzx0H+fDsc2DsfPiyi61QKTl885yt951UlIQg4sS/D6FCc3PCcAzZnt5YiO2f0EqNbGbAeXwQsk5adr9PGIn+8RvZ6ZgsXsInv7Jm1B2nXNIuTYlItu3ybEY7Y68Zpyuk+WVYPDctSSjbqx6SED7vwMKe38dNVetHNbJV9qRW5s+ljthIE/btkg0fiDrAeabHVTe1L/VK0KTZycdmUfuMwu5VKuKNU7mD9dYjHYZnd0QwWOOtMjbmeGFcI3XaX+QBhw5D9QRt272Qu2k0zRLkk95faNU+Hyc2EdTwzjOnNIyOOCJZk3vjRNCQSZwW+53uX+ozDiveQr7Jd8qNUehsesRXhLXpvpRQWyUxue87N6tde659/1IG9oaQzMlQyUA2XKQ0HznBhEDtVekmEbKy5gvXkCH3NhOdADhEgiL+eMyLddnGeuLo6xqoD6y0bCK84pclpFvs1jcPyzmAgFaGqq4Cb0qchV/KIYjJdgHD0KBlUOpiuHVGrl8hfMSoJ5cY6LsXgeUE81ND5L6a7LAsrK6VA/IWf+7UQ1yWNv36smrO1SDjmvQQlZFoLk+ghYZWtCOh4K8+I1OJ5eMt/JWi5XI10UomQDbexfKAAaUsoID9F119uM96akOS40YPszPStsxbI3SZy7AQf6LZb0OGOJrOULffxTs+kxGa3Z9EtaMoamEW/qB29mGZBPGLaNCUNYYqLOMqeH5zXBc1P3SJODj2Cl00r9TDq65qB22BK85sZlnRaT8NhjNlFoz5PGtIMU6DZX6B7XdtgBnzTiVQ/Z8nvlvJocYP5wwHwmhyPK8CrwCA2RF6PKzD9BqWsHBB3E4v4AW0py1h1CA8OljRwd6BLrqqCtg5J1cgcc/rR0AyLbsEOKE9fVN2nlFCJGqKhsk0xcYmMN40qWUzkoCUsh+CoUClLvajjMQpM0X+DjKPKNXBR+U1AWucm0vWJJZXGVkjZVIX0TVkEpYyHajlHIQavobYC+TBhEbMptFTmUTbHvQJgtwl+8vz8rvO+qia7JU5fd8nxaBrQeZv8xZdeWjkRWu0zgfWX3G0TSI7O+g8+wsJkdvPt1cn2UaJaILxg0FysDfRn9sE//9ZOrctLxSwMHDLeZwqpYqAlx/EEtO5hW68rf85SEPgJ/j7MPskODNm9EJoCbBDWPxxe2Y8erB0icXGT+8SKmgOQSQMyRoI66hot/8Ms4n42FeHduIz8sot4owouDMr+U8aO6b3FpB/JGjx5B2aNpHIccHFwFNs8EPO4M0Jn1IzgADsLDJm6uVlAhjnUcr9cCMiKcKY5zXbQ5wYrk0N4XOGUsL8m9n3zT4nOb9P+BkSpbxrSt88aQoGyRRcDKPU9lcKIu7qdrMp2GJ1HP/+kyHU0bNhZz2Nhld13GJDmB7s+NtgoKiHECzDuZtLLsVWXOhX4TN26hf37dVoXwzBj08IWHsN4Kfpt50XKSeIOxoIFEUhKt+ZivcGYYzsSBDkugVqysV+DMlIAK5rYsUQSucEC1h+IrSCSATuD/RcLf5pCYNzeNklyQQtsM75rjH+isiIfWS0I0GaSbfkt5rT8ZetvM7GhdgrMSW057LENnkoq10m2OC3uGw6XSeNwEVcDY1vbPpMF6gALqM+ig2x6sp8eBQxqjaqrdG2/3pCwHJEXGIcBx16U6/jUAG9i0sQkr6rzbkXqegRJ1AKsQl5GcAz6FBAMskYDhnd07mVENN7WX4JUbii8xxbbCE+OyboP4biJL+OyjmMzR2k84Fpc42xs+YWA3hgxTxztNGRyYvngGIHKj3KEcnSkDW2L0B7hAAvG7xAARnFQcszYHeOX0kk+fUhpJT42I/XO/O/qrzL7HUvRsscxLtojbdnamaqBw2WmRzmHbOnmIMvr6c/FVhOYk7qSQp8wTIjyUv3K0S+WRbu9pVryuE+g08Orn4a8TNP+WWCL+/34QDJdZyArLeJqJs4H5aRIVzi6IDGu81+YDLt2LRHjwoAfQoMRmR68jwb70TkcC48tJ4fNA0p+mT1N3cDXAsvU/RHhGgXiXjFojLJ0bqkFaWILDE0yTTbLHYUHQ5ppeREBjYl2FwnSFesqZdoktpVOLmZ8lfMpLUPbBKFNI+vx3lfrRQ8P75gHWbn8NtyZa1p0bO8IHvNsa7dm923MZzZrcUv2watDtH6CHdg/7EK+oG+O3X0JGaz8eZSgvSmANA3VRiCU3VM2zWwFIfBiN3jTiX4C0byKXEs7A8a4GAROqGqTkHgwwya5ptLSC/IBjhHm9iZL/d/SLoNfk3cpA/XdoKYcdJXhPLQQydjOvwH8DjWLCkf+Z73+/3cR1i0tdE+xMVolml1Pn6NKVi3dnjNkwdkBlivH5UhUr9egd+j0uxibNCmFmmhAlss12RFH7u75b0iiFg177ftNbCiH7aBisfppAsOCA7iE67pb3IM+SQDzo6Ueupur1srNVfZiuj1KTvuAC1jECS075EPk8tyP22mm8so1CZzWIMssxUw3zl1qCjK35VVFmBRrPLxUJgnH8wShr3fhyGNcUybrRw53uiP8Z2OiHa9bkJe8aOOqcWzo7a908dVgi58U9QpyVbrd0LuNy+IdVPuM/dZ+EcHwow8uTu78TmltpHgXqC/0NHCpwO2mNO6WDioXXwokylpIu+pHeBFzXXOSihXlPu45+N4caU1NP/iDiCIiiBaJ29SFrwROU+4t0JyLR9Nn/Om6cSTGEuhuzUpddwkig6h3AyR7WoO4goEvb1IUBhal4LOkV3jvA5AwZ8SMcC3YQect+C03NvK2iU7OWZSDBxwspvBMncPNW58XFmr6JsL4A9vLQXarGKh2z91ruzCjrfcbS7W2aIqi29Q5G3r4gk/nykM7au/qVq2Qhp9k0JxKdXEUl2DdRddHIk1vIM7OdSn8fJrzVMdJwoPMJz/j2/KjGL+d93UfeCkIFdvXb0tUYnx/EEq2tNq6kby3H1aO9EDMaiCne5Ug8ZCJkCVJCZHrPLqopbkCA2V/wE/keQKZVpSLxa3BH7pzqDE+RGz9o0F19A+9/G+eitT6F/7E4r3y8fAlPBY2UGuUgsT0hcci8n7t6n9mV4QxvpQVZrNsfdUduoVFojBcHbDV/GG+UVXCtUQbhMvWdF/f2lHkNwf76X+BF7bAZfBYKlSWRGmjN/nRNywUix0EBPCiMVY7IT/W3JXrju8UbTaL+XD+m/7EgiHC2MXxDkFadLfxXUnzZoz4QYQm3EsDtpN0+kQh+DXEYzPEEaj9kNI6xNYdEf4drSWwPGOqq5GRSc5bgawahP8B+k57HYJr3sBLjhj0AN2xhBi0MTUNSxDT2J24AFeN0TKv3NRpJjAdZly6yTWUVXRTEJzKuUmiB+lYxGUjT9IrMaAteAAJjj6qgF7Yd/XHv9YZ3wl3Hb4uEEUtWSf7E5DgRwzc+gNBPl3a6PG31sJtWVTZgk0tmXsmFNnh9sn8IAxR9zjYK5PN5YK3DOxbwWqQK+ivqa/XKeXOUu9pk+koj57b3nKXXxans2J1Fm4qtMRrtO4dqMluMJ0f+s4hkXX7E2ySxtwgGnYOPp5JZAjhTpX6mAhnqpuSz6RQ1vsJHVbrm7s58y7lcr+aoyqqScgGXT+X9UgRcDeYXv0xMbHUMkIrs0+QC4goRUVHY3kzBQmAaE96gR6Q0HMqYQqooabVbBJGErlyQN60FqETeJGA++Brt7ESOjyV5R6kzHMDypw28O113FnWlcNbKb4chmFfavyInG2KpCTyw379/k3L2I01DafJ6bJs4gGsmwVzCQ7c+xb9vQGH+jH/dkTIQNm7jyyCliFwtml5FDWrl6W0GX23g9Go88DIDOqqZ42k6lSMmbJh8PKQhoJjD8JBjSNmbrClOrrdgrS5kzPj4ZBNODGHZSl4ZrL7VwtnOiYWVjb9Yp05pvBAmbZwMpwt7KlS3XGNobmjk69RNANwwC6bLFebKs1VuCTjHwuRunVZ+Y3NmCHv0tiWeBhH9AUNF6CF8yQfH4aOgOsquWyX/CNT9GtYb/t9AwSMWDlQX4mQR9a8rbk05YY/QANW52rnfSLUJRwN9TCqRzGYf/m7NvXFGMlExg84G0GfPZfoGOJnKlQUme8E93GKsgWjrtsbZJMnf/tOPdwDbw4AWoaFrwiFx8Y3tBOVAUjCjIvQFzoaSqD7Px/ydnq/75h+Gs+oNcAIg1mPj6In9GIhC+GXmwMLbstoXcPyiDgbz7AvOfLwrvjapF0Yd3z5v8vTJMhBZ8uh2GN6xJzOCV4WacfD5IOS+nlrRfRuBS+Ia4G6OIzLHe7yi81jY+Cxm7QNlrFN39xWomRtWpNVpzxoZB2PS2lw2B1OWy3MwdxcxOXdyqF11DgfHrGa2Nf9sFVQqhcyH65rVm8bm8iCqhxZFNPda+SmZyl1hfb6vtvoxfDpr4t3xgbOacFHWZfkcckW3Pr3LmUSgjyPzdnB/ozBCmJjuKviBYAsRb9c9vhz6eWaLGsr6BL9uiab96ODYf6DcXs9ejQxexLkL7sMiM2AE5x4yBYWOpJ8+/PJ+bkxqWnkQFYLnzQRTd2Xw+pwe6IIwKCfiCNh22OGeU/AQrd+ilJVxiwo7CkPu8WnXTqY9OMx3lpniyAylzaadfIyHizi3g6BZDxxQu8V4TkItMcNFzXuKunM3GfCzthGTpf3C52/Nvqi2q2X/VCfj4FvwxUBLi5ExhCL+zb4xGi/c0CX1v9Wm5zT7aRpnDMgWv3DwrHNxV/8y+32Pe67c30IVf862XiZe4h0FenzsS4MPKJwjmn1beYPcX89g6gjWMkXyhDvXP7xOzYBhOnrYj9D8s3lz0R+IC3xiYaQ1iPEN9Gr7RuFBzokk98kAoRSs1D0v1qC8DHLtuOpYZDzjLNUrZeIkRZB3SqTPJRjGO0Lrvw74eP3cWx55YQ7vRtB5LLvRApwkxgPDlSDtnaVCIriukI2tHxULeumw4jRa1rMxjvsqeWRz0fFzMmAyuz0TOvuhbutQSbbdA+ZgSwqRxY4j08zJqj8fEouKfI8cOGAdVY15Q8mB6Li6bL/xJrjcOaGcenIjwHUS5pxThYg4ukZQHvdJIgU3HFSZowG6aj+dOmqDIQq3QKqa3fT1Kw9QPlBvpn4Hf2mYk/siQ/uNY0iDYs/9dkODJpGVPFXHA5y4cwHLIBnX5ycmxEvqRTYLzR8/3AUz4dmaVUDBWZn12gbl034HuwLM/6vX8r6gN7a0mrfnVOJzVVjibTvuEFRjmYG4LT95F+Wn837qHLZ4pKWmaxOklbTcLZlMvprdNoplj/koNPBm9TRUsrdpfgc3JdT8cz3gfiaSbX0dHppSFYDTo54OUkyd7MhsGzULaWlrxwBKn0hkypZUE/cVH7NHT+itQGfDX10Kw64p+RyLm0k1vuVXqIDPXLmWvm22WRcQ7BseDqMEEUF/k7xuI2Ii75QH2r+RqPFcEXUNAtJeWMnhWN1ijcm1oY3rtf6PZfwVFFyZAKxMcAfqmXo3uAZ+UUfJ3a5qtT6TvqxMSYJkRRjHAOlYfLZkrRnSsZr30H6CzTZtWCh17I44j82ZN/iTAi2pSm64KOIHSwBhyEIUGBTGpimPcAdTvGh/8D5lw/Av4YBi2M/DLQkVtgsTUxIjaaQ6kUTdjY9X3kH3xy27dZVJTasBZ+DVpzTvAJ71eRc0LwtoFhy3iVYTKaK9hiYCbMLxbLdsjoIJY/HFU5zpSgBVGXCcNniZVrqfWrE/aAvqIQKlGOAJ0t0VWm61yB6oJA2PGjwU0iNuGR6u83zfssncAZaFGqFuoU1VQaGtcIG6TN0hRwqwN1pYbeVWzRV7e65qGy+iAllMzfrUv2T8FSQQVhlQQ8idZ+nFgHbZk+MijQgpSu6JvfRhYJzKmis42183BEC5W9jL8o4ufZmA1qk2ZB4PGhcNuIN4dq98q80/0H0v+wWFqZNFlmBHZx3AX4uYFzlX9VdsLqeLP+Zk5WVeWB+Pvw9hnl1/gGpeuM5S6Fu0o8+gzQ2zyJ2EdgeXQf3glA1bwO9icV4q6Z1nm/Ti/T/MCYtem8CidTDjppmwHbSyDwoSLdq3m5Q85IVgeBDvSLfmuZDr5gixDmfyGSyJbFKrzWNoa+Pt7DV1DqC+w9IywuyaCw1saz7oc+f6SzcIBkNY9iyL4vl6rLk/79IwdLAX0hTk++8x4eAlytiKxCgRbV206J8caK4hQ8EehkEyxebeiR2lhUtN8EaAKTQpoL4MWEiGrqjwsv1VGq2jqfFGrhKACeAIKl9qPMIr9MDcAi6d5cjVWhSfjBYXRIYahRBRx0klZf0m4t7M0eJc7mkD28ek1ORUF9Al2O3M97WkGJrWQapHME5VJgnhuzY3NpM28LH7F0QC/DCXG4tXkBS5LpW5XglLwjExGKhvEJECiYMKJQ7PiFRstNMZZcEyL2CQyqw/6Ay819dZrQmyZ/aFnPPJQhfgRBh5T3ng9DLzUzaC1uFgX/a2+3hqdbDdlu31LXFPoPHwQkoQ2xFuIHnxTImj284OfLzPeqFgO1OzA9Mu//gZMPLCaRe7q/RebpgvO++NsIp10cV3a8jGve3ykRxnGQwwA5j/owcdc3Gtt4PY7XNA2OxZnXFRZrFktF7lwVvjRdkJGDsBSn5fX4zSFML67MsstwoIoSYmra4b8axLluLJB33tGCBIs8/6x5CQxYXINydDNkRdr62dW+cyhs5MD4w5S5ZUL14doZpRTw9d8nMasQEjefLD9L07c35Q6VaqP/gKDYQVC2wh5cvXs6IvIg4EK43Zk+5hrHW863fRk6B0kHorEEzbLmYIkzCrYbuhvwZtXwrb9RKYBt7BKcrkI78WtkuLhheAC4Zj+DuTifm2GSZplXyF95M0KetKDie7xkiC0LyeNnjvE5EZGM9Ez30S8eA6vJtTVgqB+zPwtWJOMXsUb3GC7HBveTK5QiwksINJFD+0cRh2egN/ZKl89isfLhaDAC4jHWoZ+Bx2ECfGU+lWJpTSkOZ7w/xI11StL7csFbVsm4T632qEYL5HxypmysUyfp9y3BcRu5mY9TGfjeahmEhQe29EJD81wLToTLAMjKoj6s6gg5b+MgW9KYwsQgL9PboU/D3HBPIPITO8D7aWKcam6ZjwhmONC7vAeVvPhGjlrXWDtG8+5HfkXyOD81Nb3g4CnccXPifLIb/xPOuGEzjgYVX5EiElUHst9mKYX7y1yurbeBZr2xQoR+LoJu0aqnEb2ngMqlizVxN2EmasMJeAeKr/NKeECnDjmet4FUz4uYb7zSlVHkefPfFSZjJZn72P4bFaxXDVKeaeW/hA1xk7f3/Bm0VRolm1IF5ioLLTSjKBOqeZMuBybASNejP6B1Ae4VNEew314t2h65YJutHB6SXe5xlMCQ4C9IyVvda7IJl/ITw8QehyqqIsA6NnFsRJdjuv8OhDn79yRv/KxH9hUf1JvifZbSC08UzeG2lqjuGr5xl2uPFli9rXCr2gaaWxd7KvIwrBHBGW432lsbQxbUUQGoZUyUG8r18rJlO1tcAwEEopR1bNysiMgdMLBO6oIjPeotwY+ejm8BeF3pl2T0PHjTu/0murCbelAOK7jYeG/qinH5cWp/yPHKxsr12MwUT+l3IgA4+Z4A6TgfBiiazIZkRSBiCRY1Fs4C1ZyWX78Z+ZnEsICNTH5pBB3qw1McknQMucL5jX23eKBc8bt+zf83d3/b/1+vqYl9Ax8EylpXJ6u+ystt+cnaUyY0VEBygX+i7P5V4B2vxBotkcBrObpJhmaurnCsDecH9tnue0RaGRZ2xUX8JrJGe8RcVp14BFC8q4xkPji5b5ES97/1NgD7OORnXzwmhPWP6PJ+UNk3sO48TnLuzBcLOT26oqtdeHFtWAIeO05hVtRoMEGaiY+t/a6h+jRcim5MDeX3Wa+U3h2AWg0te2UBTN8ObrHCYZg43/kcy+gRdrdIB2VBHqrnvWst2JykTsVmjFjkwPPBY6cgOzQrBztsuEsakm/HrdMnpvhUlWs64er06l6ywwFk/Vt5PUXBnWdCgBzGgr/SjI5pqgCx9+5JEqQjK4uN8aMm2DEdUEUH2IApwdSPBTPOmbxeD5gCwBoWlG/mwW+VAiw5U4+iXMA7nDFW/ACJbNWN0LEBXTS7S2MPqvU5+2HQhPxEudQGubJNXaa8UnQn3Q7jpUhSsp1M7PjeGSziqRSKla+YkXcbchu9hPfqBQakPGJ8g9xDxY5EZhWRUmlMk/Qyrjbh6WOVzeUd6o8GD+v58DJzFvoBvoKg3+ZvKafkbNqDPIzN/m/RVR1PjaKBUmHrTDKbKcoqLQN0E6NhfONCLlnQlt9TS50HJspD+KAYshqq8KsaQEUwcK4zLeIWsKqpTgJDtGzWkOTBmwMOrXZhIGRBHa+TTnhCicNNeuCJvcS4BZiEfxoH/5AWhj56ExzkHEec+TRo29b0CFzp89TO/mrAmlmUhOEc5ePSuJTLmVp7eCD0h9/pG4tsHrYfsqOj8LJaWp47wfQ0Rek1RHenk2k8G2Vn3RquljskYpHA8d0ijva8Perum0HCftCnpmfjRVENIwF9va4KccUOJ17/2EciNkIOq0y3HW0H7MReg8WnK/1dadYMdIx7rodIGZkbEO86G0WFNOhv26X3LRsbVMUyvx06YPREGtORhWR1V8JrT4S3+S3L0XCHMKTASZ/wm1ePtoKCB8eDZlreqlFZj11MXf2M12RHeqdp0ECy8cDHyuCzDvj1d/L4a0ApGVXgdBms44lTgHIZ1wcoPzb6I/DWdKJZRRfGoely/AVZaRW/CryiOgCx2CvgZC+1+sneswgcIP0LCDlDkpZu5BhuAjTnRyVb0wsAQ3Tb0x4QsM4GqK5VtsxeaCqjLtYY8OQoUCtuRpbIGpY2K1ae7LEmBHh+k5wODHMXmkf3PNR1+oCGeWSvaH0av+qZW/+FGa8Y2elF1p1OkyFjWHC1A3F4FnZsKIl1DaYBb+o9Zi9tYVi0qF8Q4gbdyN6Wn9VG+kJa6EypLUzs4/SLcYavbdJ7njt6T3M6mc1ZpNzOBcc4qDBHZAuPaPOI5i3uSICb75PPDxRYXRrE3LjpHfJJ/sE5wvpyPUZII9nDNid7pfe0lg2IMvLzsXQTZuRtEmRaw11wisneuBmPwNDDTSNOPBNvJpgdqhuSN5LqHDkbZIn48tLgPf96QAsATZyjHsnq3Pi7mLjQBPpLSE2fttuUh8uZolvhLqtIlZZ3vPK95OEm8YA2rhNzvxaXnS9P6BVYhLJvPcmQlE85tFe0RLS0OpuE9FX2W/OpNd6fl+E8iYvYJcgo4Nc+4MTic7QhyQJ4KC3KGxNAUTmZXq4CYbU1vgTghzVNLDFiw4G3ncpludW6th536FXog9E7kX7z4xtXNI3GBcGWiwLQwh2BFVQeyZ79MYEDdJ6drjaqdpIycect/RTqWJRACTM23uzXwutw1Joi+fkv6r8saXwOpbQhl7JxjXrf6615AlJyvXQGrUF4U0mDxwVla7WsMx1Ha16GYQC+l/ond5kgyhsiIWpKukeF5QgP5e+sduFw29aoPltZJ2xLX1NcLTi8MyitTWbmvDJm4McKzIINokAHlxDyDULXdRSrrbJw+VBsqDv9L7LIdltx4EHmp+w+yO2eTvYpsRbeMgwREl//08n3hLMq4YUrfOpy+eiBolrIO+Jq3LFRFAj/FDxhMarcE7rN1u1gbCFuKEY+NUzngcilAmOAd282/ATZZITssj1OkHKJ+3oRtmFimZzIZpF4iPYHHiBlBKShBt+Z+hPjbKusP/ldEOnDnKmQdTC5numDKuekmd6xxh0plFT+PfC0JCIXlwRauGO+kue02EcgEUbx6Dj8ng/A9ZYdD2i1lxjfm7b+fvpIRVyBeXlCNEIuGsUknvc9c1ONYhRXajuFVR5mxdZF7Lt5aEuHmKpZzJd3sKnvOBDLrcrjPcMkzgFngzLn8MCDBz5WHRAWwuzTQF6FL1Jr5xmjHWCEeNUBFb/ihPH40+R9m2HWsmaq6jR8Ek=" />
+
+
+<script src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMyxcB4EBaaU3UwDL8QTt_dOmwzcmIpZ2pEAeznnTFZflrnyfXJ0cwL7FDFOMMSGlM7RLSRZsZA7Epiu7IwGQ0YtqZvq-M16GuiZ0sw_ffKy_w1BwKmSNhINnNwz4EWB8OWhfMI1&amp;t=ffffffffa1bf0f7b" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioH0PbfmYPfBLUFgSyXUprO2qwX5LVj-iHPDe6BwY6DfTYUJMho2mdOd-TDyXhBDnT2JVmgDFVP7-atLuIkcELsggpR6D60&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj7I2hutw41gaT6fMreE6i3-YgQF3rANbIQVSiY9Zfu08IQTKeMHad9NkqSNwEWoZJnAvESw1&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_m-udV_GmN-xrwtf90_cowkpG5dtm4CG4CEsctnje5zrXZybWKmGs9SCeEMrljAk6PRfRpr1_DUHVoCGF18uGipMuQ820&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqU7Jl9VHwXhJM2V73x50W8rs_NH5leqEi-Msjuw2t5wWpgRqbo_dLRgSPLeaqCOYgRjwMudNjF0HpNMbgpZlW-CoEYtd0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghenvp4QCPtuxsm4hePq2oFPg6M2wtyzQzQ05YA-91Jb-Nn-FfV7muRNvAZbBrdQiCmo-Igtve6mQM-Ahs94T-BuTYv9U0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0JranAccs4XVzg9xxaKO_-XXSneq1E8pdbtOwC8DCb0FIUHGslGozP0kdwyMsRO_dDyYTnDfYbobnxo_6zjCwR5MvUfi0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAqcqZJhHGpDvVlTnmPqtDUItND-kzueMzRaFtIAB9BcJJ5zH8TAy8v5sL71rJ-vaQJtQfwNEjN9l2srUtCLxnhy6Vjsn0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabb6csvSe4p5tnwJldjFxYK3oSX7fS3SFeNDZIXhuuDBZp1ils4udrGTLff1gXyUej1SUGwtEl-XMFM0tBHrAtBuQSG9a0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKksAHk9rB7jLTyjrCk4hsx77sUzrz9hes4VWLiRPIWDLjJWlEFZn3xalmgvJ7C0x6DjREN3p-wlDA_Hm6lDhzQf-oUWG0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNYfadsFVJ4c3fgkDwpXkUvniCZvgc6oy3EYMbcSHCmu9rDatzWY74iKeavSAex5zWaM-Pr6TFuBKuejFpMFG7OR0fVJw0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUrCrsrT2XkndDnMb4Oz0z-CGRjafbiS9et7o8xi17O7uAJCtt7ulxQgcO5ARxRaH4HstKV4UO9Hg0Xtvaq1seSUziKj0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmgXz4M-TlX2IBBr5SAzhWzGL7Unm_bVwho5W9SNWjIxXzlGmX-GsFcHPfK40vYD4ZGg_haZgWsYjJAF3gcGfWHfiDvmO0&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA63XRuOKZZ9r88t5dCS0jeZkpbXkNeYMiCC6-VCo6GK2DbYoDL0KLP5B3CMQHnLwt-7cSX_LEeZsG6tRElc4821-E8t00&amp;t=ffffffffb56adc1f" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6845A73A" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="vo2kANPVhdAG7ftFn3WIhoWSPYDtAEQZ+L+pJGL4a0R4SNlurfxgRyn6XzeblBef10L3FP04CkhcBEhx/SDXDAt1ay6ySJH6LPzdJdY6V+B+aWGJnV/1VMhOhM4pzvqYygvLqsSiVFvAE2ighenVtHj5STMIIP4qbwKALKZWxofhWFi9pFJCfa2HmoCq6JZGNHpSuf/Da1mfo7vieUUnmY7FmNeeYE+DtIyO1+p34rxavqnxxYLhuhK9avilP+ifDMZWXw==" />
+
+
+        <input type="hidden" name="PropertySearchUScriptManager" id="PropertySearchUScriptManager" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("PropertySearchUScriptManager", "PropertySearchUScriptManager");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+
+
+        
+
+        <div id="content">
+            <div class="box">
+                <div style="background-color: #81ACDC;">
+                    <div class="sectionTitle">
+                                   <a href="http://fieldcards.leepa.org/CurrentCostCard/Folio/10614748" target="CostCard" title="A printable version of our property record card showing the current individual parts and pieces that are considered in the valuation of your parcel.">
+                                     <img style="vertical-align: middle;" src="/images/ReportWithNumbersInfo32.png" alt="Cost Card" />
+                                 </a>
+                         Property Data
+                    </div>
+
+                    <div class="sectionTitleSmaller">
+                        <span id="parcelLabel">STRAP: 08-44-24-C2-00004.0010&nbsp;&nbsp;Folio ID: 10614748</span>
+                        
+                        <span id="deletedLabel" class="lightRed"></span>
+                        
+                    </div>
+                    <div class="sectionSubTitle yellowLinks">
+                        <a id="TRVLLink" title="Tax Roll Value Letter unavailable for this parcel" class="aspNetDisabled" onclick="return false;" title="Tax Roll Value Letter unavailable for this parcel" target="_blank" style="text-decoration: none; cursor: not-allowed;">Tax Roll Value Letter </a>
+                            <select name="TaxRollLetterYears" id="TaxRollLetterYears" disabled="disabled" class="aspNetDisabled" style="pointer-events:none;  text-decoration:none;">
+
+</select>
+                    </div>
+
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+
+                <div id="TaxLetterDiv" class="alertBox" style="visibility: hidden; border-collapse: separate; margin-left: 5%; width: 400px;">
+                    <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibilityTaxLetter(event,'TaxLetterDiv');">
+                        <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+                    <div id="TaxLetterText" style="padding: 1px; padding-top: 30px; font-size: medium;"></div>
+                    <div style="text-align: center; visibility:hidden;Height:1px;">
+
+                        <input name="EmailAddress" type="text" id="EmailAddress" class="textField lg" />
+                        <br />
+                        <input type="submit" name="Button1" value="Continue" id="Button1" class="darkBlueButton" />
+                    </div>
+                    <div style="text-align: center; ">
+                        <input type="button" class="darkBlueButton" value="Continue" width="100px" onclick="toggleVisibilityTaxLetter(event,'');" style="color: white;">
+                    </div>
+                </div>
+
+
+                <div class="column columnLeft">
+                    <div id="CurrentTaxLetterDiv" class="alertBox" style="visibility: hidden; border-collapse: separate; margin-left: 5%; width: 400px;">
+                        <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibilityCurrentTaxLetter(event,'CurrentTaxLetterDiv');">
+                            <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+                        <div id="CurrentTaxLetterText" style="padding: 1px; padding-top: 30px; font-size: medium;"></div>
+                        <div style="text-align: center; visibility:hidden;Height:1px;">
+
+                            <input name="EmailAddressCurrent" type="text" id="EmailAddressCurrent" class="textField lg" />
+                            <br />
+                            <input type="submit" name="CurrentTaxLetterButton" value="Continue" id="CurrentTaxLetterButton" class="darkBlueButton" />
+                        </div>
+                        <div style="text-align: center; ">
+                            <input type="button" class="darkBlueButton" value="Continue" width="100px" onclick="toggleVisibilityCurrentTaxLetter(event,'');" style="color: white;">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="flex">
+                  
+                    <div id="ownershipTypeDiv" class="alertBox" style="visibility: hidden; border-collapse: separate; margin-left: 10%; margin-top: 3%; width: 70%; font-size: medium;">
+                        <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleOwnershipVisibility('ownershipTypeDiv');return false;">
+                            <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+                        <div id="Div1" style="padding: 20px; padding-top: 50px;">
+                            <p>
+                                The Owner of Record field displays the name of the person(s) or entity that will show on the tax roll as the "Owner" for value and tax bill purposes.  This office is required to determine legal and/or beneficial title for assessment and exemption purposes, 
+                                    therefore, the person or entity listed as "Owner" <span style="text-decoration: underline;">may not</span> be the fee simple title holder.   Please review all sales/transactions or conduct a title search for complete title and ownership information.
+                            </p>
+
+                            <p><span class="ownershipTypeDiv">Sole Owner:</span>Exclusive ownership interest in real estate, whether by an individual, corporation, or trust. </p>
+                            <p><span class="ownershipTypeDiv">Tenants by Entirety:</span>Ownership of real property held by a married couple, where each person owns the undivided whole of the property, coupled with the Right of Survivorship, so that upon the death of one, the survivor is entitled to the decedent's share.</p>
+                            <p><span class="ownershipTypeDiv">Joint Tenants:</span>Asset ownership for two or more persons in which each owner holds an equal share.  In the event of death, an owner's share is divided equally among the surviving co-owners.</p>
+                            <p><span class="ownershipTypeDiv">Tenants in Common:</span>Asset ownership for two or more persons in which each owner holds an individual, undivided share and may give away or sell that share without the permission of the other owner(s). In the event of death, an owner's share is passed to their heirs through probate.</p>
+                            <p><span class="ownershipTypeDiv">Life Estate:</span>An ownership interest in real estate giving a person, the “Life Tenant”, the right to enjoy benefits of ownership of the property during his or her lifetime, while designating to whom ownership of the property will revert to upon their death.</p>
+                            <p><span class="ownershipTypeDiv">Ninety Nine Year Lease:</span>An agreement in which the tenant is allowed to enjoy benefits of ownership, including applying for a homestead exemption on property taxes.</p>
+                            <p><span class="ownershipTypeDiv">Agreement for Deed:</span>An agreement in which the seller retains legal title to the property, while the buyer is allowed to enjoy other benefits of ownership, including applying for a homestead exemption on property taxes.</p>
+                        </div>
+                    </div>
+                    <div id="ownershipDiv" class="ownershipAlertBox noPrint" style="visibility: collapse; display: none;">
+                        <div class="column columnLeft">
+                            <div class="sectionSubTitle">
+                                <img src="/images/navigate_minus.png" alt="Show" title="Hide Complete Ownership Information" class="completeOwnershipButton" onclick="toggleVisibility('ownershipDiv');" />
+                                Owner Of Record  - Sole Owner
+                            </div>
+
+                            <p><ul class=&quot;genericList&quot;><li>WAVE GOODBYE LLC  </li></ul><br/></p>
+                        </div>
+                    </div>
+                    <div id="divDisplayParcelOwner" style="border-style: solid; border-color: #E8E8E8; border-width: thin;">
+                        <div class="column columnLeft">
+                            <div>
+                                <div class="sectionSubTitle"  >
+                                    Owner Of Record  - Sole Owner
+                                    
+                                            <br />
+                                            <div class="underline" style="font-size: smaller; vertical-align: top; ">
+                                                <a href="/AddressChange/AddressChangeForm.aspx/?folioid=10614748" target="_blank">[Change Mailing Address]</a>
+                                            </div>
+                                            <a class="ownerDivHelp" onclick="toggleVisibility('ownershipTypeDiv');return false;">
+                                                <img class="ownershipDivButton" src="/images/help2_32.png" alt="What's This - Get more information about types of ownership" />
+                                            </a>
+                                    
+                                    <a onclick="toggleVisibility('ownershipDiv');return false;" class="ownerDivPlusSign">
+                                        <img src="/images/navigate_plus.png" alt="Show Complete Ownership Information" title="Show Complete Ownership Information" class="completeOwnershipButton" />
+                                    </a>
+                                </div>
+                                <div class="textPanel">
+                                    <div>
+                                        WAVE GOODBYE LLC<br/>1421 GOLDEN CREST DR<br/>ESCONDIDO CA 92029<br/><br/><br/><br/><br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+
+                            <div id="addressHistoryDiv" class="ownershipAlertBox noPrint" style="visibility: collapse; display: none;">
+                                <div class="column columnLeft">
+                                    <div class="sectionSubTitle">
+                                        <img src="/images/navigate_minus.png" alt="Show" title="Hide Address History Information" class="completeOwnershipButton" onclick="toggleVisibility('addressHistoryDiv');return false;" />
+                                        Address History Information
+                                    </div>
+
+                                    
+                                            <table class="detailsTable">
+                                                <tr>
+                                                    <th>Street Number
+                                                    </th>
+                                                    <th>Street Name
+                                                    </th>
+                                                    <th>Unit    
+                                                    </th>
+                                                    <th>City
+                                                    </th>
+                                                    <th>Zip
+                                                    </th>
+                                                    <th>Maintenance Date
+                                                    </th>
+                                                </tr>
+                                        
+                                            <tr class="even">
+                                                <td>1165 </td>
+                                                <td>PONDELLA RD </td>
+                                                <td> </td>
+                                                <td>CAPE CORAL </td>
+                                                <td>33909     </td>
+                                                <td>3/14/2025 8:23:02 AM </td>
+                                            </tr>
+                                        
+                                            <tr class="odd">
+                                                <td>1109 </td>
+                                                <td>PONDELLA RD </td>
+                                                <td> </td>
+                                                <td>CAPE CORAL </td>
+                                                <td>33909     </td>
+                                                <td>7/19/2022 12:24:34 PM </td>
+                                            </tr>
+                                        
+                                            <tr class="even">
+                                                <td> </td>
+                                                <td>ACCESS UNDETERMINED </td>
+                                                <td> </td>
+                                                <td>CAPE CORAL </td>
+                                                <td>33909     </td>
+                                                <td>7/14/2022 2:37:43 PM </td>
+                                            </tr>
+                                        
+                                            <tr class="odd">
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td>          </td>
+                                                <td>7/13/2022 1:26:08 PM </td>
+                                            </tr>
+                                        
+                                            </table>
+                                        
+                                </div>
+                            </div>
+
+
+                            <div class="sectionSubTitle">
+                                <a onclick="toggleVisibility('addressHistoryDiv');" style="">
+                                    <img src="/images/navigate_plus.png" alt="Show Address History Information" title="Show Address History Information" class="completeOwnershipButton" /></a>
+                                Site Address<br />
+                                <span style="margin-left: 20px; font-size: smaller;">Site Address maintained by <a href="mailto:eaddressing@leegov.com?subject=Folio%20ID:%20%2010614748" style="text-decoration: underline;">E911 Program Addressing</a></span>
+                            </div>
+                            <div class="textPanel">1109 PONDELLA RD <br/>CAPE CORAL FL 33909<br/></div>
+                            
+                        </div>
+
+
+
+                        <div>
+
+                              <div id="legalDiv" class="alertBox" style="visibility: hidden; border-collapse: separate; margin-left: 20%; margin-top: 5%;">
+                                  <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibility('legalDiv');return false;">
+                                      <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+                                  <div id="Div2" style="padding: 20px; padding-top: 40px; font-size: medium;">
+                                      NOTE: This Property Description is a condensed version of the original legal description recorded in the public records, 
+                                          developed for internal use, and should not be used when conveying property or for any recorded document. The Property Appraiser assumes no responsibility for the use or interpretations of the Property Description. 
+                                  </div>
+                              </div>
+                            <div class="sectionSubTitle" style="padding-left: 6px; margin-top: 33px">
+                                Property Description<br />
+                                <span class="lightRed" style="margin-left: 20px; font-size: smaller;">Do not use for legal documents!</span>
+                                <a  style="float: right; margin-right: 1px; margin-top: -15px; cursor: pointer;" onclick="toggleVisibility('legalDiv');return false;">
+                                    <img class="questionIcon" src="/images/help2_32.png" alt="What's This - Get more information about our property description" /></a>
+                            </div>
+                            <div class="textPanel">
+                                N458FT OF W390FT OF E1080 FT OF NE 1/4+PART PONDELLA HTS UT 2 N 458FT OF W 5 FT LESS OR 3708/1429 + PARL IN NE 1/4 OF SEC 8 AS DESC IN OR 1528 PG 2124
+                                <br />
+                                
+                            </div>
+
+                            <div style="margin: 4px; font-size:90%;">
+
+                                
+
+                               </div>
+                                <div style="text-align:center;font-weight:bold;">Attributes and Location Details</div>
+                                 <table class="appraisalDetails autoAlternate">
+                            <tr>
+
+                               <tr>
+                                <th>
+                                    Total Bedrooms / Bathrooms
+                                    
+                                    <img height="16" src="/Images/information.png" style="vertical-align: bottom; visibility:hidden;" title="Due to mixed use buildings on this property, this count reflects the total number of bedrooms and the total number of bathrooms and fixtures for all the buildings.  See the Appraisal Details section below for a breakdown per building." alt="" />
+                                </th>
+                                <td>
+                                    0
+                                   
+                                </td>
+                            </tr>
+                                       
+                                      <tr>
+                                <th>1st Year Building on Tax Roll
+                                    <img class="informationIcon" src="/images/information.png" alt="1st year on the tax roll information"
+                                        title="The year that the structure first appears on the tax roll or the actual year built of the structure when the first tax roll year is not available." /></th>
+                                <td>
+                                    N/A
+                                </td>
+                            </tr>
+
+                                     <tr>
+                                <th>Historic Designation</th>
+                                <td>
+                                    No
+                                </td>
+                            </tr>
+                            </table>
+                            
+                            <br />
+                    
+                            <div class="overFlowDiv">
+                                
+                                    <table class="appraisalDetailsLocation autoAlternate">
+                                
+                                    
+                                            <tr>
+                                                <th>Township</th>
+                                                <th>Range</th>
+                                                <th>Section</th>
+                                                <th>Block</th>
+                                                <th>Lot</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">44</td>
+                                                <td style="text-align: left;">24E</td>
+                                                <td style="text-align: left;">08</td>
+                                                <td style="text-align: left;">00004</td>
+                                                <td style="text-align: left;">0010</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Municipality</th>
+                                                <th>Latitude</th>
+                                                <th colspan="3">
+                                                Longitude</>
+                                    
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">City of Cape Coral</td>
+                                                <td style="text-align: left;">26.66632</td>
+                                                <td colspan="3" style="text-align: left;">-81.9261</td>
+                                            </tr>
+                                            <tr>
+                                            </tr>
+                                            </table>
+
+                               
+                                     
+                           
+                                        
+                                
+                                
+                            </div>
+                                    
+
+                        </div>
+
+                        <br />
+
+                        <a href="https://maps.google.com/?z=19&t=k&q=loc:26.66632+-81.9261" target="_blank" title="View Parcel on Google Maps">View Parcel on Google Maps</a>
+                    </div>
+                </div>
+
+                
+                <div id="divDisplayParcelTaxMap" style="border-style: solid; border-color: #E8E8E8; border-width: thin;">
+                    <div id="AlertBoxComps" class="alertBox" style="visibility: hidden; border-collapse: separate; margin-left: 5%; width: 400px;">
+                        <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibilityComp(event,'AlertBoxComp');">
+                            <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+                        <div id="AlertBoxCompsText" style="padding: 10px; padding-top: 30px; font-size: medium;"></div>
+                    </div>
+                    <div class="column">
+                        <div class="sectionSubTitle" style="min-height: 18px;">
+                            
+                            <a href="http://gissvr.leepa.org/geoview2/?folioid=10614748" target="LeePaAerial">[ Tax Map Viewer ]</a>
+                            <a  onclick="toggleVisibilityComp(event,'<p>No comparable sales chart is currently available for this parcel.<br/><br/>Use the Comparable Sales control in the Appraisal Information layer found in the <a href=&quot;http://gissvr.leepa.org/geoview2/?folioid=10614748&quot; onclick=&quot;closeComp();&quot; target=&quot;LeePaAerial&quot; >GeoView Tax Map Viewer</a> to see sales in your area.</p>');return false;" target="CompView" style="cursor: pointer;">[ View Comparables ]</a>
+                            
+                        </div>
+                        <div class="centerAlign imgDisplay">
+                            
+                                 <img src="https://gissvr.leepa.org/TaxMapImage/TaxMapImage.aspx?FolioID=10614748&amp;w=387&amp;h=290" alt="Tax Map" />
+                             
+                        </div>
+                        <div class="sectionSubTitle" style="min-height: 18px;">
+                            
+                            <a href="http://gissvr.leepa.org/pictoipa/default.aspx?folioid=10614748" target="LeePaPic">[ Pictometry Aerial Viewer ]</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+
+
+
+
+
+
+
+
+                <div id="divDisplayParcelPhoto" style="vertical-align: bottom; border-style: solid; border-color: #E8E8E8; border-width: thin;">
+                    <div id="UploadPhotoAlertBox" class="alertBoxSmall" style="visibility: hidden; border-collapse: separate;">
+                        <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibilityPhotoMessage('UploadPhotoAlertBox');">
+                            <img style="vertical-align: middle;" src="/images/closeX.png" alt="What's This" /></a>
+                        <div id="Div4" style="padding: 20px; padding-top: 40px; font-size: medium;">
+                            Don't like the photo of your house? Want new photos on our website?<br />
+                            <br />
+                            Use our <a href="/Membership/Actions/AddPhotos/AddPhotoForm.aspx" target="_blank">Upload Photo</a> link to upload your own photos for display on our website.
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="sectionSubTitle">
+                            Image of Structure 
+                            <div style="float: right; padding-right: 1px; margin-top: -6px; height: 5px;">
+                                <a  onclick="toggleVisibilityPhotoMessage('UploadPhotoAlertBox');return false;">
+                                    <img class="questionIcon" src="/images/help2_32.png" alt="What's This" /></a>
+                            </div>
+                        </div>
+                        
+                        <div class="centerAlign imgDisplay" style="clear: right;">
+                            <a href="/dotnet/photo/photo.aspx?id=4302531&Width=640" target="_blank">
+                                <img src="/dotnet/photo/photo.aspx?id=4302531&&Height=290&Width=387" alt="Front Image" /></a>
+                        </div>
+                        <div class="sectionFooter">
+                            <a id="MovePhotoBackHyperLink" class="aspNetDisabled"><img src="/images/navigate_left_disabled.png" class="imgButton" title="Move to next photo" alt="Move Photo" /></a>
+                            Photo Date January of 2026
+                            <a id="MovePhotoForwardHyperLink" class="aspNetDisabled"><img src="/images/navigate_right_disabled.png" class="imgButton" title="Move to previous photo" alt="Move Photo" /></a>
+                            <span title="View other photos" style="margin-left: 5px;"><input id="ViewOtherPhotosCheckBox" type="checkbox" name="ViewOtherPhotosCheckBox" onclick="showAllPhotos();" /></span>
+
+                            <label for="ViewOtherPhotosCheckBox" style="position: relative; vertical-align: top; font-size: small;">View other photos</label>
+                            <div style="font-size: smaller;"></div>
+
+                        </div>
+                        <div class="LastInspectionDiv">Last Inspection Date: 07/13/2022</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="position: relative">
+            <div class="box">
+                <div class="sectionTitle">
+                    <a id="ValuesHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True#PropertyValueHistory"><img src="/images/navigate_minus.png" alt="Hide Property Values / Exemptions / TRIM Notices" /></a>
+                    <a id="ValuesHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True#PropertyValueHistory">Property Values / Exemptions / TRIM Notices</a>
+                       <div class="generatedOnExpander">
+                                Generated on 10/7/2026 9:18 AM
+                    </div>
+               </div>
+                <div id="PropertyValueHistory">
+                
+            <div id="noExemptionNotice" style="padding: 8px; font-weight: bold; text-align: center;">
+                No existing exemptions found for this property.
+            </div>
+        
+            
+            
+            
+            
+
+
+                <br />
+                    <hr />
+                    <br />
+                    <div style="text-align:center;">
+                        <div class="overFlowDiv">
+                    <div>
+	<table cellspacing="0" rules="all" border="1" id="valueGrid" width="100%">
+		<tr align="center" bgcolor="#E8E8E8">
+			<th scope="col"><font color="#365B78">
+                                    TRIM Notices
+                                </font></th><th scope="col"><font color="#365B78"><a href="javascript:__doPostBack(&#39;valueGrid&#39;,&#39;Sort$Tax Year&#39;)"><font color="#365B78">Tax Year</font></a></font></th><th scope="col"><font color="#365B78">Just</font></th><th scope="col"><font color="#365B78">Land</font></th><th scope="col"><font color="#365B78">Market Assessed</font></th><th scope="col"><font color="#365B78">Capped Assessed</font></th><th scope="col"><font color="#365B78">Exemptions</font></th><th scope="col"><font color="#365B78">Classified Use</font></th><th scope="col"><font color="#365B78">Taxable</font></th>
+		</tr><tr>
+			<td align="center" width="100">
+                                    <a target="_blank" href='/TrimDetail/WebTrim.aspx?FolioID=10614748&TaxYear=2026'>
+                                        2026 
+                                    </a>
+
+                                    <a target="_blank" href='/TaxRoll/TRIM/2026 TRIM Insert.pdf'>
+                                         / Additional Info 
+                                    </a>
+                                </td><td align="center" width="100">2026 (TRIM Value)</td><td align="right" width="100">1,632,456</td><td align="right" width="100">1,632,456</td><td align="right" width="100">1,632,456</td><td align="right" width="100">1,197,134</td><td align="right" width="100">0</td><td align="right" width="100">0</td><td align="right" width="100">1,197,134</td>
+		</tr><tr bgcolor="#E8E8E8">
+			<td align="center" width="100">
+                                    <a target="_blank" href='/TrimDetail/WebTrim.aspx?FolioID=10614748&TaxYear=2025'>
+                                        2025 
+                                    </a>
+
+                                    <a target="_blank" href='/TaxRoll/TRIM/2025 TRIM Insert.pdf'>
+                                         / Additional Info 
+                                    </a>
+                                </td><td align="center" width="100">2025 (Final Value)</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">0</td><td align="right" width="100">0</td><td align="right" width="100">1,088,304</td>
+		</tr><tr>
+			<td align="center" width="100">
+                                    <a target="_blank" href='/TrimDetail/WebTrim.aspx?FolioID=10614748&TaxYear=2024'>
+                                        2024 
+                                    </a>
+
+                                    <a target="_blank" href='/TaxRoll/TRIM/2024 TRIM Insert.pdf'>
+                                         / Additional Info 
+                                    </a>
+                                </td><td align="center" width="100">2024 (Final Value)</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">0</td><td align="right" width="100">0</td><td align="right" width="100">1,088,304</td>
+		</tr><tr bgcolor="#E8E8E8">
+			<td align="center" width="100">
+                                    <a target="_blank" href='/TrimDetail/WebTrim.aspx?FolioID=10614748&TaxYear=2023'>
+                                        2023 
+                                    </a>
+
+                                    <a target="_blank" href='/TaxRoll/TRIM/2023 TRIM Insert.pdf'>
+                                         / Additional Info 
+                                    </a>
+                                </td><td align="center" width="100">2023 (Final Value)</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">1,088,304</td><td align="right" width="100">0</td><td align="right" width="100">0</td><td align="right" width="100">1,088,304</td>
+		</tr><tr>
+			<td align="center" width="100">
+                                    <a target="_blank" href='/TrimDetail/WebTrim.aspx?FolioID=10614748&TaxYear=2022'>
+                                        2022 
+                                    </a>
+
+                                    <a target="_blank" href='/TaxRoll/TRIM/2022 TRIM Insert.pdf'>
+                                         / Additional Info 
+                                    </a>
+                                </td><td align="center" width="100">2022 (Final Value)</td><td align="right" width="100">476,133</td><td align="right" width="100">476,133</td><td align="right" width="100">476,133</td><td align="right" width="100">476,133</td><td align="right" width="100">0</td><td align="right" width="100">0</td><td align="right" width="100">476,133</td>
+		</tr>
+	</table>
+</div>
+                            </div>
+                    <br />
+
+                    <p>
+                        The <strong>Just</strong> value is the total parcel assessment (less any considerations
+                        for the cost of sale). This is the closest value to <em>Fair Market Value</em> we
+                        produce and is dated as of January 1st of the tax year in question (<a href="https://www.flrules.org/gateway/ruleNo.asp?id=12D-1.002" target="_blank">F.A.C. 12D-1.002</a>).
+                    </p>
+                    <p>
+                        The <strong>Land</strong> value is the portion of the total parcel assessment attributed to the land.
+                    </p>
+                    <p>
+                        The <strong>Market Assessed</strong> value is the total parcel assessment (less
+                    any considerations for the cost of sale) based upon the assessment standard. Most
+                    parcels are assessed based either upon the <em>Highest and Best Use</em> standard
+                    or the <em>Present Use</em> standard&nbsp;(<em><a href="http://www.flsenate.gov/statutes/index.cfm?App_mode=Display_Statute&Search_String=&URL=0100-0199/0193/Sections/0193.011.html"
+                        target="_blank">F.S. 193.011</a>)</em> . For <em>Agriculturally Classified</em>
+                        parcels (or parts thereof), only agricultural uses are considered in the assessment
+                    (<em><a href="http://www.flsenate.gov/statutes/index.cfm?App_mode=Display_Statute&Search_String=&URL=0100-0199/0193/Sections/0193.461.html"
+                        target="_blank">F.S. 193.461 (6) (a)</a></em>). The difference between the <em>Highest
+                            and Best Use/Present Use</em> and the <em>Agricultural Use</em> is often
+                    referred to as the <em>Agricultural Exemption</em>.<br />
+                        (i.e. Market Assessed = Just - Agricultural Exemption)
+                    </p>
+                    <p>
+                        The <strong>Capped Assessed</strong> value is the <em>Market Assessment</em>
+                        after any <em>Save Our Homes</em> or <em>10% Assessment Limitation</em> cap is applied. This assessment 
+                    cap is applied to all properties and limits year-to-year assessment increases to either the 
+                    <em>Consumer Price Index</em> or 3%, whichever is lower for Homestead properties OR 10% for non-Homestead properties.
+                    </p>
+                    <p>
+                        The <strong>Exemptions</strong> value is the total amount of all exemptions on the parcel.
+                    </p>
+                    <p>
+                        The <strong>Taxable</strong> value is the <em>Capped Assessment</em> after 
+                    exemptions (<em>Homestead, etc.</em>) are applied to it. This is
+                    the value that most taxing authorities use to calculate a parcel's taxes.<br />
+                        (i.e. Taxable = Capped Assessed - Exemptions)
+                    </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="box" id="PropertyDetailsCurrent">
+            <div class="sectionTitle">
+                <a id="AppraisalHyperLinkCurrent" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetails=True&amp;AuthDetails=True#PropertyDetailsCurrent"><img src="/images/navigate_minus.png" alt="Hide Current Property Details" /></a>
+                <a id="AppraisalHyperLinkCurrent2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetails=True&amp;AuthDetails=True#PropertyDetailsCurrent">Property Details (Current as of 10/6/2026)</a>
+                <a  style="margin-right: 1px; margin-top: -13px; cursor: pointer;" onclick="toggleVisibilityCurrentValues('currentValuesDiv');return false;">
+                    <img class="questionIcon" src="/images/help2_32.png" alt="What's This - Get more information about current values" /></a>
+                <div class="generatedOnExpander">
+                    Generated on 10/7/2026 9:18 AM
+                </div>
+            </div>
+            <div id="currentValuesDiv" class="alertBoxSmall" style="visibility: hidden; border-collapse: separate; ">
+    <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibilityCurrentValues('currentValuesDiv');return false;">
+        <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+    <div id="Div7" style="padding: 20px; padding-top: 30px; font-size: medium;">
+        NOTE: This information may be refreshed on a daily basis. 
+    </div>
+</div>
+
+            
+                    <div class="innerBox">
+                        <div class="sectionSubTitle">Land</div>
+                        <table class="appraisalAttributes">
+                            <tr>
+                                <th colspan="6" class="subheader">Land Tracts</th>
+                            </tr>
+                            <tr>
+                                <th>Use Code</th>
+                                <th>Use Code Description</th>
+                                <th>Number of Units</th>
+                                <th>Unit of Measure</th>
+                            </tr>
+                
+                    <tr>
+                        <td>4000</td>
+                        <td>Industrial, Vacant</td>
+                        <td>180905.00</td>
+                        <td>Square Feet</td>
+                    </tr>
+                
+                    <tr class="odd">
+                        <td>4000</td>
+                        <td>Industrial, Vacant</td>
+                        <td>91171.00</td>
+                        <td>Square Feet</td>
+                    </tr>
+                
+                    </table>                            
+                
+
+            
+
+            
+                
+
+
+
+
+            
+                
+
+            <div class="items">
+                
+                    
+            </div>
+
+
+            
+                
+
+        </div>
+        
+
+        <div class="box" id="PropertyDetails">
+            <div class="sectionTitle">
+                    <a id="AppraisalHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;AuthDetails=True#PropertyDetails"><img src="/images/navigate_minus.png" alt="Hide Property Details for the Selected Tax Year" /></a>
+                                       <a href="http://fieldcards.leepa.org/CostCard/Folio/10614748?TaxYear=2026" target="CostCard" title="A printable version of our property record card showing the individual parts and pieces that are considered in the valuation of your parcel for the selected Tax Roll year.">
+                        <img style="vertical-align: middle;" src="/images/ReportWithNumbersInfo32.png" alt="Cost Card" /></a>
+                    <a id="AppraisalHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;AuthDetails=True#PropertyDetails">Property Details (2026 TRIM)</a>
+                   <a style="vertical-align: top;" onclick="toggleVisibility('TaxRollDiv');return false;" >
+                        <img style="vertical-align: middle; cursor: pointer;" src="/images/SpreadsheetNumbers32.png" alt="What's This" title="Certified Roll Data" /></a>
+                <div class="generatedOnExpander">
+                    Generated on 10/7/2026 9:18 AM
+                </div>
+            </div>
+            <div id="TaxRollDiv" class="taxRollAlertBox" style="visibility: collapse; display: none;">
+                <div>
+                    <div class="sectionSubTitle">
+                        <img src="/images/navigate_minus.png" alt="Show" class="completeOwnershipButton" onclick="toggleVisibility('TaxRollDiv');" title="Close" />
+                        Certified Roll Data
+                    </div>
+                    <div class="certifiedRollData">
+                        Certified Roll Data not found for this parcel.
+                    </div>
+                </div>
+            </div>
+
+            
+                    <div class="innerBox">
+                        <div class="sectionSubTitle">Land</div>
+                        <table class="appraisalAttributes">
+                            <tr>
+                                <th colspan="6" class="subheader">Land Tracts</th>
+                            </tr>
+                            <tr>
+                                <th>Use Code</th>
+                                <th>Use Code Description</th>
+                                <th>Number of Units</th>
+                                <th>Unit of Measure</th>
+                            </tr>
+                
+                    <tr>
+                        <td>4000</td>
+                        <td>Industrial, Vacant</td>
+                        <td>180905.00</td>
+                        <td>Square Feet</td>
+                    </tr>
+                
+                    <tr class="odd">
+                        <td>4000</td>
+                        <td>Industrial, Vacant</td>
+                        <td>91171.00</td>
+                        <td>Square Feet</td>
+                    </tr>
+                
+                    </table>                            
+                    
+                
+
+            
+
+            
+                
+
+            
+                
+
+
+            <div class="items">
+                
+                    
+            </div>
+
+
+            
+                
+        </div>
+
+
+
+            <div class="box" id="TaxAuthority">
+                <div class="sectionTitle">
+                    <a id="TaxAuthorityHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True#TaxAuthority"><img src="/images/navigate_minus.png" alt="Hide Taxing Authorities" /></a>
+                    <a id="TaxAuthorityHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True#TaxAuthority">Taxing Authorities</a>
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+                <div class="overFlowDiv">
+                
+                        <div class="sectionSubTitle">CITY OF CAPE CORAL / 057</div>
+                        <table class="detailsTable">
+                            <tr>
+                                <th>Name / Code</th>
+                                <th>Category</th>
+                                <th>Mailing Address</th>
+                            </tr>
+                    
+                        <tr class="even">
+                            <td>LEE CO GENERAL REVENUE / 044</td>
+                            <td>County</td>
+                            <td>
+                                <pre>LEE COUNTY
+PO BOX 398
+FORT MYERS FL 33902-0398</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>LEE CO ALL HAZARDS PROTECTION DIST / 101</td>
+                            <td>Dependent District</td>
+                            <td>
+                                <pre>LEE COUNTY
+PO BOX 398
+FORT MYERS FL 33902-0398</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>LEE COUNTY LIBRARY DIST / 052</td>
+                            <td>Dependent District</td>
+                            <td>
+                                <pre>LEE COUNTY
+PO BOX 398
+FORT MYERS FL 33902-0398</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>LEE CO HYACINTH CONTROL DIST / 051</td>
+                            <td>Independent District</td>
+                            <td>
+                                <pre>LEE CO HYACINTH CONTROL DIST
+15191 HOMESTEAD RD
+LEHIGH ACRES FL 33971</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>LEE CO MOSQUITO CONTROL DIST / 053</td>
+                            <td>Independent District</td>
+                            <td>
+                                <pre>LEE CO MOSQUITO CONTROL DIST
+15191 HOMESTEAD RD
+LEHIGH ACRES FL 33971</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>WEST COAST INLAND NAVIGATION DIST / 098</td>
+                            <td>Independent District</td>
+                            <td>
+                                <pre>WEST COAST INLAND NAVIGATION DIST
+200 MIAMI AVE E
+VENICE FL 34285-2408</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL / 014</td>
+                            <td>Municipal</td>
+                            <td>
+                                <pre>CITY OF CAPE CORAL
+FINANCIAL SERVICES DIRECTOR
+PO BOX 150027
+CAPE CORAL FL  33915-0027</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>PUBLIC SCHOOL - BY LOCAL BOARD / 012</td>
+                            <td>Public Schools</td>
+                            <td>
+                                <pre>LEE COUNTY SCHOOL BOARD
+BUDGET DEPARTMENT
+2855 COLONIAL BLVD
+FORT MYERS FL 33966</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>PUBLIC SCHOOL - BY STATE LAW / 013</td>
+                            <td>Public Schools</td>
+                            <td>
+                                <pre>LEE COUNTY SCHOOL BOARD
+BUDGET DEPARTMENT
+2855 COLONIAL BLVD
+FORT MYERS FL 33966</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL ALLEY IMP / 239</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL FIRE ASMT / 312</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre>CITY OF CAPE CORAL
+FINANCIAL SERVICES DIRECTOR
+PO BOX 150027
+CAPE CORAL FL  33915-0027</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL LOT MOWING DIST 1 / 311</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL MAINTENANCE OF MEDIANS & RIGHT-OF-WAYS / 237</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL NON AD / 411</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL PARKING LOT IMP / 240</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL PEPPER TREE REMOVAL  / 238</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL PINE ISLAND RD IRRIGATION IMP AREA / 175</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL PINE ISLAND RD WASTEWATER IMP AREA / 174</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL PINE ISLAND RD WATER IMP AREA / 173</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL SEAWALL IMP PH VII B / 243</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL SIDEWALK IMP / 242</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL STORMWATER ANNUAL / 183</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL STORMWATER DELINQUENT / 184</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL STREETLIGHTING IMP / 306</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>CITY OF CAPE CORAL TARGET GREEN WASTEWATER  / 235</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL WATERWAY LOCK IMP / 301</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>FLORIDA GREEN FINANCE AUTHORITY / 358</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre>SPECIAL DISTRICT SERVICES INC
+2501A BURNS RD
+PALM BEACH GARDENS FL 33410</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>FLORIDA PACE FUNDING AGENCY / 343</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>GREEN CORRIDOR PACE  / 363</td>
+                            <td>Special District</td>
+                            <td>
+                                <pre></pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>CITY OF CAPE CORAL PARKS VOTED DEBT SVC / 382</td>
+                            <td>Voter Approved</td>
+                            <td>
+                                <pre>CITY OF CAPE CORAL
+FINANCIAL SERVICES DIRECTOR
+PO BOX 150027
+CAPE CORAL FL  33915-0027</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>SFWMD-DISTRICT-WIDE / 110</td>
+                            <td>Water District</td>
+                            <td>
+                                <pre>SFWMD
+3301 GUN CLUB RD
+WEST PALM BEACH FL 33406</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="odd">
+                            <td>SFWMD-EVERGLADES CONSTRUCTION PROJECT / 084</td>
+                            <td>Water District</td>
+                            <td>
+                                <pre>SFWMD
+3301 GUN CLUB RD
+WEST PALM BEACH FL 33406</pre>
+                            </td>
+                        </tr>
+                    
+                        <tr class="even">
+                            <td>SFWMD-OKEECHOBEE BASIN / 308</td>
+                            <td>Water District</td>
+                            <td>
+                                <pre>SFWMD
+3301 GUN CLUB RD
+WEST PALM BEACH FL 33406</pre>
+                            </td>
+                        </tr>
+                    
+                        </table>
+                    
+                    </div>
+            </div>
+
+
+            <div class="box" id="EIDetails" style="visibility: hidden; display: none;">
+                <div class="sectionTitle">
+                    <a id="EIHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;EIDetails=True#EIDetails"><img src="/images/navigate_plus.png" alt="Show E & I Information" /></a>
+                    <a id="EIHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;EIDetails=True#EIDetails">Adjustments to the Roll (E & I)</a>
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+                <div class="overFlowDiv">
+                
+                    </div>
+            </div>
+
+            <div class="box" id="SalesDetails">
+                <div class="sectionTitle">
+                    <a id="SalesHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;SalesDetails=True#SalesDetails"><img src="/images/navigate_plus.png" alt="Show Sale Information" /></a>
+                    <a id="SalesHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;SalesDetails=True#SalesDetails">Sales / Transactions</a>
+                    <a style="cursor: pointer;" href="\Deed\Deeds.aspx" title="Learn more about deeds" target="_blank">
+                        <img class="informationIcon" src="/images/information.png" alt="What's This" /></a>
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+
+                 <div id="VerifierCompleteBox" class="alertBox" style="visibility: hidden; border-collapse: separate; margin-left: 5%; width: 400px;">
+     <a style="float: right; margin-top: 2px; padding-top: -30px;" onclick="toggleVisibilityVerifier(event,'VerifierCompleteBox');">
+         <img style="vertical-align: middle;" src="/images/closeX.png" alt="Close" /></a>
+     <div id="VerifierCompleteText" style="padding: 10px; padding-top: 30px; font-size: medium;">The Questionnaire for this sale has already been completed.</div>
+ </div>
+                <div class="overFlowDiv">
+                     
+                </div>
+                <div id="AlertBoxInternalCode" class="alertBoxSmall" style="visibility: hidden; border-collapse: separate; margin-left: 10%;">
+                    <a style="float: right; margin-top: 2px; padding-top: -20px;" onclick="toggleVisibilityInternalCode(event, 'AlertBoxInternalCode');">
+                        <img style="vertical-align: middle;" src="/images/closeX.png" alt="What's This" /></a>
+                    <div id="Div5" style="padding: 20px; padding-top: 20px; font-size: medium;">
+                        <span class="bold">Real Property Transfer Code</span>
+                        <br />
+                        <br />
+                        An internal code was used for this document.
+                    </div>
+                    
+                </div>
+
+                <div id="AlertBoxHiddenFromWeb" class="alertBoxSmall" style="visibility: hidden; border-collapse: separate; margin-left: 10%;">
+                    <a style="float: right; margin-top: 2px; padding-top: -20px;" onclick="toggleVisibilityHiddenFromWeb(event, 'AlertBoxHiddenFromWeb');">
+                        <img style="vertical-align: middle;" src="/images/closeX.png" alt="What's This" /></a>
+                    <div id="Div6" style="padding: 20px; padding-top: 20px; font-size: medium;">
+                        <span class="bold">Instrument Not Viewable</span>
+                        <br />
+                        <br />
+                        Images for this record are not viewable by the general public.
+                                <br />
+                        <br />
+                        Visit the Clerk of Courts web site at <a href="https:\\www.leeclerk.org" target="_blank">www.leeclerk.org</a> for more information.
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" id="PermitDetails" >
+                <div class="sectionTitle">
+                    <a id="PermitHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;PermitDetails=True#PermitDetails"><img src="/images/navigate_plus.png" alt="Show Permit Information" /></a>
+                    <a id="PermitHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;PermitDetails=True#PermitDetails">Building / Construction Permit Data</a>
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="box" id="NumberingDetails" style="">
+                <div class="sectionTitle">
+                    <a id="NumberingHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;RenumberDetails=True#NumberingDetails"><img src="/images/navigate_plus.png" alt="Show Parcel Renumber Information" /></a>
+                    <a id="NumberingHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;RenumberDetails=True#NumberingDetails">Parcel Numbering History</a>
+                    <a style="cursor: pointer;" href="\Parcel\ParcelSplitOrCombination.aspx" title="Learn more about why a parcel might be renumbered" target="_blank">
+                        <img class="informationIcon" src="/images/information.png" alt="What's This" /></a>
+                    <br />
+                    <span class="sectionSubTitleSmallerToRight" style="visibility: hidden; display: none;"></span>
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+                <div class="overFlowDiv"> 
+                  
+                </div>
+            </div>
+
+
+
+            <div class="box" id="RPDetails" style="visibility: hidden; display: none;">
+                <div class="sectionTitle">
+                    <a id="RPHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;RPDetails=True#RPDetails"><img src="/images/navigate_plus.png" alt="Show RP Information" /></a>
+                    <a id="RPHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;RPDetails=True#RPDetails">Real Property Tag Information</a>
+                    <div class="generatedOnExpander">
+                        Generated on 10/7/2026 9:18 AM
+                    </div>
+                </div>
+
+                <div class="overFlowDiv">
+                    
+                </div>
+            </div>
+       
+
+        <div id="GarbageDetails" class="box">
+            <div class="sectionTitle">
+                <a id="GarbageHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;GarbageDetails=True#GarbageDetails"><img src="/images/navigate_plus.png" alt="Show Garbage Details" /></a>
+                <a id="GarbageHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;GarbageDetails=True#GarbageDetails">Solid Waste (Garbage) Roll Data</a>
+                <div class="generatedOnExpander">
+                    Generated on 10/7/2026 9:18 AM
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="box" id="ElevationDetails">
+            <div class="sectionTitle">
+                <a id="ElevationHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;ElevationDetails=True#ElevationDetails"><img src="/images/navigate_plus.png" alt="Show Elevation Details" /></a>
+                <a id="ElevationHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;ElevationDetails=True#ElevationDetails">Flood and Storm Information</a>
+                <div class="generatedOnExpander">
+                    Generated on 10/7/2026 9:18 AM
+                </div>
+            </div>
+            
+
+            
+        </div>
+
+
+        <div class="box" id="SubsurfaceDetails">
+            <div class="sectionTitle">
+                <a id="SubsurfaceHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;SubsurfaceDetails=True#SubsurfaceDetails"><img src="/images/navigate_plus.png" alt="Show Subsurface Rights" /></a>
+                <a id="SubsurfaceHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;SubsurfaceDetails=True#SubsurfaceDetails">Subsurface Rights</a>
+                <div class="generatedOnExpander">
+                    Generated on 10/7/2026 9:18 AM
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="box" id="AltAddressDetails" style="visibility: hidden; display: none;">
+            <div class="sectionTitle">
+                <a id="AlternateAddressHyperLink" class="showHideLink" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;AltAddressDetails=True#AltAddressDetails"><img src="/images/navigate_plus.png" alt="Show Alternate Address Information" /></a>
+                <a id="AlternateAddressHyperLink2" class="nonLinkLinks" href="/Display/DisplayParcel.aspx?FolioID=10614748&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True&amp;AltAddressDetails=True#AltAddressDetails">Alternate Address Information</a>
+                <div class="generatedOnExpander">
+                    Generated on 10/7/2026 9:18 AM
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+        <!--FIXME </div>-->
+
+
+        </div>    
+</div>    
+
+   
+   
+       
+    <div style="position: absolute; left: 90%; top: 100%">
+        <div style="position: absolute; left: -50%; top: -50%;">
+            <input type="hidden" name="hidForModel" id="hidForModel" />
+
+            
+
+            <div id="pnlIssues" class="modalPopup" style="display: none;">
+	
+                <p style="margin: 20px;">
+                    <span id="lblWarning"></span>
+                </p>
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <input type="button" name="btnContinue" value="Continue" onclick="javascript:__doPostBack(&#39;btnContinue&#39;,&#39;&#39;)" id="btnContinue" class="darkBlueButton" />
+                    <input type="button" style="width: 100px;" class="darkBlueButton" value="Cancel" onclick="javascript: document.location = 'https://www.leepa.org';" />
+                </div>
+            
+</div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","dynamicServicePath":"/Display/DisplayParcel.aspx","id":"WarningModal","popupControlID":"pnlIssues"}, null, null, $get("hidForModel"));
+});
+//]]>
+</script>
+</form>
+
+    <div class="generatedOn">
+        Generated on 10/7/2026 9:18 AM
+    </div>
+
+    <div id="footer">
+        <div id="bottomOfPage" style="text-align: center;">
+
+            <a id="FooterLowerParcelLink" class="footLinks" href="/Display/DisplayParcel.aspx?FolioID=10153026&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True">Previous Parcel Number</a>
+            <a id="FooterHigherParcelLink" class="footLinks" href="/Display/DisplayParcel.aspx?FolioID=10158782&amp;historyDetails=True&amp;PropertyDetailsCurrent=True&amp;PropertyDetails=True&amp;AuthDetails=True">Next Parcel Number</a>
+            <a class="footLinks" href="javascript:newQuery();">New Query</a>
+            <a class="footLinks" href="javascript:goResults();">Search Results</a>
+            <a class="footLinks" href="javascript:goHome();">Home</a>
+        </div>
+
+    </div>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFZRJ54F6F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SFZRJ54F6F');
+    </script>
+
+
+    <script type="text/javascript">!function () { var b = function () { window.__AudioEyeSiteHash = "2d7dda9b78d2021b05ef6305ac2d985c"; var a = document.createElement("script"); a.src = "https://wsmcdn.audioeye.com/aem.js"; a.type = "text/javascript"; a.setAttribute("async", ""); document.getElementsByTagName("body")[0].appendChild(a) }; "complete" !== document.readyState ? window.addEventListener ? window.addEventListener("load", b) : window.attachEvent && window.attachEvent("onload", b) : b() }();</script>
+
+</body>
+
+</html>

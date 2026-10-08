@@ -1,0 +1,1051 @@
+
+
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Highlands County - Property Detail
+</title><script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+<link href="/Content/css?v=Rr7aK0sHg5isr9kbLDhZZip823bgYAuLC3znWXOIn_s1" rel="stylesheet"/>
+<link id="myFavicon" href="Highlands-favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <style>
+            :root {
+                --navbar-bg-color: #0854a4 !important;
+                --navbar-highlight-color: #66ccff !important;
+                --dropdown-menu-highlight-color: #3399ff !important;
+            }
+            
+            /* Override dropdown open state background with rgba version of top menu color */
+            .navbar-inverse .navbar-nav .dropdown.open > a,
+            .navbar-inverse .navbar-nav .dropdown.open > a:hover,
+            .navbar-inverse .navbar-nav .dropdown.open > a:focus {
+                background-color: rgba(102, 204, 255, 0.15) !important;
+            }
+            
+            /* Additional overrides to ensure colors apply */
+            .navbar-inverse {
+                background-color: #0854a4 !important;
+            }
+            
+            .navbar-inverse .navbar-nav > li > a:hover,
+            .navbar-inverse .navbar-nav > li > a:focus,
+            .navbar-inverse .navbar-nav .dropdown-toggle:hover,
+            .navbar-inverse .navbar-nav .dropdown-toggle:focus,
+            .navbar-inverse .navbar-nav.navbar-right > li > a:hover,
+            .navbar-inverse .navbar-nav.navbar-right > li > a:focus {
+                color: #66ccff !important;
+            }
+            
+            .navbar-inverse .dropdown-menu > li > a:hover,
+            .navbar-inverse .dropdown-menu > li > a:focus {
+                background-color: #3399ff !important;
+                color: #ffffff !important;
+            }
+        </style>
+            
+
+    <style>
+        /* ── CSS Variables for Dynamic Theming ────────────────────── */
+        :root {
+            --navbar-bg-color: #222222;
+            --navbar-highlight-color: #ffbf47;
+            --dropdown-menu-highlight-color: #005fa3;
+        }
+        /* ── Skip Navigation ──────────────────────────────────────── */
+        .skip-nav {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: #005fa3;
+            color: #ffffff;
+            padding: 10px 20px;
+            z-index: 10000;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0 0 4px 0;
+            text-decoration: none;
+            transition: top 0.15s ease;
+        }
+
+            .skip-nav:focus {
+                top: 0;
+                outline: 3px solid var(--navbar-highlight-color);
+                outline-offset: 2px;
+            }
+
+        /* ── Focus Visible (global) ───────────────────────────────── */
+        /* Ensure every focusable element has a visible focus ring     */
+        :focus-visible {
+            outline: 3px solid var(--navbar-highlight-color);
+            outline-offset: 2px;
+        }
+        /* Remove outline for mouse users while keeping it for keyboard */
+        :focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* ── Navbar ───────────────────────────────────────────────── */
+        .navbar-inverse {
+            background-color: var(--navbar-bg-color) !important; /* Dynamic via CSS variable */
+            border-color: #080808;
+        }
+
+            /* Nav links – white on #222 = 14.75:1 (AAA) */
+            .navbar-inverse .navbar-nav > li > a,
+            .navbar-inverse .navbar-nav > li > a:visited {
+                color: #ffffff;
+            }
+
+                .navbar-inverse .navbar-nav > li > a:hover,
+                .navbar-inverse .navbar-nav > li > a:focus {
+                    color: var(--navbar-highlight-color) !important; /* Dynamic highlight color */
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+
+            /* Dropdown toggle */
+            .navbar-inverse .navbar-nav .dropdown-toggle {
+                color: #ffffff;
+            }
+
+                .navbar-inverse .navbar-nav .dropdown-toggle:hover,
+                .navbar-inverse .navbar-nav .dropdown-toggle:focus {
+                    color: var(--navbar-highlight-color) !important; /* Dynamic highlight color */
+                    text-decoration: underline;
+                }
+
+            /* Dropdown menu – meet 4.5:1 contrast on white background */
+            .navbar-inverse .dropdown-menu > li > a {
+                color: #1a1a1a;
+            }
+
+                .navbar-inverse .dropdown-menu > li > a:hover,
+                .navbar-inverse .dropdown-menu > li > a:focus {
+                    background-color: var(--dropdown-menu-highlight-color) !important;
+                    color: #ffffff !important;
+                    text-decoration: underline;
+                }
+
+            /* Right-side auth links */
+            .navbar-inverse .navbar-nav.navbar-right > li > a,
+            .navbar-inverse .navbar-nav.navbar-right > li > a:visited {
+                color: #ffffff;
+            }
+
+                .navbar-inverse .navbar-nav.navbar-right > li > a:hover,
+                .navbar-inverse .navbar-nav.navbar-right > li > a:focus {
+                    color: var(--navbar-highlight-color) !important; /* Dynamic highlight color */
+                    text-decoration: underline;
+                }
+
+            /* When dropdown is open (active state) */
+            .navbar-inverse .navbar-nav .dropdown.open > a,
+            .navbar-inverse .navbar-nav .dropdown.open > a:hover,
+            .navbar-inverse .navbar-nav .dropdown.open > a:focus {
+                background-color: rgba(255, 191, 71, 0.15) !important; /* Will be overridden dynamically */
+                color: var(--navbar-highlight-color) !important;
+            }
+
+            /* LoginStatus logout link */
+            .navbar-inverse .navbar-nav .navbar-right .aspNetLink,
+            .navbar-inverse .navbar-nav .navbar-right a {
+                color: #ffffff;
+            }
+
+        /* ── Logo ─────────────────────────────────────────────────── */
+        .logo {
+            height: 70px;       /* explicit logo height */
+            width: auto;
+        }
+
+        .navbar-brand {
+            padding: 0 15px;            /* remove top/bottom padding */
+            display: flex;
+            align-items: center;        /* vertically centre the logo */
+            height: 70px;               /* match the logo height exactly */
+        }
+
+        /* Force the navbar itself to be at least as tall as the logo */
+        .navbar {
+            min-height: 70px;
+        }
+
+        .navbar .container {
+            min-height: 70px;
+        }
+
+        /* ── Body padding for fixed navbar ───────────────────────── */
+        body {
+            padding-top: 70px; /* matches navbar min-height */
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 60px;
+            }
+        }
+
+        /* ── Mobile dropdown adjustments ─────────────────────────── */
+        @media (max-width: 767px) {
+            .navbar-nav .dropdown-menu {
+                position: static;
+                float: none;
+                width: auto;
+                margin-top: 0;
+                background-color: transparent;
+                border: 0;
+                box-shadow: none;
+            }
+
+                .navbar-nav .dropdown-menu > li > a {
+                    padding-left: 30px;
+                    color: #ffffff; /* white text on dark collapsed menu */
+                }
+
+                    .navbar-nav .dropdown-menu > li > a:hover,
+                    .navbar-nav .dropdown-menu > li > a:focus {
+                        color: var(--navbar-highlight-color) !important;
+                        background-color: transparent;
+                    }
+
+            .navbar-nav a br {
+                display: none;
+            }
+
+            .navbar-nav a {
+                white-space: normal !important;
+            }
+
+            .body-content {
+                padding: 15px;
+            }
+        }
+
+        /* ── Footer ───────────────────────────────────────────────── */
+        footer {
+            text-align: center;
+        }
+
+            footer img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            footer p {
+                word-wrap: break-word;
+            }
+
+        /* ── Keyboard-controlled dropdown support ─────────────────── */
+        /* When JS opens dropdown via keyboard, ensure menu is visible */
+        .dropdown.open .dropdown-menu {
+            display: block;
+        }
+    </style>
+<link href="/WebResource.axd?d=DSgCKnaJlQjfnXvLWZApAOjYy88bHUayWAit8-yYb01tcj_SfGp3tmd1Pd--e5T6p1PU56OgenLAe0qFXfXWsWZTgisOG1LPwOJdaRhAFMhSHj6fyPRJ8SxAYx4-PAwITXFVR7GY2TWqsQD49bAN6A2&amp;t=637037912498632462" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3zrHcMYk1HNAcba4O1nBi-GTXvmTzNgnA1zHeo_ii4Qews2Aa3XbPb9e-0hai0IuxnOK0WR1fiCSpUumSG-9b8-HuccDUjApkl6eF0zSqAhHVemIsfSRGzRDnU9kPKv-pkJYb3nJUPI909ELOrA5jd41&amp;t=637037912498632462" type="text/css" rel="stylesheet" /></head>
+<body>
+    
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <form method="post" action="./PropertyDetail?p=C013329-04000000260" id="ctl01">
+<input type="hidden" name="MainContent_PropertyContainer_ClientState" id="MainContent_PropertyContainer_ClientState" value="{&quot;ActiveTabIndex&quot;:0,&quot;TabEnabledState&quot;:[true,true,true,true,true,true,true,true,true,true],&quot;TabWasLoadedOnceState&quot;:[false,false,false,false,false,false,false,false,false,false]}" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="1eGhSxmnB2dsfjFskW7n6C715mcZ7ts0gRyumqvM5wpB8j25xoM6mb7ARFA+8gOJXxvTS/7IwsaHgjbspqddHjVV0UhYkolOZF1TLgvZ4putSBh7fANU7N8SAcuf/VJpWtrDpsNu2hHmQRjtT5QuPopqb4NPjtkH0QffE+QK/7QD+6PUu3KqAOGiHVhi2T9cxIVWJWZoRq6DOb9z0c3z6vetM+V+OAcqwgYWqMwPQWuAERebVDorO/ae46jyodUC9AqwNoE/qRHTxnY5R3OtZmxSTsSFjhRs68w1ZOl3HyM0J4/FT5V9NqHT77C5wQ2ro3iPK7r4q2NiSWXTlCrpO+PEstqpcT+uutsH26VZ8FisChTx/kGmnW/4Sj4Q2XvUSp7ZZSPzUXyzHLJUmGASKS5/EAQNb5aXHF86ei86XRswo+8hkkYa6TD403p4xTAoVZwiCpP3OBz1CnHN2K0rIG8nLhg8UkBJF0/y/8vud50eZojPtQ8dmp7dOlV8sho4suBF7pYrLQvAjWYCOPK1pqRSB3Uf55LJSlh8X6EPBLYvYEsQbbt6oBjs/QDkwPXXU3FRLdW+PUwreQ0v2xfLGnD5ZXuAIkg1wTxp0j6017Iwpz3yq2N5Los88ZmvT6aMFhfhtOEcNepmZ8iLWafNiddhzSceNgQ2vuqq0wImJJhkq0DeWl6b5mhidPFOWNE1q2OISTjNKmCTHZdpTxtYmJTWLfUsM+7UE7HXsKsdSHqw8/EBSgAXo18Rf+EzuKRaNQpDiZVdwlOkPQ6eHnbLc4/YCYd9GNKeKefCUZK/LwA6P90hwxEtRuAk/deGsMu7TCeg31IMDBrFJzKJQ+GmXnczHMujj2C4Ome/ZuHJvNWPG3n41s+mtt93xjIFXrxy3c/MldFuuw5XEkTDQO475Tsx+vWJCB0KaNUmqB7JZngGr8PANfpMjAlh++62tWXR4eaP5XodjC5zBh/TAaRpSzGZxuZpk0dtnWAHm4YF6gS4/F3K4wBsIVCQrNuukIh9nz7eRqCQuptFro5gJzz5BaBsszTEg2GI2te5VWOSy7nhrvsitMnWMySFGTq5wXmdviwOtGEN+PoFD4CHrL1G9b1MErl6xFsMPA8NdTy0zPFodA9mYNpUZt+GDdkDetq8jQmPQXM3RyI+5TmNgaWF1aVR/fYC1/BJ4Uk6U2DLvCh/yJff3e+tI1Y339ePSBQflCtBg0mJkd1s/xp91/0SSu6ILfhH74UXRrkriBEyTR747AC4oiDI77ySBC/VzKZ2JIQosWA4zgk5KCIZs8y6CRgkgDjcwtCJCQZWBDUUqcikjb8IPV2ea8saAwNTChx61KC6CA7Ylneamm5inS4FJ1JFxRRDRvVPfg4o//HddYiAKsyeaM4OcrYL29TO6pWdBMkhniCMkuli5kK6mdQjjo8T1q9qcKH+tS/73uxt36wyClcaDJ3ZVjwLuaCC6BkyEp3wzexe/qQgwAJHLZ8XVSz8gusG95GXTsRAw1ryHSdo+4AARyvyUBXGPv6ARFM4lZzyMaQniVfwtB3iuvG+16jkIBnIQCvX0dDbcLCxsKVmIaDDLbLGVGDT+x0L2YmnzzmkQKy11isqR9GsM7LT/6TWNJ1VaeuSlij50DcSz7nGxfqy3B6TVdkJY3KrUa2Mvc4DTxU1bgLpwLM5mhzBo6jDGA3Ej7+BmMgWt8F+7Aoz5572fAvE1w+yI6GgWPTfbhXkR3bRiJIhPaAfShE8OHOTQaUnV51gGz0jAZszzvHqiMQTp9McsbdPUJaYDE8pUEhoryjFlWiPXzuCSJH154csbZpD1xUUarU6Afma/2cKJnsp8bshKKicmBvEoNfqwlv5yMhOrMcHLaECWm7FLoJuPxd8XsdLVMjQ3yMnqtBRUL4i0el6nTVivbiPCLkYARAgVtvZW+UI5ZS4xmD6DBHkQigizfS/ZizPYOdS7yQjOusCaSi4l5yaqF7eHCXIT6mEk5afhgiU2kYNFHSZ9csxsY2ltgKtd6xelfVQmtDuI1xUdOv3lZ8G3S8T50CeTTxK73V7tZEZmFMBz1nsTjxTOAgeoIBsoNWKJbwHyQmO2kTlOwARaz4AXXyiGhI5i4UbIwG8dZHTPrSokTWnvLTig+ft0MYxVKvRHdN3tVW+HaupgZTQ12rjvOrkVM9eUZBp1nCoKrnJbGkMC0A/ZVVlhjPACatN565mlrUXqK0m7V+vDLAXcdeVlvrPc3XEVOOVtVyW6IjgpoYZLH/g9CFXfz+E/soBOSJZjNz64fxTN/Wzs38TS1TNMbEgI+XnG9ChyXUPgxT42gwappckDIyjYIL3Pcdv6Fsm7z+p0GVEvfK1LuRz4fxFxAY4d602G6yW0aeqVfOwvfyjSUSWyxmewCtWOhiu2xz74Fb/l83E2IQrkTZisftLX+jtOdYNNHl/meQEzsZMrfEYWjyvhQWIroUC72WqO/muhBSckqfj2I2l/HOp6kAKY7gTnMf/OpeyoE6Bu/5/e3CuqUnR/wPxeyOO1pEdWQB8P7hEcpKKcXZxC4xBCVY/D7Z9nFHIqyq2ne7BM6+oHZiM183okQLj7ZDRkS2HgEsJUhiW3LjaoaqCkFKSzfSP3N4C88mNn6KGdyF7VqylFwTBS6Ez4KmM/9Kjpvnc+R8Keft5XRdBot55+uhjDuEuHPoe1ZzMiGVJnpWkVM9EjXzH88q8oNPrOGM71J1t8uBgjoQGtaN00hhCCmGCe6iWePoNwM6qjiXYN+E3TR0p2dZUgpqn/pKp7L6Cz2LsMCBCEWYVL+GX7VBC+XX6hyY2Wwzc/uRKiLMP+K3F0FxF1VmB1q3r3oMBY+XqOpqdpjuP6ZT8ucMZNZcbeMUB2SKjgiYXQj/r+Qx1IvWDQvdtUoJRq47q4nBtzTBhQiX1GJh/+MJJXR1ieN1df+46DsYoTH0z1nzc/QBzJ84XBp8vpuEBtGLvj7UCwkXk3Q0zoxQJqdZHE3Kvm6iFeI27WBcKERC/prJjMewigGN6RtEmEh29m4C7TE+wmrxw7XTH2Q6Zg7KzmeDy4DIHStOtyS2Paq11hsaDH5j7a+7xNNj0kV6+gj6JDRFh+f5DYnkanadX5xS8D/BGfxXBx7PZFin7LTuTDCmBNUxnsuwinow+/HtUH3FizJjoC+dhhWPJIbDns4OfnCTsz/829J51OdMGvH8jLFNzaYoJHCArQcbCYJ5018FEWc0HQ7kWnW7SIVDR05Y4XIPgjG9YbVGch1xsgUui9GxrynLoscO8JExDPIb2zRMefxY9D494waOOIRrtgg3xliEl+qElqu7WxB0YFUoC9ph283vjBfxQrPQPnnpO/1ke+uZUrSSyawRw8ifVMg64w3/eIacq0EgpzY08C2YyObGRYlY2d8d5/Y7DORf7Fr5v9kS9q/ilJPKcqv68PI9Jx47iyq8qGoq2ZuUx69gPGBaOHSxe3DLkarvbQYjFFFpTHceKsI3i8ai4M4pAoEXGZuds39VtEPR4XiQ9JeUEm/fGS42ivtfKCn3kSNSBjcGlOKV7Z2fWub0G7SltZZ81V9PCHBv3gfi28m6j61+lMK467yjwn4Bn1qZYzQxsoTGO70q5nDAMEVGiiAx13utPOXatOPopXuPYHtzP9orFc8QCJUAJa3K7qhtqrn1ndxssWX2kayMP1eFpw04eg9CN18/cHFvyW4fRxXP6dy/OZsvMpsrEuY9QgxUOL72zvwVa2QA2+lbEccCVLKEx7hFoqNK65QDXk6iTQJUX1FoUgQIytDEVxgod0jmM7S4db/rjWmMsBnHSc84DVdtO65/mWHhFgYq0kLmc1890IBAZjIFG+oV0KXHsIA/yQTZSjRMCJ7VduBGmjZ0DWYWByy2NTUAHN2c7K2ObQRSGixaFpu0Yfwb/ujxeM0/XX284BQO7RWCjfE8vrNftTBqLR+Dg4rii+bwSCCRCLHY/DR6F0XmiuYyiFORqTBdOuJqR/Jdi9WUMMxDiWmJEmPxJCr5kJ5G6NUruSLgVHJkIPZlNBZp44R+dNSI7Ch9H3JNgDMSSO0HFfQEK5pVghN6vCj6pg2Zy9OZ2FNRbcT9NYuY7g0fzNugLR0akQJmrDLOt0obw054igG0JKRbJQjjRkz3GUvTVjX6ijskT81WOERQIsZS845PCM6nF8nVuZpec1hX+pGRLT3MWAvpCWdWk8FxC7Y5uXWDpP8QTlnOnINipjsTf+kjePWXHEJ0qEdmL16e5496fn7iF6m91Hu3AzQ2JIeZ7EnRBK5o3sci028W5IKUe43yKTZqGzU72GcTohMYuBJzYAM704xHbdD5kYxBJUvsFjoAK1m9Nb1YTnDDQ7wkiKJ2RTs4BzeI8zTTUQNCoOx2Ajh2CbFpvJ5GDr+NLc14nR0LQ8tpD3xQel4YBoVAEa/g3AUVqfNavQTk9rd3zhJt4Mc18Pp5bhwnPgagxgoiga1bGLEk3dXq7/AePRucRP8b1RAblkn0rpFTHrMXBKBDYERyDzlXELo+baxMyZVvEla4zrBd6w/um+ChG2v0deuBLky0cHUxr2OlxqzB1uEFPlUY3Ukky/aCvva0EbqF/VglWRVxe1ynLDtNg5tIirI+VVK2+emSPpzYfMCNUulBh9zhuFCPIu58KcxSnjGTBVI6rpLOAoNvMfdo21CGIUh/D4d82K1oc7KBgEyZGgs5bXgHRe4Clb2/v6Vow2g7LCz8U7E/UEZQzbY+vjBQL+chyzbvAhRnPEnXBVKnP46muEQj/fCb+aPPsAifGepMRxFnslU4YQ9kROpPAZazNbkoXQ7+nNjuWMlQXKgLJPqROnja964ofIsZj1MZVhVgVmOyWrkF4ppf2CQAguxmRMuMwK53Pff3vJty6jq0HOMmOV+6l0TQ8G5Yc7HaC6nTGFl7/o1x7Tku/R0B+17d2jqXRvVfnk1DHnSwZz/uElt2lAJ0gAXmVbxD8CEooaKAh/rTEinr9uHDsSa28lVgeI5hDnmZPU3/mF2Kz4eB2UWe+brQ8BHTju3mmshKdP5YgYmCp8p+IzqY6jJtTLYc7O10bcRK5Z8NoOyAYx2yyzqMq+1EaYvTtnWgZ4CHouuJv1LUjcAeIN4F7BzQwoDCz+ENrQoE4bXLtMYvMiciJWqCMH04crfZpFB8huwzG/695JHElnH8xlcPL4l28MkvpodIbdOxCC4NQh6utU/t0JoB68sLXjzHA7Tz/xjuRGVkMX9s7estxwTqM9ydqI0YxguneYI+xoxDlPYU/YYukcLBYS2Sshj2/Ie86SiT5TNBOJE89E39P+YwiUkP/TSkuTVV6byFxLGULFfpdSRaZpsQQXPiooUFDv/WKHke8pgJ6BaCwsN1cfHW4YIJJxyUXLwUfoq+oy9J4VIII+M0g7VnBiU+Ug34cO/ga5l2hWxD94EnTeftOmrcKIrc9ilC3FTxQUq9uXVKgc0TqtGkxRhfr+6egG+d7oZT2FFidnLcHHLyVc8MYc2PykjhSIP8YZDiAn2/LXGc4wFRGh4SkQtrQ7iim7B2pDVHnHYHZPugS4q4pZL/HmKenEbI9/cnAS1EnevfXpSx6eqGtsPVvLdizRND7fcb6HZ92kIplvGpHctoZKebZI9CEXvK+8l9TT55ljHPTmgsj9rQ3v5XvUWkkgMhN1sBNzG3mJ6LlVwCOrPsoIQV/7v38bAyHLkSMOsKSwb27hNPBm3vyQKyNWJyWEP0XdY5hRk0Cnka+O6hheS6HngTz5h6RnvzyZWt/XbgYQ75H/g50+xdAgq53tW/SKSdfTmFwbaOHmBha0uvrvrS7hukFDaiUT94VpI/Wwj3RH+abIZSeAHdd7qBHl7leEk3BQU3zgZCSPCFd3+3V3nfmPgcLqAOEMx+uN25azk+qqBc0yp35PkkxqSnzLBdzpo9y0DxzPtznMEoDcal7ff0vq5pwk0KmpgmQZeN433OfWqwCmM7Bc3Iph/FX//xAE6+QN+B1u2obFglN6wEumU/RLYZcXZ1UJfnQCmtxicvpynWtMPvSbsToWJm2pBq9ts/CKmyE9qUNA9gFqGeK3gQy665zHDVqDlQ64DSQjCvFLD9kpf2x95Hiq+Sn5PvxAnGgbjAXxhIR7BTFvZ8+EqXFdbTuOt6ZCe+oc98U5Ii5XzmGxXVy2ll/eBEXOqUAUAsIj3umJ5z9+vEUHdhv1HAXEDzGDz0RC3/apbnfGBrL4qBY8QEttuXqxdg+OpJjwxVXpFa8wz++kXL2l+WXr+6l0Tl87f+LoM9kNCkrlLWP4zTHa2KdZNvjQu8H3WiD7AKPxIa74eYgHZ/3XiGsv5Dc/5dYj3WBzI7oTXdsGYw7Rf/gr/htPnnE+UIIqPzBidhv0M5S9vEcBfPn+s5Q/iCLCrEl/zOIf2PbkJXF1kPIghxj+O/yEXOAQc3BnAD4YAKFbKkBUD6JHvTLKhpBrjcycEH9RSDoM8tnDHKUMR6Wg17PJ7rczZKHyRFmyHSa9+682D1bNVdo0dRjd5O2YjoL6m95qezGr7WWtZx6oBIbACEjKAdThCIGVWvTdlwV4HuYNTjwsb7ZihuwiaO2xLS9IexUZfL1vQejQdgRjEsIxsy9Le5btTYhJ2QgXQFhynZ4UvzXh3UjKJQu7nYdyWG5fWZ0z3BzyS4A56FpCfcCC1tCpfquZiGndJP10AO75jOGvQs3iNfPxY9K4VE4QaGtMzCr8baMdUabV0vGLd0m5ZhzIHxFOdPBHrRGltWVTnJZtn5vySE+XP/OoGUYm9LMdaTowqdQQ38+fUg737bnVI8QQyIEIgk95cIdsgvWhSS6/WgSHlCrpTp0WCL0op6QG90LmmEl2tYRHasgkO7VQg2BkQ1erkoU5sgIjMmMOt7BuuLrTW4vXd0eRu/lW1DJdwOwtyYGo5RPSPGBhRaG1sWiwSgNTz/diKGN+mXizOCOboiU6/0n0grUkH0zVZoJBT/PmX9g2fseng6Asq8shRnXOKaH/hBRd/N0lSLzJoFVxQn+RLmUCpqKtwwQxUAMzTrwGrsxjXl7esC42CLYhXVkj6jOWAO7IxiVBYjcaKPWXbZE+LPYmGlEAzYKi8q7RPubPbopYBh9fvoBF2gzVqtNkK12wlYMGmEX4IOgwfROtPTWHiD5FZYTowHVdq5YaeDtwhR6weAyN18Cy0zL+gmc2ICmj+iwQRnsUTtGn0UiqBxnewUzhHrqA/D7/CgCuSGiJZSBrLujLpHw5VdSYM7FyKgkQslQV7p07HXw8DtOfuSN2HWwyRI4oku+WfipZrbrwTE/qlP3xxf1SshdHJlYZPL/N6jH2MffCZ77k1WVP2CMxJop//KkcJLaPPbAUC18aWPaevfAJCuhb4cQnaORF4F3wiva2G3uJTho4z1g5BGL/umoXMWnGfLrlQyAUvkwPEiQ+3ak6Gtm5IPaL0svw948/KxomSchy9cxKCPhZiC9jaXx8pTdFo2mzoOFdw3AvvncG1x1sI+IHlk3aml2/D8qiKVfLlTZlWv8kdQgdGIkVnkVO39vTBGFErOnUNJLhPAFUd9mCYpXoJRrB0OJ34wZvnWmvfDvU0SQjnZyoIut92hWh1No2SnmeXCu8u08AIa+J52ZVJz0vh5rU09vnZocVmLgNLcr7sZRfpsSp+eehoJ3f7DK+Xt3+0KyjwjRR8dSIOv5QRkOz52vZm88zw4MH2h4dgNlHhlVev5Hx/+NAwox7IFX4PXRnGpu7SyaScPS5KzI2i2a0UF2hLyuYWkOICfR4Gydrt8vvytk/L1fU0K2GcMc6//wMql6xzGkzG4RJiX78TYw2bqJkyDaVnaX8RtP6MDckou3r3Cq+18omIKfZHVKvQpXYpNCgL6JYQb8c1M+QI/MSCUJ6XifvBPOPXuIWyqVT63FJ6AXyhP7cjLOAweJJgXABwR5yfYYMBUJIYRHj8uYznryWP3eH0LgiDqV/6PB+r+taOfsXuksYmKNWan1PH3YZAksSDw+0PChJda2AXxYaMm7IrYsA9C/MMWI/bJgaPlb3AFn4MGl2gxFW/si3GFzWLeGVS45SCl8ye9DDv14Bqvrd3pA8GLK92Hh4HCtybpLNKzEWiU1PIcZm0i2AFA8Vta2MMrTDmrReeBhyMv7nF0st3fHY18AcHuiZs5mC7w3DaSP2FN5Yl1xW0wUo9EjdGfG+ulJczznqocMK6PkdWRjBUSvuAxxwcMEOlEHmZXM7AaQy2+b32O1nfVH8f7lt7mMFeEFV+8zTROh+vi0qg3nsnH8CqYgzomcExdjm/Qp2LUR2hwjp751mecOpXGpPkOg5UJfKA5VivMmvsbHixdD1kOXieBgUoTpYem3qQnYLxPuv9d+vFfjXfknWrwzK3q/iDUv9q3owmiPaAi7skMLy0gvaAA7B7xc5/UNarioPpTtDtabnpwZnIgvPe9R+E9rR5UCUygwKSErGdWEZv3mqnbyrhSxorabY+0lmVJuPwsz0b8wdCGzMc31xiEWA/I1SjMcM3tsifpYoIb4PukC75PyKBj3PAmKklrkYPH7jrKAK48/S0DovaNVGKk5+OHW7tYBEYOTVcJ0aVNfPseOd1zsMwvhYCDpS7RrDWSYv9eJpsOXeI7LfCTsIv0U/U9LaHSiFJJID9EuBKH7c0WlwU4WIIbKdyDE3nKdannYd6W3+V3O7Jh5o+kb8R8lIdBSsjbBC/aY/YQ70s/giETtdkhCjTD0ILHiqyHMXE7vobkWWTwiR5laIhQ07Tsolq8RLXkXpQUhE6GmFv6ENWUf9wplLq2VYi8QwcglbaNXhW3XnS13/1b3iUOSHcTyT/LVvPIcE6sWBoneQuLN9ekuHbujwe7rgOxzNkfMDqMpGVbt2LkgI6Ur35P/F34bF4locItjsJfUhSq7x9VkXyCyG9MlM78jMM/uU+id/ijoH54oz2MbtO3E/zEv58l6d+cLJzcehDKPFoIjEM2u5xNB7VpQ2lV+YmXr+H4kC4paQlxZbk1d59I1zXUUZjuFtmRbJ6C3DECmq1yQ05wFhuTAJ2Lbm+P2f8R7262wFcOhuP7qBiMPUanIceAHVvFLy0Osvt5Z+uVnqK1mXaDlpjbDk8jnjcha6joVkNKwcgNPL9/g6Ji+3pQXdtq35kRO5L0yHWjhkk5UHpezqMDpSiSE18WQ9Kxo7SXUGGtAnZ3CsqfbbsyGTKXY/93iWWnpV8HEMJHlkKarCpkEaiIHHK7z4IrJHne9r/b18sl7NeRo8taCURhJygDWoaFWdaIgFDi8+zmWAIuRyAXtoo6rFRKp6MHzPDdNaUKmDU6zwgiXwq2ILrI1Kbi1cqJgUeHXVv2iUVP6Bqaps/fzNMtieHR966biOVZFwC7BkRcEtSLtLqtfn9a5/bB9f78nWoJ5i6M/ioa+kx32wTKc9Qet+U/15YDDGyA/1WQco2YqhtyPvdK/EOYT7YaL2eLHvD81SpdKylyTal1nYwG0MwfU3FByquSAGcgaN+OtIZmRjNdqYD+ogLd9bTER3c7Tpnp7ETViOgBEqaq0vGZOwvjjHyUXdedTtoWA6fwtefcbt0oMsigOGNZ/r+JvRNJxHrrhxwfnJdRkw26Zk1xqPNSZmyltSUBNDR+uWNvbrq4SfT0aX7Qh+YlcwYicQlM9c8ZdylKNm2Nu4qqZ7v78NR09SAdFEMLR9k5lunnl1wHmv47rnzYc9oE+TJn38eiNyZfz4/6/CzG5dEZLS6HNLU/nC4mpQyLJy8mU9XKliSOVoF4H76KMdrcuVrQI+V8Vzz9mHihfl5yT9CVNM9WGmUUNVEaFz5lQoCxxYAJiRIrATIBDUH45w//mkBTqyejV1cjGhOokdpFme/AXMmmKbPBF3aGsvnqozL9InPKL1ucDD0RZcVoTUaS5XPLye3Cset2mUILIDA9Bl0FMB8DGRNTBoCmZnmoUeh6qIQb6o96I4gIRIc9mInCvh1bpiPprjcq/OBneEpSxws0fzlxeFCcb8o0dYQ7HVOezTemQ2FEtuRCPVg0BZo10I7Ofz6FXYjld3i7fRJv9yTzaz3EjEmyjrYfYyAyhbivIomLyCdLpQ+iZdmhdLc447BwCkptBnUV70aVtnKPnJ5UcxRDlipVCjBQfrmPMStH71OSbDYNjksSaOLe4vlapXlt6vGNQras1GaypUZRaa7YZCSTyGNh0JQEGhM+koI1+ZNO2xXkP+ukr/ZRnTj2AX/ejeSBeKKdOKaEejSCeNhJvZ2thH749afYID9zvhT9uhaRe/8cI2h2x/VZ91nNI+pX4EAAbH5KSM3kVUzGV916blGxV4dfnjCj4ZkoEqLPVZH9q0SmE26w3tjbhA4+3RY0Qz3eC705yr9Sin0lyy82zoqpfTmKe3tHmndmOuAMq5/7p2yH+7bus6scVYmputkzqRaVwYv7goBPwEooXaym3rL5Pc1u4FrZhWz8EJVcOPzGB7gf7f15xBRG90IH6GEdVxAlTGYFnUc4LC4IJTxoVtbPyuOzk1eR6G0EUSI2QaevO+dlqEFlCQelZlfN+rF+bQKHJTtbTutbLoTr4E6riO9TgM527R3cl1/0FimvuDGoqQIj8zNv4fvS38osQNBFQa+TnB/NYjHgKgF57R57nYM/KeMZe51n5LkFyPvqeXh15q8WFN+F8rjYjdKIsHFEwJ+UMN5+o7SefKIGVTuxyTbhw+DlNQ1EMAIuBbh8ZO8gNM6eyFT2Ojn2TztadXHHgpEhDTcbbSzHhMiCrz03pGSG9JRWwo8kM7c4VjFGCHa3d6W/n5NaSQNcrseIh1Oghgihb6QdGg+7B/ppgcRHGgowh62KTcQKSIsX0AiwEe5amQFpQ7njhDCEe+9ILZGrTl01jthw9HsTCn540qu3BvjMVATqdVCS8ZL0RDTKbaUI5wowtz+rJQ4JMf//866IQMFolIqQxev0q22NAxRE+77ewj5j8I5bcB3oJmtAyX91V3rcp0YKcwI5weg0eqXubyAs60Co8Y/NNK2qeQ3gPTDteCTEtAGJTGY/6bFsc2r9mCRZlmO2y/RRQs0+vpGGrpusmCsAM5L0JU+2LoaIVrLuHqvsLFalHdHRKDZag8mhUFCbD/iJRTdUy/Fnld3f6esXpsdazh+7bjSsOum9hHyDvpVmQ94Z+Vh8sJFrcAol20r3JB93c0n0c701TCkHLV+iPC5f5VHi29c0Mr8lRTrRriaPn9/dCJhJ1r6qXEWpUoKVnGzeNkKqMtdQUj5kRmgWJn5wRNgA/LPs+TdrtlTvPzAQ+c6B1qCX/zfQt1Ux0/AaNYQeyJmi9Eq/MpICzvgQ2b8eB8Cd8MQed4Kl5Op+JYENXk1Ev7ov9I9Efuo59gNx2WNhmPlL35dNqle/i4xcVnn2b0R1KGj1A19v1TeXlV8H/hIXkL0T+xchJBfiW/NaAe/InZBsngshYEyn4j8nf5vK+rbtg2Zh/sqSTQL4TfTnq8zMcY1IJ/9UqHhVKlYoYP+hxgbUVButVWXitrIFrhIJ5EQGPYN22HNBaF4Rbd540wfQ/Z1w5cqoScT677GVQtPTf1XAD3vXZ9AN4k+zkNcYaqftuvuem9Xrowv6V3UC339/003MKW/q5Ne1Ew9+6xgnxqwskFy2F64Q0dBrtlnNzlDbdnwGyWEUPLFvWfBDeWC1ZCIEbHoQZbbzoFk5Hw+uoTMgtTI8UWvDG1fU1x4LPA5/8ssGcMHO/JK4f7KA3X6+VtdQbaLJJG7SuuWN8teLmNQAv0BsUFqt0x6hex7jQMN4N0qaxGK1gzihbjGKJUV//ZOR2fpDiAFfNVqvknBiuBlXUQ0cQzAYiVB3wL5CpFb+AfjuN5vuYA6Od+zOKHNjRjfqQQve9Qemu9umVBd1nNufwD3h0vO9Gg9OHGDJ/T0vGATdFug0e3nLa+4PqpZoNbCN/epzMFvntmMAZxvPT56rcP4OuKLCrA0lfcNwlKMPND9dB0udDUXUV/4gxRAdABQEhNJHUtKO+r1JSypYTXqjaqOlJW1AY6aJSegmyY+rDD5L5lQ5olDYrYtdbD9Dpn+ueIwEJDu6rIq6iAjUJ/wovTdsKIIMwOs+vFl2SMkGhy5UqdDnKiOcWetfAV7j36hTJ3r7ESmo+JcILjzIKDwSjFdWC9mUJvZYb8DsIQ+43fJkS3qs4JW1oJuIoAOzDnsL+ivwPOrO84WlFwqked6/HkU00n2L1817SunJvpiuDZRhSn2VaPaWZPbR5k361YeM/lZ54zbxtCP3tgZg7U5OlPqFuIjGt9D0gfoWcueUKlZrEJeWuC7xy+fpjq00rAiyRYrN1P0u+J5GvZdAPoyHsQoLB2TvFJYHe+BB19pkjps4vmzyNbCGTDbUFF+RlVomS676FVEiM1lzB40k5APlxBchtn2pM9nnaKOKKSAjr83AHxKuwzTcC4VpPvpuVQsGxEOK08YLaiFGiJ5gTurthxbZeXgCOd5RRLbwInlOa9S3EKGOUhgQxSXdhSEEPk9yieooDyDAS7H8V5ja3MvRJmX4qDNqxpLO64gI9/GcIxygClRpkxxWa2qxxrw8Mh/3mGYBik56Tde06EMqWC+XKfoVtR5D+FvOZligbeZcQWxqehc4l2zXJ/M5gEMlAT3We91h+9w1YI+32Ga6FNxJ5dqrdDCATw5HSQmLTGbbYP9IwlMvNvKlVllwbCGIxxPetCM0QZh6jyhdlsj5dRbuxa8qBV+5Zo/i9KYdukAQhZ90RYQ2OiUAgQQcVEAvdax9e6Ye1iDv45ZUnhZ0njET99cPPI65nXfxOhiD75fz/WWbceFdvRSoQO23hFaDbxFQx+fdxSfVb2+yjbo6O3UwBZRnJINMUrWtQQWIiCsbpzGgVJ60ubkPphESvuBBQ6mec5AYXZ9zy3abqjbSHwFXpJaH16ElDRx5YFlMv4YIbLqF4qKw9VHvLSaF+to4OvG0K0K9rwqMehjZOVNrvFm9NpEoyZHYs7ztCbFsuS5wYbswmWTmex8/ODyZZzmtA8tptOrpOHfSJCqTDDWrgrwYD74N08cT1mQF9NMsqW4hvIbWDUd1dxDV4bRsEKO4YMAuOf2Rau0DsFtycmJN/jOU6ZEe7s3ki06ljJ2eMftqLAY4qlNJKgygEJ1yJgB22+xVZsf/mop2tBezcHRHXNZxq4aH5ZpWzs/EnpUHR56EoLTXGi9kDej76e618V1PoL7rKtAkwKmRur5QakEO5Xf/+7RjA7PgfztNJ/5x+q8kaDG/YZHlPm+vPpqLb115O46LNZof0TVbrUvqbc6pDMtL5U7/7H7TZ5DL2ExSQ4MGV7C4YMxVejG2x8kYVaQ3RQtYNK6pt3c013QzcOS382iut9idTooKG/vpon///dhTWiWmM6PcJlRBIvFsPwb8NgERPLS04w0o/uf0UCLNnQ28MepichhMnIBO0AVuafa/X/S6zjCI/GU4QR/ar/MHtATyZPUzI6j2yL7mGFP4w7A3CYu1Q0RmTIZHYMSILu8fwTjVpwLE6ks8F8WGclJ/X7SrtP0hbTQdWVE6Y3zncB82clnGnvlxRi83NTzN8jcPkRsgo3pUoAMqcvJtXzfsYfb10Q7SewO6hk0kxnI5+Ex1KHgc5FK1ChDJdwwjMTwvL8U9ndtTAYg6dciHI/rC8pSOD9VnVC5BnbOjlM5KZV5AAZhrI3/N1Q2/mq3X7CnedCsgzfg8+flYt8r469njEeo/sUgeBaqiwSJ1HXp4q9QmD7tgrS9nDZTImAqyurL8yUcWEp2xM+SA1GBCYvKQN6JYTO3UK0jOZluFDGokq8CXtOAKAtB6co66nVkHBunnrgRXtYz+rlX3f499UoQcWf38VJKwsi6SyfXX8Vf3RjlHak6vrvN9oOyibLSt7DmnGgTIN23cS4hgOiMSc2uRUVnheBcZlIvTFCaJUC3Sd5EkFMiq0c6O0YcZDs9y8QVEaCOeQHwZFEbIOXoOb5aLKX1qE/8ospozK2n9x7Er1iwZHBe9xSCvwfxkWz86YgNgBy5AKlBlh1SGid/ewokg3yfL1utok6SocRp6UivNroCcK6MOjHwAQHu24K/eFAhDvSogm9t6g/Jca7/nyAXpBpI2u/wZb/kuZCtFoNnhhWpL/HcuNK9KyVlZLxMuIK2bGfkoa/kYXaSmzkMjp+n4DYVyJtIC0T5AzxaJMqg==" />
+
+
+<script src="/bundles/MsAjaxJs?v=c42ygB2U07n37m_Sfa8ZbLGVu4Rr2gsBo7MvUEnJeZ81" type="text/javascript"></script>
+<script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="Scripts/respond.min.js" type="text/javascript"></script>
+<script src="/bundles/WebFormsJs?v=AAyiAYwMfvmwjNSBfIMrBAqfU5exDukMVhrRuZ-PDU01" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioH33QV-VnQG0DYJbEnFSl9OR8QdOcRFEgrIRC2ZPYYZzqwGqQrkNHrQRQYh5N6K2K4kUjTlLI2mWPqHY1QryVwx-_VWgk58LxP3WmR8H2OmGD0&amp;t=17b84382" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbjwgJLROCPygIy9VbcxxirCWo3TEXa4iYf9nOqpw_BnSGT2vIFyh_VgZVgut3VtmrhS9BzLdY1yFIqAPRuDAUZ2E1&amp;t=17b84382" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_pAjD_Av1ClLGNHAUzFe8hmnSiLcPYWAu4AsF7_9HdISXr3zpLnWXGydvHfpUXUy38zfMSNs9VSdHCLBtJwEmicvbsuPr1YkNY9XAWjt9gTM0&amp;t=17b84382" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0FsJjw3DQiMtTwPvJaA64ZEsZPMVXwlAefeTOuf07NgK5yJx-OPBq3mN0Rd9thQmsAq5eb5vNj1eKYKHLlm6UpFat-IqyQ08E9aNvL3ue_O50&amp;t=17b84382" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pLajufG-EHT4Ewa1DS8jZLrHBv9VMgs5ryrWMM1uN2SOTb3EnK9PHrU1FUm8ZFxy2Fg3jN2o76XCDTs4mnAjVutzXFbZHd5ufeOYjQqsLVI1&amp;t=17b84382" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmi4xyo6xo9ZM5m9XC92RQ72vc7mNrNJ-X0xNmzyYnsmn8nIyhUCTnRJiYOjHIn92PuYx25mrV_qBYmZYBWKaV4clU-Kj_uMC0uIBVeT1xZRq0&amp;t=17b84382" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8054B053" />
+        
+
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Primary navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    
+                    <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#site-navbar-collapse"
+                        aria-controls="site-navbar-collapse"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation menu">
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                    </button>
+
+                    
+                    <a id="TaxCollectorLink" class="navbar-brand" aria-label="County Tax Collector (opens in new tab)" href="https://www.hctaxcollector.com/" target="_blank"><img src="..\Images\Highlands 01 transparent.png" class="img - responsive logo" alt="This is a link to the Tax Collector Site"></a>
+                </div>
+
+                
+                <div class="navbar-collapse collapse" id="site-navbar-collapse">
+                    <ul class="nav navbar-nav" role="menubar">
+
+                        
+                        <li role="menuitem">
+                            <a href="./" role="menuitem">
+                                
+                                Home
+                            </a>
+                        </li>
+
+                        
+                        
+                            <li class="dropdown">
+                                
+                                <a href="#"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    id="propertyTaxDropdown">Property Tax <span class="caret" aria-hidden="true"></span>
+                                </a>
+                                <ul class="dropdown-menu"
+                                    role="menu"
+                                    aria-labelledby="propertyTaxDropdown">
+                                    
+                                        <li role="menuitem"><a href="AccountSearch.aspx?s=pt" role="menuitem">Tax Account Search</a></li>
+                                    
+                                </ul>
+                            </li>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            
+                            <li role="menuitem">
+                                <a href="ShoppingCart" id="cartCount" role="menuitem" aria-label="Shopping Cart (0 items)">Shopping Cart <span aria-hidden='true'>(0)</span></a>
+                            </li>
+                        
+                    </ul>
+
+                    
+                    
+                            <ul class="nav navbar-nav navbar-right" aria-label="Account navigation">
+                                <li><a href="Account/Register">Register</a></li>
+                                <li><a href="Account/Login">Log in</a></li>
+                            </ul>
+                        
+                </div>
+                
+            </div>
+            
+        </nav>
+        
+
+        
+        <main id="main-content" class="container body-content" tabindex="-1">
+            
+    <style>
+        @media print {
+            a[href]:after {
+                display: none;
+                visibility: hidden;
+            }
+        }
+        /* Responsive Layout Styles */
+        .detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .sidebar-left {
+            flex: 0 0 180px;
+            min-width: 180px;
+        }
+
+        .main-content {
+            flex: 1 1 500px;
+            min-width: 0; /* Important for flex items */
+        }
+
+        .sidebar-right {
+            flex: 0 0 220px;
+            min-width: 220px;
+        }
+
+        /* Mobile: Stack all sections vertically */
+        @media (max-width: 991px) {
+            .sidebar-left {
+                flex: 1 1 100%;
+                order: 2; /* Move to bottom on mobile */
+            }
+
+            .main-content {
+                flex: 1 1 100%;
+                order: 1; /* Show first on mobile */
+            }
+
+            .sidebar-right {
+                flex: 1 1 100%;
+                order: 3; /* Show last on mobile */
+            }
+
+            /* Hide sidebar spacing divs on mobile */
+            .sidebar-left > div:not(:has(table)) {
+                display: none;
+            }
+        }
+
+        /* Year Links Table - Responsive */
+        .year-links-table {
+            width: 100%;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 991px) {
+            .year-links-table {
+                max-width: 100%;
+            }
+        }
+
+        /* Payment Options - Responsive */
+        .payment-options-container {
+            width: 100%;
+        }
+
+        @media (max-width: 991px) {
+            .payment-options-container {
+                max-width: 400px;
+                margin: 20px auto;
+            }
+        }
+
+        /* GridView Responsive */
+        .responsive-grid-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-grid-wrapper table {
+                font-size: 12px;
+            }
+
+            .responsive-grid-wrapper th,
+            .responsive-grid-wrapper td {
+                padding: 5px 3px !important;
+                white-space: nowrap;
+            }
+        }
+
+        /* Tab Container */
+        .ajax__tab_header {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 768px) {
+            .fancy .ajax__tab_header {
+                font-size: 11px;
+            }
+
+            .ajax__tab_tab {
+                padding: 5px 8px !important;
+            }
+        }
+
+        /* Title Image */
+        .title-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Property Info Table */
+        .property-info-table {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .property-info-table td {
+                display: block;
+                width: 100% !important;
+                text-align: left !important;
+                padding: 5px 10px !important;
+            }
+
+                .property-info-table td[style*="text-align: right"] {
+                    text-align: left !important;
+                }
+        }
+
+        /* Buttons - Make them full width on mobile */
+        @media (max-width: 576px) {
+            .btn-default {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Form Controls */
+        .form-control {
+            max-width: 100%;
+        }
+
+        .rcorners2 {
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rounded-corners {
+            border: 1px solid black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .rounded_corners {
+            border: 1px solid #A1DCF2;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .rounded_corners td, .rounded_corners th {
+                border: 1px solid #A1DCF2;
+                font-family: Arial;
+                font-size: 10pt;
+                text-align: center;
+            }
+
+            .rounded_corners table table td {
+                border-style: none;
+            }
+
+        .btn {
+            background-color: rgb(0, 92, 178);
+            border-color: rgb(0, 92, 178);
+            color: white;
+        }
+
+            .btn:hover {
+                border-color: rgb(0, 92, 178);
+                color: rgb(0, 92, 178);
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .btn:focus {
+                background-color: rgb(0, 92, 178);
+                border-color: rgb(0, 92, 178);
+                color: white;
+                outline-color: transparent;
+            }
+
+            .btn:disabled {
+                background-color: rgb(24,137,245);
+            }
+
+        .myTabContainer {
+            border-color: lightblue;
+            border-bottom-color: lightblue;
+        }
+
+        .fancy .ajax__tab_header {
+            font-size: 13px;
+            font-weight: bold;
+            color: #000;
+            font-family: sans-serif;
+            /*background: url(images/tab-line.gif) repeat-x bottom;*/
+        }
+
+        .fancy .ajax__tab_outer {
+            border-color: lightblue;
+            border-left-color: lightblue;
+            border-bottom-color: lightblue;
+        }
+
+        .fancy .ajax__tab_inner {
+            border-color: lightblue;
+        }
+
+        .fancy .ajax__tab_tab {
+            border-color: lightblue;
+        }
+
+        .fancy .ajax__tab_body {
+            border-color: lightblue;
+        }
+
+        .fancy .ajax__tab_hover {
+            border-color: lightblue;
+        }
+
+        .fancy .ajax__tab_active {
+            border-color: lightblue;
+        }
+    </style>
+
+    
+    <!-- Left Sidebar - Year Links -->
+    
+    <div class="detail-container">
+        <!-- LEFT SIDEBAR: Year Links -->
+        <div class="sidebar-left">
+            <div style="margin-bottom: 20px;"></div>
+            <br>
+            <br>
+            <br>
+            <table class="year-links-table" rules="rows" style="border-color: lightblue">
+	<tr>
+		<td style="text-align: center; font-weight: bold; font-size: large; padding-bottom: 5px;"><span id="MainContent_lblTaxYearLinks">Year</span><br />
+                    </td><td style="text-align: center; font-weight: bold; font-size: large; padding-bottom: 5px;"><span id="MainContent_lblAmountLinks">Due</span><br />
+                    </td>
+	</tr><tr id="MainContent_YearRow01">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear01" href="PropertyDetail?p=C013329-04000000260&amp;y=2025" style="display:inline-block;"><b><font color="#7BBAF5">2025</font></b></a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount01" style="display:inline-block;"><b>$0.00</b></span></td>
+	</tr><tr id="MainContent_YearRow02">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear02" href="PropertyDetail?p=C013329-04000000260&amp;y=2024" style="display:inline-block;">2024</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount02" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow03">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear03" href="PropertyDetail?p=C013329-04000000260&amp;y=2023" style="display:inline-block;">2023</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount03" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow04">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear04" href="PropertyDetail?p=C013329-04000000260&amp;y=2022" style="display:inline-block;">2022</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount04" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow05">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear05" href="PropertyDetail?p=C013329-04000000260&amp;y=2021" style="display:inline-block;">2021</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount05" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow06">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear06" href="PropertyDetail?p=C013329-04000000260&amp;y=2020" style="display:inline-block;">2020</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount06" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow07">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear07" href="PropertyDetail?p=C013329-04000000260&amp;y=2019" style="display:inline-block;">2019</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount07" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow08">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear08" href="PropertyDetail?p=C013329-04000000260&amp;y=2018" style="display:inline-block;">2018</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount08" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow09">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear09" href="PropertyDetail?p=C013329-04000000260&amp;y=2017" style="display:inline-block;">2017</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount09" style="display:inline-block;">$0.00</span></td>
+	</tr><tr id="MainContent_YearRow10">
+		<td style="text-align: center; padding-bottom: 5px"><a id="MainContent_hlYear10" href="PropertyDetail?p=C013329-04000000260&amp;y=2016" style="display:inline-block;">2016</a></td><td style="text-align: center; padding-bottom: 5px"><span id="MainContent_h1Amount10" style="display:inline-block;">$0.00</span></td>
+	</tr>
+</table>
+        </div>
+        
+
+        <!-- Main Content Area -->
+        <!-- MAIN CONTENT AREA -->
+        <div class="main-content">
+            <div style="margin-bottom: 20px;">
+                <img id="MainContent_TitleImage" class="title-image" src="../Images/PropertyTaxDetail%20-%20Highlands.jpg" />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <span id="MainContent_PaymentsDisabledMessage"></span>
+            </div>
+            <span id="MainContent_lblPaymentAddedToCart" style="font-size: large"></span>
+            
+            <!-- Property General Info -->
+            <table id="MainContent_PropertyGeneralInfo" class="property-info-table" rules="rows" width="100%" style="border-color: lightblue">
+	<tr>
+		<td align="left" valign="top" colspan="6" style="font-size: large; padding-left: 10px"><span id="MainContent_lblAccountBanner" style="font-weight: bold">Property Tax Account: <font color="darkblue">C013329-04000000260</font></span><br />
+                            <span id="MainContent_lblOwnerNameBanner">PLATHE MICHAEL +</span><br />
+                            &nbsp;
+                        </td>
+	</tr><tr>
+		<td align="left" valign="top" colspan="2" style="padding-left: 2em"><span id="MainContent_lblGITaxYearBanner"><b>Year:</b> 2025</span><br />
+                            <span id="MainContent_lblGITaxDistrictBanner"><b>Tax District:</b> 60</span><br />
+                            &nbsp;
+                        </td><td align="left" valign="top" colspan="2"><span id="MainContent_lblGIBillNumberBanner"><b>Bill Number:</b> 10258</span><br />
+                            <span id="MainContent_lblGIPropertyTypeBanner"><b>Property Type:</b> Real Estate</span></td><td align="left" valign="top" colspan="2"><span id="MainContent_lblGIOwnerNameBanner"><b>Owner:</b> PLATHE MICHAEL +</span><br />
+                            <span id="MainContent_lblGIInstallmentBanner"></span></td>
+	</tr><tr align="left" valign="top">
+		<td align="left" colspan="3" style="padding-left: 2em"><span id="MainContent_lblGIMailingAddress"><b>MAILING ADDRESS:</b><br>PLATHE MICHAEL +<br>PLATHE KATHLEEN<br>6100 E ARBUCKLE RD<br>AVON PARK FL 33825<br><br></span></td><td align="left" colspan="2" style="padding-left: 2em"><span id="MainContent_lblGIPhysicalAddress"><b>PROPERTY ADDRESS:</b><br>6100 E ARBUCKLE RD<br>AVON PARK 33825-</span></td><td align="center" colspan="1" style="padding-left: 2em"><span id="MainContent_lblLienNumber"></span></td>
+	</tr>
+</table>
+
+            <!-- Tab Container -->
+            <br />
+            <div id="MainContent_PropertyContainer" class="fancy">
+	<div id="MainContent_PropertyContainer_header" class="ajax__tab_header">
+		<span id="MainContent_PropertyContainer_tpTaxes_tab" class="ajax__tab"><span class="ajax__tab_outer"><span class="ajax__tab_inner"><a class="ajax__tab_tab" id="__tab_MainContent_PropertyContainer_tpTaxes" href="#"><span>Taxes</span></a></span></span></span><span id="MainContent_PropertyContainer_tpAssessments_tab" class="ajax__tab"><span class="ajax__tab_outer"><span class="ajax__tab_inner"><a class="ajax__tab_tab" id="__tab_MainContent_PropertyContainer_tpAssessments" href="#"><span>Assessments</span></a></span></span></span><span id="MainContent_PropertyContainer_tpLegalDescription_tab" class="ajax__tab"><span class="ajax__tab_outer"><span class="ajax__tab_inner"><a class="ajax__tab_tab" id="__tab_MainContent_PropertyContainer_tpLegalDescription" href="#"><span>Legal Description</span></a></span></span></span><span id="MainContent_PropertyContainer_tpTransactionHistory_tab" class="ajax__tab"><span class="ajax__tab_outer"><span class="ajax__tab_inner"><a class="ajax__tab_tab" id="__tab_MainContent_PropertyContainer_tpTransactionHistory" href="#"><span>Payment History</span></a></span></span></span>
+	</div><div id="MainContent_PropertyContainer_body" class="ajax__tab_body" style="display:block;">
+		<div id="MainContent_PropertyContainer_tpTaxes" class="ajax__tab_panel">
+			
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            <span id="MainContent_PropertyContainer_tpTaxes_lblAdvaloremTaxes"><b><font size="5">Ad Valorem</font></b></span>
+                            <br />
+                            <div>
+				<table cellspacing="0" rules="rows" id="MainContent_PropertyContainer_tpTaxes_TaxesGrid" width="100%" style="border-color: lightblue">
+					<tr>
+						<th align="center" scope="col">Authority/Fund</th><th class="text-right" scope="col">Tax Rate</th><th class="text-right" scope="col">Charged</th><th class="text-right" scope="col">Paid</th><th class="text-right" scope="col">Due</th>
+					</tr><tr>
+						<td align="left">County General</td><td align="right">7.6000</td><td align="right">$1,424.34</td><td align="right">$1,424.34</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">School General</td><td align="right">3.1040</td><td align="right">$658.38</td><td align="right">$658.38</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">School Basic Discretionary</td><td align="right">0.7480</td><td align="right">$158.66</td><td align="right">$158.66</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">School Capital Improvement</td><td align="right">1.5000</td><td align="right">$318.16</td><td align="right">$318.16</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">SFWM District</td><td align="right">0.0948</td><td align="right">$17.77</td><td align="right">$17.77</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">SFWM District (Okeechobee Basin)</td><td align="right">0.1026</td><td align="right">$19.23</td><td align="right">$19.23</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">SFWM District (Everglades Project)</td><td align="right">0.0327</td><td align="right">$6.12</td><td align="right">$6.12</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">TOTAL</td><td align="right">13.1821</td><td align="right">$2,602.66</td><td align="right">$2,602.66</td><td align="right">$0.00</td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            <span id="MainContent_PropertyContainer_tpTaxes_lblNonAdvaloremTaxes"><b><font size="5">Non-Ad Valorem</font></b></span>
+                            <br />
+                            <div>
+				<table cellspacing="0" rules="rows" id="MainContent_PropertyContainer_tpTaxes_TaxesNonAdValoremGrid" width="100%" style="border-color: lightblue">
+					<tr>
+						<th align="center" scope="col">Authority/Fund</th><th class="text-right" scope="col">Charged</th><th class="text-right" scope="col">Paid</th><th class="text-right" scope="col">Due</th>
+					</tr><tr>
+						<td align="left">County Mandatory Solid Waste</td><td align="right">$226.90</td><td align="right">$226.90</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">County Fire (Residential)</td><td align="right">$261.18</td><td align="right">$261.18</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">County Fire (Industrial)</td><td align="right">$52.42</td><td align="right">$52.42</td><td align="right">$0.00</td>
+					</tr><tr>
+						<td align="left">TOTAL</td><td align="right">$540.50</td><td align="right">$540.50</td><td align="right">$0.00</td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            
+                            <br />
+                            <div>
+
+			</div>
+                        </div>
+                    
+		</div><div id="MainContent_PropertyContainer_tpAssessments" class="ajax__tab_panel" style="display:none;">
+			
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            <span><b><font size="5">Assessments</font></b></span>
+                            <br />
+                            <div>
+				<table cellspacing="0" rules="rows" id="MainContent_PropertyContainer_tpAssessments_AssessmentsGrid" width="100%" style="border-color: lightblue">
+					<tr>
+						<th align="right" scope="col"><font size="1"><b>Authority</b></font></th><th class="text-right" scope="col"><font size="1"><b>Improv</b></font></th><th class="text-right" scope="col"><font size="1"><b>Land</b></font></th><th class="text-right" scope="col"><font size="1"><b>Ag Land</b></font></th><th class="text-right" scope="col"><font size="1"><b>Personal</b></font></th><th class="text-right" scope="col"><font size="1"><b>Market Ag</b></font></th>
+					</tr><tr>
+						<td align="left"><font size="1">County General</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">School General</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">School Basic Discretionary</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">School Capital Improvement</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">SFWM District</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">SFWM District (Okeechobee Basin)</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">SFWM District (Everglades Project)</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td><td align="right"><font size="1">0</font></td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            <span><b><font size="5">Exemptions</font></b></span>
+                            <br />
+                            <div>
+				<table cellspacing="0" rules="rows" id="MainContent_PropertyContainer_tpAssessments_ExemptionsGrid" width="100%" style="border-color: lightblue">
+					<tr>
+						<th align="right" scope="col"><font size="1"><b>Exemption</b></font></th><th class="text-right" scope="col"><font size="1"><b>Amount</b></font></th>
+					</tr><tr>
+						<td align="left"><font size="1">Homestead Banded (196.031(1)(ab)</font></td><td align="right"><font size="1">25,722</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">Homestead (196.031(1)(a))</font></td><td align="right"><font size="1">25,000</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">Widower (196.202)</font></td><td align="right"><font size="1">5,000</font></td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            <span><b><font size="5">Taxable Values</font></b></span>
+                            <br />
+                            <div>
+				<table cellspacing="0" rules="rows" id="MainContent_PropertyContainer_tpAssessments_TaxableValuesGrid" width="100%" style="border-color: lightblue">
+					<tr>
+						<th align="center" scope="col"><font size="1"><b>Authority</b></font></th><th class="text-right" align="right" scope="col"><font size="1"><b>Assessed</b></font></th><th class="text-right" scope="col"><font size="1"><b>Exemption</b></font></th><th class="text-right" scope="col"><font size="1"><b>Taxable</b></font></th>
+					</tr><tr>
+						<td align="left"><font size="1">County&nbsp;General</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">55,722</font></td><td align="right"><font size="1">195,222</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">School&nbsp;General</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">30,000</font></td><td align="right"><font size="1">220,944</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">School&nbsp;Basic&nbsp;Discretionary</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">30,000</font></td><td align="right"><font size="1">220,944</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">School&nbsp;Capital&nbsp;Improvement</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">30,000</font></td><td align="right"><font size="1">220,944</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">SFWM&nbsp;District</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">55,722</font></td><td align="right"><font size="1">195,222</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">SFWM&nbsp;District&nbsp;(Okeechobee&nbsp;Basin)</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">55,722</font></td><td align="right"><font size="1">195,222</font></td>
+					</tr><tr>
+						<td align="left"><font size="1">SFWM&nbsp;District&nbsp;(Everglades&nbsp;Project)</font></td><td align="right"><font size="1">250,944</font></td><td align="right"><font size="1">55,722</font></td><td align="right"><font size="1">195,222</font></td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+                    
+		</div><div id="MainContent_PropertyContainer_tpLegalDescription" class="ajax__tab_panel" style="display:none;">
+			
+                        <br />
+                        <p>
+                            <span id="MainContent_PropertyContainer_tpLegalDescription_lblLegalDescription">HAMMOCK LAND & CATTLE UNRECPARCEL 2610.10 ACRES</span>
+                        </p>
+                    
+		</div><div id="MainContent_PropertyContainer_tpTransactionHistory" class="ajax__tab_panel" style="display:none;">
+			
+                        <div class="responsive-grid-wrapper">
+                            <br />
+                            <div>
+				<table cellspacing="0" rules="rows" id="MainContent_PropertyContainer_tpTransactionHistory_TransactionHistoryGrid" width="100%" style="border-color: lightblue">
+					<tr>
+						<th class="text-center" scope="col"><font size="1"><b>Tax Year</b></font></th><th class="text-center" scope="col"><font size="1"><b>Folio</b></font></th><th class="text-center" scope="col"><font size="1"><b>Receipt Number</b></font></th><th class="text-center" scope="col"><font size="1"><b>Paid By</b></font></th><th class="text-center" scope="col"><font size="1"><b>Payment Date</b></font></th><th class="text-right" scope="col"><font size="1"><b>Paid</b></font></th>
+					</tr><tr>
+						<td align="center"><font size="1">2025</font></td><td align="center"><font size="1">10258</font></td><td align="center"><font size="1">2025-28049</font></td><td align="center"><font size="1">Richard Snyder</font></td><td align="center"><font size="1">11/19/2025</font></td><td align="right"><font size="1">$3,143.16</font></td>
+					</tr><tr>
+						<td align="center"><font size="1">2024</font></td><td align="center"><font size="1">49264</font></td><td align="center"><font size="1">2024-5103287</font></td><td align="center"><font size="1">RICHARD J SNYDER </font></td><td align="center"><font size="1">11/30/2024</font></td><td align="right"><font size="1">$3,050.45</font></td>
+					</tr><tr>
+						<td align="center"><font size="1">2023</font></td><td align="center"><font size="1">2896188</font></td><td align="center"><font size="1">2023-1127090</font></td><td align="center"><font size="1">ROBERT J SNYDER</font></td><td align="center"><font size="1">11/13/2023</font></td><td align="right"><font size="1">$3,028.26</font></td>
+					</tr><tr>
+						<td align="center"><font size="1">2022</font></td><td align="center"><font size="1">2639204</font></td><td align="center"><font size="1">2022-940603</font></td><td align="center"><font size="1">RICHARD J SNYDER</font></td><td align="center"><font size="1">11/28/2022</font></td><td align="right"><font size="1">$3,041.63</font></td>
+					</tr><tr>
+						<td align="center"><font size="1">2021</font></td><td align="center"><font size="1">2382143</font></td><td align="center"><font size="1">2021-736733</font></td><td align="center"><font size="1">RICHARD SNYDER</font></td><td align="center"><font size="1">11/22/2021</font></td><td align="right"><font size="1">$3,067.77</font></td>
+					</tr><tr>
+						<td align="center"><font size="1">2020</font></td><td align="center"><font size="1">2125282</font></td><td align="center"><font size="1">2020-523920</font></td><td align="center"><font size="1">RICHARD J SNYDER</font></td><td align="center"><font size="1">11/23/2020</font></td><td align="right"><font size="1">$2,948.04</font></td>
+					</tr><tr>
+						<td align="center"><font size="1">2019</font></td><td align="center"><font size="1">1868665</font></td><td align="center"><font size="1">2019-324498</font></td><td align="center"><font size="1">RICHARD SNYDER</font></td><td align="center"><font size="1">11/25/2019</font></td><td align="right"><font size="1">$2,879.04</font></td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+                    
+		</div>
+	</div>
+</div>
+        </div>
+        
+        <!-- RIGHT SIDEBAR: Payment Options -->
+        <div class="sidebar-right">
+            <div style="margin-bottom: 100px;"></div>
+
+            <table id="MainContent_PropertyPaymentInfo" class="payment-options-container">
+	<tr>
+		<td colspan="2" style="text-align: center; font-weight: bold; font-size: large; padding-bottom: 5px"><span id="MainContent_lblPaymentOptions">Payment Options</span><br />
+                    </td>
+	</tr><tr>
+		<td colspan="2" style="text-align: center;"></td>
+	</tr><tr>
+		<td><span id="MainContent_lblThisBill">This Bill:</span></td><td><input name="ctl00$MainContent$txtThisBill" type="text" value="$0.00" id="MainContent_txtThisBill" disabled="disabled" class="aspNetDisabled form-control" style="text-align: right; height: 50%;" /></td>
+	</tr><tr>
+		<td><span id="MainContent_lblAllBills">All Bills:</span></td><td><input name="ctl00$MainContent$txtAllBills" type="text" value="$0.00" id="MainContent_txtAllBills" disabled="disabled" class="aspNetDisabled form-control" style="text-align: right; height: 50%;" /></td>
+	</tr><tr>
+		<td><span id="MainContent_lblCartAmount">Cart Amount:</span></td><td><input name="ctl00$MainContent$txtCartAmount" type="text" value="$0.00" id="MainContent_txtCartAmount" disabled="disabled" class="aspNetDisabled form-control" style="text-align: right; height: 50%;" /></td>
+	</tr><tr>
+		<td colspan="2"> &nbsp; <br /></td>
+	</tr><tr>
+		<td colspan="2"></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"><input type="submit" name="ctl00$MainContent$btnPrimaryBill" value="Bill 10258 -- No Amount Due" id="MainContent_btnPrimaryBill" disabled="disabled" title="Add your current year tax bill to the shopping cart" class="aspNetDisabled btn btn-default" /></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"><input type="submit" name="ctl00$MainContent$btnPayAllBills" value="Pay All Bills" id="MainContent_btnPayAllBills" disabled="disabled" title="Add all unpaid bills to the shopping cart" class="aspNetDisabled btn btn-default" /></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"><a id="MainContent_btnPrintBill" title="Download and print your tax bill" class="btn btn-default" href="javascript:__doPostBack(&#39;ctl00$MainContent$btnPrintBill&#39;,&#39;&#39;)" style="display:inline-block;">
+                            <span class="glyphicon glyphicon-print"></span>&nbsp; Print Bill / Receipt
+                        </a></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"><a id="MainContent_hypAssessorLink" title="Go to the Property Appraiser website" class="btn btn-default" href="https://www.hcpao.org/Search/Parcel/29330104000000260C" target="_blank" style="display:inline-block;">Property Appraiser</a></td>
+	</tr><tr>
+		<td align="center" colspan="2" style="padding-bottom: 5px"></td>
+	</tr>
+</table>
+
+        </div>
+    </div>
+    
+    
+
+            <hr />
+
+            
+            
+        </main>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TabPanel, {"headerTab":$get("__tab_MainContent_PropertyContainer_tpTaxes"),"ownerID":"MainContent_PropertyContainer","wasLoadedOnce":false}, null, {"owner":"MainContent_PropertyContainer"}, $get("MainContent_PropertyContainer_tpTaxes"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TabPanel, {"headerTab":$get("__tab_MainContent_PropertyContainer_tpAssessments"),"ownerID":"MainContent_PropertyContainer","wasLoadedOnce":false}, null, {"owner":"MainContent_PropertyContainer"}, $get("MainContent_PropertyContainer_tpAssessments"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TabPanel, {"headerTab":$get("__tab_MainContent_PropertyContainer_tpLegalDescription"),"ownerID":"MainContent_PropertyContainer","wasLoadedOnce":false}, null, {"owner":"MainContent_PropertyContainer"}, $get("MainContent_PropertyContainer_tpLegalDescription"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TabPanel, {"headerTab":$get("__tab_MainContent_PropertyContainer_tpTransactionHistory"),"ownerID":"MainContent_PropertyContainer","wasLoadedOnce":false}, null, {"owner":"MainContent_PropertyContainer"}, $get("MainContent_PropertyContainer_tpTransactionHistory"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TabContainer, {"activeTabIndex":0,"clientStateField":$get("MainContent_PropertyContainer_ClientState"),"onDemand":false,"tabStripPlacement":0,"useVerticalStripPlacement":false}, null, null, $get("MainContent_PropertyContainer"));
+});
+//]]>
+</script>
+</form>
+
+    
+    <script>
+        (function () {
+            'use strict';
+
+            /* ── Sync aria-expanded when Bootstrap opens/closes a dropdown ── */
+            $(document).on('show.bs.dropdown', function (e) {
+                $(e.target).find('[aria-haspopup="true"]').attr('aria-expanded', 'true');
+            });
+            $(document).on('hide.bs.dropdown', function (e) {
+                $(e.target).find('[aria-haspopup="true"]').attr('aria-expanded', 'false');
+            });
+
+            /* ── Full keyboard navigation for dropdown menus ────────────── */
+            $(document).on('keydown', '.dropdown-toggle', function (e) {
+                var $toggle = $(this);
+                var $parent = $toggle.closest('.dropdown');
+                var isOpen = $parent.hasClass('open');
+
+                /* Enter or Space: toggle the dropdown */
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    $toggle.trigger('click');
+                    if (!isOpen) {
+                        /* Move focus to first menu item after opening */
+                        setTimeout(function () {
+                            $parent.find('.dropdown-menu [role="menuitem"]:visible:first').focus();
+                        }, 50);
+                    }
+                    return;
+                }
+
+                /* Arrow Down: open menu and focus first item */
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (!isOpen) { $toggle.trigger('click'); }
+                    setTimeout(function () {
+                        $parent.find('.dropdown-menu [role="menuitem"]:visible:first').focus();
+                    }, 50);
+                    return;
+                }
+
+                /* Arrow Up: open menu and focus last item */
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (!isOpen) { $toggle.trigger('click'); }
+                    setTimeout(function () {
+                        $parent.find('.dropdown-menu [role="menuitem"]:visible:last').focus();
+                    }, 50);
+                    return;
+                }
+            });
+
+            $(document).on('keydown', '.dropdown-menu [role="menuitem"]', function (e) {
+                var $item = $(this);
+                var $menu = $item.closest('.dropdown-menu');
+                var $parent = $item.closest('.dropdown');
+                var $items = $menu.find('[role="menuitem"]:visible');
+                var index = $items.index($item);
+
+                /* Arrow Down: next item (wraps to first) */
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    $items.eq(index < $items.length - 1 ? index + 1 : 0).focus();
+                    return;
+                }
+
+                /* Arrow Up: previous item (wraps to last) */
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    $items.eq(index > 0 ? index - 1 : $items.length - 1).focus();
+                    return;
+                }
+
+                /* Escape: close menu, return focus to toggle */
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    $parent.removeClass('open');
+                    $parent.find('.dropdown-toggle')
+                        .attr('aria-expanded', 'false')
+                        .focus();
+                    return;
+                }
+
+                /* Tab: close menu (focus moves naturally) */
+                if (e.key === 'Tab') {
+                    $parent.removeClass('open');
+                    $parent.find('.dropdown-toggle').attr('aria-expanded', 'false');
+                }
+            });
+
+            /* ── Close dropdown when focus leaves the whole dropdown ────── */
+            $(document).on('focusout', '.dropdown', function (e) {
+                var $parent = $(this);
+                /* Short timeout allows the new focused element to be set */
+                setTimeout(function () {
+                    if (!$.contains($parent[0], document.activeElement)) {
+                        $parent.removeClass('open');
+                        $parent.find('.dropdown-toggle').attr('aria-expanded', 'false');
+                    }
+                }, 100);
+            });
+
+        }());
+    </script>
+    <footer role="contentinfo">
+        <p>
+            <img src="Publicsoft_logo_Small.png"
+                alt="Powered by Publicsoft Phenix.net"
+                class="img-responsive"
+                style="display: inline-block; max-width: 150px;" />
+            &nbsp;&nbsp;&copy; 2026 - Powered by Phenix.net
+        </p>
+    </footer>
+</body>
+
+</html>

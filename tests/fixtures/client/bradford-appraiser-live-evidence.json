@@ -1,0 +1,149 @@
+{
+  "input": {
+    "scrap_order_id": "bradford-fresh-20261008",
+    "address": "14500 S HWY 301",
+    "ownerName": "WALMART STORES EAST, LP",
+    "county": "bradford-fl",
+    "transactionType": "REFI",
+    "state": "FL"
+  },
+  "collected_at": "2026-10-08T08:13:17.488Z",
+  "status": "MATCHED",
+  "parcel_id": "04708-0-00200",
+  "candidates": [
+    {
+      "parcel_id": "04708-0-00200",
+      "address": "14500 S HWY 301 STARKE",
+      "owners": [
+        "WALMART STORES EAST, LP"
+      ],
+      "source_id": "bradford_address_search"
+    },
+    {
+      "parcel_id": "04708-0-00201",
+      "address": "14500 S HWY 301 STARKE",
+      "owners": [
+        "FLORIDA CREDIT UNION"
+      ],
+      "source_id": "bradford_address_search"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "bradford_address_search",
+      "url": "https://www.bradfordappraiser.com/gis/recordSearch_2_Results/",
+      "http_status": 200,
+      "sha256": "fe7affa0bf5a15467d9891496fee7a62285417c85fd1809d34643a52b54e309b",
+      "bytes": 17992,
+      "content_type": "text/html",
+      "fetched_at": "2026-10-08T08:13:16.482Z"
+    },
+    {
+      "source_id": "bradford_assessment",
+      "url": "https://www.bradfordappraiser.com/gis/gisSideMenu_3_Details/showDetails/",
+      "http_status": 200,
+      "sha256": "6189c8d39e6e344bc57525e554cbad09966ec56e583b64619cc909b8e284cd49",
+      "bytes": 35286,
+      "content_type": "text/html",
+      "fetched_at": "2026-10-08T08:13:16.929Z"
+    },
+    {
+      "source_id": "bradford_property_card",
+      "url": "https://www.bradfordappraiser.com/gis/linkPropCard/?ohhmenmepckhhomghnbnmocnpgllfifjdaeolklncickglpbcmiollgpamdilbmapgbhjjjegclamhliooandkicmkdkjnfapidbimhkkmgbdjjfhchmoinnnnchinhkoojjbggofcjkgjdgffebljknlimjobbgplnnklompedlpmnieilfjgap",
+      "http_status": 200,
+      "sha256": "0dbdd081abe1c17b63a7310f4f7ab253dd4f5d210d9268f8dbbaec6c81227800",
+      "bytes": 16765,
+      "content_type": "application/pdf; charset=UTF-8; Charset=UTF-8",
+      "fetched_at": "2026-10-08T08:13:17.241Z"
+    }
+  ],
+  "source_request_count": 3,
+  "acceptance": {
+    "address": "14500 S HWY 301, STARKE",
+    "owners": [
+      "WALMART STORES EAST, LP"
+    ],
+    "year": "2026",
+    "year_status": "Preliminary",
+    "assessed_value": "$10,002,023",
+    "sales": 4,
+    "components": 10,
+    "card": "EXTRACTED",
+    "card_pages": 1
+  },
+  "section_status": {
+    "PropertyInformation": {
+      "status": "EXTRACTED",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "#gisDetails_OwnerContent"
+      ]
+    },
+    "AssessmentInformation": {
+      "status": "EXTRACTED",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "[id=\"gisDetails_ValuesContent\"]"
+      ]
+    },
+    "AssessmentHistory": {
+      "status": "PARTIAL",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "[id=\"gisDetails_ValuesContent\"]"
+      ]
+    },
+    "BenefitsInformation": {
+      "status": "UNAVAILABLE",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "#unavailable-benefit-schedule"
+      ]
+    },
+    "BenefitsNote": {
+      "status": "UNAVAILABLE",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "#unavailable-benefit-schedule"
+      ]
+    },
+    "TaxableValueInformation": {
+      "status": "EXTRACTED",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "[id=\"gisDetails_ValuesContent\"]"
+      ]
+    },
+    "FullLegalDescription": {
+      "status": "PARTIAL",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "#gisDetails_OwnerContent"
+      ]
+    },
+    "SalesInformation": {
+      "status": "EXTRACTED",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "#gisDetails_SalesContent"
+      ]
+    },
+    "LandBuildingExtraFeatures": {
+      "status": "EXTRACTED",
+      "source_id": "bradford_assessment",
+      "source_paths": [
+        "#gisBuilding_Characteristics, #gisExtra_Features, #gisLand_Breakdown"
+      ],
+      "components": {
+        "Building": "EXTRACTED",
+        "ExtraFeature": "EXTRACTED",
+        "Land": "EXTRACTED"
+      }
+    }
+  },
+  "limitations": [
+    "The county labels these 2026 Preliminary Values; preliminary values are not relabelled certified. Occupancy and authority-specific exemptions are unavailable. Reported acreage and land square feet are retained independently without reconciling conflicting native values.",
+    "Only the displayed assessment year is captured; no complete assessment-history claim. The GIS description is abbreviated, and the printed record card also abbreviates it; full legal completeness is unverified.",
+    "All property-record-card positioned text is retained in provenance, including construction, printed subareas, permits, prior-year valuation, notes and dimensions. Card printed-date and valuation year are separate source observations."
+  ]
+}

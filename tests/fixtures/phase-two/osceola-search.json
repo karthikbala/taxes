@@ -1,0 +1,71 @@
+{
+  "child_groups": [
+    {
+      "children": [
+        {
+          "external_id": "R022528-285000010010",
+          "custom_parameters": {
+            "roll_year": "2025",
+            "external_type": "Account",
+            "custom_payable_type": "accounts"
+          },
+          "external_id_tokens": [
+            "R022528285000010010",
+            "R022528 285000010010"
+          ]
+        }
+      ]
+    }
+  ],
+  "custom_parameters": {
+    "public_url": "/public/real_estate/parcels/R022528-285000010010/bills?parcel=edbb4e6a-e509-11eb-9381-005056818420",
+    "custom_payable_type": "parents",
+    "alternate_keys": [
+      {
+        "external_id": "1007246",
+        "external_type": "Alternate Key"
+      }
+    ],
+    "external_type": "Account",
+    "entities": [
+      {
+        "external_id": "WAL-MART STORES EAST LP, ATTN PROPERTY TAX DEPT\nPO BOX 8050 MS 0555, BENTONVILLE, AR 72716-0555",
+        "address": "ATTN PROPERTY TAX DEPT\nPO BOX 8050 MS 0555",
+        "province": "",
+        "external_type": "Owner/Address",
+        "country": "",
+        "state": "AR",
+        "zip": "72716-0555",
+        "name": "WAL-MART STORES EAST LP",
+        "city": "BENTONVILLE"
+      },
+      {
+        "external_id": "",
+        "address": "",
+        "province": "",
+        "external_type": "Billing Address",
+        "country": "",
+        "state": "",
+        "zip": "",
+        "name": "",
+        "city": ""
+      },
+      {
+        "external_id": "3250 VINELAND RD, KISSIMMEE",
+        "address": "3250 VINELAND RD",
+        "province": "",
+        "external_type": "Address",
+        "country": "",
+        "state": "",
+        "zip": "",
+        "name": "",
+        "city": "KISSIMMEE"
+      }
+    ]
+  },
+  "display_name": "WAL-MART STORES EAST LP",
+  "display_type": "property_tax",
+  "external_id": "R022528-285000010010",
+  "item_category": "Real Estate",
+  "objectID": "/Taxsys-GovHub/v0/items/osceola:real_estate:parents:edbb4e6a-e509-11eb-9381-005056818420"
+}
