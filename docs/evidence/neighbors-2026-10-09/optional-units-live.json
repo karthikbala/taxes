@@ -1,0 +1,3306 @@
+{
+  "scrap_order_id": "10000001",
+  "address": "555 NE 15 ST UNIT T-15",
+  "ownerName": "GASTON GIRARD",
+  "county": "Miami-Dade",
+  "state": "FL",
+  "status": "partial",
+  "errorMessage": "NA",
+  "NeighboringProperties": {
+    "status": "PARTIAL",
+    "subject": {
+      "folio": "0132310520640",
+      "address": "555 NE 15 ST",
+      "unit": "T-15",
+      "owners": [
+        "GASTON GIRARD"
+      ],
+      "comparison_names": [
+        "GASTON GIRARD"
+      ],
+      "owner_comparison_complete": true,
+      "owner_comparison_provenance": {
+        "method": "county_owner_display_continuation",
+        "source_path": "OwnerInfos[].Name",
+        "grouped": [],
+        "unpaired_generic_markers": [],
+        "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+      },
+      "parent_folio": "0132310520001",
+      "matchesRequestedOwner": true,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.18596100299999,
+              25.790335361000075
+            ],
+            [
+              -80.18596301799994,
+              25.79057307200003
+            ],
+            [
+              -80.18542568199996,
+              25.790577024000072
+            ],
+            [
+              -80.18544243199995,
+              25.789798114000064
+            ],
+            [
+              -80.18589884899995,
+              25.789781383000047
+            ],
+            [
+              -80.18590785699996,
+              25.789781708000078
+            ],
+            [
+              -80.18591669299997,
+              25.78978333400005
+            ],
+            [
+              -80.18592512399994,
+              25.789786218000074
+            ],
+            [
+              -80.18593293999999,
+              25.789790287000073
+            ],
+            [
+              -80.18593993699994,
+              25.78979543500003
+            ],
+            [
+              -80.18594593199998,
+              25.789801530000034
+            ],
+            [
+              -80.18595077399993,
+              25.789808416000028
+            ],
+            [
+              -80.18595433599995,
+              25.78981591400003
+            ],
+            [
+              -80.18595652799996,
+              25.789823830000046
+            ],
+            [
+              -80.18595729299994,
+              25.78983196200005
+            ],
+            [
+              -80.18595862999996,
+              25.790055478000056
+            ],
+            [
+              -80.18596100299999,
+              25.790335361000075
+            ]
+          ]
+        ]
+      },
+      "centroid": [
+        -80.1856973513257,
+        25.790185363329293
+      ],
+      "geometry_anchor_folio": "0132310520001",
+      "geometry_anchor_kind": "PUBLISHED_PARENT"
+    },
+    "properties": [
+      {
+        "folio": "0132310060210",
+        "address": "464 NE 16 ST",
+        "unit": null,
+        "owners": [
+          "TRINITY EPISCOPAL CATHEDRAL",
+          "INC"
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -80.18596100299999,
+                25.790335361000075
+              ],
+              [
+                -80.18595862999996,
+                25.790055478000056
+              ],
+              [
+                -80.18600734399996,
+                25.790056528000036
+              ],
+              [
+                -80.18660542299995,
+                25.79004203200003
+              ],
+              [
+                -80.18689571399995,
+                25.790034994000052
+              ],
+              [
+                -80.18690551499998,
+                25.790304916000025
+              ],
+              [
+                -80.18691471399995,
+                25.790558186000055
+              ],
+              [
+                -80.18596310599997,
+                25.790587800000026
+              ],
+              [
+                -80.18596301799994,
+                25.79057307200003
+              ],
+              [
+                -80.18596100299999,
+                25.790335361000075
+              ]
+            ]
+          ]
+        },
+        "centroid": null,
+        "spatial_relation": "ABUTTING",
+        "comparison_names": [
+          "TRINITY EPISCOPAL CATHEDRAL INC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [
+            {
+              "source_indices": [
+                0,
+                1
+              ],
+              "source_values": [
+                "TRINITY EPISCOPAL CATHEDRAL",
+                "INC"
+              ],
+              "comparison_name": "TRINITY EPISCOPAL CATHEDRAL INC"
+            }
+          ],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_parcel_gis_candidate_page_1",
+            "source_url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+            "source_path": "features[0]",
+            "outSR": 4326,
+            "anchor_folio": "0132310520001"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310060210",
+            "sha256": "02fd4502e2fbb3a48943f1f96da92622e0c9d0683ad3c3d4731f814883840d7e"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": ""
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310060210"
+        }
+      },
+      {
+        "folio": "0132310520010",
+        "address": "555 NE 15 ST",
+        "unit": "401",
+        "owners": [
+          "JUDE PATRICK JACOB",
+          "NOAH ELIJAH JACOB"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "JUDE PATRICK JACOB",
+          "NOAH ELIJAH JACOB"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010",
+            "sha256": "f5b569f10079e2ece9b617b8a3f55b5abc8573370219c0469c7a9c0e2885150b"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010"
+        }
+      },
+      {
+        "folio": "0132310520020",
+        "address": "555 NE 15 ST",
+        "unit": "402",
+        "owners": [
+          "GVDB LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "GVDB LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520020",
+            "sha256": "5329d53c280839904ac35d507ec69c7a680ec3a1421c78c6babb0b8a7278fe4c"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520020"
+        }
+      },
+      {
+        "folio": "0132310520030",
+        "address": "555 NE 15 ST",
+        "unit": "403",
+        "owners": [
+          "PENATEX BROTHERS LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "PENATEX BROTHERS LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520030",
+            "sha256": "50db946115543abc699ca028b4bc01113fda9e84db83c5e8531d7e5370470b9d"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520030"
+        }
+      },
+      {
+        "folio": "0132310520040",
+        "address": "555 NE 15 ST",
+        "unit": "404",
+        "owners": [
+          "MITZI D PARLOR"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "MITZI D PARLOR"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520040",
+            "sha256": "f4bb5379b0cf3512ec335bc75dcd21ce19b2963072aac6dd7d3dedfa05fb3f01"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520040"
+        }
+      },
+      {
+        "folio": "0132310520050",
+        "address": "555 NE 15 ST",
+        "unit": "405",
+        "owners": [
+          "TARA L MAIONE",
+          "JOSHUA BRECKLING"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "TARA L MAIONE",
+          "JOSHUA BRECKLING"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520050",
+            "sha256": "4151377e3012fec3f8424cd43164f24d90904c64e317a871dda1318c34caaa6c"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520050"
+        }
+      },
+      {
+        "folio": "0132310520060",
+        "address": "555 NE 15 ST",
+        "unit": "406",
+        "owners": [
+          "DAVID MACARUSO"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "DAVID MACARUSO"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520060",
+            "sha256": "d90cb4165595b52ccf23bc4030f693d83f812fc14a0c37766bd81afd72d1db0a"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520060"
+        }
+      },
+      {
+        "folio": "0132310520070",
+        "address": "555 NE 15 ST",
+        "unit": "407",
+        "owners": [
+          "HANIC G ARIAS"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "HANIC G ARIAS"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520070",
+            "sha256": "1e8bb34ac109c266cd6f330a47d98682ea48e7bff23c5fa4a1b761b3d57f7d14"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520070"
+        }
+      },
+      {
+        "folio": "0132310520080",
+        "address": "555 NE 15 ST",
+        "unit": "408",
+        "owners": [
+          "ANGELITA MOMI LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ANGELITA MOMI LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520080",
+            "sha256": "e01a66266f8a063be96e6a23e985cefad619fa51c8a12456cc49a1fc9a4172f2"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520080"
+        }
+      },
+      {
+        "folio": "0132310520090",
+        "address": "555 NE 15 ST",
+        "unit": "409",
+        "owners": [
+          "SVETISLAV RABRENOVIC",
+          "ANDRIJANA RABRENOVIC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "SVETISLAV RABRENOVIC",
+          "ANDRIJANA RABRENOVIC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520090",
+            "sha256": "259cc09f5b35f93ea8f9c20f1407fa57914c4607b581ad0a17702869ca78317d"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520090"
+        }
+      },
+      {
+        "folio": "0132310520100",
+        "address": "555 NE 15 ST",
+        "unit": "410",
+        "owners": [
+          "DIANA B SUBIRATS"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "DIANA B SUBIRATS"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520100",
+            "sha256": "2ed031ccb316c2c9202a59232730a8dd7fd2e503c36e1c3e46a24c07e1844239"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520100"
+        }
+      },
+      {
+        "folio": "0132310520110",
+        "address": "555 NE 15 ST",
+        "unit": "411",
+        "owners": [
+          "OSCAR GLOTTMAN"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "OSCAR GLOTTMAN"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520110",
+            "sha256": "d4a76f83872fbb203f2c3054effade7c71f182c8e99025897ae1d55d8cabcde9"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520110"
+        }
+      },
+      {
+        "folio": "0132310520120",
+        "address": "555 NE 15 ST",
+        "unit": "412",
+        "owners": [
+          "CRUZADOS CORP"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "CRUZADOS CORP"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520120",
+            "sha256": "5fea135d63caf1857fd4883fab8219e0d280214bf91bee49369a808007a17cec"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520120"
+        }
+      },
+      {
+        "folio": "0132310520130",
+        "address": "555 NE 15 ST",
+        "unit": "414",
+        "owners": [
+          "TRIFILY FORKIN TRS",
+          "TRIFILY FORKIN AND",
+          "CONSUELO NIETO REV LIVING TR",
+          "CONSUELO NIETO TRS"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "TRIFILY FORKIN TRS",
+          "TRIFILY FORKIN AND",
+          "CONSUELO NIETO REV LIVING TR",
+          "CONSUELO NIETO TRS"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520130",
+            "sha256": "c276c2078a2c306baea7f1ca9b0d30586b546854d8442bd0a97b8ea152502d7f"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520130"
+        }
+      },
+      {
+        "folio": "0132310520140",
+        "address": "555 NE 15 ST",
+        "unit": "415",
+        "owners": [
+          "TRIFILY A FORKIN"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "TRIFILY A FORKIN"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520140",
+            "sha256": "e5c359d2e9a9abdf09501d72e5df0815035fe6eaab22111ed915f9e25092a297"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520140"
+        }
+      },
+      {
+        "folio": "0132310520150",
+        "address": "555 NE 15 ST",
+        "unit": "416",
+        "owners": [
+          "KATERINA FORKIN",
+          "CONSUELO NIETO"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "KATERINA FORKIN",
+          "CONSUELO NIETO"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520150",
+            "sha256": "9aab2b2b4a58390a965cefb6498ee923c7f30319d08d62828335d08ca18930c5"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520150"
+        }
+      },
+      {
+        "folio": "0132310520160",
+        "address": "555 NE 15 ST",
+        "unit": "417",
+        "owners": [
+          "THEO E SPILKA"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "THEO E SPILKA"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520160",
+            "sha256": "20d026c475eb2019be158dcf77a651ff3de1a85c9b62b922a935f8e879bf2376"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520160"
+        }
+      },
+      {
+        "folio": "0132310520170",
+        "address": "555 NE 15 ST",
+        "unit": "418",
+        "owners": [
+          "GRV MIAMI LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "GRV MIAMI LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520170",
+            "sha256": "2c90c84357a14464e93f8f4e71bb7593b5ec779ff743cc5d734dcc355248dcc4"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520170"
+        }
+      },
+      {
+        "folio": "0132310520180",
+        "address": "555 NE 15 ST",
+        "unit": "419",
+        "owners": [
+          "MIA SUNFLOWER INVESTMENTS LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "MIA SUNFLOWER INVESTMENTS LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520180",
+            "sha256": "b95efc68356ae444f359ed6f44076d2e3d0c75cd69f81b628e6505d322a306f1"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520180"
+        }
+      },
+      {
+        "folio": "0132310520190",
+        "address": "555 NE 15 ST",
+        "unit": "420",
+        "owners": [
+          "ROSANA BOWMAN"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ROSANA BOWMAN"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520190",
+            "sha256": "64d29283b1fb21958341af965f69c41d6a08def3e1f26cab4b029fd53de2410b"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520190"
+        }
+      },
+      {
+        "folio": "0132310520200",
+        "address": "555 NE 15 ST",
+        "unit": "421",
+        "owners": [
+          "ANA PAULA COSACHKOW"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ANA PAULA COSACHKOW"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520200",
+            "sha256": "c82c6029122377ebce0b6d56090fbf3c999a297b7b8ed9bc450575c5eeac5484"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520200"
+        }
+      },
+      {
+        "folio": "0132310520210",
+        "address": "555 NE 15 ST",
+        "unit": "501",
+        "owners": [
+          "MARJORIE ANN JONAS"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "MARJORIE ANN JONAS"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520210",
+            "sha256": "c5994b0958203f326a83fb5aacd17b1e52b427b9df59e02495617e2e93d81463"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520210"
+        }
+      },
+      {
+        "folio": "0132310520220",
+        "address": "555 NE 15 ST",
+        "unit": "502",
+        "owners": [
+          "JULIO C RUIZ TRS",
+          "JULIO C RUIZ REV TRUST"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "JULIO C RUIZ TRS",
+          "JULIO C RUIZ REV TRUST"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520220",
+            "sha256": "34905e95414b6349affbe64f03518bb96b05b1b48982a17e067c7c186083c74c"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520220"
+        }
+      },
+      {
+        "folio": "0132310520230",
+        "address": "555 NE 15 ST",
+        "unit": "503",
+        "owners": [
+          "WILDALIA HERNANDEZ TRS",
+          "WILDALIA HERNANDEZ REV TRUST"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "WILDALIA HERNANDEZ TRS",
+          "WILDALIA HERNANDEZ REV TRUST"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520230",
+            "sha256": "150f585ae6be45795c8913bcc44c152a0662d8d5ae90974b710d67ac4eaaa296"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520230"
+        }
+      },
+      {
+        "folio": "0132310520240",
+        "address": "555 NE 15 ST",
+        "unit": "504",
+        "owners": [
+          "JONATHAN GARCIA"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "JONATHAN GARCIA"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520240",
+            "sha256": "2796609237d95b7aceb30d1a20cdae232c88f44a8c60b08a0dda3b9d8329bc45"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520240"
+        }
+      },
+      {
+        "folio": "0132310520250",
+        "address": "555 NE 15 ST",
+        "unit": "505",
+        "owners": [
+          "BENJAMIN JONES",
+          "DIANA GAY JONES"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "BENJAMIN JONES",
+          "DIANA GAY JONES"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520250",
+            "sha256": "d724edf9cf938c52c482854710f0d6736375384ebd2cdabb195f9765e9439e20"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520250"
+        }
+      },
+      {
+        "folio": "0132310520260",
+        "address": "555 NE 15 ST",
+        "unit": "506",
+        "owners": [
+          "FONSECA MIAMI ORGANIZATION"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "FONSECA MIAMI ORGANIZATION"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520260",
+            "sha256": "acac9902799567e78de043afa9b5e733888d97db4c9b04bbefdf799603ca6c54"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520260"
+        }
+      },
+      {
+        "folio": "0132310520270",
+        "address": "555 NE 15 ST",
+        "unit": "507",
+        "owners": [
+          "JOSEPH DOWNS",
+          "C/O TREMBLY LAW FIRM"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "JOSEPH DOWNS",
+          "C/O TREMBLY LAW FIRM"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520270",
+            "sha256": "da7001fdeb9c8e36f4ef741816fd14ce9e1ab1ec2902c5986975b2a2c55f8ccb"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520270"
+        }
+      },
+      {
+        "folio": "0132310520280",
+        "address": "555 NE 15 ST",
+        "unit": "508",
+        "owners": [
+          "ELIZABETH GOMEZ"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ELIZABETH GOMEZ"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520280",
+            "sha256": "883fcb2fc54b537c612e044d99feb33793d1b472d20688acb7c3affcf866a336"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520280"
+        }
+      },
+      {
+        "folio": "0132310520290",
+        "address": "555 NE 15 ST",
+        "unit": "509",
+        "owners": [
+          "ANTONIO AGUIAR TOANDE &W ELVIRA"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ANTONIO AGUIAR TOANDE &W ELVIRA"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520290",
+            "sha256": "5ffb2a117bdaa38b748c4e5354a37aa057192727f8274901b38eb869de55377d"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520290"
+        }
+      },
+      {
+        "folio": "0132310520300",
+        "address": "555 NE 15 ST",
+        "unit": "510",
+        "owners": [
+          "EUGENIO F CAPELO ARIZAGA"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "EUGENIO F CAPELO ARIZAGA"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520300",
+            "sha256": "e909aff2c2ef4902ab0b618f2658209b9aea9e81782ec6a2a499a7cc36eb336d"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520300"
+        }
+      },
+      {
+        "folio": "0132310520310",
+        "address": "555 NE 15 ST",
+        "unit": "511",
+        "owners": [
+          "JOSE O HERRERA"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "JOSE O HERRERA"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520310",
+            "sha256": "821ce106b732b7c92aad6e855c337e6295b8abdbaee20fcdee2f591014b0e6b1"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520310"
+        }
+      },
+      {
+        "folio": "0132310520320",
+        "address": "555 NE 15 ST",
+        "unit": "512",
+        "owners": [
+          "GONZALO JAVIER MORO AGUILAR"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "GONZALO JAVIER MORO AGUILAR"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520320",
+            "sha256": "203816eef8aca7051676e2c339db96b8844924c6957d961d21fc428551d23935"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520320"
+        }
+      },
+      {
+        "folio": "0132310520330",
+        "address": "555 NE 15 ST",
+        "unit": "514",
+        "owners": [
+          "DEV RAMNARINE"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "DEV RAMNARINE"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520330",
+            "sha256": "4e59c40273b386748e92f9661917ea71b71c8de4ea3da62c1281eb33449cbda2"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520330"
+        }
+      },
+      {
+        "folio": "0132310520340",
+        "address": "555 NE 15 ST",
+        "unit": "515",
+        "owners": [
+          "INVICTUS YACHTS LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "INVICTUS YACHTS LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520340",
+            "sha256": "8d8dc0fa4d7dfeb54312cc88d1d22909fa680cfed7eddbde1aabb35260b07e98"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520340"
+        }
+      },
+      {
+        "folio": "0132310520350",
+        "address": "555 NE 15 ST",
+        "unit": "516",
+        "owners": [
+          "BURCU CIKIM"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "BURCU CIKIM"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520350",
+            "sha256": "e33b4288e8d5599f9d1d0a8372f8ef7602e492b8a3be8e8ab218555186aec5a8"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520350"
+        }
+      },
+      {
+        "folio": "0132310520360",
+        "address": "555 NE 15 ST",
+        "unit": "517",
+        "owners": [
+          "STEINMAUER FAMILY LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "STEINMAUER FAMILY LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520360",
+            "sha256": "3d7e375d611fe3613350058176f579bd07b84fcbd4f791b3b91a35c5d37a9415"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520360"
+        }
+      },
+      {
+        "folio": "0132310520370",
+        "address": "555 NE 15 ST",
+        "unit": "518",
+        "owners": [
+          "SAMANTHA ERICA BARREDO"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "SAMANTHA ERICA BARREDO"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520370",
+            "sha256": "a21bd2c078efea0dbf87e3bcf69e533c868fe2e2d83b683f1c08996881b66486"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520370"
+        }
+      },
+      {
+        "folio": "0132310520380",
+        "address": "555 NE 15 ST",
+        "unit": "519",
+        "owners": [
+          "CATHERINE ALBISA",
+          "DARIO CUBERO ALBISA"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "CATHERINE ALBISA",
+          "DARIO CUBERO ALBISA"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520380",
+            "sha256": "0d7dcd124f08a610ad4f0b13a298a86ca899b1fcc832d8ec6957b47257ddce54"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520380"
+        }
+      },
+      {
+        "folio": "0132310520390",
+        "address": "555 NE 15 ST",
+        "unit": "520",
+        "owners": [
+          "TRIFILY A FORKIN"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "TRIFILY A FORKIN"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520390",
+            "sha256": "1751dc2f806f89d9c809bbc85fc2eb98c91dbeccf125df57f04e7521e917f27a"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520390"
+        }
+      },
+      {
+        "folio": "0132310520400",
+        "address": "555 NE 15 ST",
+        "unit": "521",
+        "owners": [
+          "521 VENETIA LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "521 VENETIA LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520400",
+            "sha256": "e352ff85036747c58de20f16c293598039d5acda4e1faf156281a4a7551077b2"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520400"
+        }
+      },
+      {
+        "folio": "0132310520410",
+        "address": "555 NE 15 ST",
+        "unit": "601",
+        "owners": [
+          "BLAS A REYES &W HILDA C"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "BLAS A REYES &W HILDA C"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520410",
+            "sha256": "4500e345959140b6edb8fd8d37474ab7a8ccef49d00fb8338caae7e51b445f49"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520410"
+        }
+      },
+      {
+        "folio": "0132310520420",
+        "address": "555 NE 15 ST",
+        "unit": "602",
+        "owners": [
+          "ROLANDO BARRETO &W JOYCE"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ROLANDO BARRETO &W JOYCE"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520420",
+            "sha256": "5241bbe941890eabe515df0c85615598d01e1c884ba5329f0bd1f803b945875f"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520420"
+        }
+      },
+      {
+        "folio": "0132310520430",
+        "address": "555 NE 15 ST",
+        "unit": "603",
+        "owners": [
+          "ALECRI LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "ALECRI LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520430",
+            "sha256": "2285083e0c86a0391c66ab8d54d0d3884caf4e2d269878e4762243a57de3e92b"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520430"
+        }
+      },
+      {
+        "folio": "0132310520440",
+        "address": "555 NE 15 ST",
+        "unit": "604",
+        "owners": [
+          "MARZIA MANCUSI",
+          "ADELCHI MANCUSI"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "MARZIA MANCUSI",
+          "ADELCHI MANCUSI"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520440",
+            "sha256": "e403d9660886af375d43b01998295a7326dddaf92da8e10f057ee80403c6e8ae"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520440"
+        }
+      },
+      {
+        "folio": "0132310520450",
+        "address": "555 NE 15 ST",
+        "unit": "605",
+        "owners": [
+          "NEWREZ LLC",
+          "C/O PLANTET HOME LENDING LLC"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "NEWREZ LLC",
+          "C/O PLANTET HOME LENDING LLC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520450",
+            "sha256": "9fda1ecdbaa879172b6471e8072a93f6c50a5aaff769685e2de3eba35023f6b4"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520450"
+        }
+      },
+      {
+        "folio": "0132310520460",
+        "address": "555 NE 15 ST",
+        "unit": "606",
+        "owners": [
+          "IVAN ENRICO CASANOVA REYNOSO",
+          "INGRID VERONICA ALBAN VALERO"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "IVAN ENRICO CASANOVA REYNOSO",
+          "INGRID VERONICA ALBAN VALERO"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520460",
+            "sha256": "9a65e5e7d83066f288be1a3793105db4344020881731d5380b6696b025697276"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520460"
+        }
+      },
+      {
+        "folio": "0132310520940",
+        "address": "555 NE 15 ST",
+        "unit": "12-B",
+        "owners": [
+          "GASTON GIRARD"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "GASTON GIRARD"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "SAME_OWNER_SET",
+        "matching_owner_names": [
+          "GASTON GIRARD"
+        ],
+        "matchesRequestedOwner": true,
+        "matchesSubjectOwner": true,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520940",
+            "sha256": "f7d0597abd4080aa468eb4b296adf48266196a43908f4d1bac33aa5c25e3d8f7"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520940"
+        }
+      },
+      {
+        "folio": "0132310521010",
+        "address": "555 NE 15 ST",
+        "unit": "20-B",
+        "owners": [
+          "GASTON GIRARD"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "GASTON GIRARD"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "SAME_OWNER_SET",
+        "matching_owner_names": [
+          "GASTON GIRARD"
+        ],
+        "matchesRequestedOwner": true,
+        "matchesSubjectOwner": true,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310521010",
+            "sha256": "23415ad4ba3a1537c0f00d861039f67a60abf49c0cabf59a349d50e6cc3d8688"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310521010"
+        }
+      },
+      {
+        "folio": "0132310521220",
+        "address": "555 NE 15 ST",
+        "unit": "16-C",
+        "owners": [
+          "GASTON GIRARD"
+        ],
+        "geometry": null,
+        "centroid": null,
+        "spatial_relation": "SAME_BUILDING",
+        "comparison_names": [
+          "GASTON GIRARD"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "SAME_OWNER_SET",
+        "matching_owner_names": [
+          "GASTON GIRARD"
+        ],
+        "matchesRequestedOwner": true,
+        "matchesSubjectOwner": true,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_neighbors_building_search",
+            "source_path": "MinimumPropertyInfos",
+            "method": "address_index_candidate_only"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310521220",
+            "sha256": "d5f0a5033e3a678bb80ce86a14b1c3a6d6bb88b8fe6497677c6f5c6d493c5468"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": "01-3231-052-0001"
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310521220"
+        }
+      }
+    ],
+    "hasMatchingOwnerNeighbors": true,
+    "hasRequestedOwnerNeighbors": true,
+    "coverage": {
+      "status": "PARTIAL",
+      "candidate_count": 380,
+      "discovered_candidate_count": 382,
+      "unclassified_geometry_count": 1,
+      "examined_count": 50,
+      "returned_count": 50,
+      "excluded_count": 2,
+      "owner_unavailable_count": 0,
+      "cap_reached": true,
+      "max_candidates": 50,
+      "same_building": {
+        "status": "COMPLETE",
+        "complete": true,
+        "index_total": 381,
+        "index_rows": 381,
+        "candidate_count": 379,
+        "self_excluded_count": 1,
+        "parent_reference_excluded_count": 1,
+        "pages": [
+          {
+            "from": 1,
+            "to": 200,
+            "row_count": 200,
+            "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&myAddress=555+NE+15+ST&to=200"
+          },
+          {
+            "from": 201,
+            "to": 400,
+            "row_count": 181,
+            "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=201&myAddress=555+NE+15+ST&to=400"
+          }
+        ],
+        "reason": null
+      },
+      "adjacency": {
+        "status": "SEARCH_INCOMPLETE",
+        "complete": false,
+        "candidate_count": 4,
+        "requested_object_ids": [
+          32522,
+          32527,
+          32599,
+          32613
+        ],
+        "max_candidates": 50,
+        "buffer_m": 5,
+        "returned_object_count": 4
+      },
+      "ownership_complete": false,
+      "owner_index": {
+        "status": "COMPLETE",
+        "complete": true,
+        "queried_names": [
+          "GASTON GIRARD"
+        ],
+        "queries": [
+          {
+            "owner_name": "GASTON GIRARD",
+            "status": "COMPLETE",
+            "complete": true,
+            "seed_verified": true,
+            "index_total": 299,
+            "index_rows": 299,
+            "exact_name_rows": 4,
+            "indexCandidateFolios": [
+              "0132310520940",
+              "0132310521010",
+              "0132310521220"
+            ],
+            "nonexact_name_rows": 295,
+            "pages": [
+              {
+                "from": 1,
+                "to": 200,
+                "row_count": 200,
+                "source_count": 0,
+                "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&from=1&ownerName=GASTON+GIRARD&to=200"
+              },
+              {
+                "from": 201,
+                "to": 400,
+                "row_count": 99,
+                "source_count": 0,
+                "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&from=201&ownerName=GASTON+GIRARD&to=400"
+              }
+            ],
+            "reason": null
+          }
+        ],
+        "indexCandidateFolios": [
+          "0132310520940",
+          "0132310521010",
+          "0132310521220"
+        ],
+        "scopeCandidateFolios": [
+          "0132310520940",
+          "0132310521010",
+          "0132310521220"
+        ],
+        "hasObservedMatchingOwnerNeighbor": true,
+        "note": "Exact published name-token matches in the native owner index, intersected with discovered neighbor candidates; index-only observation does not prove full neighbor ownership or legal identity."
+      }
+    },
+    "options": {
+      "sameBuilding": true,
+      "adjacency": true,
+      "includeCornerTouch": false,
+      "maxCandidates": 50
+    },
+    "warnings": [
+      "Native unit-filtered search did not complete; a fresh all-unit street index was requested with complete pagination and exact-unit confirmation required.",
+      "GIS boundary classification is approximate and is not a legal survey.",
+      "Candidate detail cap reached; remaining county candidates were not examined. No negative ownership conclusion is available."
+    ],
+    "note": "Neighbor ownership is based on current published county owner names. Matching names are not proof of legal identity; this search does not establish statewide ownership or tax clearance."
+  },
+  "ExtractionMetadata": {
+    "contractVersion": "2.0-neighbors",
+    "request_id": "f1f6445f-3f7c-4f59-bd17-a8e80cdf4bd3",
+    "collected_at": "2026-10-09T08:57:39.136Z",
+    "duration_ms": 37795,
+    "county_id": "miami-dade-fl",
+    "status": "PARTIAL",
+    "match": {
+      "status": "MATCHED",
+      "parcel_id": "0132310520640",
+      "candidates": [
+        {
+          "parcel_id": "0132310520640",
+          "address": "555 NE 15 ST",
+          "unit": "T-15",
+          "owners": [
+            "GASTON GIRARD"
+          ],
+          "source_id": "miami_address_search"
+        }
+      ],
+      "notes": [
+        "Native unit-filtered search did not complete; a fresh all-unit street index was requested with complete pagination and exact-unit confirmation required."
+      ],
+      "source_id": "miami_assessment"
+    },
+    "sources": [
+      {
+        "id": "miami_address_search",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=T-15&from=1&myAddress=555+NE+15+ST&to=200",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:39.136Z",
+        "http_status": 200,
+        "sha256": "07c202c654b4eb77e430aa02f464bfe5c4a61734c300d5db10c570295bbe36d6",
+        "duration_ms": 4556
+      },
+      {
+        "id": "miami_address_search_all_units_fallback",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&myAddress=555+NE+15+ST&to=200",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:43.692Z",
+        "http_status": 200,
+        "sha256": "4cb55f8e9cc89f88a791bdd1b86f1eb268e5bee02dff13d40f650416301ef706",
+        "duration_ms": 4076
+      },
+      {
+        "id": "miami_address_search_all_units_fallback",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=201&myAddress=555+NE+15+ST&to=400",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:47.768Z",
+        "http_status": 200,
+        "sha256": "9a244379ecf9c7bf3c18196dc15765a6edad2f458f19569fa0fe55c1ac230087",
+        "duration_ms": 3514
+      },
+      {
+        "id": "miami_assessment",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520640",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:51.282Z",
+        "http_status": 200,
+        "sha256": "fd2f07cb90bb83f5aa21c443bc41327760aa34518e824b4a7946cd946cc0cd10",
+        "duration_ms": 375
+      },
+      {
+        "id": "miami_neighbors_building_search",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&myAddress=555+NE+15+ST&to=200",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:51.657Z",
+        "http_status": 200,
+        "sha256": "4cb55f8e9cc89f88a791bdd1b86f1eb268e5bee02dff13d40f650416301ef706",
+        "duration_ms": 3258
+      },
+      {
+        "id": "miami_neighbors_building_search",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=201&myAddress=555+NE+15+ST&to=400",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:54.915Z",
+        "http_status": 200,
+        "sha256": "9a244379ecf9c7bf3c18196dc15765a6edad2f458f19569fa0fe55c1ac230087",
+        "duration_ms": 4362
+      },
+      {
+        "id": "miami_parcel_gis_subject",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520640%27&outFields=*&returnGeometry=true&outSR=4326",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:57:59.277Z",
+        "http_status": 200,
+        "sha256": "10315aa771776395a76fe93c35a711be9f7ff2b5190bf61a817d009dad5c3917",
+        "duration_ms": 1838
+      },
+      {
+        "id": "miami_parcel_gis_parent",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520001%27&outFields=*&returnGeometry=true&outSR=4326",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:01.115Z",
+        "http_status": 200,
+        "sha256": "8fc6453cf05bd8cc3eacc33b61b3dd416a6fa9ceae967268db0e4987188a2bbe",
+        "duration_ms": 604
+      },
+      {
+        "id": "miami_parcel_gis_candidate_ids",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnIdsOnly=true",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:01.719Z",
+        "http_status": 200,
+        "sha256": "ae50252e694a9ab1e0863610be0574111b137a4176bcc9dab0cbd9cda74764fd",
+        "duration_ms": 309
+      },
+      {
+        "id": "miami_parcel_gis_candidate_count",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnCountOnly=true",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:02.028Z",
+        "http_status": 200,
+        "sha256": "a5fb8eb97856970b61d9f466deb64f7659e835ee8ec5497003b78438fe888cad",
+        "duration_ms": 309
+      },
+      {
+        "id": "miami_parcel_gis_candidate_page_1",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:02.337Z",
+        "http_status": 200,
+        "sha256": "99fd508491407971686fa4e86bf90fb47f9dbcc00b2f123a00d32eafbe7deeb7",
+        "duration_ms": 312
+      },
+      {
+        "id": "miami_neighbors_owner_index",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&from=1&ownerName=GASTON+GIRARD&to=200",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:02.649Z",
+        "http_status": 200,
+        "sha256": "4b36b465b1dd1fd53a0f493c9d3c2d79e1b17ca486adedbfff0695ec0122d4ab",
+        "duration_ms": 2501
+      },
+      {
+        "id": "miami_neighbors_owner_index",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&from=201&ownerName=GASTON+GIRARD&to=400",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:05.150Z",
+        "http_status": 200,
+        "sha256": "1ae637580f99efc0bd22414e8f6de337f00fad077e3cffd69e92bf529067c05c",
+        "duration_ms": 1782
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520940",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:06.932Z",
+        "http_status": 200,
+        "sha256": "f7d0597abd4080aa468eb4b296adf48266196a43908f4d1bac33aa5c25e3d8f7",
+        "duration_ms": 1670
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310521010",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:06.932Z",
+        "http_status": 200,
+        "sha256": "23415ad4ba3a1537c0f00d861039f67a60abf49c0cabf59a349d50e6cc3d8688",
+        "duration_ms": 351
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310521220",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:07.283Z",
+        "http_status": 200,
+        "sha256": "d5f0a5033e3a678bb80ce86a14b1c3a6d6bb88b8fe6497677c6f5c6d493c5468",
+        "duration_ms": 360
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310060210",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:07.643Z",
+        "http_status": 200,
+        "sha256": "02fd4502e2fbb3a48943f1f96da92622e0c9d0683ad3c3d4731f814883840d7e",
+        "duration_ms": 349
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:07.992Z",
+        "http_status": 200,
+        "sha256": "f5b569f10079e2ece9b617b8a3f55b5abc8573370219c0469c7a9c0e2885150b",
+        "duration_ms": 353
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520020",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:08.345Z",
+        "http_status": 200,
+        "sha256": "5329d53c280839904ac35d507ec69c7a680ec3a1421c78c6babb0b8a7278fe4c",
+        "duration_ms": 355
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520030",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:08.602Z",
+        "http_status": 200,
+        "sha256": "50db946115543abc699ca028b4bc01113fda9e84db83c5e8531d7e5370470b9d",
+        "duration_ms": 387
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520040",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:08.700Z",
+        "http_status": 200,
+        "sha256": "f4bb5379b0cf3512ec335bc75dcd21ce19b2963072aac6dd7d3dedfa05fb3f01",
+        "duration_ms": 356
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520050",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:08.989Z",
+        "http_status": 200,
+        "sha256": "4151377e3012fec3f8424cd43164f24d90904c64e317a871dda1318c34caaa6c",
+        "duration_ms": 385
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520060",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:09.056Z",
+        "http_status": 200,
+        "sha256": "d90cb4165595b52ccf23bc4030f693d83f812fc14a0c37766bd81afd72d1db0a",
+        "duration_ms": 355
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520070",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:09.374Z",
+        "http_status": 200,
+        "sha256": "1e8bb34ac109c266cd6f330a47d98682ea48e7bff23c5fa4a1b761b3d57f7d14",
+        "duration_ms": 410
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520080",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:09.411Z",
+        "http_status": 200,
+        "sha256": "e01a66266f8a063be96e6a23e985cefad619fa51c8a12456cc49a1fc9a4172f2",
+        "duration_ms": 355
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520090",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:09.766Z",
+        "http_status": 200,
+        "sha256": "259cc09f5b35f93ea8f9c20f1407fa57914c4607b581ad0a17702869ca78317d",
+        "duration_ms": 388
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520100",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:09.784Z",
+        "http_status": 200,
+        "sha256": "2ed031ccb316c2c9202a59232730a8dd7fd2e503c36e1c3e46a24c07e1844239",
+        "duration_ms": 349
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520110",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:10.133Z",
+        "http_status": 200,
+        "sha256": "d4a76f83872fbb203f2c3054effade7c71f182c8e99025897ae1d55d8cabcde9",
+        "duration_ms": 347
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520120",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:10.154Z",
+        "http_status": 200,
+        "sha256": "5fea135d63caf1857fd4883fab8219e0d280214bf91bee49369a808007a17cec",
+        "duration_ms": 387
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520130",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:10.480Z",
+        "http_status": 200,
+        "sha256": "c276c2078a2c306baea7f1ca9b0d30586b546854d8442bd0a97b8ea152502d7f",
+        "duration_ms": 358
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520140",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:10.541Z",
+        "http_status": 200,
+        "sha256": "e5c359d2e9a9abdf09501d72e5df0815035fe6eaab22111ed915f9e25092a297",
+        "duration_ms": 390
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520150",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:10.838Z",
+        "http_status": 200,
+        "sha256": "9aab2b2b4a58390a965cefb6498ee923c7f30319d08d62828335d08ca18930c5",
+        "duration_ms": 347
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520160",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:10.931Z",
+        "http_status": 200,
+        "sha256": "20d026c475eb2019be158dcf77a651ff3de1a85c9b62b922a935f8e879bf2376",
+        "duration_ms": 387
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520170",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:11.185Z",
+        "http_status": 200,
+        "sha256": "2c90c84357a14464e93f8f4e71bb7593b5ec779ff743cc5d734dcc355248dcc4",
+        "duration_ms": 349
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520180",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:11.318Z",
+        "http_status": 200,
+        "sha256": "b95efc68356ae444f359ed6f44076d2e3d0c75cd69f81b628e6505d322a306f1",
+        "duration_ms": 385
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520190",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:11.534Z",
+        "http_status": 200,
+        "sha256": "64d29283b1fb21958341af965f69c41d6a08def3e1f26cab4b029fd53de2410b",
+        "duration_ms": 354
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520200",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:11.703Z",
+        "http_status": 200,
+        "sha256": "c82c6029122377ebce0b6d56090fbf3c999a297b7b8ed9bc450575c5eeac5484",
+        "duration_ms": 383
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520210",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:11.888Z",
+        "http_status": 200,
+        "sha256": "c5994b0958203f326a83fb5aacd17b1e52b427b9df59e02495617e2e93d81463",
+        "duration_ms": 353
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520220",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:12.086Z",
+        "http_status": 200,
+        "sha256": "34905e95414b6349affbe64f03518bb96b05b1b48982a17e067c7c186083c74c",
+        "duration_ms": 382
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520230",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:12.241Z",
+        "http_status": 200,
+        "sha256": "150f585ae6be45795c8913bcc44c152a0662d8d5ae90974b710d67ac4eaaa296",
+        "duration_ms": 353
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520240",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:12.468Z",
+        "http_status": 200,
+        "sha256": "2796609237d95b7aceb30d1a20cdae232c88f44a8c60b08a0dda3b9d8329bc45",
+        "duration_ms": 377
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520250",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:12.594Z",
+        "http_status": 200,
+        "sha256": "d724edf9cf938c52c482854710f0d6736375384ebd2cdabb195f9765e9439e20",
+        "duration_ms": 380
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520260",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:12.845Z",
+        "http_status": 200,
+        "sha256": "acac9902799567e78de043afa9b5e733888d97db4c9b04bbefdf799603ca6c54",
+        "duration_ms": 391
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520270",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:12.974Z",
+        "http_status": 200,
+        "sha256": "da7001fdeb9c8e36f4ef741816fd14ce9e1ab1ec2902c5986975b2a2c55f8ccb",
+        "duration_ms": 357
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520280",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:13.236Z",
+        "http_status": 200,
+        "sha256": "883fcb2fc54b537c612e044d99feb33793d1b472d20688acb7c3affcf866a336",
+        "duration_ms": 387
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520290",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:13.331Z",
+        "http_status": 200,
+        "sha256": "5ffb2a117bdaa38b748c4e5354a37aa057192727f8274901b38eb869de55377d",
+        "duration_ms": 355
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520300",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:13.623Z",
+        "http_status": 200,
+        "sha256": "e909aff2c2ef4902ab0b618f2658209b9aea9e81782ec6a2a499a7cc36eb336d",
+        "duration_ms": 385
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520310",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:13.686Z",
+        "http_status": 200,
+        "sha256": "821ce106b732b7c92aad6e855c337e6295b8abdbaee20fcdee2f591014b0e6b1",
+        "duration_ms": 351
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520320",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:14.008Z",
+        "http_status": 200,
+        "sha256": "203816eef8aca7051676e2c339db96b8844924c6957d961d21fc428551d23935",
+        "duration_ms": 395
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520330",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:14.037Z",
+        "http_status": 200,
+        "sha256": "4e59c40273b386748e92f9661917ea71b71c8de4ea3da62c1281eb33449cbda2",
+        "duration_ms": 362
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520340",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:14.399Z",
+        "http_status": 200,
+        "sha256": "8d8dc0fa4d7dfeb54312cc88d1d22909fa680cfed7eddbde1aabb35260b07e98",
+        "duration_ms": 361
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520350",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:14.403Z",
+        "http_status": 200,
+        "sha256": "e33b4288e8d5599f9d1d0a8372f8ef7602e492b8a3be8e8ab218555186aec5a8",
+        "duration_ms": 394
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520360",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:14.760Z",
+        "http_status": 200,
+        "sha256": "3d7e375d611fe3613350058176f579bd07b84fcbd4f791b3b91a35c5d37a9415",
+        "duration_ms": 358
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520370",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:14.797Z",
+        "http_status": 200,
+        "sha256": "a21bd2c078efea0dbf87e3bcf69e533c868fe2e2d83b683f1c08996881b66486",
+        "duration_ms": 391
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520380",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:15.118Z",
+        "http_status": 200,
+        "sha256": "0d7dcd124f08a610ad4f0b13a298a86ca899b1fcc832d8ec6957b47257ddce54",
+        "duration_ms": 379
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520390",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:15.188Z",
+        "http_status": 200,
+        "sha256": "1751dc2f806f89d9c809bbc85fc2eb98c91dbeccf125df57f04e7521e917f27a",
+        "duration_ms": 395
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520400",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:15.497Z",
+        "http_status": 200,
+        "sha256": "e352ff85036747c58de20f16c293598039d5acda4e1faf156281a4a7551077b2",
+        "duration_ms": 359
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520410",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:15.583Z",
+        "http_status": 200,
+        "sha256": "4500e345959140b6edb8fd8d37474ab7a8ccef49d00fb8338caae7e51b445f49",
+        "duration_ms": 377
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520420",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:15.856Z",
+        "http_status": 200,
+        "sha256": "5241bbe941890eabe515df0c85615598d01e1c884ba5329f0bd1f803b945875f",
+        "duration_ms": 352
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520430",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:15.960Z",
+        "http_status": 200,
+        "sha256": "2285083e0c86a0391c66ab8d54d0d3884caf4e2d269878e4762243a57de3e92b",
+        "duration_ms": 387
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520440",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:16.208Z",
+        "http_status": 200,
+        "sha256": "e403d9660886af375d43b01998295a7326dddaf92da8e10f057ee80403c6e8ae",
+        "duration_ms": 349
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520450",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:16.347Z",
+        "http_status": 200,
+        "sha256": "9fda1ecdbaa879172b6471e8072a93f6c50a5aaff769685e2de3eba35023f6b4",
+        "duration_ms": 401
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520460",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:58:16.557Z",
+        "http_status": 200,
+        "sha256": "9a65e5e7d83066f288be1a3793105db4344020881731d5380b6696b025697276",
+        "duration_ms": 374
+      }
+    ],
+    "errors": [],
+    "validation": {
+      "subject_folio_and_unit": true,
+      "owner_match": true,
+      "all_candidates_examined": false
+    },
+    "provenance": {
+      "owners": {
+        "source_id": "miami_assessment",
+        "source_path": "OwnerInfos[].Name"
+      },
+      "parent_folio": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.ParentFolio"
+      }
+    }
+  }
+}
