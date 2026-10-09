@@ -43,3 +43,13 @@ Authenticated production JSON request `124c0bbd-7617-414f-abfe-92c2d99d1141` res
 Final layout release: standalone `8066339ac3200108c0761490368fd14abced5330` passed [CI](https://github.com/karthikbala/taxes/actions/runs/37894481714). Hosted source `e976d26238cc371b2f62846ad983f7128e8e1d1c`, version 38, deployment `appgdep_6ac88c07d6f08191a459c3d6bf239fb2` succeeded at 06:39:32 UTC. Only map-control width/margins changed after the version-37 source/API acceptance; extraction proof is reused for the unchanged modules. Local preview server was stopped.
 
 Final version-38 browser acceptance: request `b2bd42b6-44d6-4dc7-bfaf-b57328677370` independently fetched T-15, enumerated 382 candidates, examined 50, and displayed all three confirmed GASTON GIRARD unit matches. The match-only filter and card selection were exercised. Compact map buttons measured 83–102 pixels wide. Screenshot: `docs/evidence/neighbors-2026-10-09/owner-matches.png`. The original Jude example remains the saved default; the open demonstration tab uses the separately verified positive example.
+
+## UI follow-up — 9 October 2026
+
+User requested the same elapsed timer as live client JSON and results beside the form. Both actions now own one right-hand result panel. Neighbour progress starts immediately at 0.0 seconds, stops on success/failure, keeps final elapsed time and explains the bounded wait. Both action buttons and the county selector are locked during a request. Switching actions clears stale rendered sections, JSON and download state; neighbour JSON is shown/downloaded through the shared controls. No source adapters changed.
+
+Standalone code `261dbd1f1cd69ae37eab3687ef5fbcb72a6d5dc0`; [CI](https://github.com/karthikbala/taxes/actions/runs/37900338519) passed. Thirty focused offline checks passed, including timer success/failure and overlapping-request protection; standalone and hosted builds passed. Injected offline browser QA verified immediate progress, shared-panel placement, JSON correspondence and switching back to the client action.
+
+Hosted source `9c8fa13f19ba04dd9cf295f5d1922f50751bc05a`, version 39, deployment `appgdep_6ac89aba10d881918619e33e3ba65c19` succeeded. Release preflight found no active paid browser jobs across all 50 rows. One direct, unpaid production neighbour call verified timer/panel behavior: request `9c9d180a-6b4f-4cbc-b1ad-ef11414b87a9`, subject `0132310520010`, 50 returned records, errors empty, final elapsed 29.5 seconds. DOM geometry confirmed results inside the panel to the right of the form. Paid provider and model calls: zero. No PortTrack changes.
+
+Screenshots: `docs/evidence/neighbors-2026-10-09/panel-progress.png` and `panel-result.png`.
