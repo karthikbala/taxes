@@ -87,3 +87,27 @@ test('init sends default order fields only and never persists access key', async
     elements.county.value = 'broward-fl'; elements.county.emit('change'); assert.equal(elements['neighbors-check'].disabled, true); assert.match(elements['neighbors-status'].textContent, /Miami-Dade County only/);
   } finally { globalThis.fetch = priorFetch; }
 });
+
+test('neighbor progress starts immediately, ticks while pending and stops on success or failure', async()=>{
+ for(const failed of [false,true]){
+  const ids=['neighbors-check','neighbors-result','neighbors-status','status','timer','request-id','error','county','order','address','owner','transaction','key'];
+  const els=Object.fromEntries(ids.map(id=>[id,new Node('div')]));
+  for(const [id,value]of Object.entries({county:'miami-dade-fl',order:'O',address:'10 Example Lane',owner:'A & B TRUST',transaction:'REFI',key:'private-test-key'}))els[id].value=value;
+  let release,clock=0,tick,stopped=0,started=0,finished=0,result=null;
+  const prior=globalThis.fetch;globalThis.fetch=()=>new Promise((resolve,reject)=>{release=()=>failed?reject(new Error('offline transport failure')):resolve({ok:true,json:async()=>fixture(),headers:{get:()=>null}});});
+  try{
+   initNeighbors({...document,getElementById:id=>els[id]},{now:()=>clock,repeat:fn=>{tick=fn;return 7;},stopRepeat:id=>{assert.equal(id,7);stopped++;},onStart:()=>{started++;return true;},onResult:data=>{result=data;},onFinish:()=>finished++});
+   const pending=els['neighbors-check'].emit('click');assert.equal(started,1);assert.equal(els.timer.textContent,' · 0.0 seconds');assert.equal(els['neighbors-check'].disabled,true);assert.match(els.status.textContent,/Checking fresh county/);
+   clock=2500;tick();assert.equal(els.timer.textContent,' · 2.5 seconds');release();await pending;
+   assert.equal(stopped,1);assert.equal(finished,1);assert.equal(els['neighbors-check'].disabled,false);assert.equal(els.timer.textContent,' · 2.5 seconds');
+   if(failed){assert.equal(result,null);assert.match(els.error.textContent,/could not be reached/);assert.equal(els.status.textContent,'Neighbor request failed');}else{assert.ok(result.NeighboringProperties);assert.equal(els.status.textContent,'Neighbor results ready');}
+  }finally{globalThis.fetch=prior;}
+ }
+});
+
+test('shared request owner can reject neighbor start without changing an active result',async()=>{
+ const els=Object.fromEntries(['neighbors-check','neighbors-result','neighbors-status','county','order','address','owner','transaction','key'].map(id=>[id,new Node('div')]));
+ for(const [id,value]of Object.entries({county:'miami-dade-fl',order:'O',address:'A',owner:'B',transaction:'REFI',key:'private-test-key'}))els[id].value=value;
+ els['neighbors-result'].textContent='Prior result';let called=0;const prior=globalThis.fetch;globalThis.fetch=()=>{called++;throw Error('must not dispatch');};
+ try{initNeighbors({...document,getElementById:id=>els[id]},{onStart:()=>false});await els['neighbors-check'].emit('click');assert.equal(called,0);assert.equal(els['neighbors-result'].textContent,'Prior result');}finally{globalThis.fetch=prior;}
+});
