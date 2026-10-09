@@ -1,32 +1,34 @@
 import {renderNeighbors} from './neighbors-render.mjs';
 
-export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFinish=()=>{}, now=()=>performance.now(), repeat=setInterval, stopRepeat=clearInterval}={}) {
+export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFinish=()=>{}, onScopeChange=()=>{}, now=()=>performance.now(), repeat=setInterval, stopRepeat=clearInterval}={}) {
   const el=id=>document.getElementById(id), button=el('neighbors-check'), result=el('neighbors-result'), status=el('neighbors-status');
   if(!button||!result||!status)return;
   let pending=false, requestVersion=0, activeController=null;
   const sharedStatus=message=>{status.textContent=message;if(el('status'))el('status').textContent=message;};
   const enabled=()=>{
     const supported=el('county')?.value==='miami-dade-fl';
-    button.disabled=pending||!supported;
-    if(!pending)status.textContent=supported?'Check adjacent parcels and same-building units for owner-name matches.':'Neighbor checks are currently available for Miami-Dade County only.';
+    button.disabled=pending||!supported;if(el('neighbors-same-building'))el('neighbors-same-building').disabled=pending||!supported;
+    if(!pending)status.textContent=supported?'Check shared-boundary parcels; optionally include same-building units.':'Neighbor checks are currently available for Miami-Dade County only.';
   };
   el('county')?.addEventListener('change',()=>{requestVersion++;activeController?.abort();result.replaceChildren();enabled();});
   const Observer=document.defaultView?.MutationObserver;
   if(Observer&&el('county'))new Observer(enabled).observe(el('county'),{childList:true});
   enabled();
+  el('neighbors-same-building')?.addEventListener('change',()=>{if(pending)return;result.replaceChildren();el('neighbors-map-result')?.replaceChildren();onScopeChange();status.textContent='Search scope changed. Run a new neighbour check.';});
   button.addEventListener('click',async()=>{
     if(pending||el('county')?.value!=='miami-dade-fl')return;
-    const order={scrap_order_id:el('order').value,address:el('address').value,ownerName:el('owner').value,county:el('county').value,transactionType:el('transaction').value,state:'FL'};
+    const order={scrap_order_id:el('order').value,address:el('address').value,ownerName:el('owner').value,county:el('county').value,transactionType:el('transaction').value,state:'FL',neighborOptions:{sameBuilding:el('neighbors-same-building')?.checked===true,adjacency:true,includeCornerTouch:false}};
     if(!order.address.trim()||!order.ownerName.trim()||!el('key').value.trim()){sharedStatus('Enter the property address, owner name and API access key before checking neighbors.');return;}
     if(onStart()===false)return;
-    pending=true;button.disabled=true;button.textContent='Checking neighbours…';result.replaceChildren();
-    sharedStatus('Checking fresh county neighbour records…');status.textContent='Resolving the property and checking shared parcel boundaries and owner records. This can take up to two minutes.';
+    pending=true;button.disabled=true;if(el('neighbors-same-building'))el('neighbors-same-building').disabled=true;button.textContent='Checking neighbours…';result.replaceChildren();
+    sharedStatus('Checking fresh county neighbour records…');status.textContent=order.neighborOptions.sameBuilding?'Checking shared parcel boundaries and separately checking same-building unit owners. This can take up to two minutes.':'Resolving the property and checking shared parcel boundaries and owner records. This can take up to two minutes.';
     const start=now(),tick=()=>{if(el('timer'))el('timer').textContent=' · '+((now()-start)/1000).toFixed(1)+' seconds';};tick();
     const interval=repeat(tick,100),version=requestVersion,controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),135000);activeController=controller;
     try{
       const response=await fetch('/api/v2/property/neighbors',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+el('key').value},body:JSON.stringify(order),cache:'no-store',signal:controller.signal});
       const data=await response.json();if(version!==requestVersion)return;
       onResult(data);
+      if(el('neighbors-scope-note'))el('neighbors-scope-note').textContent=data.NeighboringProperties?.options?.sameBuilding===true?'Checks boundary-sharing parcels and, separately, units in the same building. Unit records do not establish individual land boundaries.':'Checks properties that share a parcel boundary. Each returned property includes its recorded owners and name-match result.';
       const requestId=data.ExtractionMetadata?.request_id||response.headers?.get('x-request-id');if(el('request-id'))el('request-id').textContent=requestId?'Request ID: '+requestId:'';
       if(data.NeighboringProperties){
         const view=renderNeighbors(document,result,data,{mapParent:el('neighbors-map-result')});
@@ -40,7 +42,7 @@ export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFi
       if(el('error'))el('error').textContent=status.textContent;
     }finally{
       clearTimeout(timeout);stopRepeat(interval);tick();pending=false;activeController=null;button.textContent='Check neighbouring properties →';
-      onFinish();if(version!==requestVersion)enabled();else button.disabled=el('county')?.value!=='miami-dade-fl';
+      onFinish();if(el('neighbors-same-building'))el('neighbors-same-building').disabled=el('county')?.value!=='miami-dade-fl';if(version!==requestVersion)enabled();else button.disabled=el('county')?.value!=='miami-dade-fl';
     }
   });
 }

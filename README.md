@@ -58,7 +58,7 @@ Real county calls are separate from tests. Without the existing managed browser 
 
 ## Miami-Dade neighbouring properties
 
-The `/poc` page includes **Check neighbouring properties**. The separate protected `POST /api/v2/property/neighbors` endpoint accepts the lookup fields and optional `neighborOptions`. The default scope includes only parcels with a verified shared boundary. Same-building condo units are excluded unless explicitly requested with `neighborOptions.sameBuilding: true`. It returns official geometry, registered-name comparisons and explicit coverage. It uses deterministic direct county requests. See [implementation and live examples](docs/MIAMI-NEIGHBORS-2026-10-09.md).
+The `/poc` page includes **Check neighbouring properties**. The separate protected `POST /api/v2/property/neighbors` endpoint accepts the lookup fields and optional `neighborOptions`. The default scope includes only parcels with a verified shared boundary. Same-building condo units are excluded unless the demo checkbox **Include units in the same building** is selected or the API explicitly sets `neighborOptions.sameBuilding: true`. For the separately verified Gaston example, enter `555 NE 15 ST UNIT T-15` / `GASTON GIRARD` and select that checkbox. It returns official geometry, registered-name comparisons and explicit coverage. It uses deterministic direct county requests. See [implementation and live examples](docs/MIAMI-NEIGHBORS-2026-10-09.md).
 
 ```sh
 curl -X POST 'http://127.0.0.1:3000/api/v2/property/neighbors' \

@@ -81,9 +81,10 @@ function sourceLinks(document, parent, property) {
 export function renderNeighbors(document, parent, response, options = {}) {
   parent.replaceChildren();
   const view = neighborPresentation(response), {result} = view;
-  text(document, parent, 'h2', 'Boundary-sharing parcels and owners');
+  text(document, parent, 'h2', result.options?.sameBuilding===true?'Neighbouring parcels and same-building units':'Boundary-sharing parcels and owners');
   const boundaryOnly = result.options?.sameBuilding === false;
-  text(document, parent, 'p', `${view.spatial.length} boundary-sharing parcel${view.spatial.length===1?'':'s'} returned · ${view.matching.length} owner-name match${view.matching.length===1?'':'es'}`, 'neighbors-summary');
+  text(document, parent, 'p', `${view.spatial.length} boundary-sharing parcel${view.spatial.length===1?'':'s'} returned · ${view.spatial.filter(p=>['requested','coowner'].includes(ownerCategory(p))).length} parcel owner-name matches`, 'neighbors-summary');
+  if(!boundaryOnly)text(document,parent,'p',`${view.units.length} same-building unit records returned · ${view.units.filter(p=>['requested','coowner'].includes(ownerCategory(p))).length} unit owner-name matches`,'neighbors-summary');
   text(document, parent, 'p', view.matching.length ? 'Matching registered names are highlighted below.' : 'No matching owner names in the returned records. Search notes are available below.', 'neighbors-note');
   const warningMessages=[];
   const addWarning=value=>{const message=typeof value==='string'?value:value?.message||value?.code||JSON.stringify(value);if(message&&!warningMessages.includes(message))warningMessages.push(message);};

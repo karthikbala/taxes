@@ -4,14 +4,14 @@ import { renderSections, renderValidation, resultBadge, resultRequestId } from '
 const el=id=>document.getElementById(id);let last=null, activeLookup=null;
 const beginLookup=mode=>{
  if(activeLookup)return false;activeLookup=mode;last=null;
- el('submit').disabled=true;el('neighbors-check').disabled=true;el('county').disabled=true;el('download').disabled=true;
+ el('submit').disabled=true;el('neighbors-check').disabled=true;el('county').disabled=true;el('neighbors-same-building').disabled=true;el('download').disabled=true;
  el('result-panel').setAttribute('aria-busy','true');el('result-title').textContent=mode==='neighbors'?'Neighbouring properties and owner-name matches':'Result and source coverage';
  el('client-result').hidden=mode==='neighbors';el('neighbors-view').hidden=mode!=='neighbors';el('neighbors-map-view').hidden=true;
  for(const id of ['error','request-id','timer'])el(id).textContent='';
  for(const id of ['sections','sources','summary','neighbors-result','neighbors-map-result'])el(id).replaceChildren();
  el('status').className='status';el('json').textContent='Waiting for the live result…';return true;
 };
-const finishLookup=mode=>{if(activeLookup!==mode)return;activeLookup=null;el('submit').disabled=false;el('neighbors-check').disabled=el('county').value!=='miami-dade-fl';el('county').disabled=false;el('result-panel').setAttribute('aria-busy','false');};
+const finishLookup=mode=>{if(activeLookup!==mode)return;activeLookup=null;el('submit').disabled=false;el('neighbors-check').disabled=el('county').value!=='miami-dade-fl';el('county').disabled=false;el('neighbors-same-building').disabled=el('county').value!=='miami-dade-fl';el('result-panel').setAttribute('aria-busy','false');};
 const countyProfiles=new Map();const text=(p,tag,value)=>{const n=document.createElement(tag);n.textContent=value;p.append(n);return n};const input=()=>({scrap_order_id:el('order').value,address:el('address').value,ownerName:el('owner').value,county:el('county').value,transactionType:el('transaction').value,state:'FL'});const preview=()=>el('request').textContent=JSON.stringify(input(),null,2)+'\n\ncurl -X POST '+location.origin+'/api/v2/property/lookup \\\n-H "Authorization: Bearer $POC_ACCESS_KEY" \\\n-H "Content-Type: application/json" \\\n--data '+JSON.stringify(input());
 el('county').addEventListener('change',()=>{const example=countyProfiles.get(el('county').value)?.demo_input;if(example){el('address').value=example.address;el('owner').value=example.ownerName;el('county-example').textContent=example.origin;}preview();});
 for(const id of ['order','address','owner','county','transaction'])el(id).addEventListener('input',preview);
@@ -20,5 +20,6 @@ el('download').onclick=()=>{if(!last)return;const u=URL.createObjectURL(new Blob
 (async()=>{try{const r=await fetch('/api/v2/sources',{cache:'no-store'});if(!r.ok)throw Error();const d=await r.json();for(const c of d.counties){countyProfiles.set(c.id,c);const o=document.createElement('option');o.value=c.id;o.textContent=c.name+(c.address_lookup_enabled?'':' · pending');o.disabled=!c.address_lookup_enabled;el('county').append(o);const tr=document.createElement('tr');for(const v of [c.name,c.client_contract_status,c.address_lookup_enabled?'Implemented; acceptance status above':'Pending',c.source_pair_status])text(tr,'td',v);el('coverage').append(tr);}el('county').value='miami-dade-fl';el('county-example').textContent=countyProfiles.get('miami-dade-fl')?.demo_input?.origin||'';preview();initNeighbors(document,{
  onStart:()=>beginLookup('neighbors'),
  onResult:data=>{el('neighbors-map-view').hidden=!data.NeighboringProperties;last=data;el('json').textContent=JSON.stringify(data,null,2);el('download').disabled=false;},
- onFinish:()=>finishLookup('neighbors')
+ onFinish:()=>finishLookup('neighbors'),
+ onScopeChange:()=>{if(el('neighbors-view').hidden)return;last=null;el('download').disabled=true;el('neighbors-map-view').hidden=true;el('status').textContent='Ready for a new neighbour check';el('error').textContent='';el('timer').textContent='';el('request-id').textContent='';el('json').textContent='Search scope changed. Run a new neighbour check.';}
 });}catch{el('submit').disabled=true;el('error').textContent='The county contract could not load.';}})();

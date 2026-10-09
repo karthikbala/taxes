@@ -82,7 +82,7 @@ test('init sends default order fields only and never persists access key', async
   try {
     initNeighbors(doc); await elements['neighbors-check'].emit('click');
     assert.equal(request.url, '/api/v2/property/neighbors'); assert.equal(request.options.headers.Authorization, 'Bearer memory-only-key');
-    assert.deepEqual(JSON.parse(request.options.body), {scrap_order_id: 'test-order', address: '10 Example Lane', ownerName: 'A & B TRUST', county: 'miami-dade-fl', transactionType: 'Purchase', state: 'FL'});
+    assert.deepEqual(JSON.parse(request.options.body), {scrap_order_id: 'test-order', address: '10 Example Lane', ownerName: 'A & B TRUST', county: 'miami-dade-fl', transactionType: 'Purchase', state: 'FL', neighborOptions:{sameBuilding:false,adjacency:true,includeCornerTouch:false}});
     assert.doesNotMatch(content(elements['neighbors-result']), /memory-only-key/); assert.equal(elements['neighbors-check'].disabled, false);
     elements.county.value = 'broward-fl'; elements.county.emit('change'); assert.equal(elements['neighbors-check'].disabled, true); assert.match(elements['neighbors-status'].textContent, /Miami-Dade County only/);
   } finally { globalThis.fetch = priorFetch; }
@@ -119,4 +119,21 @@ test('owner data precedes consolidated notes; map is the last section or uses th
  assert.ok(ownerIndex>=0&&summaryIndex>ownerIndex);assert.equal(nodes.filter(n=>n.tagName==='svg').length,0);assert.equal(descendants(mapParent).filter(n=>n.tagName==='svg').length,1);
  assert.doesNotMatch(content(parent),/Same-building condominium units/);assert.equal(parent.children[1].className,'neighbors-summary');assert.doesNotMatch(parent.children[1].textContent,/PARTIAL|incomplete|unavailable/);
  const combined=new Node('section');renderNeighbors(document,combined,data);assert.equal(combined.children.at(-1).className,'neighbors-map-area');
+});
+
+test('same-building option snapshots into the request, locks while pending and invalidates stale scope',async()=>{
+ const els=Object.fromEntries(['neighbors-check','neighbors-result','neighbors-status','neighbors-same-building','neighbors-map-result','county','order','address','owner','transaction','key'].map(id=>[id,new Node('div')]));
+ for(const [id,value]of Object.entries({county:'miami-dade-fl',order:'O',address:'A',owner:'B',transaction:'REFI',key:'private-test-key'}))els[id].value=value;
+ els['neighbors-same-building'].checked=true;let release,request,scopeChanged=0;const prior=globalThis.fetch;
+ globalThis.fetch=async(url,options)=>{request=JSON.parse(options.body);await new Promise(r=>release=r);return{ok:true,json:async()=>({...fixture(),NeighboringProperties:{...fixture().NeighboringProperties,options:{sameBuilding:true}}})};};
+ try{
+  initNeighbors({...document,getElementById:id=>els[id]},{onScopeChange:()=>scopeChanged++});const pending=els['neighbors-check'].emit('click');
+  assert.equal(request.neighborOptions.sameBuilding,true);assert.equal(els['neighbors-same-building'].disabled,true);release();await pending;assert.equal(els['neighbors-same-building'].disabled,false);
+  els['neighbors-same-building'].checked=false;els['neighbors-same-building'].emit('change');assert.equal(scopeChanged,1);assert.equal(els['neighbors-result'].children.length,0);assert.equal(els['neighbors-map-result'].children.length,0);assert.match(els['neighbors-status'].textContent,/Run a new/);
+ }finally{globalThis.fetch=prior;}
+});
+
+test('combined scope labels boundary and condo owner matches separately',()=>{
+ const data=fixture();data.NeighboringProperties.options={sameBuilding:true};data.NeighboringProperties.properties[2].owners=['A & B TRUST'];data.NeighboringProperties.properties[2].matchesRequestedOwner=true;
+ const root=new Node('section');renderNeighbors(document,root,data);const s=content(root);assert.match(s,/3 boundary-sharing parcels returned · 2 parcel owner-name matches/);assert.match(s,/1 same-building unit records returned · 1 unit owner-name matches/);assert.match(s,/Same-building condominium units/);
 });
