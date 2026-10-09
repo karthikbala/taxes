@@ -67,7 +67,7 @@ export function mapLayout(records) {
   return valid.map(({record, rings}) => ({record, path: rings.map(ring => ring.map((p, i) => `${i ? 'L' : 'M'}${(xOffset + (p[0] - minX) * scale).toFixed(2)},${(600 - yOffset - (p[1] - minY) * scale).toFixed(2)}`).join(' ') + ' Z').join(' ')}));
 }
 
-const spatialLabels = {SHARED_BOUNDARY: 'Shares a parcel boundary', CORNER_TOUCH: 'Touches a parcel corner', SAME_BUILDING: 'Same condominium building'};
+const spatialLabels = {ABUTTING: 'Shares a parcel boundary', SHARED_BOUNDARY: 'Shares a parcel boundary', CORNER_TOUCH: 'Touches a parcel corner', SAME_BUILDING: 'Same condominium building'};
 const ownerLabels = {requested: 'Requested owner name matches', coowner: 'A subject co-owner name matches', different: 'No owner-name match', unknown: 'Owner unavailable'};
 
 function sourceLinks(document, parent, property) {
@@ -81,22 +81,26 @@ function sourceLinks(document, parent, property) {
 export function renderNeighbors(document, parent, response, options = {}) {
   parent.replaceChildren();
   const view = neighborPresentation(response), {result} = view;
-  text(document, parent, 'h2', 'Neighbor parcels and owner names');
-  text(document, parent, 'p', view.message, view.complete ? 'neighbors-summary' : 'neighbors-summary neighbors-warning');
-  text(document, parent, 'p', view.coverageLabel);
-  text(document, parent, 'p', 'A matching owner name is a source-record comparison, not verification of legal identity. Spatial relationships apply only to the retrieved county parcel geometry.', 'neighbors-note');
-  const errors = response.ExtractionMetadata?.errors || [];
-  for (const error of errors) text(document, parent, 'p', typeof error === 'string' ? error : error.message || error.code || JSON.stringify(error), 'neighbors-warning');
-  if (view.unknownCount) text(document, parent, 'p', `${view.unknownCount} returned parcel${view.unknownCount === 1 ? '' : 's'} have unavailable owner information; their ownership cannot be ruled out.`, 'neighbors-warning');
-  if (result.coverage?.cap_reached) text(document, parent, 'p', 'The candidate limit was reached. Additional parcels or owner matches may exist.', 'neighbors-warning');
-  for (const warning of result.warnings || []) text(document, parent, 'p', typeof warning === 'string' ? warning : warning.message || JSON.stringify(warning), 'neighbors-warning');
+  text(document, parent, 'h2', 'Boundary-sharing parcels and owners');
+  const boundaryOnly = result.options?.sameBuilding === false;
+  text(document, parent, 'p', `${view.spatial.length} boundary-sharing parcel${view.spatial.length===1?'':'s'} returned · ${view.matching.length} owner-name match${view.matching.length===1?'':'es'}`, 'neighbors-summary');
+  text(document, parent, 'p', view.matching.length ? 'Matching registered names are highlighted below.' : 'No matching owner names in the returned records. Search notes are available below.', 'neighbors-note');
+  const warningMessages=[];
+  const addWarning=value=>{const message=typeof value==='string'?value:value?.message||value?.code||JSON.stringify(value);if(message&&!warningMessages.includes(message))warningMessages.push(message);};
+  if(!view.complete)addWarning(view.message);
+  addWarning('A matching owner name is a source-record comparison, not verification of legal identity. Spatial relationships apply only to retrieved county parcel geometry.');
+  for(const error of response.ExtractionMetadata?.errors||[])addWarning(error);
+  if(result.coverage?.unclassified_geometry_count)addWarning(`${result.coverage.unclassified_geometry_count} nearby GIS shapes could not be classified. They are excluded from confirmed boundary-sharing results, so the search does not establish that no additional neighbours exist.`);
+  if(view.unknownCount)addWarning(`${view.unknownCount} returned parcels have unavailable owner information.`);
+  if(result.coverage?.cap_reached&&!result.warnings?.some(w=>String(w).includes('cap reached')))addWarning('The candidate limit was reached. Additional parcels or owner matches may exist.');
+  for(const warning of result.warnings||[])addWarning(warning);
   if (result.subject) {
     const panel = document.createElement('div'); panel.className = 'neighbors-subject'; parent.append(panel);
     text(document, panel, 'h3', 'Subject parcel');
     text(document, panel, 'p', `${label(result.subject.address)} · Folio ${label(result.subject.folio)}${result.subject.unit ? ' · Unit ' + result.subject.unit : ''}`);
     text(document, panel, 'p', 'Recorded owners: ' + (result.subject.owners?.length ? result.subject.owners.map(o => typeof o === 'string' ? o : o.name || o.ownerName || label(o)).join('; ') : 'Unavailable'));
     if(result.subject.geometry_anchor_kind==='PUBLISHED_PARENT')text(document,panel,'p','Map anchor: county-published condo parent '+label(result.subject.geometry_anchor_folio)+'. The outline represents the condo site, not the individual apartment unit.','neighbors-note');
-    if (result.subject.matchesRequestedOwner === false) text(document, panel, 'p', 'The requested owner name does not match the retrieved subject owner names.', 'neighbors-warning');
+    if (result.subject.matchesRequestedOwner === false) addWarning('The requested owner name does not match the retrieved subject owner names.');
     sourceLinks(document, panel, result.subject);
   }
 
@@ -104,9 +108,10 @@ export function renderNeighbors(document, parent, response, options = {}) {
   const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.checked = Boolean(options.matchesOnly); filter.append(checkbox);
   text(document, filter, 'span', 'Show only owner-name matches'); parent.append(filter);
   const surface = document.createElement('div'); parent.append(surface);
+  const mapSurface=document.createElement('div');mapSurface.className='neighbors-map-area';
   const detail = document.createElement('div'); detail.className = 'neighbors-selection'; detail.setAttribute('aria-live', 'polite');
   const redraw = () => {
-    surface.replaceChildren(); detail.replaceChildren();
+    surface.replaceChildren(); mapSurface.replaceChildren(); detail.replaceChildren();
     const spatial = checkbox.checked ? view.spatial.filter(p => ['requested', 'coowner'].includes(ownerCategory(p))) : view.spatial;
     const units = checkbox.checked ? view.units.filter(p => ['requested', 'coowner'].includes(ownerCategory(p))) : view.units;
     const cards = new Map(), paths = new Map();
@@ -116,7 +121,7 @@ export function renderNeighbors(document, parent, response, options = {}) {
       detail.replaceChildren(); text(document, detail, 'strong', `${label(property.address)} · Folio ${label(property.folio)}`);
       text(document, detail, 'p', property === result.subject ? 'Subject parcel selected' : `${spatialLabels[property.spatial_relation] || label(property.spatial_relation)} · ${ownerLabels[ownerCategory(property)]}`);
     };
-    const map = document.createElement('div'); map.className = 'neighbors-map'; surface.append(map);
+    const map = document.createElement('div'); map.className = 'neighbors-map'; mapSurface.append(map);
     const records = [...(result.subject?.geometry ? [result.subject] : []), ...spatial];
     const layout = mapLayout(records);
     if (layout.length) {
@@ -161,11 +166,14 @@ export function renderNeighbors(document, parent, response, options = {}) {
       }
     };
     renderList('Adjacent parcels', spatial);
-    renderList('Same-building condominium units', units, 'These are separate unit records. Shared building or parent parcel geometry does not establish individual unit locations.');
+    if(!boundaryOnly)renderList('Same-building condominium units', units, 'These are separate unit records. Shared building or parent parcel geometry does not establish individual unit locations.');
     const notMapped = spatial.filter(p => !geometryRings(p.geometry).length).length;
-    if (notMapped) text(document, surface, 'p', `${notMapped} adjacent parcel record${notMapped === 1 ? '' : 's'} have no retrievable outline and are listed only.`, 'neighbors-warning');
+    if(notMapped)addWarning(`${notMapped} adjacent parcel records have no retrievable outline and are listed only.`);
   };
   checkbox.addEventListener('change', redraw); redraw();
+  const notes=document.createElement('details');notes.className='neighbors-notes';text(document,notes,'summary','Search notes and limitations');parent.append(notes);
+  text(document,notes,'p',view.coverageLabel);
+  for(const warning of warningMessages)text(document,notes,'p',warning,'neighbors-note');
   const sources = response.ExtractionMetadata?.sources || [];
   if (sources.length || result.coverage) {
     const panel = document.createElement('details'); panel.className = 'neighbors-sources'; text(document, panel, 'summary', 'Search sources and coverage'); parent.append(panel);
@@ -181,5 +189,6 @@ export function renderNeighbors(document, parent, response, options = {}) {
       if (source.note) text(document, panel, 'p', source.note);
     }
   }
+  const mapParent=options.mapParent||parent;if(options.mapParent)mapParent.replaceChildren();mapParent.append(mapSurface);
   return view;
 }

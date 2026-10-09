@@ -20,7 +20,7 @@ export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFi
     if(!order.address.trim()||!order.ownerName.trim()||!el('key').value.trim()){sharedStatus('Enter the property address, owner name and API access key before checking neighbors.');return;}
     if(onStart()===false)return;
     pending=true;button.disabled=true;button.textContent='Checking neighbours…';result.replaceChildren();
-    sharedStatus('Checking fresh county neighbour records…');status.textContent='Resolving the property and checking parcel boundaries and owner records. This can take up to two minutes.';
+    sharedStatus('Checking fresh county neighbour records…');status.textContent='Resolving the property and checking shared parcel boundaries and owner records. This can take up to two minutes.';
     const start=now(),tick=()=>{if(el('timer'))el('timer').textContent=' · '+((now()-start)/1000).toFixed(1)+' seconds';};tick();
     const interval=repeat(tick,100),version=requestVersion,controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),135000);activeController=controller;
     try{
@@ -29,7 +29,7 @@ export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFi
       onResult(data);
       const requestId=data.ExtractionMetadata?.request_id||response.headers?.get('x-request-id');if(el('request-id'))el('request-id').textContent=requestId?'Request ID: '+requestId:'';
       if(data.NeighboringProperties){
-        const view=renderNeighbors(document,result,data);
+        const view=renderNeighbors(document,result,data,{mapParent:el('neighbors-map-result')});
         sharedStatus(response.ok===false?'Neighbor check unavailable':'Neighbor results ready');
         status.textContent=view.complete?'County neighbour search completed.':'Returned records are ready. See the search coverage and limits below.';
       }else{sharedStatus('Neighbor check unavailable');status.textContent=data.error?.message||data.errorMessage||'Neighbor results unavailable. No absence of owner matches is claimed.';if(el('error'))el('error').textContent=status.textContent;}

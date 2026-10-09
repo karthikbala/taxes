@@ -111,3 +111,12 @@ test('shared request owner can reject neighbor start without changing an active 
  els['neighbors-result'].textContent='Prior result';let called=0;const prior=globalThis.fetch;globalThis.fetch=()=>{called++;throw Error('must not dispatch');};
  try{initNeighbors({...document,getElementById:id=>els[id]},{onStart:()=>false});await els['neighbors-check'].emit('click');assert.equal(called,0);assert.equal(els['neighbors-result'].textContent,'Prior result');}finally{globalThis.fetch=prior;}
 });
+
+test('owner data precedes consolidated notes; map is the last section or uses the dedicated pre-JSON host',()=>{
+ const data=fixture();data.NeighboringProperties.options={sameBuilding:false};data.NeighboringProperties.properties=data.NeighboringProperties.properties.filter(p=>p.spatial_relation!=='SAME_BUILDING');
+ const parent=new Node('section'),mapParent=new Node('section');renderNeighbors(document,parent,data,{mapParent});
+ const nodes=descendants(parent),summaryIndex=nodes.findIndex(n=>n.textContent==='Search notes and limitations'),ownerIndex=nodes.findIndex(n=>n.textContent.startsWith('Recorded owners:'));
+ assert.ok(ownerIndex>=0&&summaryIndex>ownerIndex);assert.equal(nodes.filter(n=>n.tagName==='svg').length,0);assert.equal(descendants(mapParent).filter(n=>n.tagName==='svg').length,1);
+ assert.doesNotMatch(content(parent),/Same-building condominium units/);assert.equal(parent.children[1].className,'neighbors-summary');assert.doesNotMatch(parent.children[1].textContent,/PARTIAL|incomplete|unavailable/);
+ const combined=new Node('section');renderNeighbors(document,combined,data);assert.equal(combined.children.at(-1).className,'neighbors-map-area');
+});

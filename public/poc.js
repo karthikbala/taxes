@@ -6,9 +6,9 @@ const beginLookup=mode=>{
  if(activeLookup)return false;activeLookup=mode;last=null;
  el('submit').disabled=true;el('neighbors-check').disabled=true;el('county').disabled=true;el('download').disabled=true;
  el('result-panel').setAttribute('aria-busy','true');el('result-title').textContent=mode==='neighbors'?'Neighbouring properties and owner-name matches':'Result and source coverage';
- el('client-result').hidden=mode==='neighbors';el('neighbors-view').hidden=mode!=='neighbors';
+ el('client-result').hidden=mode==='neighbors';el('neighbors-view').hidden=mode!=='neighbors';el('neighbors-map-view').hidden=true;
  for(const id of ['error','request-id','timer'])el(id).textContent='';
- for(const id of ['sections','sources','summary','neighbors-result'])el(id).replaceChildren();
+ for(const id of ['sections','sources','summary','neighbors-result','neighbors-map-result'])el(id).replaceChildren();
  el('status').className='status';el('json').textContent='Waiting for the live result…';return true;
 };
 const finishLookup=mode=>{if(activeLookup!==mode)return;activeLookup=null;el('submit').disabled=false;el('neighbors-check').disabled=el('county').value!=='miami-dade-fl';el('county').disabled=false;el('result-panel').setAttribute('aria-busy','false');};
@@ -19,6 +19,6 @@ el('form').onsubmit=async e=>{e.preventDefault();if(!beginLookup('client'))retur
 el('download').onclick=()=>{if(!last)return;const u=URL.createObjectURL(new Blob([JSON.stringify(last,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='Zeneral-client-property-order.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
 (async()=>{try{const r=await fetch('/api/v2/sources',{cache:'no-store'});if(!r.ok)throw Error();const d=await r.json();for(const c of d.counties){countyProfiles.set(c.id,c);const o=document.createElement('option');o.value=c.id;o.textContent=c.name+(c.address_lookup_enabled?'':' · pending');o.disabled=!c.address_lookup_enabled;el('county').append(o);const tr=document.createElement('tr');for(const v of [c.name,c.client_contract_status,c.address_lookup_enabled?'Implemented; acceptance status above':'Pending',c.source_pair_status])text(tr,'td',v);el('coverage').append(tr);}el('county').value='miami-dade-fl';el('county-example').textContent=countyProfiles.get('miami-dade-fl')?.demo_input?.origin||'';preview();initNeighbors(document,{
  onStart:()=>beginLookup('neighbors'),
- onResult:data=>{last=data;el('json').textContent=JSON.stringify(data,null,2);el('download').disabled=false;},
+ onResult:data=>{el('neighbors-map-view').hidden=!data.NeighboringProperties;last=data;el('json').textContent=JSON.stringify(data,null,2);el('download').disabled=false;},
  onFinish:()=>finishLookup('neighbors')
 });}catch{el('submit').disabled=true;el('error').textContent='The county contract could not load.';}})();

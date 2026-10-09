@@ -9,7 +9,7 @@ const index=fixture('./fixtures/neighbors/miami-building-address-page1-source.js
 const unit402=fixture('./fixtures/neighbors/miami-unit-0132310520020-source.json');
 const unit403=fixture('./fixtures/neighbors/miami-unit-0132310520030-source.json');
 const judeIndex=fixture('./fixtures/neighbors/miami-owner-jude-source.json'),noahIndex=fixture('./fixtures/neighbors/miami-owner-noah-source.json');
-const input={scrap_order_id:'neighbor-offline',address:'555 NE 15 ST UNIT 401',ownerName:'JUDE PATRICK JACOB',county:'Miami-Dade',transactionType:'REFI',state:'FL',neighborOptions:{adjacency:false}};
+const input={scrap_order_id:'neighbor-offline',address:'555 NE 15 ST UNIT 401',ownerName:'JUDE PATRICK JACOB',county:'Miami-Dade',transactionType:'REFI',state:'FL',neighborOptions:{sameBuilding:true,adjacency:false}};
 const siblingRows=index.MinimumPropertyInfos.filter(row=>['0132310520020','0132310520030'].includes(row.Strap.replaceAll('-','')));
 const completeIndex={...index,MinimumPropertyInfos:siblingRows,Total:2};
 function harness({building=completeIndex,details={},failId=null}={}){
@@ -66,19 +66,19 @@ test('individual coowners remain separate while entity suffix provenance records
 
 test('a proven shared owner remains true even if the capped scope is partial',async()=>{
  const modified=structuredClone(unit402);modified.OwnerInfos=[seed.OwnerInfos[1]];
- const out=await extractNeighborProperties({...input,neighborOptions:{adjacency:false,maxCandidates:1}},harness({details:{'0132310520020':modified}}).fetcher);
+ const out=await extractNeighborProperties({...input,neighborOptions:{sameBuilding:true,adjacency:false,maxCandidates:1}},harness({details:{'0132310520020':modified}}).fetcher);
  assert.equal(out.NeighboringProperties.status,'PARTIAL');assert.equal(out.NeighboringProperties.hasMatchingOwnerNeighbors,true);assert.equal(out.NeighboringProperties.coverage.cap_reached,true);
  assert.equal(out.NeighboringProperties.properties[0].matchesRequestedOwner,false);
 });
 
 test('candidate cap cannot turn unexamined owners into false',async()=>{
- const out=await extractNeighborProperties({...input,neighborOptions:{adjacency:false,maxCandidates:1}},harness().fetcher);
+ const out=await extractNeighborProperties({...input,neighborOptions:{sameBuilding:true,adjacency:false,maxCandidates:1}},harness().fetcher);
  assert.equal(out.NeighboringProperties.hasMatchingOwnerNeighbors,null);assert.equal(out.NeighboringProperties.coverage.examined_count,1);assert.equal(out.NeighboringProperties.coverage.candidate_count,2);
 });
 
 test('capped detail work prioritizes indexed requested-name matches without trusting index ownership',async()=>{
  const building=structuredClone(completeIndex);building.MinimumPropertyInfos[1].Owner1=input.ownerName;
- const h=harness({building}),out=await extractNeighborProperties({...input,neighborOptions:{adjacency:false,maxCandidates:1}},h.fetcher);
+ const h=harness({building}),out=await extractNeighborProperties({...input,neighborOptions:{sameBuilding:true,adjacency:false,maxCandidates:1}},h.fetcher);
  assert.equal(out.NeighboringProperties.properties[0].folio,'0132310520030');
  assert.deepEqual(out.NeighboringProperties.properties[0].owners,unit403.OwnerInfos.map(row=>row.Name));
  assert.equal(out.NeighboringProperties.properties[0].matchesRequestedOwner,false);assert.equal(out.NeighboringProperties.hasRequestedOwnerNeighbors,null);
@@ -153,7 +153,7 @@ test('owner index stable Total pagination and bounded cap use source-derived row
 test('owner index shortlists only guide detail order and never override authoritative names or negative cap rule',async()=>{
  const ownerIndex=structuredClone(noahIndex),hint={...siblingRows[1],Owner1:'NOAH ELIJAH JACOB'};ownerIndex.MinimumPropertyInfos.push(hint);ownerIndex.Total=2;
  const h=harness(),fetcher=async(url,options)=>new URL(url).searchParams.get('Operation')==='GetOwners'?new Response(JSON.stringify(ownerIndex)):h.fetcher(url,options);
- const out=await extractNeighborProperties({...input,neighborOptions:{adjacency:false,maxCandidates:1}},fetcher);
+ const out=await extractNeighborProperties({...input,neighborOptions:{sameBuilding:true,adjacency:false,maxCandidates:1}},fetcher);
  assert.equal(out.NeighboringProperties.properties[0].folio,'0132310520030');assert.equal(out.NeighboringProperties.properties[0].matchesSubjectOwner,false);assert.equal(out.NeighboringProperties.hasMatchingOwnerNeighbors,null);
  assert.equal(out.NeighboringProperties.coverage.owner_index.hasObservedMatchingOwnerNeighbor,true);
 });
@@ -183,4 +183,25 @@ test('options are bounded and stripped before strict existing client input valid
 test('abort propagates through native deadline transport without fixture substitution',async()=>{
  const ctl=new AbortController();ctl.abort();let calls=0;
  const out=await extractNeighborProperties(input,async()=>{calls++;throw new Error('unexpected');},{signal:ctl.signal});assert.equal(calls,0);assert.equal(out.NeighboringProperties.subject,null);assert.equal(out.NeighboringProperties.hasMatchingOwnerNeighbors,null);assert.equal(out.ExtractionMetadata.errors[0].code,'lookup_deadline');
+});
+
+test('default scope returns shared-boundary parcels only, excluding condo units and unresolved nearby shapes',async()=>{
+ const {neighborOptions,...request}=input;
+ assert.deepEqual(validateNeighborInput(request).options,{sameBuilding:false,adjacency:true,includeCornerTouch:false,maxCandidates:50});
+ const proof=fixture('../docs/evidence/neighbors-2026-10-09/gis-source-proof.json');
+ const adjacent='0132310060210';
+ // Synthetic appraiser owner data isolates scope selection; GIS shapes are county-source fixtures.
+ const detail={...seed,PropertyInfo:{...seed.PropertyInfo,FolioNumber:adjacent},OwnerInfos:[{Name:'TEST NEIGHBOUR OWNER'}]};
+ const h=harness({details:{[adjacent]:detail}}),gisCalls=[];
+ const out=await extractNeighborProperties(request,async(url,options)=>{
+  if(new URL(url).hostname==='gisweb.miamidade.gov'){
+   const saved=proof.requests.find(row=>row.url===String(url));assert.ok(saved,'GIS request must match authoritative fixture');gisCalls.push(url);return new Response(typeof saved.body==='string'?saved.body:JSON.stringify(saved.body),{status:saved.http_status});
+  }
+  return h.fetcher(url,options);
+ });
+ const n=out.NeighboringProperties;
+ assert.deepEqual(n.properties.map(row=>[row.folio,row.spatial_relation]),[[adjacent,'ABUTTING']]);
+ assert.equal(n.coverage.candidate_count,1);assert.equal(n.coverage.discovered_candidate_count,3);assert.equal(n.coverage.examined_count,1);assert.equal(n.coverage.cap_reached,false);
+ assert.equal(n.coverage.same_building.status,'NOT_REQUESTED');assert.equal(n.coverage.adjacency.complete,false);assert.equal(n.hasMatchingOwnerNeighbors,null);
+ assert.equal(gisCalls.length,5);assert.ok(h.calls.every(row=>new URL(row.url).searchParams.get('Operation')!=='GetOwners'));assert.equal(h.calls.filter(row=>new URL(row.url).searchParams.get('Operation')==='GetAddress').length,1);
 });

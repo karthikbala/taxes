@@ -58,13 +58,13 @@ Real county calls are separate from tests. Without the existing managed browser 
 
 ## Miami-Dade neighbouring properties
 
-The `/poc` page includes **Check neighbouring properties**. The separate protected `POST /api/v2/property/neighbors` endpoint accepts the lookup fields and optional `neighborOptions`. It returns official parcel geometry, adjacent-parcel results, a separate same-building unit list, registered-name comparisons and explicit coverage. It uses deterministic direct county requests. See [implementation and live examples](docs/MIAMI-NEIGHBORS-2026-10-09.md).
+The `/poc` page includes **Check neighbouring properties**. The separate protected `POST /api/v2/property/neighbors` endpoint accepts the lookup fields and optional `neighborOptions`. The default scope includes only parcels with a verified shared boundary. Same-building condo units are excluded unless explicitly requested with `neighborOptions.sameBuilding: true`. It returns official geometry, registered-name comparisons and explicit coverage. It uses deterministic direct county requests. See [implementation and live examples](docs/MIAMI-NEIGHBORS-2026-10-09.md).
 
 ```sh
 curl -X POST 'http://127.0.0.1:3000/api/v2/property/neighbors' \
   -H "Authorization: Bearer $POC_ACCESS_KEY" \
   -H 'Content-Type: application/json' \
-  --data '{"scrap_order_id":"10000001","address":"555 NE 15 ST UNIT 401","ownerName":"JUDE PATRICK JACOB","county":"miami-dade-fl","transactionType":"REFI","state":"FL","neighborOptions":{"sameBuilding":true,"adjacency":true,"maxCandidates":50}}'
+  --data '{"scrap_order_id":"10000001","address":"555 NE 15 ST UNIT 401","ownerName":"JUDE PATRICK JACOB","county":"miami-dade-fl","transactionType":"REFI","state":"FL","neighborOptions":{"sameBuilding":false,"adjacency":true,"maxCandidates":50}}'
 ```
 
 ## Linux deployment
