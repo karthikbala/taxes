@@ -26,3 +26,18 @@ Sanitized source/result evidence is in `docs/evidence/neighbors-2026-10-09/`. Li
 Selected offline checks: 86 passed, covering geometry, owner/entity matching, pagination and limits, API authentication, UI rendering, shared Miami resolution and existing lookup/server controls. Standalone and hosted builds passed. A local browser run verified authenticated source fetching, SVG map, separate unit list and coverage comments. GitHub CI and final published acceptance are recorded below after release.
 
 No paid source/provider or runtime model requests were made. No PortTrack files, credentials or deployment were changed. GitHub remains the canonical standalone Node/Linux project; publication updates the existing demonstration host only.
+
+### Release evidence
+
+* Canonical standalone implementation: `b9910dd61a9b6cc95d3eeb3d060d3eece3403b95`; [CI run](https://github.com/karthikbala/taxes/actions/runs/37893788875) passed all 280 offline tests and the standalone build. An earlier CI run found the stale checked-in HTML copy; it was synchronized, checked and rebuilt before final publication.
+* Final hosted source: `281e3e099984e8fb0c808e3871322faf375a594c`, version 37; deployment `appgdep_6ac88ad6ac64819196a048a3556dc417` succeeded at 06:34:29 UTC. This includes rebuilt static POC HTML; preceding version 36 had the new API but retained an older static page and is not the accepted final demo.
+* Release preflight read all 50 browser-run rows: no running/pending requests. Existing ledger stayed $2.08 spent, $0 reserved, $5 combined cap. No budget reset or paid neighbour calls.
+* Source/page packaging checks confirmed the neighbor controls in the final archive. Final production source-to-JSON-to-UI verification follows below.
+
+### Published acceptance
+
+At taxes.zeneral.ai/poc, request `14a4d75d-9833-424c-96fc-b7dc9b0a2241` fetched the client-default parcel live, returned 50 independently checked records (one abutting parcel and 49 condo units) from 382 discovered candidates, and rendered two authoritative parcel polygons. Owner names, published-parent map anchor and the incomplete-coverage warning were visible. No unobserved-negative conclusion was made.
+
+Authenticated production JSON request `124c0bbd-7617-414f-abfe-92c2d99d1141` resolved T-15 / GASTON GIRARD and confirmed three exact registered-name matches at 12-B, 20-B and 16-C; errors were empty. Response is saved in `production-positive.json`. This proves the deployed positive branch; partial scope remains explicit. The final compact map-control styling preserves these extraction modules.
+
+Final layout release: standalone `8066339ac3200108c0761490368fd14abced5330` passed [CI](https://github.com/karthikbala/taxes/actions/runs/37894481714). Hosted source `e976d26238cc371b2f62846ad983f7128e8e1d1c`, version 38, deployment `appgdep_6ac88c07d6f08191a459c3d6bf239fb2` succeeded at 06:39:32 UTC. Only map-control width/margins changed after the version-37 source/API acceptance; extraction proof is reused for the unchanged modules. Local preview server was stopped.
