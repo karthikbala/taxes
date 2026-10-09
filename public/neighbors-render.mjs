@@ -95,6 +95,7 @@ export function renderNeighbors(document, parent, response, options = {}) {
   if(view.unknownCount)addWarning(`${view.unknownCount} returned parcels have unavailable owner information.`);
   if(result.coverage?.cap_reached&&!result.warnings?.some(w=>String(w).includes('cap reached')))addWarning('The candidate limit was reached. Additional parcels or owner matches may exist.');
   for(const warning of result.warnings||[])addWarning(warning);
+  const matchSurface=document.createElement('div');matchSurface.className='neighbors-matches-first';if(view.matching.length)parent.append(matchSurface);
   if (result.subject) {
     const panel = document.createElement('div'); panel.className = 'neighbors-subject'; parent.append(panel);
     text(document, panel, 'h3', 'Subject parcel');
@@ -112,7 +113,7 @@ export function renderNeighbors(document, parent, response, options = {}) {
   const mapSurface=document.createElement('div');mapSurface.className='neighbors-map-area';
   const detail = document.createElement('div'); detail.className = 'neighbors-selection'; detail.setAttribute('aria-live', 'polite');
   const redraw = () => {
-    surface.replaceChildren(); mapSurface.replaceChildren(); detail.replaceChildren();
+    surface.replaceChildren(); matchSurface.replaceChildren(); mapSurface.replaceChildren(); detail.replaceChildren();
     const spatial = checkbox.checked ? view.spatial.filter(p => ['requested', 'coowner'].includes(ownerCategory(p))) : view.spatial;
     const units = checkbox.checked ? view.units.filter(p => ['requested', 'coowner'].includes(ownerCategory(p))) : view.units;
     const cards = new Map(), paths = new Map();
@@ -152,12 +153,13 @@ export function renderNeighbors(document, parent, response, options = {}) {
     const legend = document.createElement('ul'); legend.className = 'neighbors-legend'; map.append(legend);
     for (const [category, name] of [['subject', result.subject?.geometry_anchor_kind==='PUBLISHED_PARENT'?'Subject condo-site boundary':'Subject parcel'], ['requested', 'Requested owner name matches'], ['coowner', 'Subject co-owner name matches'], ['different', 'No owner-name match'], ['unknown', 'Owner unavailable']]) text(document, legend, 'li', name, 'neighbors-' + category);
     surface.append(detail);
-    const renderList = (title, properties, note) => {
-      text(document, surface, 'h3', `${title} (${properties.length})`); if (note) text(document, surface, 'p', note, 'neighbors-note');
-      if (!properties.length) { text(document, surface, 'p', checkbox.checked ? 'No confirmed owner-name matches in this returned group.' : 'No entries returned in this group. See coverage above.'); return; }
-      const list = document.createElement('div'); list.className = 'neighbors-list'; surface.append(list);
+    const renderList = (title, properties, note, target=surface) => {
+      text(document, target, 'h3', `${title} (${properties.length})`); if (note) text(document, target, 'p', note, 'neighbors-note');
+      if (!properties.length) { text(document, target, 'p', checkbox.checked ? 'No confirmed owner-name matches in this returned group.' : 'No entries returned in this group. See coverage above.'); return; }
+      const list = document.createElement('div'); list.className = 'neighbors-list'; target.append(list);
       for (const property of properties) {
         const card = document.createElement('article'); card.className = 'neighbors-card neighbors-' + ownerCategory(property); list.append(card);
+        if(['requested','coowner'].includes(ownerCategory(property))){card.className+=' neighbors-match';text(document,card,'span',ownerCategory(property)==='requested'?'OWNER NAME MATCH':'CO-OWNER NAME MATCH','neighbors-match-badge');}
         const button = text(document, card, 'button', `${label(property.address)}${property.unit ? ' · Unit ' + property.unit : ''}`); button.type = 'button'; button.setAttribute('aria-pressed', 'false'); button.addEventListener('click', () => select(property)); cards.set(property, button);
         text(document, card, 'p', `Folio ${label(property.folio)} · ${spatialLabels[property.spatial_relation] || label(property.spatial_relation)}`);
         text(document, card, 'p', ownerLabels[ownerCategory(property)]);
@@ -166,8 +168,12 @@ export function renderNeighbors(document, parent, response, options = {}) {
         sourceLinks(document, card, property);
       }
     };
-    renderList('Adjacent parcels', spatial);
-    if(!boundaryOnly)renderList('Same-building condominium units', units, 'These are separate unit records. Shared building or parent parcel geometry does not establish individual unit locations.');
+    const matches=[...view.matching].sort((a,b)=>Number(ownerCategory(b)==='requested')-Number(ownerCategory(a)==='requested'));
+    if(matches.length)renderList('Owner-name matches',matches,'Matched records appear first. Each tile identifies whether it is a boundary-sharing parcel or a separate condominium unit.',matchSurface);
+    if(!checkbox.checked){
+      renderList(matches.length?'Other boundary-sharing parcels':'Adjacent parcels',spatial.filter(p=>!matches.includes(p)));
+      if(!boundaryOnly)renderList(matches.length?'Other same-building condominium units':'Same-building condominium units',units.filter(p=>!matches.includes(p)),'These are separate unit records. Shared building or parent parcel geometry does not establish individual unit locations.');
+    }else if(!matches.length)text(document,surface,'p','No confirmed owner-name matches in the returned records.');
     const notMapped = spatial.filter(p => !geometryRings(p.geometry).length).length;
     if(notMapped)addWarning(`${notMapped} adjacent parcel records have no retrievable outline and are listed only.`);
   };

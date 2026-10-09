@@ -66,10 +66,10 @@ test('render preserves source text, separates condo units and supports keyboard 
   assert.equal(paths.length, 3, 'subject plus 2 actual adjacent outlines; condo duplicate outline excluded');
   assert.ok(anchors.every(a => a.href.startsWith('https://'))); assert.equal(nodes.filter(n => n.tagName === 'img').length, 0);
   assert.match(content(parent), /<img src=x onerror=alert\(1\)>/); assert.match(content(parent), /not verification of legal identity/);
-  assert.match(content(parent), /Same-building condominium units \(1\)/); assert.match(content(parent), /does not establish individual unit locations/);
+  assert.match(content(parent), /Other same-building condominium units \(1\)/); assert.match(content(parent), /does not establish individual unit locations/);
   paths[1].emit('keydown', {key: 'Enter', preventDefault() {}}); assert.equal(paths[1].attributes['aria-pressed'], 'true');
   const filter = nodes.find(n => n.tagName === 'input'); filter.checked = true; filter.emit('change');
-  assert.match(content(parent), /Adjacent parcels \(2\)/); assert.match(content(parent), /Same-building condominium units \(0\)/);
+  assert.match(content(parent), /Owner-name matches \(2\)/); assert.doesNotMatch(content(parent), /Other boundary-sharing parcels/);
   assert.equal(descendants(parent).filter(n => n.tagName === 'path').length, 3);
 });
 
@@ -135,5 +135,13 @@ test('same-building option snapshots into the request, locks while pending and i
 
 test('combined scope labels boundary and condo owner matches separately',()=>{
  const data=fixture();data.NeighboringProperties.options={sameBuilding:true};data.NeighboringProperties.properties[2].owners=['A & B TRUST'];data.NeighboringProperties.properties[2].matchesRequestedOwner=true;
- const root=new Node('section');renderNeighbors(document,root,data);const s=content(root);assert.match(s,/3 boundary-sharing parcels returned · 2 parcel owner-name matches/);assert.match(s,/1 same-building unit records returned · 1 unit owner-name matches/);assert.match(s,/Same-building condominium units/);
+ const root=new Node('section');renderNeighbors(document,root,data);const s=content(root);assert.match(s,/3 boundary-sharing parcels returned · 2 parcel owner-name matches/);assert.match(s,/1 same-building unit records returned · 1 unit owner-name matches/);assert.match(s,/Other same-building condominium units/);
+});
+
+test('matching owner tiles lead the result, are highlighted and do not duplicate other records',()=>{
+ const data=fixture();data.NeighboringProperties.options={sameBuilding:true};data.NeighboringProperties.properties.reverse();
+ const root=new Node('section');renderNeighbors(document,root,data);const nodes=descendants(root),cards=nodes.filter(n=>n.tagName==='article');
+ assert.equal(cards.length,4);assert.match(cards[0].className,/neighbors-requested neighbors-match/);assert.match(cards[1].className,/neighbors-coowner neighbors-match/);assert.doesNotMatch(cards[2].className,/neighbors-match/);assert.doesNotMatch(cards[3].className,/neighbors-match/);
+ assert.ok(nodes.indexOf(cards[0])<nodes.findIndex(n=>n.textContent==='Subject parcel'));assert.match(content(cards[0]),/OWNER NAME MATCH/);assert.match(content(cards[1]),/CO-OWNER NAME MATCH/);
+ const headings=nodes.filter(n=>n.tagName==='h3').map(n=>n.textContent);assert.equal(headings[0],'Owner-name matches (2)');
 });
