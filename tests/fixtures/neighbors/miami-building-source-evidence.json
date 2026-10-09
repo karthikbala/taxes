@@ -1,0 +1,22 @@
+{
+  "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&myAddress=555+NE+15+ST&to=200",
+  "retrieved_at": "2026-10-09T05:48:15.249Z",
+  "http_status": 200,
+  "sha256": "4cb55f8e9cc89f88a791bdd1b86f1eb268e5bee02dff13d40f650416301ef706",
+  "details": [
+    {
+      "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520020",
+      "folio": "0132310520020",
+      "retrieved_at": "2026-10-09T05:49:54.441Z",
+      "http_status": 200,
+      "sha256": "5329d53c280839904ac35d507ec69c7a680ec3a1421c78c6babb0b8a7278fe4c"
+    },
+    {
+      "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520030",
+      "folio": "0132310520030",
+      "retrieved_at": "2026-10-09T05:49:54.779Z",
+      "http_status": 200,
+      "sha256": "50db946115543abc699ca028b4bc01113fda9e84db83c5e8531d7e5370470b9d"
+    }
+  ]
+}

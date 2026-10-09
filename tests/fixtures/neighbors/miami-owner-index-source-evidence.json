@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&from=1&ownerName=JUDE+PATRICK+JACOB&to=200",
+    "retrieved_at": "2026-10-09T05:56:02.835Z",
+    "http_status": 200,
+    "sha256": "9917a00e04b78510286e47224361d45457458dda3fa5bf77684f948bc6590bd9"
+  },
+  {
+    "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&from=1&ownerName=NOAH+ELIJAH+JACOB&to=200",
+    "retrieved_at": "2026-10-09T05:56:05.374Z",
+    "http_status": 200,
+    "sha256": "d5b04137a7820a493d03c0f3e62d4af7db5574d8d55038813a662196488a5fcf"
+  }
+]

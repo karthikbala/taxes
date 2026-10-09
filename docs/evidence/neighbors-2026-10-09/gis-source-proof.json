@@ -1,0 +1,1062 @@
+{
+  "request_cap": 5,
+  "paid_usage": 0,
+  "requests": [
+    {
+      "id": "miami_parcel_gis_subject",
+      "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520010%27&outFields=*&returnGeometry=true&outSR=4326",
+      "http_status": 200,
+      "retrieved_at": "2026-10-09T05:51:44.341Z",
+      "body": {
+        "displayFieldName": "FOLIO",
+        "fieldAliases": {
+          "Shape_Length": "Shape_Length",
+          "Shape_Area": "Shape_Area",
+          "OBJECTID": "OBJECTID",
+          "FOLIO": "FOLIO",
+          "h_num": "h_num",
+          "true_site_addr": "true_site_addr",
+          "zip_code": "zip_code"
+        },
+        "geometryType": "esriGeometryPolygon",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "Shape_Length",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Length"
+          },
+          {
+            "name": "Shape_Area",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Area"
+          },
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "FOLIO",
+            "type": "esriFieldTypeString",
+            "alias": "FOLIO",
+            "length": 13
+          },
+          {
+            "name": "h_num",
+            "type": "esriFieldTypeString",
+            "alias": "h_num",
+            "length": 5
+          },
+          {
+            "name": "true_site_addr",
+            "type": "esriFieldTypeString",
+            "alias": "true_site_addr",
+            "length": 100
+          },
+          {
+            "name": "zip_code",
+            "type": "esriFieldTypeInteger",
+            "alias": "zip_code"
+          }
+        ],
+        "features": []
+      }
+    },
+    {
+      "id": "miami_parcel_gis_parent",
+      "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520001%27&outFields=*&returnGeometry=true&outSR=4326",
+      "http_status": 200,
+      "retrieved_at": "2026-10-09T05:51:45.993Z",
+      "body": {
+        "displayFieldName": "FOLIO",
+        "fieldAliases": {
+          "Shape_Length": "Shape_Length",
+          "Shape_Area": "Shape_Area",
+          "OBJECTID": "OBJECTID",
+          "FOLIO": "FOLIO",
+          "h_num": "h_num",
+          "true_site_addr": "true_site_addr",
+          "zip_code": "zip_code"
+        },
+        "geometryType": "esriGeometryPolygon",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "Shape_Length",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Length"
+          },
+          {
+            "name": "Shape_Area",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Area"
+          },
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "FOLIO",
+            "type": "esriFieldTypeString",
+            "alias": "FOLIO",
+            "length": 13
+          },
+          {
+            "name": "h_num",
+            "type": "esriFieldTypeString",
+            "alias": "h_num",
+            "length": 5
+          },
+          {
+            "name": "true_site_addr",
+            "type": "esriFieldTypeString",
+            "alias": "true_site_addr",
+            "length": 100
+          },
+          {
+            "name": "zip_code",
+            "type": "esriFieldTypeInteger",
+            "alias": "zip_code"
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "Shape_Length": 0.002600354141598145,
+              "Shape_Area": 4.1266723261813115e-7,
+              "OBJECTID": 32613,
+              "FOLIO": "0132310520001",
+              "h_num": "555",
+              "true_site_addr": "555 NE 15 ST",
+              "zip_code": 33132
+            },
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -80.18596100299999,
+                    25.790335361000075
+                  ],
+                  [
+                    -80.18596301799994,
+                    25.79057307200003
+                  ],
+                  [
+                    -80.18542568199996,
+                    25.790577024000072
+                  ],
+                  [
+                    -80.18544243199995,
+                    25.789798114000064
+                  ],
+                  [
+                    -80.18589884899995,
+                    25.789781383000047
+                  ],
+                  [
+                    -80.18590785699996,
+                    25.789781708000078
+                  ],
+                  [
+                    -80.18591669299997,
+                    25.78978333400005
+                  ],
+                  [
+                    -80.18592512399994,
+                    25.789786218000074
+                  ],
+                  [
+                    -80.18593293999999,
+                    25.789790287000073
+                  ],
+                  [
+                    -80.18593993699994,
+                    25.78979543500003
+                  ],
+                  [
+                    -80.18594593199998,
+                    25.789801530000034
+                  ],
+                  [
+                    -80.18595077399993,
+                    25.789808416000028
+                  ],
+                  [
+                    -80.18595433599995,
+                    25.78981591400003
+                  ],
+                  [
+                    -80.18595652799996,
+                    25.789823830000046
+                  ],
+                  [
+                    -80.18595729299994,
+                    25.78983196200005
+                  ],
+                  [
+                    -80.18595862999996,
+                    25.790055478000056
+                  ],
+                  [
+                    -80.18596100299999,
+                    25.790335361000075
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "miami_parcel_gis_candidate_ids",
+      "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnIdsOnly=true",
+      "http_status": 200,
+      "retrieved_at": "2026-10-09T05:51:46.319Z",
+      "body": {
+        "objectIdFieldName": "OBJECTID",
+        "objectIds": [
+          32522,
+          32527,
+          32599,
+          32613
+        ]
+      }
+    },
+    {
+      "id": "miami_parcel_gis_candidate_count",
+      "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnCountOnly=true",
+      "http_status": 200,
+      "retrieved_at": "2026-10-09T05:51:46.627Z",
+      "body": {
+        "count": 4
+      }
+    },
+    {
+      "id": "miami_parcel_gis_candidate_page_1",
+      "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+      "http_status": 200,
+      "retrieved_at": "2026-10-09T05:51:46.913Z",
+      "body": {
+        "displayFieldName": "FOLIO",
+        "fieldAliases": {
+          "Shape_Length": "Shape_Length",
+          "Shape_Area": "Shape_Area",
+          "OBJECTID": "OBJECTID",
+          "FOLIO": "FOLIO",
+          "h_num": "h_num",
+          "true_site_addr": "true_site_addr",
+          "zip_code": "zip_code"
+        },
+        "geometryType": "esriGeometryPolygon",
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "fields": [
+          {
+            "name": "Shape_Length",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Length"
+          },
+          {
+            "name": "Shape_Area",
+            "type": "esriFieldTypeDouble",
+            "alias": "Shape_Area"
+          },
+          {
+            "name": "OBJECTID",
+            "type": "esriFieldTypeOID",
+            "alias": "OBJECTID"
+          },
+          {
+            "name": "FOLIO",
+            "type": "esriFieldTypeString",
+            "alias": "FOLIO",
+            "length": 13
+          },
+          {
+            "name": "h_num",
+            "type": "esriFieldTypeString",
+            "alias": "h_num",
+            "length": 5
+          },
+          {
+            "name": "true_site_addr",
+            "type": "esriFieldTypeString",
+            "alias": "true_site_addr",
+            "length": 100
+          },
+          {
+            "name": "zip_code",
+            "type": "esriFieldTypeInteger",
+            "alias": "zip_code"
+          }
+        ],
+        "features": [
+          {
+            "attributes": {
+              "Shape_Length": 0.002945302695620911,
+              "Shape_Area": 4.976777706852448e-7,
+              "OBJECTID": 32522,
+              "FOLIO": "0132310060210",
+              "h_num": "1540",
+              "true_site_addr": "1540 N BAYSHORE DR",
+              "zip_code": 33132
+            },
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -80.18596100299999,
+                    25.790335361000075
+                  ],
+                  [
+                    -80.18595862999996,
+                    25.790055478000056
+                  ],
+                  [
+                    -80.18600734399996,
+                    25.790056528000036
+                  ],
+                  [
+                    -80.18660542299995,
+                    25.79004203200003
+                  ],
+                  [
+                    -80.18689571399995,
+                    25.790034994000052
+                  ],
+                  [
+                    -80.18690551499998,
+                    25.790304916000025
+                  ],
+                  [
+                    -80.18691471399995,
+                    25.790558186000055
+                  ],
+                  [
+                    -80.18596310599997,
+                    25.790587800000026
+                  ],
+                  [
+                    -80.18596301799994,
+                    25.79057307200003
+                  ],
+                  [
+                    -80.18596100299999,
+                    25.790335361000075
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "attributes": {
+              "Shape_Length": 0.0017692216012686651,
+              "Shape_Area": 1.721896391500458e-7,
+              "OBJECTID": 32527,
+              "FOLIO": "0132310100010",
+              "h_num": "515",
+              "true_site_addr": "515 NE 15 ST",
+              "zip_code": 33132
+            },
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -80.18600734399996,
+                    25.790056528000036
+                  ],
+                  [
+                    -80.18599990399997,
+                    25.78977309000004
+                  ],
+                  [
+                    -80.18659182299996,
+                    25.78974739100005
+                  ],
+                  [
+                    -80.18660542299995,
+                    25.79004203200003
+                  ],
+                  [
+                    -80.18600734399996,
+                    25.790056528000036
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "attributes": {
+              "Shape_Length": 0.006607063903077417,
+              "Shape_Area": 0.0000029615285644453816,
+              "OBJECTID": 32599,
+              "FOLIO": "0132310360022",
+              "h_num": "1635",
+              "true_site_addr": "1635 N BAYSHORE DR",
+              "zip_code": 33132
+            },
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -80.18544243199995,
+                    25.789798114000064
+                  ],
+                  [
+                    -80.18542568199996,
+                    25.790577024000072
+                  ],
+                  [
+                    -80.18542254499994,
+                    25.79072304700003
+                  ],
+                  [
+                    -80.18543957199995,
+                    25.790722713000036
+                  ],
+                  [
+                    -80.18542939299994,
+                    25.79119623300005
+                  ],
+                  [
+                    -80.18542867899998,
+                    25.791229475000023
+                  ],
+                  [
+                    -80.18541425399997,
+                    25.79190028100004
+                  ],
+                  [
+                    -80.18539722399998,
+                    25.791900695000038
+                  ],
+                  [
+                    -80.18480984199994,
+                    25.791932823000025
+                  ],
+                  [
+                    -80.18473696599995,
+                    25.79193317100004
+                  ],
+                  [
+                    -80.18459228399996,
+                    25.791918087000056
+                  ],
+                  [
+                    -80.18445210099998,
+                    25.791882335000025
+                  ],
+                  [
+                    -80.18431999699999,
+                    25.79182682900006
+                  ],
+                  [
+                    -80.18419934499997,
+                    25.791752985000073
+                  ],
+                  [
+                    -80.18409322199994,
+                    25.79166268800003
+                  ],
+                  [
+                    -80.18400433899996,
+                    25.791558242000065
+                  ],
+                  [
+                    -80.18393496299996,
+                    25.79144231600003
+                  ],
+                  [
+                    -80.18388686699996,
+                    25.791317867000032
+                  ],
+                  [
+                    -80.18386830799994,
+                    25.791123534000064
+                  ],
+                  [
+                    -80.18387022099995,
+                    25.790641005000055
+                  ],
+                  [
+                    -80.18388434899998,
+                    25.790503389000037
+                  ],
+                  [
+                    -80.18392338799998,
+                    25.790374445000054
+                  ],
+                  [
+                    -80.18398491999994,
+                    25.790252904000056
+                  ],
+                  [
+                    -80.18406732599993,
+                    25.790141954000035
+                  ],
+                  [
+                    -80.18416844399997,
+                    25.790044511000076
+                  ],
+                  [
+                    -80.18428561899998,
+                    25.789963132000025
+                  ],
+                  [
+                    -80.18442552999994,
+                    25.789895772000023
+                  ],
+                  [
+                    -80.18457621299996,
+                    25.78985136700004
+                  ],
+                  [
+                    -80.18473311499997,
+                    25.789831261000074
+                  ],
+                  [
+                    -80.18544243199995,
+                    25.789798114000064
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "attributes": {
+              "Shape_Length": 0.002600354141598145,
+              "Shape_Area": 4.1266723261813115e-7,
+              "OBJECTID": 32613,
+              "FOLIO": "0132310520001",
+              "h_num": "555",
+              "true_site_addr": "555 NE 15 ST",
+              "zip_code": 33132
+            },
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -80.18596100299999,
+                    25.790335361000075
+                  ],
+                  [
+                    -80.18596301799994,
+                    25.79057307200003
+                  ],
+                  [
+                    -80.18542568199996,
+                    25.790577024000072
+                  ],
+                  [
+                    -80.18544243199995,
+                    25.789798114000064
+                  ],
+                  [
+                    -80.18589884899995,
+                    25.789781383000047
+                  ],
+                  [
+                    -80.18590785699996,
+                    25.789781708000078
+                  ],
+                  [
+                    -80.18591669299997,
+                    25.78978333400005
+                  ],
+                  [
+                    -80.18592512399994,
+                    25.789786218000074
+                  ],
+                  [
+                    -80.18593293999999,
+                    25.789790287000073
+                  ],
+                  [
+                    -80.18593993699994,
+                    25.78979543500003
+                  ],
+                  [
+                    -80.18594593199998,
+                    25.789801530000034
+                  ],
+                  [
+                    -80.18595077399993,
+                    25.789808416000028
+                  ],
+                  [
+                    -80.18595433599995,
+                    25.78981591400003
+                  ],
+                  [
+                    -80.18595652799996,
+                    25.789823830000046
+                  ],
+                  [
+                    -80.18595729299994,
+                    25.78983196200005
+                  ],
+                  [
+                    -80.18595862999996,
+                    25.790055478000056
+                  ],
+                  [
+                    -80.18596100299999,
+                    25.790335361000075
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "result": {
+    "subject_folio": "0132310520010",
+    "anchor_folio": "0132310520001",
+    "anchor_kind": "PUBLISHED_PARENT",
+    "subjectGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -80.18596100299999,
+            25.790335361000075
+          ],
+          [
+            -80.18596301799994,
+            25.79057307200003
+          ],
+          [
+            -80.18542568199996,
+            25.790577024000072
+          ],
+          [
+            -80.18544243199995,
+            25.789798114000064
+          ],
+          [
+            -80.18589884899995,
+            25.789781383000047
+          ],
+          [
+            -80.18590785699996,
+            25.789781708000078
+          ],
+          [
+            -80.18591669299997,
+            25.78978333400005
+          ],
+          [
+            -80.18592512399994,
+            25.789786218000074
+          ],
+          [
+            -80.18593293999999,
+            25.789790287000073
+          ],
+          [
+            -80.18593993699994,
+            25.78979543500003
+          ],
+          [
+            -80.18594593199998,
+            25.789801530000034
+          ],
+          [
+            -80.18595077399993,
+            25.789808416000028
+          ],
+          [
+            -80.18595433599995,
+            25.78981591400003
+          ],
+          [
+            -80.18595652799996,
+            25.789823830000046
+          ],
+          [
+            -80.18595729299994,
+            25.78983196200005
+          ],
+          [
+            -80.18595862999996,
+            25.790055478000056
+          ],
+          [
+            -80.18596100299999,
+            25.790335361000075
+          ]
+        ]
+      ]
+    },
+    "subjectCentroid": [
+      -80.1856973513257,
+      25.790185363329293
+    ],
+    "candidates": [
+      {
+        "folio": "0132310060210",
+        "object_id": 32522,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -80.18596100299999,
+                25.790335361000075
+              ],
+              [
+                -80.18595862999996,
+                25.790055478000056
+              ],
+              [
+                -80.18600734399996,
+                25.790056528000036
+              ],
+              [
+                -80.18660542299995,
+                25.79004203200003
+              ],
+              [
+                -80.18689571399995,
+                25.790034994000052
+              ],
+              [
+                -80.18690551499998,
+                25.790304916000025
+              ],
+              [
+                -80.18691471399995,
+                25.790558186000055
+              ],
+              [
+                -80.18596310599997,
+                25.790587800000026
+              ],
+              [
+                -80.18596301799994,
+                25.79057307200003
+              ],
+              [
+                -80.18596100299999,
+                25.790335361000075
+              ]
+            ]
+          ]
+        },
+        "attributes": {
+          "Shape_Length": 0.002945302695620911,
+          "Shape_Area": 4.976777706852448e-7,
+          "OBJECTID": 32522,
+          "FOLIO": "0132310060210",
+          "h_num": "1540",
+          "true_site_addr": "1540 N BAYSHORE DR",
+          "zip_code": 33132
+        },
+        "spatial_relation": "ABUTTING",
+        "metrics": {
+          "relation": "ABUTTING",
+          "distance_m": 0,
+          "shared_edge_m": 57.55558306047783,
+          "limitations": []
+        },
+        "provenance": {
+          "source_id": "miami_parcel_gis_candidate_page_1",
+          "source_url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+          "source_path": "features[0]",
+          "outSR": 4326,
+          "anchor_folio": "0132310520001"
+        }
+      },
+      {
+        "folio": "0132310100010",
+        "object_id": 32527,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -80.18600734399996,
+                25.790056528000036
+              ],
+              [
+                -80.18599990399997,
+                25.78977309000004
+              ],
+              [
+                -80.18659182299996,
+                25.78974739100005
+              ],
+              [
+                -80.18660542299995,
+                25.79004203200003
+              ],
+              [
+                -80.18600734399996,
+                25.790056528000036
+              ]
+            ]
+          ]
+        },
+        "attributes": {
+          "Shape_Length": 0.0017692216012686651,
+          "Shape_Area": 1.721896391500458e-7,
+          "OBJECTID": 32527,
+          "FOLIO": "0132310100010",
+          "h_num": "515",
+          "true_site_addr": "515 NE 15 ST",
+          "zip_code": 33132
+        },
+        "spatial_relation": "NEARBY",
+        "metrics": {
+          "relation": "NEARBY",
+          "distance_m": 4.419662194714143,
+          "shared_edge_m": 0,
+          "limitations": []
+        },
+        "provenance": {
+          "source_id": "miami_parcel_gis_candidate_page_1",
+          "source_url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+          "source_path": "features[1]",
+          "outSR": 4326,
+          "anchor_folio": "0132310520001"
+        }
+      },
+      {
+        "folio": "0132310360022",
+        "object_id": 32599,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -80.18544243199995,
+                25.789798114000064
+              ],
+              [
+                -80.18542568199996,
+                25.790577024000072
+              ],
+              [
+                -80.18542254499994,
+                25.79072304700003
+              ],
+              [
+                -80.18543957199995,
+                25.790722713000036
+              ],
+              [
+                -80.18542939299994,
+                25.79119623300005
+              ],
+              [
+                -80.18542867899998,
+                25.791229475000023
+              ],
+              [
+                -80.18541425399997,
+                25.79190028100004
+              ],
+              [
+                -80.18539722399998,
+                25.791900695000038
+              ],
+              [
+                -80.18480984199994,
+                25.791932823000025
+              ],
+              [
+                -80.18473696599995,
+                25.79193317100004
+              ],
+              [
+                -80.18459228399996,
+                25.791918087000056
+              ],
+              [
+                -80.18445210099998,
+                25.791882335000025
+              ],
+              [
+                -80.18431999699999,
+                25.79182682900006
+              ],
+              [
+                -80.18419934499997,
+                25.791752985000073
+              ],
+              [
+                -80.18409322199994,
+                25.79166268800003
+              ],
+              [
+                -80.18400433899996,
+                25.791558242000065
+              ],
+              [
+                -80.18393496299996,
+                25.79144231600003
+              ],
+              [
+                -80.18388686699996,
+                25.791317867000032
+              ],
+              [
+                -80.18386830799994,
+                25.791123534000064
+              ],
+              [
+                -80.18387022099995,
+                25.790641005000055
+              ],
+              [
+                -80.18388434899998,
+                25.790503389000037
+              ],
+              [
+                -80.18392338799998,
+                25.790374445000054
+              ],
+              [
+                -80.18398491999994,
+                25.790252904000056
+              ],
+              [
+                -80.18406732599993,
+                25.790141954000035
+              ],
+              [
+                -80.18416844399997,
+                25.790044511000076
+              ],
+              [
+                -80.18428561899998,
+                25.789963132000025
+              ],
+              [
+                -80.18442552999994,
+                25.789895772000023
+              ],
+              [
+                -80.18457621299996,
+                25.78985136700004
+              ],
+              [
+                -80.18473311499997,
+                25.789831261000074
+              ],
+              [
+                -80.18544243199995,
+                25.789798114000064
+              ]
+            ]
+          ]
+        },
+        "attributes": {
+          "Shape_Length": 0.006607063903077417,
+          "Shape_Area": 0.0000029615285644453816,
+          "OBJECTID": 32599,
+          "FOLIO": "0132310360022",
+          "h_num": "1635",
+          "true_site_addr": "1635 N BAYSHORE DR",
+          "zip_code": 33132
+        },
+        "spatial_relation": "UNKNOWN",
+        "metrics": {
+          "relation": "UNKNOWN",
+          "distance_m": null,
+          "shared_edge_m": null,
+          "limitations": [
+            "Geometry exceeds the 200 metre local projection scope."
+          ]
+        },
+        "provenance": {
+          "source_id": "miami_parcel_gis_candidate_page_1",
+          "source_url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+          "source_path": "features[2]",
+          "outSR": 4326,
+          "anchor_folio": "0132310520001"
+        }
+      }
+    ],
+    "coverage": {
+      "status": "SEARCH_INCOMPLETE",
+      "complete": false,
+      "candidate_count": 4,
+      "requested_object_ids": [
+        32522,
+        32527,
+        32599,
+        32613
+      ],
+      "max_candidates": 10,
+      "buffer_m": 5,
+      "returned_object_count": 4
+    },
+    "sources": [
+      {
+        "id": "miami_parcel_gis_subject",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520010%27&outFields=*&returnGeometry=true&outSR=4326"
+      },
+      {
+        "id": "miami_parcel_gis_parent",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520001%27&outFields=*&returnGeometry=true&outSR=4326"
+      },
+      {
+        "id": "miami_parcel_gis_candidate_ids",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnIdsOnly=true"
+      },
+      {
+        "id": "miami_parcel_gis_candidate_count",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnCountOnly=true"
+      },
+      {
+        "id": "miami_parcel_gis_candidate_page_1",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326"
+      }
+    ],
+    "warnings": [
+      "GIS boundary classification is approximate and is not a legal survey."
+    ],
+    "errors": [],
+    "parent_reference": {
+      "source_id": "miami_assessment",
+      "source_path": "PropertyInfo.ParentFolio",
+      "source_value": "01-3231-052-0001"
+    },
+    "anchor_attributes": {
+      "Shape_Length": 0.002600354141598145,
+      "Shape_Area": 4.1266723261813115e-7,
+      "OBJECTID": 32613,
+      "FOLIO": "0132310520001",
+      "h_num": "555",
+      "true_site_addr": "555 NE 15 ST",
+      "zip_code": 33132
+    },
+    "provenance": {
+      "source_id": "miami_parcel_gis_parent",
+      "source_url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520001%27&outFields=*&returnGeometry=true&outSR=4326",
+      "source_path": "features[0].geometry",
+      "anchor_folio": "0132310520001",
+      "outSR": 4326
+    }
+  },
+  "final_offline_replay": {
+    "checked_at": "2026-10-09T05:53:38.742Z",
+    "request_count": 5,
+    "metrics_unchanged": true,
+    "coverage_unchanged": true
+  }
+}

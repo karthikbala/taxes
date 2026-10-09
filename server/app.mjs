@@ -1,3 +1,4 @@
+import {extractNeighborProperties} from '../lib/client/neighbors.mjs';
 import {debitScrapedoProbe} from '../lib/client/external-probe-budget.mjs';
 import {discoverMiamiDeed} from '../lib/client/deed-discovery.mjs';
 import {readFile,realpath,stat} from 'node:fs/promises';
@@ -21,7 +22,7 @@ async function inputJSON(request){
   const all=new Uint8Array(bytes);let offset=0;for(const part of parts){all.set(part,offset);offset+=part.length;}
   try{return JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(all));}catch{throw problem('invalid_json',400,'Supply valid JSON.');}
 }
-export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'public'),logSink,deadlineMs=120000,lookupClient=clientLookup,lookupLegacy=legacyLookup}={}){
+export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'public'),logSink,deadlineMs=120000,lookupClient=clientLookup,lookupLegacy=legacyLookup,lookupNeighbors=extractNeighborProperties}={}){
  const managedBrowser=makeManagedBrowser(env);const pages=new Map(),pending=new Set();
  const track=promise=>{const task=Promise.resolve(promise);pending.add(task);task.finally(()=>pending.delete(task)).catch(()=>{});return task;};
  async function handle(request){
@@ -39,7 +40,7 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
     return json({api:'ready',managed_source_access:await managedPreflight(env)});
    }
    if(path==='/api/v2/sources'||path==='/api/v1/sources'){if(request.method!=='GET')return method('GET');return json(path.includes('/v2/')?clientCapabilities:capabilities);}
-   if(path==='/api/v2/property/lookup'||path==='/api/v1/property/lookup'){
+   if(path==='/api/v2/property/lookup'||path==='/api/v1/property/lookup'||path==='/api/v2/property/neighbors'){
     if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
     if(request.signal.aborted)return error('request_aborted',499,'Request canceled.');
     const input=await inputJSON(request),ctl=new AbortController();const abort=()=>ctl.abort();request.signal.addEventListener('abort',abort,{once:true});if(request.signal.aborted)ctl.abort();
@@ -47,7 +48,7 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
     // Legacy engine callers also receive cancellation through the injected fetch boundary.
     const boundedFetch=(u,options={})=>fetcher(u,{...options,signal:options.signal?AbortSignal.any([ctl.signal,options.signal]):ctl.signal});
     let preflight;const guardedBrowser=managedBrowser?async args=>{if(ctl.signal.aborted)throw problem('request_aborted',499,'Request canceled.');preflight??=await managedPreflight(env);if(!preflight.ready)throw problem('managed_access_not_ready',503,'Managed source entitlement or authorized budget was not verified.');if(ctl.signal.aborted)throw problem('request_aborted',499,'Request canceled.');return managedBrowser({...args,signal:ctl.signal,deadline:Math.min(args.deadline??Infinity,start+deadlineMs)});}:null;
-    try{const runtime={requestId,signal:ctl.signal,managedBrowser:guardedBrowser,log};const backend=track(Promise.resolve().then(()=>path.includes('/v2/')?lookupClient(input,boundedFetch,runtime):lookupLegacy(input,boundedFetch,runtime)));const result=await Promise.race([backend,canceled]);if(path.includes('/v1/')){result.request_id=requestId;return json(result,result.status==='not_found'?404:result.status==='blocked'?503:result.status==='error'?502:200);}return json(result);}
+    try{const runtime={requestId,signal:ctl.signal,managedBrowser:guardedBrowser,log};const backend=track(Promise.resolve().then(()=>path==='/api/v2/property/neighbors'?lookupNeighbors(input,boundedFetch,runtime):path.includes('/v2/')?lookupClient(input,boundedFetch,runtime):lookupLegacy(input,boundedFetch,runtime)));const result=await Promise.race([backend,canceled]);if(path.includes('/v1/')){result.request_id=requestId;return json(result,result.status==='not_found'?404:result.status==='blocked'?503:result.status==='error'?502:200);}return json(result);}
     finally{clearTimeout(timer);request.signal.removeEventListener('abort',abort);}
    }
    if(path==='/api/v2/diagnostics/miami-tax-deed'){

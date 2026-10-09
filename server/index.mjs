@@ -3,7 +3,7 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createApp} from './app.mjs';
 import {projectRoot} from '../scripts/build-selfhost.mjs';
-export async function createServerHTTP({env=process.env,fetcher=fetch,logSink,staticRoot,deadlineMs,lookupClient,lookupLegacy,dbFactory}={}){
+export async function createServerHTTP({env=process.env,fetcher=fetch,logSink,staticRoot,deadlineMs,lookupClient,lookupLegacy,lookupNeighbors,dbFactory}={}){
  const runtime={...env};
  if(runtime.NODE_ENV==='production'&&!runtime.INVISIA_POC_API_KEY)throw new Error('INVISIA_POC_API_KEY is required in production.');
  let ownedDB;
@@ -12,7 +12,7 @@ export async function createServerHTTP({env=process.env,fetcher=fetch,logSink,st
   let budget;try{budget=await runtime.DB.prepare('SELECT limit_milli_usd,spent_milli_usd,reserved_milli_usd FROM scrape_budgets WHERE id=?').bind('florida-phase1-2026-10-07').first();}catch{}
   if(!budget){runtime.INVISIA_BROWSER_ENABLED='0';console.warn('Managed browser disabled: existing authorized budget ledger is missing. No budget was created.');}
  }
- const handler=createApp({env:runtime,fetcher,logSink,staticRoot,deadlineMs,lookupClient,lookupLegacy});
+ const handler=createApp({env:runtime,fetcher,logSink,staticRoot,deadlineMs,lookupClient,lookupLegacy,lookupNeighbors});
  const server=createServer(async(req,res)=>{
   const ctl=new AbortController();req.on('aborted',()=>ctl.abort());res.on('close',()=>{if(!res.writableEnded)ctl.abort();});
   try{

@@ -45,7 +45,7 @@ test('address matching handles compact spelling, ordinals and locality; unit ide
   assert.deepEqual(normalizeMiamiAddress('555 NE15ST UNIT401'),{street:'555 NE 15 ST',unit:'401',conflict:false});
   assert.deepEqual(normalizeMiamiAddress('555 NE 15th Street #401, Miami, FL'),{street:'555 NE 15 ST',unit:'401',conflict:false});
   assert.equal(matchMiamiCandidates({...input,address:'555 NE 15 ST UNIT 402'},search).status,'NOT_FOUND');
-  assert.equal(matchMiamiCandidates({...input,address:'555 NE 15 ST'},search).status,'NOT_FOUND');
+  assert.equal(matchMiamiCandidates({...input,address:'555 NE 15 ST'},search).status,'SEARCH_INCOMPLETE');
   assert.equal(matchMiamiCandidates({...input,unit:'402'},search).status,'SEARCH_INCOMPLETE');
 });
 test('partial pagination, incomplete response and ambiguous exact parcels stop before property calls',async()=>{
@@ -116,3 +116,32 @@ test('native area sentinel becomes null with raw provenance while an actual nega
   const result=enrichMiami(raw,'0132310520010');assert.equal(result.PropertyInformation.LivingArea,null);assert.equal(result.provenance['PropertyInformation.LivingArea'].source_value,-1);assert.equal(result.provenance['PropertyInformation.LivingArea'].missing_reason,'SOURCE_UNAVAILABLE_SENTINEL');assert.equal(result.PropertyInformation.LotSize,'0 Sq.Ft');assert.equal(result.SalesInformation[0].Price,'$-1');
 });
 test('full directional address words resolve without guessing trailing units',()=>{assert.deepEqual(normalizeMiamiAddress('555 NORTHEAST 15 STREET UNIT 401'),normalizeMiamiAddress('555 NE 15 ST UNIT 401'));assert.equal(normalizeMiamiAddress('555 NE 15 ST 401').unit,'');});
+
+const neighborFixture=name=>JSON.parse(readFileSync(new URL('./fixtures/neighbors/'+name,import.meta.url)));
+const alphaDetail=neighborFixture('miami-alpha-unit-detail-source.json'),alphaRejected=neighborFixture('miami-alpha-unit-filtered-search-source.json');
+const streetFirst=neighborFixture('miami-building-address-page1-source.json');
+// Complete two-page offline scenario assembled from actual county rows; Total is
+// deliberately reduced to 201 for bounded pagination regression, not live proof.
+const alphaPage1={...streetFirst,Total:201},alphaPage2={Completed:true,Total:201,MinimumPropertyInfos:[neighborFixture('miami-owner-jude-source.json').MinimumPropertyInfos[0]]};
+const alphaInput={address:'555 NE 15 ST UNIT T-15',ownerName:'GASTON GIRARD',county:'miami-dade-fl'};
+function alphaHarness({last=alphaPage2,raw=alphaDetail,filtered=alphaRejected}={}){const calls=[];return {calls,get:async url=>{const q=new URL(url).searchParams;calls.push(url);return q.get('Operation')==='GetPropertySearchByFolio'?raw:q.get('myUnit')?filtered:q.get('from')==='1'?alphaPage1:last;}};}
+test('native rejected alphanumeric unit resolves through a fresh complete street index and verified detail',async()=>{
+ const h=alphaHarness(),out=await resolveMiami(alphaInput,h.get);assert.equal(out.status,'MATCHED');assert.equal(out.parcel_id,'0132310520640');assert.equal(out.raw.SiteAddress[0].Unit,'T-15');assert.equal(h.calls.length,4);
+ assert.equal(new URL(h.calls[0]).searchParams.get('myUnit'),'T-15');assert.equal(new URL(h.calls[1]).searchParams.get('myUnit'),'');assert.equal(new URL(h.calls[2]).searchParams.get('from'),'201');assert.ok(out.notes.some(v=>v.includes('all-unit')));
+});
+test('all-unit fallback cannot accept incomplete pages, duplicate folios or changed Total',async()=>{
+ for(const last of [{...alphaPage2,Completed:false},{...alphaPage2,Total:202},{...alphaPage2,MinimumPropertyInfos:[streetFirst.MinimumPropertyInfos[0]]}]){const h=alphaHarness({last});assert.equal((await resolveMiami(alphaInput,h.get)).status,'SEARCH_INCOMPLETE');assert.equal(h.calls.length,3);}
+});
+test('fallback retains exact alphanumeric unit identity and rejects missing or conflicting unit',async()=>{
+ const wrong=copy(alphaDetail);wrong.SiteAddress[0].Unit='T-16';await assert.rejects(resolveMiami(alphaInput,alphaHarness({raw:wrong}).get),e=>e.code==='identity_mismatch');
+ const conflict=alphaHarness();assert.equal((await resolveMiami({...alphaInput,unit:'T-16'},conflict.get)).status,'SEARCH_INCOMPLETE');assert.equal(conflict.calls.length,0);
+ const missing=alphaHarness();assert.equal((await resolveMiami({...alphaInput,address:'555 NE 15 ST'},missing.get)).status,'SEARCH_INCOMPLETE');assert.equal(missing.calls.length,2);
+ const absent=alphaHarness();assert.equal((await resolveMiami({...alphaInput,address:'555 NE 15 ST UNIT T-999'},absent.get)).status,'NOT_FOUND');assert.equal(absent.calls.length,3);
+});
+test('native unit search also paginates before a unique detail lookup',async()=>{
+ const calls=[],get=async url=>{const q=new URL(url).searchParams;calls.push(url);return q.get('Operation')==='GetPropertySearchByFolio'?alphaDetail:q.get('from')==='1'?alphaPage1:alphaPage2;};
+ assert.equal((await resolveMiami(alphaInput,get)).status,'MATCHED');assert.equal(calls.length,3);assert.equal(new URL(calls[1]).searchParams.get('myUnit'),'T-15');
+});
+test('reference-only parent row cannot satisfy an omitted-unit property request',()=>{
+ const parent=streetFirst.MinimumPropertyInfos[0],out=matchMiamiCandidates({...input,address:'555 NE 15 ST',ownerName:'REFERENCE ONLY'},{Completed:true,Total:1,MinimumPropertyInfos:[parent]});assert.equal(out.status,'SEARCH_INCOMPLETE');assert.equal(out.parcel_id,undefined);assert.ok(out.notes.some(note=>note.includes('unit is required')));
+});

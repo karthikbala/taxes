@@ -56,6 +56,17 @@ Runtime extraction is fixed code, never an LLM call. County selection fills samp
 
 Real county calls are separate from tests. Without the existing managed browser credentials and approved ledger, challenged sources return explicit unavailable/blocked sections; saved samples are never fallback data.
 
+## Miami-Dade neighbouring properties
+
+The `/poc` page includes **Check neighbouring properties**. The separate protected `POST /api/v2/property/neighbors` endpoint accepts the lookup fields and optional `neighborOptions`. It returns official parcel geometry, adjacent-parcel results, a separate same-building unit list, registered-name comparisons and explicit coverage. It uses deterministic direct county requests. See [implementation and live examples](docs/MIAMI-NEIGHBORS-2026-10-09.md).
+
+```sh
+curl -X POST 'http://127.0.0.1:3000/api/v2/property/neighbors' \
+  -H "Authorization: Bearer $POC_ACCESS_KEY" \
+  -H 'Content-Type: application/json' \
+  --data '{"scrap_order_id":"10000001","address":"555 NE 15 ST UNIT 401","ownerName":"JUDE PATRICK JACOB","county":"miami-dade-fl","transactionType":"REFI","state":"FL","neighborOptions":{"sameBuilding":true,"adjacency":true,"maxCandidates":50}}'
+```
+
 ## Linux deployment
 
 Use [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [systemd service](deploy/taxes.service) and [Nginx template](deploy/nginx.conf). Provision Node 22, an unprivileged service user, private environment file, durable SQLite storage, HTTPS and server/DNS permissions. Docker templates are an optional alternative.

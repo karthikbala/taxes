@@ -1,0 +1,6 @@
+{
+  "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520640",
+  "retrieved_at": "2026-10-09T06:17:37.845Z",
+  "http_status": 200,
+  "sha256": "fd2f07cb90bb83f5aa21c443bc41327760aa34518e824b4a7946cd946cc0cd10"
+}
