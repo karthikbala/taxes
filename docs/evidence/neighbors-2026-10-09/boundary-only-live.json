@@ -1,0 +1,398 @@
+{
+  "scrap_order_id": "10000001",
+  "address": "555 NE 15 ST UNIT 401",
+  "ownerName": "JUDE PATRICK JACOB",
+  "county": "Miami-Dade",
+  "state": "FL",
+  "status": "partial",
+  "errorMessage": "NA",
+  "NeighboringProperties": {
+    "status": "PARTIAL",
+    "subject": {
+      "folio": "0132310520010",
+      "address": "555 NE 15 ST",
+      "unit": "401",
+      "owners": [
+        "JUDE PATRICK JACOB",
+        "NOAH ELIJAH JACOB"
+      ],
+      "comparison_names": [
+        "JUDE PATRICK JACOB",
+        "NOAH ELIJAH JACOB"
+      ],
+      "owner_comparison_complete": true,
+      "owner_comparison_provenance": {
+        "method": "county_owner_display_continuation",
+        "source_path": "OwnerInfos[].Name",
+        "grouped": [],
+        "unpaired_generic_markers": [],
+        "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+      },
+      "parent_folio": "0132310520001",
+      "matchesRequestedOwner": true,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.18596100299999,
+              25.790335361000075
+            ],
+            [
+              -80.18596301799994,
+              25.79057307200003
+            ],
+            [
+              -80.18542568199996,
+              25.790577024000072
+            ],
+            [
+              -80.18544243199995,
+              25.789798114000064
+            ],
+            [
+              -80.18589884899995,
+              25.789781383000047
+            ],
+            [
+              -80.18590785699996,
+              25.789781708000078
+            ],
+            [
+              -80.18591669299997,
+              25.78978333400005
+            ],
+            [
+              -80.18592512399994,
+              25.789786218000074
+            ],
+            [
+              -80.18593293999999,
+              25.789790287000073
+            ],
+            [
+              -80.18593993699994,
+              25.78979543500003
+            ],
+            [
+              -80.18594593199998,
+              25.789801530000034
+            ],
+            [
+              -80.18595077399993,
+              25.789808416000028
+            ],
+            [
+              -80.18595433599995,
+              25.78981591400003
+            ],
+            [
+              -80.18595652799996,
+              25.789823830000046
+            ],
+            [
+              -80.18595729299994,
+              25.78983196200005
+            ],
+            [
+              -80.18595862999996,
+              25.790055478000056
+            ],
+            [
+              -80.18596100299999,
+              25.790335361000075
+            ]
+          ]
+        ]
+      },
+      "centroid": [
+        -80.1856973513257,
+        25.790185363329293
+      ],
+      "geometry_anchor_folio": "0132310520001",
+      "geometry_anchor_kind": "PUBLISHED_PARENT"
+    },
+    "properties": [
+      {
+        "folio": "0132310060210",
+        "address": "464 NE 16 ST",
+        "unit": null,
+        "owners": [
+          "TRINITY EPISCOPAL CATHEDRAL",
+          "INC"
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -80.18596100299999,
+                25.790335361000075
+              ],
+              [
+                -80.18595862999996,
+                25.790055478000056
+              ],
+              [
+                -80.18600734399996,
+                25.790056528000036
+              ],
+              [
+                -80.18660542299995,
+                25.79004203200003
+              ],
+              [
+                -80.18689571399995,
+                25.790034994000052
+              ],
+              [
+                -80.18690551499998,
+                25.790304916000025
+              ],
+              [
+                -80.18691471399995,
+                25.790558186000055
+              ],
+              [
+                -80.18596310599997,
+                25.790587800000026
+              ],
+              [
+                -80.18596301799994,
+                25.79057307200003
+              ],
+              [
+                -80.18596100299999,
+                25.790335361000075
+              ]
+            ]
+          ]
+        },
+        "centroid": null,
+        "spatial_relation": "ABUTTING",
+        "comparison_names": [
+          "TRINITY EPISCOPAL CATHEDRAL INC"
+        ],
+        "owner_comparison_complete": true,
+        "owner_comparison_provenance": {
+          "method": "county_owner_display_continuation",
+          "source_path": "OwnerInfos[].Name",
+          "grouped": [
+            {
+              "source_indices": [
+                0,
+                1
+              ],
+              "source_values": [
+                "TRINITY EPISCOPAL CATHEDRAL",
+                "INC"
+              ],
+              "comparison_name": "TRINITY EPISCOPAL CATHEDRAL INC"
+            }
+          ],
+          "unpaired_generic_markers": [],
+          "note": "Standalone entity suffix display lines are attached to the preceding owner name for comparison only; raw county owner lines remain unchanged. Unpaired generic markers cannot establish ownership identity."
+        },
+        "ownership_relation": "DIFFERENT_OWNER",
+        "matching_owner_names": [],
+        "matchesRequestedOwner": false,
+        "matchesSubjectOwner": false,
+        "owner_comparison_note": "Published name-token comparison with entity display continuation grouping only; matching names do not establish legal identity.",
+        "provenance": {
+          "spatial": {
+            "source_id": "miami_parcel_gis_candidate_page_1",
+            "source_url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+            "source_path": "features[0]",
+            "outSR": 4326,
+            "anchor_folio": "0132310520001"
+          },
+          "owners": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "OwnerInfos[].Name",
+            "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310060210",
+            "sha256": "02fd4502e2fbb3a48943f1f96da92622e0c9d0683ad3c3d4731f814883840d7e"
+          },
+          "parent_folio": {
+            "source_id": "miami_neighbors_detail",
+            "source_path": "PropertyInfo.ParentFolio",
+            "source_value": ""
+          },
+          "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310060210"
+        }
+      }
+    ],
+    "hasMatchingOwnerNeighbors": null,
+    "hasRequestedOwnerNeighbors": null,
+    "coverage": {
+      "status": "PARTIAL",
+      "candidate_count": 1,
+      "discovered_candidate_count": 3,
+      "unclassified_geometry_count": 1,
+      "examined_count": 1,
+      "returned_count": 1,
+      "excluded_count": 2,
+      "owner_unavailable_count": 0,
+      "cap_reached": false,
+      "max_candidates": 50,
+      "same_building": {
+        "status": "NOT_REQUESTED",
+        "complete": true
+      },
+      "adjacency": {
+        "status": "SEARCH_INCOMPLETE",
+        "complete": false,
+        "candidate_count": 4,
+        "requested_object_ids": [
+          32522,
+          32527,
+          32599,
+          32613
+        ],
+        "max_candidates": 50,
+        "buffer_m": 5,
+        "returned_object_count": 4
+      },
+      "ownership_complete": false,
+      "owner_index": {
+        "status": "NOT_NEEDED",
+        "complete": null,
+        "indexCandidateFolios": [],
+        "scopeCandidateFolios": []
+      }
+    },
+    "options": {
+      "sameBuilding": false,
+      "adjacency": true,
+      "includeCornerTouch": false,
+      "maxCandidates": 50
+    },
+    "warnings": [
+      "GIS boundary classification is approximate and is not a legal survey."
+    ],
+    "note": "Neighbor ownership is based on current published county owner names. Matching names are not proof of legal identity; this search does not establish statewide ownership or tax clearance."
+  },
+  "ExtractionMetadata": {
+    "contractVersion": "2.0-neighbors",
+    "request_id": "9e450ccc-4845-420d-a7d6-836213a37b10",
+    "collected_at": "2026-10-09T08:03:12.186Z",
+    "duration_ms": 7713,
+    "county_id": "miami-dade-fl",
+    "status": "PARTIAL",
+    "match": {
+      "status": "MATCHED",
+      "parcel_id": "0132310520010",
+      "candidates": [
+        {
+          "parcel_id": "0132310520010",
+          "address": "555 NE 15 ST",
+          "unit": "401",
+          "owners": [
+            "JUDE PATRICK JACOB",
+            "NOAH ELIJAH JACOB"
+          ],
+          "source_id": "miami_address_search"
+        }
+      ],
+      "notes": [],
+      "source_id": "miami_assessment"
+    },
+    "sources": [
+      {
+        "id": "miami_address_search",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=401&from=1&myAddress=555+NE+15+ST&to=200",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:12.186Z",
+        "http_status": 200,
+        "sha256": "8a6d4e5843ff3d1a35e5c6a68a738aa250ae76be42625c59e6b04f57c50d3dbd",
+        "duration_ms": 4037
+      },
+      {
+        "id": "miami_assessment",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:16.223Z",
+        "http_status": 200,
+        "sha256": "f5b569f10079e2ece9b617b8a3f55b5abc8573370219c0469c7a9c0e2885150b",
+        "duration_ms": 337
+      },
+      {
+        "id": "miami_parcel_gis_subject",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520010%27&outFields=*&returnGeometry=true&outSR=4326",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:16.560Z",
+        "http_status": 200,
+        "sha256": "10315aa771776395a76fe93c35a711be9f7ff2b5190bf61a817d009dad5c3917",
+        "duration_ms": 1625
+      },
+      {
+        "id": "miami_parcel_gis_parent",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=FOLIO%3D%270132310520001%27&outFields=*&returnGeometry=true&outSR=4326",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:18.185Z",
+        "http_status": 200,
+        "sha256": "8fc6453cf05bd8cc3eacc33b61b3dd416a6fa9ceae967268db0e4987188a2bbe",
+        "duration_ms": 546
+      },
+      {
+        "id": "miami_parcel_gis_candidate_ids",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnIdsOnly=true",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:18.731Z",
+        "http_status": 200,
+        "sha256": "ae50252e694a9ab1e0863610be0574111b137a4176bcc9dab0cbd9cda74764fd",
+        "duration_ms": 278
+      },
+      {
+        "id": "miami_parcel_gis_candidate_count",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A-80.1860129584809%2C%22ymin%22%3A25.78973641698186%2C%22xmax%22%3A-80.185375741519%2C%22ymax%22%3A25.79062199001826%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnCountOnly=true",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:19.009Z",
+        "http_status": 200,
+        "sha256": "a5fb8eb97856970b61d9f466deb64f7659e835ee8ec5497003b78438fe888cad",
+        "duration_ms": 276
+      },
+      {
+        "id": "miami_parcel_gis_candidate_page_1",
+        "url": "https://gisweb.miamidade.gov/arcgis/rest/services/CAD911/MapServer/22/query?f=json&objectIds=32522%2C32527%2C32599%2C32613&outFields=*&returnGeometry=true&outSR=4326",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:19.285Z",
+        "http_status": 200,
+        "sha256": "99fd508491407971686fa4e86bf90fb47f9dbcc00b2f123a00d32eafbe7deeb7",
+        "duration_ms": 280
+      },
+      {
+        "id": "miami_neighbors_detail",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310060210",
+        "method": "GET",
+        "status": "retrieved",
+        "fetched_at": "2026-10-09T08:03:19.565Z",
+        "http_status": 200,
+        "sha256": "02fd4502e2fbb3a48943f1f96da92622e0c9d0683ad3c3d4731f814883840d7e",
+        "duration_ms": 334
+      }
+    ],
+    "errors": [],
+    "validation": {
+      "subject_folio_and_unit": true,
+      "owner_match": true,
+      "all_candidates_examined": false
+    },
+    "provenance": {
+      "owners": {
+        "source_id": "miami_assessment",
+        "source_path": "OwnerInfos[].Name"
+      },
+      "parent_folio": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.ParentFolio"
+      }
+    }
+  }
+}

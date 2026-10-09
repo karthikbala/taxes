@@ -53,3 +53,17 @@ Standalone code `261dbd1f1cd69ae37eab3687ef5fbcb72a6d5dc0`; [CI](https://github.
 Hosted source `9c8fa13f19ba04dd9cf295f5d1922f50751bc05a`, version 39, deployment `appgdep_6ac89aba10d881918619e33e3ba65c19` succeeded. Release preflight found no active paid browser jobs across all 50 rows. One direct, unpaid production neighbour call verified timer/panel behavior: request `9c9d180a-6b4f-4cbc-b1ad-ef11414b87a9`, subject `0132310520010`, 50 returned records, errors empty, final elapsed 29.5 seconds. DOM geometry confirmed results inside the panel to the right of the form. Paid provider and model calls: zero. No PortTrack changes.
 
 Screenshots: `docs/evidence/neighbors-2026-10-09/panel-progress.png` and `panel-result.png`.
+
+## Boundary-only scope and owner-first layout — 9 October 2026
+
+User clarified that neighbours must share a parcel boundary. The previous 382 count combined 379 other condominium units and three nearby GIS folios, of which one was confirmed abutting. Default API options now use `sameBuilding:false`, `adjacency:true`, `includeCornerTouch:false`. Explicit same-building API requests remain supported. No building index or owner-index searches run for this default example.
+
+Top-level `coverage.candidate_count` now counts eligible parcels after relationship filtering; `discovered_candidate_count` preserves pre-filter discovery counts, and `unclassified_geometry_count` explicitly records unresolved nearby shapes. Raw GIS query coverage includes the anchor object separately. Unsupported geometry stays partial and nullable negative findings stay unknown; it cannot be promoted to complete merely because it was excluded from displayed results.
+
+UI leads with confirmed parcel count, owner-match count, subject identity and neighbour owner records. Consolidated search notes/limitations and source details follow the property cards. The map lives in a separate host immediately before full JSON. Existing timer, download and shared-panel behavior are preserved.
+
+Standalone code `8d79251cd39bac83de4d262aa274fc1d6a513b40`; [CI](https://github.com/karthikbala/taxes/actions/runs/37902278416) passed. Fifty-nine selected checks passed, including authoritative GIS-fixture default-scope regression, incomplete geometry, optional condo scopes, bottom notes, separate map host and an unaffected client renderer. Standalone and hosted builds passed; local fixture UI verified ordering.
+
+Hosted source `231d5e88967b38f434695d94829d28a34169cbe4`, version 40, deployment `appgdep_6ac89f81159c8191a019a9c1c377aeb1` succeeded. One direct, unpaid live lookup: request `9e450ccc-4845-420d-a7d6-836213a37b10`, 7.8 seconds, subject `0132310520010`, one ABUTTING result `0132310060210` / 464 NE 16 ST / source owners TRINITY EPISCOPAL CATHEDRAL; INC, no owner-name match. Eligible/examined/returned counts all one; discovered non-anchor folios three; one unresolved geometry; no detail cap, no condo-unit search, errors empty. Browser confirmed map immediately before JSON with two genuine parcel paths. All 50 paid-run rows were terminal at release preflight. No paid provider/model calls or PortTrack changes.
+
+Evidence: `boundary-only-live.json` and `boundary-only-live.png` in the dated neighbour evidence directory.
