@@ -145,3 +145,12 @@ test('matching owner tiles lead the result, are highlighted and do not duplicate
  assert.ok(nodes.indexOf(cards[0])<nodes.findIndex(n=>n.textContent==='Subject parcel'));assert.match(content(cards[0]),/OWNER NAME MATCH/);assert.match(content(cards[1]),/CO-OWNER NAME MATCH/);
  const headings=nodes.filter(n=>n.tagName==='h3').map(n=>n.textContent);assert.equal(headings[0],'Owner-name matches (2)');
 });
+
+test('matching tile opens only its own details while source links and nonmatches remain independent',()=>{
+ const root=new Node('section'),opened=[];renderNeighbors(document,root,fixture(),{onPropertyOpen:p=>opened.push(p.folio)});
+ const cards=descendants(root).filter(n=>n.tagName==='article');
+ descendants(cards[0]).find(n=>n.tagName==='button').emit('click');assert.deepEqual(opened,['A']);
+ cards[0].emit('click',{target:{closest:()=>true}});assert.deepEqual(opened,['A'],'source and button bubbling must not dispatch twice');
+ cards[0].emit('click',{target:{closest:()=>false}});assert.deepEqual(opened,['A','A']);
+ descendants(cards[2]).find(n=>n.tagName==='button').emit('click');assert.deepEqual(opened,['A','A']);
+});

@@ -1,6 +1,6 @@
 import {renderNeighbors} from './neighbors-render.mjs';
 
-export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFinish=()=>{}, onScopeChange=()=>{}, now=()=>performance.now(), repeat=setInterval, stopRepeat=clearInterval}={}) {
+export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFinish=()=>{}, onScopeChange=()=>{}, onSelectProperty=()=>{}, now=()=>performance.now(), repeat=setInterval, stopRepeat=clearInterval}={}) {
   const el=id=>document.getElementById(id), button=el('neighbors-check'), result=el('neighbors-result'), status=el('neighbors-status');
   if(!button||!result||!status)return;
   let pending=false, requestVersion=0, activeController=null;
@@ -19,7 +19,7 @@ export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFi
     if(pending||el('county')?.value!=='miami-dade-fl')return;
     const order={scrap_order_id:el('order').value,address:el('address').value,ownerName:el('owner').value,county:el('county').value,transactionType:el('transaction').value,state:'FL',neighborOptions:{sameBuilding:el('neighbors-same-building')?.checked===true,adjacency:true,includeCornerTouch:false}};
     if(!order.address.trim()||!order.ownerName.trim()||!el('key').value.trim()){sharedStatus('Enter the property address, owner name and API access key before checking neighbors.');return;}
-    if(onStart()===false)return;
+    if(onStart(order)===false)return;
     pending=true;button.disabled=true;if(el('neighbors-same-building'))el('neighbors-same-building').disabled=true;button.textContent='Checking neighbours…';result.replaceChildren();
     sharedStatus('Checking fresh county neighbour records…');status.textContent=order.neighborOptions.sameBuilding?'Checking shared parcel boundaries and separately checking same-building unit owners. This can take up to two minutes.':'Resolving the property and checking shared parcel boundaries and owner records. This can take up to two minutes.';
     const start=now(),tick=()=>{if(el('timer'))el('timer').textContent=' · '+((now()-start)/1000).toFixed(1)+' seconds';};tick();
@@ -27,11 +27,11 @@ export function initNeighbors(document, {onStart=()=>true, onResult=()=>{}, onFi
     try{
       const response=await fetch('/api/v2/property/neighbors',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+el('key').value},body:JSON.stringify(order),cache:'no-store',signal:controller.signal});
       const data=await response.json();if(version!==requestVersion)return;
-      onResult(data);
+      onResult(data,order);
       if(el('neighbors-scope-note'))el('neighbors-scope-note').textContent=data.NeighboringProperties?.options?.sameBuilding===true?'Checks boundary-sharing parcels and, separately, units in the same building. Unit records do not establish individual land boundaries.':'Checks properties that share a parcel boundary. Each returned property includes its recorded owners and name-match result.';
       const requestId=data.ExtractionMetadata?.request_id||response.headers?.get('x-request-id');if(el('request-id'))el('request-id').textContent=requestId?'Request ID: '+requestId:'';
       if(data.NeighboringProperties){
-        const view=renderNeighbors(document,result,data,{mapParent:el('neighbors-map-result')});
+        const view=renderNeighbors(document,result,data,{mapParent:el('neighbors-map-result'),onPropertyOpen:property=>onSelectProperty(property,data)});
         sharedStatus(response.ok===false?'Neighbor check unavailable':'Neighbor results ready');
         status.textContent=view.complete?'County neighbour search completed.':'Returned records are ready. See the search coverage and limits below.';
       }else{sharedStatus('Neighbor check unavailable');status.textContent=data.error?.message||data.errorMessage||'Neighbor results unavailable. No absence of owner matches is claimed.';if(el('error'))el('error').textContent=status.textContent;}

@@ -3,3 +3,5 @@
 [hidden]{display:none!important}.neighbors-area{min-width:0}.neighbors-area p,.neighbors-card p,.neighbors-sources p{overflow-wrap:anywhere}.neighbors-list{grid-template-columns:repeat(auto-fit,minmax(min(255px,100%),1fr))}
 
 .neighbors-card.neighbors-match{background:#eaf6ed;border:2px solid #1a8760;border-left-width:6px;box-shadow:0 2px 8px #19352612}.neighbors-card.neighbors-match.neighbors-coowner{background:#f1edfa;border-color:#795ab0}.neighbors-match-badge{display:inline-block;padding:3px 8px;border-radius:5px;background:#1a8760;color:#fff;font-size:11px;font-weight:750;letter-spacing:.035em;margin-bottom:10px}.neighbors-coowner .neighbors-match-badge{background:#795ab0}.neighbors-match button{display:block;margin-top:0;color:#194d32}.neighbors-match.neighbors-coowner button{color:#513886}
+
+.neighbors-match{cursor:pointer}.neighbors-open-details{display:block;margin-top:12px;color:#28543b;font-weight:600}#neighbors-back{margin:0 0 14px;width:auto}#selected-property-context{padding:10px 12px;background:#edf4e5;border-radius:7px}

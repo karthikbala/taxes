@@ -160,7 +160,13 @@ export function renderNeighbors(document, parent, response, options = {}) {
       for (const property of properties) {
         const card = document.createElement('article'); card.className = 'neighbors-card neighbors-' + ownerCategory(property); list.append(card);
         if(['requested','coowner'].includes(ownerCategory(property))){card.className+=' neighbors-match';text(document,card,'span',ownerCategory(property)==='requested'?'OWNER NAME MATCH':'CO-OWNER NAME MATCH','neighbors-match-badge');}
-        const button = text(document, card, 'button', `${label(property.address)}${property.unit ? ' · Unit ' + property.unit : ''}`); button.type = 'button'; button.setAttribute('aria-pressed', 'false'); button.addEventListener('click', () => select(property)); cards.set(property, button);
+        const button = text(document, card, 'button', `${label(property.address)}${property.unit ? ' · Unit ' + property.unit : ''}`); button.type = 'button'; button.setAttribute('aria-pressed', 'false'); const openProperty=()=>{select(property);if(['requested','coowner'].includes(ownerCategory(property)))options.onPropertyOpen?.(property);};
+        button.addEventListener('click',openProperty);cards.set(property,button);
+        if(['requested','coowner'].includes(ownerCategory(property))&&options.onPropertyOpen){
+          button.setAttribute('aria-label',`${label(property.address)}${property.unit?' · Unit '+property.unit:''}`);
+          card.addEventListener('click',event=>{if(event.target?.closest?.('a,button'))return;openProperty();});
+          text(document,card,'small','Click to fetch assessor and tax collector details','neighbors-open-details');
+        }
         text(document, card, 'p', `Folio ${label(property.folio)} · ${spatialLabels[property.spatial_relation] || label(property.spatial_relation)}`);
         text(document, card, 'p', ownerLabels[ownerCategory(property)]);
         text(document, card, 'p', 'Recorded owners: ' + (property.owners?.length ? property.owners.map(o => typeof o === 'string' ? o : o.name || o.ownerName || label(o)).join('; ') : 'Unavailable'));
