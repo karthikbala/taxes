@@ -67,6 +67,8 @@ curl -X POST 'http://127.0.0.1:3000/api/v2/property/neighbors' \
   --data '{"scrap_order_id":"10000001","address":"555 NE 15 ST UNIT 401","ownerName":"JUDE PATRICK JACOB","county":"miami-dade-fl","transactionType":"REFI","state":"FL","neighborOptions":{"sameBuilding":false,"adjacency":true,"maxCandidates":50}}'
 ```
 
+Matching owner tiles open a fresh lookup of the selected property through the existing v2 API. The form follows the selected address/unit and owner; the page checks the clicked folio against the returned appraiser and resolution IDs before displaying its details. **Back to neighbour results** restores the original subject, highlighted matches and neighbour JSON without another source request. Original client order metadata is retained, and each lookup gets its own extraction request ID. See [drilldown acceptance and handoff](docs/NEIGHBOR-PROPERTY-DRILLDOWN-2026-10-10.md).
+
 ## Linux deployment
 
 Use [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [systemd service](deploy/taxes.service) and [Nginx template](deploy/nginx.conf). Provision Node 22, an unprivileged service user, private environment file, durable SQLite storage, HTTPS and server/DNS permissions. Docker templates are an optional alternative.
