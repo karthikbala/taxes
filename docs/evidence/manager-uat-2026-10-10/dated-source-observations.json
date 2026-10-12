@@ -1,0 +1,48 @@
+{
+  "note": "Dated evidence, not newly scraped complete pages or fresh source acceptance. See fixture kind and limitations.",
+  "fixtures": [
+    {
+      "file": "besil-miami-512-search.json",
+      "kind": "unaltered_official_response",
+      "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=512&from=1&myAddress=1900+N+BAYSHORE+DR&to=200",
+      "fetched_at": "2026-10-10T06:28:59.667Z",
+      "http_status": 200,
+      "fixture_sha256": "06cfd13254892786f8a927251fce5b5fff22fc6e9af42e9273eb6b92cb0a950e"
+    },
+    {
+      "file": "besil-miami-512-property.json",
+      "kind": "unaltered_official_response",
+      "source_url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310670130",
+      "fetched_at": "2026-10-10T06:29:00.058Z",
+      "http_status": 200,
+      "fixture_sha256": "c4fffbc282cc0e470402635aaed30823d44331d3eafcb60f5b885abf88bc6d88"
+    },
+    {
+      "file": "besil-miami-512-history-excerpt.html",
+      "kind": "source_derived_transcribed_DOM_excerpt",
+      "source_url": "https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5",
+      "observed_on": "2026-10-10",
+      "retrieval_timestamp": "Exact browser retrieval timestamp was not retained.",
+      "fixture_sha256": "99cabd8a037ad70e441f55ce802d8bfa7e77d34beccaf34b8f9a2949fbd7c1bf",
+      "limitation": "Excerpt omits unrelated markup; its hash is not a full original-response hash and does not prove complete history."
+    },
+    {
+      "file": "besil-miami-512-bill-excerpt.html",
+      "kind": "source_derived_transcribed_DOM_excerpt",
+      "source_url": "https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a#bill",
+      "observed_on": "2026-10-10",
+      "retrieval_timestamp": "Exact browser retrieval timestamp was not retained.",
+      "fixture_sha256": "aded17bdadd0f0644550b24b8364dac84799e8292b4ee0b6fbfe2a63353ceac7",
+      "limitation": "Excerpt omits unrelated markup; its hash is not a full original-response hash and does not prove complete history."
+    },
+    {
+      "file": "besil-osceola-bill-excerpt.html",
+      "kind": "source_derived_transcribed_DOM_excerpt",
+      "source_url": "https://county-taxes.net/osceola/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7#bill",
+      "observed_on": "2026-10-10",
+      "retrieval_timestamp": "Exact browser retrieval timestamp was not retained.",
+      "fixture_sha256": "40046c4371e58684670afb5b73563ec306bcea984c364dd1b720b2f65b86341e",
+      "limitation": "Excerpt omits unrelated markup; its hash is not a full original-response hash and does not prove complete history."
+    }
+  ]
+}

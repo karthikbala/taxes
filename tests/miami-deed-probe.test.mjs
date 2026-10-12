@@ -44,15 +44,15 @@ test('optional folio accepts only exact numeric identities and formats the revie
  assert.equal(normalizeMiamiDeedFolio(),null);
 });
 
-async function searchCodeResult({counts=1,waitError=false,initialStatus=200,xhrStatus=200}={}){
+async function searchCodeResult({counts=1,waitError=false,initialStatus=200,xhrStatus=200,document=false}={}){
  const messages=[],calls=[];let listener;const response={status:()=>initialStatus,headers:()=>({'content-type':'text/html'})};
- const page={goto:async()=>response,on:(_,fn)=>{listener=fn;},off:()=>{listener=null;},locator:selector=>{assert.equal(selector,'#filterParcelNumber');return{count:async()=>counts,fill:async(value,options)=>{calls.push(['fill',value]);assert.equal(options.timeout,4000);}};},getByRole:(role,options)=>{assert.equal(role,'button');assert.equal(options.name,'Process Search');assert.equal(options.exact,true);return{count:async()=>1,click:async()=>{calls.push(['click']);listener({url:()=>miamiDeedUrl+'?token=SECRET',request:()=>({resourceType:()=> 'xhr'}),status:()=>xhrStatus});}};},waitForLoadState:async(state,options)=>{assert.equal(state,'networkidle');assert.equal(options.timeout,15000);if(waitError)throw new Error('timeout');},content:async()=>html,url:()=>miamiDeedUrl,evaluate:async()=>({})};
- await runInNewContext('(async()=>{'+miamiDeedCaptureCode('0132310520010')+'})()',{page,URL,console:{log:s=>messages.push(s)}});
+ const page={goto:async()=>response,on:(_,fn)=>{listener=fn;},off:()=>{listener=null;},locator:selector=>{if(selector.includes('[data-original='))return {waitFor:async options=>{assert.equal(options.state,'attached');calls.push(['response-ready']);}};assert.equal(selector,'#filterParcelNumber');return{count:async()=>counts,fill:async(value,options)=>{calls.push(['fill',value]);assert.equal(options.timeout,4000);}};},getByRole:(role,options)=>{assert.equal(role,'button');assert.equal(options.name,'Process Search');assert.equal(options.exact,true);return{count:async()=>1,click:async()=>{calls.push(['click']);listener({url:()=>miamiDeedUrl+'?token=SECRET',request:()=>({resourceType:()=>document?'document':'xhr',method:()=> 'POST',postData:()=> 'filterParcelNumber=01-3231-052-0010&filterCaseStatus=&filterPartyName=&filterCaseNumber=&filterAppNumber=&filterCertNumber=&filterPropAddress=&filterSaleDateStart=&filterSaleDateStop=&secret=SECRET'}),status:()=>xhrStatus});}};},waitForNavigation:async options=>{assert.equal(options.waitUntil,'domcontentloaded');assert.equal(options.timeout,15000);if(waitError)throw new Error('timeout');},content:async()=>html,url:()=>miamiDeedUrl,evaluate:async()=>({})};
+ await runInNewContext('(async()=>{'+miamiDeedCaptureCode('0132310520010')+'})()',{page,URL,URLSearchParams,console:{log:s=>messages.push(s)}});
  return {result:JSON.parse(messages[0].slice('INVISIA_RESULT='.length)),calls};
 }
 
 test('deterministic search fills once, clicks once, records AJAX status and surfaces wait/control failures',async()=>{
- const {result,calls}=await searchCodeResult();assert.deepEqual(calls,[['fill','01-3231-052-0010'],['click']]);assert.equal(result.search_applied,true);assert.equal(result.requested_folio,'01-3231-052-0010');assert.equal(result.search_error,null);assert.equal(result.search_responses[0].http_status,200);assert.ok(!JSON.stringify(result.search_responses).includes('SECRET'));
+ const {result,calls}=await searchCodeResult();assert.deepEqual(calls,[['fill','01-3231-052-0010'],['click'],['response-ready']]);assert.equal(result.search_applied,true);assert.equal(result.requested_folio,'01-3231-052-0010');assert.equal(result.search_error,null);assert.equal(result.search_responses[0].http_status,200);assert.ok(!JSON.stringify(result.search_responses).includes('SECRET'));
  assert.equal((await searchCodeResult({waitError:true})).result.search_error,'SEARCH_WAIT_INCOMPLETE');
  const ambiguous=await searchCodeResult({counts:2});assert.equal(ambiguous.result.search_error,'SEARCH_CONTROLS_MISSING_OR_AMBIGUOUS');assert.deepEqual(ambiguous.calls,[]);
  const denied=await searchCodeResult({initialStatus:403});assert.equal(denied.result.search_error,'INITIAL_SOURCE_NOT_READY');assert.deepEqual(denied.calls,[]);
@@ -67,4 +67,8 @@ test('search evidence retains public tables and pagination but input echoes neve
  assert.equal(r.status,'DISCOVERY_ONLY');assert.equal(r.record_verified,false);assert.equal(r.parcel_identity,null);assert.equal(r.case_identity,null);assert.equal(r.coverage,'UNAVAILABLE');
  assert.equal(summarizeDeedCapture({...c,search_applied:false}).search_evidence.visible_text,undefined);
  const bounded=summarizeDeedCapture({...c,html:'<body>'+('visible '.repeat(14000))+'</body>'});assert.equal(bounded.search_evidence.visible_text.length,100000);
+});
+
+test('capture records only allowed search POST criteria, never tokens or unrelated form values',async()=>{
+ const {result}=await searchCodeResult({document:true});assert.equal(result.search_submission.parcel,'01-3231-052-0010');assert.equal(result.search_submission.http_status,200);assert.deepEqual(result.search_submission.other_filters,Array(7).fill(''));assert.ok(!JSON.stringify(result.search_submission).includes('SECRET'));
 });

@@ -1,0 +1,2143 @@
+{
+  "scrap_order_id": "MIAMI-PDF-FIX-API-FINAL-20261012",
+  "address": "1900 N Bayshore Dr, Unit 512",
+  "ownerName": "ALLEN HASBUN",
+  "county": "Miami-Dade",
+  "state": "FL",
+  "errorMessage": "NA",
+  "status": "partial",
+  "scrapTaxOrderRequest": {
+    "orderId": "MIAMI-PDF-FIX-API-FINAL-20261012",
+    "status": "new",
+    "transactionType": "REFI",
+    "address": "1900 N Bayshore Dr, Unit 512",
+    "county": "Miami-Dade",
+    "state": "FL",
+    "errorMessage": "NA",
+    "matchStatus": "MATCHED",
+    "warnings": [
+      "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total.",
+      "Discountable subtotal retained from the verified same-account, same-year collector web bill; other totals retain their own source coverage.",
+      "The published annual bill rows were inspected. Full prior-year, certificate and tax-deed coverage is not established by this account view.",
+      "NonAdValoremNote was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "ExemptionsNote was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "Active delinquency is supported by the inspected history. Certificate and tax-deed findings are limited to events published in the retrieved account history; independent full-history clearance is not established."
+    ],
+    "PropertyInformation": {
+      "ParcelNumber": "01-3231-067-0130",
+      "PropertyAddress": "1900 N BAYSHORE DR 512, Miami, FL 33132-0000",
+      "MailingAddress": "1900 N BAYSHORE DR 512, MIAMI, FL 33132",
+      "PrimaryZone": "5000 HOTELS & MOTELS - GENERAL",
+      "PrimaryLandUse": "0407 RESIDENTIAL - TOTAL VALUE : CONDOMINIUM - RESIDENTIAL",
+      "BedsBathsHalf": "2 / 2 / 0",
+      "Floors": "1",
+      "LivingUnits": "1",
+      "LivingArea": "1104 Sq.Ft",
+      "AdjustedArea": "1104 Sq.Ft",
+      "LotSize": "0 Sq.Ft",
+      "YearBuilt": "2008",
+      "Owners": [
+        "ALLEN HASBUN",
+        "CHRISTIE HASBUN"
+      ],
+      "ownerOccupied": null
+    },
+    "AssessmentInformation": {
+      "Year": "2026",
+      "LandValue": "$0",
+      "BuildingValue": "$0",
+      "ExtraFeatureValue": "$0",
+      "MarketValue": "$396,793",
+      "AssessedValue": "$221,988",
+      "Status": null,
+      "SourceScope": "PROPERTY_APPRAISER_ROLL_AUTHORITY_UNSPECIFIED"
+    },
+    "TaxInformation": {
+      "accountNumber": "01-3231-067-0130",
+      "type": "DELINQUENT",
+      "amountDue": "$4,085.87",
+      "statusMessage": null,
+      "lastPaymentDate": null,
+      "lastPaymentAmount": null,
+      "amountPaidYear": "2025",
+      "note": "Account payment status and historical delinquency are separate observations."
+    },
+    "BillDetails": {
+      "taxYear": "2025",
+      "folio": "01-3231-067-0130",
+      "municipality": "MIAMI",
+      "millCode": "0100",
+      "propertyAddress": "1900 N BAYSHORE DR 512, Miami, 33132-0000",
+      "mailingAddress": "ALLEN HASBUN, CHRISTIE HASBUN, 1900 N BAYSHORE DR 512, MIAMI, FL, 33132",
+      "paidBy": null,
+      "receiptNumber": null,
+      "paidDate": null,
+      "paidAmount": null,
+      "documentType": "Delinquent Tax Certificate Redemption",
+      "redemption": {
+        "amountDue": "$4,085.87",
+        "ifReceivedBy": "Oct 30, 2026",
+        "certificateNumber": "3299",
+        "certificateIssued": "June 1, 2026",
+        "faceAmount": "$3,885.35",
+        "interestRate": "0.25%",
+        "charges": [
+          {
+            "description": "Tax Due",
+            "amount": "$3,477.20"
+          },
+          {
+            "description": "Auction Listing Fee",
+            "amount": "$35.00"
+          },
+          {
+            "description": "Advertisement Fee",
+            "amount": "$35.00"
+          },
+          {
+            "description": "Tax Coll. Comm.",
+            "amount": "$181.68"
+          },
+          {
+            "description": "Delinquency Interest",
+            "amount": "$156.47"
+          },
+          {
+            "description": "Cert. Redemption Fee",
+            "amount": "$6.25"
+          },
+          {
+            "description": "Certificate Interest",
+            "amount": "$194.27"
+          }
+        ]
+      }
+    },
+    "ParcelDetails": {
+      "millageRate": null
+    },
+    "TaxAmounts": {
+      "adValorem": null,
+      "nonAdValorem": null,
+      "totalDiscountable": "$3,477.20",
+      "totalTax": null
+    },
+    "PaymentDetails": {
+      "combinedTaxesAndAssessments": null,
+      "discountNote": null,
+      "PaymentSchedule": [
+        {
+          "ifReceivedBy": "Oct 30, 2026",
+          "pleasePay": "$4,085.87"
+        }
+      ]
+    },
+    "FullLegalDescription": [
+      "QUANTUM ON THE BAY CONDO NORTH",
+      "UNIT 512",
+      "UNIDV 0.42625%",
+      "INT IN COMMON ELEMENTS",
+      "OFF REC 26229-0646"
+    ],
+    "AssessmentHistory": [
+      {
+        "Year": "2026",
+        "LandValue": "$0",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$396,793",
+        "AssessedValue": "$221,988",
+        "Status": null,
+        "SourceScope": "PROPERTY_APPRAISER_ROLL_AUTHORITY_UNSPECIFIED"
+      },
+      {
+        "Year": "2025",
+        "LandValue": "$0",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$450,901",
+        "AssessedValue": "$216,152",
+        "Status": null,
+        "SourceScope": "PROPERTY_APPRAISER_ROLL_AUTHORITY_UNSPECIFIED"
+      },
+      {
+        "Year": "2024",
+        "LandValue": "$0",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$484,840",
+        "AssessedValue": "$398,552",
+        "Status": null,
+        "SourceScope": "PROPERTY_APPRAISER_ROLL_AUTHORITY_UNSPECIFIED"
+      }
+    ],
+    "BenefitsInformation": [
+      {
+        "Benefit": "Save Our Homes Cap",
+        "Type": "Assessment Reduction",
+        "Values": {
+          "2024": null,
+          "2025": null,
+          "2026": "$174,805"
+        }
+      },
+      {
+        "Benefit": "Non-Homestead Cap",
+        "Type": "Assessment Reduction",
+        "Values": {
+          "2024": "$86,288",
+          "2025": null,
+          "2026": null
+        }
+      },
+      {
+        "Benefit": "Portability",
+        "Type": "Assessment Reduction",
+        "Values": {
+          "2024": null,
+          "2025": "$234,749",
+          "2026": null
+        }
+      },
+      {
+        "Benefit": "Homestead",
+        "Type": "Exemption",
+        "Values": {
+          "2024": null,
+          "2025": "$25,000",
+          "2026": "$25,000"
+        }
+      },
+      {
+        "Benefit": "Second Homestead",
+        "Type": "Exemption",
+        "Values": {
+          "2024": null,
+          "2025": "$25,722",
+          "2026": "$26,411"
+        }
+      }
+    ],
+    "SalesInformation": [
+      {
+        "Date": "06/27/2024",
+        "Price": "$545,000",
+        "ORBookPage": "34316-1118",
+        "QualificationDescription": "Qual by exam of deed"
+      },
+      {
+        "Date": "02/16/2021",
+        "Price": "$310,000",
+        "ORBookPage": "32356-0539",
+        "QualificationDescription": "Qual by exam of deed"
+      },
+      {
+        "Date": "11/19/2015",
+        "Price": "$285,000",
+        "ORBookPage": "29869-0676",
+        "QualificationDescription": "Qual by exam of deed"
+      },
+      {
+        "Date": "03/12/2013",
+        "Price": "$100",
+        "ORBookPage": "28657-1016",
+        "QualificationDescription": "Corrective, tax or QCD; min consideration"
+      },
+      {
+        "Date": "02/29/2012",
+        "Price": "$100",
+        "ORBookPage": "28034-2851",
+        "QualificationDescription": "Corrective, tax or QCD; min consideration"
+      },
+      {
+        "Date": "08/04/2009",
+        "Price": "$244,000",
+        "ORBookPage": "26970-2094",
+        "QualificationDescription": "Qual by exam of deed"
+      }
+    ],
+    "AccountHistory": [
+      {
+        "billYear": "2025",
+        "billType": "Annual",
+        "amountDue": "$4,085.87",
+        "status": "Unpaid",
+        "paidAmount": null,
+        "paidDate": null,
+        "receiptNumber": null,
+        "billId": "38df3a95-a6dc-11f0-aafd-00505681fc7a",
+        "note": "2025 Annual bill $4,085.87 Unpaid Print (PDF) Downloading...",
+        "pdf_url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a/print",
+        "certificate": {
+          "status": "Issued",
+          "date": "06/01/2026",
+          "faceAmount": "$3,885.35",
+          "closed": false,
+          "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%",
+          "certificateNumber": "3299",
+          "interestRate": "0.25%"
+        }
+      }
+    ],
+    "AdValoremMillage": [],
+    "NonAdValorem": [],
+    "TaxableValueInformation": {
+      "2024": {
+        "County": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$398,552"
+        },
+        "SchoolBoard": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$484,840"
+        },
+        "City": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$398,552"
+        },
+        "Regional": {
+          "ExemptionValue": "$0",
+          "TaxableValue": "$398,552"
+        }
+      },
+      "2025": {
+        "County": {
+          "ExemptionValue": "$50,722",
+          "TaxableValue": "$165,430"
+        },
+        "SchoolBoard": {
+          "ExemptionValue": "$25,000",
+          "TaxableValue": "$191,152"
+        },
+        "City": {
+          "ExemptionValue": "$50,722",
+          "TaxableValue": "$165,430"
+        },
+        "Regional": {
+          "ExemptionValue": "$50,722",
+          "TaxableValue": "$165,430"
+        }
+      },
+      "2026": {
+        "County": {
+          "ExemptionValue": "$51,411",
+          "TaxableValue": "$170,577"
+        },
+        "SchoolBoard": {
+          "ExemptionValue": "$25,000",
+          "TaxableValue": "$196,988"
+        },
+        "City": {
+          "ExemptionValue": "$51,411",
+          "TaxableValue": "$170,577"
+        },
+        "Regional": {
+          "ExemptionValue": "$51,411",
+          "TaxableValue": "$170,577"
+        }
+      }
+    },
+    "LandBuildingExtraFeatures": {
+      "2024": [],
+      "2025": [],
+      "2026": []
+    },
+    "AdValoremGroupTotals": null,
+    "Exemptions": {
+      "printed": "ADDL HOMESTEAD, HOMESTEAD"
+    },
+    "BenefitsNote": "Not all benefits are applicable to all Taxable Values (i.e. County, School Board, City, Regional).",
+    "NonAdValoremNote": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total.",
+    "ExemptionsNote": null,
+    "DelinquencyInformation": {
+      "hasActiveDelinquency": true,
+      "knownPriorYearsDue": "$0.00",
+      "totalPriorYearsDue": null,
+      "currentYearDue": "$4,085.87",
+      "delinquentYears": [
+        {
+          "billYear": "2025",
+          "billType": "Annual",
+          "amountDue": "$4,085.87",
+          "status": "Unpaid",
+          "code": "OPEN_CERTIFICATE",
+          "certificate": {
+            "status": "Issued",
+            "date": "06/01/2026",
+            "faceAmount": "$3,885.35",
+            "closed": false,
+            "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%",
+            "certificateNumber": "3299",
+            "interestRate": "0.25%"
+          },
+          "note": "2025 Annual bill $4,085.87 Unpaid Print (PDF) Downloading..."
+        }
+      ],
+      "coverage": "PARTIAL",
+      "unavailableYears": [
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012"
+      ],
+      "currentBillYear": "2025",
+      "asOf": "2026-10-12",
+      "timeZone": "America/New_York",
+      "note": "Active delinquency is supported by the inspected history.",
+      "notes": [
+        "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out.",
+        "Unavailable years: 2008, 2009, 2010, 2011, 2012."
+      ],
+      "coverageDetails": {
+        "publishedAnnualRows": "PARTIAL",
+        "unavailableYears": [
+          "2008",
+          "2009",
+          "2010",
+          "2011",
+          "2012"
+        ],
+        "certificateEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+        "independentCertificateSearch": "NOT_IMPLEMENTED",
+        "taxDeedEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+        "independentTaxDeedSearch": "NOT_IMPLEMENTED",
+        "historicalClearanceEstablished": false
+      }
+    },
+    "ParcelDetailsNote": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total.",
+    "AdValoremMillageNote": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total.",
+    "AdValoremGroupTotalsNote": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total.",
+    "candidateFolios": [
+      {
+        "parcel_id": "0132310670130",
+        "address": "1900 N BAYSHORE DR",
+        "unit": "512",
+        "owners": [
+          "ALLEN HASBUN",
+          "CHRISTIE HASBUN"
+        ],
+        "source_id": "miami_address_search"
+      }
+    ]
+  },
+  "ExtractionMetadata": {
+    "contractVersion": "2.0",
+    "request_id": "9942d4a6-f3df-4f31-aa00-80ffeba88278",
+    "collected_at": "2026-10-12T05:26:24.270Z",
+    "duration_ms": 24776,
+    "county_id": "miami-dade-fl",
+    "status": "partial",
+    "match": {
+      "status": "MATCHED",
+      "parcel_id": "0132310670130",
+      "candidates": [
+        {
+          "parcel_id": "0132310670130",
+          "address": "1900 N BAYSHORE DR",
+          "unit": "512",
+          "owners": [
+            "ALLEN HASBUN",
+            "CHRISTIE HASBUN"
+          ],
+          "source_id": "miami_address_search"
+        }
+      ],
+      "notes": [],
+      "source_id": "miami_assessment"
+    },
+    "section_status": {
+      "PropertyInformation": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "PropertyInfo",
+          "OwnerInfos",
+          "SiteAddress",
+          "MailingAddress"
+        ],
+        "note": "Owner occupancy is not explicitly published by the retrieved source; ownerOccupied remains null. Mailing-address differences do not establish occupancy."
+      },
+      "AssessmentInformation": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Assessment.AssessmentInfos"
+        ],
+        "note": null
+      },
+      "TaxInformation": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "BillDetails": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "ParcelDetails": {
+        "status": "UNAVAILABLE",
+        "note": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total."
+      },
+      "TaxAmounts": {
+        "status": "PARTIAL",
+        "note": "Discountable subtotal retained from the verified same-account, same-year collector web bill; other totals retain their own source coverage."
+      },
+      "PaymentDetails": {
+        "status": "EXTRACTED",
+        "note": "Printed redemption quote; received-by date and payable amount are distinct from annual taxes or a payment receipt."
+      },
+      "FullLegalDescription": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "LegalDescription.Description"
+        ],
+        "note": null
+      },
+      "AssessmentHistory": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Assessment.AssessmentInfos"
+        ],
+        "note": null
+      },
+      "BenefitsInformation": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Benefit.BenefitInfos"
+        ],
+        "note": null
+      },
+      "SalesInformation": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "SalesInfos"
+        ],
+        "note": null
+      },
+      "AccountHistory": {
+        "status": "PARTIAL",
+        "note": "The published annual bill rows were inspected. Full prior-year, certificate and tax-deed coverage is not established by this account view."
+      },
+      "AdValoremMillage": {
+        "status": "UNAVAILABLE",
+        "note": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total."
+      },
+      "NonAdValorem": {
+        "status": "UNAVAILABLE",
+        "note": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total."
+      },
+      "TaxableValueInformation": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Taxable.TaxableInfos"
+        ],
+        "note": null
+      },
+      "LandBuildingExtraFeatures": {
+        "status": "EMPTY",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Land.Landlines",
+          "Building.BuildingInfos",
+          "ExtraFeature.ExtraFeatureInfos"
+        ],
+        "note": null
+      },
+      "AdValoremGroupTotals": {
+        "status": "UNAVAILABLE",
+        "note": "This certificate redemption notice does not publish annual authority taxes, millage or a combined annual tax total."
+      },
+      "Exemptions": {
+        "status": "EXTRACTED",
+        "note": null
+      },
+      "BenefitsNote": {
+        "status": "EXTRACTED",
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Benefit"
+        ],
+        "note": null
+      },
+      "NonAdValoremNote": {
+        "status": "unavailable",
+        "note": "NonAdValoremNote was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "ExemptionsNote": {
+        "status": "unavailable",
+        "note": "ExemptionsNote was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "DelinquencyInformation": {
+        "status": "PARTIAL",
+        "note": "Active delinquency is supported by the inspected history. Certificate and tax-deed findings are limited to events published in the retrieved account history; independent full-history clearance is not established."
+      }
+    },
+    "sources": [
+      {
+        "id": "miami_address_search",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=512&from=1&myAddress=1900+N+BAYSHORE+DR&to=200",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-12T05:26:24.272Z",
+        "http_status": 200,
+        "sha256": "06cfd13254892786f8a927251fce5b5fff22fc6e9af42e9273eb6b92cb0a950e",
+        "duration_ms": 1827
+      },
+      {
+        "id": "miami_assessment",
+        "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310670130",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-12T05:26:26.101Z",
+        "http_status": 200,
+        "sha256": "c4fffbc282cc0e470402635aaed30823d44331d3eafcb60f5b885abf88bc6d88",
+        "duration_ms": 208
+      },
+      {
+        "id": "collector_config",
+        "url": "https://config.grantstreet.com/api/v1/payhub/data-pub/settings/fl-miamidade/fl-miamidade",
+        "method": "GET",
+        "status": "verified",
+        "fetched_at": "2026-10-12T05:26:26.313Z",
+        "http_status": 200,
+        "sha256": "2be7a55056a86d3bf81822af64498ccbcce5a6409ef67668c6778d8fcae7a973",
+        "duration_ms": 391
+      },
+      {
+        "id": "collector_search",
+        "url": "https://0lwzo52ls2-dsn.algolia.net/1/indexes/*/queries",
+        "method": "POST",
+        "status": "verified",
+        "fetched_at": "2026-10-12T05:26:26.705Z",
+        "http_status": 200,
+        "sha256": "668af4956ae139ee9972c31818756752509c1fd7ef7f8edf6e8d9fc4d36aaba2",
+        "duration_ms": 398
+      },
+      {
+        "id": "collector_identity",
+        "url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5",
+        "method": "GET",
+        "status": "recovered",
+        "fetched_at": "2026-10-12T05:26:27.104Z",
+        "http_status": 403,
+        "error_code": "source_blocked",
+        "duration_ms": 23,
+        "attempt_status": "failed",
+        "recovery_source_id": "tax_collector_browser",
+        "note": "Direct access blocked \u2014 recovered through browser"
+      },
+      {
+        "id": "tax_collector_browser",
+        "url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5?search_query=&search_target=&search_category=property-tax&search_path=",
+        "method": "BROWSER",
+        "status": "verified",
+        "fetched_at": "2026-10-12T05:26:27.127Z",
+        "duration_ms": 21503,
+        "sha256": "39a54003c851db58d4d85c561a0d424eb52b0c60b901baec366c24fb36dbb7fd"
+      },
+      {
+        "id": "receipt_pdf",
+        "url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a/print",
+        "method": "BROWSER_DOWNLOAD",
+        "status": "verified",
+        "fetched_at": "2026-10-12T05:26:48.704Z",
+        "duration_ms": null,
+        "sha256": "784e7db43a4218dd08275c6baca8a9f8be8956c7e464b95167886802b952d165"
+      },
+      {
+        "id": "collector_bill_html",
+        "url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a",
+        "method": "BROWSER",
+        "status": "retrieved",
+        "fetched_at": "2026-10-12T05:26:24.270Z",
+        "sha256": "273a5afb91b671672ff628f4298456816c3d56fe5146b93f380bbb40a22b1ee9"
+      }
+    ],
+    "errors": [],
+    "validation": {
+      "published_history_rows": "PARTIAL",
+      "parcel": "MATCHED",
+      "taxYear": "MATCHED",
+      "redemptionChargesReconciliation": "MATCHED",
+      "redemptionQuoteReconciliation": "MATCHED",
+      "redemptionHistoryReconciliation": "MATCHED",
+      "parcel_join": "matched",
+      "appraiser_bill_year": {
+        "bill_year": "2025",
+        "latest_assessment_year": "2026",
+        "status": "captured_year_available"
+      }
+    },
+    "provenance": {
+      "AssessmentHistory.0.Year": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.Year",
+        "source_value": 2026
+      },
+      "AssessmentHistory.0.LandValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.LandValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.0.BuildingValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.BuildingOnlyValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.0.ExtraFeatureValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.ExtraFeatureValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.0.MarketValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.TotalValue",
+        "source_value": 396793
+      },
+      "AssessmentHistory.0.AssessedValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.AssessedValue",
+        "source_value": 221988
+      },
+      "AssessmentHistory.0.Status": {
+        "source_id": "miami_assessment",
+        "source_year": "2026",
+        "source_messages": [
+          {
+            "source_path": "Assessment.AssessmentInfos.0.Message",
+            "source_value": null
+          }
+        ],
+        "missing_reason": "NO_EXPLICIT_SAME_YEAR_ROLL_STATUS"
+      },
+      "AssessmentHistory.0.SourceScope": {
+        "source_id": "miami_assessment",
+        "source_year": "2026",
+        "source_path": "Assessment.AssessmentInfos.0",
+        "method": "source_section_scope",
+        "authority_scope": null,
+        "note": "Property Appraiser assessment roll values; this section does not identify an individual taxing authority."
+      },
+      "AssessmentHistory.1.Year": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.1.Year",
+        "source_value": 2025
+      },
+      "AssessmentHistory.1.LandValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.1.LandValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.1.BuildingValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.1.BuildingOnlyValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.1.ExtraFeatureValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.1.ExtraFeatureValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.1.MarketValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.1.TotalValue",
+        "source_value": 450901
+      },
+      "AssessmentHistory.1.AssessedValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.1.AssessedValue",
+        "source_value": 216152
+      },
+      "AssessmentHistory.1.Status": {
+        "source_id": "miami_assessment",
+        "source_year": "2025",
+        "source_messages": [
+          {
+            "source_path": "Assessment.AssessmentInfos.1.Message",
+            "source_value": null
+          },
+          {
+            "source_path": "Assessment.Messages.0.Message",
+            "source_value": ""
+          }
+        ],
+        "missing_reason": "NO_EXPLICIT_SAME_YEAR_ROLL_STATUS"
+      },
+      "AssessmentHistory.1.SourceScope": {
+        "source_id": "miami_assessment",
+        "source_year": "2025",
+        "source_path": "Assessment.AssessmentInfos.1",
+        "method": "source_section_scope",
+        "authority_scope": null,
+        "note": "Property Appraiser assessment roll values; this section does not identify an individual taxing authority."
+      },
+      "AssessmentHistory.2.Year": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.2.Year",
+        "source_value": 2024
+      },
+      "AssessmentHistory.2.LandValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.2.LandValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.2.BuildingValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.2.BuildingOnlyValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.2.ExtraFeatureValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.2.ExtraFeatureValue",
+        "source_value": 0
+      },
+      "AssessmentHistory.2.MarketValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.2.TotalValue",
+        "source_value": 484840
+      },
+      "AssessmentHistory.2.AssessedValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.2.AssessedValue",
+        "source_value": 398552
+      },
+      "AssessmentHistory.2.Status": {
+        "source_id": "miami_assessment",
+        "source_year": "2024",
+        "source_messages": [
+          {
+            "source_path": "Assessment.AssessmentInfos.2.Message",
+            "source_value": null
+          },
+          {
+            "source_path": "Assessment.Messages.1.Message",
+            "source_value": ""
+          }
+        ],
+        "missing_reason": "NO_EXPLICIT_SAME_YEAR_ROLL_STATUS"
+      },
+      "AssessmentHistory.2.SourceScope": {
+        "source_id": "miami_assessment",
+        "source_year": "2024",
+        "source_path": "Assessment.AssessmentInfos.2",
+        "method": "source_section_scope",
+        "authority_scope": null,
+        "note": "Property Appraiser assessment roll values; this section does not identify an individual taxing authority."
+      },
+      "BenefitsInformation.0.Values.2026": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.0.Value",
+        "source_value": 174805
+      },
+      "BenefitsInformation.1.Values.2024": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.1.Value",
+        "source_value": 86288
+      },
+      "BenefitsInformation.2.Values.2025": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.2.Value",
+        "source_value": 234749
+      },
+      "BenefitsInformation.3.Values.2026": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.3.Value",
+        "source_value": 25000
+      },
+      "BenefitsInformation.3.Values.2025": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.4.Value",
+        "source_value": 25000
+      },
+      "BenefitsInformation.4.Values.2026": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.5.Value",
+        "source_value": 26411
+      },
+      "BenefitsInformation.4.Values.2025": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos.6.Value",
+        "source_value": 25722
+      },
+      "BenefitsInformation.source_rows": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.BenefitInfos",
+        "source_value": [
+          {
+            "Description": "Save Our Homes Cap",
+            "Message": null,
+            "Seq": "4",
+            "TaxYear": 2026,
+            "Type": "Assessment Reduction",
+            "Url": "http://www.miamidade.gov/pa/amendment_10.asp",
+            "Value": 174805
+          },
+          {
+            "Description": "Non-Homestead Cap",
+            "Message": null,
+            "Seq": "5",
+            "TaxYear": 2024,
+            "Type": "Assessment Reduction",
+            "Url": "http://www.miamidade.gov/pa/property_value_cap.asp",
+            "Value": 86288
+          },
+          {
+            "Description": "Portability",
+            "Message": null,
+            "Seq": "6",
+            "TaxYear": 2025,
+            "Type": "Assessment Reduction",
+            "Url": "http://www.miamidade.gov/pa/exemptions_portability.asp",
+            "Value": 234749
+          },
+          {
+            "Description": "Homestead",
+            "Message": null,
+            "Seq": "5",
+            "TaxYear": 2026,
+            "Type": "Exemption",
+            "Url": "http://www.miamidade.gov/pa/exemptions_homestead.asp",
+            "Value": 25000
+          },
+          {
+            "Description": "Homestead",
+            "Message": null,
+            "Seq": "5",
+            "TaxYear": 2025,
+            "Type": "Exemption",
+            "Url": "http://www.miamidade.gov/pa/exemptions_homestead.asp",
+            "Value": 25000
+          },
+          {
+            "Description": "Second Homestead",
+            "Message": null,
+            "Seq": "10",
+            "TaxYear": 2026,
+            "Type": "Exemption",
+            "Url": "http://www.miamidade.gov/pa/exemptions_homestead_additional.asp",
+            "Value": 26411
+          },
+          {
+            "Description": "Second Homestead",
+            "Message": null,
+            "Seq": "10",
+            "TaxYear": 2025,
+            "Type": "Exemption",
+            "Url": "http://www.miamidade.gov/pa/exemptions_homestead_additional.asp",
+            "Value": 25722
+          }
+        ]
+      },
+      "TaxableValueInformation.2026.County.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.CountyExemptionValue",
+        "source_value": 51411
+      },
+      "TaxableValueInformation.2026.County.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.CountyTaxableValue",
+        "source_value": 170577
+      },
+      "TaxableValueInformation.2026.SchoolBoard.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.SchoolExemptionValue",
+        "source_value": 25000
+      },
+      "TaxableValueInformation.2026.SchoolBoard.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.SchoolTaxableValue",
+        "source_value": 196988
+      },
+      "TaxableValueInformation.2026.City.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.CityExemptionValue",
+        "source_value": 51411
+      },
+      "TaxableValueInformation.2026.City.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.CityTaxableValue",
+        "source_value": 170577
+      },
+      "TaxableValueInformation.2026.Regional.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.RegionalExemptionValue",
+        "source_value": 51411
+      },
+      "TaxableValueInformation.2026.Regional.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.0.RegionalTaxableValue",
+        "source_value": 170577
+      },
+      "TaxableValueInformation.2025.County.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.CountyExemptionValue",
+        "source_value": 50722
+      },
+      "TaxableValueInformation.2025.County.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.CountyTaxableValue",
+        "source_value": 165430
+      },
+      "TaxableValueInformation.2025.SchoolBoard.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.SchoolExemptionValue",
+        "source_value": 25000
+      },
+      "TaxableValueInformation.2025.SchoolBoard.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.SchoolTaxableValue",
+        "source_value": 191152
+      },
+      "TaxableValueInformation.2025.City.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.CityExemptionValue",
+        "source_value": 50722
+      },
+      "TaxableValueInformation.2025.City.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.CityTaxableValue",
+        "source_value": 165430
+      },
+      "TaxableValueInformation.2025.Regional.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.RegionalExemptionValue",
+        "source_value": 50722
+      },
+      "TaxableValueInformation.2025.Regional.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.1.RegionalTaxableValue",
+        "source_value": 165430
+      },
+      "TaxableValueInformation.2024.County.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.CountyExemptionValue",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2024.County.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.CountyTaxableValue",
+        "source_value": 398552
+      },
+      "TaxableValueInformation.2024.SchoolBoard.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.SchoolExemptionValue",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2024.SchoolBoard.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.SchoolTaxableValue",
+        "source_value": 484840
+      },
+      "TaxableValueInformation.2024.City.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.CityExemptionValue",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2024.City.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.CityTaxableValue",
+        "source_value": 398552
+      },
+      "TaxableValueInformation.2024.Regional.ExemptionValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.RegionalExemptionValue",
+        "source_value": 0
+      },
+      "TaxableValueInformation.2024.Regional.TaxableValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.TaxableInfos.2.RegionalTaxableValue",
+        "source_value": 398552
+      },
+      "SalesInformation.0.Date": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.0.DateOfSale",
+        "source_value": "6/27/2024"
+      },
+      "SalesInformation.0.Price": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.0.SalePrice",
+        "source_value": 545000
+      },
+      "SalesInformation.0.ORBookPage": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.0",
+        "source_value": {
+          "OfficialRecordBook": "34316",
+          "OfficialRecordPage": "1118"
+        }
+      },
+      "SalesInformation.0.QualificationDescription": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.0.QualificationDescription",
+        "source_value": "Qual by exam of deed"
+      },
+      "SalesInformation.1.Date": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.1.DateOfSale",
+        "source_value": "2/16/2021"
+      },
+      "SalesInformation.1.Price": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.1.SalePrice",
+        "source_value": 310000
+      },
+      "SalesInformation.1.ORBookPage": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.1",
+        "source_value": {
+          "OfficialRecordBook": "32356",
+          "OfficialRecordPage": "0539"
+        }
+      },
+      "SalesInformation.1.QualificationDescription": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.1.QualificationDescription",
+        "source_value": "Qual by exam of deed"
+      },
+      "SalesInformation.2.Date": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.2.DateOfSale",
+        "source_value": "11/19/2015"
+      },
+      "SalesInformation.2.Price": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.2.SalePrice",
+        "source_value": 285000
+      },
+      "SalesInformation.2.ORBookPage": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.2",
+        "source_value": {
+          "OfficialRecordBook": "29869",
+          "OfficialRecordPage": "0676"
+        }
+      },
+      "SalesInformation.2.QualificationDescription": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.2.QualificationDescription",
+        "source_value": "Qual by exam of deed"
+      },
+      "SalesInformation.3.Date": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.3.DateOfSale",
+        "source_value": "3/12/2013"
+      },
+      "SalesInformation.3.Price": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.3.SalePrice",
+        "source_value": 100
+      },
+      "SalesInformation.3.ORBookPage": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.3",
+        "source_value": {
+          "OfficialRecordBook": "28657",
+          "OfficialRecordPage": "1016"
+        }
+      },
+      "SalesInformation.3.QualificationDescription": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.3.QualificationDescription",
+        "source_value": "Corrective, tax or QCD; min consideration"
+      },
+      "SalesInformation.4.Date": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.4.DateOfSale",
+        "source_value": "2/29/2012"
+      },
+      "SalesInformation.4.Price": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.4.SalePrice",
+        "source_value": 100
+      },
+      "SalesInformation.4.ORBookPage": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.4",
+        "source_value": {
+          "OfficialRecordBook": "28034",
+          "OfficialRecordPage": "2851"
+        }
+      },
+      "SalesInformation.4.QualificationDescription": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.4.QualificationDescription",
+        "source_value": "Corrective, tax or QCD; min consideration"
+      },
+      "SalesInformation.5.Date": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.5.DateOfSale",
+        "source_value": "8/4/2009"
+      },
+      "SalesInformation.5.Price": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.5.SalePrice",
+        "source_value": 244000
+      },
+      "SalesInformation.5.ORBookPage": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.5",
+        "source_value": {
+          "OfficialRecordBook": "26970",
+          "OfficialRecordPage": "2094"
+        }
+      },
+      "SalesInformation.5.QualificationDescription": {
+        "source_id": "miami_assessment",
+        "source_path": "SalesInfos.5.QualificationDescription",
+        "source_value": "Qual by exam of deed"
+      },
+      "PropertyInformation.ParcelNumber": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.FolioNumber",
+        "source_value": "01-3231-067-0130"
+      },
+      "PropertyInformation.Floors": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.FloorCount",
+        "source_value": 1
+      },
+      "PropertyInformation.LivingUnits": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.UnitCount",
+        "source_value": 1
+      },
+      "PropertyInformation.LivingArea": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.BuildingActualArea",
+        "source_value": 1104
+      },
+      "PropertyInformation.AdjustedArea": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.BuildingEffectiveArea",
+        "source_value": 1104
+      },
+      "PropertyInformation.LotSize": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.LotSize",
+        "source_value": 0
+      },
+      "PropertyInformation.YearBuilt": {
+        "source_id": "miami_assessment",
+        "source_path": "PropertyInfo.YearBuilt",
+        "source_value": "2008"
+      },
+      "PropertyInformation.Owners": {
+        "source_id": "miami_assessment",
+        "source_path": "OwnerInfos",
+        "source_value": [
+          {
+            "Description": "Tenants by the Entirety",
+            "MarriedFlag": "H",
+            "Message": null,
+            "Name": "ALLEN HASBUN",
+            "PercentageOwn": 1,
+            "Role": null,
+            "ShortDescription": "TBE",
+            "TenancyCd": "U"
+          },
+          {
+            "Description": "Tenants by the Entirety",
+            "MarriedFlag": "W",
+            "Message": null,
+            "Name": "CHRISTIE HASBUN",
+            "PercentageOwn": 1,
+            "Role": null,
+            "ShortDescription": "TBE",
+            "TenancyCd": "U"
+          }
+        ]
+      },
+      "PropertyInformation.PropertyAddress": {
+        "source_id": "miami_assessment",
+        "source_path": "SiteAddress",
+        "source_value": [
+          {
+            "Address": "1900 N BAYSHORE DR 512, Miami, FL 33132-0000",
+            "BuildingNumber": 1,
+            "City": "Miami",
+            "HouseNumberSuffix": "",
+            "Message": null,
+            "StreetName": "BAYSHORE",
+            "StreetNumber": 1900,
+            "StreetPrefix": "N",
+            "StreetSuffix": "DR",
+            "StreetSuffixDirection": "",
+            "Unit": "512",
+            "Zip": "33132-0000"
+          }
+        ]
+      },
+      "PropertyInformation.MailingAddress": {
+        "source_id": "miami_assessment",
+        "source_path": "MailingAddress",
+        "source_value": {
+          "Address1": "1900 N BAYSHORE DR 512",
+          "Address2": "",
+          "Address3": "",
+          "City": "MIAMI",
+          "Country": "USA",
+          "Message": null,
+          "State": "FL",
+          "ZipCode": "33132"
+        }
+      },
+      "PropertyInformation.PrimaryZone": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "PropertyInfo.PrimaryZone",
+          "PropertyInfo.PrimaryZoneDescription"
+        ],
+        "source_value": {
+          "PrimaryZone": "5000",
+          "PrimaryZoneDescription": "HOTELS & MOTELS - GENERAL"
+        }
+      },
+      "PropertyInformation.PrimaryLandUse": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "PropertyInfo.DORCode",
+          "PropertyInfo.DORDescription"
+        ],
+        "source_value": {
+          "DORCode": "0407",
+          "DORDescription": "RESIDENTIAL - TOTAL VALUE : CONDOMINIUM - RESIDENTIAL"
+        }
+      },
+      "PropertyInformation": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "PropertyInfo",
+          "OwnerInfos",
+          "SiteAddress",
+          "MailingAddress"
+        ],
+        "source_value": {
+          "BathroomCount": 2,
+          "BedroomCount": 2,
+          "BuildingActualArea": 1104,
+          "BuildingBaseArea": 1104,
+          "BuildingEffectiveArea": 1104,
+          "BuildingGrossArea": -1,
+          "BuildingHeatedArea": 1104,
+          "DORCode": "0407",
+          "DORDescription": "RESIDENTIAL - TOTAL VALUE : CONDOMINIUM - RESIDENTIAL",
+          "DORDescriptionCurrent": null,
+          "EncodedFolioAndTaxYear": "L5cgA%2f52Z79fTzIY%2fA4Q2e2w%2fh3S3OvAsUJ5hiepcVU%3d",
+          "FloorCount": 1,
+          "FolioNumber": "01-3231-067-0130",
+          "HalfBathroomCount": 0,
+          "HxBaseYear": 2025,
+          "LotSize": 0,
+          "Message": null,
+          "Municipality": "Miami",
+          "Neighborhood": 2430,
+          "NeighborhoodDescription": "EDGEWATER",
+          "ParentFolio": "01-3231-067-0001",
+          "PercentHomesteadCapped": 100,
+          "PlatBook": "",
+          "PlatPage": "11",
+          "PrimaryZone": "5000",
+          "PrimaryZoneDescription": "HOTELS & MOTELS - GENERAL",
+          "ShowCurrentValuesFlag": "Y",
+          "Status": "AC Active",
+          "Subdivision": "013231067",
+          "SubdivisionDescription": "QUANTUM ON THE BAY CONDO NORTH",
+          "UnitCount": 1,
+          "YearAnnexed": 0,
+          "YearBuilt": "2008"
+        }
+      },
+      "AssessmentInformation": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Assessment.AssessmentInfos"
+        ]
+      },
+      "AssessmentHistory": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Assessment.AssessmentInfos"
+        ],
+        "source_value": {
+          "AssessmentInfos": [
+            {
+              "AssessedValue": 221988,
+              "BuildingOnlyValue": 0,
+              "ExtraFeatureValue": 0,
+              "LandValue": 0,
+              "Message": null,
+              "TotalValue": 396793,
+              "Year": 2026
+            },
+            {
+              "AssessedValue": 216152,
+              "BuildingOnlyValue": 0,
+              "ExtraFeatureValue": 0,
+              "LandValue": 0,
+              "Message": null,
+              "TotalValue": 450901,
+              "Year": 2025
+            },
+            {
+              "AssessedValue": 398552,
+              "BuildingOnlyValue": 0,
+              "ExtraFeatureValue": 0,
+              "LandValue": 0,
+              "Message": null,
+              "TotalValue": 484840,
+              "Year": 2024
+            }
+          ],
+          "Messages": [
+            {
+              "Message": "",
+              "Year": 2025
+            },
+            {
+              "Message": "",
+              "Year": 2024
+            }
+          ]
+        }
+      },
+      "BenefitsInformation": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Benefit.BenefitInfos"
+        ]
+      },
+      "BenefitsNote": {
+        "source_id": "miami_property_ui",
+        "source_url": "https://apps.miamidadepa.gov/PropertySearch/main.ca4dd149bc5b80db.js",
+        "source_text": "Not all benefits are applicable to all Taxable Values (i.e. County, School Board, City, Regional)."
+      },
+      "TaxableValueInformation": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Taxable.TaxableInfos"
+        ],
+        "source_value": {
+          "Messages": [],
+          "TaxableInfos": [
+            {
+              "CityExemptionValue": 51411,
+              "CityTaxableValue": 170577,
+              "CountyExemptionValue": 51411,
+              "CountyTaxableValue": 170577,
+              "Message": null,
+              "RegionalExemptionValue": 51411,
+              "RegionalTaxableValue": 170577,
+              "SchoolExemptionValue": 25000,
+              "SchoolTaxableValue": 196988,
+              "Year": 2026
+            },
+            {
+              "CityExemptionValue": 50722,
+              "CityTaxableValue": 165430,
+              "CountyExemptionValue": 50722,
+              "CountyTaxableValue": 165430,
+              "Message": null,
+              "RegionalExemptionValue": 50722,
+              "RegionalTaxableValue": 165430,
+              "SchoolExemptionValue": 25000,
+              "SchoolTaxableValue": 191152,
+              "Year": 2025
+            },
+            {
+              "CityExemptionValue": 0,
+              "CityTaxableValue": 398552,
+              "CountyExemptionValue": 0,
+              "CountyTaxableValue": 398552,
+              "Message": null,
+              "RegionalExemptionValue": 0,
+              "RegionalTaxableValue": 398552,
+              "SchoolExemptionValue": 0,
+              "SchoolTaxableValue": 484840,
+              "Year": 2024
+            }
+          ]
+        }
+      },
+      "FullLegalDescription": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "LegalDescription.Description"
+        ],
+        "source_value": {
+          "Description": "QUANTUM ON THE BAY CONDO NORTH|UNIT 512|UNIDV 0.42625%|INT IN COMMON ELEMENTS|OFF REC 26229-0646",
+          "Message": null,
+          "Number": null
+        }
+      },
+      "SalesInformation": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "SalesInfos"
+        ],
+        "source_value": [
+          {
+            "DateOfSale": "6/27/2024",
+            "DocumentStamps": 3270,
+            "EncodedRecordBookAndPage": "M6QKSgoe%2bhc7oyv%2b57QFrgaroioin0yInVIDTn4p32NAJcQE%2faTwPkBJapDQTwKMJFaubuF8g0DaJH9cISAmGQ%3d%3d",
+            "GranteeName1": "ALLEN HASBUN",
+            "GranteeName2": "CHRISTIE HASBUN",
+            "GrantorName1": "ESCUDEROS LLC",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "34316",
+            "OfficialRecordPage": "1118",
+            "QualificationDescription": "Qual by exam of deed",
+            "QualifiedFlag": "Q",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "01",
+            "ReviewCode": null,
+            "SaleId": 6,
+            "SaleInstrument": "WDE",
+            "SalePrice": 545000,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+          },
+          {
+            "DateOfSale": "2/16/2021",
+            "DocumentStamps": 1860,
+            "EncodedRecordBookAndPage": "M6QKSgoe%2bhfSGBS8B4v%2b6n3Fw7seo%2bxcd0LfnGJgj3yBKXlQ%2b2aPh5alEPUSxqH9CH5aVdNTKYpMZyDLNmtODw%3d%3d",
+            "GranteeName1": "ESCUDEROS LLC",
+            "GranteeName2": "",
+            "GrantorName1": "QUANTUM 512 LLC",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "32356",
+            "OfficialRecordPage": "0539",
+            "QualificationDescription": "Qual by exam of deed",
+            "QualifiedFlag": "Q",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "01",
+            "ReviewCode": null,
+            "SaleId": 5,
+            "SaleInstrument": "WDE",
+            "SalePrice": 310000,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+          },
+          {
+            "DateOfSale": "11/19/2015",
+            "DocumentStamps": 1710,
+            "EncodedRecordBookAndPage": "M6QKSgoe%2bhfYC6MZfBN%2b0Mruj8BuRxkH1%2b%2bFhwUOvPfN4y0CG6A0gDxufUL7CN5ih%2bZhcKki9JC28X80MM1pCA%3d%3d",
+            "GranteeName1": "QUANTUM 512 LLC",
+            "GranteeName2": "",
+            "GrantorName1": "512 N BAYSHORE LLC",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "29869",
+            "OfficialRecordPage": "0676",
+            "QualificationDescription": "Qual by exam of deed",
+            "QualifiedFlag": "Q",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "01",
+            "ReviewCode": null,
+            "SaleId": 4,
+            "SaleInstrument": "DEE",
+            "SalePrice": 285000,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+          },
+          {
+            "DateOfSale": "3/12/2013",
+            "DocumentStamps": 0,
+            "EncodedRecordBookAndPage": "M6QKSgoe%2bhfe2H43NN%2f%2f5bGI1w30nnDZk2fh93gsz8s9%2bTU24o%2fLKpfY8fvnuWfNO7RG4TEozK70AlVKmSztnw%3d%3d",
+            "GranteeName1": "512 N BAYSHORE LLC",
+            "GranteeName2": "",
+            "GrantorName1": "GER INVESTMENTS INC",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "28657",
+            "OfficialRecordPage": "1016",
+            "QualificationDescription": "Corrective, tax or QCD; min consideration",
+            "QualifiedFlag": "U",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "11",
+            "ReviewCode": null,
+            "SaleId": 3,
+            "SaleInstrument": "QCD",
+            "SalePrice": 100,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+          },
+          {
+            "DateOfSale": "2/29/2012",
+            "DocumentStamps": 0,
+            "EncodedRecordBookAndPage": "M6QKSgoe%2bhd7bRazRo5giBPxqtm7mvBbWQLDdWRFUFPaHtUo2Y%2fw3sWLmtF63tWFCiHuKCdN9OVWTEQo%2bcQ1cQ%3d%3d",
+            "GranteeName1": "GER INVESTMENTS INC",
+            "GranteeName2": "",
+            "GrantorName1": "MANUEL O RICALDI MORALES",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "28034",
+            "OfficialRecordPage": "2851",
+            "QualificationDescription": "Corrective, tax or QCD; min consideration",
+            "QualifiedFlag": "U",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "11",
+            "ReviewCode": null,
+            "SaleId": 2,
+            "SaleInstrument": "QCD",
+            "SalePrice": 100,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+          },
+          {
+            "DateOfSale": "8/4/2009",
+            "DocumentStamps": 0,
+            "EncodedRecordBookAndPage": "M6QKSgoe%2bhf7kXJQW9oTWvnb1tC4LGUHKvrpP%2bmubRcEM9U7i60PmqAfcQleH22ftnCjr3M7KZt2Bsx9oO9k8g%3d%3d",
+            "GranteeName1": "MANUEL O RICALDI MORALES",
+            "GranteeName2": "",
+            "GrantorName1": "TERRA ADI INTL BAYSHORE LLC",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "26970",
+            "OfficialRecordPage": "2094",
+            "QualificationDescription": "Qual by exam of deed",
+            "QualifiedFlag": "Q",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "01",
+            "ReviewCode": null,
+            "SaleId": 1,
+            "SaleInstrument": "DEE",
+            "SalePrice": 244000,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+          }
+        ]
+      },
+      "LandBuildingExtraFeatures": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "Land.Landlines",
+          "Building.BuildingInfos",
+          "ExtraFeature.ExtraFeatureInfos"
+        ]
+      },
+      "Assessment.Messages": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.Messages",
+        "source_value": [
+          {
+            "Message": "",
+            "Year": 2025
+          },
+          {
+            "Message": "",
+            "Year": 2024
+          }
+        ]
+      },
+      "Benefit.Messages": {
+        "source_id": "miami_assessment",
+        "source_path": "Benefit.Messages",
+        "source_value": []
+      },
+      "Taxable.Messages": {
+        "source_id": "miami_assessment",
+        "source_path": "Taxable.Messages",
+        "source_value": []
+      },
+      "Land.Messages": {
+        "source_id": "miami_assessment",
+        "source_path": "Land.Messages",
+        "source_value": []
+      },
+      "Building.Messages": {
+        "source_id": "miami_assessment",
+        "source_path": "Building.Messages",
+        "source_value": []
+      },
+      "ExtraFeature.Messages": {
+        "source_id": "miami_assessment",
+        "source_path": "ExtraFeature.Messages",
+        "source_value": []
+      },
+      "PropertyInformation.ownerOccupied": {
+        "source_id": "miami_assessment",
+        "status": "UNAVAILABLE",
+        "source_value": null,
+        "reason": "No explicit source occupancy field"
+      },
+      "PropertyInformation.BedsBathsHalf": {
+        "source_id": "miami_assessment",
+        "source_paths": [
+          "PropertyInfo.BedroomCount",
+          "PropertyInfo.BathroomCount",
+          "PropertyInfo.HalfBathroomCount"
+        ],
+        "source_value": {
+          "BedroomCount": 2,
+          "BathroomCount": 2,
+          "HalfBathroomCount": 0
+        }
+      },
+      "AssessmentInformation.Year": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.Year",
+        "source_value": 2026
+      },
+      "AssessmentInformation.LandValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.LandValue",
+        "source_value": 0
+      },
+      "AssessmentInformation.BuildingValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.BuildingOnlyValue",
+        "source_value": 0
+      },
+      "AssessmentInformation.ExtraFeatureValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.ExtraFeatureValue",
+        "source_value": 0
+      },
+      "AssessmentInformation.MarketValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.TotalValue",
+        "source_value": 396793
+      },
+      "AssessmentInformation.AssessedValue": {
+        "source_id": "miami_assessment",
+        "source_path": "Assessment.AssessmentInfos.0.AssessedValue",
+        "source_value": 221988
+      },
+      "AssessmentInformation.Status": {
+        "source_id": "miami_assessment",
+        "source_year": "2026",
+        "source_messages": [
+          {
+            "source_path": "Assessment.AssessmentInfos.0.Message",
+            "source_value": null
+          }
+        ],
+        "missing_reason": "NO_EXPLICIT_SAME_YEAR_ROLL_STATUS"
+      },
+      "AssessmentInformation.SourceScope": {
+        "source_id": "miami_assessment",
+        "source_year": "2026",
+        "source_path": "Assessment.AssessmentInfos.0",
+        "method": "source_section_scope",
+        "authority_scope": null,
+        "note": "Property Appraiser assessment roll values; this section does not identify an individual taxing authority."
+      },
+      "AccountHistory": {
+        "source_id": "tax_collector_browser",
+        "method": "county_history_html",
+        "source_scope": "PUBLIC_PUBLISHED_BILL_ROWS",
+        "published_history_coverage": "PARTIAL"
+      },
+      "BillDetails.taxYear": {
+        "page": 1,
+        "text": "2025",
+        "x": 109.18,
+        "y": 746.07,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "BillDetails.folio": {
+        "page": 1,
+        "text": "01-3231-067-0130",
+        "x": 58.89,
+        "y": 656.51,
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text"
+      },
+      "BillDetails.municipality": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "MIAMI",
+        "x": 290.9,
+        "y": 655.8
+      },
+      "BillDetails.millCode": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "0100",
+        "x": 504.28,
+        "y": 656.03
+      },
+      "BillDetails.mailingAddress": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "items": [
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "ALLEN HASBUN",
+            "x": 30.73,
+            "y": 628.77
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "CHRISTIE HASBUN",
+            "x": 30.73,
+            "y": 618.33
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "1900 N BAYSHORE DR 512",
+            "x": 30.73,
+            "y": 607.89
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "MIAMI, FL",
+            "x": 30.73,
+            "y": 597.45
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "33132",
+            "x": 78.53,
+            "y": 597.45
+          }
+        ]
+      },
+      "BillDetails.propertyAddress": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "items": [
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "1900 N BAYSHORE DR 512,",
+            "x": 326.48,
+            "y": 628.83
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "Miami,",
+            "x": 326.48,
+            "y": 618.39
+          },
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "33132-0000",
+            "x": 326.48,
+            "y": 607.95
+          }
+        ]
+      },
+      "BillDetails.redemption.amountDue": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "$4,085.87",
+        "x": 513.87,
+        "y": 314.38
+      },
+      "BillDetails.redemption.ifReceivedBy": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "Oct 30, 2026",
+        "x": 499.93,
+        "y": 279.59
+      },
+      "BillDetails.redemption.certificateNumber": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "Cert #3299",
+        "x": 274.23,
+        "y": 279.59000000000003
+      },
+      "BillDetails.redemption.certificateIssued": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "June 1, 2026",
+        "x": 52.08,
+        "y": 271.88
+      },
+      "BillDetails.redemption.faceAmount": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "Face: $3,885.35",
+        "x": 153.10000000000002,
+        "y": 279.59000000000003
+      },
+      "BillDetails.redemption.interestRate": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "Rate: 0.25%",
+        "x": 160.42000000000002,
+        "y": 267.42
+      },
+      "BillDetails.documentType": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "page": 1,
+        "text": "Delinquent Tax Certificate",
+        "x": 111.98,
+        "y": 724.95
+      },
+      "BillDetails.redemption.charges[0]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Tax Due",
+          "x": 34.89,
+          "y": 486.55
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "3,477.20",
+          "x": 524.61,
+          "y": 485.69
+        }
+      },
+      "BillDetails.redemption.charges[1]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Auction Listing Fee",
+          "x": 34.68,
+          "y": 474.48
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "35.00",
+          "x": 536.11,
+          "y": 474.37
+        }
+      },
+      "BillDetails.redemption.charges[2]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Advertisement Fee",
+          "x": 34.68,
+          "y": 462.79
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "35.00",
+          "x": 536.11,
+          "y": 462.68
+        }
+      },
+      "BillDetails.redemption.charges[3]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Tax Coll. Comm.",
+          "x": 34.68,
+          "y": 451.1
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "181.68",
+          "x": 534.88,
+          "y": 450.99
+        }
+      },
+      "BillDetails.redemption.charges[4]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Delinquency Interest",
+          "x": 34.68,
+          "y": 439.41
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "156.47",
+          "x": 533.4499999999999,
+          "y": 439.3
+        }
+      },
+      "BillDetails.redemption.charges[5]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Cert. Redemption Fee",
+          "x": 34.68,
+          "y": 427.71999999999997
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "6.25",
+          "x": 541.8,
+          "y": 427.61
+        }
+      },
+      "BillDetails.redemption.charges[6]": {
+        "label": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Certificate Interest",
+          "x": 34.68,
+          "y": 416.03
+        },
+        "value": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "194.27",
+          "x": 533.43,
+          "y": 415.92
+        }
+      },
+      "Exemptions": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "items": [
+          {
+            "source_id": "receipt_pdf",
+            "method": "positioned_pdf_text",
+            "page": 1,
+            "text": "ADDL HOMESTEAD, HOMESTEAD",
+            "x": 30.76,
+            "y": 554.19
+          }
+        ]
+      },
+      "PaymentDetails.PaymentSchedule[0]": {
+        "source_id": "receipt_pdf",
+        "method": "positioned_pdf_text",
+        "amount": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "$4,085.87",
+          "x": 513.87,
+          "y": 314.38
+        },
+        "date": {
+          "source_id": "receipt_pdf",
+          "method": "positioned_pdf_text",
+          "page": 1,
+          "text": "Oct 30, 2026",
+          "x": 499.93,
+          "y": 279.59
+        }
+      },
+      "original_annual_bill": {
+        "source_id": "receipt_pdf",
+        "source_url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a/print",
+        "sha256": "784e7db43a4218dd08275c6baca8a9f8be8956c7e464b95167886802b952d165",
+        "format": "PDF",
+        "document_type": "Delinquent Tax Certificate Redemption"
+      },
+      "TaxAmounts.totalDiscountable": {
+        "source_id": "collector_bill_html",
+        "method": "labelled_collector_html",
+        "source_label": "Total Discountable:",
+        "source_value": "$3,477.20",
+        "selector": ".label + .value",
+        "source_year": "2025",
+        "account_number": "01-3231-067-0130",
+        "source_url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a",
+        "sha256": "273a5afb91b671672ff628f4298456816c3d56fe5146b93f380bbb40a22b1ee9",
+        "fetched_at": "2026-10-12T05:26:24.270Z"
+      },
+      "AccountHistory[0].certificate": {
+        "client_normalization": {
+          "method": "client_contract",
+          "raw_source_value": {
+            "number": "3299",
+            "status": "Issued",
+            "date": "06/01/2026",
+            "faceAmount": "$3,885.35",
+            "rate": "0.25%",
+            "closed": false,
+            "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%"
+          },
+          "normalized_value": {
+            "status": "Issued",
+            "date": "06/01/2026",
+            "faceAmount": "$3,885.35",
+            "closed": false,
+            "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%",
+            "certificateNumber": "3299",
+            "interestRate": "0.25%"
+          }
+        }
+      },
+      "DelinquencyInformation.delinquentYears[0].certificate": {
+        "client_normalization": {
+          "method": "client_contract",
+          "raw_source_value": {
+            "number": "3299",
+            "status": "Issued",
+            "date": "06/01/2026",
+            "faceAmount": "$3,885.35",
+            "rate": "0.25%",
+            "closed": false,
+            "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%"
+          },
+          "normalized_value": {
+            "status": "Issued",
+            "date": "06/01/2026",
+            "faceAmount": "$3,885.35",
+            "closed": false,
+            "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%",
+            "certificateNumber": "3299",
+            "interestRate": "0.25%"
+          }
+        }
+      }
+    }
+  },
+  "_verification_http_status": 200,
+  "_verification_release": "/home/interns/apps/taxes/releases/besil-20261012-pdf-recovery-v6"
+}

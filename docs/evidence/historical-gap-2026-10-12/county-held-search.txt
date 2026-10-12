@@ -1,0 +1,133 @@
+Browser tab: 11, Title: "Miami Dade County - View/Purchase Certificates", URL: "https://lienhub.com/county/miamidade/countyheld/certificates".
+1 AXWebArea Miami Dade County - View/Purchase Certificates, URL: lienhub.com/county/miamidade/countyheld/certificates
+	2 container
+		3 link Description: Skip to main content, Value: lienhub.com/county/miamidade/countyheld/certificates#main-content
+		4 container navbar_container
+			5 link Description: LienHub homepage, Value: lienhub.com/
+			6 content list
+				7 content list
+					8 link Description: Sign In , Value: lienhub.com/ssosp/check_authenticated/r/county/miamidade/countyheld/certificates
+				9 content list
+					10 button (collapsed) Miami-Dade County , Secondary Actions: Expand
+						11 text Miami-Dade County 
+				12 link Description: My Portfolio, Value: lienhub.com/county/miamidade/portfolio/portfolio
+				13 link Description: Purchase County-Held Liens, Value: lienhub.com/county/miamidade/countyheld/certificates
+				14 link Description: Tax Lien Auction, Value: lienhub.com/county/miamidade/certsale/main
+				15 link Description: What's New?, Value: lienhub.com/tutorial
+				16 link Description: Support, Value: lienhub.com/county/miamidade/support
+		17 container main-content
+			18 heading View/Purchase Certificates, Value: 1, ID: title
+				19 text View/Purchase Certificates
+			20 container gsg-alert-id-broadcast
+				21 text Certificate redemption will be withheld until certificate holder finalizes registration with Miami-Dade County. Contact the county at 305-375-3860 or e-mail  TaxSale@miamidade.gov .
+			22 container sidebar
+				23 text Filters
+				24 container certs_filters
+					25 text Tax Year:
+					26 text 174
+					27 checkbox (settable, integer) Description: 2025, Value: 0
+					28 text 86
+					29 checkbox (settable, integer) Description: 2024, Value: 0
+					30 text 2
+					31 checkbox (settable, integer) Description: 2009, Value: 0
+					32 button (collapsed) More..., Secondary Actions: Expand
+					33 text Use Code:
+					34 text 237
+					35 checkbox (settable, integer) Description: 1118, Value: 0
+					36 text 15
+					37 checkbox (settable, integer) Description: 0081, Value: 0
+					38 text 10
+					39 checkbox (settable, integer) Description: 9981, Value: 0
+					40 button (collapsed) More..., Secondary Actions: Expand
+					41 text Purchase Amount:
+					42 container
+						43 text $
+						44 text field (settable) Description: Minimum Purchase Amount, Value: 82.09, ID: purchase_amt_input_min
+						45 text  to $
+						46 text field (settable) Description: Maximum Purchase Amount, Value: 14289.25, ID: purchase_amt_input_max
+					47 text Assessed Value:
+					48 text $30 - $193,900
+					49 container assessed_value-slider
+						50 slider Description: Minimum Assessed Value: $30, Value: 30
+						51 slider Description: Maximum Assessed Value: $193,900, Value: 193900
+					52 text Certs Issued:
+					53 text 1 - 29
+					54 container certs_issued-slider
+						55 slider Description: Minimum Certificates Issued: 1, Value: 1
+						56 slider Description: Maximum Certificates Issued: 29, Value: 29
+					57 text Certs Redeemed:
+					58 text 0 - 10
+					59 container certs_redeemed-slider
+						60 slider Description: Minimum Certificates Redeemed: 0, Value: 0
+						61 slider Description: Maximum Certificates Redeemed: 10, Value: 10
+					62 text Certs Outstanding:
+					63 text 1 - 19
+					64 container certs_outstanding-slider
+						65 slider Description: Minimum Certificates Outstanding: 1, Value: 1
+						66 slider Description: Maximum Certificates Outstanding: 19, Value: 19
+					67 text Homestead Status:
+					68 text 273
+					69 checkbox (settable, integer) Description: No, Value: 0
+					70 text Filter By Account #:
+					71 button Upload Account # List, ID: account_number_filter_upload_button
+					72 link Description: Reset Filters, Value: lienhub.com/county/miamidade/countyheld/certificates#
+			73 container certs_wrapper
+				74 container
+					75 pop up button (collapsed, settable) entries per page, Value: 10, ID: dt-length-0, Secondary Actions: Expand
+						76 menu
+							77 (selected) 10
+							78 25
+							79 50
+							80 100
+					81 text entries per page
+				82 container
+					83 text Search:
+					84 search text field (settable) Search:, Value: 01-3231-067-0130, ID: dt-search-0
+				85 table certs
+					86 row
+						87 cell
+							88 text Account #
+							89 button Account #: Activate to sort
+						90 cell
+							91 text Tax Year
+							92 button Tax Year: Activate to sort
+						93 cell
+							94 text Certificate #
+							95 button Certificate #: Activate to invert sorting
+						96 cell
+							97 text Issued Date
+							98 button Issued Date: Activate to sort
+						99 cell
+							100 text Expiration Date
+							101 button Expiration Date: Activate to sort
+						102 cell
+							103 text Purchase Amount
+							104 button Purchase Amount: Activate to sort
+					252 row
+						253 cell
+							254 text No matching records found
+				255 text Showing 0 to 0 of 0 entries (filtered from 273 total entries)
+				251 text Any new certificates made available for sale by the tax collector are posted at 9:00 am local time each day. To see recently posted items, please sign in.
+				108 container pagination
+					256 content list
+						257 link (disabled) First
+							258 text «
+						259 link (disabled) Previous
+							260 text ‹
+						261 link (disabled) Next
+							262 text ›
+						263 link (disabled) Last
+							264 text »
+				109 button   Download 0 matching rows
+					265 text 
+					266 text   Download 0 matching rows
+		112 container footer
+			113 container bottom_links
+				114 link Description: Privacy Policy, Value: lienhub.com/doc/privacy
+				115 link Description: Disclaimer, Value: lienhub.com/doc/disclaimer
+				116 link Description: User Agreement, Value: lienhub.com/doc/terms
+				117 link Description: Contact Us, Value: lienhub.com/user/contact
+			118 container copyright
+				119 text Copyright © 1997 - 2026. All rights reserved.
+
+The focused UI element is 84 search text field (settable) Search:, Value: 01-3231-067-0130, ID: dt-search-0

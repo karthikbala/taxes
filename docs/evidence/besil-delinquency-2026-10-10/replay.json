@@ -1,0 +1,82 @@
+{
+  "tested_at": "2026-10-10T11:12:19.902Z",
+  "source": "Saved source-derived DOM excerpt, not a complete live page",
+  "before_commit": "024e558037ca3bd973f2744d0677c9e6cba53a00",
+  "before": {
+    "summary": {
+      "accountNumber": "01-3231-067-0130",
+      "amountDue": null,
+      "statusMessage": null,
+      "lastPaymentDate": null,
+      "lastPaymentAmount": null
+    },
+    "delinquency": {
+      "hasActiveDelinquency": null,
+      "knownPriorYearsDue": "$0.00",
+      "totalPriorYearsDue": null,
+      "currentYearDue": "$4,085.87",
+      "delinquentYears": [],
+      "coverage": "PARTIAL",
+      "unavailableYears": [
+        "2012"
+      ],
+      "currentBillYear": "2025",
+      "asOf": "2026-10-10",
+      "timeZone": "America/New_York",
+      "note": "History is incomplete or inconclusive; no negative delinquency conclusion is available.",
+      "notes": [
+        "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out.",
+        "Unavailable years: 2012.",
+        "Tax year 2025 has a positive balance but no source delinquent status, original notice date or deadline.",
+        "Tax year 2025 has no source bill type or county-profile annual declaration.",
+        "Tax year 2025 has an event with no affirmative active or closed status."
+      ]
+    }
+  },
+  "after": {
+    "summary": {
+      "accountNumber": "01-3231-067-0130",
+      "amountDue": "$4,085.87",
+      "statusMessage": null,
+      "lastPaymentDate": null,
+      "lastPaymentAmount": null
+    },
+    "delinquency": {
+      "hasActiveDelinquency": true,
+      "knownPriorYearsDue": "$0.00",
+      "totalPriorYearsDue": null,
+      "currentYearDue": "$4,085.87",
+      "delinquentYears": [
+        {
+          "billYear": "2025",
+          "billType": "Annual",
+          "amountDue": "$4,085.87",
+          "status": "Unpaid",
+          "code": "OPEN_CERTIFICATE",
+          "certificate": {
+            "number": "3299",
+            "status": "Issued",
+            "date": "06/01/2026",
+            "faceAmount": "$3,885.35",
+            "rate": "0.25%",
+            "closed": false,
+            "note": "Certificate #3299 Issued 06/01/2026 Face $3,885.35, Rate 0.25%"
+          },
+          "note": "2025 Annual bill $4,085.87 Unpaid Print (PDF)"
+        }
+      ],
+      "coverage": "PARTIAL",
+      "unavailableYears": [
+        "2012"
+      ],
+      "currentBillYear": "2025",
+      "asOf": "2026-10-10",
+      "timeZone": "America/New_York",
+      "note": "Active delinquency is supported by the inspected history.",
+      "notes": [
+        "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out.",
+        "Unavailable years: 2012."
+      ]
+    }
+  }
+}

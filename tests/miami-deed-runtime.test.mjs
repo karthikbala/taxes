@@ -24,3 +24,17 @@ test('blocked source capture remains unverified and reconciles the existing shar
  const budget=await db.prepare('SELECT * FROM scrape_budgets').first();assert.equal(budget.spent_milli_usd,1840);assert.equal(budget.reserved_milli_usd,0);
  }finally{globalThis.fetch=old;db.close();}
 });
+
+test('authenticated diagnostic requests share the application staging capture limit',async()=>{
+ const db=await fixture(),old=globalThis.fetch;let sessions=0;
+ globalThis.fetch=async(url,options={})=>{
+  if(String(url).endsWith('/team/credit-usage'))return Response.json({data:{remainingCredits:100}});
+  if(options.method==='DELETE')return Response.json({success:true,creditsBilled:2});
+  if(String(url).endsWith('/execute'))return Response.json({success:true,exitCode:0,stdout:'INVISIA_RESULT='+JSON.stringify({html:'Access denied',url:miamiDeedUrl,http_status:403,pdf:null})});
+  sessions++;return Response.json({success:true,id:'offline-session'});
+ };
+ try{const app=createApp({env:{DB:db,TAXES_DEPLOYMENT_ENV:'staging',INVISIA_BROWSER_LEDGER_BYPASS:'1',INVISIA_BROWSER_STAGING_MAX_CAPTURES:'1',INVISIA_BROWSER_ENABLED:'1',INVISIA_BROWSER_API_KEY:'offline',INVISIA_POC_API_KEY:'offline-key'},logSink:()=>{}});
+ const request=()=>new Request(path,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer offline-key'},body:'{}'});
+ assert.equal((await app(request())).status,200);const denied=await app(request());assert.equal((await denied.json()).error.code,'staging_capture_limit');assert.equal(sessions,1);
+ }finally{globalThis.fetch=old;db.close();}
+});

@@ -39,6 +39,8 @@ test('reference sample keys remain canonical without filling missing sections fr
   assert.deepEqual(record.scrapTaxOrderRequest.TaxAmounts, { adValorem: null, nonAdValorem: null, totalDiscountable: null, totalTax: null });
   assert.deepEqual(record.scrapTaxOrderRequest.AccountHistory, []);
   assert.equal(record.scrapTaxOrderRequest.DelinquencyInformation.hasActiveDelinquency, null);
+  assert.equal(record.scrapTaxOrderRequest.DelinquencyInformation.knownPriorYearsDue, null);
+  assert.equal(record.scrapTaxOrderRequest.DelinquencyInformation.coverage, 'UNAVAILABLE');
   assert.equal(record.status, 'partial');
   assert.equal(record.ExtractionMetadata.section_status.AccountHistory.status, 'unavailable');
   assert.match(record.ExtractionMetadata.section_status.AccountHistory.note, /not retrieved/);

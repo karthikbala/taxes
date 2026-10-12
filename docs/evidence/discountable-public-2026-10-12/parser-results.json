@@ -1,0 +1,100 @@
+[
+  {
+    "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BL&taxbillno=502000&taxyear=2025",
+    "fetched_at": "2026-10-12T05:54:21.295651+00:00",
+    "http_status": 200,
+    "sha256": "65364caf6175b3df6af05dc76d74a6a357eee49274e4f7610287461b6c1ef451",
+    "file": "bradford-502000.html",
+    "parcel": "01250-0-00401",
+    "address": "5604 NW CR 125 LAWTEY 32058",
+    "discountable_labels": [],
+    "discount": "$0.00",
+    "discountB": "$0.00",
+    "amounts": {
+      "adValorem": "$223.83",
+      "nonAdValorem": "$292.00",
+      "totalDiscountable": null,
+      "totalTax": "$515.83"
+    },
+    "proof": {
+      "source_id": "tax_collector",
+      "method": "inspected_collector_html",
+      "status": "UNAVAILABLE",
+      "reason": "No readable explicitly labelled discountable subtotal in the verified bill."
+    }
+  },
+  {
+    "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BI&taxbillno=350000&taxyear=2025",
+    "fetched_at": "2026-10-12T05:54:24.631352+00:00",
+    "http_status": 200,
+    "sha256": "69b22143784f70db41a8ba11fb8df62d4ccde971d2102a273c0b7491d8d134c2",
+    "file": "bradford-350000.html",
+    "parcel": "00893-0-00200",
+    "address": "11130 SW 85TH AVE HAMPTON 32044",
+    "discountable_labels": [],
+    "discount": "",
+    "discountB": "$0.00",
+    "amounts": {
+      "adValorem": "$1,446.27",
+      "nonAdValorem": "$292.00",
+      "totalDiscountable": null,
+      "totalTax": "$1,738.27"
+    },
+    "proof": {
+      "source_id": "tax_collector",
+      "method": "inspected_collector_html",
+      "status": "UNAVAILABLE",
+      "reason": "No readable explicitly labelled discountable subtotal in the verified bill."
+    }
+  },
+  {
+    "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BL&taxbillno=1308000&taxyear=2025",
+    "fetched_at": "2026-10-12T05:54:27.336819+00:00",
+    "http_status": 200,
+    "sha256": "d91c8dcf38b3d2fb3dd0d2e520ec9974d4f5b371227f17d0a1497e8710aee6ff",
+    "file": "bradford-1308000.html",
+    "parcel": "05079-0-01314",
+    "address": "10066 S FLORIDA AVE HAMPTON 32044",
+    "discountable_labels": [],
+    "discount": "$0.00",
+    "discountB": "$0.00",
+    "amounts": {
+      "adValorem": "$343.37",
+      "nonAdValorem": "$292.00",
+      "totalDiscountable": null,
+      "totalTax": "$635.37"
+    },
+    "proof": {
+      "source_id": "tax_collector",
+      "method": "inspected_collector_html",
+      "status": "UNAVAILABLE",
+      "reason": "No readable explicitly labelled discountable subtotal in the verified bill."
+    }
+  },
+  {
+    "county": "Miami-Dade",
+    "value": "$3,477.20",
+    "proof": {
+      "source_id": "collector_bill_html",
+      "method": "labelled_collector_html",
+      "source_label": "Total Discountable:",
+      "source_value": "$3,477.20",
+      "selector": ".label + .value",
+      "source_year": "2025",
+      "account_number": "01-3231-067-0130"
+    }
+  },
+  {
+    "county": "Osceola",
+    "value": "$285,389.65",
+    "proof": {
+      "source_id": "collector_bill_html",
+      "method": "labelled_collector_html",
+      "source_label": "Total Discountable:",
+      "source_value": "$285,389.65",
+      "selector": ".label + .value",
+      "source_year": "2025",
+      "account_number": "R022528-285000010010"
+    }
+  }
+]

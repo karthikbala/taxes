@@ -1,0 +1,209 @@
+<!-- Source excerpt: Clerk exact-folio search, 2026-10-12. Scripts and unrelated inputs removed. No submission verification is fabricated. -->
+<div class="site-content"><form name="casefilterform" id="caseFiltersForm" method="post" action="public/cases/list">
+
+
+
+
+<fieldset>
+<legend>Filters for the public case records on REALTDM.</legend>
+<div class="row px-4 py-3">
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<input type="hidden" class="form-control" name="filtercasestatus" id="filterCaseStatus" value="" data-original="">
+<label class="text-label" for="filterCaseStatusDropdown">Case Status</label>
+<div class="dropdown" id="caseStatusFilterMenu">
+<button type="button" class="btn btn-dropdown" id="filterCaseStatusDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside"><span id="caseStatusDsp">Select One or More Statuses...</span><i class="fa-solid fa-caret-down"></i></button>
+<div class="dropdown-menu public p-0 scroller w-100 shadow-lg">
+<div tabindex="1" class="dropdown-section" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;&quot; , &quot;group&quot; : &quot;statusgroup1&quot; }">
+Active
+<i class="fs-5 fa-thin fa-square dropdown-select-all-off"></i>
+<i class="fs-5 fa-solid fa-square-check dropdown-select-all-on"></i>
+</div>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="192" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;192&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active&quot; , &quot;group&quot; : &quot;&quot; }">
+Active
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="198" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;198&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Sold&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Sold
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="200" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;200&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Sold Bidder&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Sold Bidder
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="199" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;199&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Sold Applicant&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Sold Applicant
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="194" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;194&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Bidder Defaulted&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Bidder Defaulted
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="193" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;193&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Applicant Defaulted&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Applicant Defaulted
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="196" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;196&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Redemption&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Redemption
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="449" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;449&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Resale Full (4 Adv)&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Resale Full (4 Adv)
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup1" data-status-id="448" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;448&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Active - Resale 30Day (1 Adv)&quot; , &quot;group&quot; : &quot;&quot; }">
+Active - Resale 30Day (1 Adv)
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<div tabindex="1" class="dropdown-section" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;&quot; , &quot;group&quot; : &quot;statusgroup2&quot; }">
+Canceled
+<i class="fs-5 fa-thin fa-square dropdown-select-all-off"></i>
+<i class="fs-5 fa-solid fa-square-check dropdown-select-all-on"></i>
+</div>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="201" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;201&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="863" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;863&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Vacate Sale&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Vacate Sale
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="1822" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;1822&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Rejected&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Rejected
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="205" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;205&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Per Order&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Per Order
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="202" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;202&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Per Bankruptcy&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Per Bankruptcy
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="897" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;897&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Certificate&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Certificate
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="206" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;206&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Reschedule&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Reschedule
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="1938" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;1938&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Per TC&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Per TC
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup2" data-status-id="370" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;370&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Canceled - Other&quot; , &quot;group&quot; : &quot;&quot; }">
+Canceled - Other
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<div tabindex="1" class="dropdown-section" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;&quot; , &quot;group&quot; : &quot;statusgroup3&quot; }">
+List of Lands
+<i class="fs-5 fa-thin fa-square dropdown-select-all-off"></i>
+<i class="fs-5 fa-solid fa-square-check dropdown-select-all-on"></i>
+</div>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup3" data-status-id="213" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;213&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;List of Lands&quot; , &quot;group&quot; : &quot;&quot; }">
+List of Lands
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<div tabindex="1" class="dropdown-section" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;&quot; , &quot;group&quot; : &quot;statusgroup4&quot; }">
+Transfered
+<i class="fs-5 fa-thin fa-square dropdown-select-all-off"></i>
+<i class="fs-5 fa-solid fa-square-check dropdown-select-all-on"></i>
+</div>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup4" data-status-id="214" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;214&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Transfered&quot; , &quot;group&quot; : &quot;&quot; }">
+Transfered
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<div tabindex="1" class="dropdown-section" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;&quot; , &quot;group&quot; : &quot;statusgroup5&quot; }">
+Completed
+<i class="fs-5 fa-thin fa-square dropdown-select-all-off"></i>
+<i class="fs-5 fa-solid fa-square-check dropdown-select-all-on"></i>
+</div>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup5" data-status-id="207" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;207&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Completed&quot; , &quot;group&quot; : &quot;&quot; }">
+Completed
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup5" data-status-id="210" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;210&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Completed - Redeemed&quot; , &quot;group&quot; : &quot;&quot; }">
+Completed - Redeemed
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup5" data-status-id="209" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;209&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Completed - LAS SOLD&quot; , &quot;group&quot; : &quot;&quot; }">
+Completed - LAS SOLD
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup5" data-status-id="211" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;211&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Completed - Sold Applicant&quot; , &quot;group&quot; : &quot;&quot; }">
+Completed - Sold Applicant
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup5" data-status-id="1634" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;1634&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Completed - Escheatment&quot; , &quot;group&quot; : &quot;&quot; }">
+Completed - Escheatment
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+<a tabindex="1" href="javascript:void(0)" class="dropdown-item statusgroup5" data-status-id="212" data-dropdown-select-multiple="{ &quot;menu&quot; : &quot;caseStatusFilterMenu&quot; , &quot;field&quot; : &quot;filterCaseStatus&quot; , &quot;value&quot; : &quot;212&quot; , &quot;label&quot; : &quot;caseStatusDsp&quot; , &quot;display&quot; : &quot;Completed - Sold Bidder&quot; , &quot;group&quot; : &quot;&quot; }">
+Completed - Sold Bidder
+<i class="fa-solid fa-check ms-2"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label class="text-label" id="labelPartyName" for="filterPartyName">Party Name <small>(full / partial name)</small></label>
+<input type="text" class="form-control" name="filterPartyName" id="filterPartyName" value="" aria-labelledby="labelPartyName" data-original="">
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label class="text-label" for="filterCaseNumber">Case Number</label>
+<input type="text" class="form-control" name="filterCaseNumber" id="filterCaseNumber" value="" data-original="">
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label class="text-label" for="filterParcelNumber">Parcel Number</label>
+<input type="text" class="form-control" name="filterParcelNumber" id="filterParcelNumber" value="01-3231-067-0130" data-original="01-3231-067-0130">
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label for="filterAppNumber" class="text-label">Application Number</label>
+<input type="text" class="form-control" name="filterAppNumber" id="filterAppNumber" value="" data-original="">
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label class="text-label" for="filterCertNumber">Certificate Number</label>
+<input type="text" class="form-control" name="filterCertNumber" id="filterCertNumber" value="" data-original="">
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label class="text-label" for="filterPropAddress">Property Address</label>
+<input type="text" class="form-control" name="filterPropAddress" id="filterPropAddress" value="" data-original="">
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<label class="text-label">Sale Date Range</label>
+<div class="input-group">
+<label for="filterSaleDateStart" class="visually-hidden">Sale Date Start</label>
+<div class="input-group-text" data-date-picker="filterSaleDateStart"><i class="fa-regular fa-calendar-alt"></i></div>
+<input readonly="" type="text" class="form-control" placeholder="Start Date" name="filterSaleDateStart" id="filterSaleDateStart" value="" data-original="" data-date-picker="filterSaleDateStart">
+<label for="filterSaleDateStop" class="visually-hidden">Sale Date Stop</label>
+<div class="input-group-text" data-date-picker="filterSaleDateStop"><i class="fa-regular fa-calendar-alt"></i></div>
+<input readonly="" type="text" class="form-control" placeholder="End Date" name="filterSaleDateStop" id="filterSaleDateStop" value="" data-original="" data-date-picker="filterSaleDateStop">
+</div>
+</div>
+<div class="col-12 col-lg-6 col-xxl-4 mb-3">
+<div class="dropdown">
+
+<label class="text-label" for="filterCasesPerPage">Results per Page</label>
+<button type="button" class="btn btn-dropdown" data-bs-toggle="dropdown"><span id="resultsDsp">20 Results per Page</span><i class="fa-solid fa-caret-down"></i></button>
+<div class="dropdown-menu public p-0 w-100 shadow-lg" id="resultsPerPageMenu">
+<a href="javascript:void(0)" class="dropdown-item selected" data-dropdown-select="{ &quot;menu&quot; : &quot;resultsPerPageMenu&quot; , &quot;field&quot; : &quot;filterCasesPerPage&quot; , &quot;value&quot; : &quot;20&quot; , &quot;label&quot; : &quot;resultsDsp&quot; , &quot;display&quot; : &quot;20 Results per Page&quot; }">
+20 Results per Page
+<i class="fa-solid fa-check"></i>
+</a>
+<a href="javascript:void(0)" class="dropdown-item " data-dropdown-select="{ &quot;menu&quot; : &quot;resultsPerPageMenu&quot; , &quot;field&quot; : &quot;filterCasesPerPage&quot; , &quot;value&quot; : &quot;50&quot; , &quot;label&quot; : &quot;resultsDsp&quot; , &quot;display&quot; : &quot;50 Results per Page&quot; }">
+50 Results per Page
+<i class="fa-solid fa-check"></i>
+</a>
+<a href="javascript:void(0)" class="dropdown-item " data-dropdown-select="{ &quot;menu&quot; : &quot;resultsPerPageMenu&quot; , &quot;field&quot; : &quot;filterCasesPerPage&quot; , &quot;value&quot; : &quot;100&quot; , &quot;label&quot; : &quot;resultsDsp&quot; , &quot;display&quot; : &quot;100 Results per Page&quot; }">
+100 Results per Page
+<i class="fa-solid fa-check"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+</form><div class="container"><div class="content-box p-5 text-center mt-3">
+<div class="fs-4 text-primary"><i class="fa-solid fa-info-circle me-2"></i>NO CASES FOUND</div>
+<div class="fs-5">Your search criteria returned no results.</div><div class="opacity-75">Please refine your filter selection and try again.</div>
+</div></div></div>

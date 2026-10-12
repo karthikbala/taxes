@@ -1,0 +1,1 @@
+Open index.html. Includes actual application screenshots, four full staging API responses, manual inputs and every returned field. Production screenshots are prepared inputs only, NOT RUN. No production comparison result or full resolution is claimed. Every-response CSV includes nulls, empty collections and metadata. Do not share access keys in this package.
