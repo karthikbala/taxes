@@ -1,0 +1,267 @@
+{
+  "scrap_order_id": "MANAGER-ISSUE3-OSCEOLA",
+  "address": "3250 VINELAND RD",
+  "ownerName": "WAL-MART STORES EAST LP",
+  "county": "Osceola",
+  "state": "FL",
+  "errorMessage": "County source blocked or limited this request.",
+  "status": "error",
+  "scrapTaxOrderRequest": {
+    "orderId": "MANAGER-ISSUE3-OSCEOLA",
+    "status": "new",
+    "transactionType": "REFI",
+    "address": "3250 VINELAND RD",
+    "county": "Osceola",
+    "state": "FL",
+    "errorMessage": "County source blocked or limited this request.",
+    "matchStatus": "SEARCH_INCOMPLETE",
+    "warnings": [
+      "PropertyInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "AssessmentInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "TaxInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "BillDetails was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "ParcelDetails was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "TaxAmounts was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "PaymentDetails was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "FullLegalDescription was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "AssessmentHistory was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "BenefitsInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "SalesInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "AccountHistory was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "AdValoremMillage was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "NonAdValorem was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "TaxableValueInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "LandBuildingExtraFeatures was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "AdValoremGroupTotals was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "Exemptions was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "BenefitsNote was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "NonAdValoremNote was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "ExemptionsNote was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+      "DelinquencyInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+    ],
+    "PropertyInformation": {
+      "ParcelNumber": null,
+      "PropertyAddress": null,
+      "MailingAddress": null,
+      "PrimaryZone": null,
+      "PrimaryLandUse": null,
+      "BedsBathsHalf": null,
+      "Floors": null,
+      "LivingUnits": null,
+      "LivingArea": null,
+      "AdjustedArea": null,
+      "LotSize": null,
+      "YearBuilt": null,
+      "Owners": [],
+      "ownerOccupied": null
+    },
+    "AssessmentInformation": {
+      "Year": null,
+      "LandValue": null,
+      "BuildingValue": null,
+      "ExtraFeatureValue": null,
+      "MarketValue": null,
+      "AssessedValue": null
+    },
+    "TaxInformation": {
+      "accountNumber": null,
+      "type": null,
+      "amountDue": null,
+      "statusMessage": null,
+      "lastPaymentDate": null,
+      "lastPaymentAmount": null,
+      "amountPaidYear": null,
+      "note": null
+    },
+    "BillDetails": {
+      "taxYear": null,
+      "folio": null,
+      "municipality": null,
+      "millCode": null,
+      "propertyAddress": null,
+      "mailingAddress": null,
+      "paidBy": null,
+      "receiptNumber": null,
+      "paidDate": null,
+      "paidAmount": null
+    },
+    "ParcelDetails": {
+      "millageRate": null
+    },
+    "TaxAmounts": {
+      "adValorem": null,
+      "nonAdValorem": null,
+      "totalDiscountable": null,
+      "totalTax": null
+    },
+    "PaymentDetails": {
+      "combinedTaxesAndAssessments": null,
+      "discountNote": null,
+      "PaymentSchedule": []
+    },
+    "FullLegalDescription": [],
+    "AssessmentHistory": [],
+    "BenefitsInformation": [],
+    "SalesInformation": [],
+    "AccountHistory": [],
+    "AdValoremMillage": [],
+    "NonAdValorem": [],
+    "TaxableValueInformation": null,
+    "LandBuildingExtraFeatures": null,
+    "AdValoremGroupTotals": null,
+    "Exemptions": null,
+    "BenefitsNote": null,
+    "NonAdValoremNote": "NonAdValorem was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "ExemptionsNote": "Exemptions was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "DelinquencyInformation": {
+      "hasActiveDelinquency": null,
+      "knownPriorYearsDue": null,
+      "totalPriorYearsDue": null,
+      "currentYearDue": null,
+      "delinquentYears": [],
+      "coverage": "UNAVAILABLE",
+      "unavailableYears": [],
+      "note": "Tax history was not inspected; no delinquency conclusion is available."
+    },
+    "PropertyInformationNote": "PropertyInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "AssessmentInformationNote": "AssessmentInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "TaxInformationNote": "TaxInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "BillDetailsNote": "BillDetails was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "ParcelDetailsNote": "ParcelDetails was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "TaxAmountsNote": "TaxAmounts was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "PaymentDetailsNote": "PaymentDetails was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "FullLegalDescriptionNote": "FullLegalDescription was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "AssessmentHistoryNote": "AssessmentHistory was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "BenefitsInformationNote": "BenefitsInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "SalesInformationNote": "SalesInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "AccountHistoryNote": "AccountHistory was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "AdValoremMillageNote": "AdValoremMillage was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "TaxableValueInformationNote": "TaxableValueInformation was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "LandBuildingExtraFeaturesNote": "LandBuildingExtraFeatures was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "AdValoremGroupTotalsNote": "AdValoremGroupTotals was not retrieved or was unavailable; no empty-source conclusion is claimed.",
+    "DelinquencyInformationNote": "DelinquencyInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+  },
+  "ExtractionMetadata": {
+    "contractVersion": "2.0",
+    "request_id": "0b9dd00d-e1c2-4cf5-af0e-1f7be10cf62f",
+    "collected_at": "2026-10-10T11:31:23.563Z",
+    "duration_ms": 82,
+    "county_id": "osceola-fl",
+    "status": "error",
+    "match": {
+      "status": "SEARCH_INCOMPLETE",
+      "candidates": []
+    },
+    "section_status": {
+      "PropertyInformation": {
+        "status": "unavailable",
+        "note": "PropertyInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "AssessmentInformation": {
+        "status": "unavailable",
+        "note": "AssessmentInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "TaxInformation": {
+        "status": "unavailable",
+        "note": "TaxInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "BillDetails": {
+        "status": "unavailable",
+        "note": "BillDetails was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "ParcelDetails": {
+        "status": "unavailable",
+        "note": "ParcelDetails was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "TaxAmounts": {
+        "status": "unavailable",
+        "note": "TaxAmounts was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "PaymentDetails": {
+        "status": "unavailable",
+        "note": "PaymentDetails was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "FullLegalDescription": {
+        "status": "unavailable",
+        "note": "FullLegalDescription was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "AssessmentHistory": {
+        "status": "unavailable",
+        "note": "AssessmentHistory was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "BenefitsInformation": {
+        "status": "unavailable",
+        "note": "BenefitsInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "SalesInformation": {
+        "status": "unavailable",
+        "note": "SalesInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "AccountHistory": {
+        "status": "unavailable",
+        "note": "AccountHistory was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "AdValoremMillage": {
+        "status": "unavailable",
+        "note": "AdValoremMillage was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "NonAdValorem": {
+        "status": "unavailable",
+        "note": "NonAdValorem was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "TaxableValueInformation": {
+        "status": "unavailable",
+        "note": "TaxableValueInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "LandBuildingExtraFeatures": {
+        "status": "unavailable",
+        "note": "LandBuildingExtraFeatures was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "AdValoremGroupTotals": {
+        "status": "unavailable",
+        "note": "AdValoremGroupTotals was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "Exemptions": {
+        "status": "unavailable",
+        "note": "Exemptions was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "BenefitsNote": {
+        "status": "unavailable",
+        "note": "BenefitsNote was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "NonAdValoremNote": {
+        "status": "unavailable",
+        "note": "NonAdValoremNote was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "ExemptionsNote": {
+        "status": "unavailable",
+        "note": "ExemptionsNote was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      },
+      "DelinquencyInformation": {
+        "status": "unavailable",
+        "note": "DelinquencyInformation was not retrieved or was unavailable; no empty-source conclusion is claimed."
+      }
+    },
+    "sources": [
+      {
+        "id": "osceola_address_search",
+        "url": "https://search.property-appraiser.org/api/v1/ParcelMarket?%24filter=contains%28SitusAll%2C%273250+VINELAND+RD%27%29&%24count=true&%24top=100",
+        "method": "GET",
+        "status": "failed",
+        "fetched_at": "2026-10-10T11:31:23.564Z",
+        "http_status": 403,
+        "error_code": "source_blocked",
+        "duration_ms": 81
+      }
+    ],
+    "errors": [
+      {
+        "source_id": "osceola_assessment",
+        "code": "source_blocked",
+        "message": "County source blocked or limited this request."
+      }
+    ],
+    "validation": {},
+    "provenance": {}
+  }
+}

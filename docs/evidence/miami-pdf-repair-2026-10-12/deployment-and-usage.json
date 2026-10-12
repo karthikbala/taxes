@@ -1,0 +1,189 @@
+{
+  "checked_at": "2026-10-12T05:31:57.351177+00:00",
+  "active_release": "/home/interns/apps/taxes/releases/besil-20261012-pdf-recovery-v7",
+  "service": "active",
+  "staging_capture_limit": "10",
+  "tests": [
+    "1..318",
+    "# tests 318",
+    "# suites 0",
+    "# pass 318",
+    "# fail 0",
+    "# cancelled 0",
+    "# skipped 0",
+    "# todo 0",
+    "# duration_ms 3505.293893"
+  ],
+  "source_hashes": {
+    "lib/live/managed-browser.mjs": "362e48746a8adc56ad27f5cb2e4cdfd7662328994e5224c9043a1728a734d718",
+    "lib/live/managed-pdf.mjs": "1ef3b969658da126b02b24bddeef04d79ae091ee563a8442df0c2226cae8172e",
+    "lib/live/redemption.mjs": "1cc60b1a43ea4a1090fd8d6c3a3d6a83eea35a3dc968c70fe1fc921a1afccfa3",
+    "lib/live/pdf-text.mjs": "c870c1c46bb462841e441bb625b2519b8e540c5c8e1bd624d5be11d9d046d13d",
+    "lib/client/bill.mjs": "cb4706ff09fff0a9d9d20c535d2a6431640a6b746898145004a576d963c5bb15",
+    "lib/client/engine.mjs": "459aea22c0c6d30f8d3fd3f31f25910a9a6dada6c9f1c1ec8eb5eaaa2530f071"
+  },
+  "remaining_provider_credits": 970,
+  "active_provider_sessions": 0,
+  "events": [
+    {
+      "event": "managed_browser_session_created",
+      "county": "miami-dade-fl",
+      "session_id": "01a12e84-4177-74fb-b58d-9b23de5e1535",
+      "lease_id": "75aa47ca-c1b4-45a9-9747-a3507efc8818",
+      "journal_utc": "2026-10-12T05:09:44.018753+00:00"
+    },
+    {
+      "event": "managed_document_transfer_failed",
+      "county": "miami-dade-fl",
+      "stage": "pdf_transfer",
+      "error_code": "source_url_rejected",
+      "journal_utc": "2026-10-12T05:09:58.173788+00:00"
+    },
+    {
+      "event": "staging_browser_capture_billed",
+      "lease_id": "75aa47ca-c1b4-45a9-9747-a3507efc8818",
+      "county": "miami-dade-fl",
+      "credits": 2,
+      "status": "completed",
+      "ledger_bypassed": true,
+      "journal_utc": "2026-10-12T05:09:59.542991+00:00"
+    },
+    {
+      "event": "client_lookup_completed",
+      "request_id": "ab152026-507e-483c-bbbb-362ea1658ed0",
+      "timestamp": "2026-10-12T05:09:59.671Z",
+      "county": "miami-dade-fl",
+      "status": "partial",
+      "duration_ms": 21921,
+      "journal_utc": "2026-10-12T05:09:59.671365+00:00"
+    },
+    {
+      "event": "managed_browser_session_created",
+      "county": "miami-dade-fl",
+      "session_id": "01a12e86-c0b4-76bd-87a1-f9ea1fd312b8",
+      "lease_id": "9c3b3b1f-0dbe-4ab6-a8b6-66bbe8dc2f6c",
+      "journal_utc": "2026-10-12T05:12:27.876633+00:00"
+    },
+    {
+      "event": "managed_document_transfer_failed",
+      "county": "miami-dade-fl",
+      "stage": "pdf_transfer",
+      "error_code": null,
+      "journal_utc": "2026-10-12T05:12:43.650780+00:00"
+    },
+    {
+      "event": "staging_browser_capture_billed",
+      "lease_id": "9c3b3b1f-0dbe-4ab6-a8b6-66bbe8dc2f6c",
+      "county": "miami-dade-fl",
+      "credits": 2,
+      "status": "completed",
+      "ledger_bypassed": true,
+      "journal_utc": "2026-10-12T05:12:44.547164+00:00"
+    },
+    {
+      "event": "client_lookup_completed",
+      "request_id": "9d729d8b-80dd-40cb-9842-068c66561cd7",
+      "timestamp": "2026-10-12T05:12:44.651Z",
+      "county": "miami-dade-fl",
+      "status": "partial",
+      "duration_ms": 23261,
+      "journal_utc": "2026-10-12T05:12:44.651609+00:00"
+    },
+    {
+      "event": "managed_browser_session_created",
+      "county": "miami-dade-fl",
+      "session_id": "01a12e91-1db8-718c-b674-91ab806231d2",
+      "lease_id": "9399f5b5-9434-4ba0-9754-0a4c6e5a7ad3",
+      "journal_utc": "2026-10-12T05:23:47.078864+00:00"
+    },
+    {
+      "event": "managed_document_transfer_failed",
+      "county": "miami-dade-fl",
+      "stage": "pdf_transfer",
+      "error_code": null,
+      "journal_utc": "2026-10-12T05:24:01.369593+00:00"
+    },
+    {
+      "event": "staging_browser_capture_billed",
+      "lease_id": "9399f5b5-9434-4ba0-9754-0a4c6e5a7ad3",
+      "county": "miami-dade-fl",
+      "credits": 2,
+      "status": "completed",
+      "ledger_bypassed": true,
+      "journal_utc": "2026-10-12T05:24:02.526005+00:00"
+    },
+    {
+      "event": "client_lookup_completed",
+      "request_id": "4fa9afb4-16df-48fb-86fd-d2b60f138a35",
+      "timestamp": "2026-10-12T05:24:02.617Z",
+      "county": "miami-dade-fl",
+      "status": "partial",
+      "duration_ms": 21819,
+      "journal_utc": "2026-10-12T05:24:02.617535+00:00"
+    },
+    {
+      "event": "managed_browser_session_created",
+      "county": "miami-dade-fl",
+      "session_id": "01a12e93-9b4c-7023-8466-3c8dda61bb3b",
+      "lease_id": "08a57cfa-ddef-48c4-90da-8f00ddfe5c91",
+      "journal_utc": "2026-10-12T05:26:30.011280+00:00"
+    },
+    {
+      "event": "staging_browser_capture_billed",
+      "lease_id": "08a57cfa-ddef-48c4-90da-8f00ddfe5c91",
+      "county": "miami-dade-fl",
+      "credits": 2,
+      "status": "completed",
+      "ledger_bypassed": true,
+      "journal_utc": "2026-10-12T05:26:48.567899+00:00"
+    },
+    {
+      "event": "client_lookup_completed",
+      "request_id": "9942d4a6-f3df-4f31-aa00-80ffeba88278",
+      "timestamp": "2026-10-12T05:26:49.049Z",
+      "county": "miami-dade-fl",
+      "status": "partial",
+      "duration_ms": 24776,
+      "journal_utc": "2026-10-12T05:26:49.049135+00:00"
+    },
+    {
+      "event": "managed_browser_session_created",
+      "county": "miami-dade-fl",
+      "session_id": "01a12e96-1129-73fe-b2a9-3b36f9526c72",
+      "lease_id": "581d424e-03ac-4ed2-b252-e6f2211c9f90",
+      "journal_utc": "2026-10-12T05:29:11.247166+00:00"
+    },
+    {
+      "event": "staging_browser_capture_billed",
+      "lease_id": "581d424e-03ac-4ed2-b252-e6f2211c9f90",
+      "county": "miami-dade-fl",
+      "credits": 2,
+      "status": "completed",
+      "ledger_bypassed": true,
+      "journal_utc": "2026-10-12T05:29:30.789742+00:00"
+    },
+    {
+      "event": "client_lookup_completed",
+      "request_id": "97c82784-0a2e-4705-bff4-32f7e82cdad3",
+      "timestamp": "2026-10-12T05:29:31.256Z",
+      "county": "miami-dade-fl",
+      "status": "partial",
+      "duration_ms": 26009,
+      "journal_utc": "2026-10-12T05:29:31.256627+00:00"
+    }
+  ],
+  "credits_before": 982,
+  "credits_after": 970,
+  "spent_credits": 12,
+  "additional_diagnostic_sessions": [
+    {
+      "session_id": "01a12e8a-a85b-730d-9253-d8fe2ed47015",
+      "credits": 2,
+      "status": "failed",
+      "cleanup_confirmed": true,
+      "reason": "Two matching account footers exposed the history-wait selector bug. This standalone SSH diagnosis logged outside the service journal."
+    }
+  ],
+  "service_session_credits": 10,
+  "usage_reconciled": true
+}

@@ -1,0 +1,41 @@
+{
+  "purpose": "Original public source snapshots, captured 12 October 2026. Offline tests only; never runtime fallback.",
+  "sources": [
+    {
+      "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BL&taxbillno=502000&taxyear=2025",
+      "fetched_at": "2026-10-12T05:54:21.295651+00:00",
+      "http_status": 200,
+      "sha256": "65364caf6175b3df6af05dc76d74a6a357eee49274e4f7610287461b6c1ef451",
+      "file": "bradford-502000.html"
+    },
+    {
+      "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BI&taxbillno=350000&taxyear=2025",
+      "fetched_at": "2026-10-12T05:54:24.631352+00:00",
+      "http_status": 200,
+      "sha256": "69b22143784f70db41a8ba11fb8df62d4ccde971d2102a273c0b7491d8d134c2",
+      "file": "bradford-350000.html"
+    },
+    {
+      "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BL&taxbillno=1308000&taxyear=2025",
+      "fetched_at": "2026-10-12T05:54:27.336819+00:00",
+      "http_status": 200,
+      "sha256": "d91c8dcf38b3d2fb3dd0d2e520ec9974d4f5b371227f17d0a1497e8710aee6ff",
+      "file": "bradford-1308000.html"
+    },
+    {
+      "file": "miami-512.html",
+      "url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a",
+      "method": "fresh_browser_DOM",
+      "fetched_at": "2026-10-12T05:54:51.102170+00:00",
+      "sha256": "7cd13c3893f941547a87113e18f7caece7220d571ed371077f3490f9cd822326"
+    },
+    {
+      "file": "osceola-3250.html",
+      "url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7",
+      "method": "fresh_browser_DOM",
+      "fetched_at": "2026-10-12T05:56:08.519078+00:00",
+      "sha256": "494a7e480415974ec5dc7dddde416fc67a71b5825714acab87615bf0dea199e2"
+    }
+  ],
+  "mutations": "Only explicitly identified tests append synthetic subtotal labels or change dates."
+}

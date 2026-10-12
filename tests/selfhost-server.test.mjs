@@ -6,6 +6,9 @@ import {mkdtemp,writeFile,mkdir,symlink,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {createApp} from '../server/app.mjs';
+import {spawn} from 'node:child_process';
+import {once} from 'node:events';
+import {fileURLToPath} from 'node:url';
 const env={INVISIA_POC_API_KEY:'offline-test-key'};
 const order={scrap_order_id:'offline-1',address:'100 TEST ST',ownerName:'TEST OWNER',county:'martin-fl',transactionType:'REFI'};
 const req=(path,body,extra={})=>new Request('http://localhost'+path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+env.INVISIA_POC_API_KEY,'Content-Type':'application/json',...extra.headers},...(body===undefined?{}:{body:typeof body==='string'?body:JSON.stringify(body)}),...extra});
@@ -53,4 +56,32 @@ test('HTTP shutdown retains owned database while detached lookup reconciles',asy
   await new Promise(resolve=>server.close(resolve));let complete=false;server.shutdownComplete.then(()=>complete=true);await new Promise(resolve=>setImmediate(resolve));assert.equal(complete,false);assert.equal(closed,false);
   cleanup.resolve();await server.shutdownComplete;assert.equal(reconciled,true);assert.equal(closed,true);
  }finally{cleanup.resolve();if(server.listening)await new Promise(resolve=>server.close(resolve));await server.shutdownComplete;}
+});
+
+test('CLI starts the HTTP server when the release directory is a symlink',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'taxes-release-'));
+ let child,timer;
+ try{
+  await symlink(fileURLToPath(new URL('../',import.meta.url)),join(dir,'current'),'dir');
+  const {createServer}=await import('node:net'),probe=createServer();
+  await new Promise(resolve=>probe.listen(0,'127.0.0.1',resolve));const port=probe.address().port;
+  await new Promise(resolve=>probe.close(resolve));
+  child=spawn(process.execPath,['--import',fileURLToPath(new URL('../scripts/test.mjs',import.meta.url)),join(dir,'current/server/index.mjs')],{
+   env:{...process.env,INVISIA_OFFLINE_TEST_WORKER:'1',NODE_ENV:'production',HOST:'127.0.0.1',PORT:String(port),TAXES_DB_PATH:join(dir,'test.sqlite'),INVISIA_POC_API_KEY:'offline-symlink-test-key',INVISIA_BROWSER_ENABLED:'0',INVISIA_BROWSER_API_KEY:''},stdio:['ignore','pipe','pipe']
+  });
+  await new Promise((resolve,reject)=>{
+   let output='',errors='';
+   timer=setTimeout(()=>reject(new Error('Linked release did not start within 10 seconds.')),10000);
+   child.stdout.on('data',data=>{output+=data;if(output.includes('selfhost_listening'))resolve();});
+   child.stderr.on('data',data=>{errors+=data;});
+   child.once('error',reject);child.once('exit',code=>reject(new Error('Linked release exited before startup: '+code+' '+errors)));
+  });
+  clearTimeout(timer);
+  const response=await fetch('http://127.0.0.1:'+port+'/healthz');
+  assert.equal(response.status,200);assert.deepEqual(await response.json(),{status:'ok'});
+ }finally{
+  clearTimeout(timer);
+  if(child&&child.exitCode===null&&child.signalCode===null){child.kill('SIGTERM');await once(child,'exit');}
+  await rm(dir,{recursive:true,force:true});
+ }
 });

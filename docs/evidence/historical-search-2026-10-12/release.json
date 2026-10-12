@@ -1,0 +1,23 @@
+{
+  "baseline_head": "024e558037ca3bd973f2744d0677c9e6cba53a00",
+  "source_hashes": {
+    "lib/client/engine.mjs": "845cafc6933bfb841dda1432f0e49c3292eca697826e1137dc564bbe466b5fe9",
+    "lib/client/historical-clearance.mjs": "fc67a0caf55ec2bece4dacb34821edc5f973836e35a52af50dc7056d07bd06d2",
+    "lib/client/miami-deed-probe.mjs": "e67d801575c859e0cfc7fb859da93022364d56b690152b6e69cb5915d588c262",
+    "lib/client/deed-discovery.mjs": "19cb2906bfdf932427871a54423740c7be2123b3f626628d527334f91c61dc41",
+    "server/app.mjs": "b793e9405767775bbdf77c0178ff0a9e7ad0eeea74045f0b34699e339900e62a",
+    "lib/live/managed-browser.mjs": "362e48746a8adc56ad27f5cb2e4cdfd7662328994e5224c9043a1728a734d718",
+    "lib/live/managed-pdf.mjs": "1ef3b969658da126b02b24bddeef04d79ae091ee563a8442df0c2226cae8172e"
+  },
+  "local_regression": "325 passed before final additional shared-limit test; final focused tests passed",
+  "target_regression": "326 passed on Node 22 for v9; build passed",
+  "release": "besil-20261012-historical-search-v9",
+  "previous_release": "besil-20261012-pdf-recovery-v7",
+  "provider_credits_before_investigation": 970,
+  "provider_credits_before_acceptance": 964,
+  "active_sessions_before_activation": 0,
+  "historical_sessions_before_activation": 12,
+  "historical_session_status": "destroyed",
+  "intermediate_release": "besil-20261012-historical-search-v8",
+  "provider_credits_before_retry": 960
+}

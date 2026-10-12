@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BL&taxbillno=502000&taxyear=2025",
+    "fetched_at": "2026-10-12T05:54:21.295651+00:00",
+    "http_status": 200,
+    "sha256": "65364caf6175b3df6af05dc76d74a6a357eee49274e4f7610287461b6c1ef451",
+    "file": "bradford-502000.html"
+  },
+  {
+    "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BI&taxbillno=350000&taxyear=2025",
+    "fetched_at": "2026-10-12T05:54:24.631352+00:00",
+    "http_status": 200,
+    "sha256": "69b22143784f70db41a8ba11fb8df62d4ccde971d2102a273c0b7491d8d134c2",
+    "file": "bradford-350000.html"
+  },
+  {
+    "url": "https://www.bradfordtaxcollector.com/Property/TATaxBill?pq=N&rolltype=R&st=BL&taxbillno=1308000&taxyear=2025",
+    "fetched_at": "2026-10-12T05:54:27.336819+00:00",
+    "http_status": 200,
+    "sha256": "d91c8dcf38b3d2fb3dd0d2e520ec9974d4f5b371227f17d0a1497e8710aee6ff",
+    "file": "bradford-1308000.html"
+  }
+]

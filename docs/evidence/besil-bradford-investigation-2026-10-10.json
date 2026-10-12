@@ -1,0 +1,72 @@
+{
+  "observations": [
+    {
+      "parcel": "00986-0-00700",
+      "year": "2025",
+      "source_status": "BL",
+      "balance": "$0.00",
+      "discountable": null,
+      "discount_panel": "",
+      "discountable_labels": []
+    },
+    {
+      "parcel": "01684-0-00800",
+      "code": "ambiguous_collector_bill",
+      "message": "Current annual history payment date conflicts with the printed receipt."
+    }
+  ],
+  "sources": [
+    {
+      "id": "session",
+      "url": "https://www.bradfordtaxcollector.com/Property/SearchSelect?Accept=true&ClearData=True",
+      "method": "GET",
+      "status": "retrieved",
+      "fetched_at": "2026-10-10T06:56:37.128Z",
+      "http_status": 200,
+      "sha256": "219347e367896b5816ff785423b7bf268301fd514e37de8e5b09e6421dfb020a",
+      "duration_ms": 1410
+    },
+    {
+      "id": "search",
+      "url": "https://www.bradfordtaxcollector.com/Property/Search",
+      "method": "POST",
+      "status": "retrieved",
+      "fetched_at": "2026-10-10T06:56:38.538Z",
+      "http_status": 200,
+      "sha256": "cf0b076d3d0c1e5b89770de9b078d8a42d3a53d8ee560d3a8f4006cf9e8fd76c",
+      "duration_ms": 432
+    },
+    {
+      "id": "bill_00986-0-00700",
+      "url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+      "method": "POST",
+      "status": "retrieved",
+      "fetched_at": "2026-10-10T06:56:38.971Z",
+      "http_status": 200,
+      "sha256": "427560b3086f9d3e3d18046ce765171fd9860584eceb81fe27ddccccb45bec61",
+      "duration_ms": 1333
+    },
+    {
+      "id": "bill_01684-0-00800",
+      "url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+      "method": "POST",
+      "status": "retrieved",
+      "fetched_at": "2026-10-10T06:56:40.390Z",
+      "http_status": 200,
+      "sha256": "1f62dcf06b40a8b1e380db8e45fddeaf9063775df348342a81e4e3bc168afc5a",
+      "duration_ms": 1285
+    }
+  ],
+  "scope": "Three official Bradford 2025 collector records from the first SMITH search page; not a complete owner search, not client-example acceptance.",
+  "first_bill_outcome": {
+    "parcel_id": "06013-0-00100",
+    "status": "source_unavailable",
+    "http_status": 500
+  },
+  "limitations": [
+    "One additional paid bill has no discountable subtotal.",
+    "One bill failed with conflicting receipt/history payment dates; values were withheld.",
+    "After two non-advancing live diagnosis cycles, stopped Bradford sampling.",
+    "No result identifies Besil\u2019s unspecified affected property/year."
+  ]
+}

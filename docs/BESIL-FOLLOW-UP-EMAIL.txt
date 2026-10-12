@@ -1,0 +1,23 @@
+To: Besil Poulose <besilp@invisiabpo.com>
+Subject: RE: POC/ Demo details FYR — Changes implemented and validation update
+
+Hi Besil,
+
+Thank you for testing the POC and sharing your observations.
+
+We have implemented the following changes and validated them in our development environment:
+
+1. Delinquent tax information: Corrected extraction for 1900 N Bayshore Dr, Unit 512. The verified current delinquent amount of $4,085.87 is now retained and displayed, together with the available certificate details.
+
+2. Address search: Made the street suffix optional while preserving checks for the correct street number, direction, unit and owner.
+
+3. Discountable amounts: Added extraction of published discountable totals from the Miami-Dade and Osceola annual tax pages. We also added support for explicitly labelled Bradford totals.
+
+All 306 automated checks pass locally and on the Linux server. The changes are deployed to private Linux staging and have passed startup and API authentication checks. Full live-source verification remains partial because Miami-Dade and Osceola sources blocked some server requests. Public demo rollout is still pending, so these changes are not yet confirmed on the shared URLs.
+
+For Bradford, could you please share one affected property address or parcel ID, the bill year, and the source-page link where the discountable amount is shown? We inspected official Bradford bills and searched publicly available examples, but could not establish the reported discountable subtotal. Your example will help us verify the exact case accurately.
+
+We will confirm completion after validating the Bradford example and completing live-source verification. We also look forward to receiving the requirements for the other two states on Monday.
+
+Best regards,
+Zeneral Team

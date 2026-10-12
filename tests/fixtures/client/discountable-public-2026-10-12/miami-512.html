@@ -1,0 +1,850 @@
+<html lang="en" xml:lang="en"><plasmo-csui></plasmo-csui><head style="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+                        TaxSys - Miami-Dade County Tax Collector    </title>
+
+    <script language="javascript">
+    var app_user_role = 'public';
+    var county_id = 'miamidade';
+    var global_user_id = '6f461a7f-5a2b-11e8-9b2a-005056814855';
+    var global_user_name = 'Public_User';
+</script>
+    <script language="javascript">
+        var psc_client = 'fl-miamidade';
+        var psc_site   = 'taxsys-landing';
+        var psc_tags   = [ 'Property_Tax' ];
+        var environment = 'prod';
+    </script>
+<script async="" src="https://pay-hub.net/web/widgets/current/taxsys-iframe-public.js"></script><script async="" src="https://pay-hub.net/web/widgets/current/cloud-translations.js"></script>
+                <style>
+                    @import url('https://pay-hub.net/web/widgets/current/taxsys-iframe-public.css') layer(taxsys-legacy);
+                </style>
+            
+                <style>
+                    @import url('/iframe-taxsys/miamidade.county-taxes.com/tcb/~56e89e9075bfe718d70b7774c2cb580e324b750b/css?govhub:loading-bars') layer(taxsys-legacy);
+                </style>
+            
+    <script type="text/javascript"> window.static_url_prefix = ''; </script>
+    <script src="/iframe-taxsys/miamidade.county-taxes.com/tcb/~56e89e9075bfe718d70b7774c2cb580e324b750b/javascript?lib/jquery:lib/jquery-placeheld:lib/popper-1.15.0.min:lib/bootstrap-4.3.1.min:lib/jquery.stickybits-3.7.7.min:lib/js.cookie.min:ajax:iframe-whisperer:base:ccutils:dlutils:environment-banner:filtered-search:loading-buttons:main:print-bill-wait:property_tax:timer_cookie:public:public/alert-boxes:loading_bars:public/messages:lib/sentry/bundle.tracing.min:jserror_sentry"></script>    <script src="/iframe-taxsys/miamidade.county-taxes.com/tcb/~56e89e9075bfe718d70b7774c2cb580e324b750b/javascript?lib/css.escape:collapsible:good-faith"></script>
+    <script type="text/javascript" language="javascript">
+                $(function() { set_page_load_cookie(0,'69177EB4-C601-11F1-8CB1-F2636E3EB8DB'); });
+    </script>
+    <script type="text/javascript" language="javascript">
+    window.cc_check_ignore_fields = new Array("search_query", "search_account_number", "search_county_account_number", "account_number");
+</script>    <script type="text/javascript" language="javascript">
+    window.cc_check_warn_fields = new Array("drivers_license_number");
+</script>        <script type="text/javascript" language="javascript">
+        window.dl_check_regexes = ["[a-zA-Z] \\d{3} \\d{3} \\d{3} \\d{3}","[a-zA-Z]\\d{12}","[a-zA-Z]\\d{3}-\\d{3}-\\d{2}-\\d{3}-\\d","[a-zA-Z]-\\d{3}-\\d{3}-\\d{3}-\\d{3}"];
+    </script>            
+    
+            <script language="javascript">
+            var sentry_params = {};
+            $.extend(true, sentry_params,
+                { integrations: [Sentry.browserTracingIntegration()]},
+                {"tracesSampleRate":0.01,"autoSessionTracking":true,"environment":"prod","sampleRate":1,"release":"tax-cbs@56e89e9075bfe718d70b7774c2cb580e324b750b","initialScope":{"user":{"session_id":"265346599620649228064743106258551483023","id":"3","email":null,"username":"public_user","first_name":"Public","sso_class":null,"last_name":"User","oidc_subject":null,"role":"public"},"tags":{"app_site":"miamidade.county-taxes.com","request_id":"69177EB4-C601-11F1-8CB1-F2636E3EB8DB","county":"miamidade"}},"attachStacktrace":true,"dsn":"https://5efe114e037640859e5b43c59e5dc5d1@o168195.ingest.sentry.io/5729937"},
+                { initialScope: { tags: { url: window.location.pathname } } }
+            );
+            Sentry.init(sentry_params);
+        </script>
+    
+        <script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script></head>
+<body class="public-v2 public-govhub property_tax js" data-correlation-id="tax-cbs:69178238-C601-11F1-BD43-923C3634D037">
+    <div class="modals">
+    <div class="modal" id="session-validation" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Validating your session</h5>
+                </div>
+                <div class="modal-body row justify-content-center">
+                    <div class="col-12">
+                        <span class="loading-bars" role="status">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Loading</span>
+</span>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="container-fluid">
+    <div class="row banners">
+        <div class="col-12">
+            <div class="row" id="message_container" aria-live="assertive"></div>
+        </div>
+    </div>
+
+    
+    <input type="hidden" id="govhub-redirect-path" name="govhub-redirect-path">
+
+    <main class="page-content">
+            <section class="content-card account property-tax details">
+        <div class="d-flex justify-content-between align-items-center">
+        <div class="row no-gutters align-items-center">
+            <div class="col-auto"><a href="https://county-taxes.net/fl-miamidade/property-tax" onclick="return iframe_navigate('/property-tax', 'navigation')">    <div class="row no-gutters flex-nowrap align-items-center icon-link pagination-back">                    <div class="col link-text">
+                Search            </div>
+            <div class="col wait-link-text d-none">
+                <em class="text-muted">Downloading...</em>
+            </div>
+            </div>
+</a></div><div class="col-auto"><span class="d-inline-flex align-items-center justify-content-center pagination-next icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9.306" height="16" viewBox="0 0 9.306 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="16" height="9.306" fill="none"></rect>
+    </clipPath>
+  </defs>
+  <g id="caret" transform="translate(9.306) rotate(90)" clip-path="url(#clip-path)">
+    <g id="Artwork_10" data-name="Artwork 10" transform="translate(12.5 2.305) rotate(-90)">
+      <path id="Artwork_10-2" data-name="Artwork 10" d="M0,14,7.306,7,0,0" transform="translate(-6.001 -11.5)" fill="none" stroke="#0077b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    </g>
+  </g>
+</svg></span></div><div class="col-auto"><a href="https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5" onclick="return iframe_navigate('/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5', '')">    <div class="row no-gutters flex-nowrap align-items-center icon-link ">                    <div class="col link-text">
+                Account Summary            </div>
+            <div class="col wait-link-text d-none">
+                <em class="text-muted">Downloading...</em>
+            </div>
+            </div>
+</a></div><div class="col-auto"><span class="d-inline-flex align-items-center justify-content-center pagination-next icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9.306" height="16" viewBox="0 0 9.306 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="16" height="9.306" fill="none"></rect>
+    </clipPath>
+  </defs>
+  <g id="caret" transform="translate(9.306) rotate(90)" clip-path="url(#clip-path)">
+    <g id="Artwork_10" data-name="Artwork 10" transform="translate(12.5 2.305) rotate(-90)">
+      <path id="Artwork_10-2" data-name="Artwork 10" d="M0,14,7.306,7,0,0" transform="translate(-6.001 -11.5)" fill="none" stroke="#0077b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+    </g>
+  </g>
+</svg></span></div><div class="col-auto">Bill Details</div>
+        </div>
+            </div>
+    <div class="account-header">
+        <div class="row no-gutters">
+            <h1 class="col col-md">Real Estate  Account #01-3231-067-0130</h1>
+                    </div>
+
+        
+        <div class="row">
+            <div class="col-12 col-md-auto account-detail">
+            <div class="label">
+        Owner:
+    </div>
+    <div class="value">                <div class="owner" translate="no">ALLEN HASBUN</div>                <div class="owner" translate="no">CHRISTIE HASBUN</div>    </div>        </div>
+
+        <div class="col-12 col-md-auto account-detail">
+            <div class="label" translate="no">
+                Situs:
+            </div>
+            <div class="value" translate="no">
+                1900 N BAYSHORE DR 512<br>
+Miami    33132-0000            </div>
+        </div>
+
+        <div class="col-12 col-md-auto account-detail">
+            <div class="parcel" translate="no"><a href="https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a#parcel" onclick="return iframe_navigate('/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a#parcel', '')">    <div class="row no-gutters flex-nowrap align-items-center icon-link info">                    <div class="col link-text">
+                Parcel details            </div>
+            <div class="col wait-link-text d-none">
+                <em class="text-muted">Downloading...</em>
+            </div>
+            </div>
+</a>            </div>                <div><a href="https://www.miamidade.gov/Apps/PA/propertysearch/#/?folio=0132310670130" target="_blank">Property Appraiser <span class="hint" aria-label="External Link">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="1894 1019.793 24.207 24.207"><defs><style>.a{fill:none;stroke:#666;stroke-linecap:round;stroke-linejoin:round;}</style></defs><g transform="translate(1906 1032)"><g transform="translate(-11.5 -11.5)"><path class="a" d="M21.5,13v8.674A1.826,1.826,0,0,1,19.674,23.5H2.326A1.826,1.826,0,0,1,.5,21.674V4.326A1.826,1.826,0,0,1,2.326,2.5H11" transform="translate(-0.5 -0.5)"></path><line class="a" x2="6" transform="translate(17)"></line><line class="a" y1="6" transform="translate(23)"></line><line class="a" y1="11" x2="11" transform="translate(12)"></line></g></g></svg></span>    </a>                </div>                <div class="icon-link">
+                    <span class="d-inline-flex align-items-center justify-content-center homestead icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17">
+  <g id="homestead" transform="translate(0.5 0.5)">
+    <path id="Path_6530" data-name="Path 6530" d="M166.625,798.767c2.189,1.165,4.28,2.418,6.5,2.087L172.4,809.2c-1.2,3.345-4,3.558-5.778,5.565-1.776-2.007-4.574-2.22-5.777-5.565l-.723-8.348C162.346,801.185,164.437,799.932,166.625,798.767Z" transform="translate(-160.125 -798.767)" fill="none" stroke="#666" stroke-linejoin="round" stroke-width="1"></path>
+    <path id="Path_6531" data-name="Path 6531" d="M163.014,805.724A12.617,12.617,0,0,1,165.9,809.9a40.495,40.495,0,0,1,5.056-6.261" transform="translate(-160.125 -798.767)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+  </g>
+</svg></span>                    Homestead Exemption
+                </div>        </div>                                </div>
+        
+    </div>
+    
+            <div id="billexpress-panel" class="content-group">
+    <div class="row no-gutters align-items-center">
+        <div class="col-auto billexpress">
+                            <a href="https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/billexpress" onclick="return iframe_navigate('/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/billexpress', '')">                    <img src="/iframe-taxsys/miamidade.county-taxes.com/images/public/billexpress-icon.png" alt="">                </a>                    </div>
+        <div class="col ml-3">
+                            <a href="https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/billexpress" onclick="return iframe_navigate('/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/billexpress', '')">                    <h2 class="link-text mb-0">Enroll in paperless</h2>
+                </a>                        <a href="https://county-taxes.net/fl-miamidade/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/billexpress" onclick="return iframe_navigate('/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/billexpress', '')">                <div class="link-text mt-1">Sign up</div>
+            </a>                    </div>
+    </div>
+</div>    
+            <input type="hidden" name="add_to_cart_workflow" id="add_to_cart_workflow">
+        <div class="content-group individual-bill individual-bill-re">
+            <div class="row">
+                <h2 class="col-12 d-flex bill-label" id="bill">
+                    <span translate="no">2025</span>‍ Annual bill                </h2>
+            </div>
+
+            <div class="row notices">
+                <div class="col-6 d-md-block tax-office-title">Miami-Dade County Tax Collector    </div>
+
+    <div class="col-6 d-md-flex justify-content-end statute-notice-of">
+        Notice of Ad Valorem Taxes and Non-ad Valorem Assessments
+    </div>            </div>
+
+                            <table class="table table-hover bills">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="description">Bill</th>                            <th scope="col" class="d-none d-md-table-cell escrow">
+                                Escrow code                            </th>
+                            <th scope="col" class="d-none d-md-table-cell millage">
+                                Millage code                            </th>
+                            <th scope="col" class="balance">
+                                Amount due
+                            </th>
+                            <td scope="col" class="d-none d-md-table-cell actions">
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <th scope="row" class="description">
+                                2025 Annual bill                            </th>                            <td class="d-none d-md-table-cell escrow" translate="no">
+                                —                            </td>
+                            <td class="d-none d-md-table-cell millage" translate="no">
+                                0100                            </td>
+                            <td class="balance for-cart" translate="no">                                    $4,085.87                            </td>
+                            <td class="d-none d-md-flex justify-content-end actions">
+                                <div>
+                                            
+            <form onsubmit="return iframe_add_to_cart( this )">
+                                    <input type="hidden" name="payables_amount">
+                    <input type="hidden" name="payables_path">
+                <input type="hidden" name="security_code">
+                <input type="hidden" name="transaction_item_type_name">
+                        <input type="hidden" name="bill_id">
+                        <button class="btn btn-primary loading-button btn btn-mobile-block" type="submit">
+    <span class="loading-button-indicator">
+        <span class="loading-bars" role="status">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Loading</span>
+</span>    </span>
+    <span class="loading-button-content">Add to Cart</span></button>            </form>                                    <div class="d-flex justify-content-end print-bill">
+                                        <a href="https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a/print" class="js-ga-track-download print-link-with-icon" print_wait_time="5">    <div class="row no-gutters flex-nowrap align-items-center icon-link print">            <div class="col-auto d-flex align-items-center">
+                <span class="d-inline-flex align-items-center justify-content-center print icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="1944 1220 24.001 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #666;
+      }
+
+      .cls-1 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="print" transform="translate(1956 1232)">
+    <g id="fax" transform="translate(-11.5 -11.5)">
+      <path id="Path_1112" data-name="Path 1112" class="cls-1" d="M18.5,17.5h4.005a1.024,1.024,0,0,0,.995-1.04V9.1A2,2,0,0,0,23.165,8l-1.66-2.5H2.5L.836,8A2,2,0,0,0,.5,9.106V16.46a1.024,1.024,0,0,0,.995,1.04H5.5" transform="translate(-0.5 -0.5)"></path>
+      <rect id="Rectangle_653" data-name="Rectangle 653" class="cls-1" width="13" height="5" transform="translate(5)"></rect>
+      <rect id="Rectangle_654" data-name="Rectangle 654" class="cls-1" width="13" height="9" transform="translate(5 14)"></rect>
+      <line id="Line_1166" data-name="Line 1166" class="cls-1" x2="7" transform="translate(8 17)"></line>
+      <line id="Line_1167" data-name="Line 1167" class="cls-1" x2="5" transform="translate(8 20)"></line>
+      <circle id="Ellipse_376" data-name="Ellipse 376" class="cls-2" cx="0.5" cy="0.5" r="0.5" transform="translate(15.5 8.5)"></circle>
+      <circle id="Ellipse_377" data-name="Ellipse 377" class="cls-2" cx="0.5" cy="0.5" r="0.5" transform="translate(19.5 8.5)"></circle>
+      <line id="Line_1168" data-name="Line 1168" class="cls-1" x2="17" transform="translate(3 14)"></line>
+    </g>
+  </g>
+</svg></span>            </div>                    <div class="col link-text">
+                Print (PDF)            </div>
+            <div class="col wait-link-text d-none">
+                <em class="text-muted">Downloading...</em>
+            </div>
+            </div>
+</a>                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="d-table-row d-md-none mobile-actions">
+                            <td scope="row" class="d-none d-md-table-cell description"></td>
+                            <td colspan="2" class="actions">
+                                        
+            <form onsubmit="return iframe_add_to_cart( this )">
+                                    <input type="hidden" name="payables_amount">
+                    <input type="hidden" name="payables_path">
+                <input type="hidden" name="security_code">
+                <input type="hidden" name="transaction_item_type_name">
+                        <input type="hidden" name="bill_id">
+                        <button class="btn btn-primary loading-button btn btn-mobile-block" type="submit">
+    <span class="loading-button-indicator">
+        <span class="loading-bars" role="status">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Loading</span>
+</span>    </span>
+    <span class="loading-button-content">Add to Cart</span></button>            </form>                                <div class="d-flex justify-content-end print-bill">
+                                    <a href="https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a/print" class="js-ga-track-download print-link-with-icon" print_wait_time="5">    <div class="row no-gutters flex-nowrap align-items-center icon-link print">            <div class="col-auto d-flex align-items-center">
+                <span class="d-inline-flex align-items-center justify-content-center print icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="1944 1220 24.001 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #666;
+      }
+
+      .cls-1 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="print" transform="translate(1956 1232)">
+    <g id="fax" transform="translate(-11.5 -11.5)">
+      <path id="Path_1112" data-name="Path 1112" class="cls-1" d="M18.5,17.5h4.005a1.024,1.024,0,0,0,.995-1.04V9.1A2,2,0,0,0,23.165,8l-1.66-2.5H2.5L.836,8A2,2,0,0,0,.5,9.106V16.46a1.024,1.024,0,0,0,.995,1.04H5.5" transform="translate(-0.5 -0.5)"></path>
+      <rect id="Rectangle_653" data-name="Rectangle 653" class="cls-1" width="13" height="5" transform="translate(5)"></rect>
+      <rect id="Rectangle_654" data-name="Rectangle 654" class="cls-1" width="13" height="9" transform="translate(5 14)"></rect>
+      <line id="Line_1166" data-name="Line 1166" class="cls-1" x2="7" transform="translate(8 17)"></line>
+      <line id="Line_1167" data-name="Line 1167" class="cls-1" x2="5" transform="translate(8 20)"></line>
+      <circle id="Ellipse_376" data-name="Ellipse 376" class="cls-2" cx="0.5" cy="0.5" r="0.5" transform="translate(15.5 8.5)"></circle>
+      <circle id="Ellipse_377" data-name="Ellipse 377" class="cls-2" cx="0.5" cy="0.5" r="0.5" transform="translate(19.5 8.5)"></circle>
+      <line id="Line_1168" data-name="Line 1168" class="cls-1" x2="17" transform="translate(3 14)"></line>
+    </g>
+  </g>
+</svg></span>            </div>                    <div class="col link-text">
+                Print (PDF)            </div>
+            <div class="col wait-link-text d-none">
+                <em class="text-muted">Downloading...</em>
+            </div>
+            </div>
+</a>                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <div class="row bill-taxes-extra">                            <div class="col-12 col-md-auto certificate">
+                                <div>
+                                    Face Amt <span translate="no">3,885.35</span>
+                                </div>
+                                <div>
+                                    Bid % <span translate="no">0.25</span>
+                                </div>
+                                <div>
+                                    Bidder <span translate="no">3781055</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-auto certificate">
+                                <div>
+                                    Certificate <span translate="no">#3299</span>
+                                </div>
+                                <div>
+                                    Issued Year 2026                                </div>
+                            </div>                    </div>
+
+                    <div class="row bill-taxes">
+                        <div class="col-6 col-md-2 header">
+                            If received by:
+                        </div>
+                        <div class="col-6 col-md-2 order-md-7 header">
+                            Please pay:
+                        </div>
+                                <div class="col-6 col-md-2" translate="no">
+                                    Oct 30, 2026                                </div>
+                                <div class="col-6 col-md-2 order-md-8" translate="no">
+                                    $4,085.87                                </div>
+                                <div class="col-6 col-md-2" translate="no">
+                                    Nov 30, 2026                                </div>
+                                <div class="col-6 col-md-2 order-md-9" translate="no">
+                                    $4,085.87                                </div>
+                                <div class="col-6 col-md-2" translate="no">
+                                    Dec 31, 2026                                </div>
+                                <div class="col-6 col-md-2 order-md-10" translate="no">
+                                    $4,085.87                                </div>
+                            <div class="col-6 col-md-2">
+                            </div>
+                            <div class="col-6 col-md-2 order-md-11">
+                            </div>
+                            <div class="col-6 col-md-2">
+                            </div>
+                            <div class="col-6 col-md-2 order-md-12">
+                            </div>
+                    </div>
+                <div class="row messages">                        <div class="col-12 message">
+                            Combined taxes and assessments: <span translate="no">$3,477.20</span>                        </div>
+                            <div class="col-12 message">
+                                <b><font color="darkred">Amounts due subject to change without notice.</font></b>                            </div>                        <div class="col-12"><div class="alert alert-warning">
+    Mail your payment, in U.S. funds from a </div><div class="alert alert-warning">
+    U.S. bank, and payable to:</div><div class="alert alert-warning">
+    DARIEL FERNANDEZ,</div><div class="alert alert-warning">
+    TAX COLLECTOR, MIAMI-DADE COUNTY</div><div class="alert alert-warning">
+    200 NW 2nd Avenue, Miami, FL 33128</div>                        </div>                </div>
+
+                <div class="row bill-links">
+        <div class="col-12 col-md-auto d-flex">
+                                            </div>
+
+                    <div class="col-12 col-md-auto d-flex">
+                                            </div>    </div>            
+                        <div class="row advalorem">
+        <h3 class="col-12">Ad Valorem Taxes</h3>
+
+        
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="d-none d-md-table-cell name">Taxing authority</th>                        <th scope="col" class="millage">Millage</th>                            <th scope="col" class="d-none d-md-table-cell assessed">Assessed</th>                            <th scope="col" class="d-none d-md-table-cell exemption">Exemption</th>                        <th scope="col" class="d-none d-md-table-cell taxable">Taxable</th>                                                <th scope="col" class="tax">Tax</th>
+                    </tr>
+                </thead>
+
+                    <tbody class="district-group">
+                        <tr class="d-none d-md-table-row" translate="no">
+                            <th scope="row" class="name">
+                                Miami-Dade School Board                            </th>                                <td colspan="5"></td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                School Board Operating                            </th>                                <td class="millage">
+                                    5.49900                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $25,000.00                                    </td>                                <td class="taxable">
+                                    $191,152.00                                </td>                                <td class="tax">$1,051.15                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                School Board Debt Service                            </th>                                <td class="millage">
+                                    0.13400                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $25,000.00                                    </td>                                <td class="taxable">
+                                    $191,152.00                                </td>                                <td class="tax">$25.61                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Voted School Operating                            </th>                                <td class="millage">
+                                    1.00000                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $25,000.00                                    </td>                                <td class="taxable">
+                                    $191,152.00                                </td>                                <td class="tax">$191.15                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="district-group">
+                        <tr class="d-none d-md-table-row" translate="no">
+                            <th scope="row" class="name">
+                                State and Other                            </th>                                <td colspan="5"></td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Florida Inland Navigation District                            </th>                                <td class="millage">
+                                    0.02700                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$4.47                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                South Florida Water Management District                            </th>                                <td class="millage">
+                                    0.09480                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$15.68                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Okeechobee Basin                            </th>                                <td class="millage">
+                                    0.10260                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$16.97                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Everglades Construction Project                            </th>                                <td class="millage">
+                                    0.03270                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$5.41                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Childrens Trust Authority                            </th>                                <td class="millage">
+                                    0.46380                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$76.73                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="district-group">
+                        <tr class="d-none d-md-table-row" translate="no">
+                            <th scope="row" class="name">
+                                Miami-Dade County                            </th>                                <td colspan="5"></td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                County Wide Operating                            </th>                                <td class="millage">
+                                    4.57400                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$756.68                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                County Wide Debt Service                            </th>                                <td class="millage">
+                                    0.41710                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$69.00                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Library District                            </th>                                <td class="millage">
+                                    0.28120                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$46.52                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="district-group">
+                        <tr class="d-none d-md-table-row" translate="no">
+                            <th scope="row" class="name">
+                                Municipal Governing Board                            </th>                                <td colspan="5"></td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Miami Operating                            </th>                                <td class="millage">
+                                    7.10800                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$1,175.88                                </td>                        </tr>
+                    </tbody>
+                    <tbody class="taxing-authority">
+                        <tr class="d-none d-md-table-row grouped" translate="no">
+                            <th scope="row" class="name">
+                                Miami Debt Service                            </th>                                <td class="millage">
+                                    0.25360                                </td>                                    <td class="assessed">
+                                        $216,152.00                                    </td>                                    <td class="exemption">
+                                        $50,722.00                                    </td>                                <td class="taxable">
+                                    $165,430.00                                </td>                                <td class="tax">$41.95                                </td>                        </tr>
+                    </tbody>
+                <tfoot>
+                    <tr>                            <th scope="row" class="d-none d-md-table-cell name">
+                                Total Ad Valorem Taxes
+                            </th>
+                            <td class="millage" translate="no">
+                                19.98780                            </td>                            <td colspan="3" class="d-none d-md-table-cell">
+                            </td>                            <td class="tax" translate="no">$3,477.20                            </td>                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+                                    <div class="row nonadvalorem">
+        <h3 class="col-12">Non-Ad Valorem Assessments</h3>
+
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="d-flex">
+                        <th scope="col" class="col-12 col-md d-none d-md-table-cell levying-authority">Levying authority</th>
+                                                <th scope="col" class="col-2 d-none d-md-table-cell rate">Rate</th>
+                        <th scope="col" class="col-2 amount">Amount</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr class="d-flex">                            <th scope="row" colspan="3" class="no-taxes">
+                                No Non-Ad Valorem assessments.
+                            </th>                    </tr>
+                </tfoot>
+            </table>
+            <div>
+                                    </div>
+        </div>
+    </div>
+        </div>
+
+                    <div class="content-group details parcel">
+                <div class="row">
+                    <h2 class="col-12 d-flex bill-label" id="parcel" translate="no">
+                        Parcel details
+                    </h2>
+                </div>
+
+                <div class="row detail">
+                    <div class="col-12 col-md-4 owners">
+                        <div class="row no-gutters px-1 address selected"><div class="col label">
+        Owner:
+    </div>
+    <div class="col value">                <div class="owner" translate="no">ALLEN HASBUN</div>                <div class="owner" translate="no">CHRISTIE HASBUN</div>    </div>                        </div>
+
+                        <div class="row no-gutters px-1 address situs">
+                            <div class="col label" translate="no">
+                                Situs:
+                            </div>
+                            <div class="col value" translate="no">
+                                1900 N BAYSHORE DR 512<br>
+Miami    33132-0000                            </div>
+                        </div>
+                    </div>
+
+                        <div class="col-12 col-md-4 account-details">
+        
+                    <div class="row no-gutters px-1">
+                <div class="col label">
+                    Account                </div>
+                <div class="col value" translate="no">
+                    01-3231-067-0130                </div>
+            </div>
+                    <div class="row no-gutters px-1">
+                <div class="col label">
+                    Millage code                </div>
+                <div class="col value" translate="no">
+                    0100 - MIAMI                </div>
+            </div>
+                    <div class="row no-gutters px-1">
+                <div class="col label">
+                    Millage rate                </div>
+                <div class="col value" translate="no">
+                    19.98780                </div>
+            </div>
+            </div>
+
+
+                    <div class="col-12 col-md-4 parcel-values">
+                        <div class="row no-gutters px-1">
+                            <div class="col-8 label">
+                                Assessed value:
+                            </div>
+                            <div class="col d-flex justify-content-end value" translate="no">
+                                $216,152                            </div>
+                        </div>
+                            <div class="row no-gutters px-1">
+                                <div class="col-8 label">
+                                    School assessed value:
+                                </div>
+                                <div class="col d-flex justify-content-end value" translate="no">
+                                    $216,152                                </div>
+                            </div>                    </div>
+                </div>
+
+                <div class="row detail">
+                    <div class="col-12 col-md-4 bill-details">                            <div class="row no-gutters px-2 header">
+                                <div class="col-12">
+                                    2025 Tax Amounts
+                                </div>
+                            </div>
+
+                            <div class="row no-gutters px-2">
+                                <div class="col label">
+                                    Ad valorem:
+                                </div>
+                                <div class="col d-flex justify-content-end value" translate="no">
+                                    $3,477.20                                </div>
+                            </div>
+
+                            <div class="row no-gutters px-2">
+                                <div class="col label">
+                                    Non-ad valorem:
+                                </div>
+                                <div class="col d-flex justify-content-end value" translate="no">
+                                    $0.00                                </div>
+                            </div>
+
+                            <div class="row no-gutters px-2">
+                                <div class="col label">
+                                    Total Discountable:
+                                </div>
+                                <div class="col d-flex justify-content-end value" translate="no">
+                                    $3,477.20                                </div>
+                            </div>
+                            <div class="row no-gutters px-2">
+                                <div class="col label">
+                                    Total tax:
+                                </div>
+                                <div class="col d-flex justify-content-end value" translate="no">
+                                    $3,477.20                                </div>
+                            </div>                    </div>
+<div class="col-12 col-md-4 legal">
+        <div class="row no-gutters px-2 header">
+            <div class="col-12">
+                Legal description
+            </div>
+        </div>
+
+        <div class="row no-gutters px-1">
+            <div id="truncated-legal-description" class="col-12" translate="no">
+                QUANTUM ON THE BAY CONDO NORTH
+UNIT 512
+UNIDV 0.42625%
+INT IN COMMON ELEMENTS
+OFF REC 2622                    <span class="truncated">...</span>
+                    <span class="expanded" style="display: none;">
+                        9-0646                    </span>            </div>
+            <div class="col-12 text-right smaller">                    <button id="truncated-legal-description-button" type="button" class="toggle btn btn-link" onclick="return toggle_legal();" aria-controls="truncated-legal-description" aria-expanded="false">
+                        <span class="truncated">View More</span>
+                        <span class="expanded" style="display: none;">View Less</span>
+                    </button>            </div>
+        </div>
+    </div>                        <div class="col-12 col-md-4 location">
+                            <div class="row no-gutters px-2 header">
+                                <div class="col-12">
+                                    Location
+                                </div>
+                            </div>
+
+                                <div class="row no-gutters px-1">
+                                    <div class="col label">
+                                        Range:
+                                    </div>
+                                    <div class="col value" translate="no">
+                                        42E                                    </div>
+                                </div>
+                                <div class="row no-gutters px-1">
+                                    <div class="col label">
+                                        Township:
+                                    </div>
+                                    <div class="col value" translate="no">
+                                        53S                                    </div>
+                                </div>
+                                <div class="row no-gutters px-1">
+                                    <div class="col label">
+                                        Section:
+                                    </div>
+                                    <div class="col value" translate="no">
+                                        31                                    </div>
+                                </div>
+                                <div class="row no-gutters px-1">
+                                    <div class="col label">
+                                        Block:
+                                    </div>
+                                    <div class="col value" translate="no">
+                                        30                                    </div>
+                                </div>
+                                <div class="row no-gutters px-1">
+                                    <div class="col label">
+                                        Use code:
+                                    </div>
+                                    <div class="col value" translate="no">
+                                        0407                                    </div>
+                                </div>                        </div>                </div>
+
+                <div class="row detail">                        <div class="col-12 col-md-4 exemptions">
+                            <div class="row no-gutters px-2 header">
+                                <div class="col-12">
+                                    Exemptions
+                                </div>
+                            </div>
+                                <div class="row no-gutters px-1">
+                                    <div class="col-7 label" translate="no">
+                                        ADDL HOMESTEAD                                    </div>
+                                    <div class="col d-flex justify-content-end value" translate="no">
+                                        $25,722                                    </div>
+                                </div>                                <div class="row no-gutters px-1">
+                                    <div class="col-7 label" translate="no">
+                                        HOMESTEAD                                    </div>
+                                    <div class="col d-flex justify-content-end value" translate="no">
+                                        $25,000                                    </div>
+                                </div>                        </div>                </div>
+            </div>
+                    <div class="content-group details certificate">
+    <div class="row">
+        <h2 class="col-12" id="certificate">
+            Certificate #3299        </h2>
+    </div>
+
+    <div class="row no-gutters px-1">
+        <div class="col-12 warning">
+            This <span translate="no">parcel</span> has an            issued certificate for 2025.
+        </div>
+    </div>
+
+    <div class="row detail">
+        <div class="col-12 col-md-4">
+            <div class="row no-gutters px-1">
+                <div class="col label">
+                    Advertised number:
+                </div>
+                <div class="col value">
+                    3948                </div>
+            </div>
+
+            <div class="row no-gutters px-1">
+                <div class="col label">
+                    Face amount:
+                </div>
+                <div class="col value" translate="no">
+                    $3,885.35                </div>
+            </div>
+                <div class="row no-gutters px-1">
+                    <div class="col label">
+                        Issued date:
+                    </div>
+                    <div class="col value">
+                        <time>06/01/2026</time>
+                    </div>
+                </div>                <div class="row no-gutters px-1">
+                    <div class="col label">
+                        Expiration date:
+                    </div>
+                    <div class="col value">
+                        <time>06/01/2033</time>
+                    </div>
+                </div>        </div>
+
+        <div class="col-12 col-md-4">                <div class="row no-gutters px-1">
+                    <div class="col label">
+                        Buyer:
+                    </div>
+                    <div class="col value">                            <div>Bidder number 3781055</div>
+                        <div translate="no">BALA PARTNERS LLC<br>
+1 AMERICAN LN STE 220<br>
+GREENWICH, CT    06831</div>
+                    </div>
+                </div>
+            <div class="row no-gutters px-1">
+                <div class="col label">
+                    Interest rate:
+                </div>
+                <div class="col value">
+                    0.25%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="row mailing-address">
+            <div class="col-auto">
+                <div class="label" translate="no">
+                    Miami-Dade County Tax Collector                </div>
+                <div class="value" translate="no">
+                    200 NW 2nd Avenue, Miami, FL 33128                </div>
+            </div>
+        </div>
+    </section>    </main>
+</div>
+</body><div id="codex-agent-overlay-root" data-codex-agent-overlay-root="true"></div></html>

@@ -1,0 +1,10 @@
+{
+  "source_url": "https://county-taxes.net/iframe-taxsys/miamidade.county-taxes.com/govhub/property-tax/bWlhbWlkYWRlOnJlYWxfZXN0YXRlOnBhcmVudHM6ZjNmMGJmOWItZTUwOS0xMWViLWE2MzItMDA1MDU2ODE0OWU5/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a/print",
+  "retrieved_on": "2026-10-12",
+  "format": "original PDF",
+  "sha256": "784e7db43a4218dd08275c6baca8a9f8be8956c7e464b95167886802b952d165",
+  "parcel": "01-3231-067-0130",
+  "bill_year": 2025,
+  "document_type": "Delinquent Tax Certificate Redemption",
+  "note": "Source-derived offline regression fixture. Runtime never substitutes this file for a fresh source response."
+}

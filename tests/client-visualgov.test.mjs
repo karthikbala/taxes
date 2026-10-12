@@ -78,18 +78,18 @@ test('wrong parcel/year, mismatched annual identity, challenges and conflicting 
 test('missing tables/fields retain available bill data and explicit partial/unavailable outcomes',()=>{
   const missing=parse(mutate($=>{$(id('dgAdValorem')).remove();$(id('dgNonAdValorem')).remove();$(id('lblExemption')).remove();summary($).remove();$(id('lblUnpaidBalance')).remove();}));
   assert.equal(missing.section_status.AdValoremMillage,'UNAVAILABLE');assert.equal(missing.section_status.NonAdValorem,'UNAVAILABLE');
-  assert.equal(missing.section_status.Exemptions,'UNAVAILABLE');assert.equal(missing.section_status.TaxAmounts,'PARTIAL');
+  assert.equal(missing.section_status.Exemptions,'UNAVAILABLE');assert.equal(missing.section_status.TaxAmounts.status,'PARTIAL');
   assert.equal(missing.history.coverage,'UNAVAILABLE');assert.equal(missing.section_status.AccountHistory,'UNAVAILABLE');
   assert.equal(missing.TaxInformation.amountDue,null);assert.equal(missing.section_status.TaxInformation,'PARTIAL');assert.equal(missing.TaxInformation.type,'UNKNOWN');
   assert.equal(missing.TaxAmounts.totalTax,'$201,605.05');assert.equal(missing.BillDetails.paidAmount,'$193,540.85');
   const malformed=parse(mutate($=>$(id('dgAdValorem')).find('tr').eq(1).children('td').eq(1).text('NOT A RATE')));
   assert.equal(malformed.section_status.AdValoremMillage,'PARTIAL');assert.equal(malformed.validation.adValoremReconciliation,'UNAVAILABLE');
-  assert.equal(malformed.section_status.TaxAmounts,'PARTIAL');assert.equal(malformed.AdValoremMillage.length,4);
+  assert.equal(malformed.section_status.TaxAmounts.status,'PARTIAL');assert.equal(malformed.AdValoremMillage.length,4);
 });
 
 test('gross totals reconcile at a five-cent tolerance and larger source discrepancies remain partial',()=>{
   const near=parse(mutate($=>$(id('lblCombinedTotal')).text('$201,605.09')));
   assert.equal(near.validation.combinedTotalReconciliation,'MATCHED');
   const different=parse(mutate($=>$(id('lblCombinedTotal')).text('$201,605.11')));
-  assert.equal(different.validation.combinedTotalReconciliation,'DIFFERENT');assert.equal(different.section_status.TaxAmounts,'PARTIAL');
+  assert.equal(different.validation.combinedTotalReconciliation,'DIFFERENT');assert.equal(different.section_status.TaxAmounts.status,'PARTIAL');
 });

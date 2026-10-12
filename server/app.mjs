@@ -54,7 +54,7 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
    if(path==='/api/v2/diagnostics/miami-tax-deed'){
     if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
     const input=await inputJSON(request);if(!input||Array.isArray(input)||typeof input!=='object'||Object.keys(input).some(k=>k!=='folio'))return error('invalid_input',400,'Fixed source probe accepts only an optional Miami folio.');
-    const backend=track(discoverMiamiDeed(env,{signal:request.signal,requestId,folio:input.folio}));return json(await backend);
+    const backend=track(discoverMiamiDeed(env,{signal:request.signal,requestId,folio:input.folio,managedBrowser}));return json(await backend);
    }
    if(path==='/api/v2/diagnostics/miami-external-test-budget'){
     if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');

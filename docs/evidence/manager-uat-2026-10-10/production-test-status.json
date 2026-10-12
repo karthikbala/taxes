@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-10T11:35:24.240390+00:00",
+  "url": "https://taxes.zeneral.ai/poc",
+  "page_observed": true,
+  "lookup_submitted": false,
+  "reason": "Current production managed-provider budget and entitlement preflight unavailable. Prepared-input screenshots are not extraction results.",
+  "public_capabilities_direct_request": "HTTP 403; no retry",
+  "production_changed": false,
+  "paid_requests_this_pack": 0
+}
