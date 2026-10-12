@@ -38,7 +38,7 @@ Request ID: `1a77f6cf-7735-4eb7-b00b-8561ea70d23c`. Started `2026-10-12T09:06:03
 | Payment | **$273,974.06**, 18 November 2025, receipt `121702900` |
 | Sales | Three native rows |
 | Extraction errors | Empty array |
-| UI | Results ready; exact parcel, bill year, amounts and payment rendered; JSON downloaded from the page DOM and independently asserted |
+| UI | Results ready; exact parcel, bill year, amounts and payment rendered; JSON saved from the page DOM and independently asserted |
 
 Original annual PDF SHA-256: `472dea39f0d24ef16030c2b56cce97645c6f9c585981e680d6d9af1c5e605523`.
 
