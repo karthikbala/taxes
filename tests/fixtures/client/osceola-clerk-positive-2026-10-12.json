@@ -1,0 +1,210 @@
+{
+  "event": "contract_result",
+  "name": "clerk-positive-query",
+  "at": "2026-10-12T09:47:39.971Z",
+  "source_url": "https://officialrecords.osceolaclerk.org/browserviewtd/api/search",
+  "http_status": 200,
+  "bytes": 2438,
+  "sha256": "0dc9e876cbce523d22f457f9ec56a9093db812865f637286d83231d691261768",
+  "request_cost": "10",
+  "remaining_credits": "249619",
+  "requested_parcel": "132731999204320020",
+  "query": {
+    "ParcelNumber": "132731999204320020",
+    "MaxRows": 100,
+    "RowsPerPage": 0,
+    "StartRow": 0
+  },
+  "rows": [
+    {
+      "deed_id": 5840,
+      "tax_number": 81282013,
+      "cr_date": "2020-04-13T00:00:00",
+      "trans_amt": 1924.26,
+      "bid_amt": null,
+      "type_code": "A",
+      "last_name": "MARK H FINK",
+      "strap_num": "132731999204320020",
+      "deed_status": "REDEEM",
+      "sale_date": "2020-07-14T00:00:00",
+      "ref_1": "079-2020",
+      "rowid": 1,
+      "_start_row": 1,
+      "_end_row": 1,
+      "_total_rows": 1,
+      "_headers": [
+        {
+          "field": "deed_id",
+          "caption": "Detail",
+          "index": 0,
+          "colIndex": 0,
+          "order": 1,
+          "width": 90,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "tax_number",
+          "caption": "Tax Number",
+          "index": 1,
+          "colIndex": 0,
+          "order": 1,
+          "width": 175,
+          "autosize": true,
+          "cellFilter": null
+        },
+        {
+          "field": "cr_date",
+          "caption": "Create Date",
+          "index": 2,
+          "colIndex": 0,
+          "order": 2,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": "date:'MM/dd/yyyy'"
+        },
+        {
+          "field": "trans_amt",
+          "caption": "Base Bid",
+          "index": 3,
+          "colIndex": 0,
+          "order": 3,
+          "width": 125,
+          "autosize": false,
+          "cellFilter": "currency"
+        },
+        {
+          "field": "bid_amt",
+          "caption": "Highest Bid",
+          "index": 4,
+          "colIndex": 0,
+          "order": 4,
+          "width": 125,
+          "autosize": false,
+          "cellFilter": "currency"
+        },
+        {
+          "field": "type_code",
+          "caption": "Type",
+          "index": 5,
+          "colIndex": 0,
+          "order": 5,
+          "width": 60,
+          "autosize": true,
+          "cellFilter": null
+        },
+        {
+          "field": "last_name",
+          "caption": "Name",
+          "index": 6,
+          "colIndex": 0,
+          "order": 6,
+          "width": 200,
+          "autosize": true,
+          "cellFilter": null
+        },
+        {
+          "field": "strap_num",
+          "caption": "Parcel Number",
+          "index": 7,
+          "colIndex": 0,
+          "order": 7,
+          "width": 200,
+          "autosize": true,
+          "cellFilter": null
+        },
+        {
+          "field": "deed_status",
+          "caption": "Status",
+          "index": 8,
+          "colIndex": 0,
+          "order": 8,
+          "width": 120,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "sale_date",
+          "caption": "Sale Date",
+          "index": 9,
+          "colIndex": 0,
+          "order": 9,
+          "width": 110,
+          "autosize": false,
+          "cellFilter": "date:'MM/dd/yyyy'"
+        },
+        {
+          "field": "ref_1",
+          "caption": "Tax Deed ID",
+          "index": 10,
+          "colIndex": 0,
+          "order": 10,
+          "width": 200,
+          "autosize": true,
+          "cellFilter": null
+        },
+        {
+          "field": null,
+          "caption": "",
+          "index": 11,
+          "colIndex": 0,
+          "order": 1,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "_start_row",
+          "caption": "",
+          "index": 12,
+          "colIndex": 0,
+          "order": 1,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "_end_row",
+          "caption": "",
+          "index": 13,
+          "colIndex": 0,
+          "order": 1,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "_total_rows",
+          "caption": "",
+          "index": 14,
+          "colIndex": 0,
+          "order": 1,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "_headers",
+          "caption": "",
+          "index": 15,
+          "colIndex": 0,
+          "order": 1,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": null
+        },
+        {
+          "field": "formatted_rec_date",
+          "caption": "Date",
+          "index": 16,
+          "colIndex": 0,
+          "order": 1,
+          "width": 0,
+          "autosize": false,
+          "cellFilter": null
+        }
+      ],
+      "formatted_rec_date": "01/01/0001"
+    }
+  ]
+}

@@ -50,6 +50,8 @@ Load `POC_ACCESS_KEY` securely from your local environment before using curl. Th
 
 Three richer client workflows are enabled: Miami-Dade, Osceola and Bradford, with explicit partial coverage. Twenty legacy parcel workflows are configured; seventeen still await the richer contract. The 67-county registry is research coverage, not 67 completed crawlers.
 
+Osceola includes exact-account Collector certificate and tax-deed reports. The independent Clerk parcel search is optional: privately provision `SCRAPEDO_API_KEY` and explicitly enable `INVISIA_OSCEOLA_CLERK_ENABLED=1`. It uses one bounded native HTTP query through Scrape.do and the existing spending policy. Public-query completeness does not establish historical/title clearance. See [the dated source and staging evidence](docs/OSCEOLA-CERTIFICATE-DEED-COVERAGE-2026-10-12.md).
+
 Runtime extraction is fixed code, never an LLM call. County selection fills sample inputs. Miami defaults to the Zeneral-verified T-15 / GASTON GIRARD neighbour example with same-building units enabled. The original client-supplied unit-401 sample remains a regression fixture and API example; the other two county defaults are Zeneral-selected public examples.
 
 `npm test` blocks external source/provider traffic. Fixtures mock those transports; HTTP server tests explicitly allow literal loopback only. GitHub CI runs offline tests and the self-host build on Node 22. It does not deploy or use provider secrets.
