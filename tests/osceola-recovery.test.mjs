@@ -87,8 +87,10 @@ test('recovered appraiser data joins the independent collector account, original
  };
  const result=await clientLookup({scrap_order_id:'OFFLINE-RECOVERY-FULL',county:'Osceola',transactionType:'REFI',...input},fetcher,{log:()=>{},managedBrowser:async args=>{
   captures++;if(args.profile==='osceola-appraiser')return appraiser;
+  if(args.profile==='osceola-liability-reports')return JSON.parse(read('osceola-liability-empty-2026-10-12.json'));
   return {url:root,html:readFileSync(new URL('./fixtures/phase-two/osceola-rendered.html',import.meta.url),'utf8'),bill_url:bill,bill_html:read('besil-osceola-bill-excerpt.html'),pdf:{url:bill+'/print',base64:readFileSync(new URL('./fixtures/phase-two/osceola-original.pdf',import.meta.url)).toString('base64')}};
  }});
- const r=result.scrapTaxOrderRequest;assert.equal(captures,2);assert.equal(r.matchStatus,'MATCHED');assert.equal(result.ExtractionMetadata.validation.parcel_join,'matched');assert.deepEqual(result.ExtractionMetadata.errors,[]);
+ const r=result.scrapTaxOrderRequest;assert.equal(captures,3);assert.equal(r.matchStatus,'MATCHED');assert.equal(result.ExtractionMetadata.validation.parcel_join,'matched');assert.deepEqual(result.ExtractionMetadata.errors,[]);
+ assert.equal(r.DelinquencyInformation.certificateSearch.status,'INSPECTED_EMPTY');assert.equal(r.DelinquencyInformation.taxDeedSearch.status,'INSPECTED_EMPTY');assert.equal(r.DelinquencyInformation.coverageDetails.independentTaxDeedSearch,'UNAVAILABLE');assert(result.ExtractionMetadata.provenance['DelinquencyInformation.certificateSearch'].pages[0].query_sha256);
  assert.equal(r.TaxInformation.accountNumber,'R022528-285000010010');assert.equal(r.BillDetails.taxYear,'2025');assert.equal(r.TaxAmounts.totalDiscountable,'$285,389.65');assert.equal(r.TaxAmounts.totalTax,'$285,389.65');assert.equal(r.AdValoremMillage.length,11);assert.equal(r.NonAdValorem.length,1);assert.equal(r.SalesInformation.length,3);
 });
