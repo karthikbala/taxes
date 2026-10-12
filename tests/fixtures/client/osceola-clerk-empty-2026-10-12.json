@@ -1,0 +1,19 @@
+{
+  "event": "contract_result",
+  "name": "clerk-walmart-query",
+  "at": "2026-10-12T09:47:39.152Z",
+  "source_url": "https://officialrecords.osceolaclerk.org/browserviewtd/api/search",
+  "http_status": 200,
+  "bytes": 2,
+  "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "request_cost": "10",
+  "remaining_credits": "249629",
+  "requested_parcel": "022528285000010010",
+  "query": {
+    "ParcelNumber": "022528285000010010",
+    "MaxRows": 100,
+    "RowsPerPage": 0,
+    "StartRow": 0
+  },
+  "rows": []
+}
