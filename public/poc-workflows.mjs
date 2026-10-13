@@ -42,6 +42,20 @@ export const workflowLabels = {
 export function workflowSample(profile, mode) {
   return profile.samples?.[mode] || profile.sample;
 }
+export function automaticPocMode(profile, fields = {}) {
+  const modes = (verifiedPocModes[profile?.id] || []).filter(mode=>profile?.lookup_modes?.includes(mode));
+  if (!modes.length) throw new Error('Select an available county.');
+  if (!fields.parcel?.trim() && modes.includes('address')) return 'address';
+  const mode = modes.find(mode => mode === 'county') || modes.find(mode => mode === 'collector');
+  if (!mode) throw new Error('Parcel lookup is unavailable for this county. Clear the parcel ID to search by address and owner.');
+  return mode;
+}
+export function automaticPocRequest(profile, fields) {
+  const mode = automaticPocMode(profile, fields);
+  if (mode === 'address' && (!fields.address?.trim() || !fields.owner?.trim())) throw new Error('Enter the property address and owner name, or provide a parcel ID.');
+  if (mode !== 'address' && !fields.parcel?.trim()) throw new Error('Enter a parcel ID to search '+profile.name+'. Address-and-owner search is not yet available for this county.');
+  return pocRequest(profile, mode, { ...fields, parcel: fields.parcel?.trim() });
+}
 export function pocRequest(profile, mode, fields) {
   if (!profile?.lookup_modes.includes(mode) || !(verifiedPocModes[profile.id]?.includes(mode) || mode==='address'&&profile.client?.address_lookup_enabled)) throw new Error('This lookup mode is unavailable for the selected county.');
   return catalogRequest(profile, mode, fields);

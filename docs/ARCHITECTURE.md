@@ -4,9 +4,9 @@ This application has a standalone Node 22 server for local development and futur
 
 ## Request path
 
-`/poc` → browser `/poc.js` → selected supported search method. Address-and-owner orders use authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI. Parcel orders use the existing authenticated `/api/v1/property/lookup`; their original parcel envelope and source coverage are rendered separately.
+`/poc` → browser `/poc.js` → automatic admitted-adapter routing from entered fields. Address-and-owner orders use authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI. Parcel orders use the existing authenticated `/api/v1/property/lookup`; their original parcel envelope and source coverage are rendered separately.
 
-`public/poc-workflows.mjs` combines the v1 catalogue and enabled v2 address contracts. The POC retains all three established address workflows, alongside nine counties with production parcel/collector sample verification. Source-limited address workflows stay visible with their availability stated; visibility does not promote acceptance. The full API catalogue remains separate, including explicitly requested Florida annual-roll modes. Annual-roll data is never an automatic fallback. Mode changes clear prior results and disable irrelevant fields; parcel JSON retains its own fields and source gaps.
+`public/poc-workflows.mjs` combines the v1 catalogue and enabled v2 address contracts. The POC retains all three established address workflows, alongside nine counties with production parcel/collector sample verification. Source-limited address workflows stay visible with their availability stated; visibility does not promote acceptance. The full API catalogue remains separate, including explicitly requested Florida annual-roll modes. Annual-roll data is never an automatic fallback. County/input changes clear prior results and disable irrelevant fields; parcel JSON retains its own fields and source gaps.
 
 | Component | Responsibility |
 | --- | --- |
