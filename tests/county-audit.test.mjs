@@ -1,7 +1,8 @@
+import {catalogRequest as auditRequest} from '../public/poc-workflows.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {checkDeliveredRecord,auditTasks,auditRequest} from '../scripts/audit-counties.mjs';
+import {checkDeliveredRecord,auditTasks} from '../scripts/audit-counties.mjs';
 import {floridaCounties} from '../lib/live/florida-counties.mjs';
 import {floridaLookup} from '../lib/live/florida.mjs';
 const samples=JSON.parse(await readFile(new URL('./fixtures/florida/roll-67.json',import.meta.url),'utf8'));
