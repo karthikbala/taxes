@@ -12,13 +12,21 @@ export const verifiedPocModes = Object.freeze({
   'suwannee-fl': ['county'],
   'union-fl': ['county']
 });
-export function pocWorkflows(parcelCatalog, clientCatalog) {
+export function catalogWorkflows(parcelCatalog, clientCatalog) {
   const clients = new Map(clientCatalog.counties.map(c => [c.id, c]));
-  return parcelCatalog.counties.flatMap(county => {
+  return parcelCatalog.counties.map(county => {
     const client = clients.get(county.id);
+    return { ...county, client, lookup_modes: [
+      ...(client?.address_lookup_enabled ? ['address'] : []),
+      ...county.modes.filter(mode => ['county','collector','state_roll'].includes(mode))
+    ] };
+  });
+}
+export function pocWorkflows(parcelCatalog, clientCatalog) {
+  return catalogWorkflows(parcelCatalog, clientCatalog).flatMap(county => {
     const modes = (verifiedPocModes[county.id] || []).filter(mode =>
-      mode === 'address' ? client?.address_lookup_enabled : county.modes.includes(mode));
-    return modes.length ? [{ ...county, client, lookup_modes: modes }] : [];
+      county.lookup_modes.includes(mode));
+    return modes.length ? [{ ...county, lookup_modes: modes }] : [];
   });
 }
 export const workflowLabels = {
@@ -32,6 +40,10 @@ export function workflowSample(profile, mode) {
 }
 export function pocRequest(profile, mode, fields) {
   if (!verifiedPocModes[profile?.id]?.includes(mode) || !profile?.lookup_modes.includes(mode)) throw new Error('This lookup mode is unavailable for the selected county.');
+  return catalogRequest(profile, mode, fields);
+}
+export function catalogRequest(profile, mode, fields) {
+  if (!profile?.lookup_modes.includes(mode)) throw new Error('This lookup mode is unavailable for the selected county.');
   if (mode === 'address') return { endpoint: '/api/v2/property/lookup', body: {
     scrap_order_id: fields.order, address: fields.address, ownerName: fields.owner,
     county: profile.id, transactionType: fields.transaction, state: profile.state,

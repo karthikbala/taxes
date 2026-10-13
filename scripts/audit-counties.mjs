@@ -8,14 +8,14 @@ import {createHash} from 'node:crypto';
 import {createApp} from '../server/app.mjs';
 import {capabilities,readBounded} from '../lib/live/router.mjs';
 import {clientCapabilities} from '../lib/client/profiles.mjs';
-import {pocWorkflows,pocRequest,workflowSample} from '../public/poc-workflows.mjs';
+import {catalogWorkflows,catalogRequest,workflowSample} from '../public/poc-workflows.mjs';
 
 const compact=v=>String(v??'').toUpperCase().replace(/[^A-Z0-9*]/g,'');
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const safeUrl=value=>{const u=new URL(value);u.username='';u.password='';for(const key of [...u.searchParams.keys()])if(/key|token|secret|password|signature/i.test(key))u.searchParams.set(key,'REDACTED');return u.href;};
 export function auditTasks({state,only}={}){
  if(state&&!['FL','PA'].includes(state))throw Error('Audit state must be FL or PA.');
- return pocWorkflows(capabilities,clientCapabilities).filter(p=>!state||p.state===state).flatMap(profile=>profile.lookup_modes.map(mode=>({profile,mode}))).filter(t=>!only||only.includes(t.profile.id+':'+t.mode));
+ return catalogWorkflows(capabilities,clientCapabilities).filter(p=>!state||p.state===state).flatMap(profile=>profile.lookup_modes.map(mode=>({profile,mode}))).filter(t=>!only||only.includes(t.profile.id+':'+t.mode));
 }
 export function checkDeliveredRecord(result,profile,mode,captures=[]){
  const checks=[],check=(name,status,detail)=>checks.push({name,status,...(detail?{detail}:{})});
@@ -72,7 +72,7 @@ export async function auditCounties({out,limit,only,state,key,fetcher=fetch}){
    const app=createApp({env:{INVISIA_POC_API_KEY:key,INVISIA_BROWSER_ENABLED:'0'},fetcher:sourceFetch,logSink:()=>{}});
    const example=profile.client?.demo_input||{};
    const sample=workflowSample(profile,mode);
-   const request=pocRequest(profile,mode,{order:'LOCAL-FLEET-'+id,address:example.address,owner:example.ownerName,transaction:'REFI',parcel:sample.parcel_id,includePdf:true});
+   const request=catalogRequest(profile,mode,{order:'LOCAL-FLEET-'+id,address:example.address,owner:example.ownerName,transaction:'REFI',parcel:sample.parcel_id,includePdf:true});
    let result,http_status;
    try{const response=await app(new Request('http://localhost'+request.endpoint,{method:'POST',headers:{Authorization:'Bearer '+key,'Content-Type':'application/json'},body:JSON.stringify(request.body)}));http_status=response.status;result=await response.json();}
    catch(e){result={status:'error',error:{code:'audit_request_failed',message:e.message}};}

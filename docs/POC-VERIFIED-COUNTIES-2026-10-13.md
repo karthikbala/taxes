@@ -20,6 +20,6 @@ One sample per county was requested through the authenticated production parcel 
 
 ## Regression checks
 
-Nine controller/workflow checks, 13 rendering checks and 16 HTTP/server checks passed; self-host build passed. Unsupported source modes are rejected, switches clear stale values, existing Bradford mailing searches and Union physical-site selection remain supported. Saved lookups for removed counties cannot reactivate a hidden workflow.
+Nine controller/workflow checks, 13 rendering checks and 16 HTTP/server checks passed; self-host build passed. The full offline suite also passed 483/483 checks after separating the operational audit catalogue from POC admission. Unsupported source modes are rejected, switches clear stale values, existing Bradford mailing searches and Union physical-site selection remain supported. Saved lookups for removed counties cannot reactivate a hidden workflow.
 
-Admission lives in public/poc-workflows.mjs and applies to the selector, coverage table and request builder. The larger API/source catalogue is retained separately. No paid access, spending ledger, crawler, authentication or tax parser was changed. Miami source-access restoration remains a separate outstanding task.
+Admission lives in public/poc-workflows.mjs and applies to the selector, coverage table and request builder. The larger API/source catalogue and operational audit request builder are retained separately. No paid access, spending ledger, crawler, authentication or tax parser was changed. Miami source-access restoration remains a separate outstanding task.
