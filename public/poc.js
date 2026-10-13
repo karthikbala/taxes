@@ -22,7 +22,7 @@ const preview=()=>{const r=request();el('request').textContent=JSON.stringify(r.
  '--data '+"'"+JSON.stringify(r.body).replaceAll("'", "'\\''")+"'"
 ].join(' \\\n');};
 const neighborsAvailable=()=>supportsNeighbors(countyProfiles.get(el('county').value),el('lookup-mode').value);
-const setForm=order=>{for(const [id,key]of [['order','scrap_order_id'],['address','address'],['owner','ownerName'],['county','county'],['transaction','transactionType']])el(id).value=order[key];el('lookup-mode').value='address';el('address-type').value=order.addressType||'site';syncMode();preview();};
+const setForm=order=>{for(const [id,key]of [['order','scrap_order_id'],['address','address'],['owner','ownerName'],['county','county'],['transaction','transactionType']])el(id).value=order[key];el('lookup-mode').value='address';el('address-type').value=order.addressType||(order.county==='bradford-fl'?'auto':'site');syncMode();preview();};
 const invalidateNeighbors=()=>{neighborsSnapshot=null;el('neighbors-back').hidden=true;};
 function beginLookup(mode){
  if(activeLookup)return false;
@@ -64,11 +64,13 @@ function renderClientData(data,response,expectedFolio,fieldStatus){
   el('selected-property-context').textContent=check.message;el('selected-property-context').hidden=false;
   if(!check.verified){canDisplay=false;el('status').textContent='Selected property not verified';el('status').className='status warn';el('error').textContent=[check.message,el('error').textContent].filter(Boolean).join(' ');}
  }
- if(meta?.match?.status==='ADDRESS_REVIEW_REQUIRED'){
+ const autoAmbiguous=meta?.match?.requested_address_type==='auto'&&meta.match.status==='AMBIGUOUS';
+ if(meta?.match?.status==='ADDRESS_REVIEW_REQUIRED'||autoAmbiguous){
   canDisplay=false;el('status').textContent='Property address confirmation needed';el('status').className='status warn';
-  const panel=document.createElement('div');panel.className='section';text(panel,'h3','The supplied address is a mailing address');
-  text(panel,'p','The Bradford records use this as a mailing address. Their property sites are different. Any separately verified property at the supplied address is also listed with its actual county and current owners. Choose a parcel to fill its county lookup, then fetch its records. Nothing is selected or fetched automatically.');
-  for(const candidate of [...(meta.match.candidates||[]).map(c=>({...c,county:'bradford-fl',county_name:'Bradford'})),...(meta.match.site_candidates||[])]){
+  const panel=document.createElement('div');panel.className='section';text(panel,'h3',autoAmbiguous?'More than one Bradford property matches':'The supplied address is a mailing address');
+  text(panel,'p',autoAmbiguous?'The verified owner and address match more than one parcel across the property-site and mailing-address searches. Confirm the intended parcel before fetching its tax records.':'The Bradford records use this as a mailing address. Their property sites are different. Any separately verified property at the supplied address is also listed with its actual county and current owners. Choose a parcel to fill its county lookup, then fetch its records. Nothing is selected or fetched automatically.');
+  const reviewCandidates=autoAmbiguous?(meta.match.candidates||[]).filter(c=>c.verified_address_match&&c.owner_matches_requested):meta.match.candidates||[];
+  for(const candidate of [...reviewCandidates.map(c=>({...c,county:'bradford-fl',county_name:'Bradford'})),...(meta.match.site_candidates||[])]){
    const card=document.createElement('article');card.className='record-card';
    text(card,'h4',candidate.county_name+' parcel '+candidate.parcel_id);if(candidate.address_match_type==='site')text(card,'p','This is the property at the supplied address, in '+candidate.county_name+' County. '+(candidate.owner_matches_requested?'The reported owner names match.':'The county owner names differ from the supplied name. Do not attribute this property to that owner.'));renderValue(document,card,{property_site:candidate.address,owners:candidate.owners,mailing_address:candidate.mailing_address,owner_comparison:candidate.owner_matches_requested?'Exact reported owner names':'County owner name differs from the supplied name'});
    const button=document.createElement('button');button.type='button';button.textContent='Use parcel '+candidate.parcel_id;button.disabled=!countyProfiles.get(candidate.county)?.lookup_modes.includes('county');
@@ -82,6 +84,10 @@ function renderClientData(data,response,expectedFolio,fieldStatus){
  if(record&&canDisplay){
   for(const [label,value]of [['Property',record.PropertyInformation?.PropertyAddress??'Unavailable'],['Parcel',record.PropertyInformation?.ParcelNumber??'Unavailable'],['Match',record.matchStatus],['Latest annual bill',record.BillDetails?.taxYear??'Unavailable'],['Historical coverage',record.DelinquencyInformation?.coverage??'Unavailable']]){
    const div=document.createElement('div');text(div,'small',label);text(div,'strong',String(value));el('summary').append(div);
+  }
+  if(meta?.match?.requested_address_type==='auto'&&meta.match.status==='MATCHED'){
+   const meaning=meta.match.matched_address_types?.length>1?'Property site and owner mailing address':meta.match.input_address_type==='mailing'?'Owner mailing address':'Property site address';
+   const div=document.createElement('div');text(div,'small','Address matched as');text(div,'strong',meaning+' · detected from county records');el('summary').append(div);
   }
   renderSections(document,el('sections'),fieldStatus?displayFieldAvailability(record,fieldStatus):record,meta?.section_status||{});renderValidation(document,el('sections'),meta?.validation||{});
  }
@@ -158,7 +164,7 @@ async function watchJob(id,expectedFolio,restoreInput=false){
   if(!response.ok){el('error').textContent=job.error?.message||'Job could not be loaded.';restoreJob.hidden=false;break;}
   delay=2000;currentJob=id;if(restoreInput&&job.input){if(!countyProfiles.get(job.input.county)?.lookup_modes.includes('address')){el('error').textContent='This saved lookup belongs to a county currently unavailable in the POC.';cancelJob.hidden=true;resumeJob.hidden=true;break;}setForm(job.input);restoreInput=false;}
   if(job.result){for(const key of ['sections','sources','summary'])el(key).replaceChildren();renderClientData(job.result,response,expectedFolio,job.field_status);}
-  if(job.result?.ExtractionMetadata?.match?.status!=='ADDRESS_REVIEW_REQUIRED'){const labels={queued:'Waiting to start',running:'Fetching county records',retry_scheduled:'Waiting for county retry',needs_review:'Review needed',completed:'Verified retrieval complete',completed_with_gaps:'Available records retrieved · gaps shown',failed:'Retrieval could not finish',cancelled:'Lookup cancelled'},stages={resolve_property:'Finding the property',appraiser:'Reading assessment records',collector_history:'Reading tax history',documents:'Reading original bills',certificate_deed:'Checking certificates and deeds',validation:'Checking identity and amounts',serialization:'Preparing results'};el('status').textContent=(labels[job.status]||'Lookup in progress')+(['running','queued'].includes(job.status)?' · '+(stages[job.stage]||'Fetching records'):'');}
+  if(job.result?.ExtractionMetadata?.match?.status!=='ADDRESS_REVIEW_REQUIRED'&&!(job.result?.ExtractionMetadata?.match?.requested_address_type==='auto'&&job.result.ExtractionMetadata.match.status==='AMBIGUOUS')){const labels={queued:'Waiting to start',running:'Fetching county records',retry_scheduled:'Waiting for county retry',needs_review:'Review needed',completed:'Verified retrieval complete',completed_with_gaps:'Available records retrieved · gaps shown',failed:'Retrieval could not finish',cancelled:'Lookup cancelled'},stages={resolve_property:'Finding the property',appraiser:'Reading assessment records',collector_history:'Reading tax history',documents:'Reading original bills',certificate_deed:'Checking certificates and deeds',validation:'Checking identity and amounts',serialization:'Preparing results'};el('status').textContent=(labels[job.status]||'Lookup in progress')+(['running','queued'].includes(job.status)?' · '+(stages[job.stage]||'Fetching records'):'');}
   el('request-id').textContent='Lookup ID: '+id+' · updated '+new Date(job.updated_at).toLocaleString();
   const notes=[...new Set((job.gaps||[]).map(g=>g.reason.replaceAll('_',' ')+': '+g.action))];
   if(job.next_retry_at)notes.push('Next recovery: '+new Date(job.next_retry_at).toLocaleString());
@@ -223,7 +229,7 @@ const applyExample=()=>{
  invalidateNeighbors();clearResults();const profile=countyProfiles.get(el('county').value),example=profile.client?.demo_input;
  el('lookup-mode').replaceChildren();for(const mode of profile.lookup_modes){const option=document.createElement('option');option.value=mode;option.textContent=workflowLabels[mode];el('lookup-mode').append(option);}
  el('parcel').value=profile.sample?.parcel_id||'';sampleParcelValue=el('parcel').value;el('collector-account').value='';
- el('address-type').value='site';el('address').value=example?.address||'';el('owner').value=example?.ownerName||'';el('neighbors-same-building').checked=example?.includeSameBuilding===true;
+ el('address-type').value=profile.id==='bradford-fl'?'auto':'site';el('address').value=example?.address||'';el('owner').value=example?.ownerName||'';el('neighbors-same-building').checked=example?.includeSameBuilding===true;
  syncMode();
 };
 el('county').addEventListener('change',applyExample);

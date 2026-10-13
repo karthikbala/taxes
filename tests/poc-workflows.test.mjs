@@ -128,4 +128,21 @@ test('verified physical-address option switches to its actual county without sub
  const buttons=[];const walk=n=>{if(n.tag==='button')buttons.push(n);for(const c of n.children)walk(c)};walk(e.get('sections'));assert.equal(buttons.length,1);await buttons[0].listeners.click[0]();assert.equal(e.get('county').value,'union-fl');assert.equal(e.get('parcel').value,site.parcel_id);assert.equal(e.get('lookup-mode').value,'county');assert.equal(calls.length,1);await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.county,'union-fl');assert.equal(calls.at(-1).body.parcel_id,site.parcel_id);
 });
 
-test('Bradford mailing mode is explicit in the actual controller and resets when county changes',async()=>{const {elements:e,calls}=await harness();await e.get('county').change('bradford-fl');assert.equal(e.get('address-type').value,'site');assert.equal(e.get('mailing-mode-field').hidden,false);await e.get('address-type').change('mailing');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.addressType,'mailing');assert.equal(calls.at(-1).body.address,'8130 SW 50TH PATH');await e.get('county').change('union-fl');assert.equal(e.get('address-type').value,'site');assert.equal(e.get('mailing-mode-field').hidden,true);});
+test('Bradford mailing mode is explicit in the actual controller and resets when county changes',async()=>{const {elements:e,calls}=await harness();await e.get('county').change('bradford-fl');assert.equal(e.get('address-type').value,'auto');assert.equal(e.get('mailing-mode-field').hidden,false);await e.get('address-type').change('mailing');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.addressType,'mailing');assert.equal(calls.at(-1).body.address,'8130 SW 50TH PATH');await e.get('county').change('union-fl');assert.equal(e.get('address-type').value,'site');assert.equal(e.get('mailing-mode-field').hidden,true);});
+
+test('Bradford automatically submits and displays detected mailing meaning without changing the supplied address',async()=>{
+ const result={status:'partial',scrapTaxOrderRequest:{matchStatus:'MATCHED',PropertyInformation:{ParcelNumber:'00420-0-00200',PropertyAddress:'SW 180TH PL, BROOKER',MailingAddress:'8130 SW 50TH PATH'},DelinquencyInformation:{coverage:'PARTIAL'}},ExtractionMetadata:{match:{status:'MATCHED',requested_address_type:'auto',input_address_type:'mailing',matched_address_types:['mailing']},sources:[],section_status:{PropertyInformation:'EXTRACTED'}}};
+ const {elements:e,calls}=await harness(result);await e.get('county').change('bradford-fl');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';
+ await e.get('form').onsubmit({preventDefault(){}});
+ assert.equal(calls.length,1);assert.equal(calls[0].body.addressType,'auto');assert.equal(e.get('address').value,'8130 SW 50TH PATH');
+ assert.match(e.get('summary').textContent,/Owner mailing address.*detected from county records/);assert.match(e.get('sections').textContent,/00420-0-00200/);assert.match(e.get('sections').textContent,/SW 180TH PL, BROOKER/);
+});
+
+test('automatic role ambiguity shows verified candidates and waits for explicit parcel selection',async()=>{
+ const candidates=[{parcel_id:'05194-0-00000',address:'SE 11TH AVE, STARKE',owners:['CALLAHAN JAMES R & CHARLOTTE'],owner_matches_requested:true,verified_address_match:true,address_match_type:'mailing_only'},{parcel_id:'05379-0-00000',address:'8280 SE SWEET BAY DR',owners:['CALLAHAN JAMES R & CHARLOTTE'],owner_matches_requested:true,verified_address_match:true,address_match_type:'site'}];
+ const {elements:e,calls}=await harness({status:'error',ExtractionMetadata:{match:{status:'AMBIGUOUS',requested_address_type:'auto',candidates},sources:[]}});
+ await e.get('county').change('bradford-fl');await e.get('form').onsubmit({preventDefault(){}});
+ assert.match(e.get('status').textContent,/confirmation needed/);assert.match(e.get('sections').textContent,/More than one Bradford property matches/);assert.equal(calls.length,1);
+ const buttons=[];const walk=n=>{if(n.tag==='button')buttons.push(n);for(const c of n.children)walk(c)};walk(e.get('sections'));
+ assert.equal(buttons.length,2);await buttons[0].listeners.click[0]();assert.equal(e.get('parcel').value,'05194-0-00000');assert.equal(calls.length,1,'Choosing a candidate only fills the form');
+});
