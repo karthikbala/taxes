@@ -8,6 +8,7 @@ No package license, subscription, new allowance or paid source evaluation is aut
 | Local Chromium | Optional locked Playwright, fixed source scripts | Install browser and confirm sandbox/resources; host compute/storage cost is not yet quoted |
 | Managed browser | Existing provider and conservative reservation/reconciliation | Verify credentials, entitlement, original ledger/history, remaining cap and bounded trial approval |
 | PyMuPDF/OCR | Pinned worker recipe, Tesseract, network-isolated container | Record applicable AGPL/commercial license decision, vendor quote if required, image build and scanned acceptance |
+| Standalone Poppler/Tesseract OCR | Standard-library Python worker; page-selective TSV evidence; no external OCR service | Build/verify isolated OCR image and original scanned-document acceptance; does not require activating PyMuPDF |
 | Restricted historical records | Unsent exact-property request draft | Authorize sending and approve county fees after an actual estimate; do not infer missing records |
 | Seven-day soak | Read-only health/queue script | Validate staging first, provision a private scheduled runner; source probes need separate approval |
 

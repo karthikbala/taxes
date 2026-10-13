@@ -30,11 +30,31 @@ Managed dispatch intent is recorded before dispatch and linked to the existing r
 
 Playwright is pinned as an optional dependency. Install Chromium with the pinned package's installer during reviewed provisioning; keep `TAXES_LOCAL_BROWSER_ENABLED=0` until the sandbox launches successfully. Run the service as an unprivileged user. Browser navigation uses fixed county scripts and reviewed host profiles, not caller-provided URLs or scripts.
 
+An operator may set `TAXES_LOCAL_BROWSER_EXECUTABLE_PATH` to an absolute installed Chromium path. Sandbox and TLS validation remain enabled. Miami-Dade/Osceola browser asset requests may load the exact `challenges.cloudflare.com` Turnstile/security-check paths; those dependencies are not accepted as source evidence or top-level county records. No interactive challenge is solved automatically. A successful Chromium launch does not establish collector access; validate the requested record before enabling this optional lane.
+
 `unpdf` and existing tax rules run in a single worker-thread queue. PDF processing defaults to 25 MiB / 50 pages. Node heap limits and Python OS/container limits bound memory; they do not constitute a hard 1 GiB limit on the entire Node server's RSS.
 
 Before activating PyMuPDF, obtain a license decision, build `deploy/Dockerfile.pdf-worker`, record its image digest and test it. Set `TAXES_PYMUPDF_ENABLED=1`, `TAXES_PYMUPDF_LICENSE_APPROVED=1`, and `TAXES_PDF_CONTAINER_IMAGE=taxes-pdf-worker@sha256:<approved digest>`. Production refuses an uncontained Python fallback. The container has no network, is read-only, drops capabilities and is limited to 1 GiB, one CPU and 64 processes. Python receives source bytes on stdin and no application secrets. Text extraction is bounded to 120 seconds; OCR to five minutes. Node cancellation terminates its worker; container cleanup must also be verified during activation.
 
 PyMuPDF text and tables are normalized to bottom-origin coordinates. OCR runs only when needed. Derived OCR artifacts are preserved separately; OCR output currently requires human review and is not automatically promoted to a verified payable amount. Licensing and real scanned-document acceptance remain activation gates.
+
+### Poppler/Tesseract OCR without PyMuPDF
+
+An independent optional backend now handles pages with no embedded text. Install Python 3, Poppler (`pdfinfo`, `pdftoppm`) and English Tesseract, then set `TAXES_OCR_ENABLED=1` for a local evaluation. This does not enable PyMuPDF or waive its license gate. Production additionally requires the reviewed `deploy/Dockerfile.ocr-worker` image and `TAXES_OCR_CONTAINER_IMAGE=taxes-ocr-worker@sha256:<verified digest>`. The same network, capability, memory, process and timeout isolation applies. No startup script enables OCR automatically.
+
+`unpdf` remains first. Missing-text page numbers select OCR pages; embedded items from other pages remain unchanged. Each selected page is rasterized at 300 DPI, bounded to 20 million pixels, then passed to Tesseract's English TSV output. Words retain exact recognized characters, page coordinates and confidence; adjacent words form positioned spans without merging leading bill-year tokens into headings. Low-confidence words remain visible and are never silently repaired or dropped. Confidence is a diagnostic, not proof that an amount or identity is correct.
+
+The original PDF stays unchanged. Durable jobs await storage of a separate `derived_pdf_text` artifact before reparsing it. Parcel, year, layout and reconciliation checks still apply. Even a successful OCR reparse returns `document_ocr_review_required`, with no automatically accepted financial values. Scanned/flattened Allegheny receipts without AcroForm fields use their separately validated payment-table layout when OCR is enabled; existing AcroForm receipt behavior remains the default.
+
+For local inspection without county/provider access:
+
+```sh
+TAXES_OCR_ENABLED=1 node scripts/ocr-pdf.mjs input.pdf runtime/ocr-review
+```
+
+The command creates private `extraction.json` and `text.txt`, including the original SHA256, coordinates, OCR page list and confidence diagnostics. It does not change the source, fetch a record, infer business fields or produce a payable amount. Local operator overrides are `TAXES_PYTHON`, `TAXES_TESSERACT`, `TAXES_PDFINFO` and `TAXES_PDFTOPPM`; container execution ignores host binary overrides.
+
+Limitations: English printed text, no handwriting guarantee, no automatic OCR of images on a page that already has embedded text, and no automatic correction of skew or damaged print. Three image-only copies of retained county PDFs passed local recognition/identity/review checks on 13 October 2026; these are controlled scan simulations, not acceptance of unseen original county scans. The production container still needs to be built and validated on the deployment host.
 
 To enable managed binary PDF ingress, install the reviewed Nginx locations and set `TAXES_ARTIFACT_INGEST_ORIGIN` to the approved HTTPS origin. Polling has a separate rate limit from lookup submissions. The ingest path permits bounded binary bodies; ordinary API input retains its 8 KiB application limit. Leave ingress unset until an external upload test passes; chunked transfer remains available.
 

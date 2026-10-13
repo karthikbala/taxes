@@ -14,6 +14,15 @@ const input={scrap_order_id:'offline',address:'100 TEST ST',ownerName:'TEST OWNE
 const result=(errors=[])=>({scrapTaxOrderRequest:{matchStatus:'MATCHED',PropertyInformation:{ParcelNumber:'123',ownerOccupied:null},TaxAmounts:{totalTax:'$10.00',totalDiscountable:null}},ExtractionMetadata:{status:errors.length?'partial':'succeeded',match:{status:'MATCHED'},errors,provenance:{'PropertyInformation.ownerOccupied':{method:'inspected_source',reason:'No explicit source occupancy field'},'TaxAmounts.totalDiscountable':{method:'inspected_collector_html',reason:'No printed subtotal'}},section_status:{}}});
 const req=(path,body,headers={})=>new Request('http://localhost'+path,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer test-key','Content-Type':'application/json',...headers},...(body===undefined?{}:{body:JSON.stringify(body)})});
 const fixture=()=>{const db=createSQLiteDB(':memory:');return {db,store:createJobStore(db)};};
+test('definitive pre-dispatch rejection settles intent without changing spend, while uncertain failures remain reviewable',async()=>{
+ const old=globalThis.fetch;globalThis.fetch=async()=>Response.json({remainingCredits:100});
+ try{for(const [code,expected]of [['staging_capture_limit','reconciled'],['browser_budget_exhausted','reconciled'],['source_timeout_or_network_error','dispatching']]){
+  const {db,store}=fixture();let calls=0;
+  const runner=createJobRunner({env:{DB:db,INVISIA_BROWSER_ENABLED:'1',INVISIA_BROWSER_API_KEY:'test-only',TAXES_DEPLOYMENT_ENV:'staging',INVISIA_BROWSER_LEDGER_BYPASS:'1'},store,autoStart:false,logSink:()=>{},managedBrowser:async()=>{calls++;throw Object.assign(new Error('Offline provider rejection'),{code});},lookup:async(_input,_fetch,runtime)=>{try{await runtime.managedBrowser({url:'https://county-taxes.net/fl-miamidade/property-tax/EXAMPLE',county:'miami-dade-fl',includePdf:false});}catch(e){return result([{source_id:'tax_collector',code:e.code}]);}}});
+  try{const job=runner.create(input,'dispatch-'+code).job;await runner.tick();await runner.idle();assert.equal(calls,1);assert.equal(store.sessions(job.id)[0].status,expected);assert.equal(db.sqlite.prepare('SELECT count(*) AS n FROM browser_runs').get().n,0);assert.equal(db.sqlite.prepare('SELECT count(*) AS n FROM scrape_budgets').get().n,0);assert.equal(store.unresolvedSessions().length,expected==='reconciled'?0:1);}
+  finally{await runner.stop();db.close();}
+ }}finally{globalThis.fetch=old;}
+});
 test('additive schema preserves existing ledger and idempotency is input-bound',()=>{
  const {db,store}=fixture();try{
   const first=store.create(input,'same','fixture');assert.equal(store.create({...input},'same').job.id,first.job.id);assert.throws(()=>store.create({...input,address:'OTHER'},'same'),e=>e.http===409);
@@ -110,6 +119,29 @@ test('no fallback interpretation turns zero, missing data or a conflict into ano
 });
 test('explicit certificate-notice omission is distinct from an unsupported layout',()=>{
  const data=result();delete data.ExtractionMetadata.provenance['TaxAmounts.totalDiscountable'];data.ExtractionMetadata.section_status.TaxAmounts={status:'UNAVAILABLE',note:'Annual tax totals are not printed on this certificate notice.'};assert.equal(explainResult(data).fields['TaxAmounts.totalDiscountable'].reason,'NOT_PUBLISHED');
+});
+
+test('blocked collector explains unavailable delinquency and dependent documents without implying an OCR or property identity failure',()=>{
+ const errors=[{source_id:'tax_collector',code:'managed_browser_unavailable'},{source_id:'documents',code:'document_dependency_failed'},{source_id:'annual_bill',code:'annual_bill_unavailable'},{source_id:'collector_identity',code:'collector_identity_unresolved'}];
+ const data=result(errors);data.scrapTaxOrderRequest.DelinquencyInformation={hasActiveDelinquency:null,knownTotalDue:null,delinquentYears:[],coverage:'UNAVAILABLE'};
+ const explanation=explainResult(data);
+ assert.equal(explanation.fields['DelinquencyInformation.hasActiveDelinquency'].reason,'ACCESS_RESTRICTED');
+ assert.equal(explanation.fields['DelinquencyInformation.knownTotalDue'].reason,'ACCESS_RESTRICTED');
+ assert.equal(explanation.fields['DelinquencyInformation.delinquentYears'].reason,'ACCESS_RESTRICTED');
+ assert(explanation.gaps.every(g=>g.reason==='ACCESS_RESTRICTED'));
+ const mismatch=explainResult(result([{source_id:'receipt_pdf',code:'document_identity_mismatch'}]));
+ assert.equal(mismatch.gaps[0].reason,'IDENTITY_REVIEW');
+});
+
+test('saved jobs display corrected dependency reasons while preserving stored audit gaps and cleanup guards',async()=>{
+ const {db,store}=fixture(),runner=createJobRunner({env:{DB:db},store,autoStart:false,logSink:()=>{}});
+ try{
+  const job=store.create(input,'gap-display').job;store.claim('offline-test');
+  const data=result([{source_id:'tax_collector',code:'managed_browser_unavailable'},{source_id:'documents',code:'document_dependency_failed'}]);
+  store.settle(job.id,'needs_review',{result:data,gaps:[{source_id:'documents',code:'document_dependency_failed',reason:'LAYOUT_UNSUPPORTED'},{code:'cleanup_pending',reason:'BUDGET_PENDING'}]});
+  const display=runner.get(job.id);assert.equal(display.gaps[0].reason,'ACCESS_RESTRICTED');assert.equal(display.gaps[1].reason,'BUDGET_PENDING');
+  assert.equal(store.get(job.id).gaps[0].reason,'LAYOUT_UNSUPPORTED');assert.equal(display.status,'needs_review');
+ }finally{await runner.stop();db.close();}
 });
 
 test('operator review is evidence-bound and cannot overwrite verified amounts',async()=>{

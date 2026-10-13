@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { displayValue, fieldDisplay, renderSections, renderValidation, renderValue, resultBadge, resultRequestId, sectionComment } from '../public/poc-render.mjs';
+import{parseClientBillPdf}from'../lib/client/bill.mjs';import{serializeClientRecord}from'../lib/client/contract.mjs';
 
 // Small DOM harness verifies rendered content and node structure without a browser or network.
 class Node {
@@ -29,6 +30,13 @@ const record = {
   DelinquencyInformation: { coverage: 'PARTIAL', hasActiveDelinquency: null, totalPriorYearsDue: null, unavailableYears: ['2003', '2005', '2006'], note: 'History is incomplete or inconclusive; no negative delinquency conclusion is available.' }
 };
 const states = Object.fromEntries(Object.keys(record).map(name => [name, { status: ['NonAdValorem', 'LandBuildingExtraFeatures', 'Exemptions'].includes(name) ? 'EMPTY' : ['AccountHistory', 'DelinquencyInformation'].includes(name) ? 'PARTIAL' : 'EXTRACTED' }]));
+
+test('source PDF total millage survives client JSON and renders with its explicit mills unit',async()=>{
+ const bill=await parseClientBillPdf(new Uint8Array(readFileSync(new URL('./fixtures/client/miami-annual-reference.pdf',import.meta.url))),'01-3231-052-0010',2025),input={scrap_order_id:'millage-render',address:'555 NE 15 ST UNIT 401',ownerName:'JUDE PATRICK JACOB',county:'miami-dade-fl',transactionType:'REFI',state:'FL'};
+ const result=serializeClientRecord(input,{sections:{ParcelDetails:bill.ParcelDetails},section_status:{ParcelDetails:'EXTRACTED'},provenance:bill.provenance,match:{status:'MATCHED',parcel_id:'01-3231-052-0010'}}),root=new Node('main');
+ assert.equal(result.scrapTaxOrderRequest.ParcelDetails.totalMillageRate,'20.37780');assert(result.ExtractionMetadata.provenance['ParcelDetails.totalMillageRate']);
+ renderSections(document,root,result.scrapTaxOrderRequest,{ParcelDetails:'EXTRACTED'});assert.match(root.textContent,/Total Millage Rate/);assert.match(root.textContent,/20\.37780/);assert.match(root.textContent,/mills/);
+});
 
 test('source values appear in every extracted section, including nested years, lists and tables', () => {
   const root = new Node('main'); renderSections(document, root, record, states);

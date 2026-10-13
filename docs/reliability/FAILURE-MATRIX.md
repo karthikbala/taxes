@@ -8,7 +8,7 @@
 | Browser disconnect/restart | Independent jobs, leases, stage artifacts and checkpoints | Job/HTTP restart and cleanup tests |
 | Dynamic history layouts | Existing footer/loaded-row markers preserved | Both source-derived layouts and live sample |
 | Large/truncated PDF | Binary ticket ingress, chunk fallback, signature/size/hash | Offline upload integrity; external binary ingress acceptance |
-| Unsupported PDF/scans | Worker unpdf → licensed PyMuPDF/Tesseract, OCR review | License/container build and real scanned sample |
+| Unsupported PDF/scans | Worker unpdf → optional Poppler/Tesseract for textless pages; licensed PyMuPDF remains separate; OCR review | OCR container build and real scanned sample; license decision only for PyMuPDF |
 | Suffix/unit/address ambiguity | Preserve current county resolvers and explicit review candidates | Existing source-derived identity regressions |
 | Missing HTML-only subtotal | Existing same-account/year supplementation retained | Fresh source → job → UI comparison |
 | Date/amount conflicts | Exact decimal checks and equivalent date normalization retained | Negative mutations and unaffected controls |

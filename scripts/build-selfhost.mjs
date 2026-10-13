@@ -18,7 +18,7 @@ export function selfhostLiveScript(text){
   return text.replace(original,"headers:{'Content-Type':'application/json','Authorization':'Bearer '+el('selfhost-key').value},body:JSON.stringify(payload())");
 }
 export async function buildSelfhost(root=projectRoot) {
-  const workers=['workers/pdf-worker.mjs','workers/pdf_extract.py','workers/requirements.txt'];
+  const workers=['workers/pdf-worker.mjs','workers/pdf_extract.py','workers/pdf_ocr.py','workers/requirements.txt'];
   for(const file of workers)if(!(await readFile(resolve(root,file))).length)throw new Error('Required document worker source is missing: '+file);
   const out=resolve(root,'dist/selfhost');await mkdir(out,{recursive:true});
   await cp(resolve(root,'public'),resolve(out,'public'),{recursive:true,filter:source=>!source.slice(resolve(root,'public').length+1).split(/[\\/]/).some(part=>part.startsWith('.'))});

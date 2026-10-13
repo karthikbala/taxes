@@ -13,3 +13,19 @@ test('managed capture supports atomic loaded history without requiring an absent
  const code=captureCode('https://county-taxes.net/fl-miamidade/property-tax/EXAMPLE',false);
  assert.match(code,/#bill-history-content table\.bills tbody tr\.regular/);assert.match(code,/#bill-history table\.bills tfoot/);
 });
+
+test('independently delayed amount panel is loaded before the exact delinquent account is captured',async()=>{
+ let historyReady=false,amountReady=false,output;
+ const frame={url:()=> 'https://county-taxes.net/iframe-taxsys/offline',locator:selector=>{
+  const locator={first:()=>locator,count:async()=>selector==='#amount-due-content'?1:0,waitFor:async()=>{
+   if(selector.includes('#bill-history'))historyReady=true;
+   if(selector.includes('#amount-due-content > .bills')){assert.equal(historyReady,true);amountReady=true;}
+  }};return locator;
+ },content:async()=>{assert.equal(amountReady,true,'History can load before the separate amount panel');return html;}};
+ const page={goto:async()=>{},frames:()=>[frame]};
+ const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;
+ await new AsyncFunction('page','console',captureCode('https://county-taxes.net/fl-miamidade/property-tax/EXAMPLE',false))(page,{log:value=>{output=value;}});
+ const captured=JSON.parse(output.slice('INVISIA_RESULT='.length));
+ assert.equal(parseTaxsysIdentity(captured.html,'0101020301070').parcel_id,'01-0102-030-1070');
+ assert.equal(parseTaxsysHistory(captured.html,captured.html).summary.payable_online_amount,'418684.53');
+});

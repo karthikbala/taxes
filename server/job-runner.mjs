@@ -20,7 +20,8 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
  const publicJob=row=>{
   if(!row)throw problem('job_not_found',404,'Job not found.');
   const explanation=row.result?explainResult(row.result):{fields:{}};
-  return {id:row.id,input:row.input,access_mode:row.access_mode,status:row.status,stage:row.stage,created_at:new Date(row.created_at).toISOString(),updated_at:new Date(row.updated_at).toISOString(),attempt:row.attempt,recovery_cycles:row.recovery_cycles,result_version:row.result_version,next_retry_at:row.next_retry_at?new Date(row.next_retry_at).toISOString():null,checkpoints:row.checkpoints,result:row.result,gaps:row.gaps,field_status:explanation.fields,artifacts:store.artifacts(row.id),attempts:store.attempts(row.id),links:{self:'/api/v2/property/jobs/'+row.id,cancel:'/api/v2/property/jobs/'+row.id+'/cancel',resume:'/api/v2/property/jobs/'+row.id+'/resume'},code_version:row.code_version};
+  const gaps=row.gaps.map(g=>(explanation.gaps||[]).find(e=>e.code===g.code&&e.source_id===g.source_id)||g);
+  return {id:row.id,input:row.input,access_mode:row.access_mode,status:row.status,stage:row.stage,created_at:new Date(row.created_at).toISOString(),updated_at:new Date(row.updated_at).toISOString(),attempt:row.attempt,recovery_cycles:row.recovery_cycles,result_version:row.result_version,next_retry_at:row.next_retry_at?new Date(row.next_retry_at).toISOString():null,checkpoints:row.checkpoints,result:row.result,gaps,field_status:explanation.fields,artifacts:store.artifacts(row.id),attempts:store.attempts(row.id),links:{self:'/api/v2/property/jobs/'+row.id,cancel:'/api/v2/property/jobs/'+row.id+'/cancel',resume:'/api/v2/property/jobs/'+row.id+'/resume'},code_version:row.code_version};
  };
  async function run(job){
   const ctl=new AbortController();active.set(job.id,{ctl,promise:null});
@@ -39,7 +40,17 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
    return paid(async()=>{
     const ready=await managedPreflight(env);if(!ready.ready)throw problem('managed_access_not_ready',503,'Managed source entitlement or authorized spending was not verified.');
     const intent=randomUUID();store.session(job.id,key,{id:intent,status:'dispatching'});
-    const capture=await managedBrowser({...args,signal:ctl.signal,binaryTransfer:env.TAXES_ARTIFACT_INGEST_ORIGIN?binaryTransfer:undefined,sessionObserver:event=>store.session(job.id,key,{...event,id:intent})});
+    let capture;
+    try{capture=await managedBrowser({...args,signal:ctl.signal,binaryTransfer:env.TAXES_ARTIFACT_INGEST_ORIGIN?binaryTransfer:undefined,sessionObserver:event=>store.session(job.id,key,{...event,id:intent})});}
+    catch(e){
+     const recorded=store.sessions(job.id).find(s=>s.id===intent);
+     // These guards reject before reservation/session dispatch in the reviewed
+     // provider adapter. Network or unknown outcomes remain unresolved.
+     if(recorded?.status==='dispatching'&&!recorded.session_id&&!recorded.lease_id&&['staging_capture_limit','browser_budget_exhausted','browser_budget_unavailable','source_url_rejected','invalid_deed_folio'].includes(e.code)){
+      store.session(job.id,key,{id:intent,status:'reconciled'});store.event(job.id,store.get(job.id).stage,'not_dispatched',e.code);
+     }
+     throw e;
+    }
     capture.artifact_retrieved_at=new Date(now()).toISOString();store.artifact(job.id,key,'browser',Buffer.from(JSON.stringify(capture)),{url:args.url,method:'MANAGED_BROWSER'});return capture;
    },ctl.signal);
   }

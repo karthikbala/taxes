@@ -47,7 +47,7 @@ function finishLookup(mode){
 }
 function displayFieldAvailability(value,statuses,path=''){
  if(value===null){const labels={NOT_PUBLISHED:'Not published by the inspected source',ACCESS_RESTRICTED:'Source access restricted',SOURCE_OUTAGE:'Source temporarily unavailable',IDENTITY_REVIEW:'Property identity requires review',LAYOUT_UNSUPPORTED:'Source evidence requires review',VALIDATION_CONFLICT:'Source values conflict',BUDGET_PENDING:'Recovery access awaiting approval'};return labels[statuses?.[path]?.reason]||value;}
- if(Array.isArray(value))return value.map((v,i)=>displayFieldAvailability(v,statuses,`${path}[${i}]`));
+ if(Array.isArray(value)){if(!value.length&&statuses?.[path]?.status==='UNAVAILABLE')return displayFieldAvailability(null,statuses,path);return value.map((v,i)=>displayFieldAvailability(v,statuses,`${path}[${i}]`));}
  if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,displayFieldAvailability(v,statuses,path?path+'.'+k:k)]));
  return value;
 }
@@ -159,7 +159,7 @@ async function watchJob(id,expectedFolio,restoreInput=false){
   if(job.result){for(const key of ['sections','sources','summary'])el(key).replaceChildren();renderClientData(job.result,response,expectedFolio,job.field_status);}
   if(job.result?.ExtractionMetadata?.match?.status!=='ADDRESS_REVIEW_REQUIRED'){const labels={queued:'Waiting to start',running:'Fetching county records',retry_scheduled:'Waiting for county retry',needs_review:'Review needed',completed:'Verified retrieval complete',completed_with_gaps:'Available records retrieved · gaps shown',failed:'Retrieval could not finish',cancelled:'Lookup cancelled'},stages={resolve_property:'Finding the property',appraiser:'Reading assessment records',collector_history:'Reading tax history',documents:'Reading original bills',certificate_deed:'Checking certificates and deeds',validation:'Checking identity and amounts',serialization:'Preparing results'};el('status').textContent=(labels[job.status]||'Lookup in progress')+(['running','queued'].includes(job.status)?' · '+(stages[job.stage]||'Fetching records'):'');}
   el('request-id').textContent='Lookup ID: '+id+' · updated '+new Date(job.updated_at).toLocaleString();
-  const notes=(job.gaps||[]).map(g=>g.reason.replaceAll('_',' ')+': '+g.action);
+  const notes=[...new Set((job.gaps||[]).map(g=>g.reason.replaceAll('_',' ')+': '+g.action))];
   if(job.next_retry_at)notes.push('Next recovery: '+new Date(job.next_retry_at).toLocaleString());
   el('error').textContent=notes.join(' ');
   if(['completed','completed_with_gaps','failed','cancelled','needs_review'].includes(job.status)){

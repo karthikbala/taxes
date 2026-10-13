@@ -54,7 +54,7 @@ test('original PDF transfers below output and request limits, with cleanup after
 test('collector capture waits for account history rather than the separate amount-due footer',async()=>{
  const {captureCode}=await import('../lib/live/managed-browser.mjs');let historyReady=false,output;
  const sourceUrl='https://county-taxes.net/iframe-taxsys/offline';
- const frame={url:()=>sourceUrl,locator:selector=>{if(selector==='table.bills tfoot')throw Error('Two matching footers');const locator={first:()=>locator,waitFor:async()=>{if(selector.includes('#bill-history'))historyReady=true;}};return locator;},content:async()=>{assert.equal(historyReady,true);return '<h1>Verified account</h1><div id="bill-history">Full published history</div>';}};
+ const frame={url:()=>sourceUrl,locator:selector=>{if(selector==='table.bills tfoot')throw Error('Two matching footers');const locator={first:()=>locator,count:async()=>0,waitFor:async()=>{if(selector.includes('#bill-history'))historyReady=true;}};return locator;},content:async()=>{assert.equal(historyReady,true);return '<h1>Verified account</h1><div id="bill-history">Full published history</div>';}};
  const page={goto:async()=>{},frames:()=>[frame],url:()=>sourceUrl};const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;
  await new AsyncFunction('page','console',captureCode('https://county-taxes.net/fl-miamidade/property-tax/EXAMPLE',false))(page,{log:value=>{output=value;}});
  assert(JSON.parse(output.slice('INVISIA_RESULT='.length)).html.includes('Full published history'));
