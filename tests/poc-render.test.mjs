@@ -99,7 +99,7 @@ test('validation panel displays discrepancy and unavailable checks without HTML 
 });
 
 test('nested bill documents use stacked records and preserve source values without table nesting',()=>{
- const data=JSON.parse(readFileSync(new URL('../docs/evidence/tax-document-accuracy-2026-10-12/baker-staging-ui.json',import.meta.url),'utf8'));
+ const data=JSON.parse(readFileSync(new URL('./fixtures/client/baker-render-source.json',import.meta.url),'utf8'));
  const before=JSON.stringify(data),root=new Node('main');renderValue(document,root,data.documents);
  assert.equal(root.children[0].className,'record-list');assert.equal(root.children[0].children[0].className,'record-card');
  assert.match(root.textContent,/817241/);assert.match(root.textContent,/12\/10\/2025/);assert.match(root.textContent,/\$2,083\.94/);assert.match(root.textContent,/\$2,021\.42/);
