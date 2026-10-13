@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no">
+
+	
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9;chrome=1;" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<script type="text/javascript">  
+	
+var bIE = false;
+var bIE8 = false;
+var bIE10 = false;
+
+var bOpera = false;
+var bChrome = false;
+var bAndroid = false;
+var bIpad = false;
+var bMobile = false;
+var bNarrow = false;
+var cW = 768;
+var cH = 1024;
+var minScreenWidth = 1;
+
+
+
+if (document.all) {bIE = true;}
+
+var browser = navigator.userAgent;
+var location_pathName = location.pathname;
+
+//console.log('location_pathName=' + location_pathName + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+if (location_pathName.indexOf("gisSideMenu_3_Details") == -1) {
+
+
+		if (bIE) {
+		cW = document.documentElement.clientWidth;
+		cH = document.documentElement.clientHeight;
+		} 
+		else
+		{
+		cW = window.innerWidth;
+		cH = window.innerHeight;
+		} //if (bIE) {
+
+		if (cH < cW) {
+		minScreenWidth = cH;
+		} else {
+		minScreenWidth = cW;
+		}
+
+		if (minScreenWidth < 500) {
+		bNarrow = true;
+		}
+
+	//console.log('SET: cW=' + cW + '| cH=' + cH + ' | location_pathName.indexOf=' + location_pathName.indexOf("gisSideMenu_3_Details"));
+
+} //if (location_pathName.indexOf("gisSideMenu_3_Details") == 0) {
+
+if (browser.indexOf('Opera') != -1) {bOpera = true;}
+if (browser.indexOf('Chrome') != -1) {bChrome = true;}
+if (browser.indexOf('MSIE 8.0') != -1) {bIE8 = true;}
+if (browser.indexOf('MSIE 10') != -1 || browser.indexOf('MSIE 7') != -1) {bIE10 = true;}
+if (browser.indexOf('Android') != -1) {bAndroid = true; bMobile = true;} 
+if (browser.indexOf('iPad') != -1 || browser.indexOf('iPhone') != -1) {bIpad = true; bMobile = true;}
+
+//alert('cW=' + cW + '| cH=' + cH + ' | minScreenWidth='+minScreenWidth);
+//if (cW > 0 &&  cW < 500) bNarrow = true;
+//bNarrow = false;
+</script>
+
+
+<script type="text/javascript"> 
+	
+    var serverName = location.hostname;
+    var strCounty = 'UnionPA'
+    var mapPath = '/www/_grizzly.gis/gis.UnionPA.com/';
+    var countyDomain = 'UnionPA.com';
+    var proxyURL = 'https://' + serverName + '/proxy/?'
+    
+    
+    var currentDomainTileServer_URL = 'https://' + serverName +  '/GIS_Server/'
+    var tileServerURL_array = ['https://union.floridapa.com/GIS_Server/'];
+    
+    var directMapserverURL = 'https://gz.floridapa.com/mapserver/'
+    
+
+</script>
+
+
+
+<style TYPE="text/css">
+
+html, body {
+height:100%;
+	width:100%;
+    overflow:visible;
+	margin-top: 2px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: arial, sans-serif; 
+    font-size:14pt;
+    background: #D9D9CF;
+    min-height: 100%;
+  	margin:0px;
+    -webkit-backface-visibility: visible;
+	-webkit-overflow-scrolling: touch;
+   }
+  
+  
+a:link		{color: #0000FF; font-family: arial; font-size: 9pt; font-weight: normal; text-decoration:none;}
+a:visited	{color: #0000FF; font-family: arial; font-size: 9pt; font-weight: normal; text-decoration:none;}
+a:hover		{color: #0000FF; font-family: arial; font-size: 9pt; font-weight: normal; text-decoration:underline;}
+
+
+.tb7{font-family:arial; font-weight: normal;font-size: 7pt;}
+
+#wrapper{
+top:0px;
+left:0px;
+overflow:hidden;
+}
+
+.mainTitle {
+font-family: Georgia; 
+font-size:13pt; 
+color:#000088;
+font-weight: bold;
+}
+
+.mainTitleAppraiser {
+font-family: Georgia; 
+font-size:8pt; 
+color: #5a5a5a;
+font-weight: bold;
+}
+
+
+
+.dbEffDate {
+font-family:arial; 
+font-size:7.5pt; 
+}
+
+
+.pointer {
+color: #0000FF; 
+font-family: arial; 
+font-size: 9pt;
+font-weight: normal; 
+cursor: pointer;
+ text-decoration:underline; 
+}
+
+
+.resultstable {
+font-family: arial;
+font-size: 10pt;
+font-color: #000000;
+background: #FFFFFF;
+text-align: center;
+}
+
+tr.resultstableheading {
+height:30px;
+font-family: arial;
+ font-weight: bold;
+font-size: 10pt;
+color: #000000;
+text-align: center;
+background-color: #B9C8D1;
+}
+
+ .legalDesctable {
+ font-family: arial;
+ font-size: 8pt;
+text-align: center;
+ } //
+   
+   
+.hv {
+ background-color:#FFFFFF;
+}
+
+.hv2 {
+ background-color:#E8E4D8;
+}
+
+tr.hv:hover {
+ background-color:#ccddee !important;
+ background: transparent;
+}
+
+tr.hv2:hover {
+ background-color:#ccddee !important;
+  background: transparent;
+}
+
+
+.outlineRadius {
+border-radius: 3px;
+margin: 0px; 
+padding: 0px;
+border: 1px solid #7f7f7f;
+background: #E8E8E8;
+}
+
+.shadow {
+border-radius: 3px;
+-moz-box-shadow: 2px 2px 5px #303030;
+-webkit-box-shadow: 2px 2px 5px #303030;
+box-shadow: 2px 2px 5px #303030;
+border-top:outset 1px #7f7f7f;
+border-left:outset 1px #7f7f7f;
+border-bottom:outset 2px #a1a1a1;
+border-right:outset 2px #a1a1a1;
+}
+
+
+.submit:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+.submit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #050505;
+	padding: 2px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+
+.submitSmall:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+}
+
+
+.submitSmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #050505;
+	padding: 1px 5px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+ </style>
+  
+<script type="text/javascript" language="javascript">
+<!--
+
+
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+
+
+
+function SetWindowWidth(inW, inH) {
+
+	if (inW == '' || inH == '') {
+
+		if (document.all) {
+		inW = document.body.clientWidth;
+		inH = document.body.clientHeight;
+		}
+		else {
+		inW=window.innerWidth;
+		inH=window.innerHeight;
+		}
+	} //if
+document.TaxPASearch.clientWidth.value	= inW
+document.TaxPASearch.clientHeight.value = inH
+
+} //func
+
+function iFrameHeight() {
+
+if (bIE) {
+cW = document.documentElement.clientWidth;
+cH = document.documentElement.clientHeight;
+} else{
+cW = window.innerWidth;
+cH = window.innerHeight;
+} //if (bIE) {
+
+SetWindowWidth(cW,cH);
+
+
+} //funct
+
+
+
+
+
+
+
+//-->
+</script>
+
+</head>
+<body onresize="iFrameHeight();">
+
+
+
+			
+<form name="TaxPASearch" action="" method="POST">
+<input type="HIDDEN" name="iTotalPage" value="1">
+<input type="HIDDEN" name="iRecordCount" value="1">
+<input type="HIDDEN" name="PageCount" value="">
+<input type="HIDDEN" name="CurrentPage" value="">
+<input type="HIDDEN" name="OrderBy" value="kkhdiofclkopilklgepdknniigpcnoahpjdjinmojjlpkdgbilpgoiojeedbhmkpolcfoeaiajdfpakl">
+<input type="HIDDEN" name="ResultsMenu" value=3>
+<input type="HIDDEN" name="Map_Rec" value>
+<input type="HIDDEN" name="Show_Rec" value>
+<input type="HIDDEN" name="LastSaleOnly" value="">	
+<input type="HIDDEN" name="ShowDownloadButton" value="1">
+<input type="HIDDEN" name="SearchResults_File" value="idipnjmifjeaclgdihiejjmjpoemjlllipokhjndnjkekagnmiekbdcd">
+<input type="HIDDEN" name="PARCEL_Buffer" value="">
+<input type="HIDDEN" name="PARCEL_Buffer_Label" value="">		
+<input type="HIDDEN" name="clientWidth">
+<input type="HIDDEN" name="clientHeight">
+<input type="HIDDEN" name="clientOrientation">
+	
+
+
+<div id="wrapper">	
+
+<!-- Grey Outline -->
+<table border="0" width="100%" cellpadding="10" cellspacing="0">
+<tr>
+<td valign="top" align="left">
+
+	<div class="outlineRadius">
+		
+
+    	
+	
+	
+	<table  cellspacing="0" cellpadding="6" width="100%" border="0">
+	<tr>
+	<td valign="top" align="center">
+	
+	
+	
+		<table cellspacing="0" cellpadding="1" border="0" width="100%">
+		
+		
+		
+		
+		
+		
+
+		
+		
+		<tr>
+		<td align="left" valign="top">
+			
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr><td class="mainTitle">Union County Property Appraiser</td></tr>
+            <tr><td class="mainTitleAppraiser">Bruce D. Dukes</font></td></tr>
+            <tr><td class="dbEffDate">updated: 10/8/2026</font></td></tr>
+			</table>
+		</td>
+			
+
+		<td height="30" align="right" valign="top">
+		
+			<table cellpadding="0" cellspacing="0">
+			<tr><td height="28" align="center"><input class="submitSmall" type="button" name="DownloadReport" value="Download / Print Report" onclick="OpenReportWindow(); return false;"></td><td><a href="javascript:;" onclick="window.focus();window.print(); return false;"><input class="submitSmall" type="button" value="Print" STYLE="font-size:8pt;"></a></td></tr>
+			<tr><td colspan="2" align="center">
+				<table border="0" cellspacing="0" cellpadding="0" class="tb7">
+				<tr>
+				<td valign="midddle" align="left">&nbsp;&nbsp;&nbsp;</td>
+				<td height="24" align=center>Records 1 thru 1<br>(1 Total)</td>
+				<td valign="midddle" align="right">&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				</table>
+			</td></tr>
+			</table>
+		
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	
+	
+	<tr>
+	<td valign=top align=center>
+	
+	<table cellpadding="0" border="0" width="100%">
+	<tr>
+	<td>
+	
+
+		
+		
+		
+		<table class="resultstable" cellspacing=1 cellpadding=1 border=0 width="100%">
+		<tr class="resultstableheading">
+		<td width="15">#</td>
+		<td width="105">Parcel ID</td>
+		<td>Owners Name</td>
+		<td>Address</td>
+		
+		<td>Brief Description</td>
+		<td>Recent Sale</td>
+		
+		<td>&nbsp;Map&nbsp;</td>
+		</tr>
+		<tr class=hv><td class=tb7>1</td><td class="pointer" onclick="Detail('1')">24-06-18<br>00-000-0059-0</td><td align=left><b>FLETCHER CARRIE A</b><br><span style="font-size:7pt; color:#bb0000;">HX HB</span><span style="font-size:7pt; color:#000000;"> (MOBILE HOME)</span></td><td align="right">8130 SW 50TH PATH LAKE BUTLER </td><td class="legalDesctable">COM @ SW COR OF SE1/4 OF SEC 24 & RUN N02*47'38"W, ALNG W LN OF SE1/4, 1331.20 F&nbsp;</td><td align="right" >7/7/2016 $95,000</td><td class="pointer" onclick="GIS('1');">GIS<br />Map</td></tr>
+
+		</table>
+			
+				
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" cols="3" bgcolor="#E8E8E8">
+		<tr><td colspan="3"><img src="https://union.floridapa.com/images/pixel.gif" width="50" height="1"><font face=verdana size=1><b>^^</b> Click Parcel ID for Record Details</font></td>
+		<td align=right colspan="4"><font face="verdana" size="1"> Click Here to display GIS Map <b>^^</b></font><img src="https://union.floridapa.com/images/pixel.gif" width="10" height="1"></td>
+		</table>
+		
+		
+	</td>
+	</tr>
+	
+	<tr><td align=center>
+	
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td width="29%" valign="bottom" align="left">&nbsp;</td>
+		<td width="40%" align="center"><font face="arial" size="2">Jump to:<br><SELECT name="DisplayPage" onChange="document.TaxPASearch.submit()"><OPTION VALUE="1" SELECTED>Page: 1 of 1</SELECT><br></font></td>
+		<td width="29%" valign="bottom" align="right">&nbsp;</td>
+		</tr>
+		</table>
+	
+	</td>
+	</tr>
+	
+	<tr><td>&nbsp;</td></tr>
+
+	</table>	
+
+	
+</td>
+</tr>
+
+<tr>
+<td>
+
+		<table border="0" width="100%" cellpadding="0" cellspacing="0">
+		<tr>
+		<td align="left"><font size="1">&copy; Union County Property Appraiser | Bruce D. Dukes | Lake Butler, Florida | 386-496-3431</font></td>
+		<td align=right><font face="arial" size=1 color=white><a href="https://www.schneidergis.com/resources/newsroom/schneider-geospatial-expands-florida-presence" target="_blank"><font face=tahoma size=1 color=blue>GrizzlyLogic</a>&nbsp;</font></td>
+		</tr>
+		</table>
+</td>
+</tr>
+
+</table>	
+
+
+
+
+
+
+</div>
+		<center>
+        <table border="0" width="99%" cellpadding="2" cellspacing="0">
+		<tr>
+        <td align="left" style="font-family:Helvetica, arial; font-size:7pt;">The information presented on this website was derived from data which was compiled by the <b>Union County Property Appraiser</b> solely for the governmental purpose of property assessment.  This information should not be relied upon by anyone as a determination of the ownership of property or market value. The GIS Map image is not a survey and shall not be used in a Title Search or any official capacity. No warranties, expressed or implied, are provided for the accuracy of the data herein, its use, or its interpretation.  This website was last updated: 10/8/2026 and may not reflect the data currently on file at our office.</td>
+        </tr>
+        </table>
+        </center>
+</td>
+</tr>
+</table>
+</div>
+</form>
+
+
+
+<form name="showParcelDetails" id="showParcelDetails" action="https://union.floridapa.com/gis/recordSearch_3_Details/" method="POST">
+<input type="hidden" name="backCheck" id="backCheck" value="2">
+<input type=hidden name="Show_Rec" value>
+<input type=hidden name="iTotalPage" value="1">
+<input type=hidden name="iRecordCount" value="1">
+<input type=hidden name="PageCount" value="">
+<input type=hidden name="CurrentPage" value="">
+<input type=hidden name="DisplayPage" value="">
+<input type=hidden name="OrderBy" value="kkhdiofclkopilklgepdknniigpcnoahpjdjinmojjlpkdgbilpgoiojeedbhmkpolcfoeaiajdfpakl">
+<input type="hidden" name="SearchResults_File" value="idipnjmifjeaclgdihiejjmjpoemjlllipokhjndnjkekagnmiekbdcd">
+<input type="hidden" name="clientWidth" value="1280">
+<input type="hidden" name="clientHeight" value="800">
+<input type="hidden" name="clientOrientation" value="-1">
+</form>
+
+<script type="text/javascript" language="javascript">
+<!--
+
+ //function onLoad() {
+  
+  var wrapperDiv = document.getElementById("wrapper")
+  iFrameHeight();
+ parent.setTabDisplayOn(2);
+ parent.showDivLoading(false);
+				
+
+if (obj=parent.document.parentForm.currentTab) obj.value= "2"; //Search Results tab
+
+if (obj=parent.document.parentForm.SearchResults_File) obj.value= "idipnjmifjeaclgdihiejjmjpoemjlllipokhjndnjkekagnmiekbdcd";
+
+if (obj=parent.document.parentForm.Show_Rec) obj.value= "1";
+if (obj=parent.document.parentForm.iTotalPage) obj.value= "1";
+if (obj=parent.document.parentForm.iRecordCount) obj.value= "1";
+if (obj=parent.document.parentForm.PageCount) obj.value= "";
+if (obj=parent.document.parentForm.CurrentPage) obj.value= "";
+if (obj=parent.document.parentForm.DisplayPage) obj.value= "";
+if (obj=parent.document.parentForm.OrderBy) obj.value= "kkhdiofclkopilklgepdknniigpcnoahpjdjinmojjlpkdgbilpgoiojeedbhmkpolcfoeaiajdfpakl";
+
+	
+//	
+//}   //function onLoad	
+	
+	
+	
+	function OpenReportWindow() {
+	window.open("https://union.floridapa.com/gis/downloadResults/?iflblcpbclkcgkedlmjghjdoiipoojnogclbokfbmcjhljnfilfogeefffgaejpjgddehbgncnmbjbiippgenbnhpkojemlbgcpnjalenggolobkolmdncedhjiemacodfmdheonegigpjoamadpdaaaclejbflhognekenbcpkamggegenbbamfmhmcbmfddomdgkfjaonikniggngmoddlfiabgpbpmikfcccanokpjmijfkfnglbclcipibpibbfndnoinpbgfogbbbnleailpndeomgjbdbilopahnmjeiekphfjepghpdhoabjbilcagkmk", "", "menubar=1,toolbar=1,scrollbars=1,resizable=1,width=640,height=500");
+	} //function
+	
+	
+	
+
+
+	
+function Detail(inRec) {
+
+if (document.all) {
+inW = document.body.clientWidth;
+inH = document.body.clientHeight;
+}
+else {
+inW=window.innerWidth;
+inH=window.innerHeight;
+}
+
+
+
+if (obj=parent.document.parentForm.clientWidth) obj.value = inW;
+if (obj=parent.document.parentForm.clientHeight) obj.value = inH;
+if (obj=parent.document.parentForm.clientOrientation) obj.value = "window.orientation";
+
+	if (obj=parent.document.parentForm.tempPIN) obj.value= "";
+	if (obj=parent.document.parentForm.Show_Rec) obj.value= inRec;
+	parent.ClickTab(3);
+	
+	
+} //function ShowDetail(inRec) {
+
+
+function GIS(inRec) {
+	
+if (obj=parent.document.parentForm.tempPIN) obj.value= "";	
+if (obj=parent.document.parentForm.Show_Rec) obj.value= inRec;
+parent.ClickTab(4);
+	
+} //function
+	
+	
+
+
+function submitRecordSearch(inForm,inDiv) {
+parent.submitRecordSearch(3,inForm,inDiv);
+}
+
+
+
+    
+    
+
+//-->
+</script>
+
+
+</body>
+</html>

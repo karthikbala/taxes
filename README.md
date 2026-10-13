@@ -29,7 +29,7 @@ For development use `npm run dev`. Node watches imported code; restart it after 
 - `server/sqlite.mjs`: persistent local database with atomic reservation/reconciliation.
 - `lib/client/`, `lib/live/`: existing deterministic source adapters, parsing, matching and validation.
 - `/florida`: the dated 67-county source matrix, with search and backend/access filters.
-- `/poc`: rich address/owner workflow; `/live`: older parcel workflow with self-hosted API key input.
+- `/poc`: unified county workflow selector with rich address/owner and existing parcel lookups; `/live`: older parcel explorer with the same authenticated parcel API.
 - `/healthz`: liveness only, no provider calls.
 - `/api/v2/health`: protected readiness/preflight, distinct from liveness or extraction proof.
 
@@ -48,7 +48,7 @@ Load `POC_ACCESS_KEY` securely from your local environment before using curl. Th
 
 ## Sources and testing
 
-Three richer client workflows are enabled: Miami-Dade, Osceola and Bradford, with explicit partial coverage. Twenty legacy parcel workflows are configured; seventeen still await the richer contract. The 67-county registry is research coverage, not 67 completed crawlers.
+POC exposes all existing `/live` search methods from its API catalogue: 20 Florida county parcel workflows plus Allegheny, and explicitly selected annual-roll searches for all 67 Florida counties. Miami-Dade, Osceola and Bradford also retain the richer address/owner workflow, with explicit partial coverage. The other 17 Florida county workflows use parcel IDs; their richer address/owner contracts remain pending. Annual-roll-only entries do not retrieve current collector balances, payments or original county bills. No county is promoted to richer acceptance merely by appearing in the selector.
 
 Osceola includes exact-account Collector certificate and tax-deed reports. The independent Clerk parcel search is optional: privately provision `SCRAPEDO_API_KEY` and explicitly enable `INVISIA_OSCEOLA_CLERK_ENABLED=1`. It uses one bounded native HTTP query through Scrape.do and the existing spending policy. Public-query completeness does not establish historical/title clearance. See [the dated source and staging evidence](docs/OSCEOLA-CERTIFICATE-DEED-COVERAGE-2026-10-12.md).
 
@@ -86,3 +86,15 @@ The live taxes.zeneral.ai site still uses the existing Worker host until your co
 Old Worker routes and scaffolding are isolated under [legacy/sites-worker](legacy/sites-worker/README.md). Hosting identifiers and the former dependency manifest are archived under docs/history. They are reference material, not dependencies or instructions to use Sites. No .openai hosting declaration remains in the active project.
 
 Before deleting old local files, preserve the current hosted key and required production backups through approved private storage. The repo is private; grant your colleague GitHub access and authorized server/DNS access. They do **not** need a ChatGPT Sites account for the chosen deployment path.
+
+## County TLS intermediate chain
+
+`npm start` and `npm run dev` launch Node with the reviewed public Let’s Encrypt YR2 chain in `vendor/tls/letsencrypt-yr2-chain.pem`. Highlands currently omits that chain in its TLS handshake. The bundle is signed through Node’s existing ISRG Root X1; certificate, hostname and expiry checks remain enabled. For a direct systemd Node entry point, set `NODE_EXTRA_CA_CERTS` to the absolute bundle path in the service environment before startup. Setting it inside an already running Node process does not repair the TLS context. See [certificate provenance](vendor/tls/README.md).
+
+## Resumable retrieval
+
+Miami-Dade, Osceola and Bradford address orders now use authenticated durable jobs on the standalone SQLite runtime. The POC shows progress and can restore an opaque job reference after reload; the access key stays in memory. Existing synchronous APIs remain compatible. See [job API and operations](docs/reliability/RUNBOOK.md), [failure coverage](docs/reliability/FAILURE-MATRIX.md) and [cost/access gates](docs/reliability/COST-AND-ACCESS-GATES.md). Optional Chromium, licensed PyMuPDF/OCR, fresh 36-property acceptance and the seven-day staging soak require their documented activation gates. This implementation does not establish complete historical clearance.
+
+## Bradford owner mailing-address searches
+
+For a Bradford order whose supplied address is the owner's mailing address, select **Address meaning → Owner mailing address in Bradford records** in the POC, or explicitly set `addressType: "mailing"` in the v2 request. The existing site-address behavior remains the default. Mailing mode requires one exact county owner/mailing-street/unit match and retains the actual county property site separately. It is currently validated only for Bradford. See [Besil identity and automated-recovery acceptance](docs/BESIL-IDENTITY-AND-AUTOMATION-2026-10-13.md).

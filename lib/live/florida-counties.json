@@ -28,20 +28,41 @@
     "state": "FL",
     "dor_code": 12,
     "appraiser_url": "http://www.bakerpa.com/",
-    "collector_url": "http://bakertaxcollector.com/",
+    "collector_url": "https://www.bakertaxcollector.com/",
     "modes": [
+      "collector",
       "state_roll"
     ],
     "assessment_status": "county_adapter_not_enabled",
-    "collector_status": "county_adapter_not_enabled",
-    "documents_status": "document_adapter_not_enabled",
+    "collector_status": "collector_only_adapter_enabled",
+    "documents_status": "original_html_bill_adapter_enabled",
     "roll_year": 2026,
     "sample": {
       "parcel_id": "322S22004900760075",
       "source_mode": "state_roll"
     },
     "directory_source": "https://floridarevenue.com/property/Pages/LocalOfficials.aspx",
-    "verified_roll_sample": true
+    "verified_roll_sample": true,
+    "collector_only_scope": "Native collector balance, annual payment history and original HTML bill; no native assessor or full historical clearance.",
+    "document_verification_status": "local_parsed_html",
+    "document_verification_evidence": {
+      "request_id": "abb84989-91b6-4336-b5e1-e6b29f1420a3",
+      "collected_at": "2026-10-12T12:44:00.661Z",
+      "environment": "local",
+      "format": "HTML",
+      "parcel_id": "322S22004900760075",
+      "bill_number": "1149200",
+      "tax_year": 2025,
+      "sha256": "dde2bf3a52af6443226d0af46c062a38f76506e418a2a4fd2f1635ca7dc0bc7d",
+      "evidence": "docs/evidence/tax-document-accuracy-2026-10-12/baker-fl-local.json"
+    },
+    "verification_status": "collector_only_verified",
+    "verification_evidence": {
+      "request_id": "abb84989-91b6-4336-b5e1-e6b29f1420a3",
+      "collected_at": "2026-10-12T12:44:00.661Z",
+      "environment": "local",
+      "scope": "Collector only; native assessor not enabled."
+    }
   },
   {
     "id": "bay-fl",
@@ -79,7 +100,7 @@
     ],
     "assessment_status": "county_adapter_enabled",
     "collector_status": "county_adapter_enabled",
-    "documents_status": "original_pdf_not_available",
+    "documents_status": "original_html_bill_adapter_enabled",
     "roll_year": 2026,
     "sample": {
       "parcel_id": "04708-0-00200",
@@ -89,7 +110,7 @@
     "verified_roll_sample": true,
     "phase": 2,
     "verification_status": "joined_verified",
-    "document_verification_status": "original_pdf_not_available",
+    "document_verification_status": "local_parsed_html",
     "last_verified_at": "2026-10-07T19:58:08.154Z",
     "verified_sample": {
       "request_id": "640d7fca-6abe-4b8f-a048-107ab9a1fdd5",
@@ -98,6 +119,17 @@
       "status": "succeeded",
       "document_status": "original_pdf_not_available",
       "errors": []
+    },
+    "document_verification_evidence": {
+      "request_id": "2e22b048-0562-422b-a8b5-9fa9556145a1",
+      "collected_at": "2026-10-12T12:44:00.672Z",
+      "environment": "local",
+      "format": "HTML",
+      "parcel_id": "04708-0-00200",
+      "bill_number": "1209500",
+      "tax_year": 2025,
+      "sha256": "299372ef9bd88a7ff620af3424f2d5c1aebef5e280ecb295ee3ecdfda30dcc2e",
+      "evidence": "docs/evidence/tax-document-accuracy-2026-10-12/bradford-fl-local.json"
     }
   },
   {
@@ -190,15 +222,17 @@
     "verified_roll_sample": true,
     "phase": 2,
     "verification_status": "joined_verified",
-    "document_verification_status": "hosted_parsed",
-    "last_verified_at": "2026-10-07T20:04:45.397Z",
+    "document_verification_status": "local_parsed",
+    "last_verified_at": "2026-10-12T12:00:01.277Z",
     "verified_sample": {
-      "request_id": "2b91400e-e7bd-4195-9c83-bb10805b18ca",
+      "request_id": "ebc23ac5-28f9-4210-93b2-31e395dcca7e",
       "assessment_year": 2026,
       "collector_year": 2025,
       "status": "succeeded",
       "document_status": "parsed",
-      "errors": []
+      "errors": [],
+      "environment": "local",
+      "evidence": "docs/evidence/four-county-resolution-2026-10-12/charlotte-fl-ui.json"
     }
   },
   {
@@ -280,7 +314,7 @@
       "state_roll"
     ],
     "assessment_status": "county_adapter_enabled",
-    "collector_status": "parcel_account_cross_reference_pending",
+    "collector_status": "county_adapter_enabled",
     "documents_status": "pdf_adapter_enabled",
     "roll_year": 2026,
     "sample": {
@@ -290,19 +324,18 @@
     "directory_source": "https://floridarevenue.com/property/Pages/LocalOfficials.aspx",
     "verified_roll_sample": true,
     "phase": 2,
-    "verification_status": "assessment_verified_collector_pending",
-    "document_verification_status": "hosted_document_pending",
-    "last_verified_at": "2026-10-07T20:05:07.366Z",
+    "verification_status": "joined_verified",
+    "document_verification_status": "local_parsed",
+    "last_verified_at": "2026-10-12T10:08:40.527Z",
     "verified_sample": {
-      "request_id": "b0be5c7e-fce2-4562-b8bd-c68f52f76bb6",
+      "request_id": "0f1f941b-4bc3-4867-ab3a-8e85490828c2",
       "assessment_year": 2026,
-      "collector_year": null,
-      "status": "partial",
-      "document_status": "dependency_failed",
-      "errors": [
-        "collector_not_found",
-        "document_dependency_failed"
-      ]
+      "collector_year": 2025,
+      "status": "succeeded",
+      "document_status": "parsed",
+      "errors": [],
+      "environment": "local",
+      "evidence": "docs/evidence/native-repair-2026-10-12/columbia-local-ui.json"
     }
   },
   {
@@ -319,7 +352,7 @@
     ],
     "assessment_status": "county_adapter_enabled",
     "collector_status": "county_adapter_enabled",
-    "documents_status": "original_pdf_not_available",
+    "documents_status": "original_html_bill_adapter_enabled",
     "roll_year": 2026,
     "sample": {
       "parcel_id": "30-37-25-0168-00F0-0010",
@@ -329,7 +362,7 @@
     "verified_roll_sample": true,
     "phase": 2,
     "verification_status": "joined_verified",
-    "document_verification_status": "original_pdf_not_available",
+    "document_verification_status": "local_parsed_html",
     "last_verified_at": "2026-10-07T19:46:00.648Z",
     "verified_sample": {
       "request_id": "833499f5-8b78-4b90-ae57-d35129ef1453",
@@ -338,6 +371,17 @@
       "status": "succeeded",
       "document_status": "original_pdf_not_available",
       "errors": []
+    },
+    "document_verification_evidence": {
+      "request_id": "15a6dec2-2d65-4e6d-870d-6f000ba823ea",
+      "collected_at": "2026-10-12T12:44:04.979Z",
+      "environment": "local",
+      "format": "HTML",
+      "parcel_id": "30-37-25-0168-00F0-0010",
+      "bill_number": "1403700",
+      "tax_year": 2025,
+      "sha256": "8fe5bd76c2ff93a9bf28cb96912316b6c938ea661106203655db065e4c0a1c2d",
+      "evidence": "docs/evidence/tax-document-accuracy-2026-10-12/desoto-fl-local.json"
     }
   },
   {
@@ -1403,7 +1447,7 @@
       "state_roll"
     ],
     "assessment_status": "county_adapter_enabled",
-    "collector_status": "parcel_account_cross_reference_pending",
+    "collector_status": "county_adapter_enabled",
     "documents_status": "pdf_adapter_enabled",
     "roll_year": 2026,
     "sample": {
@@ -1413,19 +1457,26 @@
     "directory_source": "https://floridarevenue.com/property/Pages/LocalOfficials.aspx",
     "verified_roll_sample": true,
     "phase": 2,
-    "verification_status": "assessment_verified_collector_pending",
-    "document_verification_status": "hosted_document_pending",
-    "last_verified_at": "2026-10-07T19:45:49.880Z",
+    "verification_status": "joined_verified",
+    "document_verification_status": "local_parsed",
+    "last_verified_at": "2026-10-12T11:43:29.355Z",
     "verified_sample": {
-      "request_id": "60baff66-575b-49d2-84c9-687ad0bd15de",
+      "request_id": "e609a6d2-f3bf-455e-a068-cc7e6be65720",
       "assessment_year": 2026,
-      "collector_year": null,
-      "status": "partial",
-      "document_status": "dependency_failed",
-      "errors": [
-        "collector_not_found",
-        "document_dependency_failed"
-      ]
+      "collector_year": 2025,
+      "status": "succeeded",
+      "document_status": "parsed",
+      "errors": [],
+      "environment": "local",
+      "evidence": "docs/evidence/four-county-resolution-2026-10-12/pinellas-fl-ui.json"
+    },
+    "samples": {
+      "county": {
+        "parcel_id": "01-30-14-01117-000-0001"
+      },
+      "state_roll": {
+        "parcel_id": "14 30 01 01117 000 0001"
+      }
     }
   },
   {
@@ -1451,20 +1502,18 @@
     "directory_source": "https://floridarevenue.com/property/Pages/LocalOfficials.aspx",
     "verified_roll_sample": true,
     "phase": 1,
-    "verification_status": "joined_verified",
+    "verification_status": "source_values_disagree",
     "verification_evidence": {
-      "request_id": "f0f24318-610d-43ba-be71-decc2992a337",
-      "collected_at": "2026-10-07T16:14:33.979Z",
-      "assessment_source_id": "assessment_county",
-      "collector_source_id": "tax_collector",
-      "input": {
-        "county": "polk-fl",
-        "parcel_id": "232724008500000660",
-        "source_mode": "county",
-        "include_pdf": true
-      }
+      "collected_at": "2026-10-12T11:48:25.669Z",
+      "environment": "local",
+      "type": "direct_collector_and_original_document",
+      "status": "partial",
+      "errors": [
+        "source_values_disagree"
+      ],
+      "evidence": "docs/evidence/four-county-resolution-2026-10-12/polk-current-conflict.json"
     },
-    "document_verification_status": "hosted_parsed"
+    "document_verification_status": "local_parsed_source_values_disagree"
   },
   {
     "id": "putnam-fl",
@@ -1697,7 +1746,7 @@
       "state_roll"
     ],
     "assessment_status": "county_adapter_enabled",
-    "collector_status": "parcel_account_cross_reference_pending",
+    "collector_status": "county_adapter_enabled",
     "documents_status": "pdf_adapter_enabled",
     "roll_year": 2026,
     "sample": {
@@ -1707,19 +1756,18 @@
     "directory_source": "https://floridarevenue.com/property/Pages/LocalOfficials.aspx",
     "verified_roll_sample": true,
     "phase": 2,
-    "verification_status": "assessment_verified_collector_pending",
-    "document_verification_status": "hosted_document_pending",
-    "last_verified_at": "2026-10-07T19:46:12.492Z",
+    "verification_status": "joined_verified",
+    "document_verification_status": "local_parsed",
+    "last_verified_at": "2026-10-12T11:53:53.730Z",
     "verified_sample": {
-      "request_id": "6908a9ca-f27d-4982-a10c-14cfd9886b5b",
+      "request_id": "9c41c2f8-0410-48aa-baf0-0b9e2d796c98",
       "assessment_year": 2027,
-      "collector_year": null,
-      "status": "partial",
-      "document_status": "dependency_failed",
-      "errors": [
-        "collector_not_found",
-        "document_dependency_failed"
-      ]
+      "collector_year": 2025,
+      "status": "succeeded",
+      "document_status": "parsed",
+      "errors": [],
+      "environment": "local",
+      "evidence": "docs/evidence/four-county-resolution-2026-10-12/suwannee-fl-ui.json"
     }
   },
   {
@@ -1758,7 +1806,7 @@
     ],
     "assessment_status": "county_adapter_enabled",
     "collector_status": "county_adapter_enabled",
-    "documents_status": "original_pdf_not_available",
+    "documents_status": "original_html_bill_adapter_enabled",
     "roll_year": 2026,
     "sample": {
       "parcel_id": "30-05-20-09-000-0180-0",
@@ -1768,7 +1816,7 @@
     "verified_roll_sample": true,
     "phase": 2,
     "verification_status": "joined_verified",
-    "document_verification_status": "original_pdf_not_available",
+    "document_verification_status": "local_parsed_html",
     "last_verified_at": "2026-10-07T19:58:12.937Z",
     "verified_sample": {
       "request_id": "37b0e8d4-044e-4d64-854a-8f4ec8cd3048",
@@ -1777,6 +1825,17 @@
       "status": "succeeded",
       "document_status": "original_pdf_not_available",
       "errors": []
+    },
+    "document_verification_evidence": {
+      "request_id": "8d7ff44d-329b-431a-afd4-51ff32d41950",
+      "collected_at": "2026-10-12T12:44:05.275Z",
+      "environment": "local",
+      "format": "HTML",
+      "parcel_id": "30-05-20-09-000-0180-0",
+      "bill_number": "507000",
+      "tax_year": 2025,
+      "sha256": "16d98e91d462d257c455a276efa4996b88707c2cbde8937ed9d9cc515a820da5",
+      "evidence": "docs/evidence/tax-document-accuracy-2026-10-12/union-fl-local.json"
     }
   },
   {

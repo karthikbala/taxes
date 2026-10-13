@@ -19,3 +19,70 @@ test('Osceola prefix resolves one fresh parent; absent prefix and wrong county r
 import {makeManagedBrowser} from '../lib/live/managed-browser.mjs';
 test('managed source allowlist rejects arbitrary sites, paths and extra assessor query fields before charging',async()=>{const browser=makeManagedBrowser({DB:{},INVISIA_BROWSER_ENABLED:'1',INVISIA_BROWSER_API_KEY:'TEST_ONLY'});for(const url of ['http://www.pcpao.gov/property-details?s=143001011170000001','https://www.pcpao.gov/admin?s=143001011170000001','https://www.pcpao.gov/property-details?s=143001011170000001&redirect=https://example.com','https://www.ccappraiser.com/Show_parcel.asp?acct=412306353004','https://example.com/'])await assert.rejects(()=>browser({url,county:'pinellas-fl',includePdf:false}),e=>e.code==='source_url_rejected');});
 test('PDF transfer failure preserves fresh collector HTML and closes the charged browser session',async()=>{const saved=globalThis.fetch;let closed=false;const db={prepare:sql=>({bind:(...args)=>({sql,args,first:async()=>({limit_milli_usd:5000,spent_milli_usd:40,reserved_milli_usd:0})})}),batch:async statements=>statements.map(()=>({meta:{changes:1}}))};globalThis.fetch=async(url,options)=>{if(options.method==='DELETE'){closed=true;return Response.json({success:true,creditsBilled:2});}if(url.endsWith('/execute')){const req=JSON.parse(options.body);if(req.code.includes('INVISIA_PDF='))return new Response('',{status:502});return Response.json({success:true,exitCode:0,stdout:'INVISIA_RESULT='+JSON.stringify({html:'<h1>Source record retained</h1>',url:'https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/EXAMPLE',pdf:{url:'https://county-taxes.net/print',size:10}})});}return Response.json({success:true,id:'TEST_SESSION'});};try{const b=makeManagedBrowser({DB:db,INVISIA_BROWSER_ENABLED:'1',INVISIA_BROWSER_API_KEY:'TEST_ONLY'}),r=await b({url:'https://county-taxes.net/osceola/property-tax/EXAMPLE',county:'osceola-fl',includePdf:true});assert.ok(r.html.includes('Source record retained'));assert.equal(r.pdf,undefined);assert.ok(r.pdf_error);assert.ok(closed);}finally{globalThis.fetch=saved;}});
+
+import {columbiaCollectorReference,lookupPhaseTwoOffice} from '../lib/live/phase-two-office.mjs';
+import {phenixLookup} from '../lib/live/phenix.mjs';
+test('Columbia collector account requires the official full assessor parcel and explicit tax link',async()=>{
+ const h=await html('columbia-collector-reference.html'),id='35-3S-16-02519-001';
+ assert.equal(columbiaCollectorReference(h,id),'R02519-001');
+ assert.throws(()=>columbiaCollectorReference(h,'36-3S-16-02519-001'),e=>e.code==='identity_mismatch');
+ assert.throws(()=>columbiaCollectorReference(h.replace('https://columbia.floridatax.us','https://example.com'),id),e=>e.code==='collector_identity_missing');
+ assert.throws(()=>columbiaCollectorReference(h.replace('R02519-001','P02519-001'),id),e=>e.code==='collector_identity_missing');
+ assert.throws(()=>columbiaCollectorReference(h+h.match(/<a[\s\S]*?<\/a>/)[0].replace('R02519-001','R02519-002'),id),e=>e.code==='collector_identity_missing');
+});
+test('Columbia uses an echoed parcel cross-reference and retains assessment on cross-reference failure',async()=>{
+ const county={id:'columbia-fl'},params={parcel_id:'35-3S-16-02519-001'},calls=[];
+ const get=async(url,source)=>{calls.push({url,source});return html(source==='assessment_county'?'columbia-exact-detail.html':'columbia-collector-reference.html');};
+ const r=await lookupPhaseTwoOffice(county,params,get,()=>{});
+ assert.equal(r.property.collector_parcel_id,'R02519-001');assert.equal(r.assessment.assessed_total,'9096544');
+ assert.equal(calls[1].url,'https://search.ccpafl.com/parcel/02519001163S35');
+ const rejected=await lookupPhaseTwoOffice(county,params,async(url,source)=>source==='assessment_county'?html('columbia-exact-detail.html'):'<h1 class="title-heading">Parcel WRONG</h1>',()=>{});
+ assert.equal(rejected.assessment.assessed_total,'9096544');assert.equal(rejected.property.collector_parcel_id,undefined);assert.equal(rejected.collector_reference_error.code,'identity_mismatch');
+});
+test('Columbia collector searches its explicit formatted account rather than the full assessor parcel',async()=>{
+ let query;
+ await assert.rejects(()=>phenixLookup({client:'columbia',expectedId:'R02519-001',verify:()=>{},includePdf:false,get:async(url,source,headers,opts)=>{
+  if(source==='collector_session')return '<input type="hidden" name="__VIEWSTATE" value="TEST_ONLY">';
+  query=new URLSearchParams(opts.body).get('ctl00$MainContent$txtSearchCriteria');return '<span id="MainContent_lblSearchCount">No Records Found</span>';
+ }}),e=>e.code==='collector_not_found');
+ assert.equal(query,'R02519-001');assert.equal(phaseTwo['columbia-fl'].collector_key,'collector_parcel_id');
+});
+
+import {pinellasCollectorReference} from '../lib/live/phase-two-office.mjs';
+test('Pinellas current assessor publishes its exact full-parcel Phenix g cross-reference',async()=>{
+ const h=await html('pinellas-current-assessor.html'),id='01-30-14-01117-000-0001',url='https://pinellas.floridatax.us/PropertyDetail?g=013014011170000001';
+ assert.equal(pinellasCollectorReference(h,id),url);
+ assert.throws(()=>pinellasCollectorReference(h,'01-30-14-01117-000-0002'),e=>e.code==='identity_mismatch');
+ assert.throws(()=>pinellasCollectorReference(h.replaceAll('g=013014011170000001','g=013014011170000002'),id),e=>e.code==='collector_identity_missing');
+ assert.throws(()=>pinellasCollectorReference(h.replaceAll('https://pinellas.floridatax.us','https://example.com'),id),e=>e.code==='collector_identity_missing');
+ const parsed=await lookupPhaseTwoOffice({id:'pinellas-fl'},{parcel_id:id},async()=>h,()=>{});
+ assert.equal(parsed.property.collector_reference_url,url);assert.equal(parsed.assessment.assessed_total,'0');
+ assert.equal(phaseTwo['pinellas-fl'].collector_key,'parcel_id');
+});
+test('Pinellas follows authoritative g link to separate R account, bill year and print action',async()=>{
+ const h=await html('pinellas-g-collector.html'),id='01-30-14-01117-000-0001',url='https://pinellas.floridatax.us/PropertyDetail?g=013014011170000001',calls=[];
+ const r=await phenixLookup({client:'pinellas',expectedId:id,parcelReference:url,includePdf:true,verify:()=>{},get:async u=>{calls.push(u);return h;}});
+ assert.deepEqual(calls,[url]);assert.equal(r.identity.parcel_id,'R3998');assert.equal(r.identity.appraiser_parcel_id,id);
+ assert.equal(r.taxes.summary.balance_due,'0.00');assert.equal(r.taxes.history[0].year,2025);
+ assert.equal(r.taxes.history[0].bill_number,'319274');assert.equal(r.taxes.history[0].payment_date,null);
+ assert.equal(r.print_request.url,'https://pinellas.floridatax.us/PropertyDetail?p=R3998&y=2025');
+ await assert.rejects(()=>phenixLookup({client:'pinellas',expectedId:id,includePdf:false,get:async()=>{throw Error('Must not fetch');}}),e=>e.code==='collector_dependency_failed');
+ await assert.rejects(()=>phenixLookup({client:'pinellas',expectedId:id,parcelReference:url+'0',get:async()=>{throw Error('Must not fetch');}}),e=>e.code==='collector_identity_mismatch');
+ await assert.rejects(()=>phenixLookup({client:'pinellas',expectedId:id,parcelReference:url,verify:()=>{},get:async()=>h.replaceAll('PropertyDetail?p=R3998','PropertyDetail?p=R3999')}),e=>e.code==='collector_identity_mismatch');
+});
+
+import {floridaLookup} from '../lib/live/florida.mjs';
+test('Pinellas parcel API joins the published account and zero-tax original PDF without parcel-account substitution',async()=>{
+ const calls=[],id='01-30-14-01117-000-0001';
+ const r=await floridaLookup({state:'FL',county:'pinellas-fl',parcel_id:id,source_mode:'county',include_pdf:true},async(url,opts)=>{
+  calls.push({url,method:opts.method||'GET'});
+  if(url.startsWith('https://www.pcpao.gov/property-details?'))return new Response(await html('pinellas-current-assessor.html'));
+  if(url==='https://pinellas.floridatax.us/PropertyDetail?g=013014011170000001')return new Response(await html('pinellas-g-collector.html'));
+  if(url==='https://pinellas.floridatax.us/PropertyDetail?p=R3998&y=2025'&&opts.method==='POST')return new Response(await readFile(new URL('./fixtures/phase-two/pinellas-original-zero.pdf',import.meta.url)));
+  throw Error('Unexpected source request: '+url);
+ });
+ assert.equal(r.status,'succeeded');assert.deepEqual(r.errors,[]);assert.equal(r.document_status,'parsed');
+ assert.equal(r.join.assessment_value,id);assert.equal(r.join.collector_value,id);assert.equal(r.join.collector_account_id,'R3998');
+ assert.equal(r.documents[0].fields.combined_taxes_and_assessments,'0.00');assert.equal(r.taxes.summary.balance_due,'0.00');
+ assert.ok(calls.every(c=>!c.url.includes('AccountSearch')));
+});

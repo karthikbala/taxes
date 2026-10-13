@@ -1,0 +1,11 @@
+{
+  "retrieved_date": "2026-10-12",
+  "assessor_url": "https://www.pcpao.gov/property-details?s=143001011170000001",
+  "collector_url": "https://pinellas.floridatax.us/PropertyDetail?g=013014011170000001",
+  "pdf_source_url": "https://pinellas.floridatax.us/PropertyDetail?p=R3998&y=2025",
+  "pdf_method": "POST Print Bill / Receipt",
+  "assessor_capture": "Fresh Chrome rendered DOM",
+  "collector_capture": "Fresh direct county HTTP response",
+  "sanitization": "HTML scripts, styles, navigation, iframes and hidden session fields removed; public identity/value labels retained. PDF preserved unchanged.",
+  "usage": "Offline regression fixtures only; never runtime source substitutes"
+}

@@ -59,3 +59,12 @@ next-env.d.ts
 *.sqlite-*
 *.db
 *.db-*
+
+# Reviewed public CA certificates are source assets, not private keys.
+!vendor/tls/letsencrypt-yr2-chain.pem
+
+# Private reliability evidence and Python caches
+/output/
+/tmp/
+__pycache__/
+*.pyc

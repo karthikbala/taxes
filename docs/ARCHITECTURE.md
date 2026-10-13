@@ -4,7 +4,9 @@ This application has a standalone Node 22 server for local development and futur
 
 ## Request path
 
-`/poc` → browser `/poc.js` → authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI.
+`/poc` → browser `/poc.js` → selected supported search method. Address-and-owner orders use authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI. Parcel orders use the existing authenticated `/api/v1/property/lookup`; their original parcel envelope and source coverage are rendered separately.
+
+`public/poc-workflows.mjs` combines the v1 catalogue and v2 profiles without promoting a county's acceptance status. POC offers the same 20 Florida county parcel workflows and Allegheny workflow as `/live`, preserves the three rich address workflows, and exposes the explicitly selected Florida annual-roll mode for all 67 Florida entries. The annual roll is never an automatic fallback. Mode changes clear prior results and disable irrelevant fields; Palm Beach's optional collector-account input is scoped to its county mode. Parcel JSON retains its own fields and errors rather than being relabelled as a verified rich client record.
 
 | Component | Responsibility |
 | --- | --- |

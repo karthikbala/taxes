@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head><title>
+	Suwannee County - Property Tax Search
+</title>
+
+
+        
+            
+
+    
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <form method="post" action="./AccountSearch?s=pt" id="ctl01">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="TEST_ONLY">
+
+
+
+
+
+
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="TEST_ONLY">
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="TEST_ONLY">
+        
+
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Primary navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-navbar-collapse" aria-controls="site-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation menu">
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                        <span class="icon-bar" aria-hidden="true"></span>
+                    </button>
+
+                    
+                    <a id="TaxCollectorLink" class="navbar-brand" aria-label="County Tax Collector (opens in new tab)" href="https://suwtax.com/" target="_blank"><img src="..\Images\florida-state-seal - Red transparent.png" class="img - responsive logo" alt="This is a link to the Tax Collector Site"></a>
+                </div>
+
+                
+                <div class="navbar-collapse collapse" id="site-navbar-collapse">
+                    <ul class="nav navbar-nav" role="menubar">
+
+                        
+                        <li role="menuitem">
+                            <a href="./" role="menuitem">
+                                
+                                Home
+                            </a>
+                        </li>
+
+                        
+                        
+                            <li class="dropdown">
+                                
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="propertyTaxDropdown">Property Tax <span class="caret" aria-hidden="true"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="propertyTaxDropdown">
+                                    
+                                        <li role="menuitem"><a href="AccountSearch.aspx?s=pt" role="menuitem">Tax Account Search</a></li>
+                                    
+                                </ul>
+                            </li>
+                        
+
+                        
+                        
+
+                        
+                        
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="touristTaxDropdown">Tourist Dev. Tax <span class="caret" aria-hidden="true"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="touristTaxDropdown">
+                                    
+                                        <li role="menuitem"><a href="TouristTaxAcctRegistration" role="menuitem">TDT Account Management</a></li>
+                                    
+                                        <li role="menuitem"><a href="TDTFiling" role="menuitem">TDT Filing</a></li>
+                                    
+                                </ul>
+                            </li>
+                        
+
+                        
+                        
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="miscDropdown">Misc <span class="caret" aria-hidden="true"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="miscDropdown">
+                                    <li role="menuitem"><a href="Contact" role="menuitem">Contact Us</a></li>
+                                    
+                                </ul>
+                            </li>
+                        
+
+                        
+                        
+                            
+                            <li role="menuitem">
+                                <a href="ShoppingCart" id="cartCount" role="menuitem" aria-label="Shopping Cart (0 items)">Shopping Cart <span aria-hidden="true">(0)</span></a>
+                            </li>
+                        
+                    </ul>
+
+                    
+                    
+                            <ul class="nav navbar-nav navbar-right" aria-label="Account navigation">
+                                <li><a href="Account/Register">Register</a></li>
+                                <li><a href="Account/Login">Log in</a></li>
+                            </ul>
+                        
+                </div>
+                
+            </div>
+            
+        </nav>
+        
+
+        
+        <main id="main-content" class="container body-content" tabindex="-1">
+            
+    
+    
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1">
+                <div>
+	
+                    <div class="mb-4">
+                        <img id="MainContent_TitleImage" class="img-fluid" src="../Images/florida-state-seal%20-%20Blue%20-%20small3.png">
+                    </div>
+
+                    <p class="lead">
+                        <span id="MainContent_PaymentsDisabledMessage"></span>
+                        <span id="MainContent_SearchPageMessage"><br><b>Welcome to the <span style="Color: DarkBlue">Suwannee County Tax Collector</span> site for Property Tax.</b><br><br>  In the search field below, use keywords such as owner name, address, or account number to find your record.</span>
+                    </p>
+
+                    <div class="mb-3">
+                        
+                    </div>
+
+                    <div class="search-input-wrapper mb-3">
+                        <input name="ctl00$MainContent$txtSearchCriteria" type="text" value="6868" id="MainContent_txtSearchCriteria" class="form-control MyInline" placeholder="Enter search keywords here">
+                        <a id="MainContent_btnSearch" class="btn btn-default" href="javascript:__doPostBack('ctl00$MainContent$btnSearch','')">
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </a>
+                        <a href="#" data-toggle="popover" title="Search Options" data-trigger="focus" data-content="Keyword searches apply to account/bill numbers, names, and addresses. The more keywords entered, the more precise the search will be.">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                        </a>
+                    </div>
+
+                    <span id="MainContent_lblSearchCount">Showing records 1-3 of 3 records found.</span>
+                    
+                    
+                            
+                            <!-- Property Tax Results -->
+                            <div id="MainContent_ListView1_PropertyTaxResults_0" class="card mb-3 result-table">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="PropertyDetail?p=04955002000&amp;y=2025&amp;b=16342.0000">
+                                            04955002000 - WAL-MART STORES EAST LP
+                                        </a>
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 mb-2">
+                                            <i><b>Mailing Address</b></i><br>
+                                            WAL-MART STORES EAST LP<br>P O BOX 8050<br>MS0555 STORE #2626<br>BENTONVILLE AR 727168050
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-2">
+                                            <i><b>Property Address</b></i><br>
+                                            6868  HWY 129<br>LIVE OAK 32064
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Revenue Results -->
+                            
+                        
+                            <!-- Property Tax Results -->
+                            <div id="MainContent_ListView1_PropertyTaxResults_1" class="card mb-3 result-table">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="PropertyDetail?p=5010285&amp;y=2025&amp;b=39206.0000">
+                                            5010285 - SMARTSTYLE
+                                        </a>
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 mb-2">
+                                            <i><b>Mailing Address</b></i><br>
+                                            SMARTSTYLE<br>1 OFFICE PARK CR, STE 103<br>BIRMINGHAM AL 35223
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-2">
+                                            <i><b>Property Address</b></i><br>
+                                            6868  HWY 129<br>LIVE OAK 32060
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Revenue Results -->
+                            
+                        
+                            <!-- Property Tax Results -->
+                            <div id="MainContent_ListView1_PropertyTaxResults_2" class="card mb-3 result-table">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="PropertyDetail?p=5013685&amp;y=2025&amp;b=39349.0000">
+                                            5013685 - WAL-MART STORES EAST INC
+                                        </a>
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 mb-2">
+                                            <i><b>Mailing Address</b></i><br>
+                                            WAL-MART STORES EAST INC<br>ATTN M/S #0555<br>P O BOX 8050<br>BENTONVILLE AR 727128050
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-2">
+                                            <i><b>Property Address</b></i><br>
+                                            6868 HWY 129<br>LIVE OAK 32064
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Revenue Results -->
+                            
+                        
+                        
+
+                    <div class="text-center mb-5">
+                        <span id="MainContent_DataPager1"><a class="aspNetDisabled">Previous</a>&nbsp;<span>1</span>&nbsp;<a class="aspNetDisabled">Next</a>&nbsp;</span>
+                    </div>
+                
+</div>
+            </div>
+        </div>
+    </div>
+
+            <hr>
+
+            
+            
+        </main>
+
+    </form>
+
+    
+    
+    <footer role="contentinfo">
+        <p>
+            <img src="Publicsoft_logo_Small.png" alt="Powered by Publicsoft Phenix.net" class="img-responsive" style="display: inline-block; max-width: 150px;">
+            &nbsp;&nbsp;© 2026 - Powered by Phenix.net
+        </p>
+    </footer>
+
+
+
+</body></html>

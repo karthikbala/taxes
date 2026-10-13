@@ -7,9 +7,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "node --env-file-if-exists=.env.local --watch server/index.mjs",
+    "dev": "node --env-file-if-exists=.env.local scripts/start-selfhost.mjs --watch",
     "build": "node scripts/build-selfhost.mjs",
-    "start": "node --env-file-if-exists=.env.local server/index.mjs",
+    "start": "node --env-file-if-exists=.env.local scripts/start-selfhost.mjs",
     "test": "node scripts/test.mjs",
     "setup:local": "node scripts/setup-local.mjs",
     "db:setup": "node scripts/setup-local.mjs --db-only",
@@ -19,5 +19,8 @@
     "cheerio": "1.1.2",
     "pdf-lib": "1.17.1",
     "unpdf": "1.8.1"
+  },
+  "optionalDependencies": {
+    "playwright": "1.64.0"
   }
 }

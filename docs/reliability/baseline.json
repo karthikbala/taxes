@@ -1,0 +1,17 @@
+{
+  "head": "05a1767319bbd04032d4c21741ebc0723ea4a4e2",
+  "upstream": "379943a175a70ff61e87dc6e0b89ea6b32b5ec57",
+  "fork": "2ec9cd8a6af9aa07760911d7afb81176572f7a16",
+  "first_staging_observation": {
+    "release": "bradford-client-20261013-a700188fa129",
+    "system_service_probe": "not-found; superseded by correct user-service probe"
+  },
+  "reconciled_staging_observation": {
+    "release": "bradford-client-final-20261013-f6a5bcedf983",
+    "service": "systemctl --user taxes-staging.service",
+    "state": "active"
+  },
+  "source_file_count": 961,
+  "source_manifest_sha256": "243c8f139213e4294d02f897bd8828fba23843bafaf0b1633a467e9dbd654425",
+  "note": "Local working changes beyond HEAD were reviewed/preserved; snapshot source manifest is private output/reliability/baseline.json. Staging advanced independently during implementation."
+}

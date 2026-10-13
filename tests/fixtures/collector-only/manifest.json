@@ -1,0 +1,34 @@
+{
+  "retrieved_at": "2026-10-12",
+  "scope": "Original public Baker collector sources for parcel 322S22004900760075; hidden input values sanitized if present. No live fallback.",
+  "sources": [
+    {
+      "id": "collector_session",
+      "url": "https://www.bakertaxcollector.com/Property/SearchSelect?ClearData=True",
+      "method": "GET",
+      "fetched_at": "2026-10-12T12:41:36.409Z",
+      "sha256": "9c3bf0b04c9a83cec76ae896401ab8dd858b24735d33e421a6df59bf4ebe358a"
+    },
+    {
+      "id": "collector_session_form",
+      "url": "https://www.bakertaxcollector.com/Property/SearchSelect?Accept=true&ClearData=True",
+      "method": "GET",
+      "fetched_at": "2026-10-12T12:41:36.687Z",
+      "sha256": "d51f40d3c3c2c53d3f8f79b64c01e7d04f8203af078406f74194705bdd4f6145"
+    },
+    {
+      "id": "collector_search",
+      "url": "https://www.bakertaxcollector.com/Property/Search",
+      "method": "POST",
+      "fetched_at": "2026-10-12T12:41:37.214Z",
+      "sha256": "085154e5100e964de011ec8d8aa2bc42ab0186d04d46ce3523b874a17055bae8"
+    },
+    {
+      "id": "tax_collector",
+      "url": "https://www.bakertaxcollector.com/Property/TaxBill",
+      "method": "POST",
+      "fetched_at": "2026-10-12T12:41:39.517Z",
+      "sha256": "dde2bf3a52af6443226d0af46c062a38f76506e418a2a4fd2f1635ca7dc0bc7d"
+    }
+  ]
+}

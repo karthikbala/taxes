@@ -6,6 +6,19 @@ const cases=[['sarasota-known-detail.html','parseSarasota','2024100013','1679964
 for(const [n,fn,id,value,year]of cases)test(fn+' accepts the source record and rejects another identity',async()=>{const h=await html('appraisers-'+n),r=office[fn](h,id);assert.equal(r.assessment.assessed_total,value);assert.equal(r.assessment.year,year);assert.ok(r.property.owner);assert.ok(r.property.address);assert.throws(()=>office[fn](h,'WRONG-PARCEL'));});
 test('Lee keeps capped assessment distinct from market and resolves actual STRAP',async()=>{const row=(await json('appraisers-lee-wcf-record.json')).d[0];const r=office.parseLee(await html('appraisers-lee-full-detail.html'),'08-44-24-C2-00004.0010',row);assert.equal(r.assessment.assessed_total,'1197134');assert.equal(r.assessment.market_assessed,'1632456');assert.equal(r.property.folio_id,'10614748');assert.equal(r.assessment.year,2026);});
 test('Charlotte county and school bases remain different',async()=>{const r=office.parseCharlotte(await html('appraisers-charlotte-detail.html'),'412306353004');assert.equal(r.assessment.assessed_total,'5317274');assert.equal(r.assessment.assessed_school,'5925697');assert.equal(r.assessment.taxable_school,'0');});
+test('Charlotte certified roll keeps source status, authority bases and municipal exemption',async()=>{
+ const h=await html('charlotte-certified-20261012.html'),r=office.parseCharlotte(h,'412306353004');
+ assert.equal(r.assessment.year,2026);assert.equal(r.assessment.year_status,'Certified');
+ assert.equal(r.assessment.assessed_total,'5317274');assert.equal(r.assessment.assessed_school,'5925697');
+ assert.equal(r.assessment.exemptions,'5317274');assert.equal(r.assessment.school_exemptions,'5925697');
+ assert.equal(r.assessment.taxable_non_school,'0');assert.equal(r.assessment.taxable_school,'0');
+ assert.equal(r.property.owner,'CITY OF PUNTA GORDA');
+ assert.throws(()=>office.parseCharlotte(h,'412306353005'),e=>e.code==='identity_mismatch');
+ assert.throws(()=>office.parseCharlotte(h.replace('Certified Tax Roll Values','Unlabelled Values'),'412306353004'),e=>e.code==='layout_changed');
+ assert.throws(()=>office.parseCharlotte(h.replaceAll('Certified Assessed Value','Missing Assessed Value'),'412306353004'),e=>e.code==='layout_changed');
+ const table=h.match(/<table[^>]*class="prctable[^>]*>[\s\S]*?Certified Tax Roll Values[\s\S]*?<\/table>/)?.[0];
+ assert.ok(table);assert.throws(()=>office.parseCharlotte(h+table,'412306353004'),e=>e.code==='layout_changed');
+});
 test('Polk county GIS does not invent a year or collector balance',async()=>{const r=office.parsePolkGis(await json('alternatives-polk-native-tripar-exact.json'),'232724008500000660');assert.equal(r.assessment.assessed_total,'433287');assert.equal(r.assessment.year,null);assert.equal(r.taxes,undefined);assert.throws(()=>office.parsePolkGis({features:[]},'232724008500000660'),e=>e.code==='not_found');});
 test('source negative parcel pages remain explicit outcomes',async()=>{const h=await html('appraisers-pasco-negative.html');assert.throws(()=>office.parsePasco(h,'99-99-99-9999-99999-9999'),e=>e.code==='not_found');});
 test('TaxSys exact search resolves source parent UUID, never a saved account seed',async()=>{const data=await json('collectors-broward-search.json'),r=resolveTaxsys(data,'474135010091','broward');assert.equal(r.external_id,'474135-01-0091');assert.match(atob(r.token),/^broward:real_estate:parents:/);assert.throws(()=>resolveTaxsys(data,'123456','broward'),e=>e.code==='collector_not_found');assert.throws(()=>resolveTaxsys(data,'474135010091','miamidade'),e=>e.code==='collector_identity_mismatch');});
