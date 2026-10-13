@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import {capabilities,validateInput} from '../lib/live/router.mjs';
 import {clientCapabilities} from '../lib/client/profiles.mjs';
 import {validateClientInput} from '../lib/client/contract.mjs';
-import {pocWorkflows,pocRequest,workflowLabels,workflowSample,supportsNeighbors} from '../public/poc-workflows.mjs';
+import {pocWorkflows,pocRequest,catalogWorkflows,catalogRequest,workflowLabels,workflowSample,supportsNeighbors} from '../public/poc-workflows.mjs';
 import {renderValue,renderSections,renderValidation,resultBadge,resultRequestId} from '../public/poc-render.mjs';
 import {sourcePresentation} from '../public/source-status.mjs';
 
@@ -53,7 +53,7 @@ async function harness(clientResponse){
  const document={getElementById:id=>elements.get(id),createElement:tag=>new Element(tag)},calls=[];
  let neighbors;
  const source=readFileSync(new URL('../public/poc.js',import.meta.url),'utf8').replace(/^import .*?;\s*$/gm,'');
- const context={document,pocWorkflows,pocRequest,workflowLabels,workflowSample,supportsNeighbors,renderValue,renderSections,renderValidation,resultBadge,resultRequestId,sourcePresentation,
+ const context={document,pocWorkflows,pocRequest,catalogWorkflows,catalogRequest,workflowLabels,workflowSample,supportsNeighbors,renderValue,renderSections,renderValidation,resultBadge,resultRequestId,sourcePresentation,
   initNeighbors:(_doc,handlers)=>{neighbors=handlers;},selectedPropertyOrder:()=>{},selectedParcelCheck:()=>{},
   performance:{now:()=>0},setInterval:()=>1,clearInterval(){},setTimeout:()=>1,clearTimeout(){},AbortController,AbortSignal,URL,Blob,crypto:{randomUUID:()=> 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa'},sessionStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},
   location:{origin:'http://127.0.0.1:3000'},fetch:async(url,options)=>{
@@ -128,13 +128,13 @@ test('verified physical-address option switches to its actual county without sub
  const buttons=[];const walk=n=>{if(n.tag==='button')buttons.push(n);for(const c of n.children)walk(c)};walk(e.get('sections'));assert.equal(buttons.length,1);await buttons[0].listeners.click[0]();assert.equal(e.get('county').value,'union-fl');assert.equal(e.get('parcel').value,site.parcel_id);assert.equal(e.get('lookup-mode').value,'county');assert.equal(calls.length,1);await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.county,'union-fl');assert.equal(calls.at(-1).body.parcel_id,site.parcel_id);
 });
 
-test('Bradford mailing mode is explicit in the actual controller and resets when county changes',async()=>{const {elements:e,calls}=await harness();await e.get('county').change('bradford-fl');assert.equal(e.get('address-type').value,'auto');assert.equal(e.get('mailing-mode-field').hidden,false);await e.get('address-type').change('mailing');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.addressType,'mailing');assert.equal(calls.at(-1).body.address,'8130 SW 50TH PATH');await e.get('county').change('union-fl');assert.equal(e.get('address-type').value,'site');assert.equal(e.get('mailing-mode-field').hidden,true);});
+test('address lookup has no county-specific address-mode control',async()=>{const {elements:e,calls}=await harness();assert.equal(e.has('address-type'),false);assert.equal(e.has('mailing-mode-field'),false);await e.get('form').onsubmit({preventDefault(){}});assert.equal('addressType' in calls[0].body,false);});
 
 test('Bradford automatically submits and displays detected mailing meaning without changing the supplied address',async()=>{
  const result={status:'partial',scrapTaxOrderRequest:{matchStatus:'MATCHED',PropertyInformation:{ParcelNumber:'00420-0-00200',PropertyAddress:'SW 180TH PL, BROOKER',MailingAddress:'8130 SW 50TH PATH'},DelinquencyInformation:{coverage:'PARTIAL'}},ExtractionMetadata:{match:{status:'MATCHED',requested_address_type:'auto',input_address_type:'mailing',matched_address_types:['mailing']},sources:[],section_status:{PropertyInformation:'EXTRACTED'}}};
  const {elements:e,calls}=await harness(result);await e.get('county').change('bradford-fl');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';
  await e.get('form').onsubmit({preventDefault(){}});
- assert.equal(calls.length,1);assert.equal(calls[0].body.addressType,'auto');assert.equal(e.get('address').value,'8130 SW 50TH PATH');
+ assert.equal(calls.length,1);assert.equal('addressType' in calls[0].body,false);assert.equal(e.get('address').value,'8130 SW 50TH PATH');
  assert.match(e.get('summary').textContent,/Owner mailing address.*detected from county records/);assert.match(e.get('sections').textContent,/00420-0-00200/);assert.match(e.get('sections').textContent,/SW 180TH PL, BROOKER/);
 });
 
@@ -142,7 +142,14 @@ test('automatic role ambiguity shows verified candidates and waits for explicit 
  const candidates=[{parcel_id:'05194-0-00000',address:'SE 11TH AVE, STARKE',owners:['CALLAHAN JAMES R & CHARLOTTE'],owner_matches_requested:true,verified_address_match:true,address_match_type:'mailing_only'},{parcel_id:'05379-0-00000',address:'8280 SE SWEET BAY DR',owners:['CALLAHAN JAMES R & CHARLOTTE'],owner_matches_requested:true,verified_address_match:true,address_match_type:'site'}];
  const {elements:e,calls}=await harness({status:'error',ExtractionMetadata:{match:{status:'AMBIGUOUS',requested_address_type:'auto',candidates},sources:[]}});
  await e.get('county').change('bradford-fl');await e.get('form').onsubmit({preventDefault(){}});
- assert.match(e.get('status').textContent,/confirmation needed/);assert.match(e.get('sections').textContent,/More than one Bradford property matches/);assert.equal(calls.length,1);
+ assert.match(e.get('status').textContent,/confirmation needed/);assert.match(e.get('sections').textContent,/More than one property matches/);assert.equal(calls.length,1);
  const buttons=[];const walk=n=>{if(n.tag==='button')buttons.push(n);for(const c of n.children)walk(c)};walk(e.get('sections'));
  assert.equal(buttons.length,2);await buttons[0].listeners.click[0]();assert.equal(e.get('parcel').value,'05194-0-00000');assert.equal(calls.length,1,'Choosing a candidate only fills the form');
+});
+
+test('all address-capable county API workflows use the same address-and-owner request without mode selection',()=>{
+ for(const profile of catalogWorkflows(capabilities,clientCapabilities).filter(p=>p.lookup_modes.includes('address'))){
+  const r=catalogRequest(profile,'address',{order:'generic-address',address:'100 TEST ST',owner:'TEST OWNER',transaction:'REFI',addressType:'mailing'});
+  assert.equal('addressType' in r.body,false);assert.equal(r.body.county,profile.id);assert.equal(r.body.address,'100 TEST ST');assert.equal(r.body.ownerName,'TEST OWNER');
+ }
 });

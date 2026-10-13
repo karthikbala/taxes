@@ -46,8 +46,7 @@ export function catalogRequest(profile, mode, fields) {
   if (!profile?.lookup_modes.includes(mode)) throw new Error('This lookup mode is unavailable for the selected county.');
   if (mode === 'address') return { endpoint: '/api/v2/property/lookup', body: {
     scrap_order_id: fields.order, address: fields.address, ownerName: fields.owner,
-    county: profile.id, transactionType: fields.transaction, state: profile.state,
-    ...(profile.id==='bradford-fl'?{addressType:['site','mailing'].includes(fields.addressType)?fields.addressType:'auto'}:{})
+    county: profile.id, transactionType: fields.transaction, state: profile.state
   } };
   return { endpoint: '/api/v1/property/lookup', body: {
     county: profile.id, parcel_id: fields.parcel, source_mode: mode,
