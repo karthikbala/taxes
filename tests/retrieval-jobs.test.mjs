@@ -108,6 +108,9 @@ test('429 honours long Retry-After without sleeping; circuit breaks repeated tra
 test('no fallback interpretation turns zero, missing data or a conflict into another value',()=>{
  const data=result([{source_id:'receipt_pdf',code:'source_values_disagree'}]);data.scrapTaxOrderRequest.TaxAmounts.totalTax='$0.00';data.ExtractionMetadata.provenance['TaxAmounts.totalTax']={source_id:'receipt_pdf',method:'printed_value'};const {gaps,fields}=explainResult(data);assert.equal(fields['TaxAmounts.totalTax'].status,'VERIFIED');assert.equal(gaps[0].reason,'VALIDATION_CONFLICT');assert.equal(fields['TaxAmounts.totalDiscountable'].reason,'NOT_PUBLISHED');
 });
+test('explicit certificate-notice omission is distinct from an unsupported layout',()=>{
+ const data=result();delete data.ExtractionMetadata.provenance['TaxAmounts.totalDiscountable'];data.ExtractionMetadata.section_status.TaxAmounts={status:'UNAVAILABLE',note:'Annual tax totals are not printed on this certificate notice.'};assert.equal(explainResult(data).fields['TaxAmounts.totalDiscountable'].reason,'NOT_PUBLISHED');
+});
 
 test('operator review is evidence-bound and cannot overwrite verified amounts',async()=>{
  const {db,store}=fixture(),runner=createJobRunner({env:{DB:db},store,autoStart:false,logSink:()=>{},lookup:async()=>result()});

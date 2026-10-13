@@ -1,9 +1,10 @@
 import {parentPort,workerData} from 'node:worker_threads';
 import {parseTaxBillPdf,parsePalmNoticePdf} from '../lib/live/pdf-text.mjs';
+import {captureCard} from '../lib/client/bradford.mjs';
 import {parseClientBillPdf} from '../lib/client/bill.mjs';
 import {extractPdf,extractionContext} from '../lib/reliability/pdf-extract.mjs';
 const {kind,bytes,expectedId,expectedYear,forcedExtraction}=workerData;
-const parse=()=>kind==='client'?parseClientBillPdf(bytes,expectedId,expectedYear):kind==='notice'?parsePalmNoticePdf(bytes,expectedId,expectedYear):parseTaxBillPdf(bytes,expectedId,expectedYear);
+const parse=()=>kind==='bradford_card'?captureCard(bytes,expectedId):kind==='client'?parseClientBillPdf(bytes,expectedId,expectedYear):kind==='notice'?parsePalmNoticePdf(bytes,expectedId,expectedYear):parseTaxBillPdf(bytes,expectedId,expectedYear);
 try{
  let extraction;
  const result=await extractionContext.run(forcedExtraction?{forced:forcedExtraction}:{},async()=>{extraction=await extractPdf(bytes);return parse();});
