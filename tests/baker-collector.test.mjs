@@ -17,9 +17,10 @@ test('Baker collector-only retrieves exact native taxes and original HTML with n
 });
 test('collector-only mode cannot silently enable unsupported counties or change annual-roll scope',async()=>{
  assert.throws(()=>validateFlorida({county:'alachua-fl',parcel_id:'1',source_mode:'collector'}),e=>e.code==='collector_adapter_not_enabled');
- const profile=pocWorkflows(capabilities,clientCapabilities).find(c=>c.id==='baker-fl');assert.deepEqual(profile.lookup_modes,['collector','state_roll']);
+ const profile=pocWorkflows(capabilities,clientCapabilities).find(c=>c.id==='baker-fl');assert.deepEqual(profile.lookup_modes,['collector']);
  const r=pocRequest(profile,'collector',{parcel:'322S22004900760075',includePdf:true});assert.equal(r.body.source_mode,'collector');assert.equal(r.body.include_pdf,true);
- const roll=pocRequest(profile,'state_roll',{parcel:'322S22004900760075',includePdf:true});assert.equal(roll.body.include_pdf,false);
+ assert.throws(()=>pocRequest(profile,'state_roll',{parcel:'322S22004900760075',includePdf:true}));
+ const roll=validateFlorida({county:'baker-fl',parcel_id:'322S22004900760075',source_mode:'state_roll',include_pdf:true});assert.equal(roll.source_mode,'state_roll');
 });
 test('collector-only refuses a different parcel instead of returning an unrelated bill',async()=>{
  const r=await floridaLookup({county:'baker-fl',parcel_id:'322S22004900760076',source_mode:'collector',include_pdf:true},async url=>new Response(url.includes('/SearchSelect')?'<select name="Years"><option value="2025">2025</option></select>':await fixture('baker-search.json')));
