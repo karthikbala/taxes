@@ -1,0 +1,690 @@
+{
+  "fixture_kind": "dated_source_derived_rendering_regression",
+  "source_observation_date": "2026-10-12",
+  "source_capture_sha256": "f7d0f085cd601f006f99a0edf10ee8808095383c14f53fae0960fba7df3049e5",
+  "documents": [
+    {
+      "format": "HTML",
+      "doc_type": "annual_tax_bill",
+      "method": "Original HTML bill DOM extraction",
+      "source_id": "tax_collector",
+      "fields": {
+        "parcel_id": "322S22004900760075",
+        "tax_year": 2025,
+        "bill_number": "1149200",
+        "combined_taxes_and_assessments": "2083.94",
+        "ad_valorem": "2083.94",
+        "non_ad_valorem": "0.00",
+        "amount_paid": "2021.42",
+        "payment_date": "12/10/2025",
+        "receipt_number": "817241",
+        "balance_due": "0.00",
+        "assessed_value": "120796.00",
+        "exemption_value": "0.00",
+        "taxable_value": "120796.00"
+      },
+      "tax_details": {
+        "BillDetails": {
+          "taxYear": "2025",
+          "folio": "322S22004900760075",
+          "municipality": null,
+          "millCode": "4",
+          "propertyAddress": "11 SOUTH BLVD E MACCLENNY",
+          "mailingAddress": "6328 MICHELLE RD MACCLENNY , FL 32063",
+          "paidBy": null,
+          "receiptNumber": "817241",
+          "paidDate": "12/10/2025",
+          "paidAmount": "$2,021.42"
+        },
+        "ParcelDetails": {
+          "millageRate": "0.01725160",
+          "millageRateUnit": "source_displayed_rate_fraction",
+          "assessedValue": "$120,796.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$120,796.00"
+        },
+        "TaxAmounts": {
+          "adValorem": "$2,083.94",
+          "nonAdValorem": "$0.00",
+          "totalDiscountable": null,
+          "totalTax": "$2,083.94"
+        },
+        "PaymentDetails": {
+          "combinedTaxesAndAssessments": "$2,083.94",
+          "PaymentSchedule": [],
+          "discountNote": "Derived arithmetic: original combined taxes $2,083.94 minus receipt payment $2,021.42 = $62.52. This is not a current balance or a confirmed statutory discount; the printed unpaid balance is $0.00.",
+          "printedDiscount": "$0.00",
+          "currentBalance": "$0.00"
+        },
+        "AdValoremMillage": [
+          {
+            "group": null,
+            "authority": "COUNTY",
+            "assessedValue": null,
+            "exemptionValue": null,
+            "taxableValue": null,
+            "millage": ".00729160",
+            "millageUnit": "source_displayed_rate_fraction",
+            "taxesLevied": "$880.80"
+          },
+          {
+            "group": null,
+            "authority": "SCHOOL-DISC",
+            "assessedValue": null,
+            "exemptionValue": null,
+            "taxableValue": null,
+            "millage": ".00224800",
+            "millageUnit": "source_displayed_rate_fraction",
+            "taxesLevied": "$271.55"
+          },
+          {
+            "group": null,
+            "authority": "SCHOOL-RLE",
+            "assessedValue": null,
+            "exemptionValue": null,
+            "taxableValue": null,
+            "millage": ".00307700",
+            "millageUnit": "source_displayed_rate_fraction",
+            "taxesLevied": "$371.69"
+          },
+          {
+            "group": null,
+            "authority": "CITY-MACCLENNY",
+            "assessedValue": null,
+            "exemptionValue": null,
+            "taxableValue": null,
+            "millage": ".00360000",
+            "millageUnit": "source_displayed_rate_fraction",
+            "taxesLevied": "$434.87"
+          },
+          {
+            "group": null,
+            "authority": "ST JOHNS RIVER WATER",
+            "assessedValue": null,
+            "exemptionValue": null,
+            "taxableValue": null,
+            "millage": ".00017930",
+            "millageUnit": "source_displayed_rate_fraction",
+            "taxesLevied": "$21.66"
+          },
+          {
+            "group": null,
+            "authority": "HOSPITAL",
+            "assessedValue": null,
+            "exemptionValue": null,
+            "taxableValue": null,
+            "millage": ".00085570",
+            "millageUnit": "source_displayed_rate_fraction",
+            "taxesLevied": "$103.37"
+          }
+        ],
+        "NonAdValorem": [],
+        "Exemptions": {}
+      },
+      "section_status": {
+        "AdValoremMillage": "PRESENT",
+        "NonAdValorem": "INSPECTED_EMPTY",
+        "BillDetails": "PRESENT",
+        "ParcelDetails": "PRESENT",
+        "AdValoremGroupTotals": "PRESENT",
+        "TaxAmounts": {
+          "status": "PARTIAL",
+          "note": "No readable explicitly labelled discountable subtotal was published in the retrieved original HTML bill."
+        },
+        "PaymentDetails": "PRESENT",
+        "Exemptions": "INSPECTED_EMPTY",
+        "AccountHistory": "PARTIAL",
+        "TaxInformation": "PRESENT"
+      },
+      "validation": {
+        "parcel": "MATCHED",
+        "taxYear": "MATCHED",
+        "billNumber": "1149200",
+        "authorityRowCount": 6,
+        "annualHistoryYearCount": 11,
+        "adValoremReconciliation": "MATCHED",
+        "nonAdValoremReconciliation": "MATCHED",
+        "combinedTotalReconciliation": "MATCHED",
+        "millageSourceUnits": "Original fractional tax rates, preserved at source precision; no conversion to mills",
+        "reconciliationTolerance": "$0.05",
+        "historyCoverage": "PARTIAL",
+        "derivedFields": [
+          "ParcelDetails.millageRate",
+          "AdValoremGroupTotals.AllAuthorities",
+          "PaymentDetails.discountNote"
+        ],
+        "printedFractionalRateTaxChecks": [
+          {
+            "authority": "COUNTY",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "SCHOOL-DISC",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "SCHOOL-RLE",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "CITY-MACCLENNY",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "ST JOHNS RIVER WATER",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "HOSPITAL",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          }
+        ]
+      },
+      "field_provenance": {
+        "parcel_id": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblPropertyInfo\"]",
+          "source_label": "Parcel / roll type"
+        },
+        "tax_year": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblTaxBillNumber\"]",
+          "source_label": "Tax bill number / roll / year"
+        },
+        "bill_number": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblTaxBillNumber\"]",
+          "source_label": "Tax bill number / roll / year"
+        },
+        "combined_taxes_and_assessments": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCombinedTotal\"]",
+          "source_label": "Combined taxes and assessments"
+        },
+        "ad_valorem": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+          "source_label": "TOTAL AD-VALOREM:"
+        },
+        "non_ad_valorem": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgNonAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(2)",
+          "source_label": "TOTAL NON-AD VALOREM:"
+        },
+        "amount_paid": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblAmountCollected\"]",
+          "source_label": "Amount collected"
+        },
+        "payment_date": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblLastPaymentDate\"]",
+          "source_label": "Last payment"
+        },
+        "receipt_number": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblReceiptNumber\"]",
+          "source_label": "Receipt number"
+        },
+        "balance_due": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblUnpaidBalance\"]",
+          "source_label": "Unpaid balance"
+        },
+        "assessed_value": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblGrossTaxValue\"]",
+          "source_label": "Assessed value"
+        },
+        "exemption_value": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCoExemptValue\"]",
+          "source_label": "Exempt value"
+        },
+        "taxable_value": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCoNetTaxValue\"]",
+          "source_label": "Taxable value"
+        }
+      },
+      "tax_details_provenance": {
+        "BillDetails.folio": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblPropertyInfo\"]",
+          "source_label": "Parcel / roll type"
+        },
+        "BillDetails.taxYear": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblTaxBillNumber\"]",
+          "source_label": "Tax bill number / roll / year"
+        },
+        "BillDetails.millCode": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblDistCode\"]",
+          "source_label": "District"
+        },
+        "BillDetails.propertyAddress": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblPropertyAddress\"]",
+          "source_label": "Property address"
+        },
+        "BillDetails.mailingAddress": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblAddressLine\"]",
+          "source_label": "Mailing address line"
+        },
+        "BillDetails.receiptNumber": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblReceiptNumber\"]",
+          "source_label": "Receipt number"
+        },
+        "BillDetails.paidDate": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblLastPaymentDate\"]",
+          "source_label": "Last payment"
+        },
+        "BillDetails.paidAmount": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblAmountCollected\"]",
+          "source_label": "Amount collected"
+        },
+        "TaxInformation.amountDue": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblUnpaidBalance\"]",
+          "source_label": "Unpaid balance"
+        },
+        "TaxAmounts.totalTax": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCombinedTotal\"]",
+          "source_label": "Combined taxes and assessments"
+        },
+        "ParcelDetails.assessedValue": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblGrossTaxValue\"]",
+          "source_label": "Assessed value"
+        },
+        "ParcelDetails.exemptionValue": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCoExemptValue\"]",
+          "source_label": "Exempt value"
+        },
+        "ParcelDetails.taxableValue": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCoNetTaxValue\"]",
+          "source_label": "Taxable value"
+        },
+        "AdValoremMillage[0].authority": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(2)",
+          "source_label": "COUNTY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[0].millage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(2)",
+          "source_label": "COUNTY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[0].millageUnit": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(2)",
+          "source_label": "COUNTY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[0].taxesLevied": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(2)",
+          "source_label": "COUNTY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[1].authority": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source_label": "SCHOOL-DISC; original printed fractional tax rate"
+        },
+        "AdValoremMillage[1].millage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source_label": "SCHOOL-DISC; original printed fractional tax rate"
+        },
+        "AdValoremMillage[1].millageUnit": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source_label": "SCHOOL-DISC; original printed fractional tax rate"
+        },
+        "AdValoremMillage[1].taxesLevied": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(3)",
+          "source_label": "SCHOOL-DISC; original printed fractional tax rate"
+        },
+        "AdValoremMillage[2].authority": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source_label": "SCHOOL-RLE; original printed fractional tax rate"
+        },
+        "AdValoremMillage[2].millage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source_label": "SCHOOL-RLE; original printed fractional tax rate"
+        },
+        "AdValoremMillage[2].millageUnit": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source_label": "SCHOOL-RLE; original printed fractional tax rate"
+        },
+        "AdValoremMillage[2].taxesLevied": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(4)",
+          "source_label": "SCHOOL-RLE; original printed fractional tax rate"
+        },
+        "AdValoremMillage[3].authority": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source_label": "CITY-MACCLENNY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[3].millage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source_label": "CITY-MACCLENNY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[3].millageUnit": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source_label": "CITY-MACCLENNY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[3].taxesLevied": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(5)",
+          "source_label": "CITY-MACCLENNY; original printed fractional tax rate"
+        },
+        "AdValoremMillage[4].authority": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source_label": "ST JOHNS RIVER WATER; original printed fractional tax rate"
+        },
+        "AdValoremMillage[4].millage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source_label": "ST JOHNS RIVER WATER; original printed fractional tax rate"
+        },
+        "AdValoremMillage[4].millageUnit": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source_label": "ST JOHNS RIVER WATER; original printed fractional tax rate"
+        },
+        "AdValoremMillage[4].taxesLevied": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(6)",
+          "source_label": "ST JOHNS RIVER WATER; original printed fractional tax rate"
+        },
+        "AdValoremMillage[5].authority": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source_label": "HOSPITAL; original printed fractional tax rate"
+        },
+        "AdValoremMillage[5].millage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source_label": "HOSPITAL; original printed fractional tax rate"
+        },
+        "AdValoremMillage[5].millageUnit": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source_label": "HOSPITAL; original printed fractional tax rate"
+        },
+        "AdValoremMillage[5].taxesLevied": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(7)",
+          "source_label": "HOSPITAL; original printed fractional tax rate"
+        },
+        "TaxAmounts.adValorem": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(8)",
+          "source_label": "TOTAL AD-VALOREM:"
+        },
+        "TaxAmounts.nonAdValorem": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_dgNonAdValorem\"] > tbody:nth-of-type(1) > tr:nth-of-type(2)",
+          "source_label": "TOTAL NON-AD VALOREM:"
+        },
+        "ParcelDetails.millageRate": {
+          "source_id": "tax_collector",
+          "method": "derived_decimal_calculation",
+          "formula": "Sum of original printed fractional tax rates at eight decimal places",
+          "inputs": [
+            "AdValoremMillage[0].millage",
+            "AdValoremMillage[1].millage",
+            "AdValoremMillage[2].millage",
+            "AdValoremMillage[3].millage",
+            "AdValoremMillage[4].millage",
+            "AdValoremMillage[5].millage"
+          ]
+        },
+        "AdValoremGroupTotals.AllAuthorities": {
+          "source_id": "tax_collector",
+          "method": "derived_decimal_calculation",
+          "formula": "Sum of all printed authority tax amounts; no authority group labels are printed",
+          "inputs": [
+            "AdValoremMillage[0].taxesLevied",
+            "AdValoremMillage[1].taxesLevied",
+            "AdValoremMillage[2].taxesLevied",
+            "AdValoremMillage[3].taxesLevied",
+            "AdValoremMillage[4].taxesLevied",
+            "AdValoremMillage[5].taxesLevied"
+          ]
+        },
+        "TaxAmounts.totalDiscountable": {
+          "source_id": "tax_collector",
+          "method": "inspected_collector_html",
+          "status": "UNAVAILABLE",
+          "reason": "No readable explicitly labelled discountable subtotal in the verified bill."
+        },
+        "PaymentDetails.printedDiscount": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblDiscount\"]",
+          "source_label": "Printed receipt discount"
+        },
+        "PaymentDetails.combinedTaxesAndAssessments": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblCombinedTotal\"]",
+          "source_label": "Combined taxes and assessments"
+        },
+        "PaymentDetails.currentBalance": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblUnpaidBalance\"]",
+          "source_label": "Unpaid balance"
+        },
+        "PaymentDetails.discountNote": {
+          "source_id": "tax_collector",
+          "method": "derived_decimal_calculation",
+          "formula": "Original combined tax total minus receipt payment",
+          "inputs": [
+            "TaxAmounts.totalTax",
+            "BillDetails.paidAmount"
+          ]
+        },
+        "Exemptions": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblExemption\"]",
+          "source_label": "Exemptions"
+        },
+        "AccountHistory[0]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(2)",
+          "source_label": "Annual 2025; source row 4"
+        },
+        "AccountHistory[1]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(4)",
+          "source_label": "Annual 2024; source row 6"
+        },
+        "AccountHistory[2]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(5)",
+          "source_label": "Annual 2023; source row 7"
+        },
+        "AccountHistory[3]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(6)",
+          "source_label": "Annual 2022; source row 8"
+        },
+        "AccountHistory[4]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(7)",
+          "source_label": "Annual 2021; source row 9"
+        },
+        "AccountHistory[5]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(8)",
+          "source_label": "Annual 2020; source row 10"
+        },
+        "AccountHistory[6]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(9)",
+          "source_label": "Annual 2019; source row 11"
+        },
+        "AccountHistory[7]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(10)",
+          "source_label": "Annual 2018; source row 12"
+        },
+        "AccountHistory[8]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(11)",
+          "source_label": "Annual 2017; source row 13"
+        },
+        "AccountHistory[9]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(12)",
+          "source_label": "Annual 2016; source row 14"
+        },
+        "AccountHistory[10]": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(2) > tr:nth-of-type(13)",
+          "source_label": "Annual 2015; source row 15"
+        },
+        "TaxInformation.lastPaymentDate": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblLastPaymentDate\"]",
+          "source_label": "Last payment"
+        },
+        "TaxInformation.lastPaymentAmount": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblAmountCollected\"]",
+          "source_label": "Amount collected"
+        },
+        "TaxInformation.amountPaidYear": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblTaxBillNumber\"]",
+          "source_label": "Tax bill number / roll / year"
+        },
+        "TaxInformation.accountNumber": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_lblPropertyInfo\"]",
+          "source_label": "Parcel / roll type"
+        },
+        "AccountHistory": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "[id=\"ctl00_ContentPlaceHolder1_UpdatePanel1\"] > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2) > div:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(1) > table:nth-of-type(1)",
+          "source_label": "Tax Roll Property Summary: parcel / roll / annual year / gross tax / assessments / date paid / amount paid / total unpaid"
+        },
+        "TaxInformation.statusMessage": {
+          "source_id": "tax_collector",
+          "method": "original_html_bill",
+          "selector": "div.HdHeaderBk",
+          "source_label": "** PAID **"
+        }
+      },
+      "notes": [
+        "This is the original collector HTML bill. No source PDF was published or generated.",
+        "Original HTML bill; no original PDF was exposed or manufactured.",
+        "Authority tables print authority, fractional rate and tax amount only; per-authority assessment/exemption/taxable values remain null.",
+        "Public annual history is a partial view. No complete published year scope or inspected certificate/deed sections establish negative delinquency clearance."
+      ],
+      "source_url": "https://www.bakertaxcollector.com/Property/TaxBill",
+      "source_method": "POST",
+      "sha256": "dde2bf3a52af6443226d0af46c062a38f76506e418a2a4fd2f1635ca7dc0bc7d",
+      "fetched_at": "2026-10-12T12:50:55.068Z",
+      "reconciliation": {
+        "parcel": "matched",
+        "tax_year": "matched",
+        "bill_number": "matched",
+        "amount_paid": "matched"
+      }
+    }
+  ]
+}

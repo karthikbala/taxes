@@ -12,6 +12,10 @@ import {createLookupLogger} from '../lib/client/logging.mjs';
 import {lookup as legacyLookup,capabilities} from '../lib/live/router.mjs';
 import {makeManagedBrowser} from '../lib/live/managed-browser.mjs';
 import {readPage,projectRoot,selfhostLiveScript} from '../scripts/build-selfhost.mjs';
+import {createJobRunner} from './job-runner.mjs';
+import {semaphore} from '../lib/reliability/transport.mjs';
+import {makeLocalBrowser} from './local-browser.mjs';
+import {readBounded} from '../lib/live/engine.mjs';
 const BODY_LIMIT=8192;
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.pdf':'application/pdf','.webp':'image/webp','.ico':'image/x-icon','.woff2':'font/woff2','.woff':'font/woff','.ttf':'font/ttf','.otf':'font/otf'};
 const problem=(code,http,message)=>Object.assign(new Error(message||code),{code,http});
@@ -24,7 +28,9 @@ async function inputJSON(request){
   try{return JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(all));}catch{throw problem('invalid_json',400,'Supply valid JSON.');}
 }
 export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'public'),logSink,deadlineMs=120000,lookupClient=clientLookup,lookupLegacy=legacyLookup,lookupNeighbors=extractNeighborProperties}={}){
- const managedBrowser=makeManagedBrowser(env),scrapedoClerk=makeScrapedoClerk(env);const pages=new Map(),pending=new Set();
+ const provider=makeManagedBrowser(env),paid=semaphore();
+ const managedBrowser=provider?args=>paid(()=>provider(args),args.signal):null,clerkProvider=makeScrapedoClerk(env),scrapedoClerk=clerkProvider?args=>paid(()=>clerkProvider(args),args.signal):null;const pages=new Map(),pending=new Set();
+ const jobs=env.TAXES_JOBS_ENABLED==='0'?null:createJobRunner({env,fetcher,lookup:lookupClient,managedBrowser,localBrowser:makeLocalBrowser(env),scrapedoClerk,logSink});
  const track=promise=>{const task=Promise.resolve(promise);pending.add(task);task.finally(()=>pending.delete(task)).catch(()=>{});return task;};
  async function handle(request){
   const requestId=randomUUID(),start=Date.now();const log=createLookupLogger(requestId,logSink);
@@ -41,6 +47,34 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
     return json({api:'ready',managed_source_access:await managedPreflight(env)});
    }
    if(path==='/api/v2/sources'||path==='/api/v1/sources'){if(request.method!=='GET')return method('GET');return json(path.includes('/v2/')?clientCapabilities:capabilities);}
+   if(path==='/api/v2/property/jobs'||path.startsWith('/api/v2/property/jobs/')||path==='/api/v2/operations/retrieval'){
+    const upload=path.match(/^\/api\/v2\/property\/jobs\/([a-f0-9-]{36})\/artifact-ingest\/([a-f0-9-]{36})$/);
+    if(upload){
+     if(request.method!=='POST')return method('POST');
+     const token=request.headers.get('authorization')?.match(/^Bearer ([a-f0-9]{64})$/)?.[1];
+     if(!jobs?.store.checkUpload(upload[1],upload[2],token))return error('unauthorized',401,'Upload ticket is invalid or expired.');
+     const bytes=await readBounded(request,25*1024*1024),artifact=jobs.store.acceptUpload(upload[1],upload[2],token,bytes);return json({id:artifact.id,sha256:artifact.sha256},201);
+    }
+    if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
+    if(!jobs)return error('jobs_unavailable',503,'Durable jobs require the standalone SQLite runtime.');
+    if(path==='/api/v2/operations/retrieval')return request.method==='GET'?json(jobs.metrics()):method('GET');
+    if(path==='/api/v2/property/jobs'){
+     if(request.method!=='POST')return method('POST');
+     const created=jobs.create(await inputJSON(request),request.headers.get('idempotency-key'),request.headers.get('x-retrieval-access')||'configured');return json(created.job,created.reused?200:202,{Location:created.job.links.self});
+    }
+    const match=path.match(/^\/api\/v2\/property\/jobs\/([a-f0-9-]{36})(?:\/(cancel|resume|review|records-request|artifacts)(?:\/([a-f0-9-]{36}))?)?$/);
+    if(!match)return error('not_found',404,'Job endpoint not found.');const [,id,action,artifact]=match;
+    if(action==='cancel'){if(request.method!=='POST')return method('POST');return json(jobs.cancel(id));}
+    if(action==='resume'){if(request.method!=='POST')return method('POST');const input=await inputJSON(request);if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>k!=='input'))return error('invalid_input',400,'Resume accepts an empty object or corrected input.');return json(jobs.resume(id,input.input),202);}
+    if(action==='review'){if(request.method!=='POST')return method('POST');return json(jobs.review(id,await inputJSON(request)),201);}
+    if(action==='records-request'){if(request.method!=='GET')return method('GET');return json(jobs.recordsRequest(id));}
+    if(action==='artifacts'){
+     if(request.method!=='GET')return method('GET');if(!artifact)return error('not_found',404,'Artifact not found.');
+     const item=jobs.readArtifact(id,artifact);if(!item)return error('not_found',404,'Artifact not found.');
+     return new Response(item.bytes,{headers:{...headers,'Content-Type':'application/octet-stream','Content-Disposition':'attachment; filename="'+item.id+'"','X-Content-SHA256':item.sha256}});
+    }
+    if(request.method!=='GET')return method('GET');return json(jobs.get(id));
+   }
    if(path==='/api/v2/property/lookup'||path==='/api/v1/property/lookup'||path==='/api/v2/property/neighbors'){
     if(request.method!=='POST')return method('POST');if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
     if(request.signal.aborted)return error('request_aborted',499,'Request canceled.');
@@ -77,5 +111,6 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
  }
  const app=request=>track(handle(request));
  app.waitForIdle=async()=>{while(pending.size)await Promise.allSettled([...pending]);};
+ app.shutdown=async()=>{await jobs?.stop();await app.waitForIdle();};
  return app;
 }

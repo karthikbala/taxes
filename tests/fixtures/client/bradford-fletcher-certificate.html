@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Teresa G. Phillips - Bradford County Tax Collector</title>
+    <script src="/js/jquery-1.8.2.min.js"></script>
+    <script src="/js/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="/js/jquery.placeholder.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/Style/Blue.css" />
+    <link rel="stylesheet" type="text/css" href="/Style/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/ui-lightness/jquery-ui-1.10.1.custom.css" />
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/web-icons.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    
+<header class=" sticky-top scroll-color">
+    <!--nav menu -->
+    <nav class="navbar navbar-expand-lg main-menu ">
+        <div class="container-xl container-fluid align-items-lg-start">
+            <div class="app-logo">
+                <a class="navbar-brand d-block radius-bg" href="/"><img src="/assets/images/app-logo.png"></a>
+            </div>
+            <button class="border-0 bg-transparent d-block d-lg-none" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="fs-1"><i class="bi bi-list"></i></span>
+            </button>
+            <div class="offcanvas offcanvas-start main-menu " id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <button type="button" class="btn-close d-block d-lg-none ms-auto p-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="d-none d-lg-block">
+                    <ul class="submenu ">
+                        <li>
+                            <a class="submenu-link" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/TaxCollector">Tax Collector's Office</a>
+                        </li>
+                        
+                        <li>
+                            <a class="submenu-link" href="/Survey">Customer Survey</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/Holidays">Legal Holidays</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/Deadlines">Due Dates & Discounts</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/About/Statements">Documents</a>
+                        </li>
+                        <li>
+                            <a class="submenu-link" href="/Services/Links">Helpful Links</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0 p-4 p-lg-0 py-lg-3 pb-lg-1">
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Property/SearchSelect?ClearData=True"><span class="d-lg-block d-none"><i class="bi bi-search"></i></span>Search Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/SearchSelect?ClearData=True"><span class="d-lg-block d-none"><i class="bi bi-credit-card"></i></span> Pay Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services"><span class="d-lg-block d-none"><i class="bi bi-gear"></i></span> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Locations"><span class="d-lg-block d-none"><i class="bi bi-geo-alt"></i></span> Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Contact"><span class="d-lg-block d-none"><i class="bi bi-telephone"></i></span> Contact Us</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <style>
+        .mainContentMain {
+            *padding: 0 13px 0 14px;
+        }
+    </style>
+    <div>
+        
+
+<section class="inner-hero-bg inner-hero-bg-h150">
+    <div class="container">
+        <h5>Prior Bill</h5>
+    </div>
+</section>
+ 
+
+<div class="printable">
+
+    <div style="margin-right: auto; margin-left: auto; text-align: center; display:none" id="MainContentSectio">
+        <a href="/Property/SearchSelect?Accept=true&amp;ClearData=true" class="men1u">New Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="/Property/SearchSelect" class="me1nu">Return To Search Results</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="javascript:;" class="me1nu" id="printbill">Print Bill</a>
+        <span id="view-cart-divider" style="display:none">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="/Cart" id="view-cart" style="display:none;">View Shopping Cart</a>
+    </div>
+    <div style="text-align:center;">
+        <table width="765" cellspacing="0" cellpadding="0" border="0" bgcolor="white" align="center">
+            <tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0" style="text-align:center; BORDER-COLLAPSE: collapse" align="center">
+                            <tbody>
+                                <tr>
+                                    <td width="1" valign="top">
+                                        <table width="586" cellspacing="0" cellpadding="5" bordercolor="#111111" border="0" style="BORDER-COLLAPSE: collapse" id="AutoNumber1">
+                                            <tbody>
+                                                <tr>
+                                                    <td   colspan="2">
+                                                        <b>
+                                                            <font size="1">
+                                                                <font face="Verdana">
+                                                                    NOTICE OF AD VALOREM TAXES
+                                                                    &amp; NON-AD VALOREM ASSESSMENTS
+                                                                </font>
+                                                            </font>
+                                                        </b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="1" colspan="1">
+                                                        <font size="1" face="Verdana">
+                                                            <strong>BILL #</strong>
+                                                            <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblTaxBillInfo">R 108600 2025</span>&nbsp;<font size="1" face="Verdana">
+                                                                <strong>
+                                                                    PROPERTY
+                                                                    #
+                                                                </strong>
+                                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblPropertyInfo">R 00420-0-00200</span>&nbsp;&nbsp;&nbsp;
+                                                            </font>
+                                                        </font>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="100%" style="font-size:" 1"">
+                                                        <font size="1" style="font-family:verdana;font-weight:bold">
+                                                            <li style="list-style-type: none;"><a href="http://www.bradfordappraiser.com/GIS/Search_F.asp?PIN=00420-0-00200" target="_blank">Property Appraisers Site </a></li>
+                                                        </font>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="1" colspan="1">
+                                                        <font size="1" face="Verdana">
+                                                        </font>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><font face="Verdana"><span style="color:Red;background-color:White;font-weight:bold;" id="ctl00_ContentPlaceHolder1_lblCertificateStatus"></span></font></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table width="583" cellspacing="1" cellpadding="1" border="0" style="BORDER-COLLAPSE: collapse" id="AutoNumber6">
+                            <tbody>
+                                <tr>
+                                    <td width="261" valign="top" align="left" height="1">
+                                        <font size="1" face="Verdana">
+                                            <table width="235" cellspacing="1" cellpadding="1" border="0" id="Table3">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Sale Date</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblSaleDate">05/31/2026</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Certificate#</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblCertificateNumber">50</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Certificate Holder</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblBidderID">9999999</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Interest&nbsp;Rate</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblBidRate">18.00</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Original Amount</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblCertificateOriginalAmount">$109.97</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <font size="1" face="Verdana">
+                                                                <hr>
+                                                            </font>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Interest Amount</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblInterestAmount">$8.25</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><font size="1" face="Verdana"><strong>Fees</strong></font></td>
+                                                        <td align="right"><font size="1" face="Verdana"><span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblFee">$6.25</span></font></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <font size="1" face="Verdana">
+                                                                <hr>
+                                                            </font>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td bgcolor="#ffff66" rowspan="1" colspan="1">
+                                                            <font size="1" face="Verdana">
+                                                                <strong>
+                                                                    UnPaid
+                                                                    Balance
+                                                                </strong>
+                                                            </font>
+                                                        </td>
+                                                        <td bgcolor="#ffff66" align="right"><strong><font size="2" face="Verdana"><b><span style="background-color:#FFFF80;" id="ctl00_ContentPlaceHolder1_lblTotalCertBalance">$124.47</span></b></font></strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <font face="Verdana">
+                                                            </font>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <br>
+                                            <br>
+                                            Exemptions:<br>
+                                            <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblExemption"></span>
+                                        </font>
+                                        <br>
+                                        <br>
+                                        <font face="Verdana">
+                                            <font size="1">
+                                                <strong>Property Address:</strong><br>
+                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblPropertyAddress">SW 180TH PL     BROOKER         32622</span><br>
+                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblPropertyCityZip"></span>
+                                            </font>
+                                        </font>
+                                    </td>
+                                    <td valign="top" height="1">
+                                        <table width="326" cellspacing="0" cellpadding="0" bordercolor="#111111" border="0" align="right" style="BORDER-COLLAPSE: collapse" id="AutoNumber8">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="297" valign="top" nowrap="" align="left" height="184" colspan="4">
+                                                        <font face="Verdana">
+                                                            <span id="ctl00_ContentPlaceHolder1_lblName">FLETCHER CARRIE</span><br>
+                                                            <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblAddressLine1">8130 SW 50TH PATH</span>
+                                                            <br>
+                                                            <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblAddressLine2"></span>
+                                                            <br>
+                                                            <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblAddressLine345">LAKE BUTLER          , FL 32054    </span>
+                                                            <font size="1">
+                                                                <br>
+                                                                <br>
+                                                                <!-- NOTE! Removed DeededAcred --><br>
+                                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblLegal1">18 7S 20 COM NE COR OF S1/2 GO</span>
+                                                                <br>
+                                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblLegal2">V LOT 2. RUN S01*05&#39;30&quot;E 780.0</span>
+                                                                <br>
+                                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblLegal3">6&#39; TO POB S02*05&#39;30&quot;E 230.55&#39;,</span>
+                                                                <br>
+                                                                <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblLegal4">THENCE S88*56&#39;49&quot;W 620.08&#39; TO</span>
+                                                                <hr>
+                                                                <table cellspacing="1" cellpadding="1" border="0" id="Table4">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="50%" class="TitleColor">
+                                                                                <font size="1" face="Verdana" color="#ffffff">
+                                                                                    TAXABLE
+                                                                                    VALUE
+                                                                                </font>
+                                                                            </td>
+                                                                            <td>
+                                                                                <strong>
+                                                                                    <font size="2">
+                                                                                        <span style="background-color:White;" id="ctl00_ContentPlaceHolder1_lblTaxableValue">$161.00</span>
+                                                                                    </font>
+                                                                                </strong>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </font>
+                                                        </font>
+                                                        <hr>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="297" valign="top" align="left" colspan="4">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                    <script class="removepopup" type="text/javascript">
+                                        alert("Scroll Down to display Other Delinquent Taxes for this parcel"); window.location = '#DelinquentHistory';
+                                    </script>
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr width="100%">
+                                            <a name="DelinquentHistory">
+                                                <br>
+
+                                                <span style="background-color: White; font-family: Verdana; font-size: X-Small; font-weight: bold;" id="ctl00_ContentPlaceHolder1_lblDH">Delinquent Tax History</span>
+                                                <table cellspacing="0" border="1" style="border-color: Teal; font-family: Verdana; font-size: XX-Small; width: 100%; border-collapse: collapse;" id="ctl00_ContentPlaceHolder1_dgDelinquentHistory" rules="all">
+                                                    <tbody>
+                                                        <tr align="center" style="color:white; font-size: XX-Small; font-weight: bold;" class="TitleColor">
+                                                            <td>Year</td>
+                                                            <td>Roll</td>
+                                                            <td>Bill #</td>
+                                                            <td>Outstanding Tax</td>
+                                                            <td>Accrued Penalties</td>
+                                                            <td>Total Due</td>
+                                                            <td>Reference</td>
+                                                        </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2025</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">108600-C</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="108600" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2025" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="124.47" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="124.47" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$109.97</td>
+                                                                <td align="right">$14.50</td>
+                                                                <td align="right">
+$124.47                                                                </td>
+                                                                <td align="center">50 C</td>
+                                                            </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2024</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">107400-C</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="107400" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2024" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="79.01" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="79.01" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$57.98</td>
+                                                                <td align="right">$21.03</td>
+                                                                <td align="right">
+$79.01                                                                </td>
+                                                                <td align="center">42 C</td>
+                                                            </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2023</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">104700-I</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="104700" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2023" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="88.70" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="88.70" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$57.70</td>
+                                                                <td align="right">$31.00</td>
+                                                                <td align="right">
+$88.70                                                                </td>
+                                                                <td align="center">45 I</td>
+                                                            </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2022</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">103800-I</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="103800" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2022" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="97.34" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="97.34" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$56.40</td>
+                                                                <td align="right">$40.94</td>
+                                                                <td align="right">
+$97.34                                                                </td>
+                                                                <td align="center">34 I</td>
+                                                            </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2021</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">101500-C</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="101500" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2021" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="101.94" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="101.94" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$53.31</td>
+                                                                <td align="right">$48.63</td>
+                                                                <td align="right">
+$101.94                                                                </td>
+                                                                <td align="center">36 C</td>
+                                                            </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2020</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">99700-C</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="99700" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2020" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="109.21" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="109.21" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$52.13</td>
+                                                                <td align="right">$57.08</td>
+                                                                <td align="right">
+$109.21                                                                </td>
+                                                                <td align="center">49 C</td>
+                                                            </tr>
+                                                            <tr style="background-color: White; font-size: XX-Small;">
+                                                                <td align="center">2019</td>
+                                                                <td align="center">R</td>
+                                                                <td align="center">
+                                                                    <a href="javascript:;" onclick="$(this).siblings('.GoToPriorBill').submit();">98900-C</a>
+<form action="/Property/TaxBill" class="GoToPriorBill" method="post" style="display:none"><input id="TaxBillNo" name="TaxBillNo" type="hidden" value="98900" /><input id="RollType" name="RollType" type="hidden" value="R" /><input id="TaxYear" name="TaxYear" type="hidden" value="2019" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="103.91" /><input id="TaxAmount" name="TaxAmount" type="hidden" value="103.91" /><input id="pq" name="pq" type="hidden" value="" /><input id="st" name="st" type="hidden" value="CC" /></form>                                                                </td>
+                                                                <td align="right">$45.32</td>
+                                                                <td align="right">$58.59</td>
+                                                                <td align="right">
+$103.91                                                                </td>
+                                                                <td align="center">43 C</td>
+                                                            </tr>
+                                                        <tr style="color: White; font-weight: bold; white-space: nowrap;" class="TitleColor">
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td align="right">Total Due</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>
+$704.58                                                            </td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </a>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+ 
+<script>
+    $(function () {
+
+       
+
+        $("#MainContentSectio").show();
+
+        $.ajax({
+            url: '/Cart/GetCartCount',
+
+            dataType: "json",
+            type: "get",
+            success: function (data) {
+                if (data > 0) {
+                    $("#view-cart").show();
+                    $("#view-cart-divider").show();
+                }
+
+            }
+
+        });
+
+
+
+    });
+</script>
+    </div>
+    <div>
+
+<footer class="bg-app-color pt-5">
+    <div class="container mb-5">
+        <div class="row justify-content-md-between">
+            <div class="col-md-auto mb-lg-0 mb-5">
+                <h6 class="fw-semibold mb-4">Bradford County Tax Collector</h6>
+                <div>
+                    <p class="mb-0"><span class="fw-semibold">Location :</span>  945 North Temple Ave. Suite B Starke, FL 32091-0969</p>
+                    <p class="mb-0"><span class="fw-semibold">Mailing :</span>  PO Box 969 Starke FL  32091</p>
+                    <p class="mb-3">Monday - Friday HOURS: REG. OFFICE 8:00AM TO 4:30PM </p>
+                    <p class="mb-0">DRIVERS LICENSE 8:00AM TO 4:15PM</p>
+                </div>
+                <div class="pt-4">
+                    <a href="#" class="d-flex gap-2 align-items-center text-white"><img src="/assets/images/phone.svg" width="24px">904-966-6246</a>
+                    <a href="#" class="d-flex gap-2 align-items-center text-white mt-2"><img src="/assets/images/mail.svg" width="24px"> tax@bradfordcountyfl.gov</a>
+                </div>
+            </div>
+            <div class="col-md-auto mb-lg-0 mb-5">
+                <h6 class="fw-semibold mb-3">Quick Links</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/SearchSelect?ClearData=True">Search Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/SearchSelect?ClearData=True">Pay Property Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Locations">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div> 
+            <div class="col-md-auto mb-lg-0 mb-5">
+                <h6 class="fw-semibold mb-3">  <a class="nav-link" href="/About/PropertyTax">Property Taxes</a></h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/PropertyTax">Personal Property</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/DelinquentTaxes">Delinquent Taxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/TaxCertificates">Tax Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/MillageRates">Millage Rates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/CountyCertificates">County Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Property/TaxGlossary">Tax Glossary</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-auto mb-lg-0 mb-4">
+                <h6 class="fw-semibold mb-3">Services</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.flhsmv.gov/" target="_blank">Tag Renewal Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/Tags">Tag & Title</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://myfwc.com/" target="_blank">Hunting & Fishing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/ConcealedWeapons">Concealed Weapon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/Forms">View Online Forms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://get.adobe.com/reader/" target="_blank">Download Form Viewer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services/Links">Helpful Links</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright py-3">
+        <div class="container">
+            <div class="d-md-flex justify-content-between">
+                <a href="/Home/Privacy" class="text-white">Privacy Policy</a>
+                <div class="pt-md-0 pt-3">All rights reserved.  © Copyright www.visualgov.com 1999-2023</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    
+<div id="mask">
+    <img id="mask-loader" src="/img/h-loader.gif" alt="mask" style="width:220px; height:10px" />
+</div>
+<div id="popup-background" style="display:none"></div>
+<div id="popupcontainer" style="display:none">
+    <div id="popup-inner-container">
+        <div id="popup-close" style="float:right;  margin: -45px -45px 0 0;"><img src="/Images/close_button.png" alt="close" /></div>
+        <div class="clearfix"></div>
+        <div id="popup-content"></div>
+    </div>
+</div>
+
+<style type="text/css">
+    #mask, #popup-background {
+        background: none repeat scroll 0 0 #000000;
+        display: none;
+        height: 100%;
+        left: 0;
+        opacity: 0.75;
+        filter: alpha(opacity=75);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2000;
+    }
+
+    #mask-loader {
+        position: absolute;
+    }
+
+    .popup {
+        display: none;
+        /*position: absolute;*/
+    }
+
+    #popupcontainer {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid;
+        padding: 15px;
+        position: absolute;
+        z-index: 2000;
+    }
+
+    #popup-inner-container {
+        border: 2px solid #D6D6D6;
+        float: left;
+        padding: 7px;
+    }
+</style>
+
+    <div id="printer" class="mainContentMain">
+    </div>
+
+</body>
+
+</html>

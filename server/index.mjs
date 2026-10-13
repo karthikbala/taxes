@@ -30,7 +30,7 @@ export async function createServerHTTP({env=process.env,fetcher=fetch,logSink,st
  });
  server.requestTimeout=150000;server.headersTimeout=15000;server.keepAliveTimeout=5000;server.maxHeadersCount=100;
  server.waitForIdle=handler.waitForIdle;
- server.shutdownComplete=new Promise(resolve=>server.once('close',()=>{handler.waitForIdle().then(()=>{try{ownedDB?.close?.();}catch{console.error('SQLite close failed after backend cleanup.');}resolve();}).catch(()=>{console.error('Backend cleanup failed; database remains open.');resolve();});}));
+ server.shutdownComplete=new Promise(resolve=>server.once('close',()=>{handler.shutdown().then(()=>{try{ownedDB?.close?.();}catch{console.error('SQLite close failed after backend cleanup.');}resolve();}).catch(()=>{console.error('Backend cleanup failed; database remains open.');resolve();});}));
  return server;
 }
 if(process.argv[1]&&realpathSync(resolve(process.argv[1]))===fileURLToPath(import.meta.url)){

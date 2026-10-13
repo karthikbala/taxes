@@ -215,7 +215,7 @@ test('deterministic browser capture selects the annual history row and retrieves
   const found=node?$(node).find(selector):$(selector);
   return {waitFor:async()=>{},innerText:async()=>found.text(),count:async()=>found.length,first:()=>locatorNode(found.first()),all:async()=>found.toArray().map(e=>locatorNode($(e)))};
  };
- const locatorNode=node=>({locator:s=>locator(s,node),innerText:async()=>node.text(),first:()=>locatorNode(node.first()),count:async()=>node.length,getAttribute:async name=>node.attr(name)});
+ const locatorNode=node=>({waitFor:async()=>{},locator:s=>locator(s,node),innerText:async()=>node.text(),first:()=>locatorNode(node.first()),count:async()=>node.length,getAttribute:async name=>node.attr(name)});
  const frame={url:()=>root,content:async()=>history,locator:s=>locator(s),evaluate:async(_fn,url)=>{requests.push(url);return url.endsWith('/print')?{size:42}:bill;}};
  const page={goto:async()=>{},frames:()=>[frame],waitForTimeout:async()=>{}};
  await runInNewContext('(async()=>{'+captureCode('https://county-taxes.net/fl-miamidade/property-tax/EXAMPLE',true,true)+'})()',{page,URL,console:{log:value=>output.push(value)}});

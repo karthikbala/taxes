@@ -14,6 +14,7 @@ test('dated Miami annual reference retains all 14 positioned authority rows and 
   assert.deepEqual(result.AdValoremGroupTotals,{'Miami-Dade School Board':'$1,019.62','State and Other':'$110.81','Miami-Dade County':'$810.46','Municipal Governing Board':'$1,191.56'});
   assert.equal(result.TaxAmounts.adValorem,'$3,132.45');assert.equal(result.TaxAmounts.totalTax,'$3,132.45');assert.equal(result.TaxAmounts.nonAdValorem,'$0.00');assert.equal(result.TaxAmounts.totalDiscountable,null);
   assert.equal(result.ParcelDetails.millageRate,'20.37780');assert.equal(result.validation.combinedTotalReconciliation,'MATCHED');
+  assert.equal(result.ParcelDetails.totalMillageRate,'20.37780');assert.equal(result.ParcelDetails.totalMillageRateUnit,'mills');assert.equal(result.ParcelDetails.millageRateUnit,'mills');assert.deepEqual(result.provenance['ParcelDetails.totalMillageRate'].inputs,result.AdValoremMillage.map((_,i)=>`AdValoremMillage[${i}].millage`));
   assert.equal(result.BillDetails.municipality,'MIAMI');assert.equal(result.BillDetails.millCode,'0101');assert.equal(result.BillDetails.paidBy,'SHELLPOINT MORTGAGE SERVICES');assert.equal(result.BillDetails.receiptNumber,'EEX-26-000928');assert.equal(result.BillDetails.paidDate,'11/25/2025');assert.equal(result.BillDetails.paidAmount,'$3,007.15');
   assert.equal(result.BillDetails.propertyAddress,'555 NE 15 ST 401, Miami, 33132-0000');
   assert.deepEqual(result.PaymentDetails.PaymentSchedule,[{ifPaidBy:'Nov 30, 2025',pleasePay:'$0.00'}]);

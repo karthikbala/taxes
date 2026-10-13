@@ -1,0 +1,2 @@
+# Activate only after the operator records approval of applicable licensing.
+PyMuPDF==1.26.5

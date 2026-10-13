@@ -4,7 +4,9 @@ This application has a standalone Node 22 server for local development and futur
 
 ## Request path
 
-`/poc` → browser `/poc.js` → authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI.
+`/poc` → browser `/poc.js` → selected supported search method. Address-and-owner orders use authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI. Parcel orders use the existing authenticated `/api/v1/property/lookup`; their original parcel envelope and source coverage are rendered separately.
+
+`public/poc-workflows.mjs` combines the v1 catalogue and v2 profiles without promoting a county's acceptance status. POC offers the same 20 Florida county parcel workflows and Allegheny workflow as `/live`, preserves the three rich address workflows, and exposes the explicitly selected Florida annual-roll mode for all 67 Florida entries. The annual roll is never an automatic fallback. Mode changes clear prior results and disable irrelevant fields; Palm Beach's optional collector-account input is scoped to its county mode. Parcel JSON retains its own fields and errors rather than being relabelled as a verified rich client record.
 
 | Component | Responsibility |
 | --- | --- |
@@ -49,3 +51,9 @@ Server SSH, GitHub and DNS permissions are operator concerns recorded in the dep
 ## Safe extension point
 
 For a new rich county contract, add native resolution/enrichment beside the existing county modules, reuse reviewed collector-family parsing where applicable, and add source-derived offline positive/negative fixtures. Keep `address_lookup_enabled` false until independent source → JSON → UI acceptance passes. A shared maintainer integrates any engine, contract, auth, transport, budget or UI change and releases once focused checks pass. Use `profiles.mjs` for explicit readiness/limitations and update the dated handoff with revision and live proof.
+
+## Durable address retrieval
+
+The standalone runtime adds a SQLite-backed job runner for the three rich address workflows. Job requests authenticate before validation/dispatch and run independently of HTTP disconnects. Immutable per-job artifacts, stage checkpoints, recovery leases and recorded paid dispatch ownership support restart recovery. New jobs fetch fresh sources; incomplete pagination stages are refreshed rather than replayed as complete. Protected artifact/review/operations endpoints use the current single-operator key. See [operations and API](reliability/RUNBOOK.md).
+
+PDF extraction runs outside the HTTP event loop, with a single bounded worker queue. Optional local Chromium precedes managed recovery. Optional PyMuPDF/Tesseract requires approved licensing and production container isolation. OCR output remains review-only. Structured field availability and source scopes accompany progressive POC results. Release acceptance, original spending-ledger reconciliation and the seven-day soak remain explicit gates; job completion does not establish historical clearance.

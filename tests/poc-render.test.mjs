@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { displayValue, renderSections, renderValidation, renderValue, resultBadge, resultRequestId, sectionComment } from '../public/poc-render.mjs';
+import { displayValue, fieldDisplay, renderSections, renderValidation, renderValue, resultBadge, resultRequestId, sectionComment } from '../public/poc-render.mjs';
+import{parseClientBillPdf}from'../lib/client/bill.mjs';import{serializeClientRecord}from'../lib/client/contract.mjs';
 
 // Small DOM harness verifies rendered content and node structure without a browser or network.
 class Node {
@@ -30,6 +31,13 @@ const record = {
 };
 const states = Object.fromEntries(Object.keys(record).map(name => [name, { status: ['NonAdValorem', 'LandBuildingExtraFeatures', 'Exemptions'].includes(name) ? 'EMPTY' : ['AccountHistory', 'DelinquencyInformation'].includes(name) ? 'PARTIAL' : 'EXTRACTED' }]));
 
+test('source PDF total millage survives client JSON and renders with its explicit mills unit',async()=>{
+ const bill=await parseClientBillPdf(new Uint8Array(readFileSync(new URL('./fixtures/client/miami-annual-reference.pdf',import.meta.url))),'01-3231-052-0010',2025),input={scrap_order_id:'millage-render',address:'555 NE 15 ST UNIT 401',ownerName:'JUDE PATRICK JACOB',county:'miami-dade-fl',transactionType:'REFI',state:'FL'};
+ const result=serializeClientRecord(input,{sections:{ParcelDetails:bill.ParcelDetails},section_status:{ParcelDetails:'EXTRACTED'},provenance:bill.provenance,match:{status:'MATCHED',parcel_id:'01-3231-052-0010'}}),root=new Node('main');
+ assert.equal(result.scrapTaxOrderRequest.ParcelDetails.totalMillageRate,'20.37780');assert(result.ExtractionMetadata.provenance['ParcelDetails.totalMillageRate']);
+ renderSections(document,root,result.scrapTaxOrderRequest,{ParcelDetails:'EXTRACTED'});assert.match(root.textContent,/Total Millage Rate/);assert.match(root.textContent,/20\.37780/);assert.match(root.textContent,/mills/);
+});
+
 test('source values appear in every extracted section, including nested years, lists and tables', () => {
   const root = new Node('main'); renderSections(document, root, record, states);
   assert.equal(root.children.length, Object.keys(states).length);
@@ -38,7 +46,7 @@ test('source values appear in every extracted section, including nested years, l
     const section = root.children.find(node => node.children[0].textContent.startsWith(name + ' · '));
     for (const value of values) assert.ok(section.textContent.includes(value), `${name}: ${value} missing`);
   }
-  assert.equal(descendants(root, 'table').length, 4);
+  assert.equal(descendants(root, 'table').length, 3); // Nested benefit values are stacked cards.
 });
 
 test('EMPTY comments reflect inspection, while nested empty years stay visible', () => {
@@ -97,3 +105,34 @@ test('validation panel displays discrepancy and unavailable checks without HTML 
  const root=new Node('main');renderValidation(document,root,{parcel_join:'matched',authorityTaxReconciliation:'DIFFERENT',printedTotalsReconciliation:'UNAVAILABLE',untrusted:'<script>alert(1)</script>'});
  assert.match(root.textContent,/Source validation and reconciliation/);assert.match(root.textContent,/DIFFERENT/);assert.match(root.textContent,/UNAVAILABLE/);assert.match(root.textContent,/Original values remain unchanged/);assert.equal(descendants(root,'script').length,0);
 });
+
+test('nested bill documents use stacked records and preserve source values without table nesting',()=>{
+ const data=JSON.parse(readFileSync(new URL('./fixtures/client/baker-render-source.json',import.meta.url),'utf8'));
+ const before=JSON.stringify(data),root=new Node('main');renderValue(document,root,data.documents);
+ assert.equal(root.children[0].className,'record-list');assert.equal(root.children[0].children[0].className,'record-card');
+ assert.match(root.textContent,/817241/);assert.match(root.textContent,/12\/10\/2025/);assert.match(root.textContent,/\$2,083\.94/);assert.match(root.textContent,/\$2,021\.42/);
+ for(const table of descendants(root,'table'))assert.equal(descendants(table,'table').length,1);
+ assert(descendants(root,'details').length>0);assert.equal(JSON.stringify(data),before);
+});
+test('scalar rows have separate containers so nested values cannot stretch unrelated labels',()=>{
+ const root=new Node('main');renderValue(document,root,{paidBy:null,tax_details:{BillDetails:{receiptNumber:'817241'},rows:[{authority:'County',taxesLevied:'2083.94'}]},paidDate:'12/10/2025'});
+ const list=root.children[0];assert.equal(list.className,'value-fields');assert.equal(list.children.length,3);
+ assert(list.children.every(row=>row.tag==='div'&&row.children[0].tag==='dt'&&row.children[1].tag==='dd'));assert.equal(list.children[1].className,'value-field value-field-wide');
+ assert.match(root.textContent,/Not published \/ unavailable/);assert.match(root.textContent,/12\/10\/2025/);
+});
+
+test('money presentation groups exact decimal strings without rounding rates, IDs, nulls or booleans',()=>{
+ assert.equal(fieldDisplay('2083.94','combined_taxes_and_assessments'),'$2,083.94');
+ assert.equal(fieldDisplay('0','balance_due'),'$0.00');
+ assert.equal(fieldDisplay('9007199254740993.01','paid_amount'),'$9,007,199,254,740,993.01');
+ assert.equal(fieldDisplay('0.01849000','millage'),'0.01849000');
+ assert.equal(fieldDisplay('00123','parcel_id'),'00123');
+ assert.equal(fieldDisplay(false,'ownerOccupied'),'false');assert.equal(fieldDisplay(null,'amount_paid'),'Not published / unavailable');
+});
+
+test('table missing values use a compact explained dash while a genuine zero stays monetary zero',()=>{
+ const value=[{year:2025,paid_amount:'0.00',receipt_number:null},{year:2024,paid_amount:null,receipt_number:'0012'}],before=JSON.stringify(value),root=new Node('main');renderValue(document,root,value);
+ assert.match(root.textContent,/— = not published or unavailable/);assert.match(root.textContent,/\$0\.00/);assert.match(root.textContent,/0012/);assert.equal(JSON.stringify(value),before);
+});
+
+test('county exemption amounts display as currency without changing IDs or source blanks',()=>{const root=new Node('main');renderValue(document,root,{exemptions:'49249',school_exemptions:'0',parcel_id:'0000123',ExemptionValue:null});assert.match(root.textContent,/\$49,249\.00/);assert.match(root.textContent,/\$0\.00/);assert.match(root.textContent,/0000123/);assert.match(root.textContent,/Not published \/ unavailable/);});

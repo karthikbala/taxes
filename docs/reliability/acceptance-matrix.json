@@ -1,0 +1,367 @@
+{
+  "created_at": "2026-10-13",
+  "live_acceptance_complete": false,
+  "note": "These are coverage slots, not verified properties. Populate official identity, owner, evidence and expected values before running acceptance.",
+  "cases": [
+    {
+      "id": "miami-dade-fl-01",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-02",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-03",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-04",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-05",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-06",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-07",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-08",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-09",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-10",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-11",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "miami-dade-fl-12",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "miami-dade-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-01",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-02",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-03",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-04",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-05",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-06",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-07",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-08",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-09",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-10",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-11",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "osceola-fl-12",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "osceola-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-01",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-02",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-03",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-04",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-05",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-06",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-07",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-08",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-09",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-10",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-11",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    },
+    {
+      "id": "bradford-fl-12",
+      "status": "pending_independent_verification",
+      "input": {
+        "county": "bradford-fl"
+      },
+      "source_urls": [],
+      "expected": [],
+      "ui_verified": false
+    }
+  ]
+}

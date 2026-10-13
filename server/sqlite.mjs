@@ -1,5 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
-import { readFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, mkdirSync, chmodSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 class SQLiteStatement {
@@ -25,13 +25,14 @@ class SQLiteStatement {
 /** A persistent, single-process D1-compatible adapter; no ledger is seeded. */
 export function createSQLiteDB(path) {
   if (typeof path !== 'string' || !path.trim()) throw new TypeError('A SQLite database path is required.');
-  if (path !== ':memory:') mkdirSync(dirname(resolve(path)), { recursive: true });
+  if (path !== ':memory:') mkdirSync(dirname(resolve(path)), { recursive: true, mode:0o700 });
   const sqlite = new DatabaseSync(path);
   try {
     sqlite.exec('PRAGMA busy_timeout = 5000; PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');
     const schema = readFileSync(new URL('../drizzle/0000_condemned_thundra.sql', import.meta.url), 'utf8')
       .replace(/CREATE TABLE\s+(?!IF NOT EXISTS)/gi, 'CREATE TABLE IF NOT EXISTS ');
     sqlite.exec(schema);
+    if(path!==':memory:')for(const file of [path,path+'-wal',path+'-shm'])if(existsSync(file))chmodSync(file,0o600);
   } catch (error) { sqlite.close(); throw error; }
   const db = {
     sqlite,
