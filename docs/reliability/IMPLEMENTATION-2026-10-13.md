@@ -15,14 +15,13 @@
 
 Started from local `05a1767`, upstream `379943a`, previously pushed fork branch `2ec9cd8`, plus newer local county/POC changes. The implementation preserves those newer repairs, including Bradford mailing/site-address review, Miami multi-year delinquency and Osceola certificate/deed scopes. See `baseline.json` for the source-manifest digest.
 
-Staging was initially inspected through the wrong service manager. The correct `systemctl --user` service is active and independently advanced to `bradford-client-final-20261013-f6a5bcedf983`. No reliability activation, restart or production deployment is claimed by this checkpoint.
+The existing staging deployment advanced independently during implementation and was rechecked through its correct service manager. No reliability activation or production deployment is claimed by this checkpoint.
 
 ## Verification performed
 
 - Full offline suite: **455 passed, zero failed** under bundled Node 24.19.0. Focused POC suite after the latest display change: **10 passed**. Build, Python syntax and source diff whitespace checks passed. An immutable corrected source candidate then passed **458/458 tests** and build under staging Node **22.23.3**, without activation.
 - Actual county engine through durable jobs: Miami source-derived address/detail/search fixtures and original annual PDF preserve exact folio, $3,132.45 tax and $3,007.15 paid. Offline history/HTML scaffolding is explicitly labelled in the test; not fresh live proof.
-- Fresh direct-only Bradford paid job `a751d5e0-e78f-44bc-9a43-696bed263f15`: exact parcel `04708-0-00200`, errors empty, $201,605.05 annual total and null separately unpublished discountable subtotal.
-- Fresh direct-only Bradford delinquent job `804f9c25-d2bf-4297-9df7-6cadc02487ab`: exact parcel `05194-0-00000`, errors empty, $130.33 current-year and $86.22 prior known amount; published known total $216.55. Full historical coverage remains partial.
+- Two fresh direct-only Bradford checks independently matched the exact paid and delinquent parcels, with extraction errors empty. Full source/API evidence and amounts are retained privately; historical coverage remains partial.
 - Both jobs retained their results across a real private QA server restart. Chrome restored and visibly rendered the delinquent job without another source lookup. Private JSON, original runtime artifacts and screenshot are retained outside the public source tree.
 - Credential-pattern scan: 310 relevant text source files, no private-key/provider/GitHub-token pattern matches. This is a targeted scan, not an assurance about arbitrary external data.
 
@@ -41,6 +40,6 @@ The software implementation is reviewable; the complete release programme remain
 
 ## Isolated staging candidate
 
-Candidate `/home/interns/apps/taxes/candidates/reliability-20261013-73d39b3` was built from commit `73d39b35b074ba18e0acb346fbbbfaa1e7e5980d`; archive SHA256 `8d0c0f481ab58c0f7229b525129f2c006b696bf938521b795db8cafdfb2f58bc` was verified before extraction. Locked installation, 458 offline tests and self-host build passed. Active staging, Nginx, secrets, database and allowances were unchanged. Earlier candidate failures exposed omitted worker packaging and a rendering test depending on an untracked report; worker build checks and a portable source-derived fixture corrected both. Candidate logs remain under the server's private candidates directory.
+The isolated committed candidate passed locked installation, 458 offline tests and build on Node 22.23.3. The final published source then passed 459/459 tests and build on the same runtime, including isolated Bradford property-card parsing. Source archive hashes and detailed validation receipts are retained privately. Existing staging and production were not activated by this work. Earlier candidate failures exposed omitted worker packaging and a rendering test depending on an untracked report; worker build checks and a portable source-derived fixture corrected both.
 
 A subsequent small freshness correction preserves original browser-artifact retrieval dates during same-job replay. It does not fetch new source data or alter tax values. Its focused source/job regression results are recorded with the follow-up commit.
