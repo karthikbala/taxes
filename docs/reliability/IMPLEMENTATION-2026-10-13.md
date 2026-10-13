@@ -19,7 +19,7 @@ Staging was initially inspected through the wrong service manager. The correct `
 
 ## Verification performed
 
-- Full offline suite: **455 passed, zero failed** under bundled Node 24.19.0. Focused POC suite after the latest display change: **10 passed**. Build, Python syntax and source diff whitespace checks passed. Node 22 staging-candidate validation remains separate until recorded.
+- Full offline suite: **455 passed, zero failed** under bundled Node 24.19.0. Focused POC suite after the latest display change: **10 passed**. Build, Python syntax and source diff whitespace checks passed. An immutable corrected source candidate then passed **458/458 tests** and build under staging Node **22.23.3**, without activation.
 - Actual county engine through durable jobs: Miami source-derived address/detail/search fixtures and original annual PDF preserve exact folio, $3,132.45 tax and $3,007.15 paid. Offline history/HTML scaffolding is explicitly labelled in the test; not fresh live proof.
 - Fresh direct-only Bradford paid job `a751d5e0-e78f-44bc-9a43-696bed263f15`: exact parcel `04708-0-00200`, errors empty, $201,605.05 annual total and null separately unpublished discountable subtotal.
 - Fresh direct-only Bradford delinquent job `804f9c25-d2bf-4297-9df7-6cadc02487ab`: exact parcel `05194-0-00000`, errors empty, $130.33 current-year and $86.22 prior known amount; published known total $216.55. Full historical coverage remains partial.
@@ -38,3 +38,9 @@ No paid provider capture, new allowance, license purchase or outbound records re
 6. Restricted historical records still require authoritative county access/confirmation. Complete public queries do not establish title clearance.
 
 The software implementation is reviewable; the complete release programme remains in progress behind these explicit gates.
+
+## Isolated staging candidate
+
+Candidate `/home/interns/apps/taxes/candidates/reliability-20261013-73d39b3` was built from commit `73d39b35b074ba18e0acb346fbbbfaa1e7e5980d`; archive SHA256 `8d0c0f481ab58c0f7229b525129f2c006b696bf938521b795db8cafdfb2f58bc` was verified before extraction. Locked installation, 458 offline tests and self-host build passed. Active staging, Nginx, secrets, database and allowances were unchanged. Earlier candidate failures exposed omitted worker packaging and a rendering test depending on an untracked report; worker build checks and a portable source-derived fixture corrected both. Candidate logs remain under the server's private candidates directory.
+
+A subsequent small freshness correction preserves original browser-artifact retrieval dates during same-job replay. It does not fetch new source data or alter tax values. Its focused source/job regression results are recorded with the follow-up commit.

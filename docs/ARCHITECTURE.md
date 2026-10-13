@@ -51,3 +51,9 @@ Server SSH, GitHub and DNS permissions are operator concerns recorded in the dep
 ## Safe extension point
 
 For a new rich county contract, add native resolution/enrichment beside the existing county modules, reuse reviewed collector-family parsing where applicable, and add source-derived offline positive/negative fixtures. Keep `address_lookup_enabled` false until independent source → JSON → UI acceptance passes. A shared maintainer integrates any engine, contract, auth, transport, budget or UI change and releases once focused checks pass. Use `profiles.mjs` for explicit readiness/limitations and update the dated handoff with revision and live proof.
+
+## Durable address retrieval
+
+The standalone runtime adds a SQLite-backed job runner for the three rich address workflows. Job requests authenticate before validation/dispatch and run independently of HTTP disconnects. Immutable per-job artifacts, stage checkpoints, recovery leases and recorded paid dispatch ownership support restart recovery. New jobs fetch fresh sources; incomplete pagination stages are refreshed rather than replayed as complete. Protected artifact/review/operations endpoints use the current single-operator key. See [operations and API](reliability/RUNBOOK.md).
+
+PDF extraction runs outside the HTTP event loop, with a single bounded worker queue. Optional local Chromium precedes managed recovery. Optional PyMuPDF/Tesseract requires approved licensing and production container isolation. OCR output remains review-only. Structured field availability and source scopes accompany progressive POC results. Release acceptance, original spending-ledger reconciliation and the seven-day soak remain explicit gates; job completion does not establish historical clearance.

@@ -31,16 +31,16 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
   async function browser(args){
    const serial={...args};delete serial.signal;delete serial.deadline;
    const key='browser:'+createHash('sha256').update(JSON.stringify(serial)).digest('hex'),cached=store.cached(job.id,key);
-   if(cached)return JSON.parse(Buffer.from(cached.bytes).toString('utf8'));
+   if(cached)return {...JSON.parse(Buffer.from(cached.bytes).toString('utf8')),artifact_retrieved_at:new Date(cached.created_at).toISOString()};
    if(store.sessions(job.id).some(s=>s.cache_key===key))throw problem('cleanup_pending',409,'A previous capture was dispatched for this source. Review its outcome before repeating paid work.');
-   if(localBrowser){try{const capture=await navigation(()=>localBrowser({...args,signal:ctl.signal}),ctl.signal);if(capture){store.artifact(job.id,key,'browser',Buffer.from(JSON.stringify(capture)),{url:args.url,method:'LOCAL_BROWSER'});return capture;}}catch(e){if(ctl.signal.aborted)throw e;store.event(job.id,store.get(job.id).stage,'local_browser_failed',e.code||'local_browser_unavailable');}}
+   if(localBrowser){try{const capture=await navigation(()=>localBrowser({...args,signal:ctl.signal}),ctl.signal);if(capture){capture.artifact_retrieved_at=new Date(now()).toISOString();store.artifact(job.id,key,'browser',Buffer.from(JSON.stringify(capture)),{url:args.url,method:'LOCAL_BROWSER'});return capture;}}catch(e){if(ctl.signal.aborted)throw e;store.event(job.id,store.get(job.id).stage,'local_browser_failed',e.code||'local_browser_unavailable');}}
    if(job.access_mode==='direct_only')throw problem('managed_browser_unavailable',503,'This job excludes paid recovery. Verified direct-source sections are retained.');
    if(!managedBrowser)throw problem('managed_browser_unavailable',503,'Managed browser is not configured.');
    return paid(async()=>{
     const ready=await managedPreflight(env);if(!ready.ready)throw problem('managed_access_not_ready',503,'Managed source entitlement or authorized spending was not verified.');
     const intent=randomUUID();store.session(job.id,key,{id:intent,status:'dispatching'});
     const capture=await managedBrowser({...args,signal:ctl.signal,binaryTransfer:env.TAXES_ARTIFACT_INGEST_ORIGIN?binaryTransfer:undefined,sessionObserver:event=>store.session(job.id,key,{...event,id:intent})});
-    store.artifact(job.id,key,'browser',Buffer.from(JSON.stringify(capture)),{url:args.url,method:'MANAGED_BROWSER'});return capture;
+    capture.artifact_retrieved_at=new Date(now()).toISOString();store.artifact(job.id,key,'browser',Buffer.from(JSON.stringify(capture)),{url:args.url,method:'MANAGED_BROWSER'});return capture;
    },ctl.signal);
   }
   async function binaryTransfer({sourceUrl,size,sha256},execute){
