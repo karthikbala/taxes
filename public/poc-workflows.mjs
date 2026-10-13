@@ -1,6 +1,7 @@
 // POC admission is narrower than the API directory. Each mode below has a
 // fresh production source/document check on 2026-10-13 with paid access off.
-// Re-admit blocked counties only after source -> document -> API acceptance.
+// Established address workflows stay visible with explicit source limits.
+// Only fresh source -> document -> API acceptance earns sample_verified.
 export const verifiedPocModes = Object.freeze({
   'allegheny-pa': ['county'],
   'baker-fl': ['collector'],
@@ -24,9 +25,9 @@ export function catalogWorkflows(parcelCatalog, clientCatalog) {
 }
 export function pocWorkflows(parcelCatalog, clientCatalog) {
   return catalogWorkflows(parcelCatalog, clientCatalog).flatMap(county => {
-    const modes = (verifiedPocModes[county.id] || []).filter(mode =>
-      county.lookup_modes.includes(mode));
-    return modes.length ? [{ ...county, lookup_modes: modes }] : [];
+    const verified = (verifiedPocModes[county.id] || []).filter(mode=>county.lookup_modes.includes(mode));
+    const modes = [...(county.client?.address_lookup_enabled ? ['address'] : []), ...verified.filter(mode=>mode!=='address')];
+    return modes.length ? [{ ...county, lookup_modes: modes, poc_verification: verified.length?'sample_verified':'source_access_limited' }] : [];
   });
 }
 export const workflowLabels = {
@@ -39,7 +40,7 @@ export function workflowSample(profile, mode) {
   return profile.samples?.[mode] || profile.sample;
 }
 export function pocRequest(profile, mode, fields) {
-  if (!verifiedPocModes[profile?.id]?.includes(mode) || !profile?.lookup_modes.includes(mode)) throw new Error('This lookup mode is unavailable for the selected county.');
+  if (!profile?.lookup_modes.includes(mode) || !(verifiedPocModes[profile.id]?.includes(mode) || mode==='address'&&profile.client?.address_lookup_enabled)) throw new Error('This lookup mode is unavailable for the selected county.');
   return catalogRequest(profile, mode, fields);
 }
 export function catalogRequest(profile, mode, fields) {

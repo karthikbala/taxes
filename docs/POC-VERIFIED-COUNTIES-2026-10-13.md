@@ -1,5 +1,7 @@
 # Verified POC county admission — 13 October 2026
 
+Historical nine-county filter snapshot. The later [county-status checkpoint](POC-COUNTY-STATUS-2026-10-13.md) restores the established Miami-Dade and Osceola address workflows with explicit source-access limitations.
+
 The POC now lists only nine workflows with fresh production source and original-document extraction. Annual-roll-only counties, blocked managed-recovery workflows and Polk’s unresolved source contradiction are excluded. Bradford is the default, with address/owner and parcel modes; Baker is collector-only. Other admitted counties use parcel IDs.
 
 ## Fresh production acceptance

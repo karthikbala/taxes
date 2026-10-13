@@ -10,9 +10,9 @@ import {renderValue,renderSections,renderValidation,resultBadge,resultRequestId}
 import {sourcePresentation} from '../public/source-status.mjs';
 
 const workflows=pocWorkflows(capabilities,clientCapabilities);
-test('POC exposes only production-verified county extraction and rejects removed modes',()=>{
- assert.deepEqual(workflows.map(c=>c.id),['allegheny-pa','baker-fl','bradford-fl','columbia-fl','desoto-fl','highlands-fl','palm-beach-fl','suwannee-fl','union-fl']);
- assert.equal(workflows.filter(c=>c.lookup_modes.includes('address')).length,1);
+test('POC preserves established address workflows alongside verified parcel extraction',()=>{
+ assert.deepEqual(workflows.map(c=>c.id),['allegheny-pa','baker-fl','bradford-fl','columbia-fl','desoto-fl','highlands-fl','miami-dade-fl','osceola-fl','palm-beach-fl','suwannee-fl','union-fl']);
+ assert.equal(workflows.filter(c=>c.lookup_modes.includes('address')).length,3);
  assert.equal(workflows.some(c=>c.lookup_modes.includes('state_roll')),false);
  assert.equal(capabilities.counties.length,68,'the separate API directory remains intact');
  for(const c of workflows)for(const mode of c.lookup_modes){
@@ -23,11 +23,11 @@ test('POC exposes only production-verified county extraction and rejects removed
  for(const id of ['alachua-fl','miami-dade-fl','osceola-fl','polk-fl','pinellas-fl'])assert.throws(()=>pocRequest({id,lookup_modes:['county','address','state_roll']},'county',{}));
  assert.throws(()=>pocRequest(workflows[0],'state_roll',{}));
 });
-test('collector account is confined to Palm Beach and neighbours are unavailable for admitted counties',()=>{
+test('collector account remains confined to Palm Beach and Miami retains neighbours',()=>{
  const palm=workflows.find(c=>c.id==='palm-beach-fl'),bradford=workflows.find(c=>c.id==='bradford-fl');
  assert.equal(pocRequest(palm,'county',{parcel:palm.sample.parcel_id,account:' 12345 ',includePdf:false}).body.collector_account_id,'12345');
  assert.equal('collector_account_id' in pocRequest(bradford,'county',{parcel:bradford.sample.parcel_id,account:'12345'}).body,false);
- for(const c of workflows)for(const mode of c.lookup_modes)assert.equal(supportsNeighbors(c,mode),false);
+ for(const c of workflows)for(const mode of c.lookup_modes)assert.equal(supportsNeighbors(c,mode),c.id==='miami-dade-fl'&&mode==='address');
 });
 
 // Execute the actual page controller with isolated DOM and API transports.
@@ -83,7 +83,7 @@ test('actual POC controller submits the eight admitted county parcel routes with
  }
  assert.equal(calls.length,8);
 });
-test('the verified Bradford address form keeps its v2 order and sample identity',async()=>{
+test('all three established address forms keep their v2 order and sample identity',async()=>{
  const {elements:e,calls}=await harness();
  for(const profile of workflows.filter(c=>c.lookup_modes.includes('address'))){
   await e.get('county').change(profile.id);
@@ -91,22 +91,22 @@ test('the verified Bradford address form keeps its v2 order and sample identity'
   await e.get('form').onsubmit({preventDefault(){}});
   const call=calls.at(-1);assert.equal(call.url,'/api/v2/property/jobs');assert.equal(call.body.address,profile.client.demo_input.address);assert.equal(call.body.ownerName,profile.client.demo_input.ownerName);assert.equal(call.body.scrap_order_id,'test-order');assert.equal('parcel_id' in call.body,false);assert.match(e.get('request-id').textContent,/Lookup ID: aaaaaaaa/);assert.match(e.get('sections').textContent,/TEST ADDRESS/);
  }
- assert.equal(calls.length,1);
+ assert.equal(calls.length,3);
 });
-test('county switches clear stale results and do not offer annual-roll or blocked counties',async()=>{
+test('county switches preserve established workflows and show their source limits',async()=>{
  const {elements:e,calls}=await harness();
  assert.equal(e.get('county').value,'bradford-fl');assert.equal(e.get('lookup-mode').value,'address');assert.equal(e.get('neighbor-controls').hidden,true);assert.equal(calls.length,0);
  await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.length,1);
  await e.get('county').change('palm-beach-fl');assert.equal(e.get('account-field').hidden,false);assert.equal(e.get('lookup-mode').value,'county');assert.equal(e.get('download').disabled,true);assert.equal(e.get('sections').children.length,0);
  await e.get('county').change('bradford-fl');assert.equal(e.get('owner').value,'WALMART STORES EAST, LP');assert.equal(e.get('address').disabled,false);assert.equal(e.get('parcel').disabled,true);assert.equal(calls.length,1);
- assert.equal(e.get('county').children.length,9);
- assert(e.get('county').children.every(o=>!['alachua-fl','miami-dade-fl','osceola-fl','polk-fl'].includes(o.value)));
+ assert.equal(e.get('county').children.length,11);
+ assert(e.get('county').children.every(o=>!['alachua-fl','polk-fl'].includes(o.value)));
  assert.equal(e.get('lookup-mode').children.some(o=>o.value==='state_roll'),false);
 });
 
 test('workflow table lists only admitted counties and their accurate search scope',async()=>{
  const {elements:e}=await harness();const rows=e.get('coverage').children;
- assert.equal(rows.length,9);assert.match(e.get('catalog-summary').textContent,/9 counties with verified production sample extraction/);
+ assert.equal(rows.length,11);assert.match(e.get('catalog-summary').textContent,/11 counties: 9 with verified production samples; 2 with source access limits/);
  const baker=rows.find(r=>r.children[0].textContent==='Baker County, Florida');assert.equal(baker.children[2].textContent,'Use parcel ID');assert.match(baker.children[1].textContent,/collector and original bill only/);
  const bradford=rows.find(r=>r.children[0].textContent==='Bradford County, Florida');assert.equal(bradford.children[2].textContent,'Available · source gaps shown');
  assert(!e.get('coverage').textContent.includes('annual roll'));
@@ -152,4 +152,16 @@ test('all address-capable county API workflows use the same address-and-owner re
   const r=catalogRequest(profile,'address',{order:'generic-address',address:'100 TEST ST',owner:'TEST OWNER',transaction:'REFI',addressType:'mailing'});
   assert.equal('addressType' in r.body,false);assert.equal(r.body.county,profile.id);assert.equal(r.body.address,'100 TEST ST');assert.equal(r.body.ownerName,'TEST OWNER');
  }
+});
+
+test('Miami and Osceola remain selectable without being labelled fully verified or widening parcel support',async()=>{
+ const {elements:e,calls}=await harness();
+ for(const id of ['miami-dade-fl','osceola-fl']){
+  const p=workflows.find(c=>c.id===id);assert.deepEqual(p.lookup_modes,['address']);assert.equal(p.poc_verification,'source_access_limited');
+  await e.get('county').change(id);assert.match(e.get('workflow-note').textContent,/Source access is currently limited/);
+  assert.match(e.get('county').children.find(o=>o.value===id).textContent,/source access limited/);
+  const row=e.get('coverage').children.find(r=>r.children[0].textContent===p.name);assert.match(row.children[3].textContent,/full retrieval unverified/);assert.doesNotMatch(row.children[3].textContent,/Sample verified/);
+  assert.throws(()=>pocRequest(p,'county',{}));
+ }
+ assert.equal(calls.length,0,'Changing counties must not trigger source work');
 });

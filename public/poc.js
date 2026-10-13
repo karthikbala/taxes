@@ -222,6 +222,7 @@ function syncMode(){
  el('neighbor-controls').hidden=!neighborsAvailable();el('neighbors-check').disabled=!neighborsAvailable();el('neighbors-same-building').disabled=!neighborsAvailable();
  el('submit').textContent=address?'Fetch live client JSON →':'Fetch parcel records →';
  el('workflow-note').textContent=mode==='state_roll'?'Annual statewide assessment data only. Collector balances, payments and original county bills are not retrieved.':mode==='collector'?'County collector records and original published bill only. No assessment lookup or historical-clearance conclusion is included.':address?'Detailed address-and-owner workflow; unavailable sections remain explicit.':'Existing county parcel workflow. Detailed address-and-owner search is not claimed. Source access and document coverage vary by county.';
+ if(profile.poc_verification==='source_access_limited')el('workflow-note').textContent+=' Source access is currently limited; assessment, tax or document sections may be unavailable.';
  el('county-example').textContent=address?profile.client.demo_input?.origin||'': 'Catalogue sample parcel; enter the parcel you want to inspect. No request runs automatically.';
  preview();
 }
@@ -246,13 +247,13 @@ el('download').onclick=()=>{
   if(responses.some(r=>!r.ok))throw Error();const [parcelCatalog,clientCatalog]=await Promise.all(responses.map(r=>r.json()));
   const workflows=pocWorkflows(parcelCatalog,clientCatalog);
   for(const county of workflows){
-   countyProfiles.set(county.id,county);const option=document.createElement('option');option.value=county.id;option.textContent=county.name+(county.lookup_modes.includes('collector')?' · tax collector only':'');el('county').append(option);
+   countyProfiles.set(county.id,county);const option=document.createElement('option');option.value=county.id;option.textContent=county.name+(county.poc_verification==='source_access_limited'?' · source access limited':county.lookup_modes.includes('collector')?' · tax collector only':'');el('county').append(option);
    const addressSearch=county.lookup_modes.includes('address')?'Available · source gaps shown':county.lookup_modes.includes('county')||county.lookup_modes.includes('collector')?'Use parcel ID':'Use parcel ID · assessment roll only';
-   const verification='Production sample verified · 13 Oct 2026';
+   const verification=county.poc_verification==='sample_verified'?'Sample verified · 13 Oct 2026':'Source access limited · full retrieval unverified';
    const tr=document.createElement('tr');for(const value of [county.name,county.lookup_modes.map(m=>workflowLabels[m]).join('; '),addressSearch,verification])text(tr,'td',value);el('coverage').append(tr);
   }
-  el('catalog-summary').textContent=workflows.length+' counties with verified production sample extraction. '+workflows.filter(c=>c.lookup_modes.includes('address')).length+' address-and-owner workflow; '+workflows.filter(c=>c.lookup_modes.includes('county')).length+' assessment-and-tax parcel workflows; '+workflows.filter(c=>c.lookup_modes.includes('collector')).length+' tax-collector-only workflow. Verification covers tested samples; source availability and historical coverage remain explicit.';
-  if(!workflows.length)throw Error('No verified counties available');
+  el('catalog-summary').textContent=workflows.length+' counties: '+workflows.filter(c=>c.poc_verification==='sample_verified').length+' with verified production samples; '+workflows.filter(c=>c.poc_verification==='source_access_limited').length+' with source access limits. '+workflows.filter(c=>c.lookup_modes.includes('address')).length+' address-and-owner workflow; '+workflows.filter(c=>c.lookup_modes.includes('county')).length+' assessment-and-tax parcel workflows; '+workflows.filter(c=>c.lookup_modes.includes('collector')).length+' tax-collector-only workflow. Verification covers tested samples; source availability and historical coverage remain explicit.';
+  if(!workflows.length)throw Error('No county workflows available');
   el('county').value=workflows.find(county=>county.lookup_modes.includes('address'))?.id||workflows[0].id;applyExample();
   initNeighbors(document,{
    onStart:()=>{if(!neighborsAvailable()||!beginLookup('neighbors'))return false;invalidateNeighbors();return true;},
