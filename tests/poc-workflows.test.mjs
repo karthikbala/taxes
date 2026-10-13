@@ -106,7 +106,7 @@ test('county switches preserve established workflows and show their source limit
 
 test('workflow table lists only admitted counties and their accurate search scope',async()=>{
  const {elements:e}=await harness();const rows=e.get('coverage').children;
- assert.equal(rows.length,11);assert.match(e.get('catalog-summary').textContent,/11 counties: 9 with verified production samples; 2 with source access limits/);
+ assert.equal(rows.length,11);assert.match(e.get('catalog-summary').textContent,/11 counties: 11 with verified production samples; 0 with source access limits/);
  const baker=rows.find(r=>r.children[0].textContent==='Baker County, Florida');assert.equal(baker.children[2].textContent,'Use parcel ID');assert.match(baker.children[1].textContent,/collector and original bill only/);
  const bradford=rows.find(r=>r.children[0].textContent==='Bradford County, Florida');assert.equal(bradford.children[2].textContent,'Available · source gaps shown');
  assert(!e.get('coverage').textContent.includes('annual roll'));
@@ -154,13 +154,13 @@ test('all address-capable county API workflows use the same address-and-owner re
  }
 });
 
-test('Miami and Osceola remain selectable without being labelled fully verified or widening parcel support',async()=>{
+test('Miami and Osceola have verified address samples without widening parcel support',async()=>{
  const {elements:e,calls}=await harness();
  for(const id of ['miami-dade-fl','osceola-fl']){
-  const p=workflows.find(c=>c.id===id);assert.deepEqual(p.lookup_modes,['address']);assert.equal(p.poc_verification,'source_access_limited');
-  await e.get('county').change(id);assert.match(e.get('workflow-note').textContent,/Source access is currently limited/);
-  assert.match(e.get('county').children.find(o=>o.value===id).textContent,/source access limited/);
-  const row=e.get('coverage').children.find(r=>r.children[0].textContent===p.name);assert.match(row.children[3].textContent,/full retrieval unverified/);assert.doesNotMatch(row.children[3].textContent,/Sample verified/);
+  const p=workflows.find(c=>c.id===id);assert.deepEqual(p.lookup_modes,['address']);assert.equal(p.poc_verification,'sample_verified');
+  await e.get('county').change(id);assert.doesNotMatch(e.get('workflow-note').textContent,/Source access is currently limited/);
+  assert.doesNotMatch(e.get('county').children.find(o=>o.value===id).textContent,/source access limited/);
+  const row=e.get('coverage').children.find(r=>r.children[0].textContent===p.name);assert.match(row.children[3].textContent,/Sample verified/);assert.doesNotMatch(row.children[3].textContent,/full retrieval unverified/);
   assert.throws(()=>pocRequest(p,'county',{}));
  }
  assert.equal(calls.length,0,'Changing counties must not trigger source work');

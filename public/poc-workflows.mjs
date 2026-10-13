@@ -1,5 +1,6 @@
 // POC admission is narrower than the API directory. Each mode below has a
-// fresh production source/document check on 2026-10-13 with paid access off.
+// fresh production source/document check on 2026-10-13.
+// Miami-Dade and Osceola use explicitly enabled managed-browser recovery.
 // Established address workflows stay visible with explicit source limits.
 // Only fresh source -> document -> API acceptance earns sample_verified.
 export const verifiedPocModes = Object.freeze({
@@ -9,6 +10,8 @@ export const verifiedPocModes = Object.freeze({
   'columbia-fl': ['county'],
   'desoto-fl': ['county'],
   'highlands-fl': ['county'],
+  'miami-dade-fl': ['address'],
+  'osceola-fl': ['address'],
   'palm-beach-fl': ['county'],
   'suwannee-fl': ['county'],
   'union-fl': ['county']
