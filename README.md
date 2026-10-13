@@ -48,7 +48,9 @@ Load `POC_ACCESS_KEY` securely from your local environment before using curl. Th
 
 ## Sources and testing
 
-POC exposes all existing `/live` search methods from its API catalogue: 20 Florida county parcel workflows plus Allegheny, and explicitly selected annual-roll searches for all 67 Florida counties. Miami-Dade, Osceola and Bradford also retain the richer address/owner workflow, with explicit partial coverage. The other 17 Florida county workflows use parcel IDs; their richer address/owner contracts remain pending. Annual-roll-only entries do not retrieve current collector balances, payments or original county bills. No county is promoted to richer acceptance merely by appearing in the selector.
+The `/poc` selector is deliberately limited to nine counties whose production samples returned county tax records and parsed original documents on 13 October 2026 with paid recovery disabled: Allegheny, Baker, Bradford, Columbia, DeSoto, Highlands, Palm Beach, Suwannee and Union. Bradford supports address/owner and parcel search; Baker is collector-only; the others use parcel IDs. The page defaults to Bradford. Annual-roll-only, blocked and conflicting workflows are excluded. The broader API source directory remains separate from POC admission.
+
+`public/poc-workflows.mjs` owns the explicit admitted modes. Re-admission requires fresh source → original document → authenticated API acceptance under the deployed access configuration. Passing sample checks does not guarantee every property or complete historical clearance. Miami-Dade and Osceola remain excluded while their required source recovery is unavailable.
 
 Osceola includes exact-account Collector certificate and tax-deed reports. The independent Clerk parcel search is optional: privately provision `SCRAPEDO_API_KEY` and explicitly enable `INVISIA_OSCEOLA_CLERK_ENABLED=1`. It uses one bounded native HTTP query through Scrape.do and the existing spending policy. Public-query completeness does not establish historical/title clearance. See [the dated source and staging evidence](docs/OSCEOLA-CERTIFICATE-DEED-COVERAGE-2026-10-12.md).
 
