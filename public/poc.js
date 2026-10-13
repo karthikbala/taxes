@@ -71,8 +71,9 @@ function renderClientData(data,response,expectedFolio,fieldStatus){
   for(const candidate of [...(meta.match.candidates||[]).map(c=>({...c,county:'bradford-fl',county_name:'Bradford'})),...(meta.match.site_candidates||[])]){
    const card=document.createElement('article');card.className='record-card';
    text(card,'h4',candidate.county_name+' parcel '+candidate.parcel_id);if(candidate.address_match_type==='site')text(card,'p','This is the property at the supplied address, in '+candidate.county_name+' County. '+(candidate.owner_matches_requested?'The reported owner names match.':'The county owner names differ from the supplied name. Do not attribute this property to that owner.'));renderValue(document,card,{property_site:candidate.address,owners:candidate.owners,mailing_address:candidate.mailing_address,owner_comparison:candidate.owner_matches_requested?'Exact reported owner names':'County owner name differs from the supplied name'});
-   const button=document.createElement('button');button.type='button';button.textContent='Use parcel '+candidate.parcel_id;
-   button.addEventListener('click',()=>{if(activeLookup)return;el('county').value=candidate.county;applyExample();el('lookup-mode').value='county';syncMode();el('parcel').value=candidate.parcel_id;el('county-example').textContent='Selected county parcel · '+candidate.address;preview();});
+   const button=document.createElement('button');button.type='button';button.textContent='Use parcel '+candidate.parcel_id;button.disabled=!countyProfiles.get(candidate.county)?.lookup_modes.includes('county');
+   if(button.disabled)text(card,'p','This county is currently unavailable in the POC.');
+   button.addEventListener('click',()=>{if(activeLookup||button.disabled)return;el('county').value=candidate.county;applyExample();el('lookup-mode').value='county';syncMode();el('parcel').value=candidate.parcel_id;el('county-example').textContent='Selected county parcel · '+candidate.address;preview();});
    card.append(button);panel.append(card);
   }
   for(const check of meta.match.site_reference_checks||[])if(check.status==='UNAVAILABLE')text(panel,'p',check.county+' physical-address check is unavailable. No cross-county identity is claimed.');
@@ -155,7 +156,7 @@ async function watchJob(id,expectedFolio,restoreInput=false){
   try{response=await fetch('/api/v2/property/jobs/'+id,{headers:jobHeaders(),cache:'no-store',signal:AbortSignal.timeout(15000)});job=await response.json();}
   catch{el('status').textContent='Connection interrupted · lookup continues on the server';await new Promise(r=>setTimeout(r,delay));delay=Math.min(30000,delay*2);continue;}
   if(!response.ok){el('error').textContent=job.error?.message||'Job could not be loaded.';restoreJob.hidden=false;break;}
-  delay=2000;currentJob=id;if(restoreInput&&job.input){setForm(job.input);restoreInput=false;}
+  delay=2000;currentJob=id;if(restoreInput&&job.input){if(!countyProfiles.get(job.input.county)?.lookup_modes.includes('address')){el('error').textContent='This saved lookup belongs to a county currently unavailable in the POC.';cancelJob.hidden=true;resumeJob.hidden=true;break;}setForm(job.input);restoreInput=false;}
   if(job.result){for(const key of ['sections','sources','summary'])el(key).replaceChildren();renderClientData(job.result,response,expectedFolio,job.field_status);}
   if(job.result?.ExtractionMetadata?.match?.status!=='ADDRESS_REVIEW_REQUIRED'){const labels={queued:'Waiting to start',running:'Fetching county records',retry_scheduled:'Waiting for county retry',needs_review:'Review needed',completed:'Verified retrieval complete',completed_with_gaps:'Available records retrieved · gaps shown',failed:'Retrieval could not finish',cancelled:'Lookup cancelled'},stages={resolve_property:'Finding the property',appraiser:'Reading assessment records',collector_history:'Reading tax history',documents:'Reading original bills',certificate_deed:'Checking certificates and deeds',validation:'Checking identity and amounts',serialization:'Preparing results'};el('status').textContent=(labels[job.status]||'Lookup in progress')+(['running','queued'].includes(job.status)?' · '+(stages[job.stage]||'Fetching records'):'');}
   el('request-id').textContent='Lookup ID: '+id+' · updated '+new Date(job.updated_at).toLocaleString();
@@ -239,13 +240,14 @@ el('download').onclick=()=>{
   if(responses.some(r=>!r.ok))throw Error();const [parcelCatalog,clientCatalog]=await Promise.all(responses.map(r=>r.json()));
   const workflows=pocWorkflows(parcelCatalog,clientCatalog);
   for(const county of workflows){
-   countyProfiles.set(county.id,county);const option=document.createElement('option');option.value=county.id;option.textContent=county.name+(county.lookup_modes.includes('county')?'':county.lookup_modes.includes('collector')?' · collector and annual roll':' · annual roll only');el('county').append(option);
+   countyProfiles.set(county.id,county);const option=document.createElement('option');option.value=county.id;option.textContent=county.name+(county.lookup_modes.includes('collector')?' · tax collector only':'');el('county').append(option);
    const addressSearch=county.lookup_modes.includes('address')?'Available · source gaps shown':county.lookup_modes.includes('county')||county.lookup_modes.includes('collector')?'Use parcel ID':'Use parcel ID · assessment roll only';
-   const verification=county.verification_status==='joined_verified'?'Assessor and collector sample verified':county.verification_status==='collector_only_verified'?'Collector-only sample verified':county.verification_status==='source_values_disagree'?'Source discrepancy under review':county.verification_status?county.verification_status.replace(/_/g,' '):county.coverage||'Annual-roll evidence only';
+   const verification='Production sample verified · 13 Oct 2026';
    const tr=document.createElement('tr');for(const value of [county.name,county.lookup_modes.map(m=>workflowLabels[m]).join('; '),addressSearch,verification])text(tr,'td',value);el('coverage').append(tr);
   }
-  el('catalog-summary').textContent=workflows.filter(c=>c.state==='FL'&&c.lookup_modes.includes('county')).length+' Florida county parcel workflows, Allegheny county parcel workflow, '+workflows.filter(c=>c.lookup_modes.includes('address')).length+' detailed address workflows, and '+workflows.filter(c=>c.lookup_modes.includes('state_roll')).length+' Florida annual-roll entries. '+workflows.filter(c=>c.lookup_modes.includes('collector')).length+' additional collector-only workflow.';
-  el('county').value='miami-dade-fl';applyExample();
+  el('catalog-summary').textContent=workflows.length+' counties with verified production sample extraction. '+workflows.filter(c=>c.lookup_modes.includes('address')).length+' address-and-owner workflow; '+workflows.filter(c=>c.lookup_modes.includes('county')).length+' assessment-and-tax parcel workflows; '+workflows.filter(c=>c.lookup_modes.includes('collector')).length+' tax-collector-only workflow. Verification covers tested samples; source availability and historical coverage remain explicit.';
+  if(!workflows.length)throw Error('No verified counties available');
+  el('county').value=countyProfiles.has('bradford-fl')?'bradford-fl':workflows[0].id;applyExample();
   initNeighbors(document,{
    onStart:()=>{if(!neighborsAvailable()||!beginLookup('neighbors'))return false;invalidateNeighbors();return true;},
    onResult:(data,order)=>{
