@@ -1,5 +1,7 @@
 # POC county visibility and live status — 13 October 2026
 
+**Later production recovery:** Miami-Dade and Osceola now pass fresh production address/owner/original-document acceptance. The earlier limited-access results below remain historical snapshots. See [production recovery and exact-case evidence](PRODUCTION-MIAMI-OSCEOLA-RECOVERY-2026-10-13.md).
+
 The user identified that Miami-Dade and Osceola, already demonstrated to Besil, were missing. A nine-county sample-verification allowlist had hidden those established address workflows along with unsupported parcel/roll entries. Hiding temporary source limitations made supported features appear removed. The correction preserves explicitly enabled address contracts and states their current source limitations; it does not promote their full retrieval to verified.
 
 ## Fresh production check
