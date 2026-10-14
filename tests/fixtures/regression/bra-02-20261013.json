@@ -1,0 +1,704 @@
+{
+  "purpose": "Source-derived response subset for offline regression-checker tests only. No new live acceptance or runtime fallback.",
+  "source_response_sha256": "75fa045a72f2d4c31da471a7554e7093e9b9626945a0a43e3d4c95c352623e78",
+  "observed_on": "2026-10-13",
+  "case_id": "BRA-02",
+  "record": {
+    "scrap_order_id": "BESIL-HISTORY-boyd",
+    "address": "6557 SE CR 21B, Keystone Heights",
+    "ownerName": "BAKER BOYD D REVOC TRUST",
+    "county": "Bradford",
+    "state": "FL",
+    "errorMessage": "NA",
+    "status": "partial",
+    "scrapTaxOrderRequest": {
+      "matchStatus": "MATCHED",
+      "PropertyInformation": {
+        "ParcelNumber": "05632-0-00000",
+        "PropertyAddress": "6557 SE CR 21B, KEYSTONE HEIGHTS",
+        "MailingAddress": "PO BOX 155; GRAHAM, FL 32042",
+        "PrimaryZone": null,
+        "PrimaryLandUse": "SINGLE FAMILY (0100)",
+        "BedsBathsHalf": null,
+        "Floors": null,
+        "LivingUnits": null,
+        "LivingArea": "936 Sq.Ft",
+        "AdjustedArea": null,
+        "LotSize": "90.000 FF (0.000 AC)",
+        "YearBuilt": "2020",
+        "Owners": [
+          "BAKER BOYD D REVOC TRUST"
+        ],
+        "ownerOccupied": null,
+        "AlternateKey": "15279",
+        "ActualArea": "1633 Sq.Ft",
+        "ReportedAcreage": "0"
+      },
+      "AssessmentHistory": [
+        {
+          "Year": "2026",
+          "Status": "Preliminary",
+          "SourceLabel": "2026 Preliminary Values",
+          "LandValue": "$46,440",
+          "AgriculturalLandValue": "$0",
+          "BuildingValue": "$113,549",
+          "ExtraFeatureValue": "$866",
+          "MarketValue": "$160,855",
+          "ClassifiedValue": "$0",
+          "AppraisedValue": "$160,855",
+          "AssessedValue": "$160,855",
+          "ExemptionValue": "$0"
+        }
+      ],
+      "BenefitsInformation": [],
+      "AssessmentInformation": {
+        "Year": "2026",
+        "LandValue": "$46,440",
+        "BuildingValue": "$113,549",
+        "ExtraFeatureValue": "$866",
+        "MarketValue": "$160,855",
+        "AssessedValue": "$160,855",
+        "Status": "Preliminary",
+        "SourceLabel": "2026 Preliminary Values",
+        "AgriculturalLandValue": "$0",
+        "ClassifiedValue": "$0",
+        "AppraisedValue": "$160,855",
+        "ExemptionValue": "$0"
+      },
+      "TaxInformation": {
+        "accountNumber": "05632-0-00000",
+        "type": "PAID",
+        "amountDue": "$0.00",
+        "statusMessage": "** PAID **",
+        "lastPaymentDate": "11/26/2025",
+        "lastPaymentAmount": "$2,662.29",
+        "amountPaidYear": "2025",
+        "note": "Payment status describes this verified annual bill; tax clearance and certificate/deed coverage are not established."
+      },
+      "BillDetails": {
+        "taxYear": "2025",
+        "folio": "05632-0-00000",
+        "municipality": null,
+        "millCode": "4",
+        "propertyAddress": "6557 SE CR 21B KEYSTONE HEIGHT 32656",
+        "mailingAddress": "PO BOX 155 GRAHAM , FL 32042",
+        "paidBy": null,
+        "receiptNumber": "30353",
+        "paidDate": "11/26/2025",
+        "paidAmount": "$2,662.29"
+      },
+      "ParcelDetails": {
+        "millageRate": "0.01554530",
+        "millageRateUnit": "source_displayed_rate_fraction",
+        "assessedValue": "$159,612.00",
+        "exemptionValue": "$0.00",
+        "taxableValue": "$159,612.00",
+        "totalMillageRate": "15.54530000",
+        "totalMillageRateUnit": "mills"
+      },
+      "TaxAmounts": {
+        "adValorem": "$2,481.22",
+        "nonAdValorem": "$292.00",
+        "totalDiscountable": null,
+        "totalTax": "$2,773.22"
+      },
+      "AdValoremMillage": [
+        {
+          "group": null,
+          "authority": "SCHOOL-RLE",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".00311800",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$497.67"
+        },
+        {
+          "group": null,
+          "authority": "COUNTY",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".01000000",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$1,596.12"
+        },
+        {
+          "group": null,
+          "authority": "ST. JOHNS WATER",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".00017930",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$28.62"
+        },
+        {
+          "group": null,
+          "authority": "SCHOOL-DISC",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".00224800",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$358.81"
+        }
+      ],
+      "NonAdValorem": [
+        {
+          "authority": "Asmt - FIRE RESIDENTIAL",
+          "amount": "$167.00"
+        },
+        {
+          "authority": "Asmt - GAR RESIDENTIAL",
+          "amount": "$125.00"
+        }
+      ],
+      "DelinquencyInformation": {
+        "hasActiveDelinquency": null,
+        "knownTotalDue": null,
+        "knownPriorYearsDue": "$0.00",
+        "totalPriorYearsDue": null,
+        "currentYearDue": "$0.00",
+        "delinquentYears": [],
+        "coverage": "PARTIAL",
+        "unavailableYears": [],
+        "currentBillYear": "2025",
+        "asOf": "2026-10-13",
+        "timeZone": "America/New_York",
+        "note": "History is incomplete or inconclusive; no negative delinquency conclusion is available.",
+        "notes": [
+          "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out."
+        ],
+        "coverageDetails": {
+          "publishedAnnualRows": "PARTIAL",
+          "unavailableYears": [],
+          "certificateEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+          "independentCertificateSearch": "NOT_IMPLEMENTED",
+          "taxDeedEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+          "independentTaxDeedSearch": "NOT_RUN",
+          "historicalClearanceEstablished": false,
+          "note": "Full historical clearance requires complete annual, certificate and deed coverage. A paid account or an empty public deed query alone is insufficient."
+        }
+      },
+      "FullLegalDescription": [
+        "13-8S-22E | 13 8S 22 LOT 13 EX N 10' CARL VOLLKOPF S/D ALSO DESC: SW COR OF LOT 13 N04*39'20 E 90', N88*11'17 E 299.59', N88*11'7 E 74' TO WATERS EDGE OF SILVER"
+      ],
+      "SalesInformation": [
+        {
+          "Date": "7/7/2026",
+          "Price": "$100",
+          "ORBookPage": "2223 / 365",
+          "Instrument": "WD",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "4/8/2026",
+          "Price": "$100",
+          "ORBookPage": "2205 / 443",
+          "Instrument": "WD",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "4/26/2024",
+          "Price": "$73,400",
+          "ORBookPage": "2090 / 258",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "11/20/2019",
+          "Price": "$100",
+          "ORBookPage": "1823 / 599",
+          "Instrument": "HD",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "12/3/2015",
+          "Price": "$0",
+          "ORBookPage": "1823 / 597",
+          "Instrument": "MS",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "7/19/2015",
+          "Price": "$0",
+          "ORBookPage": "0000 / 0000",
+          "Instrument": "DC",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "12/12/2014",
+          "Price": "$25,000",
+          "ORBookPage": "1561 / 499",
+          "Instrument": "QC",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "1/19/1983",
+          "Price": "$0",
+          "ORBookPage": "214 / 436",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "9/1/1980",
+          "Price": "$100",
+          "ORBookPage": "186 / 340",
+          "Instrument": "WD",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "10/2/1978",
+          "Price": "$40,500",
+          "ORBookPage": "166 / 075",
+          "Instrument": "N/A",
+          "QualificationDescription": "I / U"
+        }
+      ],
+      "PublishedTaxHistory": [
+        {
+          "billYear": "2025",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$2,662.29",
+          "paidDate": "11/26/2025",
+          "receiptNumber": "30353",
+          "billId": "1407400",
+          "grossTax": "$2,481.22",
+          "assessments": "$292.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2024",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$986.51",
+          "paidDate": "11/08/2024",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$902.61",
+          "assessments": "$125.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2023",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,016.18",
+          "paidDate": "04/29/2024",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$861.58",
+          "assessments": "$125.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2022",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,084.92",
+          "paidDate": "04/29/2024",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$824.68",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2021",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,063.19",
+          "paidDate": "04/29/2024",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$808.32",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2020",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$635.91",
+          "paidDate": "04/29/2024",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$432.84",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2019",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$508.02",
+          "paidDate": "04/14/2020",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$433.02",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2018",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$523.54",
+          "paidDate": "04/03/2019",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$433.29",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2017",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$501.14",
+          "paidDate": "01/29/2018",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$436.37",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2016",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Unknown",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$442.64",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2015",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,134.39",
+          "paidDate": "04/04/2016",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,059.39",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2014",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,059.90",
+          "paidDate": "12/01/2014",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,029.06",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2013",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,102.02",
+          "paidDate": "01/31/2014",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,049.51",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2012",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,104.53",
+          "paidDate": "12/31/2012",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,063.69",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        }
+      ],
+      "HistoricalTaxRecords": [
+        {
+          "parcelId": "05632-0-00000",
+          "billYear": "2025",
+          "billNumber": "1407400",
+          "sourceOwner": "BAKER BOYD D ET AL",
+          "documentStatus": "EXTRACTED",
+          "documentType": "annual_tax_bill",
+          "amountDue": "$0.00",
+          "paidAmount": "$2,662.29",
+          "paidDate": "11/26/2025",
+          "receiptNumber": "30353",
+          "combinedTaxesAndAssessments": "$2,773.22",
+          "certificate": null,
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Original year-specific annual bill; paid fields are retained only when printed.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+          "sourceSha256": "7e4d795ff035b5800bb55aeb4c99d6c8798a50f72c8e2ad7a86ddc17452b0f52",
+          "retrievedAt": "2026-10-13T12:19:06.626Z"
+        },
+        {
+          "parcelId": "05632-0-00000",
+          "billYear": "2022",
+          "billNumber": "1377600",
+          "sourceOwner": "HALL MICHAEL K",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": "* CERTIFICATE SOLD *",
+            "date": "06/01/2023",
+            "holder": "9990927",
+            "interestRate": "0.25",
+            "faceAmount": "$1,027.30",
+            "interestAmount": "$51.37",
+            "fees": "$6.25",
+            "certificateNumber": "1068"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "fb9f4b11c289a5d18d06875ae9fe6de146cf1853880388b9a524641c8f5310b9",
+          "retrievedAt": "2026-10-13T12:19:08.551Z"
+        },
+        {
+          "parcelId": "05632-0-00000",
+          "billYear": "2021",
+          "billNumber": "1366800",
+          "sourceOwner": "HALL MICHAEL K",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": "* CERTIFICATE SOLD *",
+            "date": "06/01/2022",
+            "holder": "9990830",
+            "interestRate": "0.25",
+            "faceAmount": "$1,006.61",
+            "interestAmount": "$50.33",
+            "fees": "$6.25",
+            "certificateNumber": "1026"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "ff19537187d93343e7af60bcfc41ce3cb65602f6c463a9f1616156fff6e65039",
+          "retrievedAt": "2026-10-13T12:19:09.551Z"
+        },
+        {
+          "parcelId": "05632-0-00000",
+          "billYear": "2020",
+          "billNumber": "1356600",
+          "sourceOwner": "HALL MICHAEL K",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": "* CERTIFICATE SOLD *",
+            "date": "06/01/2021",
+            "holder": "9990151",
+            "interestRate": "0.25",
+            "faceAmount": "$599.68",
+            "interestAmount": "$29.98",
+            "fees": "$6.25",
+            "certificateNumber": "957"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "582743a3e06711b14c43cad32ed391be6a016dbdfdeea317898aecd35255bf06",
+          "retrievedAt": "2026-10-13T12:19:10.441Z"
+        }
+      ]
+    },
+    "ExtractionMetadata": {
+      "request_id": "86ce7eef-cdff-4bf9-860e-c78dcc9414b2",
+      "county_id": "bradford-fl",
+      "collected_at": "2026-10-13T12:19:02.051Z",
+      "match": {
+        "requested_address_type": "auto",
+        "candidates": [
+          {
+            "parcel_id": "05632-0-00000",
+            "address": "6557 SE CR 21B, KEYSTONE HEIGHTS",
+            "owners": [
+              "BAKER BOYD D REVOC TRUST"
+            ],
+            "source_id": "bradford_site_reference_05632000000",
+            "address_match_type": "site",
+            "owner_matches_requested": true,
+            "mailing_address": "PO BOX 155; GRAHAM, FL 32042",
+            "verified_address_match": true
+          }
+        ],
+        "owner_reference_status": "COMPLETE",
+        "owner_reference_candidates": [
+          {
+            "parcel_id": "01037-0-00200",
+            "address": "10402 SW 93RD ST HAMPTON",
+            "owners": [
+              "BAKER BOYD D"
+            ]
+          },
+          {
+            "parcel_id": "01035-0-00100",
+            "address": "SW 93RD ST HAMPTON",
+            "owners": [
+              "BAKER BOYD D REVOC TRUST"
+            ]
+          },
+          {
+            "parcel_id": "05632-0-00000",
+            "address": "6557 SE CR 21B KEYSTONE HEIGHTS",
+            "owners": [
+              "BAKER BOYD D REVOC TRUST"
+            ]
+          },
+          {
+            "parcel_id": "01035-0-00200",
+            "address": "SW CR 225A GRAHAM",
+            "owners": [
+              "BAKER BOYD DEAN REVOC TRUST"
+            ]
+          },
+          {
+            "parcel_id": "01035-0-00201",
+            "address": "9241 SW CR 225A HAMPTON",
+            "owners": [
+              "BAKER BOYD DEAN TRUST ET AL"
+            ]
+          }
+        ],
+        "status": "MATCHED",
+        "parcel_id": "05632-0-00000",
+        "input_address_type": "site",
+        "matched_address_types": [
+          "site"
+        ],
+        "match_method": "county_verified_owner_and_detected_address",
+        "notes": [
+          "Address meaning was detected from complete Bradford site and mailing searches with one independently verified owner/parcel. The actual property site and mailing address remain separate."
+        ],
+        "source_id": "bradford_assessment"
+      },
+      "errors": [],
+      "validation": {
+        "parcel": "MATCHED",
+        "taxYear": "MATCHED",
+        "billNumber": "1407400",
+        "authorityRowCount": 4,
+        "annualHistoryYearCount": 14,
+        "adValoremReconciliation": "MATCHED",
+        "nonAdValoremReconciliation": "MATCHED",
+        "combinedTotalReconciliation": "MATCHED",
+        "millageSourceUnits": "Original fractional tax rates, preserved at source precision; no conversion to mills",
+        "reconciliationTolerance": "$0.05",
+        "historyCoverage": "PARTIAL",
+        "derivedFields": [
+          "ParcelDetails.totalMillageRate",
+          "ParcelDetails.millageRate",
+          "AdValoremGroupTotals.AllAuthorities",
+          "PaymentDetails.discountNote"
+        ],
+        "printedFractionalRateTaxChecks": [
+          {
+            "authority": "SCHOOL-RLE",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "COUNTY",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "ST. JOHNS WATER",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "SCHOOL-DISC",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          }
+        ],
+        "historical_public_query": {
+          "status": "COMPLETE_PUBLIC_QUERY",
+          "query_verified": true,
+          "search_records": 4,
+          "original_records_retrieved": 4
+        },
+        "parcel_join": "matched",
+        "appraiser_bill_year": {
+          "bill_year": "2025",
+          "latest_assessment_year": "2026",
+          "status": "bill_year_not_in_captured_appraiser_history"
+        }
+      },
+      "provenance": {
+        "original_annual_bill": {
+          "source_id": "tax_collector",
+          "source_url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+          "sha256": "7e4d795ff035b5800bb55aeb4c99d6c8798a50f72c8e2ad7a86ddc17452b0f52",
+          "format": "HTML",
+          "document_type": "annual_tax_bill",
+          "method": "POST"
+        }
+      },
+      "sources": [
+        {
+          "id": "tax_collector",
+          "url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+          "method": "POST",
+          "status": "verified",
+          "fetched_at": "2026-10-13T12:19:06.626Z",
+          "http_status": 200,
+          "sha256": "7e4d795ff035b5800bb55aeb4c99d6c8798a50f72c8e2ad7a86ddc17452b0f52",
+          "duration_ms": 1092
+        }
+      ]
+    }
+  }
+}
