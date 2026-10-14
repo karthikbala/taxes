@@ -123,7 +123,21 @@
           "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "71bd8b98-d241-4f2f-95b5-c1588f447beb",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "14c4616d354725d1534a12d223b71f74dcff912ca32b23f45c83dc8d7c1db832",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "PASS_AFTER_SOURCE_REVIEW",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "MIA-02",
@@ -176,7 +190,21 @@
           "scrapTaxOrderRequest.BillDetails.redemption.amountDue": "$4,085.87"
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "f27c67b4-19f4-4b68-99de-4ac37ce8ee6b",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "dc4b9c6c046ae9bd03364d0e3a75b57cfda465caf1af34e176780b3c7af81728",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "MIA-03",
@@ -229,7 +257,21 @@
           "scrapTaxOrderRequest.BillDetails.redemption.amountDue": "$210,961.44"
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "89f77d16-60c2-4411-a403-f091319899ba",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "dc6e230f5089e2c08cd0cfdcd939693082b3b93b7e6b3343c823e1cab1c81aec",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "OSC-01",
@@ -280,7 +322,21 @@
           "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "bc76d068-1508-441b-9dd4-4c0b1cf044a3",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "b7549ed3463c60876f9343b1b2c67ccc7bab194d12c1c2c551bb16047869f750",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "BRA-01",
@@ -329,7 +385,21 @@
           "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "80527818-46ae-4ab1-8901-e8d5433df086",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "a5a47b8d7a8d378c205d7e925de86a0f2d5beb1b45feb2ee120c855642f39317",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "BRA-02",
@@ -383,7 +453,21 @@
           "ExtractionMetadata.match.input_address_type": "site"
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "26903bea-a294-4fe5-8bb7-484358eae2e8",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "0f3f32306d336cb68147d78f07b81c2047de3e031d109f086edb74b5f74d75ad",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "BRA-03",
@@ -437,7 +521,21 @@
           "ExtractionMetadata.match.input_address_type": "site"
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "5b4a5251-47aa-4e45-888e-0843119984a5",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "ab2cafa38817cf4dc81afa3cda08bc3d3fe08b4d6251572824093f6cff5097c7",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "BRA-04",
@@ -492,7 +590,21 @@
           "ExtractionMetadata.match.input_address_type": "mailing"
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "475055c2-0f97-48c7-857c-43ec174b933a",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "b673c6bc7222d2346034be1d682776026f24127503b242f5a057e30655c15a5f",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     },
     {
       "id": "BRA-05",
@@ -547,7 +659,21 @@
           "ExtractionMetadata.match.input_address_type": "mailing"
         }
       },
-      "next_live_run": "NOT_RUN"
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "601cbc19-a953-4edf-8b92-c4b34b8bf568",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "06b1217a889c4d8040134caaabcd089792f1115717a6d39aff624559a251822f",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
     }
   ],
   "deferred": [
@@ -557,5 +683,11 @@
     "Bradford automatic discount calculation without agreed formula",
     "OCR activation",
     "Neighbour features and broader reliability acceptance expansion"
-  ]
+  ],
+  "latest_live_acceptance": {
+    "observed_on": "2026-10-14",
+    "case_count": 9,
+    "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS",
+    "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md"
+  }
 }

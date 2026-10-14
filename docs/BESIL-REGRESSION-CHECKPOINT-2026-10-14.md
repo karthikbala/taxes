@@ -28,3 +28,7 @@ Work continues in the already-attached clean worktree on `codex/bradford-address
 - Initial fixture-subset checks correctly reported missing assessment/benefit observations after the catalogue was expanded. The test subsets were repaired to retain those authentic fields; the final focused suite passes. No production parser was changed to make tests pass.
 
 Private logs and historical replay reports are under `outputs/besil-regression-2026-10-14/`. Provider/source calls **0**, paid use **0**, new live job IDs **none**. No work was dispatched that needs session cleanup. Current public health/process identity is not claimed as county acceptance. All nine next-live-run entries remain NOT_RUN. Meeting Besil's expectations requires running and closing the source/API/UI gates in this limited plan before expanding scope.
+
+## Subsequent live pass
+
+The preparation snapshot above is preserved. The later authorized [nine-case production acceptance](BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md) closed the fresh source/API/UI gates for all nine cases on 14 October, starting with MIA-01 and BRA-01.
