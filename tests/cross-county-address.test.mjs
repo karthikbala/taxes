@@ -16,6 +16,7 @@ test('fresh Miami owner index Count:0 sentinel resolves a mailing address to the
 test('Miami site/unit flow remains exact while the same complete records test both roles',async()=>{
  const f=fixture.miami.jude;
  assert.equal((await resolveMiami({...f.input,address:'555 NE 15 ST UNIT 401'},miamiGet(f).get)).input_address_type,'site');
+ assert.equal((await resolveMiami({...f.input,address:'555 NE 15 ST 401'},miamiGet(f).get)).parcel_id,'0132310520010');
  for(const address of ['555 NE 15 ST UNIT 402','202 MALLARD WAY UNIT 2','555 NW 15 ST UNIT 401'])assert.equal((await resolveMiami({...f.input,address},miamiGet(f).get)).parcel_id,undefined);
 });
 test('fresh LEGACY mailing address identifies ten parcels and never fetches a selected annual bill',async()=>{
@@ -27,6 +28,7 @@ test('incomplete or contradictory Miami owner coverage and changed final identit
  const f=fixture.miami.jude;
  for(const mutate of [x=>{x.index.Total=3;},x=>{x.index.Count=1;},x=>{x.index.HasMore=true;},x=>{x.index.MinimumPropertyInfos[0].Strap=x.index.MinimumPropertyInfos[1].Strap;}]){const d=copy(f);mutate(d);assert.equal((await resolveMiami(d.input,miamiGet(d).get)).status,'SEARCH_INCOMPLETE');}
  for(const mutate of [x=>{x.PropertyInfo.FolioNumber='01-3231-052-0020';return x;},x=>{x.OwnerInfos=[{Name:'OTHER OWNER'}];return x;},(x,_id,n)=>{if(n===2)x.MailingAddress.Address1='203 MALLARD WAY';return x;}])await assert.rejects(resolveMiami(f.input,miamiGet(f,{mutate}).get),e=>e.code==='identity_mismatch');
+ assert.equal((await resolveMiami(f.input,miamiGet(f,{mutate:x=>{delete x.MailingAddress.Address2;return x;}}).get)).status,'SEARCH_INCOMPLETE');
 });
 test('fresh Osceola unique mailing/unit resolves the actual condo parcel and retains all certified native sections',async()=>{
  const f=fixture.osceola.unique,s=osceolaGet(f),r=await resolveOsceola(f.input,s.get);

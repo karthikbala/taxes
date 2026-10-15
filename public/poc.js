@@ -74,7 +74,7 @@ function renderClientData(data,response,expectedFolio,fieldStatus){
    const card=document.createElement('article');card.className='record-card';
    text(card,'h4',candidate.county_name+' parcel '+candidate.parcel_id);if(candidate.address_match_type==='site')text(card,'p','This is the property at the supplied address, in '+candidate.county_name+' County. '+(candidate.owner_matches_requested?'The reported owner names match.':'The county owner names differ from the supplied name. Do not attribute this property to that owner.'));renderValue(document,card,{property_site:candidate.address,owners:candidate.owners,mailing_address:candidate.mailing_address,owner_comparison:candidate.owner_matches_requested?'Exact reported owner names':'County owner name differs from the supplied name'});
    const button=document.createElement('button');button.type='button';button.textContent='Use parcel '+candidate.parcel_id;button.disabled=!countyProfiles.get(candidate.county)?.lookup_modes.includes('county');
-   if(button.disabled)text(card,'p','This county is currently unavailable in the POC.');
+   if(button.disabled)text(card,'p','Parcel-ID lookup is unavailable for this workflow. Enter a listed property-site address and owner to resolve the property.');
    button.addEventListener('click',()=>{if(activeLookup||button.disabled)return;el('county').value=candidate.county;applyExample();el('lookup-mode').value='county';syncMode();el('parcel').value=candidate.parcel_id;el('county-example').textContent='Selected county parcel · '+candidate.address;preview();});
    card.append(button);panel.append(card);
   }
