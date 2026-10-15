@@ -104,3 +104,16 @@ Create a new dated result sheet for each pass rather than overwriting this histo
 For the initial prepared-plan validation and historical replay, see [the 14 October checkpoint](BESIL-REGRESSION-CHECKPOINT-2026-10-14.md). Passing evidence must always identify which run and which revision it covers.
 
 The [15 October Callahan/Fletcher annual-bill investigation](BRADFORD-ANNUAL-BILL-INVESTIGATION-2026-10-15.md) freshly checked all fifteen published originals and the print route. No separate annual version was found; certificate amounts remain distinct from annual totals and payments. The annual-bill positive control and both missing-field cases are covered offline.
+
+## Automatic mailing-address controls — added 15 October 2026
+
+After the original nine cases, run these four separately through the same source → authenticated API → rendered UI → actual JSON download gates. Detailed proof and production job IDs are in [the dated checkpoint](CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md); machine-readable controls are separate from the nine-case inventory.
+
+| County | Address / owner | Required outcome |
+| --- | --- | --- |
+| Miami-Dade | 202 MALLARD WAY / JUDE PATRICK JACOB | Mailing, folio 01-3231-052-0010; actual 555 NE 15 ST UNIT 401 |
+| Osceola | 1941 HIGHWAY A1A UNIT 306 / KORB FAMILY TRUST | Mailing, parcel 07-25-28-5216-0001-2090; actual 1001 CELEBRATION AVE UNIT 209 |
+| Miami-Dade | 1010 NE 2 AVE / LEGACY MWC TRUSTEE LLC | Ten matching parcels; AMBIGUOUS, review required, no collector dispatch |
+| Osceola | PO BOX 8050 MS 0555 / WAL-MART STORES EAST LP | Fifteen owner records, thirteen matching parcels; AMBIGUOUS, no collector dispatch |
+
+For unique matches verify both full addresses, meaningful units, legal owner and parcel before collector account/year. For ambiguity retain the complete candidate set and never select its first entry. The shared source-derived fixture tests cover incomplete pagination, changed parcel/owner/address, exact units and mail stops; `npm run test:besil` remains offline. Other counties' address workflows are outside this advertised scope.

@@ -137,6 +137,18 @@
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "0b426e81-f8e6-424c-acb1-19f4e23e0610",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "2ad04aa8bc1b3f584044cd7780d55a2a835baad66a91c74b92aa36dc200f3a66",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS_AFTER_SOURCE_REVIEW",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
         }
       ]
     },
@@ -201,6 +213,18 @@
           "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
           "source": "PASS",
           "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "e9124695-90bd-4d14-9061-314fcdc783a9",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "f9fa968f1dbae1abe36e0a36c80a39dcee1fd2e1a96e30f653845e0e4261e0da",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
@@ -271,6 +295,18 @@
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "e0bf1659-a541-48e1-8db0-2bfb635d3a9b",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "36ba3acd58ba440fd463fcdc3f599ef78a451d449183e98968da70b6d6c166f8",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
         }
       ]
     },
@@ -336,6 +372,18 @@
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "699cbee7-831f-4a75-94a4-2e8bde056c31",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "a58faaeca5108e497697292bd425cf8d32097e93c4a0f74c4cae99c2de50f994",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
         }
       ]
     },
@@ -396,6 +444,18 @@
           "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
           "source": "PASS",
           "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "16fb8627-c8c9-4371-9f30-7d7d43b476a4",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "6f6aa616b1e85d013b092d288d661a360464163d6abfcd5ea91b6185e228c831",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
@@ -467,6 +527,18 @@
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "d014f24e-9256-43e1-ac27-610d8dd750fd",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "ef161a5e130d962880ae6aaa3b5f87a2e1565cbdd4df12cf32d8363ee6e210f0",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
         }
       ]
     },
@@ -532,6 +604,18 @@
           "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
           "source": "PASS",
           "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "8b4295e0-b87f-4ccd-9d75-28186c529612",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "8b1f09e99b9676c622e0c2e1586067314bd9b6b7603d85d173a3b67b18a5a36d",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
@@ -604,6 +688,18 @@
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "ca795dd3-e93e-4f36-9402-a784af90f44e",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "52a7628b5aeef3b1ba5bbe032dd6c5fb0065d1bf00e615bc9b996a8ee504a792",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
         }
       ]
     },
@@ -673,6 +769,18 @@
           "public_ui": "PASS",
           "download_equals_api": true,
           "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        },
+        {
+          "observed_on": "2026-10-15",
+          "job_id": "6134ce42-a696-4733-af91-ec51b7f98ce2",
+          "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+          "response_sha256": "4951c76d1bdb0e0957d594d6e9aca40b58a2ee2baea07ddeb251ad045d66d225",
+          "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+          "source": "PASS",
+          "api": "PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
         }
       ]
     }
@@ -686,9 +794,113 @@
     "Neighbour features and broader reliability acceptance expansion"
   ],
   "latest_live_acceptance": {
-    "observed_on": "2026-10-14",
+    "observed_on": "2026-10-15",
     "case_count": 9,
+    "additional_address_controls": 4,
     "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS",
-    "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md"
-  }
+    "loaded_revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+    "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md"
+  },
+  "address_detection_controls": [
+    {
+      "id": "MIA-MAIL",
+      "input": {
+        "county": "Miami-Dade",
+        "address": "202 MALLARD WAY",
+        "ownerName": "JUDE PATRICK JACOB",
+        "addressType": "auto"
+      },
+      "expected_match": "MATCHED",
+      "expected_parcel": "0132310520010",
+      "expected_candidate_count": 1,
+      "collector_dispatched": true,
+      "live_acceptance": {
+        "case_id": "MIA-MAIL",
+        "job_id": "9e0697e2-7286-4c4e-a8ac-641399c381a9",
+        "revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+        "source_checks": "PASS",
+        "api_checks": "PASS",
+        "public_ui": "PASS",
+        "download_equals_api": true,
+        "result": "PASS_UNIQUE_MAILING_WITH_DOCUMENTED_SOURCE_GAPS"
+      },
+      "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+      "offline_test": "cross-county-address.test.mjs"
+    },
+    {
+      "id": "OSC-MAIL",
+      "input": {
+        "county": "Osceola",
+        "address": "1941 HIGHWAY A1A UNIT 306",
+        "ownerName": "KORB FAMILY TRUST",
+        "addressType": "auto"
+      },
+      "expected_match": "MATCHED",
+      "expected_parcel": "072528521600012090",
+      "expected_candidate_count": 1,
+      "collector_dispatched": true,
+      "live_acceptance": {
+        "case_id": "OSC-MAIL",
+        "job_id": "67cf1933-66cf-4411-b3c2-d78798289e93",
+        "revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+        "source_checks": "PASS",
+        "api_checks": "PASS",
+        "public_ui": "PASS",
+        "download_equals_api": true,
+        "result": "PASS_UNIQUE_MAILING_WITH_DOCUMENTED_SOURCE_GAPS"
+      },
+      "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+      "offline_test": "cross-county-address.test.mjs"
+    },
+    {
+      "id": "MIA-AMBIG",
+      "input": {
+        "county": "Miami-Dade",
+        "address": "1010 NE 2 AVE",
+        "ownerName": "LEGACY MWC TRUSTEE LLC",
+        "addressType": "auto"
+      },
+      "expected_match": "AMBIGUOUS",
+      "expected_parcel": null,
+      "expected_candidate_count": 10,
+      "collector_dispatched": false,
+      "live_acceptance": {
+        "case_id": "MIA-AMBIG",
+        "job_id": "1772bf4b-2294-4664-b9e7-a32aeb76b95a",
+        "revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+        "source_checks": "PASS",
+        "api_checks": "PASS",
+        "public_ui": "PASS",
+        "download_equals_api": true,
+        "result": "PASS_AMBIGUOUS_NO_COLLECTOR"
+      },
+      "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+      "offline_test": "cross-county-address.test.mjs"
+    },
+    {
+      "id": "OSC-AMBIG",
+      "input": {
+        "county": "Osceola",
+        "address": "PO BOX 8050 MS 0555",
+        "ownerName": "WAL-MART STORES EAST LP",
+        "addressType": "auto"
+      },
+      "expected_match": "AMBIGUOUS",
+      "expected_parcel": null,
+      "expected_candidate_count": 13,
+      "collector_dispatched": false,
+      "live_acceptance": {
+        "case_id": "OSC-AMBIG",
+        "job_id": "c8584736-326b-4ffa-b3d2-2d794c1bea0b",
+        "revision": "2d6a01485c7b8c1c6fe6295cbcf95cb10b645835",
+        "source_checks": "PASS",
+        "api_checks": "PASS",
+        "public_ui": "PASS",
+        "download_equals_api": true,
+        "result": "PASS_AMBIGUOUS_NO_COLLECTOR"
+      },
+      "evidence": "docs/CROSS-COUNTY-ADDRESS-DETECTION-2026-10-15.md",
+      "offline_test": "cross-county-address.test.mjs"
+    }
+  ]
 }
