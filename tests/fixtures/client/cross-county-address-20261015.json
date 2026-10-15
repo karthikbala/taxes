@@ -1,0 +1,1875 @@
+{
+  "source_date": "2026-10-15",
+  "note": "Source-derived resolver subsets. Full raw response hashes and URLs are retained; excluded fields are not runtime fallback data.",
+  "miami": {
+    "jude": {
+      "input": {
+        "address": "202 MALLARD WAY",
+        "ownerName": "JUDE PATRICK JACOB",
+        "addressType": "auto"
+      },
+      "index": {
+        "Completed": true,
+        "Count": 0,
+        "Message": "",
+        "MinimumPropertyInfos": [
+          {
+            "Municipality": "North Miami",
+            "NeighborhoodDescription": "UNCLASSIFIED NEIGHBORHOOD",
+            "Owner1": "JUDE P JACOB",
+            "Owner2": "MELIZA JACOB",
+            "Owner3": "NILUS T JACOB",
+            "SiteAddress": "2150 SANS SOUCI BLVD",
+            "SiteUnit": "A1609",
+            "Status": "AC Active",
+            "Strap": "06-2228-039-3200",
+            "SubdivisionDescription": "BAYVIEW TOWERS CONDO"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "EDGEWATER",
+            "Owner1": "JUDE PATRICK JACOB",
+            "Owner2": "NOAH ELIJAH JACOB",
+            "Owner3": "",
+            "SiteAddress": "555 NE 15 ST",
+            "SiteUnit": "401",
+            "Status": "AC Active",
+            "Strap": "01-3231-052-0010",
+            "SubdivisionDescription": "VENETIA CONDO DESC"
+          }
+        ],
+        "PrintMessageFooter": null,
+        "PrintMessageHeader": null,
+        "Total": 2
+      },
+      "details": {
+        "0132310520010": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "Joint Tenants with Rights of Survivorship",
+              "MarriedFlag": "M",
+              "Message": null,
+              "Name": "JUDE PATRICK JACOB",
+              "PercentageOwn": 1,
+              "Role": null,
+              "ShortDescription": "JTRS",
+              "TenancyCd": "A"
+            },
+            {
+              "Description": "Joint Tenants with Rights of Survivorship",
+              "MarriedFlag": "S",
+              "Message": null,
+              "Name": "NOAH ELIJAH JACOB",
+              "PercentageOwn": 1,
+              "Role": null,
+              "ShortDescription": "JTRS",
+              "TenancyCd": "A"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "202 MALLARD WAY",
+            "Address2": "",
+            "Address3": "",
+            "City": "PEEKSKILL",
+            "Country": "USA",
+            "Message": null,
+            "State": "NY",
+            "ZipCode": "10566"
+          },
+          "SiteAddress": [
+            {
+              "Address": "555 NE 15 ST 401, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "15",
+              "StreetNumber": 555,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "ST",
+              "StreetSuffixDirection": "",
+              "Unit": "401",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-3231-052-0010"
+          }
+        }
+      },
+      "sources": [
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&ownerName=JUDE+PATRICK+JACOB&from=1&to=200",
+          "source_id": "miami_owner_search",
+          "http_status": 200,
+          "sha256": "9917a00e04b78510286e47224361d45457458dda3fa5bf77684f948bc6590bd9",
+          "checked_at": "2026-10-15T07:18:52.527Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010",
+          "source_id": "miami_owner_detail_0132310520010",
+          "http_status": 200,
+          "sha256": "f5b569f10079e2ece9b617b8a3f55b5abc8573370219c0469c7a9c0e2885150b",
+          "checked_at": "2026-10-15T07:18:54.023Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0132310520010",
+          "source_id": "miami_assessment",
+          "http_status": 200,
+          "sha256": "f5b569f10079e2ece9b617b8a3f55b5abc8573370219c0469c7a9c0e2885150b",
+          "checked_at": "2026-10-15T07:18:54.373Z"
+        }
+      ]
+    },
+    "legacy": {
+      "input": {
+        "address": "1010 NE 2 AVE",
+        "ownerName": "LEGACY MWC TRUSTEE LLC",
+        "addressType": "auto"
+      },
+      "index": {
+        "Completed": true,
+        "Count": 0,
+        "Message": "",
+        "MinimumPropertyInfos": [
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "942 NE 1 AVE",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1010",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "80 NE 10 ST",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1020",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "938 NE 1 AVE",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1030",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "70 NE 10 ST",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1040",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "46 NE 10 ST",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1050",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1060",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "20 NE 10 ST",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1070",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "75 NE 9 ST",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1200",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "930 NE 1 AVE",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1210",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          },
+          {
+            "Municipality": "Miami",
+            "NeighborhoodDescription": "Downtown North",
+            "Owner1": "LEGACY MWC TRUSTEE LLC",
+            "Owner2": "",
+            "Owner3": "",
+            "SiteAddress": "906 NE 1 AVE",
+            "SiteUnit": "",
+            "Status": "AC Active",
+            "Strap": "01-0102-030-1220",
+            "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 23 PB B-41"
+          }
+        ],
+        "PrintMessageFooter": null,
+        "PrintMessageHeader": null,
+        "Total": 10
+      },
+      "details": {
+        "0101020301010": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "942 NE 1 AVE, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "1",
+              "StreetNumber": 942,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "AVE",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1010"
+          }
+        },
+        "0101020301020": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "80 NE 10 ST, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "10",
+              "StreetNumber": 80,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "ST",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1020"
+          }
+        },
+        "0101020301030": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "938 NE 1 AVE, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "1",
+              "StreetNumber": 938,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "AVE",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1030"
+          }
+        },
+        "0101020301040": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "70 NE 10 ST, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "10",
+              "StreetNumber": 70,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "ST",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1040"
+          }
+        },
+        "0101020301050": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "46 NE 10 ST, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "10",
+              "StreetNumber": 46,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "ST",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1050"
+          }
+        },
+        "0101020301060": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "",
+              "BuildingNumber": 0,
+              "City": "",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "",
+              "StreetNumber": 0,
+              "StreetPrefix": "",
+              "StreetSuffix": "",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": ""
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1060"
+          }
+        },
+        "0101020301070": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "20 NE 10 ST, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "10",
+              "StreetNumber": 20,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "ST",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1070"
+          }
+        },
+        "0101020301200": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "75 NE 9 ST, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "9",
+              "StreetNumber": 75,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "ST",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1200"
+          }
+        },
+        "0101020301210": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "930 NE 1 AVE, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "1",
+              "StreetNumber": 930,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "AVE",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1210"
+          }
+        },
+        "0101020301220": {
+          "Completed": true,
+          "OwnerInfos": [
+            {
+              "Description": "",
+              "MarriedFlag": "0",
+              "Message": null,
+              "Name": "LEGACY MWC TRUSTEE LLC",
+              "PercentageOwn": 0,
+              "Role": null,
+              "ShortDescription": "",
+              "TenancyCd": "\u0000"
+            }
+          ],
+          "MailingAddress": {
+            "Address1": "1010 NE 2 AVE",
+            "Address2": "",
+            "Address3": "",
+            "City": "MIAMI",
+            "Country": "USA",
+            "Message": null,
+            "State": "FL",
+            "ZipCode": "33132"
+          },
+          "SiteAddress": [
+            {
+              "Address": "906 NE 1 AVE, Miami, FL 33132-0000",
+              "BuildingNumber": 1,
+              "City": "Miami",
+              "HouseNumberSuffix": "",
+              "Message": null,
+              "StreetName": "1",
+              "StreetNumber": 906,
+              "StreetPrefix": "NE",
+              "StreetSuffix": "AVE",
+              "StreetSuffixDirection": "",
+              "Unit": "",
+              "Zip": "33132-0000"
+            }
+          ],
+          "PropertyInfo": {
+            "FolioNumber": "01-0102-030-1220"
+          }
+        }
+      },
+      "sources": [
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetOwners&clientAppName=PropertySearch&ownerName=LEGACY+MWC+TRUSTEE+LLC&from=1&to=200",
+          "source_id": "miami_owner_search",
+          "http_status": 200,
+          "sha256": "c3fba4f2664094bc2bfddce878648f83ed71f26091f3bcbd124ef9fa6ea70f45",
+          "checked_at": "2026-10-15T07:18:55.822Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301010",
+          "source_id": "miami_owner_detail_0101020301010",
+          "http_status": 200,
+          "sha256": "fcf23c12cbd2fe5338434954f6f846316e5f053b82301bea6414595f6b04e2f3",
+          "checked_at": "2026-10-15T07:18:56.174Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301020",
+          "source_id": "miami_owner_detail_0101020301020",
+          "http_status": 200,
+          "sha256": "9e7e1ffd9729f45cfe58f18d975cb8876144557c725fbe15b3d9911e398409b9",
+          "checked_at": "2026-10-15T07:18:56.515Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301030",
+          "source_id": "miami_owner_detail_0101020301030",
+          "http_status": 200,
+          "sha256": "09740530bcb900f8679e2855f969ed657a195599c1f8c39b13ced88bbd1a5f74",
+          "checked_at": "2026-10-15T07:18:56.889Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301040",
+          "source_id": "miami_owner_detail_0101020301040",
+          "http_status": 200,
+          "sha256": "d6274a8ac10fdeade70908cf27037f8b9d2aeb8d6602d252fe1e5a581e3dc397",
+          "checked_at": "2026-10-15T07:18:57.222Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301050",
+          "source_id": "miami_owner_detail_0101020301050",
+          "http_status": 200,
+          "sha256": "e94095a6023c7e367fea3fc15b838eb343285aabcae95242454071dc6ba7b157",
+          "checked_at": "2026-10-15T07:18:57.600Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301060",
+          "source_id": "miami_owner_detail_0101020301060",
+          "http_status": 200,
+          "sha256": "4af59f2a3329e0790ba9065af882a7bb4699c749f34fbf069d826a67a18d10e8",
+          "checked_at": "2026-10-15T07:18:57.946Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301070",
+          "source_id": "miami_owner_detail_0101020301070",
+          "http_status": 200,
+          "sha256": "b29549474a89218d912e809abf5bb35f3f6fee1cf6536f6a12f9b1feed293056",
+          "checked_at": "2026-10-15T07:18:58.344Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301200",
+          "source_id": "miami_owner_detail_0101020301200",
+          "http_status": 200,
+          "sha256": "e67e24e63fa167d9d8612034921de1cd04fed25e280e7445cfa71889d91a0a50",
+          "checked_at": "2026-10-15T07:18:58.938Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301210",
+          "source_id": "miami_owner_detail_0101020301210",
+          "http_status": 200,
+          "sha256": "feae7f1d37e58371133f38c9f14a548f9fe60be9a3d23aa524516afbae20d38d",
+          "checked_at": "2026-10-15T07:18:59.289Z"
+        },
+        {
+          "url": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0101020301220",
+          "source_id": "miami_owner_detail_0101020301220",
+          "http_status": 200,
+          "sha256": "8f03171dd61e28a39dc0b71606d9a599e281e998c8514889b16288b6cf86dc07",
+          "checked_at": "2026-10-15T07:18:59.622Z"
+        }
+      ]
+    }
+  },
+  "osceola": {
+    "unique": {
+      "input": {
+        "address": "1941 HIGHWAY A1A UNIT 306",
+        "ownerName": "KORB FAMILY TRUST",
+        "county": "osceola-fl",
+        "addressType": "auto"
+      },
+      "raw": {
+        "market": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#ParcelMarket",
+          "@odata.count": 1,
+          "value": [
+            {
+              "strap": "072528521600012090       ",
+              "dsp_strap": "07-25-28-5216-0001-2090",
+              "subName": "TERRACES AT CELEBRATION PH 1",
+              "situsCity": "CELEBRATION",
+              "situsZip": "34747",
+              "mailCity": "INDIAN HARBOUR BEACH",
+              "mailState": "FL",
+              "mailZip": "32937",
+              "mailCountry": "",
+              "census": "120970408081",
+              "dorCode": "0411",
+              "dorDesc": "CONDOMINIUM-IMPROVED",
+              "prevDorCode": "0411",
+              "prevDorDscr": "CONDOMINIUM-IMPROVED",
+              "ayb": 2001,
+              "eyb": 2001,
+              "totalAcres": 0.01,
+              "grossBldArea": 1392,
+              "HeatedArea": 1392,
+              "numofbuildings": 1,
+              "livunits": 1,
+              "grade": "05",
+              "quality": "GOOD",
+              "juris": 5100,
+              "jurisdesc": "CONDO JURS PLACE HOLDER",
+              "currassessedvalue": 282000,
+              "currJustValue": 282000,
+              "currTaxable": 282000,
+              "curNewConstruction": 0,
+              "prevAssessed": 285900,
+              "prevJust": 285900,
+              "prevTaxable": 285900,
+              "distGroup": "300",
+              "numofUnits": 0,
+              "NBC": 515216,
+              "NBCDesc": "TERRACES @ CELEBRATION CONDO",
+              "ChangeJust": -3900,
+              "changePct": -1.36,
+              "dos": "2021-04-16T00:00:00-04:00",
+              "qu_flg": "Q",
+              "price": 278000,
+              "taxyear": 2027,
+              "Owners": "KORB FAMILY TRUST;KORB ROBERT DOUGLASS COTR;KORB LORI LEIGH COTR",
+              "Legals": "TERRACES AT CELEBRATION A CONDO PHASE 1 UNIT 209 OR 1954/1603 CB 5 PG 177 CARRIED IN 18/25/28 ",
+              "Exemptions": null,
+              "Situs": "1001 CELEBRATION AVE 209 CELEBRATION FL 34747",
+              "SitusAll": "1001 CELEBRATION AVE 209",
+              "usechange": 0,
+              "Mailing": "1941 HIGHWAY A1A UNIT 306   INDIAN HARBOUR BEACH FL 32937 ",
+              "YOS": null,
+              "ParcelMarketId": 56582,
+              "X": 479980.145031,
+              "Y": 1447256.17696,
+              "lat": 28.31398019,
+              "lon": -81.54758407,
+              "tot_bld_val": 282000,
+              "tot_lnd_val": 0,
+              "asd_lnd_val": 0,
+              "tot_xf_val": 0,
+              "ag_x_val": null,
+              "soh_val": 282000,
+              "ValuationDate": "2026-10-13T03:35:30.917-04:00",
+              "SitusStreet": "1001 CELEBRATION AVE 209",
+              "MailAddr_1": "1941 HIGHWAY A1A UNIT 306",
+              "MailAddr_2": "",
+              "MailAddr_3": "",
+              "ValMethod": "8",
+              "ValMethodDscr": "Alternate Cost"
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#ParcelMarket",
+              "@odata.count": 1,
+              "value": [
+                {
+                  "strap": "072528521600012090       ",
+                  "dsp_strap": "07-25-28-5216-0001-2090",
+                  "subName": "TERRACES AT CELEBRATION PH 1",
+                  "situsCity": "CELEBRATION",
+                  "situsZip": "34747",
+                  "mailCity": "INDIAN HARBOUR BEACH",
+                  "mailState": "FL",
+                  "mailZip": "32937",
+                  "mailCountry": "",
+                  "census": "120970408081",
+                  "dorCode": "0411",
+                  "dorDesc": "CONDOMINIUM-IMPROVED",
+                  "prevDorCode": "0411",
+                  "prevDorDscr": "CONDOMINIUM-IMPROVED",
+                  "ayb": 2001,
+                  "eyb": 2001,
+                  "totalAcres": 0.01,
+                  "grossBldArea": 1392,
+                  "HeatedArea": 1392,
+                  "numofbuildings": 1,
+                  "livunits": 1,
+                  "grade": "05",
+                  "quality": "GOOD",
+                  "juris": 5100,
+                  "jurisdesc": "CONDO JURS PLACE HOLDER",
+                  "currassessedvalue": 282000,
+                  "currJustValue": 282000,
+                  "currTaxable": 282000,
+                  "curNewConstruction": 0,
+                  "prevAssessed": 285900,
+                  "prevJust": 285900,
+                  "prevTaxable": 285900,
+                  "distGroup": "300",
+                  "numofUnits": 0,
+                  "NBC": 515216,
+                  "NBCDesc": "TERRACES @ CELEBRATION CONDO",
+                  "ChangeJust": -3900,
+                  "changePct": -1.36,
+                  "dos": "2021-04-16T00:00:00-04:00",
+                  "qu_flg": "Q",
+                  "price": 278000,
+                  "taxyear": 2027,
+                  "Owners": "KORB FAMILY TRUST;KORB ROBERT DOUGLASS COTR;KORB LORI LEIGH COTR",
+                  "Legals": "TERRACES AT CELEBRATION A CONDO PHASE 1 UNIT 209 OR 1954/1603 CB 5 PG 177 CARRIED IN 18/25/28 ",
+                  "Exemptions": null,
+                  "Situs": "1001 CELEBRATION AVE 209 CELEBRATION FL 34747",
+                  "SitusAll": "1001 CELEBRATION AVE 209",
+                  "usechange": 0,
+                  "Mailing": "1941 HIGHWAY A1A UNIT 306   INDIAN HARBOUR BEACH FL 32937 ",
+                  "YOS": null,
+                  "ParcelMarketId": 56582,
+                  "X": 479980.145031,
+                  "Y": 1447256.17696,
+                  "lat": 28.31398019,
+                  "lon": -81.54758407,
+                  "tot_bld_val": 282000,
+                  "tot_lnd_val": 0,
+                  "asd_lnd_val": 0,
+                  "tot_xf_val": 0,
+                  "ag_x_val": null,
+                  "soh_val": 282000,
+                  "ValuationDate": "2026-10-13T03:35:30.917-04:00",
+                  "SitusStreet": "1001 CELEBRATION AVE 209",
+                  "MailAddr_1": "1941 HIGHWAY A1A UNIT 306",
+                  "MailAddr_2": "",
+                  "MailAddr_3": "",
+                  "ValMethod": "8",
+                  "ValMethodDscr": "Alternate Cost"
+                }
+              ]
+            }
+          ]
+        },
+        "values": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+          "@odata.count": 5,
+          "value": [
+            {
+              "Id": 227927,
+              "strap": "072528521600012090       ",
+              "tax_yr": 2026,
+              "appr_val": 285900,
+              "tot_bld_val": 285900,
+              "tot_lnd_val": 0,
+              "asd_lnd_val": 0,
+              "tot_xf_val": 0,
+              "jst_val": 285900,
+              "asd_val": 285900,
+              "soh_val": 285900,
+              "ex_val": 0,
+              "mkt_nhx": 285900,
+              "cap_val_nhx": 285900,
+              "tax_val": 285900,
+              "ag_x_val": 0,
+              "certified_dt": "2026-10-06T00:00:00-04:00"
+            },
+            {
+              "Id": 227926,
+              "strap": "072528521600012090       ",
+              "tax_yr": 2025,
+              "appr_val": 297000,
+              "tot_bld_val": 297000,
+              "tot_lnd_val": 0,
+              "asd_lnd_val": 0,
+              "tot_xf_val": 0,
+              "jst_val": 297000,
+              "asd_val": 297000,
+              "soh_val": 297000,
+              "ex_val": 0,
+              "mkt_nhx": 297000,
+              "cap_val_nhx": 297000,
+              "tax_val": 297000,
+              "ag_x_val": 0,
+              "certified_dt": "2026-06-10T00:00:00-04:00"
+            },
+            {
+              "Id": 227925,
+              "strap": "072528521600012090       ",
+              "tax_yr": 2024,
+              "appr_val": 306500,
+              "tot_bld_val": 306500,
+              "tot_lnd_val": 0,
+              "asd_lnd_val": 0,
+              "tot_xf_val": 0,
+              "jst_val": 306500,
+              "asd_val": 306500,
+              "soh_val": 301169,
+              "ex_val": 0,
+              "mkt_nhx": 306500,
+              "cap_val_nhx": 301169,
+              "tax_val": 301169,
+              "ag_x_val": 0,
+              "certified_dt": "2025-03-31T00:00:00-04:00"
+            },
+            {
+              "Id": 227924,
+              "strap": "072528521600012090       ",
+              "tax_yr": 2023,
+              "appr_val": 298200,
+              "tot_bld_val": 298200,
+              "tot_lnd_val": 0,
+              "asd_lnd_val": 0,
+              "tot_xf_val": 0,
+              "jst_val": 298200,
+              "asd_val": 298200,
+              "soh_val": 273790,
+              "ex_val": 0,
+              "mkt_nhx": 298200,
+              "cap_val_nhx": 273790,
+              "tax_val": 273790,
+              "ag_x_val": 0,
+              "certified_dt": "2024-02-12T00:00:00-05:00"
+            },
+            {
+              "Id": 227923,
+              "strap": "072528521600012090       ",
+              "tax_yr": 2022,
+              "appr_val": 248900,
+              "tot_bld_val": 248900,
+              "tot_lnd_val": 0,
+              "asd_lnd_val": 0,
+              "tot_xf_val": 0,
+              "jst_val": 248900,
+              "asd_val": 248900,
+              "soh_val": 248900,
+              "ex_val": 0,
+              "mkt_nhx": 248900,
+              "cap_val_nhx": 248900,
+              "tax_val": 248900,
+              "ag_x_val": 0,
+              "certified_dt": "2023-03-24T00:00:00-04:00"
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#PropertyValues",
+              "@odata.count": 5,
+              "value": [
+                {
+                  "Id": 227927,
+                  "strap": "072528521600012090       ",
+                  "tax_yr": 2026,
+                  "appr_val": 285900,
+                  "tot_bld_val": 285900,
+                  "tot_lnd_val": 0,
+                  "asd_lnd_val": 0,
+                  "tot_xf_val": 0,
+                  "jst_val": 285900,
+                  "asd_val": 285900,
+                  "soh_val": 285900,
+                  "ex_val": 0,
+                  "mkt_nhx": 285900,
+                  "cap_val_nhx": 285900,
+                  "tax_val": 285900,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-10-06T00:00:00-04:00"
+                },
+                {
+                  "Id": 227926,
+                  "strap": "072528521600012090       ",
+                  "tax_yr": 2025,
+                  "appr_val": 297000,
+                  "tot_bld_val": 297000,
+                  "tot_lnd_val": 0,
+                  "asd_lnd_val": 0,
+                  "tot_xf_val": 0,
+                  "jst_val": 297000,
+                  "asd_val": 297000,
+                  "soh_val": 297000,
+                  "ex_val": 0,
+                  "mkt_nhx": 297000,
+                  "cap_val_nhx": 297000,
+                  "tax_val": 297000,
+                  "ag_x_val": 0,
+                  "certified_dt": "2026-06-10T00:00:00-04:00"
+                },
+                {
+                  "Id": 227925,
+                  "strap": "072528521600012090       ",
+                  "tax_yr": 2024,
+                  "appr_val": 306500,
+                  "tot_bld_val": 306500,
+                  "tot_lnd_val": 0,
+                  "asd_lnd_val": 0,
+                  "tot_xf_val": 0,
+                  "jst_val": 306500,
+                  "asd_val": 306500,
+                  "soh_val": 301169,
+                  "ex_val": 0,
+                  "mkt_nhx": 306500,
+                  "cap_val_nhx": 301169,
+                  "tax_val": 301169,
+                  "ag_x_val": 0,
+                  "certified_dt": "2025-03-31T00:00:00-04:00"
+                },
+                {
+                  "Id": 227924,
+                  "strap": "072528521600012090       ",
+                  "tax_yr": 2023,
+                  "appr_val": 298200,
+                  "tot_bld_val": 298200,
+                  "tot_lnd_val": 0,
+                  "asd_lnd_val": 0,
+                  "tot_xf_val": 0,
+                  "jst_val": 298200,
+                  "asd_val": 298200,
+                  "soh_val": 273790,
+                  "ex_val": 0,
+                  "mkt_nhx": 298200,
+                  "cap_val_nhx": 273790,
+                  "tax_val": 273790,
+                  "ag_x_val": 0,
+                  "certified_dt": "2024-02-12T00:00:00-05:00"
+                },
+                {
+                  "Id": 227923,
+                  "strap": "072528521600012090       ",
+                  "tax_yr": 2022,
+                  "appr_val": 248900,
+                  "tot_bld_val": 248900,
+                  "tot_lnd_val": 0,
+                  "asd_lnd_val": 0,
+                  "tot_xf_val": 0,
+                  "jst_val": 248900,
+                  "asd_val": 248900,
+                  "soh_val": 248900,
+                  "ex_val": 0,
+                  "mkt_nhx": 248900,
+                  "cap_val_nhx": 248900,
+                  "tax_val": 248900,
+                  "ag_x_val": 0,
+                  "certified_dt": "2023-03-24T00:00:00-04:00"
+                }
+              ]
+            }
+          ]
+        },
+        "sales": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#sales",
+          "@odata.count": 5,
+          "value": [
+            {
+              "ID": 204559,
+              "strap": "072528521600012090       ",
+              "sale_id": 5,
+              "ln_num": 1,
+              "trns_cd": "QC",
+              "trans_dscr": "QUIT CLAIM DEED",
+              "or_bk": "6266",
+              "or_pg": "0443",
+              "grantors": "KORB ROBERT D, KORB LORI L",
+              "grantees": "KORB FAMILY TRUST, KORB ROBERT DOUGLASS COTR",
+              "dos": "2022-08-03T00:00:00-04:00",
+              "dos_yr": 2022,
+              "price": 100,
+              "vi": "I",
+              "qu_flg": "U",
+              "note": "",
+              "rea_cd": "11",
+              "dscr": "CD/QC/TX/FJ/OR/MC/DC/PROBATE/NO CONSIDERATION/OTHER",
+              "qsrc_cd": null,
+              "adj_price": 100,
+              "price_per_sqft": 0.07,
+              "reset_flg": "N",
+              "all_grantors": "KORB ROBERT D,KORB LORI L,",
+              "all_grantees": "KORB FAMILY TRUST,KORB ROBERT DOUGLASS COTR,KORB LORI LEIGH COTR,",
+              "salesratio": 282000,
+              "X": 479980.145031,
+              "Y": 1447256.17696,
+              "CurrTaxYear": 2027
+            },
+            {
+              "ID": 204558,
+              "strap": "072528521600012090       ",
+              "sale_id": 4,
+              "ln_num": 2,
+              "trns_cd": "WD",
+              "trans_dscr": "WARRANTY DEED",
+              "or_bk": "5964",
+              "or_pg": "1358",
+              "grantors": "RANDALL KARL B, RANDALL CAROLYN M",
+              "grantees": "KORB ROBERT D, KORB LORI L",
+              "dos": "2021-04-16T00:00:00-04:00",
+              "dos_yr": 2021,
+              "price": 278000,
+              "vi": "I",
+              "qu_flg": "Q",
+              "note": "",
+              "rea_cd": "02",
+              "dscr": "SALE QUAL/RESULT OF CREDIBLE,VERIFIABLE & DOC EVID",
+              "qsrc_cd": null,
+              "adj_price": 278000,
+              "price_per_sqft": 199.71,
+              "reset_flg": "Y",
+              "all_grantors": "RANDALL KARL B (H),RANDALL CAROLYN M  (W),",
+              "all_grantees": "KORB ROBERT D,KORB LORI L,",
+              "salesratio": 101.44,
+              "X": 479980.145031,
+              "Y": 1447256.17696,
+              "CurrTaxYear": 2027
+            },
+            {
+              "ID": 204557,
+              "strap": "072528521600012090       ",
+              "sale_id": 3,
+              "ln_num": 3,
+              "trns_cd": "WD",
+              "trans_dscr": "WARRANTY DEED",
+              "or_bk": "5310",
+              "or_pg": "1170",
+              "grantors": "KELLANDO MANAGEMENT CO LLC",
+              "grantees": "RANDALL KARL B, RANDALL CAROLYN M",
+              "dos": "2018-03-23T00:00:00-04:00",
+              "dos_yr": 2018,
+              "price": 245000,
+              "vi": "I",
+              "qu_flg": "Q",
+              "note": "",
+              "rea_cd": "01",
+              "dscr": "SALE QUALIFIED AS RESULT OF EXAMINATION OF DEED",
+              "qsrc_cd": null,
+              "adj_price": 245000,
+              "price_per_sqft": 176.01,
+              "reset_flg": "Y",
+              "all_grantors": "KELLANDO MANAGEMENT CO LLC,",
+              "all_grantees": "RANDALL KARL B (H),RANDALL CAROLYN M  (W),",
+              "salesratio": 115.1,
+              "X": 479980.145031,
+              "Y": 1447256.17696,
+              "CurrTaxYear": 2027
+            },
+            {
+              "ID": 204555,
+              "strap": "072528521600012090       ",
+              "sale_id": 1,
+              "ln_num": 4,
+              "trns_cd": "WD",
+              "trans_dscr": "WARRANTY DEED",
+              "or_bk": "2394",
+              "or_pg": "2465",
+              "grantors": "DAVIDSON PHILIP T, STORMZAND SHELBY M",
+              "grantees": "KELLANDO MANAGEMENT CO LLC",
+              "dos": "2003-11-18T00:00:00-05:00",
+              "dos_yr": 2003,
+              "price": 221000,
+              "vi": "I",
+              "qu_flg": "Q",
+              "note": "",
+              "rea_cd": "01",
+              "dscr": "SALE QUALIFIED AS RESULT OF EXAMINATION OF DEED",
+              "qsrc_cd": null,
+              "adj_price": 0,
+              "price_per_sqft": 158.76,
+              "reset_flg": "N",
+              "all_grantors": "DAVIDSON ,PHILIP T,STORMZAND SHELBY M,",
+              "all_grantees": "KELLANDO MANAGEMENT CO LLC,",
+              "salesratio": 127.6,
+              "X": 479980.145031,
+              "Y": 1447256.17696,
+              "CurrTaxYear": 2027
+            },
+            {
+              "ID": 204556,
+              "strap": "072528521600012090       ",
+              "sale_id": 2,
+              "ln_num": 5,
+              "trns_cd": "SW",
+              "trans_dscr": "SPECIAL WARRANTY DEED",
+              "or_bk": "1961",
+              "or_pg": "1313",
+              "grantors": "ORIOLE HOMES CORP",
+              "grantees": "DAVIDSON PHILIP T , DAVIDSON SHELBY M",
+              "dos": "2001-11-08T00:00:00-05:00",
+              "dos_yr": 2001,
+              "price": 162300,
+              "vi": "I",
+              "qu_flg": "Q",
+              "note": "",
+              "rea_cd": "01",
+              "dscr": "SALE QUALIFIED AS RESULT OF EXAMINATION OF DEED",
+              "qsrc_cd": null,
+              "adj_price": 0,
+              "price_per_sqft": 116.59,
+              "reset_flg": "N",
+              "all_grantors": "ORIOLE HOMES CORP,",
+              "all_grantees": "DAVIDSON PHILIP T &amp; DAVIDSON SHELBY M H/W,DAVIDSON SHELBY M,",
+              "salesratio": 173.75,
+              "X": 479980.145031,
+              "Y": 1447256.17696,
+              "CurrTaxYear": 2027
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#sales",
+              "@odata.count": 5,
+              "value": [
+                {
+                  "ID": 204559,
+                  "strap": "072528521600012090       ",
+                  "sale_id": 5,
+                  "ln_num": 1,
+                  "trns_cd": "QC",
+                  "trans_dscr": "QUIT CLAIM DEED",
+                  "or_bk": "6266",
+                  "or_pg": "0443",
+                  "grantors": "KORB ROBERT D, KORB LORI L",
+                  "grantees": "KORB FAMILY TRUST, KORB ROBERT DOUGLASS COTR",
+                  "dos": "2022-08-03T00:00:00-04:00",
+                  "dos_yr": 2022,
+                  "price": 100,
+                  "vi": "I",
+                  "qu_flg": "U",
+                  "note": "",
+                  "rea_cd": "11",
+                  "dscr": "CD/QC/TX/FJ/OR/MC/DC/PROBATE/NO CONSIDERATION/OTHER",
+                  "qsrc_cd": null,
+                  "adj_price": 100,
+                  "price_per_sqft": 0.07,
+                  "reset_flg": "N",
+                  "all_grantors": "KORB ROBERT D,KORB LORI L,",
+                  "all_grantees": "KORB FAMILY TRUST,KORB ROBERT DOUGLASS COTR,KORB LORI LEIGH COTR,",
+                  "salesratio": 282000,
+                  "X": 479980.145031,
+                  "Y": 1447256.17696,
+                  "CurrTaxYear": 2027
+                },
+                {
+                  "ID": 204558,
+                  "strap": "072528521600012090       ",
+                  "sale_id": 4,
+                  "ln_num": 2,
+                  "trns_cd": "WD",
+                  "trans_dscr": "WARRANTY DEED",
+                  "or_bk": "5964",
+                  "or_pg": "1358",
+                  "grantors": "RANDALL KARL B, RANDALL CAROLYN M",
+                  "grantees": "KORB ROBERT D, KORB LORI L",
+                  "dos": "2021-04-16T00:00:00-04:00",
+                  "dos_yr": 2021,
+                  "price": 278000,
+                  "vi": "I",
+                  "qu_flg": "Q",
+                  "note": "",
+                  "rea_cd": "02",
+                  "dscr": "SALE QUAL/RESULT OF CREDIBLE,VERIFIABLE & DOC EVID",
+                  "qsrc_cd": null,
+                  "adj_price": 278000,
+                  "price_per_sqft": 199.71,
+                  "reset_flg": "Y",
+                  "all_grantors": "RANDALL KARL B (H),RANDALL CAROLYN M  (W),",
+                  "all_grantees": "KORB ROBERT D,KORB LORI L,",
+                  "salesratio": 101.44,
+                  "X": 479980.145031,
+                  "Y": 1447256.17696,
+                  "CurrTaxYear": 2027
+                },
+                {
+                  "ID": 204557,
+                  "strap": "072528521600012090       ",
+                  "sale_id": 3,
+                  "ln_num": 3,
+                  "trns_cd": "WD",
+                  "trans_dscr": "WARRANTY DEED",
+                  "or_bk": "5310",
+                  "or_pg": "1170",
+                  "grantors": "KELLANDO MANAGEMENT CO LLC",
+                  "grantees": "RANDALL KARL B, RANDALL CAROLYN M",
+                  "dos": "2018-03-23T00:00:00-04:00",
+                  "dos_yr": 2018,
+                  "price": 245000,
+                  "vi": "I",
+                  "qu_flg": "Q",
+                  "note": "",
+                  "rea_cd": "01",
+                  "dscr": "SALE QUALIFIED AS RESULT OF EXAMINATION OF DEED",
+                  "qsrc_cd": null,
+                  "adj_price": 245000,
+                  "price_per_sqft": 176.01,
+                  "reset_flg": "Y",
+                  "all_grantors": "KELLANDO MANAGEMENT CO LLC,",
+                  "all_grantees": "RANDALL KARL B (H),RANDALL CAROLYN M  (W),",
+                  "salesratio": 115.1,
+                  "X": 479980.145031,
+                  "Y": 1447256.17696,
+                  "CurrTaxYear": 2027
+                },
+                {
+                  "ID": 204555,
+                  "strap": "072528521600012090       ",
+                  "sale_id": 1,
+                  "ln_num": 4,
+                  "trns_cd": "WD",
+                  "trans_dscr": "WARRANTY DEED",
+                  "or_bk": "2394",
+                  "or_pg": "2465",
+                  "grantors": "DAVIDSON PHILIP T, STORMZAND SHELBY M",
+                  "grantees": "KELLANDO MANAGEMENT CO LLC",
+                  "dos": "2003-11-18T00:00:00-05:00",
+                  "dos_yr": 2003,
+                  "price": 221000,
+                  "vi": "I",
+                  "qu_flg": "Q",
+                  "note": "",
+                  "rea_cd": "01",
+                  "dscr": "SALE QUALIFIED AS RESULT OF EXAMINATION OF DEED",
+                  "qsrc_cd": null,
+                  "adj_price": 0,
+                  "price_per_sqft": 158.76,
+                  "reset_flg": "N",
+                  "all_grantors": "DAVIDSON ,PHILIP T,STORMZAND SHELBY M,",
+                  "all_grantees": "KELLANDO MANAGEMENT CO LLC,",
+                  "salesratio": 127.6,
+                  "X": 479980.145031,
+                  "Y": 1447256.17696,
+                  "CurrTaxYear": 2027
+                },
+                {
+                  "ID": 204556,
+                  "strap": "072528521600012090       ",
+                  "sale_id": 2,
+                  "ln_num": 5,
+                  "trns_cd": "SW",
+                  "trans_dscr": "SPECIAL WARRANTY DEED",
+                  "or_bk": "1961",
+                  "or_pg": "1313",
+                  "grantors": "ORIOLE HOMES CORP",
+                  "grantees": "DAVIDSON PHILIP T , DAVIDSON SHELBY M",
+                  "dos": "2001-11-08T00:00:00-05:00",
+                  "dos_yr": 2001,
+                  "price": 162300,
+                  "vi": "I",
+                  "qu_flg": "Q",
+                  "note": "",
+                  "rea_cd": "01",
+                  "dscr": "SALE QUALIFIED AS RESULT OF EXAMINATION OF DEED",
+                  "qsrc_cd": null,
+                  "adj_price": 0,
+                  "price_per_sqft": 116.59,
+                  "reset_flg": "N",
+                  "all_grantors": "ORIOLE HOMES CORP,",
+                  "all_grantees": "DAVIDSON PHILIP T &amp; DAVIDSON SHELBY M H/W,DAVIDSON SHELBY M,",
+                  "salesratio": 173.75,
+                  "X": 479980.145031,
+                  "Y": 1447256.17696,
+                  "CurrTaxYear": 2027
+                }
+              ]
+            }
+          ]
+        },
+        "land": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Lnd_c",
+          "@odata.count": 1,
+          "value": [
+            {
+              "ID": 74367,
+              "strap": "072528521600012090       ",
+              "num": 1,
+              "land_type": "CONDO UNIT IMPROVED",
+              "uts": 1,
+              "dpth": 0,
+              "unit_type": "UT",
+              "val": 1
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Lnd_c",
+              "@odata.count": 1,
+              "value": [
+                {
+                  "ID": 74367,
+                  "strap": "072528521600012090       ",
+                  "num": 1,
+                  "land_type": "CONDO UNIT IMPROVED",
+                  "uts": 1,
+                  "dpth": 0,
+                  "unit_type": "UT",
+                  "val": 1
+                }
+              ]
+            }
+          ]
+        },
+        "buildings": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Bld",
+          "@odata.count": 1,
+          "value": [
+            {
+              "ID": 29931,
+              "Strap": "072528521600012090",
+              "CardNumber": 1,
+              "Description": "CONDO - VILLA",
+              "YearBuilt": 2001,
+              "BuildingValue": 282042,
+              "BuildingSqFeet": 1392,
+              "HeatedSqFeet": 1392,
+              "Bedrooms": 3,
+              "Bathrooms": 2,
+              "HalfBathrooms": null,
+              "Fixtures": null,
+              "LivingUnits": 1,
+              "NonLivingUnits": null,
+              "RoofCover": null,
+              "ExteriorWall": null,
+              "Photo": "\\\\pa-svr-doc\\Isynergy\\Repository\\Homestead Exemption\\_obj_3_D4315\\_obj_3_D4315_355.jpg",
+              "Sketch": "BAS 2001 <1>  (1392 P156) $   . "
+            }
+          ],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#Bld",
+              "@odata.count": 1,
+              "value": [
+                {
+                  "ID": 29931,
+                  "Strap": "072528521600012090",
+                  "CardNumber": 1,
+                  "Description": "CONDO - VILLA",
+                  "YearBuilt": 2001,
+                  "BuildingValue": 282042,
+                  "BuildingSqFeet": 1392,
+                  "HeatedSqFeet": 1392,
+                  "Bedrooms": 3,
+                  "Bathrooms": 2,
+                  "HalfBathrooms": null,
+                  "Fixtures": null,
+                  "LivingUnits": 1,
+                  "NonLivingUnits": null,
+                  "RoofCover": null,
+                  "ExteriorWall": null,
+                  "Photo": "\\\\pa-svr-doc\\Isynergy\\Repository\\Homestead Exemption\\_obj_3_D4315\\_obj_3_D4315_355.jpg",
+                  "Sketch": "BAS 2001 <1>  (1392 P156) $   . "
+                }
+              ]
+            }
+          ]
+        },
+        "extras": {
+          "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#xfob",
+          "@odata.count": 0,
+          "value": [],
+          "pages": [
+            {
+              "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#xfob",
+              "@odata.count": 0,
+              "value": []
+            }
+          ]
+        },
+        "section_errors": {}
+      },
+      "owner_index": {
+        "@odata.context": "https://search.property-appraiser.org/api/v1/$metadata#ParcelMarket",
+        "@odata.count": 1,
+        "value": [
+          {
+            "strap": "072528521600012090       ",
+            "dsp_strap": "07-25-28-5216-0001-2090",
+            "subName": "TERRACES AT CELEBRATION PH 1",
+            "situsCity": "CELEBRATION",
+            "situsZip": "34747",
+            "mailCity": "INDIAN HARBOUR BEACH",
+            "mailState": "FL",
+            "mailZip": "32937",
+            "mailCountry": "",
+            "census": "120970408081",
+            "dorCode": "0411",
+            "dorDesc": "CONDOMINIUM-IMPROVED",
+            "prevDorCode": "0411",
+            "prevDorDscr": "CONDOMINIUM-IMPROVED",
+            "ayb": 2001,
+            "eyb": 2001,
+            "totalAcres": 0.01,
+            "grossBldArea": 1392,
+            "HeatedArea": 1392,
+            "numofbuildings": 1,
+            "livunits": 1.0,
+            "grade": "05",
+            "quality": "GOOD",
+            "juris": 5100,
+            "jurisdesc": "CONDO JURS PLACE HOLDER",
+            "currassessedvalue": 282000,
+            "currJustValue": 282000,
+            "currTaxable": 282000,
+            "curNewConstruction": 0,
+            "prevAssessed": 285900,
+            "prevJust": 285900,
+            "prevTaxable": 285900,
+            "distGroup": "300",
+            "numofUnits": 0.0,
+            "NBC": 515216.0,
+            "NBCDesc": "TERRACES @ CELEBRATION CONDO",
+            "ChangeJust": -3900,
+            "changePct": -1.36,
+            "dos": "2021-04-16T00:00:00-04:00",
+            "qu_flg": "Q",
+            "price": 278000,
+            "taxyear": 2027,
+            "Owners": "KORB FAMILY TRUST;KORB ROBERT DOUGLASS COTR;KORB LORI LEIGH COTR",
+            "Legals": "TERRACES AT CELEBRATION A CONDO PHASE 1 UNIT 209 OR 1954/1603 CB 5 PG 177 CARRIED IN 18/25/28 ",
+            "Exemptions": null,
+            "Situs": "1001 CELEBRATION AVE 209 CELEBRATION FL 34747",
+            "SitusAll": "1001 CELEBRATION AVE 209",
+            "usechange": 0,
+            "Mailing": "1941 HIGHWAY A1A UNIT 306   INDIAN HARBOUR BEACH FL 32937 ",
+            "YOS": null,
+            "ParcelMarketId": 56582,
+            "X": 479980.145031,
+            "Y": 1447256.17696,
+            "lat": 28.31398019,
+            "lon": -81.54758407,
+            "tot_bld_val": 282000,
+            "tot_lnd_val": 0,
+            "asd_lnd_val": 0,
+            "tot_xf_val": 0,
+            "ag_x_val": null,
+            "soh_val": 282000,
+            "ValuationDate": "2026-10-13T03:35:30.917-04:00",
+            "SitusStreet": "1001 CELEBRATION AVE 209",
+            "MailAddr_1": "1941 HIGHWAY A1A UNIT 306",
+            "MailAddr_2": "",
+            "MailAddr_3": "",
+            "ValMethod": "8",
+            "ValMethodDscr": "Alternate Cost"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://search.property-appraiser.org/api/v1/ParcelMarket?%24filter=contains%28Owners%2C%27KORB+FAMILY+TRUST%27%29&%24count=true&%24top=100",
+          "id": "osceola_owner_search",
+          "status": 200,
+          "sha256": "ba0c2f50c6ae25da8902b1e4df17f3fea2fc9d8974c1f4cd15b5775c9a1794bd"
+        },
+        {
+          "url": "https://search.property-appraiser.org/api/v1/ParcelMarket?%24filter=strap+eq+%27072528521600012090%27&%24count=true&%24top=100",
+          "id": "osceola_address_search",
+          "status": 200,
+          "sha256": "ba0c2f50c6ae25da8902b1e4df17f3fea2fc9d8974c1f4cd15b5775c9a1794bd"
+        },
+        {
+          "url": "https://search.property-appraiser.org/api/v1/PropertyValues?%24filter=strap+eq+%27072528521600012090%27&%24orderby=tax_yr+desc&%24count=true&%24top=100",
+          "id": "osceola_assessment",
+          "status": 200,
+          "sha256": "4bf9a85f8839db4695ca0f139747a3f4f81cb8d8b84a400f101815ca0631826e"
+        },
+        {
+          "url": "https://search.property-appraiser.org/api/v1/sales?%24filter=strap+eq+%27072528521600012090%27&%24count=true&%24top=100&%24orderby=dos+desc",
+          "id": "osceola_sales",
+          "status": 200,
+          "sha256": "fe904c0d97b604fb79c3aa4a4c98b7ab7094bb03374d0188449cafde14d3a9e4"
+        },
+        {
+          "url": "https://search.property-appraiser.org/api/v1/Lnd_c?%24filter=strap+eq+%27072528521600012090%27&%24count=true&%24top=100",
+          "id": "osceola_land",
+          "status": 200,
+          "sha256": "742c4df49850440915bbfd3b3054e27709f0255e5f8c36c6e838da8a0eae91ad"
+        },
+        {
+          "url": "https://search.property-appraiser.org/api/v1/Bld?%24filter=strap+eq+%27072528521600012090%27&%24count=true&%24top=100",
+          "id": "osceola_buildings",
+          "status": 200,
+          "sha256": "3be2ff30fee32763d29f9018a5da4a9846b4653c3a572e9466ccbc98b0418adf"
+        },
+        {
+          "url": "https://search.property-appraiser.org/api/v1/xfob?%24filter=strap+eq+%27072528521600012090%27&%24count=true&%24top=100",
+          "id": "osceola_extras",
+          "status": 200,
+          "sha256": "d0971e3db1f20ea93fc554493dbf50e196a36b0bcbbecc4c6ac5d77d5da6cb94"
+        }
+      ]
+    },
+    "walmart": {
+      "@odata.count": 15,
+      "value": [
+        {
+          "strap": "182729539800010010       ",
+          "dsp_strap": "18-27-29-5398-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "904 CYPRESS PKWY KISSIMMEE FL 34759",
+          "SitusStreet": "904 CYPRESS PKWY",
+          "SitusAll": "904 CYPRESS PKWY; 904 CYPRESS PKWY B; 906 CYPRESS PKWY",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "1827295398000100C0       ",
+          "dsp_strap": "18-27-29-5398-0001-00C0",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 CYPRESS PKWY KISSIMMEE FL 34759",
+          "SitusStreet": "0 CYPRESS PKWY",
+          "SitusAll": "CYPRESS PKWY",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "022528285000010010       ",
+          "dsp_strap": "02-25-28-2850-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "3250 VINELAND RD KISSIMMEE FL 34746-    ",
+          "SitusStreet": "3250 VINELAND RD",
+          "SitusAll": "3250 VINELAND RD; 3252 VINELAND RD",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "052530546600010010       ",
+          "dsp_strap": "05-25-30-5466-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "2850 E OSCEOLA PKWY KISSIMMEE FL 34743",
+          "SitusStreet": "2850 E OSCEOLA PKWY",
+          "SitusAll": "2822 E OSCEOLA PKWY; 2826 E OSCEOLA PKWY; 2830 E OSCEOLA PKWY; 2834 E OSCEOLA PKWY; 2838 E OSCEOLA PKWY; 2842 E OSCEOLA PKWY; 2846 E OSCEOLA PKWY; 2850 E OSCEOLA PKWY",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "0225291448000100A0       ",
+          "dsp_strap": "02-25-29-1448-0001-00A0",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 E OSCEOLA PKWY KISSIMMEE FL 34744",
+          "SitusStreet": "0 E OSCEOLA PKWY",
+          "SitusAll": "E OSCEOLA PKWY",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "052631010500010010       ",
+          "dsp_strap": "05-26-31-0105-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 PUFFIN RD SAINT CLOUD FL 34771",
+          "SitusStreet": "0 PUFFIN RD",
+          "SitusAll": "PUFFIN RD",
+          "Mailing": "ATTN: REAL ESTATE MANAGER 2607 SE J ST  BENTONVILLE AR 72716-0550 ",
+          "MailAddr_1": "ATTN: REAL ESTATE MANAGER",
+          "MailAddr_2": "2607 SE J ST",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "052631010500010020       ",
+          "dsp_strap": "05-26-31-0105-0001-0020",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 PUFFIN RD SAINT CLOUD FL 34771",
+          "SitusStreet": "0 PUFFIN RD",
+          "SitusAll": "PUFFIN RD",
+          "Mailing": "ATTN: REAL ESTATE MANAGER  2608 SE J ST  BENTONVILLE AR 72716-0550 ",
+          "MailAddr_1": "ATTN: REAL ESTATE MANAGER ",
+          "MailAddr_2": "2608 SE J ST",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "022529231100010010       ",
+          "dsp_strap": "02-25-29-2311-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "1471 E OSCEOLA PKWY KISSIMMEE FL 34744",
+          "SitusStreet": "1471 E OSCEOLA PKWY",
+          "SitusAll": "1471 E OSCEOLA PKWY; 1471 E OSCEOLA PKWY 101; 1471 E OSCEOLA PKWY B",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "112527446200010010       ",
+          "dsp_strap": "11-25-27-4462-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "2855 OLD LAKE WILSON RD KISSIMMEE FL 34747-    ",
+          "SitusStreet": "2855 OLD LAKE WILSON RD",
+          "SitusAll": "2855 OLD LAKE WILSON RD",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "112527446200010020       ",
+          "dsp_strap": "11-25-27-4462-0001-0020",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "2845 N OLD LAKE WILSON RD KISSIMMEE FL 34747",
+          "SitusStreet": "2845 N OLD LAKE WILSON RD",
+          "SitusAll": "2845 N OLD LAKE WILSON RD",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "242528155100010010       ",
+          "dsp_strap": "24-25-28-1551-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "4444 W VINE ST KISSIMMEE FL 34746-    ",
+          "SitusStreet": "4444 W VINE ST",
+          "SitusAll": "4444 W VINE ST; 4446 W VINE ST",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "042630065100010010       ",
+          "dsp_strap": "04-26-30-0651-0001-0010",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "4400 13TH ST SAINT CLOUD FL 34769-    ",
+          "SitusStreet": "4400 13TH ST",
+          "SitusAll": "4396 13TH ST; 4400 13TH ST",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "2425281572000100B0       ",
+          "dsp_strap": "24-25-28-1572-0001-00B0",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 E IRLO BRONSON MEMORIAL HWY KISSIMMEE FL 34746",
+          "SitusStreet": "0 E IRLO BRONSON MEMORIAL HWY",
+          "SitusAll": "E IRLO BRONSON MEMORIAL HWY",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "0426300673000100B0       ",
+          "dsp_strap": "04-26-30-0673-0001-00B0",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 13TH ST SAINT CLOUD FL 34769",
+          "SitusStreet": "0 13TH ST",
+          "SitusAll": "13TH ST",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        },
+        {
+          "strap": "0426300673000100A0       ",
+          "dsp_strap": "04-26-30-0673-0001-00A0",
+          "Owners": "WAL-MART STORES EAST LP",
+          "Situs": "0 13TH ST SAINT CLOUD FL 34769",
+          "SitusStreet": "0 13TH ST",
+          "SitusAll": "13TH ST",
+          "Mailing": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555 ",
+          "MailAddr_1": "ATTN PROPERTY TAX DEPT",
+          "MailAddr_2": "PO BOX 8050 MS 0555",
+          "MailAddr_3": ""
+        }
+      ],
+      "source_sha256": "39f0da3d8c44e4325a4c00a15de0ea8e630fe60664c89779415cce9c27c03d78"
+    }
+  }
+}

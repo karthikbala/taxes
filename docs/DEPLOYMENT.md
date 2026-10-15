@@ -102,3 +102,7 @@ Perform DNS/traffic cutover only after explicit authorization and verified targe
 The accepted 8 October 2026 POC snapshot was `https://taxes.zeneral.ai/poc`, source revision `b184c17c610ebbb055c23beb6b7f025d5f82af3b`, saved v27 (`appgver_105267febd30819180ec4b590e93f1a2`), deployment `appgdep_6ac758a79b988191894c7814daf30bd6`, environment revision 2, on the existing Sites/Cloudflare Worker with D1. `docs/history/cloudflare-sites-v27.json` is retained as legacy deployment configuration. See [the handoff](DEVELOPMENT-HANDOFF.md) for source/API acceptance evidence.
 
 Those facts do not establish today's loaded revision. This self-host preparation makes no live deployment or DNS changes. Removing the original Mac checkout does not stop that cloud application; first preserve the hosted key, repository/evidence and required backups. Colleagues using the future Node route need GitHub/server access, not a Sites editor account.
+
+## Current production and interns staging separation
+
+The 13 October 2026 deployment uses separate service identities and databases for taxes.zeneral.ai (production) and the nip.io interns hostname (staging). See the [dated environment runbook](PRODUCTION-STAGING-ISOLATION-2026-10-13.md) and [automatic-address checkpoint](BRADFORD-AUTO-ADDRESS-CHECKPOINT-2026-10-13.md) for loaded revisions, permission checks and acceptance boundaries. These snapshots supersede the earlier shared public/staging routing, not the ledger-migration requirements above.

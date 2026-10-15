@@ -57,10 +57,10 @@ test('query code streams with a body ceiling and uses browser credentials only o
  assert.equal(JSON.parse(output.slice('INVISIA_OSCEOLA='.length)).body,tables.ParcelMarket);
 });
 test('client retries only challenged Osceola appraiser reads and retains direct failure provenance',async()=>{
- const capture=await captureOsceolaAppraiser(input,executeFixture().execute);let recoveries=0;
+ const capture=await captureOsceolaAppraiser({...input,addressType:'auto'},executeFixture().execute);let recoveries=0;
  const result=await clientLookup({scrap_order_id:'OFFLINE-RECOVERY',county:'Osceola',transactionType:'REFI',...input},async()=>new Response('challenge',{status:403}),{log:()=>{},managedBrowser:async args=>{if(args.profile!=='osceola-appraiser')throw Error('No collector fixture');recoveries++;assert.equal(args.url,osceolaSearchUrl);return capture;}});
  assert.equal(recoveries,1);assert.equal(result.scrapTaxOrderRequest.matchStatus,'MATCHED');assert.equal(result.scrapTaxOrderRequest.AssessmentInformation.Year,'2026');
- assert(result.ExtractionMetadata.sources.some(s=>s.id==='osceola_address_search_direct'&&s.http_status===403));
+ assert(result.ExtractionMetadata.sources.some(s=>s.id==='osceola_owner_search_direct'&&s.http_status===403));
  const source=result.ExtractionMetadata.sources.find(s=>s.id==='osceola_address_search');assert.equal(source.method,'BROWSER');assert.equal(source.status,'verified');assert.match(source.sha256,/^[a-f0-9]{64}$/);
  let called=false;await clientLookup({scrap_order_id:'OFFLINE-RECOVERY',county:'Osceola',transactionType:'REFI',...input},async()=>new Response('gone',{status:404}),{log:()=>{},managedBrowser:async()=>{called=true;}});assert.equal(called,false);
 });
@@ -70,13 +70,14 @@ test('managed appraiser session uses the existing shared ledger and closes after
  globalThis.fetch=async(url,options)=>{if(options.method==='DELETE'){closes++;return Response.json({success:true,creditsBilled:2});}if(String(url).endsWith('/execute'))return Response.json(await f.execute(JSON.parse(options.body)));creates++;return Response.json({success:true,id:'offline-osceola'});};
  try{
   const browser=makeManagedBrowser({DB:db,INVISIA_BROWSER_ENABLED:'1',INVISIA_BROWSER_API_KEY:'offline'});
-  const capture=await browser({url:osceolaSearchUrl,county:'osceola-fl',profile:'osceola-appraiser',includePdf:false,input});assert.equal((await resolveCapturedOsceola(input,capture)).status,'MATCHED');assert.equal(creates,1);assert.equal(closes,1);
+  const capture=await browser({url:osceolaSearchUrl,county:'osceola-fl',profile:'osceola-appraiser',includePdf:false,input:{...input,addressType:'auto'}});assert.equal((await resolveCapturedOsceola({...input,addressType:'auto'},capture)).status,'MATCHED');assert.equal(creates,1);assert.equal(closes,1);
+  await assert.rejects(browser({url:osceolaSearchUrl,county:'osceola-fl',profile:'osceola-appraiser',includePdf:false,input:{...input,addressType:'invalid'}}),e=>e.code==='source_url_rejected');assert.equal(creates,1);
   const budget=await db.prepare('SELECT * FROM scrape_budgets').first();assert.equal(budget.spent_milli_usd,1840);assert.equal(budget.reserved_milli_usd,0);
   await assert.rejects(browser({url:osceolaSearchUrl,county:'miami-dade-fl',profile:'osceola-appraiser',includePdf:false,input}),e=>e.code==='source_url_rejected');
  }finally{globalThis.fetch=old;db.close();}
 });
 test('recovered appraiser data joins the independent collector account, original PDF and HTML amounts',async()=>{
- const appraiser=await captureOsceolaAppraiser(input,executeFixture().execute);
+ const appraiser=await captureOsceolaAppraiser({...input,addressType:'auto'},executeFixture().execute);
  const token='b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==',root='https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/'+token,bill=root+'/bills/e766d457-a479-11f0-b243-0050568184a7';
  let captures=0;
  const fetcher=async target=>{

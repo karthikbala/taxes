@@ -5,7 +5,7 @@ import {load} from 'cheerio';
 import {matchBradfordCandidates,resolveBradford,enrichBradford} from '../lib/client/bradford.mjs';
 const fixture=name=>fs.readFileSync(new URL('./fixtures/client/bradford-appraiser-'+name,import.meta.url));
 const search=fixture('address-search.html').toString(),detail=fixture('detail.html').toString(),negative=fixture('negative.html').toString(),card=new Uint8Array(fixture('card.pdf'));
-const input={address:'14500 S HWY 301',ownerName:'WALMART STORES EAST, LP',county:'bradford-fl'};
+const input={address:'14500 S HWY 301',ownerName:'WALMART STORES EAST, LP',county:'bradford-fl',addressType:'site'};
 function mockGet(searchHtml=search,detailHtml=detail,cardValue=card){const calls=[];return {calls,get:async(url,id,headers,options)=>{calls.push({url,id,headers,options});if(id==='bradford_address_search')return searchHtml;if(id==='bradford_assessment')return detailHtml;if(cardValue instanceof Error)throw cardValue;return cardValue;}};}
 
 test('fresh native complete two-parcel address search narrows by intact entity owner',()=>{const r=matchBradfordCandidates(input,search);assert.equal(r.status,'MATCHED');assert.equal(r.parcel_id,'04708-0-00200');assert.equal(r.candidates.length,2);assert.deepEqual(r.candidates[0].owners,['WALMART STORES EAST, LP']);assert.equal(matchBradfordCandidates({...input,ownerName:'FLORIDA CREDIT UNION'},search).parcel_id,'04708-0-00201');assert.equal(matchBradfordCandidates({...input,ownerName:'WALMART STORES EAST'},search).status,'AMBIGUOUS');});
@@ -25,17 +25,17 @@ const clientFixture=name=>fs.readFileSync(new URL('./fixtures/client/bradford-'+
 for(const [caseId,address,ownerName,id] of [['boyd','6557 SE CR 21B, Keystone Heights','BAKER BOYD D REVOC TRUST','05632-0-00000'],['deborah','334 SE 28TH ST, MELROSE, FL 32666','BAKER DEBORAH K','06203-C-01400']]){
  test('client regression: '+caseId+' city suffix and meaningful parcel letters survive source to rich record',async()=>{
   const get=async(_url,source)=>source==='bradford_address_search'?clientFixture(caseId+'-search.html').toString():source==='bradford_assessment'?clientFixture(caseId+'-detail.html').toString():new Uint8Array(clientFixture(caseId+'-card.pdf'));
-  const r=await resolveBradford({address,ownerName},get);assert.equal(r.status,'MATCHED');assert.equal(r.parcel_id,id);
+  const r=await resolveBradford({address,ownerName,addressType:'site'},get);assert.equal(r.status,'MATCHED');assert.equal(r.parcel_id,id);
   const record=enrichBradford(r.raw,id);assert.equal(record.PropertyInformation.ParcelNumber,id);assert.ok(record.AssessmentInformation.AssessedValue);assert.equal(record.provenance.bradford_property_card.status,'EXTRACTED');
  });
 }
 for(const [caseId,address,ownerName,ids]of [['callahan','8280 SE SWEET BAY DR','CALLAHAN JAMES R & CHARLOTTE',['05194-0-00000','05379-0-00000']],['fletcher','8130 SW 50TH PATH','FLETCHER CARRIE',['00420-0-00200']]]){
  test('mailing address review preserves all '+caseId+' parcels and never resolves the site automatically',async()=>{
   const calls=[];const get=async(_url,source)=>{calls.push(source);return clientFixture(caseId+(source==='bradford_address_search'?'-negative.html':source==='bradford_owner_reference_search'?'-owner-search.html':source.endsWith('05379000000')?'-owner-detail-b.html':'-owner-detail.html')).toString()};
-  const r=await resolveBradford({address,ownerName},get);assert.equal(r.status,'ADDRESS_REVIEW_REQUIRED');assert.equal(r.parcel_id,undefined);assert.deepEqual(r.candidates.map(c=>c.parcel_id),ids);assert.ok(r.candidates.every(c=>c.address_match_type==='mailing_only'&&c.mailing_address.includes(address)));assert.ok(!calls.includes('bradford_assessment'));assert.ok(!calls.includes('bradford_property_card'));
+  const r=await resolveBradford({address,ownerName,addressType:'site'},get);assert.equal(r.status,'ADDRESS_REVIEW_REQUIRED');assert.equal(r.parcel_id,undefined);assert.deepEqual(r.candidates.map(c=>c.parcel_id),ids);assert.ok(r.candidates.every(c=>c.address_match_type==='mailing_only'&&c.mailing_address.includes(address)));assert.ok(!calls.includes('bradford_assessment'));assert.ok(!calls.includes('bradford_property_card'));
   if(caseId==='callahan')assert.deepEqual(r.candidates.map(c=>c.owner_matches_requested),[true,false]);
  });
 }
 test('incomplete owner search cannot produce review candidates or fan out details',async()=>{
- let calls=0;const r=await resolveBradford({address:'8130 SW 50TH PATH',ownerName:'FLETCHER CARRIE'},async()=>{calls++;return calls===1?clientFixture('fletcher-negative.html').toString():clientFixture('fletcher-owner-search.html').toString().replace('(1 Total)','(2 Total)')});assert.equal(r.status,'NOT_FOUND');assert.equal(r.owner_reference_status,'SEARCH_INCOMPLETE');assert.equal(calls,2);
+ let calls=0;const r=await resolveBradford({address:'8130 SW 50TH PATH',ownerName:'FLETCHER CARRIE',addressType:'site'},async()=>{calls++;return calls===1?clientFixture('fletcher-negative.html').toString():clientFixture('fletcher-owner-search.html').toString().replace('(1 Total)','(2 Total)')});assert.equal(r.status,'NOT_FOUND');assert.equal(r.owner_reference_status,'SEARCH_INCOMPLETE');assert.equal(calls,2);
 });

@@ -1,0 +1,813 @@
+{
+  "purpose": "Source-derived response subset for offline regression-checker tests only. No new live acceptance or runtime fallback.",
+  "source_response_sha256": "af91380b8ec5bcb6e6a49b003502cb715bbd4f17bdb2e50dc0ba8eb58e96852d",
+  "observed_on": "2026-10-13",
+  "case_id": "BRA-05",
+  "record": {
+    "scrap_order_id": "BESIL-HISTORY-fletcher",
+    "address": "8130 SW 50TH PATH",
+    "ownerName": "FLETCHER CARRIE",
+    "county": "Bradford",
+    "state": "FL",
+    "errorMessage": "NA",
+    "status": "partial",
+    "scrapTaxOrderRequest": {
+      "matchStatus": "MATCHED",
+      "PropertyInformation": {
+        "ParcelNumber": "00420-0-00200",
+        "PropertyAddress": "SW 180TH PL, BROOKER",
+        "MailingAddress": "8130 SW 50TH PATH; LAKE BUTLER, FL 32054",
+        "PrimaryZone": null,
+        "PrimaryLandUse": "VACANT (0000)",
+        "BedsBathsHalf": null,
+        "Floors": null,
+        "LivingUnits": null,
+        "LivingArea": null,
+        "AdjustedArea": null,
+        "LotSize": "1.000 LT (0.000 AC)",
+        "YearBuilt": null,
+        "Owners": [
+          "FLETCHER CARRIE"
+        ],
+        "ownerOccupied": null,
+        "AlternateKey": "1197",
+        "ActualArea": null,
+        "ReportedAcreage": "0"
+      },
+      "AssessmentHistory": [
+        {
+          "Year": "2026",
+          "Status": "Preliminary",
+          "SourceLabel": "2026 Preliminary Values",
+          "LandValue": "$210",
+          "AgriculturalLandValue": "$0",
+          "BuildingValue": "$0",
+          "ExtraFeatureValue": "$0",
+          "MarketValue": "$210",
+          "ClassifiedValue": "$0",
+          "AppraisedValue": "$210",
+          "AssessedValue": "$210",
+          "ExemptionValue": "$0"
+        }
+      ],
+      "BenefitsInformation": [],
+      "AssessmentInformation": {
+        "Year": "2026",
+        "LandValue": "$210",
+        "BuildingValue": "$0",
+        "ExtraFeatureValue": "$0",
+        "MarketValue": "$210",
+        "AssessedValue": "$210",
+        "Status": "Preliminary",
+        "SourceLabel": "2026 Preliminary Values",
+        "AgriculturalLandValue": "$0",
+        "ClassifiedValue": "$0",
+        "AppraisedValue": "$210",
+        "ExemptionValue": "$0"
+      },
+      "TaxInformation": {
+        "accountNumber": "00420-0-00200",
+        "type": "DELINQUENT",
+        "amountDue": "$124.47",
+        "statusMessage": null,
+        "lastPaymentDate": null,
+        "lastPaymentAmount": null,
+        "amountPaidYear": null,
+        "note": "Selected certificate balance; published delinquent-history total is separate."
+      },
+      "BillDetails": {
+        "taxYear": "2025",
+        "folio": "00420-0-00200",
+        "municipality": null,
+        "millCode": null,
+        "propertyAddress": "SW 180TH PL BROOKER 32622",
+        "mailingAddress": "8130 SW 50TH PATH; LAKE BUTLER , FL 32054",
+        "paidBy": null,
+        "receiptNumber": null,
+        "paidDate": null,
+        "paidAmount": null,
+        "documentType": "certificate_notice",
+        "certificate": {
+          "status": "UNKNOWN",
+          "statusRaw": null,
+          "date": "05/31/2026",
+          "holder": "9999999",
+          "interestRate": "18.00",
+          "faceAmount": "$109.97",
+          "interestAmount": "$8.25",
+          "fees": "$6.25",
+          "amountDue": "$124.47",
+          "certificateNumber": "50"
+        }
+      },
+      "ParcelDetails": {
+        "millageRate": null,
+        "millageRateUnit": null,
+        "totalMillageRate": null,
+        "totalMillageRateUnit": null,
+        "taxableValue": "$161.00"
+      },
+      "TaxAmounts": {
+        "adValorem": null,
+        "nonAdValorem": null,
+        "totalDiscountable": null,
+        "totalTax": null
+      },
+      "AdValoremMillage": [],
+      "NonAdValorem": [],
+      "DelinquencyInformation": {
+        "hasActiveDelinquency": true,
+        "knownTotalDue": "$704.58",
+        "knownPriorYearsDue": "$580.11",
+        "totalPriorYearsDue": null,
+        "currentYearDue": "$124.47",
+        "delinquentYears": [
+          {
+            "billYear": "2025",
+            "billType": "Annual",
+            "amountDue": "$124.47",
+            "status": "Delinquent",
+            "code": "CURRENT_YEAR_DUE",
+            "certificate": {
+              "status": "UNKNOWN",
+              "statusRaw": null,
+              "date": "05/31/2026",
+              "holder": "9999999",
+              "interestRate": "18.00",
+              "faceAmount": "$109.97",
+              "interestAmount": "$8.25",
+              "fees": "$6.25",
+              "amountDue": "$124.47",
+              "certificateNumber": "50"
+            },
+            "note": null
+          },
+          {
+            "billYear": "2024",
+            "billType": "Annual",
+            "amountDue": "$79.01",
+            "status": "Delinquent",
+            "code": "PRIOR_YEAR_DUE",
+            "note": null
+          },
+          {
+            "billYear": "2023",
+            "billType": "Annual",
+            "amountDue": "$88.70",
+            "status": "Delinquent",
+            "code": "PRIOR_YEAR_DUE",
+            "note": null
+          },
+          {
+            "billYear": "2022",
+            "billType": "Annual",
+            "amountDue": "$97.34",
+            "status": "Delinquent",
+            "code": "PRIOR_YEAR_DUE",
+            "note": null
+          },
+          {
+            "billYear": "2021",
+            "billType": "Annual",
+            "amountDue": "$101.94",
+            "status": "Delinquent",
+            "code": "PRIOR_YEAR_DUE",
+            "note": null
+          },
+          {
+            "billYear": "2020",
+            "billType": "Annual",
+            "amountDue": "$109.21",
+            "status": "Delinquent",
+            "code": "PRIOR_YEAR_DUE",
+            "note": null
+          },
+          {
+            "billYear": "2019",
+            "billType": "Annual",
+            "amountDue": "$103.91",
+            "status": "Delinquent",
+            "code": "PRIOR_YEAR_DUE",
+            "note": null
+          }
+        ],
+        "coverage": "PARTIAL",
+        "unavailableYears": [],
+        "currentBillYear": "2025",
+        "asOf": "2026-10-13",
+        "timeZone": "America/New_York",
+        "note": "Active delinquency is supported by the inspected history.",
+        "notes": [
+          "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out.",
+          "Tax year 2025 has an event with no affirmative active or closed status."
+        ],
+        "sourceReportedTotalDue": "$704.58",
+        "coverageDetails": {
+          "publishedAnnualRows": "PARTIAL",
+          "unavailableYears": [],
+          "certificateEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+          "independentCertificateSearch": "NOT_IMPLEMENTED",
+          "taxDeedEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+          "independentTaxDeedSearch": "NOT_RUN",
+          "historicalClearanceEstablished": false,
+          "note": "Full historical clearance requires complete annual, certificate and deed coverage. A paid account or an empty public deed query alone is insufficient."
+        }
+      },
+      "FullLegalDescription": [
+        "18-7S-20E | 18 7S 20 COM NE COR OF S1/2 GOV LOT 2. RUN S01*05'30 E 780.06' TO POB S02*05'30 E 230.55', THENCE S88*56'49 W 620.08' TO E R/W CSX RR R/W ALSO BEING E"
+      ],
+      "SalesInformation": [
+        {
+          "Date": "4/22/1997",
+          "Price": "$0",
+          "ORBookPage": "728 / 446",
+          "Instrument": "FJ",
+          "QualificationDescription": "V / Q"
+        },
+        {
+          "Date": "2/6/1996",
+          "Price": "$100",
+          "ORBookPage": "673 / 094",
+          "Instrument": "WD",
+          "QualificationDescription": "V / Q"
+        }
+      ],
+      "PublishedTaxHistory": [
+        {
+          "billYear": "2025",
+          "billType": "Annual",
+          "billId": "108600",
+          "status": "Delinquent",
+          "amountDue": "$124.47",
+          "outstandingTax": "$109.97",
+          "accruedPenalties": "$14.50",
+          "reference": "50 C",
+          "paidAmount": null,
+          "paidDate": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "05/31/2026",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$109.97",
+            "interestAmount": "$8.25",
+            "fees": "$6.25",
+            "amountDue": "$124.47",
+            "certificateNumber": "50"
+          }
+        },
+        {
+          "billYear": "2024",
+          "billType": "Annual",
+          "billId": "107400",
+          "status": "Delinquent",
+          "amountDue": "$79.01",
+          "outstandingTax": "$57.98",
+          "accruedPenalties": "$21.03",
+          "reference": "42 C",
+          "paidAmount": null,
+          "paidDate": null
+        },
+        {
+          "billYear": "2023",
+          "billType": "Annual",
+          "billId": "104700",
+          "status": "Delinquent",
+          "amountDue": "$88.70",
+          "outstandingTax": "$57.70",
+          "accruedPenalties": "$31.00",
+          "reference": "45 I",
+          "paidAmount": null,
+          "paidDate": null
+        },
+        {
+          "billYear": "2022",
+          "billType": "Annual",
+          "billId": "103800",
+          "status": "Delinquent",
+          "amountDue": "$97.34",
+          "outstandingTax": "$56.40",
+          "accruedPenalties": "$40.94",
+          "reference": "34 I",
+          "paidAmount": null,
+          "paidDate": null
+        },
+        {
+          "billYear": "2021",
+          "billType": "Annual",
+          "billId": "101500",
+          "status": "Delinquent",
+          "amountDue": "$101.94",
+          "outstandingTax": "$53.31",
+          "accruedPenalties": "$48.63",
+          "reference": "36 C",
+          "paidAmount": null,
+          "paidDate": null
+        },
+        {
+          "billYear": "2020",
+          "billType": "Annual",
+          "billId": "99700",
+          "status": "Delinquent",
+          "amountDue": "$109.21",
+          "outstandingTax": "$52.13",
+          "accruedPenalties": "$57.08",
+          "reference": "49 C",
+          "paidAmount": null,
+          "paidDate": null
+        },
+        {
+          "billYear": "2019",
+          "billType": "Annual",
+          "billId": "98900",
+          "status": "Delinquent",
+          "amountDue": "$103.91",
+          "outstandingTax": "$45.32",
+          "accruedPenalties": "$58.59",
+          "reference": "43 C",
+          "paidAmount": null,
+          "paidDate": null
+        }
+      ],
+      "HistoricalTaxRecords": [
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2025",
+          "billNumber": "108600",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$124.47",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "05/31/2026",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$109.97",
+            "interestAmount": "$8.25",
+            "fees": "$6.25",
+            "certificateNumber": "50"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "4920efed7518e8814b3d8b09c96b5d32448243f5132404f067db0f18657e72aa",
+          "retrievedAt": "2026-10-13T12:19:26.848Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2024",
+          "billNumber": "107400",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$79.01",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "05/31/2025",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$57.98",
+            "interestAmount": "$14.78",
+            "fees": "$6.25",
+            "certificateNumber": "42"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "7c2e6b4dea4e22f958ecf9c7ddcbde570f147a622f96bca6fc7e5f5fbe519a38",
+          "retrievedAt": "2026-10-13T12:19:29.066Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2023",
+          "billNumber": "104700",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$88.70",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": "* CERTIFICATE SOLD *",
+            "date": "06/01/2024",
+            "holder": "9990239",
+            "interestRate": "17.75",
+            "faceAmount": "$57.70",
+            "interestAmount": "$24.75",
+            "fees": "$6.25",
+            "certificateNumber": "45"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "e6abfffde6b99034292ce15dda5d97c16d5ab2270a58fab39ad9c901a4935f1e",
+          "retrievedAt": "2026-10-13T12:19:30.681Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2022",
+          "billNumber": "103800",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$97.34",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": "* CERTIFICATE SOLD *",
+            "date": "06/01/2023",
+            "holder": "9990239",
+            "interestRate": "18.00",
+            "faceAmount": "$56.40",
+            "interestAmount": "$34.69",
+            "fees": "$6.25",
+            "certificateNumber": "34"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "7639034ebe39f05f794b82d9cd7fdc43de04fefc183f9539f8a14900e2630c0e",
+          "retrievedAt": "2026-10-13T12:19:32.392Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2021",
+          "billNumber": "101500",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$101.94",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "06/01/2022",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$53.31",
+            "interestAmount": "$42.38",
+            "fees": "$6.25",
+            "certificateNumber": "36"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "371f705fa59d1ce5a47be580932a4e577b67b4befe65dd1233ad13b9397d3f1c",
+          "retrievedAt": "2026-10-13T12:19:33.999Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2020",
+          "billNumber": "99700",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$109.21",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "06/01/2021",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$52.13",
+            "interestAmount": "$50.83",
+            "fees": "$6.25",
+            "certificateNumber": "49"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "d2af9018e258d24d24c4c5ac7aff259572d4557fe705c24916ee7ab6943961b7",
+          "retrievedAt": "2026-10-13T12:19:35.633Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2019",
+          "billNumber": "98900",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$103.91",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "05/30/2020",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$45.32",
+            "interestAmount": "$52.34",
+            "fees": "$6.25",
+            "certificateNumber": "43"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Historical certificate observation; current active liabilities are reported separately from the latest verified notice.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "c847cf94cf016ee493f2d51dfef7ef7eb077615f14709bcdb0062d887711cd62",
+          "retrievedAt": "2026-10-13T12:19:37.244Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2018",
+          "billNumber": "98300",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "06/01/2019",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$0.00",
+            "interestAmount": "$0.00",
+            "fees": "$0.00",
+            "certificateNumber": "46"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "09d975a89abe9a92401b7e1d8cee49e9d903f567c786f9429a7c3b399fd6dc49",
+          "retrievedAt": "2026-10-13T12:19:38.895Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2017",
+          "billNumber": "98200",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "06/01/2018",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$0.00",
+            "interestAmount": "$0.00",
+            "fees": "$0.00",
+            "certificateNumber": "48"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "fda886da4b34b37e39b18f5f73ff44cbeeee862518643fbddb1790d934cd157f",
+          "retrievedAt": "2026-10-13T12:19:40.525Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2016",
+          "billNumber": "97900",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "06/01/2017",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$0.00",
+            "interestAmount": "$0.00",
+            "fees": "$0.00",
+            "certificateNumber": "52"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "c93080edb2ebccede3599895127d371d35e11d547bb6b212703f5e6f92a73340",
+          "retrievedAt": "2026-10-13T12:19:42.198Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2015",
+          "billNumber": "97000",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "06/01/2016",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$0.00",
+            "interestAmount": "$0.00",
+            "fees": "$0.00",
+            "certificateNumber": "47"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "d4d1b71847d59c3e335c3e3f03310a859a8ea2ad9a6ef932eff10075055db625",
+          "retrievedAt": "2026-10-13T12:19:43.805Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2014",
+          "billNumber": "96800",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": null,
+            "date": "05/30/2015",
+            "holder": "9999999",
+            "interestRate": "18.00",
+            "faceAmount": "$0.00",
+            "interestAmount": "$0.00",
+            "fees": "$0.00",
+            "certificateNumber": "68"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "f1f4f45ad7b560310bfa04ba213cc690538859ce2aa8d78f3d0f66b50bded78f",
+          "retrievedAt": "2026-10-13T12:19:45.437Z"
+        },
+        {
+          "parcelId": "00420-0-00200",
+          "billYear": "2013",
+          "billNumber": "96300",
+          "sourceOwner": "FLETCHER CARRIE",
+          "documentStatus": "EXTRACTED",
+          "documentType": "certificate_notice",
+          "amountDue": "$0.00",
+          "paidAmount": null,
+          "paidDate": null,
+          "receiptNumber": null,
+          "combinedTaxesAndAssessments": null,
+          "certificate": {
+            "status": "UNKNOWN",
+            "statusRaw": "* CERTIFICATE SOLD *",
+            "date": "05/30/2014",
+            "holder": "9990151",
+            "interestRate": "18.00",
+            "faceAmount": "$0.00",
+            "interestAmount": "$0.00",
+            "fees": "$0.00",
+            "certificateNumber": "74"
+          },
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "The original historical notice prints zero unpaid balance; redemption, cancellation or expiration is not established.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sourceSha256": "04bd7fcb3b90e2395dd55cdebed476bd9088cb40a69facea798a2bfd6171f50b",
+          "retrievedAt": "2026-10-13T12:19:47.067Z"
+        }
+      ]
+    },
+    "ExtractionMetadata": {
+      "request_id": "f72b7d62-e911-4e87-bda2-9be95810aeb1",
+      "county_id": "bradford-fl",
+      "collected_at": "2026-10-13T12:19:22.502Z",
+      "match": {
+        "requested_address_type": "auto",
+        "candidates": [
+          {
+            "parcel_id": "00420-0-00200",
+            "address": "SW 180TH PL, BROOKER",
+            "mailing_address": "8130 SW 50TH PATH; LAKE BUTLER, FL 32054",
+            "owners": [
+              "FLETCHER CARRIE"
+            ],
+            "owner_matches_requested": true,
+            "address_match_type": "mailing_only",
+            "verified_address_match": true,
+            "source_id": "bradford_owner_reference_00420000200"
+          }
+        ],
+        "owner_reference_status": "COMPLETE",
+        "owner_reference_candidates": [
+          {
+            "parcel_id": "00420-0-00200",
+            "address": "SW 180TH PL BROOKER",
+            "owners": [
+              "FLETCHER CARRIE"
+            ]
+          }
+        ],
+        "status": "MATCHED",
+        "parcel_id": "00420-0-00200",
+        "input_address_type": "mailing",
+        "matched_address_types": [
+          "mailing"
+        ],
+        "match_method": "county_verified_owner_and_detected_address",
+        "notes": [
+          "Address meaning was detected from complete Bradford site and mailing searches with one independently verified owner/parcel. The actual property site and mailing address remain separate."
+        ],
+        "source_id": "bradford_assessment"
+      },
+      "errors": [],
+      "validation": {
+        "parcel": "MATCHED",
+        "taxYear": "MATCHED",
+        "billNumber": "108600",
+        "documentType": "certificate_notice",
+        "delinquentRowCount": 7,
+        "delinquentTotalReconciliation": "MATCHED",
+        "historical_public_query": {
+          "status": "COMPLETE_PUBLIC_QUERY",
+          "query_verified": true,
+          "search_records": 13,
+          "original_records_retrieved": 13
+        },
+        "parcel_join": "matched",
+        "appraiser_bill_year": {
+          "bill_year": "2025",
+          "latest_assessment_year": "2026",
+          "status": "bill_year_not_in_captured_appraiser_history"
+        }
+      },
+      "provenance": {
+        "original_annual_bill": {
+          "source_id": "tax_collector",
+          "source_url": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "sha256": "4920efed7518e8814b3d8b09c96b5d32448243f5132404f067db0f18657e72aa",
+          "format": "HTML",
+          "document_type": "certificate_notice",
+          "method": "POST"
+        }
+      },
+      "sources": [
+        {
+          "id": "tax_collector",
+          "url": "https://www.bradfordtaxcollector.com/Property/PriorBill",
+          "method": "POST",
+          "status": "verified",
+          "fetched_at": "2026-10-13T12:19:24.660Z",
+          "http_status": 200,
+          "sha256": "4920efed7518e8814b3d8b09c96b5d32448243f5132404f067db0f18657e72aa",
+          "duration_ms": 2212
+        }
+      ]
+    }
+  }
+}

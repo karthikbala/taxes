@@ -5,35 +5,29 @@ import vm from 'node:vm';
 import {capabilities,validateInput} from '../lib/live/router.mjs';
 import {clientCapabilities} from '../lib/client/profiles.mjs';
 import {validateClientInput} from '../lib/client/contract.mjs';
-import {pocWorkflows,pocRequest,workflowLabels,workflowSample,supportsNeighbors} from '../public/poc-workflows.mjs';
+import {pocWorkflows,pocRequest,catalogWorkflows,catalogRequest,workflowLabels,workflowSample,supportsNeighbors} from '../public/poc-workflows.mjs';
 import {renderValue,renderSections,renderValidation,resultBadge,resultRequestId} from '../public/poc-render.mjs';
 import {sourcePresentation} from '../public/source-status.mjs';
 
 const workflows=pocWorkflows(capabilities,clientCapabilities);
-test('POC retains every live county and only its explicitly supported search modes',()=>{
- assert.deepEqual(workflows.map(c=>c.id),capabilities.counties.map(c=>c.id));
- assert.equal(workflows.length,68);
- assert.equal(workflows.filter(c=>c.state==='FL'&&c.lookup_modes.includes('county')).length,20);
+test('POC preserves established address workflows alongside verified parcel extraction',()=>{
+ assert.deepEqual(workflows.map(c=>c.id),['allegheny-pa','baker-fl','bradford-fl','columbia-fl','desoto-fl','highlands-fl','miami-dade-fl','osceola-fl','palm-beach-fl','suwannee-fl','union-fl']);
  assert.equal(workflows.filter(c=>c.lookup_modes.includes('address')).length,3);
- assert.equal(workflows.filter(c=>c.lookup_modes.includes('state_roll')).length,67);
- for(const c of workflows){
-  for(const mode of c.lookup_modes){
-   const r=pocRequest(c,mode,{order:'offline-order',address:'100 TEST ST',owner:'TEST OWNER',transaction:'REFI',parcel:c.sample.parcel_id,includePdf:true});
-   if(mode==='address'){assert.equal(r.endpoint,'/api/v2/property/lookup');assert.equal(validateClientInput(r.body).county,c.id);}
-   else{assert.equal(r.endpoint,'/api/v1/property/lookup');assert.equal(validateInput(r.body).county,c.id);assert.equal(r.body.source_mode,mode);assert.equal(r.body.include_pdf,['county','collector'].includes(mode));assert.equal(r.body.parcel_id,c.sample.parcel_id);}
-  }
+ assert.equal(workflows.some(c=>c.lookup_modes.includes('state_roll')),false);
+ assert.equal(capabilities.counties.length,68,'the separate API directory remains intact');
+ for(const c of workflows)for(const mode of c.lookup_modes){
+  const r=pocRequest(c,mode,{order:'offline-order',address:'100 TEST ST',owner:'TEST OWNER',transaction:'REFI',parcel:c.sample.parcel_id,includePdf:true});
+  if(mode==='address')assert.equal(validateClientInput(r.body).county,c.id);
+  else assert.equal(validateInput(r.body).county,c.id);
  }
- assert.throws(()=>pocRequest(workflows.find(c=>c.id==='alachua-fl'),'county',{}));
- assert.throws(()=>pocRequest(workflows.find(c=>c.id==='pinellas-fl'),'address',{}));
+ for(const id of ['alachua-fl','miami-dade-fl','osceola-fl','polk-fl','pinellas-fl'])assert.throws(()=>pocRequest({id,lookup_modes:['county','address','state_roll']},'county',{}));
+ assert.throws(()=>pocRequest(workflows[0],'state_roll',{}));
 });
-test('collector account and neighbours are confined to their supported workflows',()=>{
- const palm=workflows.find(c=>c.id==='palm-beach-fl'),miami=workflows.find(c=>c.id==='miami-dade-fl');
- const fields={parcel:palm.sample.parcel_id,account:' 12345 ',includePdf:false};
- assert.equal(pocRequest(palm,'county',fields).body.collector_account_id,'12345');
- assert.equal('collector_account_id' in pocRequest(palm,'state_roll',fields).body,false);
- assert.equal('collector_account_id' in pocRequest(miami,'county',fields).body,false);
- assert.equal(supportsNeighbors(miami,'address'),true);
- for(const c of workflows)for(const mode of c.lookup_modes)if(c!==miami||mode!=='address')assert.equal(supportsNeighbors(c,mode),false);
+test('collector account remains confined to Palm Beach and Miami retains neighbours',()=>{
+ const palm=workflows.find(c=>c.id==='palm-beach-fl'),bradford=workflows.find(c=>c.id==='bradford-fl');
+ assert.equal(pocRequest(palm,'county',{parcel:palm.sample.parcel_id,account:' 12345 ',includePdf:false}).body.collector_account_id,'12345');
+ assert.equal('collector_account_id' in pocRequest(bradford,'county',{parcel:bradford.sample.parcel_id,account:'12345'}).body,false);
+ for(const c of workflows)for(const mode of c.lookup_modes)assert.equal(supportsNeighbors(c,mode),c.id==='miami-dade-fl'&&mode==='address');
 });
 
 // Execute the actual page controller with isolated DOM and API transports.
@@ -59,7 +53,7 @@ async function harness(clientResponse){
  const document={getElementById:id=>elements.get(id),createElement:tag=>new Element(tag)},calls=[];
  let neighbors;
  const source=readFileSync(new URL('../public/poc.js',import.meta.url),'utf8').replace(/^import .*?;\s*$/gm,'');
- const context={document,pocWorkflows,pocRequest,workflowLabels,workflowSample,supportsNeighbors,renderValue,renderSections,renderValidation,resultBadge,resultRequestId,sourcePresentation,
+ const context={document,pocWorkflows,pocRequest,catalogWorkflows,catalogRequest,workflowLabels,workflowSample,supportsNeighbors,renderValue,renderSections,renderValidation,resultBadge,resultRequestId,sourcePresentation,
   initNeighbors:(_doc,handlers)=>{neighbors=handlers;},selectedPropertyOrder:()=>{},selectedParcelCheck:()=>{},
   performance:{now:()=>0},setInterval:()=>1,clearInterval(){},setTimeout:()=>1,clearTimeout(){},AbortController,AbortSignal,URL,Blob,crypto:{randomUUID:()=> 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa'},sessionStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},
   location:{origin:'http://127.0.0.1:3000'},fetch:async(url,options)=>{
@@ -77,7 +71,7 @@ async function harness(clientResponse){
  assert.ok(neighbors,'page initialized');
  return {elements,calls,neighbors};
 }
-test('actual POC controller submits all 21 county parcel routes with auth and renders partial records and errors',async()=>{
+test('actual POC controller submits the eight admitted county parcel routes with auth and renders partial records and errors',async()=>{
  const {elements:e,calls}=await harness();
  for(const profile of workflows.filter(c=>c.lookup_modes.includes('county'))){
   await e.get('county').change(profile.id);await e.get('lookup-mode').change('county');
@@ -87,9 +81,9 @@ test('actual POC controller submits all 21 county parcel routes with auth and re
   const call=calls.at(-1);assert.equal(call.url,'/api/v1/property/lookup');assert.equal(call.options.headers.Authorization,'Bearer offline-page-key');assert.equal(call.body.county,profile.id);assert.equal(call.body.parcel_id,profile.sample.parcel_id);assert.equal('address' in call.body,false);
   assert.match(e.get('sections').textContent,/Test blocked collector|unavailable/);assert.match(e.get('sections').textContent,/TEST ADDRESS/);assert.match(e.get('error').textContent,/Test blocked collector/);assert.match(e.get('request-id').textContent,/offline-page-request/);assert.match(e.get('status').textContent,/Partial records/);assert.equal(e.get('download').disabled,false);
  }
- assert.equal(calls.length,21);
+ assert.equal(calls.length,8);
 });
-test('the three detailed county forms keep their v2 order and sample identity',async()=>{
+test('all three established address forms keep their v2 order and sample identity',async()=>{
  const {elements:e,calls}=await harness();
  for(const profile of workflows.filter(c=>c.lookup_modes.includes('address'))){
   await e.get('county').change(profile.id);
@@ -99,30 +93,23 @@ test('the three detailed county forms keep their v2 order and sample identity',a
  }
  assert.equal(calls.length,3);
 });
-test('mode and county switches clear stale results and disable inappropriate fields without automatic lookups',async()=>{
+test('county switches preserve established workflows and show their source limits',async()=>{
  const {elements:e,calls}=await harness();
- assert.equal(e.get('county').value,'miami-dade-fl');assert.equal(e.get('lookup-mode').value,'address');assert.equal(e.get('address').disabled,false);
- assert.equal(e.get('neighbor-controls').hidden,false);assert.equal(calls.length,0);
- await e.get('county').change('alachua-fl');
- assert.equal(e.get('lookup-mode').value,'state_roll');assert.equal(e.get('include-pdf').disabled,true);assert.match(e.get('workflow-note').textContent,/Collector balances.*not retrieved/);assert.match(e.get('request').textContent,/api\/v1/);
- await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.include_pdf,false);assert.match(e.get('sections').textContent,/No current collector balance/);
- await e.get('county').change('palm-beach-fl');assert.equal(e.get('account-field').hidden,false);e.get('collector-account').value='12345';
- await e.get('lookup-mode').change('state_roll');assert.equal(e.get('collector-account').disabled,true);assert.equal(e.get('download').disabled,true);assert.equal(e.get('sections').children.length,0);
- await e.get('county').change('miami-dade-fl');assert.equal(e.get('owner').value,'GASTON GIRARD');assert.equal(e.get('address').disabled,false);assert.equal(e.get('parcel').disabled,true);assert.equal(e.get('neighbor-controls').hidden,false);assert.match(e.get('request').textContent,/api\/v2/);assert.equal(calls.length,1);
-});
-test('Pinellas uses its mode-specific source sample without replacing a user-entered parcel',async()=>{
- const {elements:e,calls}=await harness();await e.get('county').change('pinellas-fl');
- assert.equal(e.get('parcel').value,'01-30-14-01117-000-0001');
- await e.get('lookup-mode').change('state_roll');assert.equal(e.get('parcel').value,'14 30 01 01117 000 0001');
- await e.get('lookup-mode').change('county');assert.equal(e.get('parcel').value,'01-30-14-01117-000-0001');
- e.get('parcel').value='CUSTOM-PARCEL';await e.get('lookup-mode').change('state_roll');assert.equal(e.get('parcel').value,'CUSTOM-PARCEL');assert.equal(calls.length,0);
+ assert.equal(e.get('county').value,'bradford-fl');assert.equal(e.get('lookup-mode').value,'address');assert.equal(e.get('neighbor-controls').hidden,true);assert.equal(calls.length,0);
+ await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.length,1);
+ await e.get('county').change('palm-beach-fl');assert.equal(e.get('account-field').hidden,false);assert.equal(e.get('lookup-mode').value,'county');assert.equal(e.get('download').disabled,true);assert.equal(e.get('sections').children.length,0);
+ await e.get('county').change('bradford-fl');assert.equal(e.get('owner').value,'WALMART STORES EAST, LP');assert.equal(e.get('address').disabled,false);assert.equal(e.get('parcel').disabled,true);assert.equal(calls.length,1);
+ assert.equal(e.get('county').children.length,11);
+ assert(e.get('county').children.every(o=>!['alachua-fl','polk-fl'].includes(o.value)));
+ assert.equal(e.get('lookup-mode').children.some(o=>o.value==='state_roll'),false);
 });
 
-test('workflow table distinguishes address search from parcel support without claiming unsupported contracts',async()=>{
+test('workflow table lists only admitted counties and their accurate search scope',async()=>{
  const {elements:e}=await harness();const rows=e.get('coverage').children;
+ assert.equal(rows.length,11);assert.match(e.get('catalog-summary').textContent,/11 counties: 11 with verified production samples; 0 with source access limits/);
  const baker=rows.find(r=>r.children[0].textContent==='Baker County, Florida');assert.equal(baker.children[2].textContent,'Use parcel ID');assert.match(baker.children[1].textContent,/collector and original bill only/);
- const miami=rows.find(r=>r.children[0].textContent==='Miami-Dade County, Florida');assert.equal(miami.children[2].textContent,'Available · source gaps shown');
- const alachua=rows.find(r=>r.children[0].textContent==='Alachua County, Florida');assert.equal(alachua.children[2].textContent,'Use parcel ID · assessment roll only');assert(!e.get('coverage').textContent.includes('Not enabled'));
+ const bradford=rows.find(r=>r.children[0].textContent==='Bradford County, Florida');assert.equal(bradford.children[2].textContent,'Available · source gaps shown');
+ assert(!e.get('coverage').textContent.includes('annual roll'));
 });
 
 test('mailing review renders distinct sites and only fills a parcel after explicit selection',async()=>{
@@ -141,4 +128,40 @@ test('verified physical-address option switches to its actual county without sub
  const buttons=[];const walk=n=>{if(n.tag==='button')buttons.push(n);for(const c of n.children)walk(c)};walk(e.get('sections'));assert.equal(buttons.length,1);await buttons[0].listeners.click[0]();assert.equal(e.get('county').value,'union-fl');assert.equal(e.get('parcel').value,site.parcel_id);assert.equal(e.get('lookup-mode').value,'county');assert.equal(calls.length,1);await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.county,'union-fl');assert.equal(calls.at(-1).body.parcel_id,site.parcel_id);
 });
 
-test('Bradford mailing mode is explicit in the actual controller and resets when county changes',async()=>{const {elements:e,calls}=await harness();await e.get('county').change('bradford-fl');assert.equal(e.get('address-type').value,'site');assert.equal(e.get('mailing-mode-field').hidden,false);await e.get('address-type').change('mailing');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';await e.get('form').onsubmit({preventDefault(){}});assert.equal(calls.at(-1).body.addressType,'mailing');assert.equal(calls.at(-1).body.address,'8130 SW 50TH PATH');await e.get('county').change('miami-dade-fl');assert.equal(e.get('address-type').value,'site');assert.equal(e.get('mailing-mode-field').hidden,true);});
+test('address lookup has no county-specific address-mode control',async()=>{const {elements:e,calls}=await harness();assert.equal(e.has('address-type'),false);assert.equal(e.has('mailing-mode-field'),false);await e.get('form').onsubmit({preventDefault(){}});assert.equal('addressType' in calls[0].body,false);});
+
+test('Bradford automatically submits and displays detected mailing meaning without changing the supplied address',async()=>{
+ const result={status:'partial',scrapTaxOrderRequest:{matchStatus:'MATCHED',PropertyInformation:{ParcelNumber:'00420-0-00200',PropertyAddress:'SW 180TH PL, BROOKER',MailingAddress:'8130 SW 50TH PATH'},DelinquencyInformation:{coverage:'PARTIAL'}},ExtractionMetadata:{match:{status:'MATCHED',requested_address_type:'auto',input_address_type:'mailing',matched_address_types:['mailing']},sources:[],section_status:{PropertyInformation:'EXTRACTED'}}};
+ const {elements:e,calls}=await harness(result);await e.get('county').change('bradford-fl');e.get('address').value='8130 SW 50TH PATH';e.get('owner').value='FLETCHER CARRIE';
+ await e.get('form').onsubmit({preventDefault(){}});
+ assert.equal(calls.length,1);assert.equal('addressType' in calls[0].body,false);assert.equal(e.get('address').value,'8130 SW 50TH PATH');
+ assert.match(e.get('summary').textContent,/Owner mailing address.*detected from county records/);assert.match(e.get('sections').textContent,/00420-0-00200/);assert.match(e.get('sections').textContent,/SW 180TH PL, BROOKER/);
+});
+
+test('automatic role ambiguity shows verified candidates and waits for explicit parcel selection',async()=>{
+ const candidates=[{parcel_id:'05194-0-00000',address:'SE 11TH AVE, STARKE',owners:['CALLAHAN JAMES R & CHARLOTTE'],owner_matches_requested:true,verified_address_match:true,address_match_type:'mailing_only'},{parcel_id:'05379-0-00000',address:'8280 SE SWEET BAY DR',owners:['CALLAHAN JAMES R & CHARLOTTE'],owner_matches_requested:true,verified_address_match:true,address_match_type:'site'}];
+ const {elements:e,calls}=await harness({status:'error',ExtractionMetadata:{match:{status:'AMBIGUOUS',requested_address_type:'auto',candidates},sources:[]}});
+ await e.get('county').change('bradford-fl');await e.get('form').onsubmit({preventDefault(){}});
+ assert.match(e.get('status').textContent,/confirmation needed/);assert.match(e.get('sections').textContent,/More than one property matches/);assert.equal(calls.length,1);
+ const buttons=[];const walk=n=>{if(n.tag==='button')buttons.push(n);for(const c of n.children)walk(c)};walk(e.get('sections'));
+ assert.equal(buttons.length,2);await buttons[0].listeners.click[0]();assert.equal(e.get('parcel').value,'05194-0-00000');assert.equal(calls.length,1,'Choosing a candidate only fills the form');
+});
+
+test('all address-capable county API workflows use the same address-and-owner request without mode selection',()=>{
+ for(const profile of catalogWorkflows(capabilities,clientCapabilities).filter(p=>p.lookup_modes.includes('address'))){
+  const r=catalogRequest(profile,'address',{order:'generic-address',address:'100 TEST ST',owner:'TEST OWNER',transaction:'REFI',addressType:'mailing'});
+  assert.equal('addressType' in r.body,false);assert.equal(r.body.county,profile.id);assert.equal(r.body.address,'100 TEST ST');assert.equal(r.body.ownerName,'TEST OWNER');
+ }
+});
+
+test('Miami and Osceola have verified address samples without widening parcel support',async()=>{
+ const {elements:e,calls}=await harness();
+ for(const id of ['miami-dade-fl','osceola-fl']){
+  const p=workflows.find(c=>c.id===id);assert.deepEqual(p.lookup_modes,['address']);assert.equal(p.poc_verification,'sample_verified');
+  await e.get('county').change(id);assert.doesNotMatch(e.get('workflow-note').textContent,/Source access is currently limited/);
+  assert.doesNotMatch(e.get('county').children.find(o=>o.value===id).textContent,/source access limited/);
+  const row=e.get('coverage').children.find(r=>r.children[0].textContent===p.name);assert.match(row.children[3].textContent,/Sample verified/);assert.doesNotMatch(row.children[3].textContent,/full retrieval unverified/);
+  assert.throws(()=>pocRequest(p,'county',{}));
+ }
+ assert.equal(calls.length,0,'Changing counties must not trigger source work');
+});

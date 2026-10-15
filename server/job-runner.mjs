@@ -41,12 +41,12 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
     const ready=await managedPreflight(env);if(!ready.ready)throw problem('managed_access_not_ready',503,'Managed source entitlement or authorized spending was not verified.');
     const intent=randomUUID();store.session(job.id,key,{id:intent,status:'dispatching'});
     let capture;
-    try{capture=await managedBrowser({...args,signal:ctl.signal,binaryTransfer:env.TAXES_ARTIFACT_INGEST_ORIGIN?binaryTransfer:undefined,sessionObserver:event=>store.session(job.id,key,{...event,id:intent})});}
+    try{capture=await managedBrowser({...args,signal:ctl.signal,binaryTransfer:env.TAXES_ARTIFACT_INGEST_ORIGIN?binaryTransfer:undefined,sessionObserver:event=>{store.session(job.id,key,{...event,id:intent});if(event.receipt)store.artifact(job.id,'provider_receipt:'+intent,'provider_receipt',Buffer.from(JSON.stringify(event.receipt)),{policy:event.receipt.policy});}});}
     catch(e){
      const recorded=store.sessions(job.id).find(s=>s.id===intent);
      // These guards reject before reservation/session dispatch in the reviewed
      // provider adapter. Network or unknown outcomes remain unresolved.
-     if(recorded?.status==='dispatching'&&!recorded.session_id&&!recorded.lease_id&&['staging_capture_limit','browser_budget_exhausted','browser_budget_unavailable','source_url_rejected','invalid_deed_folio'].includes(e.code)){
+     if(recorded?.status==='dispatching'&&!recorded.session_id&&!recorded.lease_id&&['staging_capture_limit','browser_budget_exhausted','browser_budget_unavailable','operator_recovery_scope','source_url_rejected','invalid_deed_folio'].includes(e.code)){
       store.session(job.id,key,{id:intent,status:'reconciled'});store.event(job.id,store.get(job.id).stage,'not_dispatched',e.code);
      }
      throw e;
@@ -110,6 +110,7 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
     if(!response.ok)continue;const receipt=await response.json();if(receipt.success!==true)continue;
     const row=env.DB.sqlite.prepare('SELECT reserved_milli_usd,status FROM browser_runs WHERE id=?').get(session.lease_id);
     if(row?.status==='reserved')await reconcileBrowser(env.DB,{id:session.lease_id,reserve:row.reserved_milli_usd},receipt.creditsBilled,'recovered_cleanup');
+    if(!row)store.artifact(session.job_id,'provider_receipt:'+session.id,'provider_receipt',Buffer.from(JSON.stringify({policy:'operator_or_staging_override',session_id:session.session_id,lease_id:session.lease_id,credits_billed:Number.isInteger(receipt.creditsBilled)?receipt.creditsBilled:null,cleanup_confirmed:true,recovered_cleanup:true,recorded_at:new Date(now()).toISOString()})),{recovered_cleanup:true});
     store.session(session.job_id,session.cache_key,{...session,status:'reconciled'});logEvent(session.job_id,'retrieval_session_reconciled',{status:'reconciled'});
    }catch{logEvent(session.job_id,'retrieval_cleanup_pending',{error_code:'cleanup_pending'});}
   }
