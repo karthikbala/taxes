@@ -16,6 +16,8 @@ export const verifiedPocModes = Object.freeze({
   'suwannee-fl': ['county'],
   'union-fl': ['county']
 });
+export const phasePocCounties=Object.freeze(['palm-beach-fl','miami-dade-fl','hillsborough-fl','lee-fl','sarasota-fl','pasco-fl','volusia-fl','santa-rosa-fl','highlands-fl','polk-fl','charlotte-fl','martin-fl','hernando-fl','osceola-fl','pinellas-fl','desoto-fl','bradford-fl','union-fl','columbia-fl','suwannee-fl']);
+const admittedPocModes=Object.freeze({...verifiedPocModes,...Object.fromEntries(phasePocCounties.map(id=>[id,[...(verifiedPocModes[id]||[]).filter(mode=>mode==='address'),'county']]))});
 export function catalogWorkflows(parcelCatalog, clientCatalog) {
   const clients = new Map(clientCatalog.counties.map(c => [c.id, c]));
   return parcelCatalog.counties.map(county => {
@@ -28,9 +30,9 @@ export function catalogWorkflows(parcelCatalog, clientCatalog) {
 }
 export function pocWorkflows(parcelCatalog, clientCatalog) {
   return catalogWorkflows(parcelCatalog, clientCatalog).flatMap(county => {
-    const verified = (verifiedPocModes[county.id] || []).filter(mode=>county.lookup_modes.includes(mode));
-    const modes = [...(county.client?.address_lookup_enabled ? ['address'] : []), ...verified.filter(mode=>mode!=='address')];
-    return modes.length ? [{ ...county, lookup_modes: modes, poc_verification: verified.length?'sample_verified':'source_access_limited' }] : [];
+    const admitted = (admittedPocModes[county.id] || []).filter(mode=>county.lookup_modes.includes(mode));
+    const modes = admitted;
+    return modes.length ? [{ ...county, lookup_modes: modes, poc_verification: verifiedPocModes[county.id]?'sample_verified':'available_with_limits' }] : [];
   });
 }
 export const workflowLabels = {
@@ -43,7 +45,7 @@ export function workflowSample(profile, mode) {
   return profile.samples?.[mode] || profile.sample;
 }
 export function automaticPocMode(profile, fields = {}) {
-  const modes = (verifiedPocModes[profile?.id] || []).filter(mode=>profile?.lookup_modes?.includes(mode));
+  const modes = (admittedPocModes[profile?.id] || []).filter(mode=>profile?.lookup_modes?.includes(mode));
   if (!modes.length) throw new Error('Select an available county.');
   if (!fields.parcel?.trim() && modes.includes('address')) return 'address';
   const mode = modes.find(mode => mode === 'county') || modes.find(mode => mode === 'collector');
@@ -57,7 +59,8 @@ export function automaticPocRequest(profile, fields) {
   return pocRequest(profile, mode, { ...fields, parcel: fields.parcel?.trim() });
 }
 export function pocRequest(profile, mode, fields) {
-  if (!profile?.lookup_modes.includes(mode) || !(verifiedPocModes[profile.id]?.includes(mode) || mode==='address'&&profile.client?.address_lookup_enabled)) throw new Error('This lookup mode is unavailable for the selected county.');
+  if (!profile?.lookup_modes.includes(mode) || !(admittedPocModes[profile.id]?.includes(mode) || mode==='address'&&profile.client?.address_lookup_enabled)) throw new Error('This lookup mode is unavailable for the selected county.');
+  if(mode==='county'&&phasePocCounties.includes(profile.id))return {endpoint:'/api/v3/property/jobs',body:{county:profile.id,parcel_id:fields.parcel,...(profile.id==='palm-beach-fl'&&fields.account?.trim()?{collector_account_id:fields.account.trim()}:{})}};
   return catalogRequest(profile, mode, fields);
 }
 export function catalogRequest(profile, mode, fields) {

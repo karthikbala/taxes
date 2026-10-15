@@ -29,13 +29,14 @@ For development use `npm run dev`. Node watches imported code; restart it after 
 - `server/sqlite.mjs`: persistent local database with atomic reservation/reconciliation.
 - `lib/client/`, `lib/live/`: existing deterministic source adapters, parsing, matching and validation.
 - `/florida`: the dated 67-county source matrix, with search and backend/access filters.
-- `/poc`: unified county workflow selector with rich address/owner and existing parcel lookups; `/live`: older parcel explorer with the same authenticated parcel API.
+- `/poc`: twenty Phase 1/Phase 2 Florida parcel workflows, plus Baker and Allegheny; automatic routing retains the three supported address/owner workflows.
+- `/live`: parcel retrieval and authenticated twenty-county readiness tracking.
 - `/healthz`: liveness only, no provider calls.
 - `/api/v2/health`: protected readiness/preflight, distinct from liveness or extraction proof.
 
 Environment variables are listed in [.env.example](.env.example). The defaults bind `127.0.0.1:3000`, use SQLite and disable managed browser access. Production requires `INVISIA_POC_API_KEY`. Use a durable `TAXES_DB_PATH` and privately provision the production environment; never commit env files or databases.
 
-Both v1 and v2 lookup endpoints require the Bearer key on the standalone server. Source capability endpoints remain public.
+All v1/v2 lookups, v2/v3 jobs, artifacts and operational tracking require the Bearer key on the standalone server. Source capability endpoints remain public.
 
 ```sh
 curl -X POST 'http://127.0.0.1:3000/api/v2/property/lookup' \
@@ -48,15 +49,19 @@ Load `POC_ACCESS_KEY` securely from your local environment before using curl. Th
 
 ## Sources and testing
 
-The `/poc` selector includes eleven sample-verified counties: Allegheny (Pennsylvania), Baker, Bradford, Columbia, DeSoto, Highlands, Miami-Dade, Osceola, Palm Beach, Suwannee and Union (ten Florida counties). Verification covers tested properties, not every record or historical clearance. Miami-Dade and Osceola require authorized managed recovery when their collectors restrict direct access; defaults remain guarded.
+The `/poc` selector groups twenty Florida counties into Phase 1 and Phase 2, followed by Baker and Allegheny in an additional group. Availability describes implemented extraction; it does not establish twelve-property acceptance for every county. Restricted collectors require authorized recovery, and defaults remain guarded.
 
-The common form chooses the admitted adapter automatically. Bradford, Miami-Dade and Osceola accept address and owner; Bradford detects property-site versus owner-mailing meaning from county records and sends ambiguous matches for review. An entered parcel selects an admitted county/collector route only where verified. Miami-Dade and Osceola remain address-only. Baker is collector-only; other listed counties require a parcel. Palm Beach optionally accepts its same-parcel collector account. County changes preserve typed address/owner, clear county-specific identifiers and never dispatch a lookup. **Use example** fills inputs only on request. Annual-roll and unverified workflows remain outside the POC.
+The common form chooses the adapter and relevant fields automatically. All twenty phase counties accept parcels through authenticated `POST /api/v3/property/jobs`; poll the returned job link, or cancel/resume through its links. Results retain normalized client sections, original native fields, evidence and explicit gaps. Bradford, Miami-Dade and Osceola also retain address/owner workflows through v2. Bradford detects site versus mailing addresses and preserves ambiguous matches for review. An entered parcel takes priority. Palm Beach optionally accepts its same-parcel collector account; Baker remains collector-only. Saved jobs restore their v2/v3 namespace without creating a new lookup. The v1 synchronous API remains compatible.
+
+Authenticated `GET /api/v3/operations/counties` reports implementation state, field coverage and acceptance progress separately. See [the current PR verification checkpoint](docs/reliability/PR8-CURRENT-VERSION-2026-10-15.md) for staging identity, test evidence and remaining acceptance gates.
 
 See [the fresh PR verification checkpoint](FRESH-PR-VERIFICATION-2026-10-13.md) and [dated production acceptance](docs/PRODUCTION-MIAMI-OSCEOLA-RECOVERY-2026-10-13.md).
 
 Osceola includes exact-account Collector certificate and tax-deed reports. The independent Clerk parcel search is optional: privately provision `SCRAPEDO_API_KEY` and explicitly enable `INVISIA_OSCEOLA_CLERK_ENABLED=1`. It uses one bounded native HTTP query through Scrape.do and the existing spending policy. Public-query completeness does not establish historical/title clearance. See [the dated source and staging evidence](docs/OSCEOLA-CERTIFICATE-DEED-COVERAGE-2026-10-12.md).
 
 Runtime extraction is fixed code, never an LLM call. Sample inputs require clicking Use example. Miami defaults to the Zeneral-verified T-15 / GASTON GIRARD neighbour example with same-building units enabled. The original client-supplied unit-401 sample remains a regression fixture and API example; the other two county defaults are Zeneral-selected public examples.
+
+For the current client acceptance scope, use the [Besil three-county regression cases](docs/BESIL-REGRESSION-TESTCASES.md). `npm run test:besil` runs the selected offline checks, with `-- --county miami-dade-fl`, `osceola-fl` or `bradford-fl` for a county pass. Fresh source/API/public-UI verification is a separate checklist for the next live run.
 
 `npm test` blocks external source/provider traffic. Fixtures mock those transports; HTTP server tests explicitly allow literal loopback only. GitHub CI runs offline tests and the self-host build on Node 22. It does not deploy or use provider secrets.
 
@@ -101,4 +106,4 @@ Miami-Dade, Osceola and Bradford address orders now use authenticated durable jo
 
 ## Bradford automatic address detection
 
-The POC uses the same address-and-owner form across counties, without an address-meaning selector. Bradford address orders default to automatic detection (`addressType: "auto"` when omitted). Complete county site and owner searches must identify one parcel with the exact owner and site or mailing street/unit; different parcels remain ambiguous, and incomplete searches block automatic selection. The response records the detected address meaning and retains the actual property site separately from the supplied address. Explicit `addressType: "site"` / `"mailing"` overrides remain available to API callers. This detection is Bradford-only; other counties keep their existing behavior. See [Besil identity and automated-recovery acceptance](docs/BESIL-IDENTITY-AND-AUTOMATION-2026-10-13.md).
+The POC uses the same address-and-owner form across counties, without an address-meaning selector. Bradford address orders default to automatic detection (`addressType: "auto"` when omitted). Complete county site and owner searches must identify one parcel with the exact owner and site or mailing street/unit; different parcels remain ambiguous, and incomplete searches block automatic selection. The response records the detected address meaning and retains the actual property site separately from the supplied address. Explicit `addressType: "site"` / `"mailing"` overrides remain available to API callers. This detection is Bradford-only; other counties keep their existing behavior. See [automatic-address and environment-isolation acceptance](docs/BRADFORD-AUTO-ADDRESS-CHECKPOINT-2026-10-13.md).

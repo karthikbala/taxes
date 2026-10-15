@@ -4,9 +4,11 @@ This application has a standalone Node 22 server for local development and futur
 
 ## Request path
 
-`/poc` → browser `/poc.js` → automatic admitted-adapter routing from entered fields. Address-and-owner orders use authenticated `POST /api/v2/property/lookup` → input normalization → county address/owner resolution → appraiser sections → identity-joined collector history/original annual bill → contract serialization → JSON/UI. Parcel orders use the existing authenticated `/api/v1/property/lookup`; their original parcel envelope and source coverage are rendered separately.
+`/poc` → browser `/poc.js` → automatic routing from county and entered identifiers. Twenty Phase 1/Phase 2 parcel workflows submit authenticated v3 durable jobs; the existing three address/owner workflows retain v2. Baker and Allegheny use the compatible v1 parcel interface. Address matching preserves identity and ambiguity before joining assessment, collector history and original documents.
 
-`public/poc-workflows.mjs` combines the v1 catalogue and enabled v2 address contracts. The POC retains all three established address workflows, alongside nine counties with production parcel/collector sample verification. Source-limited address workflows stay visible with their availability stated; visibility does not promote acceptance. The full API catalogue remains separate, including explicitly requested Florida annual-roll modes. Annual-roll data is never an automatic fallback. County/input changes clear prior results and disable irrelevant fields; parcel JSON retains its own fields and source gaps.
+`lib/reliability/parcel.mjs` maps native county data into client sections with field evidence and structured gaps, retaining the original envelope in `legacy`. `server/job-runner.mjs` shares persistent checkpoints, attempts, leases, cancellation and artifact ownership across v2 and v3. `server/county-tracking.mjs` adds an acceptance table without replacing existing jobs or spending history. Acceptance requires original source artifacts, an authenticated completed result and operator-captured UI evidence for the exact revision.
+
+`public/poc-workflows.mjs` keeps Phase 1/Phase 2 first, with Baker and Allegheny in an additional group. Visibility does not promote acceptance. Annual-roll data is never an automatic fallback. County/input changes clear prior results and disable irrelevant fields. Saved jobs preserve the API namespace and restore without a new source request.
 
 | Component | Responsibility |
 | --- | --- |
@@ -24,7 +26,7 @@ This application has a standalone Node 22 server for local development and futur
 | `lib/live/managed-browser.mjs`, `browser-budget.mjs` | Approved scripted browser capture and durable reservation/reconciliation |
 | `tests/`, `tests/fixtures/` | Offline independent contract, source parser, identity, renderer and failure evidence |
 
-`/live` and `/api/v1/property/lookup` retain the legacy parcel interface. `/api/v1/sources` exposes the broader source catalogue. `/api/v2/sources` exposes configured client profiles; `/api/v2/health` is authenticated readiness/preflight. Neither health nor capability output proves fresh extraction correctness or the loaded source revision.
+`/live` uses v3 parcel jobs for the twenty phase counties and preserves legacy lookup for other catalogue entries; `/api/v1/property/lookup` remains compatible. Authenticated `/api/v3/operations/counties` exposes readiness and acceptance progress. `/api/v1/sources` exposes the broader source catalogue. `/api/v2/sources` exposes configured client profiles; `/api/v2/health` is authenticated readiness/preflight. Neither health nor capability output proves fresh extraction correctness or the loaded source revision.
 
 ## Matching and extraction boundaries
 

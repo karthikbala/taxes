@@ -1,3 +1,5 @@
+import {parcelLookup,parcelWorkflow} from '../lib/reliability/parcel.mjs';
+import {createCountyTracking} from './county-tracking.mjs';
 import {makeScrapedoClerk} from '../lib/client/osceola-clerk.mjs';
 import {extractNeighborProperties} from '../lib/client/neighbors.mjs';
 import {debitScrapedoProbe} from '../lib/client/external-probe-budget.mjs';
@@ -27,10 +29,11 @@ async function inputJSON(request){
   const all=new Uint8Array(bytes);let offset=0;for(const part of parts){all.set(part,offset);offset+=part.length;}
   try{return JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(all));}catch{throw problem('invalid_json',400,'Supply valid JSON.');}
 }
-export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'public'),logSink,deadlineMs=120000,lookupClient=clientLookup,lookupLegacy=legacyLookup,lookupNeighbors=extractNeighborProperties}={}){
+export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'public'),logSink,deadlineMs=120000,lookupClient=clientLookup,lookupLegacy=legacyLookup,lookupNeighbors=extractNeighborProperties,lookupParcel=parcelLookup}={}){
  const provider=makeManagedBrowser(env),paid=semaphore();
  const managedBrowser=provider?args=>paid(()=>provider(args),args.signal):null,clerkProvider=makeScrapedoClerk(env),scrapedoClerk=clerkProvider?args=>paid(()=>clerkProvider(args),args.signal):null;const pages=new Map(),pending=new Set();
- const jobs=env.TAXES_JOBS_ENABLED==='0'?null:createJobRunner({env,fetcher,lookup:lookupClient,managedBrowser,localBrowser:makeLocalBrowser(env),scrapedoClerk,logSink});
+ const jobs=env.TAXES_JOBS_ENABLED==='0'?null:createJobRunner({env,fetcher,lookup:lookupClient,lookupParcel,managedBrowser,localBrowser:makeLocalBrowser(env),scrapedoClerk,logSink});
+ const tracking=jobs?createCountyTracking(env.DB,jobs.store):null;
  const track=promise=>{const task=Promise.resolve(promise);pending.add(task);task.finally(()=>pending.delete(task)).catch(()=>{});return task;};
  async function handle(request){
   const requestId=randomUUID(),start=Date.now();const log=createLookupLogger(requestId,logSink);
@@ -47,6 +50,21 @@ export function createApp({env={},fetcher=fetch,staticRoot=resolve(projectRoot,'
     return json({api:'ready',managed_source_access:await managedPreflight(env)});
    }
    if(path==='/api/v2/sources'||path==='/api/v1/sources'){if(request.method!=='GET')return method('GET');return json(path.includes('/v2/')?clientCapabilities:capabilities);}
+   if(path==='/api/v3/operations/counties'){
+    if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');
+    if(request.method!=='GET')return method('GET');if(!tracking)return error('jobs_unavailable',503,'Durable tracking requires SQLite.');return json(tracking.status(env.TAXES_SOURCE_REVISION||'working-tree'));
+   }
+   if(path==='/api/v3/property/jobs'||path.startsWith('/api/v3/property/jobs/')){
+    if(!await authorized(request,env))return error('unauthorized',401,'Bearer access key required.');if(!jobs)return error('jobs_unavailable',503,'Durable parcel jobs require SQLite.');
+    if(path==='/api/v3/property/jobs'){if(request.method!=='POST')return method('POST');const created=jobs.createParcel(await inputJSON(request),request.headers.get('idempotency-key'),request.headers.get('x-retrieval-access')||'configured');return json(created.job,created.reused?200:202,{Location:created.job.links.self});}
+    const match=path.match(/^\/api\/v3\/property\/jobs\/([a-f0-9-]{36})(?:\/(cancel|resume|artifacts)(?:\/([a-f0-9-]{36}))?)?$/);
+    if(!match)return error('not_found',404,'Job endpoint not found.');const [,id,action,artifact]=match;
+    if(jobs.store.get(id)?.input.__workflow!==parcelWorkflow)return error('job_not_found',404,'Parcel job not found.');
+    if(action==='cancel'){if(request.method!=='POST')return method('POST');return json(jobs.cancel(id));}
+    if(action==='resume'){if(request.method!=='POST')return method('POST');const body=await inputJSON(request);if(!body||typeof body!=='object'||Array.isArray(body)||Object.keys(body).some(k=>k!=='input'))return error('invalid_input',400,'Resume accepts an empty object or corrected input.');return json(jobs.resume(id,body.input?{...body.input,__workflow:parcelWorkflow}:undefined),202);}
+    if(action==='artifacts'){if(request.method!=='GET')return method('GET');const item=artifact&&jobs.readArtifact(id,artifact);if(!item)return error('not_found',404,'Artifact not found.');return new Response(item.bytes,{headers:{...headers,'Content-Type':'application/octet-stream','Content-Disposition':'attachment; filename="'+item.id+'"','X-Content-SHA256':item.sha256}});}
+    if(request.method!=='GET')return method('GET');return json(jobs.get(id));
+   }
    if(path==='/api/v2/property/jobs'||path.startsWith('/api/v2/property/jobs/')||path==='/api/v2/operations/retrieval'){
     const upload=path.match(/^\/api\/v2\/property\/jobs\/([a-f0-9-]{36})\/artifact-ingest\/([a-f0-9-]{36})$/);
     if(upload){

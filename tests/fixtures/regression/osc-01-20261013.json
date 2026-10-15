@@ -1,0 +1,575 @@
+{
+  "purpose": "Source-derived response subset for offline regression-checker tests only. No new live acceptance or runtime fallback.",
+  "source_response_sha256": "665895d962faa97c3db65564f227d00b19174a069bb8e437953f8b0ab31752d4",
+  "observed_on": "2026-10-13",
+  "case_id": "OSC-01",
+  "record": {
+    "scrap_order_id": "BESIL-PROD-RECOVERY-osceola",
+    "address": "3250 VINELAND",
+    "ownerName": "WAL-MART STORES EAST LP",
+    "county": "Osceola",
+    "state": "FL",
+    "errorMessage": "NA",
+    "status": "partial",
+    "scrapTaxOrderRequest": {
+      "matchStatus": "MATCHED",
+      "PropertyInformation": {
+        "ParcelNumber": "02-25-28-2850-0001-0010",
+        "PropertyAddress": "3250 VINELAND RD KISSIMMEE FL 34746-",
+        "MailingAddress": "ATTN PROPERTY TAX DEPT PO BOX 8050 MS 0555  BENTONVILLE AR 72716-0555",
+        "PrimaryZone": null,
+        "PrimaryLandUse": "1311 DEPT. STORES-IMP",
+        "BedsBathsHalf": null,
+        "Floors": null,
+        "LivingUnits": "0",
+        "LivingArea": "213543 Sq.Ft",
+        "AdjustedArea": null,
+        "LotSize": null,
+        "YearBuilt": "2005",
+        "Owners": [
+          "WAL-MART STORES EAST LP"
+        ],
+        "ownerOccupied": null,
+        "EffectiveYearBuilt": "2008",
+        "LotAreaAcres": "24.551",
+        "GrossBuildingArea": "224581 Sq.Ft",
+        "BuildingCount": "1",
+        "ValuationMethod": "Alternate Cost"
+      },
+      "AssessmentHistory": [
+        {
+          "Year": "2027",
+          "LandValue": "$6,991,600",
+          "BuildingValue": "$5,716,700",
+          "ExtraFeatureValue": "$777,500",
+          "MarketValue": "$13,485,800",
+          "AssessedValue": "$13,485,800",
+          "UncappedAssessedValue": null,
+          "Status": "WORKING",
+          "CertifiedDate": null,
+          "ValuationDate": "2026-10-12T03:31:57.52-04:00"
+        },
+        {
+          "Year": "2026",
+          "LandValue": "$6,991,600",
+          "BuildingValue": "$5,865,500",
+          "ExtraFeatureValue": "$784,800",
+          "MarketValue": "$13,641,900",
+          "AssessedValue": "$13,641,900",
+          "UncappedAssessedValue": "$13,641,900",
+          "Status": "CERTIFIED",
+          "CertifiedDate": "2026-10-06T00:00:00-04:00",
+          "ValuationDate": null
+        },
+        {
+          "Year": "2025",
+          "LandValue": "$6,991,600",
+          "BuildingValue": "$5,865,500",
+          "ExtraFeatureValue": "$789,700",
+          "MarketValue": "$13,646,800",
+          "AssessedValue": "$13,646,800",
+          "UncappedAssessedValue": "$13,646,800",
+          "Status": "CERTIFIED",
+          "CertifiedDate": "2026-06-10T00:00:00-04:00",
+          "ValuationDate": null
+        },
+        {
+          "Year": "2024",
+          "LandValue": "$6,991,600",
+          "BuildingValue": "$5,975,000",
+          "ExtraFeatureValue": "$797,000",
+          "MarketValue": "$13,763,600",
+          "AssessedValue": "$13,763,600",
+          "UncappedAssessedValue": "$13,763,600",
+          "Status": "CERTIFIED",
+          "CertifiedDate": "2025-03-31T00:00:00-04:00",
+          "ValuationDate": null
+        },
+        {
+          "Year": "2023",
+          "LandValue": "$6,347,400",
+          "BuildingValue": "$5,941,100",
+          "ExtraFeatureValue": "$801,300",
+          "MarketValue": "$13,089,800",
+          "AssessedValue": "$13,089,800",
+          "UncappedAssessedValue": "$13,089,800",
+          "Status": "CERTIFIED",
+          "CertifiedDate": "2024-02-12T00:00:00-05:00",
+          "ValuationDate": null
+        },
+        {
+          "Year": "2022",
+          "LandValue": "$5,288,800",
+          "BuildingValue": "$6,050,600",
+          "ExtraFeatureValue": "$811,800",
+          "MarketValue": "$12,151,200",
+          "AssessedValue": "$12,151,200",
+          "UncappedAssessedValue": "$12,151,200",
+          "Status": "CERTIFIED",
+          "CertifiedDate": "2023-03-24T00:00:00-04:00",
+          "ValuationDate": null
+        }
+      ],
+      "BenefitsInformation": [],
+      "AssessmentInformation": {
+        "Year": "2026",
+        "LandValue": "$6,991,600",
+        "BuildingValue": "$5,865,500",
+        "ExtraFeatureValue": "$784,800",
+        "MarketValue": "$13,641,900",
+        "AssessedValue": "$13,641,900",
+        "UncappedAssessedValue": "$13,641,900",
+        "Status": "CERTIFIED",
+        "CertifiedDate": "2026-10-06T00:00:00-04:00",
+        "ValuationDate": null
+      },
+      "TaxInformation": {
+        "accountNumber": "R022528-285000010010",
+        "type": "PAID",
+        "amountDue": "$0.00",
+        "statusMessage": "Your account is paid in full. There is nothing due at this time.",
+        "lastPaymentDate": "11/18/2025",
+        "lastPaymentAmount": "$273,974.06",
+        "amountPaidYear": "2025",
+        "note": "Account payment status and historical delinquency are separate observations."
+      },
+      "BillDetails": {
+        "taxYear": "2025",
+        "folio": "R022528-285000010010",
+        "municipality": null,
+        "millCode": "300",
+        "propertyAddress": null,
+        "mailingAddress": null,
+        "paidBy": "WALMART INC (PT)",
+        "receiptNumber": "121702900",
+        "paidDate": "11/18/2025",
+        "paidAmount": "$273,974.06"
+      },
+      "ParcelDetails": {
+        "millageRate": "13.85430",
+        "millageRateUnit": "mills",
+        "totalMillageRate": "13.85430",
+        "totalMillageRateUnit": "mills"
+      },
+      "TaxAmounts": {
+        "adValorem": "$189,066.86",
+        "nonAdValorem": "$96,322.79",
+        "totalDiscountable": "$285,389.65",
+        "totalTax": "$285,389.65"
+      },
+      "AdValoremMillage": [
+        {
+          "group": null,
+          "authority": "OSCEOLA CO",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "6.7000",
+          "taxesLevied": "$91,433.56"
+        },
+        {
+          "group": null,
+          "authority": "SAVE OSC MAN",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.2500",
+          "taxesLevied": "$3,411.70"
+        },
+        {
+          "group": null,
+          "authority": "EMER MED SRV",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "1.0682",
+          "taxesLevied": "$14,577.51"
+        },
+        {
+          "group": null,
+          "authority": "SCH STATE LW",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "3.0580",
+          "taxesLevied": "$41,731.91"
+        },
+        {
+          "group": null,
+          "authority": "CAPITAL OUTLAY",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "1.5000",
+          "taxesLevied": "$20,470.20"
+        },
+        {
+          "group": null,
+          "authority": "DISCRETIONARY",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.7480",
+          "taxesLevied": "$10,207.81"
+        },
+        {
+          "group": null,
+          "authority": "SFWMD EVERG",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.0327",
+          "taxesLevied": "$446.25"
+        },
+        {
+          "group": null,
+          "authority": "SO FL WATER",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.0948",
+          "taxesLevied": "$1,293.72"
+        },
+        {
+          "group": null,
+          "authority": "SFWMD OKEE",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.1026",
+          "taxesLevied": "$1,400.16"
+        },
+        {
+          "group": null,
+          "authority": "LIBRARY DIST",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.3000",
+          "taxesLevied": "$4,094.04"
+        },
+        {
+          "group": null,
+          "authority": "SAVE OSC DBT",
+          "assessedValue": "$13,646,800.00",
+          "exemptionValue": "$0.00",
+          "taxableValue": "$13,646,800.00",
+          "millage": "0.0000",
+          "taxesLevied": "$0.00"
+        }
+      ],
+      "NonAdValorem": [
+        {
+          "authority": "Fire Rescue Commercial Sq Ft",
+          "amount": "$96,322.79",
+          "rate": "0.4289",
+          "footageUnits": null,
+          "unitLabel": "Sq Ft"
+        }
+      ],
+      "DelinquencyInformation": {
+        "hasActiveDelinquency": null,
+        "knownTotalDue": null,
+        "knownPriorYearsDue": "$0.00",
+        "totalPriorYearsDue": null,
+        "currentYearDue": "$0.00",
+        "delinquentYears": [],
+        "coverage": "PARTIAL",
+        "unavailableYears": [],
+        "currentBillYear": "2025",
+        "asOf": "2026-10-13",
+        "timeZone": "America/New_York",
+        "note": "History is incomplete or inconclusive; no negative delinquency conclusion is available.",
+        "notes": [
+          "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out."
+        ],
+        "certificateSearch": {
+          "status": "INSPECTED_EMPTY",
+          "source_url": "https://county-taxes.net/osceola/reports/real-estate",
+          "report_id": "1520",
+          "query_verified": true,
+          "coverage": "COMPLETE_PUBLIC_QUERY",
+          "scope": "OSCEOLA_COLLECTOR_PUBLIC_CERTIFICATE_REPORT",
+          "record_count": 0,
+          "records": [],
+          "activeEvidence": [],
+          "currentRedemptionQuote": null,
+          "historicalClearanceEstablished": false,
+          "note": "Certificate face amounts, historical redemption receipts and repeated account balances are source fields, not a current redemption quote or additive liabilities. Collector tax-deed status is separate from the independent Clerk case index. Full historical clearance is not established.",
+          "requested_account": "R022528-285000010010",
+          "captured_count": 0,
+          "pages": [
+            {
+              "page": 1,
+              "fetched_at": "2026-10-13T14:08:05.941Z",
+              "reported_count": 0,
+              "captured_rows": 0,
+              "query": "account_number\tR022528-285000010010|\tcertificate_number\t*\tstatus\t/|/\tcert_status\t/|/\tstruck_to_county\t/|/\tdeed_status\t/|/\t"
+            }
+          ],
+          "year_scope": "No year, status, owner, address or date restriction; only records published by this public report. Earliest retained year is not established."
+        },
+        "taxDeedSearch": {
+          "status": "INSPECTED_EMPTY",
+          "source_url": "https://county-taxes.net/osceola/reports/real-estate",
+          "report_id": "1825",
+          "query_verified": true,
+          "coverage": "COMPLETE_PUBLIC_QUERY",
+          "scope": "OSCEOLA_COLLECTOR_PUBLIC_TAX_DEED_REPORT",
+          "record_count": 0,
+          "records": [],
+          "activeEvidence": [],
+          "currentRedemptionQuote": null,
+          "historicalClearanceEstablished": false,
+          "note": "Certificate face amounts, historical redemption receipts and repeated account balances are source fields, not a current redemption quote or additive liabilities. Collector tax-deed status is separate from the independent Clerk case index. Full historical clearance is not established.",
+          "requested_account": "R022528-285000010010",
+          "captured_count": 0,
+          "pages": [
+            {
+              "page": 1,
+              "fetched_at": "2026-10-13T14:08:09.830Z",
+              "reported_count": 0,
+              "captured_rows": 0,
+              "query": "account_number\tR022528-285000010010|\tdeed_status\t/|/\t"
+            }
+          ],
+          "year_scope": "No year, status, owner, address or date restriction; only records published by this public report. Earliest retained year is not established."
+        },
+        "clerkTaxDeedSearch": {
+          "status": "NOT_CONFIGURED",
+          "source_url": "https://officialrecords.osceolaclerk.org/browserviewtd/api/search",
+          "query_verified": false,
+          "coverage": "UNAVAILABLE",
+          "scope": "OSCEOLA_CLERK_PUBLIC_TAX_DEED_CASE_INDEX",
+          "record_count": null,
+          "records": [],
+          "historicalClearanceEstablished": false,
+          "note": "No complete independent Clerk parcel query was verified."
+        },
+        "coverageDetails": {
+          "publishedAnnualRows": "PARTIAL",
+          "unavailableYears": [],
+          "certificateEvidence": "OSCEOLA_COLLECTOR_PUBLIC_CERTIFICATE_REPORT",
+          "independentCertificateSearch": "INSPECTED_EMPTY",
+          "certificatePublicQueryCoverage": "COMPLETE_PUBLIC_QUERY",
+          "taxDeedEvidence": "OSCEOLA_COLLECTOR_PUBLIC_TAX_DEED_REPORT",
+          "collectorTaxDeedSearch": "INSPECTED_EMPTY",
+          "collectorTaxDeedPublicQueryCoverage": "COMPLETE_PUBLIC_QUERY",
+          "independentTaxDeedSearch": "NOT_CONFIGURED",
+          "independentTaxDeedPublicQueryCoverage": "UNAVAILABLE",
+          "historicalClearanceEstablished": false,
+          "note": "Collector and Clerk public queries cover only their published records. Missing annual years and undisclosed retention limits remain separate gaps; historical clearance is not established."
+        }
+      },
+      "FullLegalDescription": [
+        "CALYPSO CAY COMMERCIAL PB 17 PG 3 LOT 1 LESS BEG AT SW R/W OF SR 535 & NE COR OF LOT 1, S 37 DEG E 213.83 FT, S 53 DEG W 172.94 FT TO POC, CURVE RIGHT, RAD 18 FT, (CH BEARING N 82 DEG W 25.44 FT) WLY ALONG CURVE 28.26 FT, N 37 DEG W 195.74 FT, N 53 DEG E 190.76 FT TO POB"
+      ],
+      "SalesInformation": [
+        {
+          "SaleDate": "2004-04-14T00:00:00-04:00",
+          "Price": "$7,162,700",
+          "DeedType": "WARRANTY DEED",
+          "InstrumentBook": "2558",
+          "InstrumentPage": "2981",
+          "Grantors": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+          "Grantees": "WAL-AMRT STORES EAST LP",
+          "QualificationCode": "U",
+          "QualificationDescription": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+          "VacantImprovedCode": "I",
+          "MultiParcelReasonCode": "05",
+          "SourceTaxYear": "2027"
+        },
+        {
+          "SaleDate": "1999-03-24T00:00:00-05:00",
+          "Price": "$8,000,000",
+          "DeedType": "SPECIAL WARRANTY DEED",
+          "InstrumentBook": "1596",
+          "InstrumentPage": "1319",
+          "Grantors": "PROPERTY SECURITY FLORIDA INC",
+          "Grantees": "EPOCH-FLA CAPITAL LAND INVESTMENT",
+          "QualificationCode": "U",
+          "QualificationDescription": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+          "VacantImprovedCode": "I",
+          "MultiParcelReasonCode": "05",
+          "SourceTaxYear": "2027"
+        },
+        {
+          "SaleDate": "1992-12-31T00:00:00-05:00",
+          "Price": "$0",
+          "DeedType": "SPECIAL WARRANTY DEED",
+          "InstrumentBook": "1143",
+          "InstrumentPage": "0907",
+          "Grantors": "OSCEOLA 104 ASSOC",
+          "Grantees": "PROPERTYSECURITY FLORIDA INC",
+          "QualificationCode": "U",
+          "QualificationDescription": "QUAL@TIME OF SALE/MULTI PARCEL W/MULTI PRCL NUMBER",
+          "VacantImprovedCode": "V",
+          "MultiParcelReasonCode": "05",
+          "SourceTaxYear": "2027"
+        }
+      ]
+    },
+    "ExtractionMetadata": {
+      "request_id": "6e93c625-434c-4b1c-b902-f5b131174d98",
+      "county_id": "osceola-fl",
+      "collected_at": "2026-10-13T14:06:38.336Z",
+      "match": {
+        "status": "MATCHED",
+        "parcel_id": "022528285000010010",
+        "candidates": [
+          {
+            "parcel_id": "022528285000010010",
+            "address": "3250 VINELAND RD",
+            "owners": [
+              "WAL-MART STORES EAST LP"
+            ],
+            "source_id": "osceola_address_search"
+          }
+        ],
+        "notes": [
+          "Direct appraiser access was challenged; fresh native queries were recovered in one managed browser session and independently verified."
+        ],
+        "source_id": "osceola_assessment"
+      },
+      "errors": [],
+      "validation": {
+        "published_history_rows": "COMPLETE",
+        "parcel": "MATCHED",
+        "taxYear": "MATCHED",
+        "authorityRowCount": 11,
+        "combinedTotalReconciliation": "MATCHED",
+        "reconciliationTolerance": "$0.05",
+        "derivedFields": [
+          "TaxAmounts.adValorem",
+          "TaxAmounts.nonAdValorem",
+          "ParcelDetails.millageRate",
+          "ParcelDetails.totalMillageRate",
+          "PaymentDetails.discountNote",
+          "validation.authorityTaxChecks"
+        ],
+        "printedAdValoremTotal": "$189,066.86",
+        "printedNonAdValoremTotal": "$96,322.79",
+        "printedMillageRate": "13.8543",
+        "millageReconciliationRule": "Authority millage sum rounded to the printed total millage precision",
+        "authorityTaxChecks": [
+          {
+            "row": 0,
+            "authority": "OSCEOLA CO",
+            "status": "MATCHED",
+            "calculatedTax": "$91,433.56",
+            "printedTax": "$91,433.56",
+            "difference": "$0.00"
+          },
+          {
+            "row": 1,
+            "authority": "SAVE OSC MAN",
+            "status": "MATCHED",
+            "calculatedTax": "$3,411.70",
+            "printedTax": "$3,411.70",
+            "difference": "$0.00"
+          },
+          {
+            "row": 2,
+            "authority": "EMER MED SRV",
+            "status": "MATCHED",
+            "calculatedTax": "$14,577.51",
+            "printedTax": "$14,577.51",
+            "difference": "$0.00"
+          },
+          {
+            "row": 3,
+            "authority": "SCH STATE LW",
+            "status": "MATCHED",
+            "calculatedTax": "$41,731.91",
+            "printedTax": "$41,731.91",
+            "difference": "$0.00"
+          },
+          {
+            "row": 4,
+            "authority": "CAPITAL OUTLAY",
+            "status": "MATCHED",
+            "calculatedTax": "$20,470.20",
+            "printedTax": "$20,470.20",
+            "difference": "$0.00"
+          },
+          {
+            "row": 5,
+            "authority": "DISCRETIONARY",
+            "status": "MATCHED",
+            "calculatedTax": "$10,207.81",
+            "printedTax": "$10,207.81",
+            "difference": "$0.00"
+          },
+          {
+            "row": 6,
+            "authority": "SFWMD EVERG",
+            "status": "MATCHED",
+            "calculatedTax": "$446.25",
+            "printedTax": "$446.25",
+            "difference": "$0.00"
+          },
+          {
+            "row": 7,
+            "authority": "SO FL WATER",
+            "status": "MATCHED",
+            "calculatedTax": "$1,293.72",
+            "printedTax": "$1,293.72",
+            "difference": "$0.00"
+          },
+          {
+            "row": 8,
+            "authority": "SFWMD OKEE",
+            "status": "MATCHED",
+            "calculatedTax": "$1,400.16",
+            "printedTax": "$1,400.16",
+            "difference": "$0.00"
+          },
+          {
+            "row": 9,
+            "authority": "LIBRARY DIST",
+            "status": "MATCHED",
+            "calculatedTax": "$4,094.04",
+            "printedTax": "$4,094.04",
+            "difference": "$0.00"
+          },
+          {
+            "row": 10,
+            "authority": "SAVE OSC DBT",
+            "status": "MATCHED",
+            "calculatedTax": "$0.00",
+            "printedTax": "$0.00",
+            "difference": "$0.00"
+          }
+        ],
+        "authorityTaxReconciliation": "MATCHED",
+        "printedTotalsReconciliation": "MATCHED",
+        "parcel_join": "matched",
+        "appraiser_bill_year": {
+          "bill_year": "2025",
+          "latest_assessment_year": "2026",
+          "status": "captured_year_available"
+        }
+      },
+      "provenance": {
+        "original_annual_bill": {
+          "source_id": "receipt_pdf",
+          "source_url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7/print",
+          "sha256": "472dea39f0d24ef16030c2b56cce97645c6f9c585981e680d6d9af1c5e605523",
+          "format": "PDF",
+          "document_type": "Annual tax bill"
+        }
+      },
+      "sources": [
+        {
+          "id": "receipt_pdf",
+          "url": "https://county-taxes.net/iframe-taxsys/osceola.county-taxes.com/govhub/property-tax/b3NjZW9sYTpyZWFsX2VzdGF0ZTpwYXJlbnRzOmVkYmI0ZTZhLWU1MDktMTFlYi05MzgxLTAwNTA1NjgxODQyMA==/bills/e766d457-a479-11f0-b243-0050568184a7/print",
+          "method": "BROWSER_DOWNLOAD",
+          "status": "verified",
+          "fetched_at": "2026-10-13T14:08:11.515Z",
+          "duration_ms": null,
+          "sha256": "472dea39f0d24ef16030c2b56cce97645c6f9c585981e680d6d9af1c5e605523"
+        }
+      ]
+    }
+  }
+}

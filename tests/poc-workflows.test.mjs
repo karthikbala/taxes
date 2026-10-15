@@ -10,8 +10,8 @@ import {renderValue,renderSections,renderValidation,resultBadge,resultRequestId}
 import {sourcePresentation} from '../public/source-status.mjs';
 
 const workflows=pocWorkflows(capabilities,clientCapabilities);
-test('POC preserves verified counties and preserves the eleven verified county samples',()=>{
- assert.deepEqual(workflows.map(c=>c.id),['allegheny-pa','baker-fl','bradford-fl','columbia-fl','desoto-fl','highlands-fl','miami-dade-fl','osceola-fl','palm-beach-fl','suwannee-fl','union-fl']);
+test('POC admits all twenty phase counties and retains two existing additional workflows',()=>{
+ assert.equal(workflows.length,22);assert.equal(workflows.filter(c=>[1,2].includes(c.phase)).length,20);
  assert.equal(workflows.filter(c=>c.lookup_modes.includes('address')).length,3);
  assert.equal(workflows.some(c=>c.lookup_modes.includes('state_roll')),false);
  assert.equal(capabilities.counties.length,68,'the separate API directory remains intact');
@@ -20,7 +20,7 @@ test('POC preserves verified counties and preserves the eleven verified county s
   if(mode==='address')assert.equal(validateClientInput(r.body).county,c.id);
   else assert.equal(validateInput(r.body).county,c.id);
  }
- for(const id of ['alachua-fl','polk-fl','pinellas-fl'])assert.throws(()=>pocRequest({id,lookup_modes:['county','address','state_roll']},'county',{}));
+ for(const id of ['alachua-fl','orange-fl','duval-fl'])assert.throws(()=>pocRequest({id,lookup_modes:['county','address','state_roll']},'county',{}));
  assert.throws(()=>pocRequest(workflows[0],'state_roll',{}));
 });
 test('collector account is confined to Palm Beach and neighbours are confined to Miami address search',()=>{
@@ -46,7 +46,7 @@ class Element {
  async click(){for(const fn of this.listeners.click||[])await fn();}
  scrollIntoView(){}
 }
-async function harness(clientResponse,{savedInput,linkedJob,jobGaps=[]}={}){
+async function harness(clientResponse,{savedInput,linkedJob,savedApi='v2',jobGaps=[]}={}){
  const html=readFileSync(new URL('../public/poc.html',import.meta.url),'utf8'),elements=new Map();
  for(const match of html.matchAll(/<(\w+)[^>]*\bid="([^"]+)"/g))elements.set(match[2],new Element(match[1]));
  elements.get('status').parentElement=new Element();
@@ -58,11 +58,11 @@ async function harness(clientResponse,{savedInput,linkedJob,jobGaps=[]}={}){
  const context={document,pocWorkflows,pocRequest,automaticPocMode,automaticPocRequest,workflowSample,supportsNeighbors,renderValue,renderSections,renderValidation,resultBadge,resultRequestId,sourcePresentation,
   initNeighbors:(_doc,handlers)=>{neighbors=handlers;},selectedPropertyOrder:()=>{},selectedParcelCheck:()=>{},
   performance:{now:()=>0},setInterval:()=>1,clearInterval(){},setTimeout:()=>1,clearTimeout(){},AbortController,AbortSignal,URL,URLSearchParams,Blob,crypto:{randomUUID:()=> 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa'},sessionStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},
-  location:{origin:'http://127.0.0.1:3000',search:linkedJob?'?job='+linkedJob:''},fetch:async(url,options)=>{
-   if(!options?.method&&url.startsWith('/api/v2/property/jobs/'))return Response.json({id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',input:savedInput,status:clientResponse?.ExtractionMetadata?.match?.status==='ADDRESS_REVIEW_REQUIRED'?'needs_review':'completed_with_gaps',stage:'serialization',updated_at:new Date().toISOString(),gaps:jobGaps,field_status:{},result:clientResponse||{scrapTaxOrderRequest:{PropertyInformation:{PropertyAddress:'TEST ADDRESS',ParcelNumber:'test-folio'},matchStatus:'MATCHED'},ExtractionMetadata:{request_id:'offline-address-request',section_status:{PropertyInformation:'PARTIAL'}}}});
+  location:{origin:'http://127.0.0.1:3000',search:linkedJob?'?job='+linkedJob+'&api='+savedApi:''},fetch:async(url,options)=>{
+   if(!options?.method&&/^\/api\/v[23]\/property\/jobs\//.test(url))return Response.json({id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa',input:savedInput,status:clientResponse?.ExtractionMetadata?.match?.status==='ADDRESS_REVIEW_REQUIRED'?'needs_review':'completed_with_gaps',stage:'serialization',updated_at:new Date().toISOString(),gaps:jobGaps,field_status:{},result:clientResponse||{scrapTaxOrderRequest:{PropertyInformation:{PropertyAddress:'TEST ADDRESS',ParcelNumber:'test-folio'},matchStatus:'MATCHED'},ExtractionMetadata:{request_id:'offline-address-request',section_status:{PropertyInformation:'PARTIAL'}}}});
    if(!options?.method)return Response.json(url.includes('/v1/')?capabilities:clientCapabilities);
    calls.push({url,options,body:JSON.parse(options.body)});
-   if(url==='/api/v2/property/jobs')return Response.json({id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa'},{status:202});
+   if(['/api/v2/property/jobs','/api/v3/property/jobs'].includes(url))return Response.json({id:'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa'},{status:202});
    if(clientResponse&&url.includes('/v2/'))return Response.json(clientResponse);
    if(url.includes('/v2/'))return Response.json({status:'partial',errorMessage:'NA',scrapTaxOrderRequest:{PropertyInformation:{PropertyAddress:'TEST ADDRESS',ParcelNumber:'test-folio'},matchStatus:'MATCHED'},ExtractionMetadata:{request_id:'offline-address-request',section_status:{PropertyInformation:'PARTIAL'}}});
    return Response.json({status:'partial',mode:JSON.parse(options.body).source_mode==='state_roll'?'live_retrieval_annual_roll':'live',request_id:'offline-page-request',property:{parcel_id:JSON.parse(options.body).parcel_id,owner:'<img src=x onerror=alert(1)>',address:'TEST ADDRESS'},assessment:{year:2025,assessed_total:'0'},taxes:{summary:{balance_due:null}},documents:[],document_status:'unavailable',errors:[{code:'source_blocked',message:'Test blocked collector'}],sources:[{id:'assessment_county',status:'verified',url:'https://example.gov/record',method:'GET'}],coverage:{collector:'unavailable'},field_provenance:{assessment:'assessment_county'}},{headers:{'X-Request-ID':'offline-page-request'}});
@@ -80,11 +80,11 @@ test('automatic routing honors explicit parcels, county admission and collector 
  const fields={order:'test',address:'6557 SE CR 21B',owner:'BAKER BOYD D REVOC TRUST',transaction:'REFI',parcel:'',includePdf:true};
  const bradford=workflows.find(c=>c.id==='bradford-fl');
  assert.equal(automaticPocMode(bradford,fields),'address');
- const r=automaticPocRequest(bradford,{...fields,parcel:' 06203-C-01400 '});assert.equal(r.endpoint,'/api/v1/property/lookup');assert.equal(r.body.parcel_id,'06203-C-01400');assert.equal('address' in r.body,false);assert.equal('ownerName' in r.body,false);
+ const r=automaticPocRequest(bradford,{...fields,parcel:' 06203-C-01400 '});assert.equal(r.endpoint,'/api/v3/property/jobs');assert.equal(r.body.parcel_id,'06203-C-01400');assert.equal('address' in r.body,false);assert.equal('ownerName' in r.body,false);
  const baker=workflows.find(c=>c.id==='baker-fl');assert.equal(automaticPocRequest(baker,{...fields,parcel:baker.sample.parcel_id}).body.source_mode,'collector');
  assert.throws(()=>automaticPocRequest(baker,fields),/Enter a parcel ID/);
  assert.throws(()=>automaticPocRequest(bradford,{...fields,owner:''}),/address and owner/);
- for(const id of ['alachua-fl','polk-fl'])assert.throws(()=>automaticPocRequest({id,lookup_modes:['county','address','state_roll']},fields),/available county/);
+ for(const id of ['alachua-fl','orange-fl'])assert.throws(()=>automaticPocRequest({id,lookup_modes:['county','address','state_roll']},fields),/available county/);
 });
 
 test('common form has no search-method selector and starts without an unintended sample property',async()=>{
@@ -100,10 +100,10 @@ test('actual common form submits every admitted native parcel route with auth an
  for(const profile of workflows.filter(c=>c.lookup_modes.some(m=>['county','collector'].includes(m)))){
   await e.get('county').change(profile.id);await e.get('parcel').input(' '+profile.sample.parcel_id+' ');
   assert.equal(e.get('parcel').disabled,false);assert.equal(e.get('address').disabled,true);assert.equal(e.get('owner').required,false);assert.equal(e.get('neighbor-controls').hidden,true);
-  await submit(e);const call=calls.at(-1);assert.equal(call.url,'/api/v1/property/lookup');assert.equal(call.options.headers.Authorization,'Bearer offline-page-key');assert.equal(call.body.county,profile.id);assert.equal(call.body.parcel_id,profile.sample.parcel_id);assert.equal(call.body.source_mode,profile.id==='baker-fl'?'collector':'county');assert.equal(call.body.include_pdf,true);assert.equal('address' in call.body,false);assert.equal('ownerName' in call.body,false);
-  assert.match(e.get('sections').textContent,/Test blocked collector|unavailable/);assert.match(e.get('sections').textContent,/TEST ADDRESS/);assert.match(e.get('error').textContent,/Test blocked collector/);assert.match(e.get('request-id').textContent,/offline-page-request/);assert.equal(e.get('download').disabled,false);
+  await submit(e);const call=calls.at(-1);assert.equal(call.url,[1,2].includes(profile.phase)?'/api/v3/property/jobs':'/api/v1/property/lookup');assert.equal(call.options.headers.Authorization,'Bearer offline-page-key');assert.equal(call.body.county,profile.id);assert.equal(call.body.parcel_id,profile.sample.parcel_id);if(![1,2].includes(profile.phase)){assert.equal(call.body.source_mode,profile.id==='baker-fl'?'collector':'county');assert.equal(call.body.include_pdf,true);}else assert.equal('source_mode' in call.body,false);assert.equal('address' in call.body,false);assert.equal('ownerName' in call.body,false);
+  assert.match(e.get('sections').textContent,/TEST ADDRESS/);if(![1,2].includes(profile.phase))assert.match(e.get('request-id').textContent,/offline-page-request/);assert.equal(e.get('download').disabled,false);
  }
- assert.equal(calls.length,9);
+ assert.equal(calls.length,22);
 });
 
 test('address-only counties request a parcel before dispatch and keep address and owner visibly out of the parcel request',async()=>{
@@ -126,7 +126,7 @@ test('county changes preserve entered address and owner, clear county-specific p
  await e.get('parcel').input('05632-0-00000');e.get('collector-account').value='12345';
  await e.get('county').change('palm-beach-fl');assert.equal(e.get('parcel').value,'');assert.equal(e.get('collector-account').value,'');assert.equal(e.get('account-field').hidden,false);assert.equal(e.get('download').disabled,true);assert.equal(e.get('sections').children.length,0);
  await e.get('county').change('bradford-fl');assert.equal(e.get('address').value,'6557 SE CR 21B');assert.equal(e.get('owner').value,'BAKER BOYD D REVOC TRUST');assert.equal(e.get('address').disabled,false);assert.equal(e.get('parcel').value,'');assert.equal(calls.length,1);
- assert.equal(e.get('county').children.length,11);assert(e.get('county').children.every(o=>!['alachua-fl','polk-fl'].includes(o.value)));
+ assert.equal(e.get('county').children.flatMap(g=>g.children).length,22);assert(e.get('county').children.flatMap(g=>g.children).every(o=>!['alachua-fl','orange-fl'].includes(o.value)));
 });
 
 test('examples are explicit input-only actions and never dispatch or retain a different county account',async()=>{
@@ -136,12 +136,12 @@ test('examples are explicit input-only actions and never dispatch or retain a di
 
 test('optional collector account and document preference remain scoped to their supported request',async()=>{
  const {elements:e,calls}=await harness();await e.get('county').change('palm-beach-fl');await e.get('parcel').input('00414726000005030');await e.get('collector-account').input(' 12345 ');e.get('include-pdf').checked=false;
- await submit(e);assert.equal(calls.at(-1).body.collector_account_id,'12345');assert.equal(calls.at(-1).body.include_pdf,false);
+ await submit(e);assert.equal(calls.at(-1).body.collector_account_id,'12345');assert.equal('include_pdf' in calls.at(-1).body,false);
  await e.get('county').change('union-fl');await e.get('parcel').input(workflows.find(c=>c.id==='union-fl').sample.parcel_id);assert.equal(e.get('account-field').hidden,true);assert.equal(e.get('collector-account').disabled,true);await submit(e);assert.equal('collector_account_id' in calls.at(-1).body,false);
 });
 
 test('available county table explains input requirements and collector-only scope without internal modes',async()=>{
- const {elements:e}=await harness(),rows=e.get('coverage').children;assert.equal(rows.length,11);assert.match(e.get('catalog-summary').textContent,/Search is selected automatically/);
+ const {elements:e}=await harness(),rows=e.get('coverage').children;assert.equal(rows.length,22);assert.match(e.get('catalog-summary').textContent,/Search is selected automatically/);
  const baker=rows.find(r=>r.children[0].textContent==='Baker County, Florida');assert.equal(baker.children[1].textContent,'Parcel ID required');assert.match(baker.children[2].textContent,/no assessment lookup/);
  const bradford=rows.find(r=>r.children[0].textContent==='Bradford County, Florida');assert.equal(bradford.children[1].textContent,'Address and owner, or parcel ID');assert(!e.get('coverage').textContent.includes('annual roll'));
 });
@@ -151,7 +151,7 @@ test('mailing review preserves distinct properties and an explicit parcel choice
  const {elements:e,calls}=await harness({status:'error',errorMessage:'Confirm the parcel',ExtractionMetadata:{match:{status:'ADDRESS_REVIEW_REQUIRED',candidates},sources:[]}});
  await e.get('use-example').click();await submit(e);assert.match(e.get('status').textContent,/confirmation needed/);assert.match(e.get('sections').textContent,/SE 11TH AVE/);assert.equal(calls.length,1);
  const buttons=buttonsIn(e.get('sections'));assert.equal(buttons.length,2);await buttons[1].click();assert.equal(e.get('parcel').value,'05379-0-00000');assert.equal(e.get('address').value,'');assert.equal(e.get('owner').value,'');assert.equal(calls.length,1);
- await submit(e);assert.equal(calls.at(-1).url,'/api/v1/property/lookup');assert.equal(calls.at(-1).body.parcel_id,'05379-0-00000');
+ await submit(e);assert.equal(calls.at(-1).url,'/api/v3/property/jobs');assert.equal(calls.at(-1).body.parcel_id,'05379-0-00000');
 });
 
 test('verified physical-site selection uses its actual county and parcel without silently assigning the requested owner',async()=>{
@@ -172,7 +172,7 @@ test('restoring an excluded county cannot reactivate it through a saved job',asy
 });
 
 
-test('restored counties use address jobs, address-only admission and scoped neighbour controls',async()=>{
+test('Miami and Osceola retain address jobs and admit parcel jobs with scoped neighbour controls',async()=>{
  const {elements:e,calls}=await harness();
  for(const [county,address,owner]of [['miami-dade-fl','20 NE 10 ST','LEGACY MWC TRUSTEE LLC'],['osceola-fl','3250 VINELAND RD','WAL-MART STORES EAST LP']]){
   const profile=workflows.find(c=>c.id===county);assert.equal(profile.poc_verification,'sample_verified');
@@ -180,11 +180,11 @@ test('restored counties use address jobs, address-only admission and scoped neig
   assert.equal(e.get('parcel').required,false);
   assert.equal(e.get('neighbor-controls').hidden,county!=='miami-dade-fl');
   await submit(e);assert.equal(calls.at(-1).url,'/api/v2/property/jobs');assert.equal(calls.at(-1).body.county,county);assert.equal(calls.at(-1).body.address,address);assert.equal(calls.at(-1).body.ownerName,owner);assert.equal('addressType' in calls.at(-1).body,false);
-  assert.equal(e.get('parcel').disabled,true);assert.throws(()=>automaticPocRequest(profile,{parcel:profile.sample.parcel_id}),/Parcel lookup is unavailable/);
+  assert.equal(e.get('parcel').disabled,false);assert.equal(automaticPocRequest(profile,{parcel:profile.sample.parcel_id}).endpoint,'/api/v3/property/jobs');
   await e.get('parcel').input('');assert.equal(e.get('address').value,address);assert.equal(e.get('neighbor-controls').hidden,county!=='miami-dade-fl');
  }
  const rows=e.get('coverage').children;
- for(const county of ['Miami-Dade County, Florida','Osceola County, Florida']){const row=rows.find(r=>r.children[0].textContent===county);assert.match(row.children[3].textContent,/Production sample verified/);}
+ for(const county of ['Miami-Dade County, Florida','Osceola County, Florida']){const row=rows.find(r=>r.children[0].textContent===county);assert.match(row.children[3].textContent,/Historical sample evidence/);}
  assert.equal(workflows.filter(c=>c.poc_verification==='sample_verified').length,11);
 });
 
@@ -204,4 +204,12 @@ test('restoring either requested county retains its exact address and collector 
  });
  test('automatic mailing matches display the detected address role',async()=>{
  const {elements:e}=await harness({status:'partial',scrapTaxOrderRequest:{matchStatus:'MATCHED',PropertyInformation:{ParcelNumber:'00420-0-00200',PropertyAddress:'SW 180TH PL'}},ExtractionMetadata:{match:{status:'MATCHED',requested_address_type:'auto',input_address_type:'mailing',matched_address_types:['mailing']},sources:[],section_status:{PropertyInformation:'EXTRACTED'}}});await e.get('use-example').click();await submit(e);assert.match(e.get('summary').textContent,/Owner mailing address.*detected from county records/);assert.equal(e.has('address-type'),false);
+ });
+
+ test('twenty-county parcel result renders full client sections and additional native county fields',async()=>{
+ const result={schema_version:'3.0',status:'partial',scrapTaxOrderRequest:{PropertyInformation:{ParcelNumber:'232724008500000660',PropertyAddress:'TEST PROPERTY',OwnerName:'TEST OWNER'},AssessmentInformation:{AssessedValue:'433287'},TaxAmounts:{totalTax:'123.45'},TotalMillage:{value:'13.85430',units:'mills'},PaymentDetails:{currentBalance:'0.00'},Documents:[]},ExtractionMetadata:{status:'partial',sources:[],errors:[]},legacy:{assessment:{taxable_school:'179113'},taxes:{payments:[{paid_by:'SOURCE PAYER',receipt_number:'RECEIPT-1'}]},documents:[]}};
+ const {elements:e,calls}=await harness(result);await e.get('county').change('polk-fl');await e.get('parcel').input('232724008500000660');await submit(e);assert.equal(calls[0].url,'/api/v3/property/jobs');for(const value of ['TEST PROPERTY','TEST OWNER','123.45','13.85430','mills','SOURCE PAYER','RECEIPT-1'])assert(e.get('sections').textContent.includes(value),value+' must remain visible');assert.match(e.get('sections').textContent,/Additional county assessment/);
+ });
+ test('saved v3 parcel lookup restores its county and exact identifier without dispatching new work',async()=>{
+ const savedInput={county:'hillsborough-fl',parcel_id:'1829244ZI000078000000A'},id='aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa';const {elements:e,calls}=await harness(undefined,{savedInput,linkedJob:id,savedApi:'v3'});await buttonsIn(e.get('status').parentElement).find(b=>b.textContent==='Restore saved lookup').click();assert.equal(e.get('county').value,savedInput.county);assert.equal(e.get('parcel').value,savedInput.parcel_id);assert.equal(e.get('owner').value,'');assert.equal(calls.length,0);
  });

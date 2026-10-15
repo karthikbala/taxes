@@ -1,3 +1,4 @@
+import {validateParcelJob,parcelLookup,parcelWorkflow,explainParcel} from '../lib/reliability/parcel.mjs';
 import {randomUUID,createHash} from 'node:crypto';
 import {validateClientInput} from '../lib/client/contract.mjs';
 import {clientLookup} from '../lib/client/engine.mjs';
@@ -11,17 +12,17 @@ import {pdfRuntime} from '../lib/reliability/pdf-context.mjs';
 import {reconcileBrowser} from '../lib/live/browser-budget.mjs';
 const problem=(code,http,message)=>Object.assign(new Error(message),{code,http});
 const stageNames={property_resolution:'resolve_property',osceola_appraiser_recovery:'appraiser',collector_lookup:'collector_history',history_parsing:'collector_history',annual_pdf_parsing:'documents',certificate_deed_reports:'certificate_deed',historical_deed_search:'certificate_deed'};
-export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBrowser,localBrowser,scrapedoClerk,store=createJobStore(env.DB),logSink,now=Date.now,transport,autoStart=true}={}){
+export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,lookupParcel=parcelLookup,managedBrowser,localBrowser,scrapedoClerk,store=createJobStore(env.DB),logSink,now=Date.now,transport,autoStart=true}={}){
  if(!store)return null;
  const owner=randomUUID(),active=new Map(),paid=semaphore(),navigation=semaphore(),reliable=transport||createReliableTransport({store,fetcher,now});
  let stopped=false,timer,ticking=false,lastPurge=0,lastCleanup=0;
  const logEvent=(id,event,fields)=>createLookupLogger(id,logSink)(event,fields);
- function validate(input){const normalized=validateClientInput(input);if(!sourceProfiles[normalized.county])throw problem('unsupported_job_county',422,'Durable address jobs currently support Miami-Dade, Osceola and Bradford.');return Object.fromEntries(Object.entries(normalized).filter(([key])=>key!=='countyName'));}
+ function validate(input){if(input?.__workflow===parcelWorkflow){const {__workflow,...params}=input;return validateParcelJob(params);}const normalized=validateClientInput(input);if(!['miami-dade-fl','osceola-fl','bradford-fl'].includes(normalized.county))throw problem('unsupported_job_county',422,'Durable address jobs currently support Miami-Dade, Osceola and Bradford.');return Object.fromEntries(Object.entries(normalized).filter(([key])=>key!=='countyName'));}
  const publicJob=row=>{
   if(!row)throw problem('job_not_found',404,'Job not found.');
-  const explanation=row.result?explainResult(row.result):{fields:{}};
+  const explanation=row.result?(row.input.__workflow===parcelWorkflow?explainParcel(row.result):explainResult(row.result)):{fields:{}};const prefix=row.input.__workflow===parcelWorkflow?'/api/v3/property/jobs/':'/api/v2/property/jobs/';const {__workflow,...publicInput}=row.input;
   const gaps=row.gaps.map(g=>(explanation.gaps||[]).find(e=>e.code===g.code&&e.source_id===g.source_id)||g);
-  return {id:row.id,input:row.input,access_mode:row.access_mode,status:row.status,stage:row.stage,created_at:new Date(row.created_at).toISOString(),updated_at:new Date(row.updated_at).toISOString(),attempt:row.attempt,recovery_cycles:row.recovery_cycles,result_version:row.result_version,next_retry_at:row.next_retry_at?new Date(row.next_retry_at).toISOString():null,checkpoints:row.checkpoints,result:row.result,gaps,field_status:explanation.fields,artifacts:store.artifacts(row.id),attempts:store.attempts(row.id),links:{self:'/api/v2/property/jobs/'+row.id,cancel:'/api/v2/property/jobs/'+row.id+'/cancel',resume:'/api/v2/property/jobs/'+row.id+'/resume'},code_version:row.code_version};
+  return {id:row.id,input:publicInput,access_mode:row.access_mode,status:row.status,stage:row.stage,created_at:new Date(row.created_at).toISOString(),updated_at:new Date(row.updated_at).toISOString(),attempt:row.attempt,recovery_cycles:row.recovery_cycles,result_version:row.result_version,next_retry_at:row.next_retry_at?new Date(row.next_retry_at).toISOString():null,checkpoints:row.checkpoints,result:row.result,gaps,field_status:explanation.fields,artifacts:store.artifacts(row.id),attempts:store.attempts(row.id),links:{self:prefix+row.id,cancel:prefix+row.id+'/cancel',resume:prefix+row.id+'/resume'},code_version:row.code_version};
  };
  async function run(job){
   const ctl=new AbortController();active.set(job.id,{ctl,promise:null});
@@ -64,7 +65,7 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
    return Buffer.from(artifact.bytes).toString('base64');
   }
   try{
-   const result=await pdfRuntime.run({signal:ctl.signal,onDerived:derived=>store.artifact(job.id,'derived:'+createHash('sha256').update(JSON.stringify(derived)).digest('hex'),'derived_pdf_text',Buffer.from(JSON.stringify(derived)),{derived:true,engine:derived.engine,method:derived.method})},()=>lookup(job.input,jobFetch,{requestId:job.id,signal:ctl.signal,deadline:now()+600000,reliableTransport:true,managedBrowser:browser,scrapedoClerk:scrapedoClerk&&job.access_mode!=='direct_only'?async args=>{
+   const result=await pdfRuntime.run({signal:ctl.signal,onDerived:derived=>store.artifact(job.id,'derived:'+createHash('sha256').update(JSON.stringify(derived)).digest('hex'),'derived_pdf_text',Buffer.from(JSON.stringify(derived)),{derived:true,engine:derived.engine,method:derived.method})},()=>(job.input.__workflow===parcelWorkflow?lookupParcel:lookup)(job.input,jobFetch,{requestId:job.id,signal:ctl.signal,deadline:now()+600000,reliableTransport:true,managedBrowser:browser,scrapedoClerk:scrapedoClerk&&job.access_mode!=='direct_only'?async args=>{
     const key='clerk:'+createHash('sha256').update(String(args.parcel)).digest('hex'),cached=store.cached(job.id,key);if(cached)return JSON.parse(Buffer.from(cached.bytes).toString());
     if(store.sessions(job.id).some(s=>s.cache_key===key))throw problem('cleanup_pending',409,'Review the previous paid Clerk query before repeating it.');
     return paid(async()=>{const id=randomUUID();store.session(job.id,key,{id,status:'dispatching'});try{const capture=await scrapedoClerk(args);store.artifact(job.id,key,'clerk',Buffer.from(JSON.stringify(capture)),{url:capture.source_url});store.session(job.id,key,{id,status:'reconciled'});return capture;}catch(e){store.session(job.id,key,{id,status:'outcome_unknown'});throw e;}},ctl.signal);
@@ -73,7 +74,7 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
    if(store.get(job.id).status==='cancelled')return;
    if(stopped){store.settle(job.id,'queued');return;}
    store.checkpoint(job.id,'validation',result);
-   const {gaps,fields}=explainResult(result),errors=result.ExtractionMetadata?.errors||[];
+   const {gaps,fields}=(job.input.__workflow===parcelWorkflow?explainParcel:explainResult)(result),errors=result.ExtractionMetadata?.errors||[];
    if(store.sessions(job.id).some(s=>!['closed','reconciled'].includes(s.status)))gaps.push({code:'cleanup_pending',reason:'BUDGET_PENDING',action:'Reconcile the recorded provider session and spending before resuming.'});
    const review=gaps.some(g=>['IDENTITY_REVIEW','VALIDATION_CONFLICT','BUDGET_PENDING'].includes(g.reason));
    const retry=!review&&errors.some(e=>isTransient(e.code));
@@ -119,6 +120,7 @@ export function createJobRunner({env,fetcher=fetch,lookup=clientLookup,managedBr
  return {
   store,tick,cleanupOrphans,
   create(input,key,accessMode='configured'){const {job,reused}=store.create(validate(input),key,env.TAXES_SOURCE_REVISION||'working-tree',accessMode);queueMicrotask(()=>{if(autoStart)tick().catch(()=>{});});return {job:publicJob(job),reused};},
+  createParcel(input,key,accessMode='configured'){return this.create(validateParcelJob(input),key,accessMode);},
   get(id){return publicJob(store.get(id));},
   cancel(id){const job=store.cancel(id);active.get(id)?.ctl.abort();return publicJob(job);},
   resume(id,input){const job=store.resume(id,input?validate(input):undefined);queueMicrotask(()=>{if(autoStart)tick().catch(()=>{});});return publicJob(job);},
