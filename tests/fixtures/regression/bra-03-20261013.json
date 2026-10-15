@@ -1,0 +1,648 @@
+{
+  "purpose": "Source-derived response subset for offline regression-checker tests only. No new live acceptance or runtime fallback.",
+  "source_response_sha256": "e4999dbafd3bd6b586dea7ed99338a1c994f44ba0f47bd329b395532f67fe297",
+  "observed_on": "2026-10-13",
+  "case_id": "BRA-03",
+  "record": {
+    "scrap_order_id": "BESIL-HISTORY-deborah",
+    "address": "334 SE 28TH ST, MELROSE, FL 32666",
+    "ownerName": "BAKER DEBORAH K",
+    "county": "Bradford",
+    "state": "FL",
+    "errorMessage": "NA",
+    "status": "partial",
+    "scrapTaxOrderRequest": {
+      "matchStatus": "MATCHED",
+      "PropertyInformation": {
+        "ParcelNumber": "06203-C-01400",
+        "PropertyAddress": "334 SE 28TH ST, MELROSE",
+        "MailingAddress": "334 SE 28TH ST; MELROSE, FL 32666",
+        "PrimaryZone": null,
+        "PrimaryLandUse": "SINGLE FAMILY (0100)",
+        "BedsBathsHalf": null,
+        "Floors": null,
+        "LivingUnits": null,
+        "LivingArea": "1232 Sq.Ft",
+        "AdjustedArea": null,
+        "LotSize": "1.000 LT (0.000 AC)",
+        "YearBuilt": "1976",
+        "Owners": [
+          "BAKER DEBORAH K"
+        ],
+        "ownerOccupied": null,
+        "AlternateKey": "16789",
+        "ActualArea": "2124 Sq.Ft",
+        "ReportedAcreage": "0"
+      },
+      "AssessmentHistory": [
+        {
+          "Year": "2026",
+          "Status": "Preliminary",
+          "SourceLabel": "2026 Preliminary Values",
+          "LandValue": "$35,000",
+          "AgriculturalLandValue": "$0",
+          "BuildingValue": "$177,905",
+          "ExtraFeatureValue": "$30,560",
+          "MarketValue": "$243,465",
+          "ClassifiedValue": "$0",
+          "AppraisedValue": "$243,465",
+          "AssessedValue": "$166,610",
+          "ExemptionValue": "$51,411"
+        }
+      ],
+      "BenefitsInformation": [],
+      "AssessmentInformation": {
+        "Year": "2026",
+        "LandValue": "$35,000",
+        "BuildingValue": "$177,905",
+        "ExtraFeatureValue": "$30,560",
+        "MarketValue": "$243,465",
+        "AssessedValue": "$166,610",
+        "Status": "Preliminary",
+        "SourceLabel": "2026 Preliminary Values",
+        "AgriculturalLandValue": "$0",
+        "ClassifiedValue": "$0",
+        "AppraisedValue": "$243,465",
+        "ExemptionValue": "$51,411"
+      },
+      "TaxInformation": {
+        "accountNumber": "06203-C-01400",
+        "type": "PAID",
+        "amountDue": "$0.00",
+        "statusMessage": "** PAID **",
+        "lastPaymentDate": "11/25/2025",
+        "lastPaymentAmount": "$2,087.82",
+        "amountPaidYear": "2025",
+        "note": "Payment status describes this verified annual bill; tax clearance and certificate/deed coverage are not established."
+      },
+      "BillDetails": {
+        "taxYear": "2025",
+        "folio": "06203-C-01400",
+        "municipality": null,
+        "millCode": "6",
+        "propertyAddress": "334 SE 28TH ST MELROSE 32666",
+        "mailingAddress": "334 SE 28TH ST MELROSE , FL 32666",
+        "paidBy": null,
+        "receiptNumber": "13204",
+        "paidDate": "11/25/2025",
+        "paidAmount": "$2,087.82"
+      },
+      "ParcelDetails": {
+        "millageRate": "0.01564720",
+        "millageRateUnit": "source_displayed_rate_fraction",
+        "assessedValue": "$162,230.00",
+        "exemptionValue": "$50,722.00",
+        "taxableValue": "$111,508.00",
+        "totalMillageRate": "15.64720000",
+        "totalMillageRateUnit": "mills"
+      },
+      "TaxAmounts": {
+        "adValorem": "$1,882.81",
+        "nonAdValorem": "$292.00",
+        "totalDiscountable": null,
+        "totalTax": "$2,174.81"
+      },
+      "AdValoremMillage": [
+        {
+          "group": null,
+          "authority": "SCHOOL-RLE",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".00311800",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$427.88"
+        },
+        {
+          "group": null,
+          "authority": "COUNTY",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".01000000",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$1,115.08"
+        },
+        {
+          "group": null,
+          "authority": "SUWAN RIV WATER",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".00028120",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$31.36"
+        },
+        {
+          "group": null,
+          "authority": "SCHOOL-DISC",
+          "assessedValue": null,
+          "exemptionValue": null,
+          "taxableValue": null,
+          "millage": ".00224800",
+          "millageUnit": "source_displayed_rate_fraction",
+          "taxesLevied": "$308.49"
+        }
+      ],
+      "NonAdValorem": [
+        {
+          "authority": "Asmt - FIRE RESIDENTIAL",
+          "amount": "$167.00"
+        },
+        {
+          "authority": "Asmt - GAR RESIDENTIAL",
+          "amount": "$125.00"
+        }
+      ],
+      "DelinquencyInformation": {
+        "hasActiveDelinquency": null,
+        "knownTotalDue": null,
+        "knownPriorYearsDue": "$0.00",
+        "totalPriorYearsDue": null,
+        "currentYearDue": "$0.00",
+        "delinquentYears": [],
+        "coverage": "PARTIAL",
+        "unavailableYears": [],
+        "currentBillYear": "2025",
+        "asOf": "2026-10-13",
+        "timeZone": "America/New_York",
+        "note": "History is incomplete or inconclusive; no negative delinquency conclusion is available.",
+        "notes": [
+          "History coverage is PARTIAL; unseen prior liabilities cannot be ruled out."
+        ],
+        "coverageDetails": {
+          "publishedAnnualRows": "PARTIAL",
+          "unavailableYears": [],
+          "certificateEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+          "independentCertificateSearch": "NOT_IMPLEMENTED",
+          "taxDeedEvidence": "VISIBLE_ACCOUNT_HISTORY_EVENTS_ONLY",
+          "independentTaxDeedSearch": "NOT_RUN",
+          "historicalClearanceEstablished": false,
+          "note": "Full historical clearance requires complete annual, certificate and deed coverage. A paid account or an empty public deed query alone is insufficient."
+        }
+      },
+      "FullLegalDescription": [
+        "36-8S-22E | 36 8S 22 LOT 14 GENEVA OAKS"
+      ],
+      "SalesInformation": [
+        {
+          "Date": "10/14/2023",
+          "Price": "$0",
+          "ORBookPage": "N/A",
+          "Instrument": "MS",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "8/21/2023",
+          "Price": "$0",
+          "ORBookPage": "N/A",
+          "Instrument": "MS",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "1/16/2020",
+          "Price": "$100",
+          "ORBookPage": "1828 / 268",
+          "Instrument": "QC",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "4/28/2017",
+          "Price": "$179,900",
+          "ORBookPage": "1679 / 384",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "4/26/2013",
+          "Price": "$145,000",
+          "ORBookPage": "1483 / 490",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "5/2/2006",
+          "Price": "$159,900",
+          "ORBookPage": "1150 / 341",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "4/27/2004",
+          "Price": "$104,000",
+          "ORBookPage": "1029 / 314",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "12/17/2002",
+          "Price": "$42,600",
+          "ORBookPage": "954 / 590",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "12/21/2001",
+          "Price": "$86,500",
+          "ORBookPage": "905 / 014",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "12/22/2000",
+          "Price": "$0",
+          "ORBookPage": "859 / 586",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "10/20/2000",
+          "Price": "$70,900",
+          "ORBookPage": "853 / 325",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "10/20/2000",
+          "Price": "$100",
+          "ORBookPage": "853 / 324",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "3/17/2000",
+          "Price": "$100",
+          "ORBookPage": "829 / 570",
+          "Instrument": "CT",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "12/31/1993",
+          "Price": "$73,000",
+          "ORBookPage": "565 / 037",
+          "Instrument": "WD",
+          "QualificationDescription": "I / Q"
+        },
+        {
+          "Date": "12/31/1993",
+          "Price": "$100",
+          "ORBookPage": "565 / 035",
+          "Instrument": "QD",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "9/1/1986",
+          "Price": "$100",
+          "ORBookPage": "274 / 250",
+          "Instrument": "WD",
+          "QualificationDescription": "I / U"
+        },
+        {
+          "Date": "9/1/1980",
+          "Price": "$47,000",
+          "ORBookPage": "186 / 251",
+          "Instrument": "03",
+          "QualificationDescription": "I / Q"
+        }
+      ],
+      "PublishedTaxHistory": [
+        {
+          "billYear": "2025",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$2,087.82",
+          "paidDate": "11/25/2025",
+          "receiptNumber": "13204",
+          "billId": "1544300",
+          "grossTax": "$1,882.81",
+          "assessments": "$292.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2024",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,868.76",
+          "paidDate": "11/26/2024",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,821.63",
+          "assessments": "$125.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2023",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,808.30",
+          "paidDate": "11/29/2023",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,758.65",
+          "assessments": "$125.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2022",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,706.02",
+          "paidDate": "11/28/2022",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,702.10",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2021",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,686.89",
+          "paidDate": "11/21/2021",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,682.18",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2020",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$2,010.25",
+          "paidDate": "11/25/2020",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$2,019.01",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2019",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,999.40",
+          "paidDate": "11/20/2019",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$2,007.71",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2018",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$1,980.24",
+          "paidDate": "11/20/2018",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$1,987.75",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2017",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$976.36",
+          "paidDate": "11/27/2017",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$942.04",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2016",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$969.38",
+          "paidDate": "11/22/2016",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$934.77",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2015",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$982.02",
+          "paidDate": "11/18/2015",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$947.94",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2014",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$971.51",
+          "paidDate": "11/21/2014",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$936.99",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2013",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$636.96",
+          "paidDate": "11/25/2013",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$588.50",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        },
+        {
+          "billYear": "2012",
+          "billType": "Annual",
+          "amountDue": "$0.00",
+          "status": "Paid",
+          "paidAmount": "$659.36",
+          "paidDate": "11/19/2012",
+          "receiptNumber": null,
+          "billId": null,
+          "grossTax": "$611.83",
+          "assessments": "$75.00",
+          "note": "Original annual row in the collector Tax Roll Property Summary; certificate/deed history coverage is not established."
+        }
+      ],
+      "HistoricalTaxRecords": [
+        {
+          "parcelId": "06203-C-01400",
+          "billYear": "2025",
+          "billNumber": "1544300",
+          "sourceOwner": "BAKER DEBORAH K",
+          "documentStatus": "EXTRACTED",
+          "documentType": "annual_tax_bill",
+          "amountDue": "$0.00",
+          "paidAmount": "$2,087.82",
+          "paidDate": "11/25/2025",
+          "receiptNumber": "13204",
+          "combinedTaxesAndAssessments": "$2,174.81",
+          "certificate": null,
+          "scope": "YEAR_SPECIFIC_ORIGINAL_RECORD",
+          "includedInCurrentLiabilityTotal": false,
+          "note": "Original year-specific annual bill; paid fields are retained only when printed.",
+          "sourceUrl": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+          "sourceSha256": "4be41da84d327398788ae716fe4cbe1f7465e90a87b098d1b29b47507a18f48c",
+          "retrievedAt": "2026-10-13T12:19:15.465Z"
+        }
+      ]
+    },
+    "ExtractionMetadata": {
+      "request_id": "cdd20608-19c5-4160-89d9-7e9778a0837c",
+      "county_id": "bradford-fl",
+      "collected_at": "2026-10-13T12:19:12.255Z",
+      "match": {
+        "requested_address_type": "auto",
+        "candidates": [
+          {
+            "parcel_id": "06203-C-01400",
+            "address": "334 SE 28TH ST, MELROSE",
+            "owners": [
+              "BAKER DEBORAH K"
+            ],
+            "source_id": "bradford_site_reference_06203C01400",
+            "address_match_type": "site",
+            "owner_matches_requested": true,
+            "mailing_address": "334 SE 28TH ST; MELROSE, FL 32666",
+            "verified_address_match": true
+          },
+          {
+            "parcel_id": "06203-C-01400",
+            "address": "334 SE 28TH ST, MELROSE",
+            "mailing_address": "334 SE 28TH ST; MELROSE, FL 32666",
+            "owners": [
+              "BAKER DEBORAH K"
+            ],
+            "owner_matches_requested": true,
+            "address_match_type": "mailing_only",
+            "verified_address_match": true,
+            "source_id": "bradford_owner_reference_06203C01400"
+          }
+        ],
+        "owner_reference_status": "COMPLETE",
+        "owner_reference_candidates": [
+          {
+            "parcel_id": "06203-C-01400",
+            "address": "334 SE 28TH ST MELROSE",
+            "owners": [
+              "BAKER DEBORAH K"
+            ]
+          }
+        ],
+        "status": "MATCHED",
+        "parcel_id": "06203-C-01400",
+        "input_address_type": "site",
+        "matched_address_types": [
+          "site",
+          "mailing"
+        ],
+        "match_method": "county_verified_owner_and_detected_address",
+        "notes": [
+          "Address meaning was detected from complete Bradford site and mailing searches with one independently verified owner/parcel. The actual property site and mailing address remain separate."
+        ],
+        "source_id": "bradford_assessment"
+      },
+      "errors": [],
+      "validation": {
+        "parcel": "MATCHED",
+        "taxYear": "MATCHED",
+        "billNumber": "1544300",
+        "authorityRowCount": 4,
+        "annualHistoryYearCount": 14,
+        "adValoremReconciliation": "MATCHED",
+        "nonAdValoremReconciliation": "MATCHED",
+        "combinedTotalReconciliation": "MATCHED",
+        "millageSourceUnits": "Original fractional tax rates, preserved at source precision; no conversion to mills",
+        "reconciliationTolerance": "$0.05",
+        "historyCoverage": "PARTIAL",
+        "derivedFields": [
+          "ParcelDetails.totalMillageRate",
+          "ParcelDetails.millageRate",
+          "AdValoremGroupTotals.AllAuthorities",
+          "PaymentDetails.discountNote"
+        ],
+        "printedFractionalRateTaxChecks": [
+          {
+            "authority": "SCHOOL-RLE",
+            "reconciliation": "DIFFERENT",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "COUNTY",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "SUWAN RIV WATER",
+            "reconciliation": "MATCHED",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          },
+          {
+            "authority": "SCHOOL-DISC",
+            "reconciliation": "DIFFERENT",
+            "basis": "Printed parcel taxable value multiplied by printed fractional rate; comparison only, no per-authority taxable value inferred"
+          }
+        ],
+        "historical_public_query": {
+          "status": "COMPLETE_PUBLIC_QUERY",
+          "query_verified": true,
+          "search_records": 1,
+          "original_records_retrieved": 1
+        },
+        "parcel_join": "matched",
+        "appraiser_bill_year": {
+          "bill_year": "2025",
+          "latest_assessment_year": "2026",
+          "status": "bill_year_not_in_captured_appraiser_history"
+        }
+      },
+      "provenance": {
+        "original_annual_bill": {
+          "source_id": "tax_collector",
+          "source_url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+          "sha256": "4be41da84d327398788ae716fe4cbe1f7465e90a87b098d1b29b47507a18f48c",
+          "format": "HTML",
+          "document_type": "annual_tax_bill",
+          "method": "POST"
+        }
+      },
+      "sources": [
+        {
+          "id": "tax_collector",
+          "url": "https://www.bradfordtaxcollector.com/Property/TaxBill",
+          "method": "POST",
+          "status": "verified",
+          "fetched_at": "2026-10-13T12:19:15.465Z",
+          "http_status": 200,
+          "sha256": "4be41da84d327398788ae716fe4cbe1f7465e90a87b098d1b29b47507a18f48c",
+          "duration_ms": 946
+        }
+      ]
+    }
+  }
+}

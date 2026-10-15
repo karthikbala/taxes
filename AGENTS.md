@@ -38,6 +38,8 @@ Before any live/paid evaluation, define the hypothesis, county/sample, maximum a
 
 ## Validate and release
 
+Pull requests require the user's explicit permission. Do not create or reopen a PR, including a draft, from a general implementation, testing or deployment request. Ask for permission before raising any new PR. This is the user's instruction recorded on 13 October 2026.
+
 Choose the smallest meaningful offline tests covering changed behavior and callers. Documentation-only changes need text/link review. Parser/adapter changes need source-derived fixtures, identity/year/pagination failures and an unaffected control. Shared transport/auth/contract changes need focused integration checks across affected callers. Expand only for broader impact or a relevant failure; reuse passing evidence for the exact revision.
 
 Before enabling a county, prove source → parsed record → client JSON → rendered UI for an independently verified property, including account/year identity, row completeness, totals, field provenance and explicit gaps. Use authenticated API delivery; HTTP 200, job success, coverage labels and CI totals alone are insufficient. Keep the prior working behavior until replacement acceptance passes. Check in-flight source/paid work before release; do not interrupt another maintainer's evaluation.

@@ -3,14 +3,14 @@ import {realpathSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createApp} from './app.mjs';
-import {stagingLedgerBypass} from '../lib/live/browser-policy.mjs';
+import {browserLedgerBypass} from '../lib/live/browser-policy.mjs';
 import {projectRoot} from '../scripts/build-selfhost.mjs';
 export async function createServerHTTP({env=process.env,fetcher=fetch,logSink,staticRoot,deadlineMs,lookupClient,lookupLegacy,lookupNeighbors,dbFactory}={}){
  const runtime={...env};
  if(runtime.NODE_ENV==='production'&&!runtime.INVISIA_POC_API_KEY)throw new Error('INVISIA_POC_API_KEY is required in production.');
  let ownedDB;
  if(!runtime.DB){const createDatabase=dbFactory||(await import('./sqlite.mjs')).createSQLiteDB;ownedDB=createDatabase(resolve(runtime.TAXES_DB_PATH||resolve(projectRoot,'runtime/taxes.sqlite')));runtime.DB=ownedDB;}
- if(runtime.INVISIA_BROWSER_ENABLED==='1'&&!stagingLedgerBypass(runtime)){
+ if(runtime.INVISIA_BROWSER_ENABLED==='1'&&!browserLedgerBypass(runtime)){
   let budget;try{budget=await runtime.DB.prepare('SELECT limit_milli_usd,spent_milli_usd,reserved_milli_usd FROM scrape_budgets WHERE id=?').bind('florida-phase1-2026-10-07').first();}catch{}
   if(!budget){runtime.INVISIA_BROWSER_ENABLED='0';console.warn('Managed browser disabled: existing authorized budget ledger is missing. No budget was created.');}
  }

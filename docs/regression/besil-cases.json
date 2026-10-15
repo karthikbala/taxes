@@ -1,0 +1,693 @@
+{
+  "schema_version": 1,
+  "phase": "Besil advertised three-county POC only",
+  "prepared_on": "2026-10-14",
+  "baseline_is_historical": true,
+  "next_live_acceptance_complete": false,
+  "commitment_sources": [
+    {
+      "date": "2026-10-07",
+      "type": "client requirements",
+      "reference": "tests/fixtures/client/client-requirements.html"
+    },
+    {
+      "date": "2026-10-10",
+      "type": "client feedback",
+      "summary": "Delinquency, optional street suffix, published discountable amounts"
+    },
+    {
+      "date": "2026-10-12",
+      "type": "sent update",
+      "summary": "Delinquency and discountable extraction; optional suffix; Bradford example requested"
+    },
+    {
+      "date": "2026-10-13",
+      "type": "client feedback and unsent reply evidence",
+      "reference": "docs/CLIENT-FEEDBACK-VALIDATION-2026-10-13.md",
+      "summary": "Four Bradford identities; tax/paid/millage fields; Miami LEGACY case. The replacement reply remains a draft."
+    }
+  ],
+  "shared_offline_tests": [
+    "besil-regression.test.mjs",
+    "client-contract.test.mjs",
+    "client-contract-gaps.test.mjs",
+    "client-besil-feedback.test.mjs",
+    "client-delinquency.test.mjs",
+    "client-bill.test.mjs",
+    "client-redemption.test.mjs",
+    "client-visualgov.test.mjs",
+    "client-engine.test.mjs",
+    "client-counties-engine.test.mjs",
+    "client-enrichment-gaps.test.mjs",
+    "client-discountable-public.test.mjs",
+    "poc-render.test.mjs",
+    "poc-workflows.test.mjs",
+    "html-bill-delivery.test.mjs",
+    "retrieval-jobs.test.mjs",
+    "managed-pdf.test.mjs",
+    "production-browser-override.test.mjs"
+  ],
+  "counties": {
+    "miami-dade-fl": {
+      "name": "Miami-Dade",
+      "offline_tests": [
+        "client-miami.test.mjs",
+        "client-miami-status.test.mjs",
+        "miami-legacy-delinquent.test.mjs"
+      ]
+    },
+    "osceola-fl": {
+      "name": "Osceola",
+      "offline_tests": [
+        "client-osceola.test.mjs",
+        "osceola-recovery.test.mjs",
+        "osceola-liabilities.test.mjs"
+      ]
+    },
+    "bradford-fl": {
+      "name": "Bradford",
+      "offline_tests": [
+        "client-bradford.test.mjs",
+        "client-bradford-auto-address.test.mjs",
+        "client-mailing-mode.test.mjs",
+        "bradford-delinquent.test.mjs",
+        "bradford-tax-history.test.mjs"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "MIA-01",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-MIA-01",
+        "county": "miami-dade-fl",
+        "address": "555 NE 15 ST UNIT 401",
+        "ownerName": "JUDE PATRICK JACOB",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "01-3231-052-0010",
+        "collector_account": "01-3231-052-0010",
+        "owners": [
+          "JUDE PATRICK JACOB",
+          "NOAH ELIJAH JACOB"
+        ],
+        "unit": "401"
+      },
+      "document_format": "PDF",
+      "bill_kind": "annual",
+      "baseline": {
+        "observed_on": "2026-10-08",
+        "evidence": "docs/DEVELOPMENT-HANDOFF.md",
+        "request_id": "0eac1349-4eda-4f22-9a10-1023ec4610ba",
+        "response_sha256": "3f5cfd03905886bd25e9cb2a96cb1400b6b73394f67e01a12ce7be4f495d3f3e",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "PAID",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$0.00",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 3,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 1,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": "$3,007.15",
+          "scrapTaxOrderRequest.BillDetails.paidDate": "11/25/2025",
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": "$3,132.45",
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": "$0.00",
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": "$3,132.45",
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": null,
+          "scrapTaxOrderRequest.AdValoremMillage.length": 14,
+          "scrapTaxOrderRequest.NonAdValorem.length": 0,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 7,
+          "scrapTaxOrderRequest.SalesInformation.length": 8,
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "71bd8b98-d241-4f2f-95b5-c1588f447beb",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "14c4616d354725d1534a12d223b71f74dcff912ca32b23f45c83dc8d7c1db832",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "PASS_AFTER_SOURCE_REVIEW",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "MIA-02",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-MIA-02",
+        "county": "miami-dade-fl",
+        "address": "1900 N Bayshore, Unit 512",
+        "ownerName": "ALLEN HASBUN",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "01-3231-067-0130",
+        "collector_account": "01-3231-067-0130",
+        "owners": [
+          "ALLEN HASBUN",
+          "CHRISTIE HASBUN"
+        ],
+        "unit": "512"
+      },
+      "document_format": "PDF",
+      "bill_kind": "redemption",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/PRODUCTION-MIAMI-OSCEOLA-RECOVERY-2026-10-13.md",
+        "request_id": "c222ce4e-3557-4aa2-b16d-f80e94331344",
+        "response_sha256": "6019cdd07009fa5a7bf03d787192afedb0fd29ecfabcb04e114074940a65ad90",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "DELINQUENT",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$4,085.87",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": null,
+          "scrapTaxOrderRequest.AssessmentHistory.length": 3,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 5,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": null,
+          "scrapTaxOrderRequest.BillDetails.paidDate": null,
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": "$3,477.20",
+          "scrapTaxOrderRequest.AdValoremMillage.length": 0,
+          "scrapTaxOrderRequest.NonAdValorem.length": 0,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 5,
+          "scrapTaxOrderRequest.SalesInformation.length": 6,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": "$4,085.87",
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 1,
+          "scrapTaxOrderRequest.BillDetails.redemption.certificateNumber": "3299",
+          "scrapTaxOrderRequest.BillDetails.redemption.amountDue": "$4,085.87"
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "f27c67b4-19f4-4b68-99de-4ac37ce8ee6b",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "dc4b9c6c046ae9bd03364d0e3a75b57cfda465caf1af34e176780b3c7af81728",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "MIA-03",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-MIA-03",
+        "county": "miami-dade-fl",
+        "address": "20 NE 10 ST",
+        "ownerName": "LEGACY MWC TRUSTEE LLC",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "01-0102-030-1070",
+        "collector_account": "01-0102-030-1070",
+        "owners": [
+          "LEGACY MWC TRUSTEE LLC"
+        ],
+        "unit": null
+      },
+      "document_format": "PDF",
+      "bill_kind": "redemption",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/PRODUCTION-MIAMI-OSCEOLA-RECOVERY-2026-10-13.md",
+        "request_id": "940f9d8a-7a1c-43cc-8d72-860c8928b5f2",
+        "response_sha256": "10284873388a1735053a1e1470c11895f851e6b4006595cd0fa722e2f2fb0941",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "DELINQUENT",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": null,
+          "scrapTaxOrderRequest.TaxInformation.amountPayableOnline": "$418,684.53",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": null,
+          "scrapTaxOrderRequest.AssessmentHistory.length": 3,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 1,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": null,
+          "scrapTaxOrderRequest.BillDetails.paidDate": null,
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": "$183,039.14",
+          "scrapTaxOrderRequest.AdValoremMillage.length": 0,
+          "scrapTaxOrderRequest.NonAdValorem.length": 0,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 4,
+          "scrapTaxOrderRequest.SalesInformation.length": 13,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": "$418,684.53",
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 2,
+          "scrapTaxOrderRequest.BillDetails.redemption.certificateNumber": "7",
+          "scrapTaxOrderRequest.BillDetails.redemption.amountDue": "$210,961.44"
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "89f77d16-60c2-4411-a403-f091319899ba",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "dc6e230f5089e2c08cd0cfdcd939693082b3b93b7e6b3343c823e1cab1c81aec",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "OSC-01",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-OSC-01",
+        "county": "osceola-fl",
+        "address": "3250 VINELAND",
+        "ownerName": "WAL-MART STORES EAST LP",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "02-25-28-2850-0001-0010",
+        "collector_account": "R022528-285000010010",
+        "owners": [
+          "WAL-MART STORES EAST LP"
+        ],
+        "unit": null
+      },
+      "document_format": "PDF",
+      "bill_kind": "annual",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/PRODUCTION-MIAMI-OSCEOLA-RECOVERY-2026-10-13.md",
+        "request_id": "6e93c625-434c-4b1c-b902-f5b131174d98",
+        "response_sha256": "665895d962faa97c3db65564f227d00b19174a069bb8e437953f8b0ab31752d4",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "PAID",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$0.00",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": "CERTIFIED",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 6,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 0,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": "$273,974.06",
+          "scrapTaxOrderRequest.BillDetails.paidDate": "11/18/2025",
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": "$189,066.86",
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": "$96,322.79",
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": "$285,389.65",
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": "$285,389.65",
+          "scrapTaxOrderRequest.ParcelDetails.totalMillageRate": "13.85430",
+          "scrapTaxOrderRequest.AdValoremMillage.length": 11,
+          "scrapTaxOrderRequest.NonAdValorem.length": 1,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 1,
+          "scrapTaxOrderRequest.SalesInformation.length": 3,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": null,
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "bc76d068-1508-441b-9dd4-4c0b1cf044a3",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "b7549ed3463c60876f9343b1b2c67ccc7bab194d12c1c2c551bb16047869f750",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "BRA-01",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-BRA-01",
+        "county": "bradford-fl",
+        "address": "14500 S HWY 301",
+        "ownerName": "WALMART STORES EAST, LP",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "04708-0-00200",
+        "collector_account": "04708-0-00200",
+        "owners": [
+          "WALMART STORES EAST, LP"
+        ],
+        "unit": null
+      },
+      "document_format": "HTML",
+      "bill_kind": "annual",
+      "baseline": {
+        "observed_on": "2026-10-08",
+        "evidence": "docs/DEVELOPMENT-HANDOFF.md",
+        "request_id": "150986d6-0a39-4555-ae9d-f54c22357188",
+        "response_sha256": "2bce7cb990fd85baccec94cadca609fefd24c6219054dfb3c7fed085b54424f2",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "PAID",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$0.00",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": "Preliminary",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 1,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 0,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": "$193,540.85",
+          "scrapTaxOrderRequest.BillDetails.paidDate": "11/18/2025",
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": "$201,605.05",
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": "$0.00",
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": "$201,605.05",
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": null,
+          "scrapTaxOrderRequest.AdValoremMillage.length": 5,
+          "scrapTaxOrderRequest.NonAdValorem.length": 0,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 1,
+          "scrapTaxOrderRequest.SalesInformation.length": 4,
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "80527818-46ae-4ab1-8901-e8d5433df086",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "a5a47b8d7a8d378c205d7e925de86a0f2d5beb1b45feb2ee120c855642f39317",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "BRA-02",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-BRA-02",
+        "county": "bradford-fl",
+        "address": "6557 SE CR 21B, Keystone Heights",
+        "ownerName": "BAKER BOYD D REVOC TRUST",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "05632-0-00000",
+        "collector_account": "05632-0-00000",
+        "owners": [
+          "BAKER BOYD D REVOC TRUST"
+        ],
+        "unit": null
+      },
+      "document_format": "HTML",
+      "bill_kind": "annual",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/BRADFORD-AUTO-ADDRESS-CHECKPOINT-2026-10-13.md",
+        "request_id": "86ce7eef-cdff-4bf9-860e-c78dcc9414b2",
+        "response_sha256": "75fa045a72f2d4c31da471a7554e7093e9b9626945a0a43e3d4c95c352623e78",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "PAID",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$0.00",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": "Preliminary",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 1,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 0,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": "$2,662.29",
+          "scrapTaxOrderRequest.BillDetails.paidDate": "11/26/2025",
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": "$2,481.22",
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": "$292.00",
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": "$2,773.22",
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": null,
+          "scrapTaxOrderRequest.ParcelDetails.totalMillageRate": "15.54530000",
+          "scrapTaxOrderRequest.AdValoremMillage.length": 4,
+          "scrapTaxOrderRequest.NonAdValorem.length": 2,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 1,
+          "scrapTaxOrderRequest.SalesInformation.length": 10,
+          "scrapTaxOrderRequest.PublishedTaxHistory.length": 14,
+          "scrapTaxOrderRequest.HistoricalTaxRecords.length": 4,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": null,
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0,
+          "ExtractionMetadata.match.input_address_type": "site"
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "26903bea-a294-4fe5-8bb7-484358eae2e8",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "0f3f32306d336cb68147d78f07b81c2047de3e031d109f086edb74b5f74d75ad",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "BRA-03",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-BRA-03",
+        "county": "bradford-fl",
+        "address": "334 SE 28TH ST, MELROSE, FL 32666",
+        "ownerName": "BAKER DEBORAH K",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "06203-C-01400",
+        "collector_account": "06203-C-01400",
+        "owners": [
+          "BAKER DEBORAH K"
+        ],
+        "unit": null
+      },
+      "document_format": "HTML",
+      "bill_kind": "annual",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/BRADFORD-AUTO-ADDRESS-CHECKPOINT-2026-10-13.md",
+        "request_id": "cdd20608-19c5-4160-89d9-7e9778a0837c",
+        "response_sha256": "e4999dbafd3bd6b586dea7ed99338a1c994f44ba0f47bd329b395532f67fe297",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "PAID",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$0.00",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": "Preliminary",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 1,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 0,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": "$2,087.82",
+          "scrapTaxOrderRequest.BillDetails.paidDate": "11/25/2025",
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": "$1,882.81",
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": "$292.00",
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": "$2,174.81",
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": null,
+          "scrapTaxOrderRequest.ParcelDetails.totalMillageRate": "15.64720000",
+          "scrapTaxOrderRequest.AdValoremMillage.length": 4,
+          "scrapTaxOrderRequest.NonAdValorem.length": 2,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 1,
+          "scrapTaxOrderRequest.SalesInformation.length": 17,
+          "scrapTaxOrderRequest.PublishedTaxHistory.length": 14,
+          "scrapTaxOrderRequest.HistoricalTaxRecords.length": 1,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": null,
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 0,
+          "ExtractionMetadata.match.input_address_type": "site"
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "5b4a5251-47aa-4e45-888e-0843119984a5",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "ab2cafa38817cf4dc81afa3cda08bc3d3fe08b4d6251572824093f6cff5097c7",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "BRA-04",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-BRA-04",
+        "county": "bradford-fl",
+        "address": "8280 SE SWEET BAY DR",
+        "ownerName": "CALLAHAN JAMES R & CHARLOTTE",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "05194-0-00000",
+        "collector_account": "05194-0-00000",
+        "owners": [
+          "CALLAHAN JAMES R & CHARLOTTE"
+        ],
+        "unit": null
+      },
+      "document_format": "HTML",
+      "bill_kind": "certificate",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/BRADFORD-AUTO-ADDRESS-CHECKPOINT-2026-10-13.md",
+        "request_id": "20527366-bad0-4897-b148-f8987c7bbba2",
+        "response_sha256": "da7fc2797c521075d7bc3e1390b9ce32d8345970a43d1b0ba0cf0e82acc71bbb",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "DELINQUENT",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$130.33",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": "Preliminary",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 1,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 0,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": null,
+          "scrapTaxOrderRequest.BillDetails.paidDate": null,
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": null,
+          "scrapTaxOrderRequest.ParcelDetails.totalMillageRate": null,
+          "scrapTaxOrderRequest.AdValoremMillage.length": 0,
+          "scrapTaxOrderRequest.NonAdValorem.length": 0,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 1,
+          "scrapTaxOrderRequest.SalesInformation.length": 7,
+          "scrapTaxOrderRequest.PublishedTaxHistory.length": 2,
+          "scrapTaxOrderRequest.HistoricalTaxRecords.length": 2,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": "$216.55",
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 2,
+          "scrapTaxOrderRequest.BillDetails.certificate.certificateNumber": "1116",
+          "ExtractionMetadata.match.input_address_type": "mailing"
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "475055c2-0f97-48c7-857c-43ec174b933a",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "b673c6bc7222d2346034be1d682776026f24127503b242f5a057e30655c15a5f",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    },
+    {
+      "id": "BRA-05",
+      "input": {
+        "scrap_order_id": "BESIL-REGRESSION-BRA-05",
+        "county": "bradford-fl",
+        "address": "8130 SW 50TH PATH",
+        "ownerName": "FLETCHER CARRIE",
+        "transactionType": "REFI",
+        "state": "FL"
+      },
+      "identity": {
+        "parcel": "00420-0-00200",
+        "collector_account": "00420-0-00200",
+        "owners": [
+          "FLETCHER CARRIE"
+        ],
+        "unit": null
+      },
+      "document_format": "HTML",
+      "bill_kind": "certificate",
+      "baseline": {
+        "observed_on": "2026-10-13",
+        "evidence": "docs/BRADFORD-AUTO-ADDRESS-CHECKPOINT-2026-10-13.md",
+        "request_id": "f72b7d62-e911-4e87-bda2-9be95810aeb1",
+        "response_sha256": "af91380b8ec5bcb6e6a49b003502cb715bbd4f17bdb2e50dc0ba8eb58e96852d",
+        "observations": {
+          "scrapTaxOrderRequest.TaxInformation.type": "DELINQUENT",
+          "scrapTaxOrderRequest.TaxInformation.amountDue": "$124.47",
+          "scrapTaxOrderRequest.PropertyInformation.ownerOccupied": null,
+          "scrapTaxOrderRequest.AssessmentInformation.Year": "2026",
+          "scrapTaxOrderRequest.AssessmentInformation.Status": "Preliminary",
+          "scrapTaxOrderRequest.AssessmentHistory.length": 1,
+          "scrapTaxOrderRequest.BenefitsInformation.length": 0,
+          "scrapTaxOrderRequest.BillDetails.taxYear": "2025",
+          "scrapTaxOrderRequest.BillDetails.paidAmount": null,
+          "scrapTaxOrderRequest.BillDetails.paidDate": null,
+          "scrapTaxOrderRequest.TaxAmounts.adValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.nonAdValorem": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalTax": null,
+          "scrapTaxOrderRequest.TaxAmounts.totalDiscountable": null,
+          "scrapTaxOrderRequest.ParcelDetails.totalMillageRate": null,
+          "scrapTaxOrderRequest.AdValoremMillage.length": 0,
+          "scrapTaxOrderRequest.NonAdValorem.length": 0,
+          "scrapTaxOrderRequest.FullLegalDescription.length": 1,
+          "scrapTaxOrderRequest.SalesInformation.length": 2,
+          "scrapTaxOrderRequest.PublishedTaxHistory.length": 7,
+          "scrapTaxOrderRequest.HistoricalTaxRecords.length": 13,
+          "scrapTaxOrderRequest.DelinquencyInformation.knownTotalDue": "$704.58",
+          "scrapTaxOrderRequest.DelinquencyInformation.delinquentYears.length": 7,
+          "scrapTaxOrderRequest.BillDetails.certificate.certificateNumber": "50",
+          "ExtractionMetadata.match.input_address_type": "mailing"
+        }
+      },
+      "next_live_run": "NOT_RUN",
+      "live_acceptance_runs": [
+        {
+          "observed_on": "2026-10-14",
+          "job_id": "601cbc19-a953-4edf-8b92-c4b34b8bf568",
+          "loaded_revision": "d0b555f30ba11a74bea7d48396e454108b6c89f1",
+          "response_sha256": "06b1217a889c4d8040134caaabcd089792f1115717a6d39aff624559a251822f",
+          "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md",
+          "source": "PASS",
+          "api": "API_CHECKS_PASS",
+          "public_ui": "PASS",
+          "download_equals_api": true,
+          "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS"
+        }
+      ]
+    }
+  ],
+  "deferred": [
+    "Other counties and states",
+    "Unverified property types",
+    "Complete historical certificate/deed clearance",
+    "Bradford automatic discount calculation without agreed formula",
+    "OCR activation",
+    "Neighbour features and broader reliability acceptance expansion"
+  ],
+  "latest_live_acceptance": {
+    "observed_on": "2026-10-14",
+    "case_count": 9,
+    "result": "PASS_WITH_DOCUMENTED_SOURCE_GAPS",
+    "evidence": "docs/BESIL-NINE-CASE-PRODUCTION-ACCEPTANCE-2026-10-14.md"
+  }
+}

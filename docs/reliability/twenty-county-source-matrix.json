@@ -1,0 +1,908 @@
+{
+  "status": "IMPLEMENTATION_MATRIX_NOT_ACCEPTANCE",
+  "required_properties": 240,
+  "verified_properties": 0,
+  "counties": [
+    {
+      "county": "bradford-fl",
+      "phase": 2,
+      "appraiser": "https://www.bradfordappraiser.com/",
+      "collector": "http://www.bradfordtaxcollector.com/",
+      "family": "visualgov",
+      "source_profile": {
+        "account": "Exact native parcel including lettered suffixes; Martin/Union are mailing-reference checks only",
+        "completion": [
+          "Exact property detail",
+          "TaxBill or PriorBill identity forms"
+        ],
+        "documents": [
+          "annual_tax_bill",
+          "certificate_notice"
+        ],
+        "scope": "Published annual/prior-bill rows; no exhaustive certificate/deed clearance.",
+        "hosts": [
+          "www.bradfordappraiser.com",
+          "bradfordappraiser.com",
+          "www.bradfordtaxcollector.com",
+          "bradfordtaxcollector.com",
+          "www.pamartinfl.gov",
+          "union.floridapa.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "charlotte-fl",
+      "phase": 2,
+      "appraiser": "https://www.ccappraiser.com/",
+      "collector": "https://taxcollector.charlottecountyfl.gov/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.ccappraiser.com",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "charlotte.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "columbia-fl",
+      "phase": 2,
+      "appraiser": "https://columbia.floridapa.com/",
+      "collector": "http://www.columbiataxcollector.com/",
+      "family": "phenix",
+      "source_profile": {
+        "account": "collector_parcel_id",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "columbia.floridapa.com",
+          "search.ccpafl.com",
+          "columbia.floridatax.us"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "desoto-fl",
+      "phase": 2,
+      "appraiser": "https://www.desotopa.com/",
+      "collector": "http://www.desotocountytaxcollector.com/",
+      "family": "visualgov",
+      "source_profile": {
+        "account": "parcel_id",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.desotopa.com",
+          "www.desotocountytaxcollector.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "hernando-fl",
+      "phase": 2,
+      "appraiser": "https://hernandocountypa-florida.us/",
+      "collector": "https://www.hernandocounty.us/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "services2.arcgis.com",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "hernando.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "highlands-fl",
+      "phase": 1,
+      "appraiser": "http://www.hcpao.org",
+      "collector": "http://hctaxcollector.com/",
+      "family": "phenix",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.hcpao.org",
+          "highlands.floridatax.us"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "hillsborough-fl",
+      "phase": 1,
+      "appraiser": "http://www.hcpafl.org",
+      "collector": "https://www.hillstaxfl.gov/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "folio",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "gis.hcpafl.org",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "hillsborough.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "lee-fl",
+      "phase": 1,
+      "appraiser": "http://www.leepa.org/",
+      "collector": "https://leetc.com/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "gissvr.leepa.org",
+          "www.leepa.org",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "lee.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "martin-fl",
+      "phase": 2,
+      "appraiser": "https://www.pamartinfl.gov/",
+      "collector": "https://martintaxcollector.com/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "collector_parcel_id",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.pamartinfl.gov",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "martin.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "miami-dade-fl",
+      "phase": 1,
+      "appraiser": "http://www.miamidade.gov/pa/",
+      "collector": "http://www.miamidade.gov/taxcollector/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "13-digit folio; retain displayed form",
+        "completion": [
+          "#bill-history-content table.bills tbody tr.regular",
+          "table.bills tfoot"
+        ],
+        "documents": [
+          "annual_tax_bill",
+          "certificate_redemption"
+        ],
+        "scope": "Published annual rows and exact-folio Clerk query; retention and missing years remain explicit.",
+        "hosts": [
+          "apps.miamidadepa.gov",
+          "county-taxes.net",
+          "miamidade.county-taxes.com",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "miamidade.realtdm.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "osceola-fl",
+      "phase": 2,
+      "appraiser": "https://search.property-appraiser.org/",
+      "collector": "https://osceolataxcollector.org/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Authoritative R-prefixed collector account joined to appraiser parcel",
+        "completion": [
+          "Native appraiser query response",
+          "Annual bill rows",
+          "Report pagination and exact-account query"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Collector certificate report 1520, deed report 1825 and independent Clerk query remain separate.",
+        "hosts": [
+          "search.property-appraiser.org",
+          "county-taxes.net",
+          "osceola.county-taxes.com",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "officialrecords.osceolaclerk.org"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "palm-beach-fl",
+      "phase": 1,
+      "appraiser": "https://pbcpao.gov/",
+      "collector": "https://www.pbctax.gov/",
+      "family": "palm",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "pbcpao.gov",
+          "pbctax.publicaccessnow.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Collector annual bill document path pending"
+      ]
+    },
+    {
+      "county": "pasco-fl",
+      "phase": 1,
+      "appraiser": "http://www.pascopa.com/",
+      "collector": "http://www.pascotaxes.com",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "search.pascopa.com",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "pasco.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "pinellas-fl",
+      "phase": 2,
+      "appraiser": "https://www.pcpao.gov/",
+      "collector": "https://pinellastaxcollector.gov/online-services/property-taxes/",
+      "family": "phenix",
+      "source_profile": {
+        "account": "parcel_id",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.pcpao.gov",
+          "pinellas.floridatax.us"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "polk-fl",
+      "phase": 1,
+      "appraiser": "https://www.polkflpa.gov/default.aspx?cookie_test=true",
+      "collector": "http://www.polktaxes.com/",
+      "family": "phenix",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "gis.polk-county.net",
+          "polk.floridatax.us"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Official payment date conflict unresolved"
+      ]
+    },
+    {
+      "county": "santa-rosa-fl",
+      "phase": 1,
+      "appraiser": "https://srcpa.gov",
+      "collector": "https://srctc.com/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "parcelview.srcpa.gov",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "santarosa.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "sarasota-fl",
+      "phase": 1,
+      "appraiser": "http://www.SC-PA.com",
+      "collector": "http://www.sarasotataxcollector.com/",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.sc-pa.com",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "sarasota.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "suwannee-fl",
+      "phase": 2,
+      "appraiser": "https://www.suwanneepa.com/",
+      "collector": "https://suwtax.com/",
+      "family": "phenix",
+      "source_profile": {
+        "account": "parcel_id",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "www.suwanneepa.com",
+          "suwannee.floridatax.us"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "union-fl",
+      "phase": 2,
+      "appraiser": "https://union.floridapa.com/",
+      "collector": "https://unioncountytc.com/#:~:text=Union%20County%20Tax%20Collector,%20Florida.%20Lisa%20B.%20Johnson",
+      "family": "visualgov",
+      "source_profile": {
+        "account": "parcel_id",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "union.floridapa.com",
+          "unioncountytc.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    },
+    {
+      "county": "volusia-fl",
+      "phase": 1,
+      "appraiser": "https://vcpa.vcgov.org/#gsc.tab=0",
+      "collector": "http://www.vctaxcollector.org",
+      "family": "taxsys",
+      "source_profile": {
+        "account": "Exact native parcel and independently resolved collector account",
+        "completion": [
+          "Exact parcel detail",
+          "Complete bounded collector history",
+          "Original document identity and year"
+        ],
+        "documents": [
+          "annual_tax_bill"
+        ],
+        "scope": "Published records only; annual, certificate and deed completeness require independent evidence.",
+        "hosts": [
+          "vcpa.vcgov.org",
+          "county-taxes.net",
+          "config.grantstreet.com",
+          "0lwzo52ls2-dsn.algolia.net",
+          "volusia.county-taxes.com"
+        ]
+      },
+      "required_sections": [
+        "PropertyInformation",
+        "AssessmentInformation",
+        "BuildingInformation",
+        "BillDetails",
+        "TaxAmounts",
+        "PaymentDetails",
+        "AdValoremMillage",
+        "NonAdValorem",
+        "Exemptions",
+        "AccountHistory",
+        "DelinquencyInformation",
+        "TotalMillage",
+        "Documents"
+      ],
+      "acceptance": "PENDING",
+      "required_cases": 12,
+      "blockers": [
+        "Full-field and history coverage pending source acceptance"
+      ]
+    }
+  ]
+}

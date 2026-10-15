@@ -13,7 +13,9 @@
     "test": "node scripts/test.mjs",
     "setup:local": "node scripts/setup-local.mjs",
     "db:setup": "node scripts/setup-local.mjs --db-only",
-    "budget:import": "node scripts/import-budget.mjs"
+    "budget:import": "node scripts/import-budget.mjs",
+    "test:besil": "node scripts/test-besil.mjs",
+    "check:besil": "node scripts/check-besil-result.mjs"
   },
   "dependencies": {
     "cheerio": "1.1.2",

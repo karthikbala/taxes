@@ -1,3 +1,4 @@
+import {catalogRequest as auditRequest} from '../public/poc-workflows.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -64,4 +65,9 @@ test('annual roll audit detects dropped or altered original source attributes',(
  assert.equal(checkDeliveredRecord(result,profile,'state_roll',capture).verdict,'ROLL_VALUES_VERIFIED');
  const changed={...source};delete changed.OWN_ADDR1;
  assert.equal(checkDeliveredRecord({...result,raw_fields:changed},profile,'state_roll',capture).verdict,'FAILED_CHECK');
+});
+
+test('full API audit requests retain explicit annual-roll scope despite narrower POC admission',()=>{
+ const {profile,mode}=auditTasks({only:['baker-fl:state_roll']})[0],r=auditRequest(profile,mode,{parcel:'322S22004900760075',includePdf:true});
+ assert.equal(r.endpoint,'/api/v1/property/lookup');assert.deepEqual(r.body,{county:'baker-fl',parcel_id:'322S22004900760075',source_mode:'state_roll',include_pdf:false});
 });
