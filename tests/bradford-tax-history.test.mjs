@@ -19,6 +19,16 @@ test('previous owners and certificate face amounts are retained without substitu
  const html=await file('boyd-2020-previous-owner.html'),row={TAXBILLNO:'1356600',TAXYEAR:'2020',NAME:'HALL MICHAEL K'};
  const r=parseBradfordHistoricalBill(html,'05632-0-00000',row);assert.equal(r.sourceOwner,'HALL MICHAEL K');assert.equal(r.amountDue,'$0.00');assert.equal(r.certificate.faceAmount,'$599.68');assert.equal(r.certificate.status,'UNKNOWN');assert.equal(r.paidDate,null);
 });
+test('a discovered original annual bill retains its own taxes and receipt without substituting certificate amounts',async()=>{
+ const original=await readFile(new URL('./fixtures/client/bradford-collector-bill-2026-10-06.html',import.meta.url),'utf8');
+ const search=JSON.parse(await readFile(new URL('./fixtures/client/bradford-collector-search-2026-10-06.json',import.meta.url),'utf8')).FLTax.ResultsList;
+ const annual=parseBradfordHistoricalBill(original,search.PROPERTYNO,search);
+ assert.equal(annual.documentType,'annual_tax_bill');assert.equal(annual.billYear,'2025');
+ assert.equal(annual.combinedTaxesAndAssessments,'$201,605.05');assert.equal(annual.paidAmount,'$193,540.85');assert.equal(annual.paidDate,'11/18/2025');assert.equal(annual.receiptNumber,'45176');
+ assert.equal(annual.certificate,null);assert.equal(annual.includedInCurrentLiabilityTotal,false);
+ assert.throws(()=>parseBradfordHistoricalBill(original,'05194-0-00000',search),e=>e.code==='collector_identity_mismatch');
+ assert.throws(()=>parseBradfordHistoricalBill(original,search.PROPERTYNO,{...search,TAXYEAR:'2024'}),e=>e.code==='collector_identity_mismatch');
+});
 function stub({failBills=false}={}){
  const two={...data,result:JSON.stringify({FLTax:{ResultsInfo:{Rows:'50',Skip:'0',TotalRowCount:'2'},ResultsList:[row2013,row2018]}})},calls=[];
  return{calls,request:async(url,options)=>{calls.push({url,options});let response;

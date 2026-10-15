@@ -102,3 +102,5 @@ Create a new dated result sheet for each pass rather than overwriting this histo
 | BRA-05 | NOT_RUN | NOT_RUN | NOT_RUN | NOT_RUN | — | NOT_RUN |
 
 For the initial prepared-plan validation and historical replay, see [the 14 October checkpoint](BESIL-REGRESSION-CHECKPOINT-2026-10-14.md). Passing evidence must always identify which run and which revision it covers.
+
+The [15 October Callahan/Fletcher annual-bill investigation](BRADFORD-ANNUAL-BILL-INVESTIGATION-2026-10-15.md) freshly checked all fifteen published originals and the print route. No separate annual version was found; certificate amounts remain distinct from annual totals and payments. The annual-bill positive control and both missing-field cases are covered offline.

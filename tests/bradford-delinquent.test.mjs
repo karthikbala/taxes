@@ -26,6 +26,16 @@ test('Fletcher blank certificate status retains seven reconciled unpaid years wi
  assert.throws(()=>parseClientVisualGovBill(h.replace('id="ctl00_ContentPlaceHolder1_lblCertificateStatus"></span>','id="ctl00_ContentPlaceHolder1_lblCertificateStatus">UNRECOGNIZED</span>'),'00420-0-00200',2025),e=>e.code==='collector_layout_changed');
  assert.throws(()=>parseClientVisualGovBill(h.replace('$124.47','$124.48'),'00420-0-00200',2025),e=>e.code==='source_values_disagree');
 });
+test('both client certificate examples keep annual breakdown, summed mills and receipt fields unavailable',async()=>{
+ const fletcher=await readFile(new URL('./fixtures/client/bradford-fletcher-certificate.html',import.meta.url),'utf8');
+ for(const [source,parcel,certificate] of [[html,id,'1116'],[fletcher,'00420-0-00200','50']]){
+  const r=parseClientVisualGovBill(source,parcel,2025);
+  assert.equal(r.BillDetails.certificate.number,certificate);
+  for(const name of ['adValorem','nonAdValorem','totalTax','totalDiscountable'])assert.equal(r.TaxAmounts[name],null,parcel+' '+name);
+  assert.equal(r.ParcelDetails.totalMillageRate,null);assert.deepEqual(r.AdValoremMillage,[]);assert.deepEqual(r.NonAdValorem,[]);
+  assert.equal(r.BillDetails.paidDate,null);assert.equal(r.BillDetails.paidAmount,null);assert.equal(r.BillDetails.receiptNumber,null);
+ }
+});
 test('client delivery distinguishes certificate-source omissions from failed extraction or an empty paid history',()=>{
  const source=parseClientVisualGovBill(html,id,2025),{section_status,provenance,validation,notes,history,...sections}=source,input={scrap_order_id:'client-fields',county:'bradford-fl',address:'8280 SE SWEET BAY DR',addressType:'mailing',ownerName:'CALLAHAN JAMES R & CHARLOTTE',transactionType:'REFI',state:'FL'};
  const result=serializeClientRecord(input,{sections,section_status,provenance,validation,match:{status:'MATCHED',parcel_id:id},delinquency:classifyDelinquency({...history,county:'bradford-fl',asOf:'2026-10-13'})}),fields=explainResult(result).fields;
