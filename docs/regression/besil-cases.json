@@ -45,7 +45,8 @@
     "html-bill-delivery.test.mjs",
     "retrieval-jobs.test.mjs",
     "managed-pdf.test.mjs",
-    "production-browser-override.test.mjs"
+    "production-browser-override.test.mjs",
+    "cross-county-address.test.mjs"
   ],
   "counties": {
     "miami-dade-fl": {

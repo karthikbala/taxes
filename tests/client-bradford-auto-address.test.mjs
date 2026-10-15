@@ -119,11 +119,12 @@ test('the selected detail revalidates parcel, exact owner and detected address b
  }
 });
 
-test('default auto contract is Bradford-only and explicit overrides remain available',()=>{
+test('default auto contract covers the three advertised address workflows and preserves overrides',()=>{
  assert.equal(validateClientInput(input('fletcher')).addressType,'auto');
  for(const addressType of ['auto','site','mailing'])assert.equal(validateClientInput({...input('fletcher'),addressType}).addressType,addressType);
- for(const addressType of ['auto','mailing'])assert.throws(()=>validateClientInput({...input('fletcher'),county:'miami-dade-fl',addressType}),e=>e.code==='unsupported_address_type');
- assert.equal(validateClientInput({...input('fletcher'),county:'miami-dade-fl'}).addressType,undefined);
+ for(const county of ['miami-dade-fl','osceola-fl','bradford-fl'])for(const addressType of ['auto','site','mailing'])assert.equal(validateClientInput({...input('fletcher'),county,addressType}).addressType,addressType);
+ assert.equal(validateClientInput({...input('fletcher'),county:'miami-dade-fl'}).addressType,'auto');
+ assert.throws(()=>validateClientInput({...input('fletcher'),county:'union-fl',addressType:'auto'}),e=>e.code==='unsupported_address_type');
 });
 
 test('ambiguous auto result survives client serialization and never dispatches collector work',async()=>{

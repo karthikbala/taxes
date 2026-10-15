@@ -118,7 +118,7 @@ const billUrl=root+'/bills/38df3a95-a6dc-11f0-aafd-00505681fc7a';
 function feedbackFetcher(html=bill){
  return async url=>{
   const u=new URL(url);
-  if(u.searchParams.get('Operation')==='GetAddress')return Response.json(JSON.parse(read('besil-miami-512-search.json')));
+  if(['GetAddress','GetOwners'].includes(u.searchParams.get('Operation')))return Response.json(JSON.parse(read('besil-miami-512-search.json')));
   if(u.searchParams.get('Operation')==='GetPropertySearchByFolio')return Response.json(JSON.parse(read('besil-miami-512-property.json')));
   if(u.hostname==='config.grantstreet.com')return Response.json(JSON.parse(read('miami-collector-config-sanitized.json')));
   if(u.hostname.includes('algolia')){

@@ -15,7 +15,7 @@ This application has a standalone Node 22 server for local development and futur
 | `server/app.mjs` | Bearer authorization, bounded JSON input, request-ID assignment, guarded browser integration and error response |
 | `lib/client/access.mjs` | POC authorization and managed-service entitlement/ledger preflight |
 | `lib/client/engine.mjs` | County dispatch, bounded fresh transport, retries, partial-section preservation, provenance and composed validation |
-| `lib/client/miami.mjs`, `osceola.mjs`, `bradford.mjs` | Native address/owner resolution and county appraiser enrichment |
+| `lib/client/miami.mjs`, `osceola.mjs`, `bradford.mjs`, `address-detection.mjs` | Native owner/site/mailing evidence, shared unique-parcel selection and county appraiser enrichment |
 | `lib/client/bill.mjs`, `visualgov.mjs` | Deterministic original PDF/HTML bill parsing and public annual-history parsing |
 | `lib/client/delinquency.mjs` | Decimal money handling and scope-aware liability classification |
 | `lib/client/contract.mjs`, `profiles.mjs` | Input/client envelope, mandatory sections, metadata and explicit county readiness |
@@ -28,7 +28,7 @@ This application has a standalone Node 22 server for local development and futur
 
 ## Matching and extraction boundaries
 
-Each county resolver returns an explicit match outcome and candidate evidence. Complete pagination is required before unique-match claims. Owner comparison and unit-sensitive addresses prevent neighbour/condominium collisions. Parcel-to-collector joins retain county-specific aliases/keys rather than silently assuming all account IDs equal the assessor ID.
+Each county resolver returns an explicit match outcome and candidate evidence. The three advertised address adapters accept automatic site/mailing detection through one shared unique-parcel selection rule; native evidence collection remains county-specific. Both address roles preserve the requested owner and complete parcel identity. Different matching parcels require review; address-role priority cannot choose one. Complete pagination is required before unique-match claims. Owner comparison and unit-sensitive addresses prevent neighbour/condominium collisions. Parcel-to-collector joins retain county-specific aliases/keys rather than silently assuming all account IDs equal the assessor ID.
 
 Transport captures fresh response identity, status, timestamps and hashes within deadlines/body limits. Direct retrieval comes first; approved managed-browser recovery captures original HTML/PDF using scripted JavaScript. Browser recovery is deterministic and preserves the direct blocked-source event separately. The original document must independently match the expected parcel/account and annual bill year.
 
